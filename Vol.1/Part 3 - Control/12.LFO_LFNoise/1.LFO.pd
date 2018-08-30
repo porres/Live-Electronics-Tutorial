@@ -2,21 +2,20 @@
 #X obj 73 210 out~;
 #X floatatom 689 126 5 0.1 10 0 - - -, f 5;
 #X obj 692 176 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 308 1;
+-1 -1 9170 1;
 #X obj 689 198 rescale 500 1500;
 #X obj 663 247 bp~ 0 10;
 #X obj 635 176 noise~;
 #X obj 663 284 out~;
 #X obj 689 224 nbx 7 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 524.283 256;
+-228856 -1 -1 1222.06 256;
 #X obj 689 150 lfo 0.1;
-#X obj 538 250 sig2float~;
 #X obj 538 275 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 -0.955409 256;
+-228856 -1 -1 -0.341551 256;
 #X text 21 281 An audio rate LFO sometimes is not necessary or even
 possible. This is why the ELSE library provides [lfo] \, a control
 rate LFO object with classical built in waveforms., f 59;
-#X obj 538 226 sine~ 0.1;
+#X obj 538 215 sine~ 0.1;
 #X obj 38 133 noise~;
 #X obj 96 117 rescale~ 500 1500;
 #X obj 96 90 osc~ 0.1;
@@ -34,6 +33,8 @@ object from ELSE is also useful for remapping control data.;
 #X text 202 147 The [rescale~] object from ELSE is convenient for rescaling
 audio signals into a new control range (here it maps the -1 to 1 input
 range to an output range from 500 to 1500)., f 25;
+#X obj 538 250 sig2float~;
+#X obj 448 161 setdsp~;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;
 #X connect 3 0 7 0;
@@ -42,11 +43,11 @@ range to an output range from 500 to 1500)., f 25;
 #X connect 5 0 4 0;
 #X connect 7 0 4 1;
 #X connect 8 0 2 0;
-#X connect 9 0 10 0;
-#X connect 12 0 9 0;
-#X connect 13 0 17 0;
-#X connect 14 0 16 0;
-#X connect 15 0 14 0;
-#X connect 16 0 17 1;
-#X connect 17 0 0 0;
-#X connect 17 1 0 1;
+#X connect 11 0 20 0;
+#X connect 12 0 16 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 1;
+#X connect 16 0 0 0;
+#X connect 16 1 0 1;
+#X connect 20 0 9 0;
