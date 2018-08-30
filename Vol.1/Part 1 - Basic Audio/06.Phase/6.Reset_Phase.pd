@@ -1,0 +1,42 @@
+#N canvas 387 119 882 426 12;
+#X text 195 197 =;
+#X obj 134 200 cos~;
+#X msg 277 139 0;
+#X obj 134 236 sig2float~;
+#X obj 134 269 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 673 1;
+#X obj 134 173 phasor~ 0.2;
+#X obj 224 199 osc~ 0.2;
+#X obj 224 236 sig2float~;
+#X obj 224 269 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 678 1;
+#X msg 618 163 0;
+#X obj 588 221 sig2float~;
+#X obj 588 254 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 3496 1;
+#X text 20 12 The native objects [phasor~] and [osc~] have a right
+inlet that accepts control data to reset the phase. This way \, every
+time the inlet receives a number from 0 to 1 \, the waveform is resetted
+to that initial phase. Bear in mind this is unrelated to the phase
+adjustments done previously with phase modulation.;
+#X text 103 121 Reset the oscillator to the initial phase of cosine:
+, f 28;
+#X text 453 18 The [osc~] objet does not allow phase modulation \,
+we did this with [phasor~] in the previous examples. Hence \, the structure
+wirh [phasor~] and [cos~] allows both processes of modulating the phase
+and reseting the oscillator., f 57;
+#X obj 588 189 sine~ 0.2;
+#X text 453 83 The oscillator objects from the ELSE library also offers
+both options. For example \, the second inlet also resets the phase
+\, while the third inlet allows phase modulation., f 57;
+#X text 648 162 <= reset oscilator;
+#X connect 1 0 3 0;
+#X connect 2 0 5 1;
+#X connect 2 0 6 1;
+#X connect 3 0 4 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 15 1;
+#X connect 10 0 11 0;
+#X connect 15 0 10 0;

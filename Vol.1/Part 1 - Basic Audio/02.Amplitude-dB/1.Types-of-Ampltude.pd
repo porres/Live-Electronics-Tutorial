@@ -1,0 +1,38 @@
+#N canvas 334 90 925 553 12;
+#X obj 625 203 pic amp.gif;
+#X obj 98 196 graph~ 441 19 1 -1;
+#X obj 98 139 osc~ 111;
+#X text 31 17 The amplitude of a sound represents the sound source's
+wave propagation \, as in the motion of your speakers., f 54;
+#X text 31 57 There are different types of amplitude concept. The "running
+amplitude" refers to the dynamic amplitude signal output such as the
+signal of any sound generator in Pd. Like an oscillator's \, for instance.
+, f 54;
+#X text 108 168 <= running amplitude;
+#X text 36 362 On the other hand \, we can think of amplitude as one
+single amplitude value \, which is called the "instant amplitude".
+, f 54;
+#X obj 151 462 snapshot~;
+#X obj 164 433 noise~;
+#X obj 151 406 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 151 488 display;
+#X text 171 406 <= get instant amplitude;
+#X text 449 29 But an "instant amplitude" doesn't tell us much about
+what's going on with the signal as a whole \, just that moment in time...
+that's why we have other types of amplitude measures \, and all take
+into account a time window. See the graph below:, f 62;
+#X text 463 330 Above \, we have 3 different types of amplitude measurement
+(represented in the graph as numbers 1 to 3). All of which depend on
+a time window (represented as number 4). Let's see below which are
+these 3 types of amplitude.;
+#X text 508 401 1- "Peak Amplitude": Biggest difference to Zero (positive
+or negative) in the time window, f 50;
+#X text 508 437 2- "Peak to Peak": Difference between positive and
+negative peaks in the time window, f 50;
+#X text 508 473 3- "Root Mean Square" (RMS): A mean of all samples
+in the time window, f 50;
+#X connect 2 0 1 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;

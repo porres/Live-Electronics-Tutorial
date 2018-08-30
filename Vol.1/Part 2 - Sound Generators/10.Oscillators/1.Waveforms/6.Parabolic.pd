@@ -1,0 +1,28 @@
+#N canvas 285 88 932 398 12;
+#X obj 598 121 nbx 5 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 87 109 nbx 5 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 555 253 out~;
+#X obj 59 214 graph~ 441 30;
+#X obj 87 162 expr~ -pow($v1 \, 2) * 2 + 1 \; pow($v1 \, 2) * 2 - 1
+;
+#X obj 273 213 graph~ 441 30;
+#X obj 665 202 graph~ 441 30;
+#X obj 598 155 parabolic~ 300;
+#X obj 87 133 saw~ 600;
+#X text 514 26 The [parabolic~] oscillator from ELSE has a waveform
+that joins the two parabolas to the left. Although it looks just like
+a sine wave \, it is not one as it contains odd partials., f 52;
+#X text 27 23 We can derive parabolas from sawtooth and triangular
+waves by first raising to the power of 2 as below \, where we have
+parabola waveforms from a sawtooth signal. They are actually the same
+\, but with the polarity inverted., f 66;
+#X connect 0 0 7 0;
+#X connect 1 0 8 0;
+#X connect 4 0 3 0;
+#X connect 4 1 5 0;
+#X connect 7 0 2 0;
+#X connect 7 0 2 1;
+#X connect 7 0 6 0;
+#X connect 8 0 4 0;

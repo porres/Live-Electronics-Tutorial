@@ -1,0 +1,75 @@
+#N canvas 391 50 932 518 12;
+#X obj 227 321 tempo 60 50 -on;
+#X obj 641 247 out~;
+#X obj 644 126 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 120 256;
+#X obj 629 320 graph~ 500 20;
+#X obj 581 186 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 192 256;
+#X obj 581 160 * 1.6;
+#X text 24 17 The "hard sync" technique synchronizes two oscillators
+\, where one (called slave) is forced to reset at the period of another
+(called master). The result is that the slave oscillator generates
+a new waveform with the same period/frequency than the master's.,
+f 62;
+#X text 24 95 If the slave's frequency is lower than the master's \,
+then it is forced to restart the cycle before it finishes it. Whereas
+if the slave's frequency is higher \, then repeats at least a portion
+of the period before resseting \, but if its frequency is high enough
+\, it can generate multiple periods before resetting \, and this adds
+lots of shaprness to the sound., f 62;
+#X text 24 239 The right inlet of the native objects [osc~] \, [phasor~]
+and [tabosc4~] do reset the oscillator \, but this is a control inlet
+\, so it's time resolution is not enough for a proper hard sync implementation.
+An audio rate inlet is needed for that!, f 62;
+#X msg 227 370 0;
+#X obj 131 385 sig2float~;
+#X obj 131 421 vsl 16 70 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 4791 1;
+#X obj 131 353 osc~ 0.25;
+#X obj 227 348 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 257 372 <= reset to the beggining of the cycle, f 16;
+#X obj 644 97 initmess 120;
+#X obj 644 184 impulse~;
+#X text 706 125 master;
+#X text 541 184 slave;
+#X obj 628 213 sine~;
+#X text 477 17 Now \, every oscillator from the ELSE library also has
+an inlet that can reset the phase with a control input \, like these
+native objects in Pd \, but they also allow you to reset the oscillator
+with audio signals. The way to trigger them is with impulses.;
+#X text 24 187 You can set a fixed interval relationship between the
+master and the slave as the patch to the right. But before trying it
+\, let's see how native Pd objects work., f 62;
+#N canvas 897 162 343 225 other 0;
+#X obj 64 104 sine~;
+#X obj 199 104 cosine~;
+#X obj 122 129 impulse~;
+#X obj 188 129 impulse2~;
+#X obj 153 153 parabolic~;
+#X obj 144 177 pulse~;
+#X obj 112 104 saw~;
+#X obj 154 104 saw2~;
+#X obj 63 129 square~;
+#X obj 63 152 tri~;
+#X obj 105 152 vsaw~;
+#X obj 63 177 wavetable~;
+#X text 29 15 These sare all the oscillators previously presented in
+the ELSE library. All of which can be synced with impulses. We'll also
+see band limited versions of them in the next section., f 41;
+#X restore 776 195 pd other \; oscillators;
+#X connect 0 0 13 0;
+#X connect 2 0 5 0;
+#X connect 2 0 16 0;
+#X connect 4 0 19 0;
+#X connect 5 0 4 0;
+#X connect 9 0 12 1;
+#X connect 10 0 11 0;
+#X connect 12 0 10 0;
+#X connect 13 0 9 0;
+#X connect 15 0 2 0;
+#X connect 16 0 19 1;
+#X connect 19 0 1 0;
+#X connect 19 0 1 1;
+#X connect 19 0 3 0;

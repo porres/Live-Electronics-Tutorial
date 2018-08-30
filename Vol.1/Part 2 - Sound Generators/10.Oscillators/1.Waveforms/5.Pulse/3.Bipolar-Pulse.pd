@@ -1,0 +1,23 @@
+#N canvas 573 23 477 425 10;
+#X obj 103 128 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 179 108 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X floatatom 176 135 5 0 0 0 - - -, f 5;
+#X text 82 127 Hz;
+#X obj 155 191 out~;
+#X obj 141 160 impulse2~ 100 0.75;
+#X text 47 16 A variation of the [impulse~] object \, [impulse2~] is
+bipolar \, meaning that it also has a negative impulse (-1). A pulse
+width parameter places this negative pulse in the cycle. A width of
+0 places it right next the impulse from the 1st sample \, and a width
+of 1 places it at the end of the cycle. A width of 0.5 (the default)
+places it right in the middle.;
+#X text 207 107 Pulse Width;
+#X obj 140 270 graph~ 441 1 1 -1;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 1;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 5 0 8 0;

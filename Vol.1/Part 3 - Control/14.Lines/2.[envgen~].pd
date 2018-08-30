@@ -1,0 +1,41 @@
+#N canvas 285 23 543 573 12;
+#X obj 284 445 vsl 18 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X msg 284 306 0.5;
+#X msg 298 338 0 1000 1;
+#X obj 264 257 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X msg 264 282 500 \$1;
+#X text 312 305 jumps to this value;
+#X text 361 338 start \, duration \, target;
+#X text 311 281 duration \, target;
+#X obj 62 412 vsl 18 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X obj 62 300 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X text 49 22 The [envgen~] object from ELSE is similar to the [vline~]
+object as it generate multiple lines \, but it has a quite different
+syntax and also other features \, as it is an envelope generator after
+all. Let's present it here as a line generator before using it as an
+envelope generator in the next examples.;
+#X obj 62 376 sig2float~;
+#X obj 62 334 envgen~ 0 1000 1 250 0.25 250 0.25 500 1 250 1 250 0
+, f 26;
+#X obj 284 368 envgen~;
+#X obj 284 409 sig2float~;
+#X text 51 122 The line segments are set in pairs of duration and target
+value \, which is the opposite of the [line] family of objects from
+Pd Vanilla. But if you have an odd number of elements \, the first
+float sets a staring point. In the case of a single float \, this is
+also true \, but it's the start and end point \, so \, in practical
+terms \, it just jumps to that value (like [line]/[line~]/[vline~].
+See examples below and check its help file., f 58;
+#X connect 1 0 13 0;
+#X connect 2 0 13 0;
+#X connect 3 0 4 0;
+#X connect 4 0 13 0;
+#X connect 9 0 12 0;
+#X connect 11 0 8 0;
+#X connect 12 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 0 0;

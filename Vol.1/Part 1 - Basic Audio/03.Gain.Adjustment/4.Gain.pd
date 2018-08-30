@@ -1,0 +1,42 @@
+#N canvas 616 62 578 588 12;
+#X obj 149 178 nbx 5 14 -1e+37 1e+37 0 0 bkjhgk hfjhgd empty 0 -8 0
+10 -228856 -1 -1 0 256;
+#X obj 207 317 *~;
+#X text 126 177 Hz;
+#X obj 225 198 nbx 5 14 -100 0 0 0 empty db empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 228 171 hsl 128 15 -100 0 0 0 empty db empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X obj 149 202 osc~ 440;
+#X obj 225 251 nbx 6 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 11
+-228856 -1 -1 0 256;
+#X text 285 198 dBFS;
+#X obj 225 221 db2lin;
+#X obj 207 366 meter~;
+#X obj 207 525 dac~;
+#X obj 283 360 graph~;
+#X text 33 19 If we multiply the output of an oscillator to values
+between 0 and 1 \, we have a gain adjustment that goes from silence
+(multiply by 0) to the original input (multiply by 1). If we multiply
+it by values greater than one \, we increase the original gain \, which
+can lead to clipping., f 72;
+#X text 33 90 Since our perception is non linear \, we can adopt a
+logarithmic scale to adjust the gain \, such as with [db2lin] to the
+right. The [float2sig~] object is also needed \, as gain changes cannot
+be abrupt \, or clicks will be generated., f 72;
+#X text 303 252 Linear Amplitude;
+#X text 39 252 Oscillator (values between -1 e 1) ==>, f 19;
+#X obj 225 278 float2sig~ 50;
+#X text 235 317 Multiply between 0-1 to adjust gain!;
+#X text 323 279 smoothen audio signal;
+#X connect 0 0 5 0;
+#X connect 1 0 9 0;
+#X connect 1 0 11 0;
+#X connect 3 0 8 0;
+#X connect 4 0 3 0;
+#X connect 5 0 1 0;
+#X connect 6 0 16 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 9 0 10 1;
+#X connect 16 0 1 1;

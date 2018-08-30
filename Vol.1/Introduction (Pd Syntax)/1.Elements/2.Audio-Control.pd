@@ -1,0 +1,38 @@
+#N canvas 543 23 542 655 12;
+#X floatatom 253 343 5 0 0 0 - - -, f 5;
+#X floatatom 253 404 5 0 0 0 - - -, f 5;
+#X obj 200 375 + 5;
+#X floatatom 200 403 5 0 0 0 - - -, f 5;
+#X msg 200 342 12;
+#X obj 133 193 +~;
+#X obj 185 193 cos~;
+#X obj 253 374 cos;
+#X text 64 21 In Pd we have two types of objects:;
+#X text 79 42 - Audio objects, f 21;
+#X text 78 56 - Control objects;
+#X text 61 93 Audio objects deal \, in some way \, with audio signals.
+In the vast majority of cases \, it will have at least one signal input
+or output. Audio objects end with a tilde sign (~) \, which resembles
+a cute and little sinusoidal wave., f 53;
+#X text 222 192 <= Audio objects;
+#X text 61 247 On the other hand \, control objects aren't capable
+of dealing with audio signals at all and do not end with "~". Hence
+\, they can only accept and generate control messages \, such as coming
+from message or number boxes \, for example., f 53;
+#X text 88 343 message box =>;
+#X text 293 342 <= number box;
+#X text 63 375 control objects =>;
+#X text 28 458 A great difference between audio signals and control
+messages is that control data is processed any time in Pd as requested.
+But audio signals need to have the "DSP" engine on \, and they consume
+CPU power even if they aren't connected to anything!, f 65;
+#X text 28 530 By default \, the DSP (from "digital signal processing")
+is off when we open Pd. Therefore \, no audio object is operational
+\, but control objects are. The DSP can be turned on and off in the
+terminal window \, via the Menu (Media => DSP On / Dsp off) and its
+shortcuts. It's also possible to send a message to Pd as we'll see
+later., f 65;
+#X connect 0 0 7 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X connect 7 0 1 0;

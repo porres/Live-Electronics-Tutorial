@@ -1,0 +1,63 @@
+#N canvas 217 23 789 598 12;
+#X obj 573 281 *~;
+#X obj 523 240 r~ \$0-sample;
+#X obj 619 233 nbx 5 14 -20000 20000 0 1 empty \$0-freq empty 0 -8
+0 10 -228856 -1 -1 100 256;
+#X obj 619 256 osc~;
+#X obj 538 113 *~;
+#X obj 613 31 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq empty 0 -8 0
+10 -228856 -1 -1 0 256;
+#X obj 613 55 osc~;
+#X text 648 54 AM;
+#X text 653 257 RM;
+#X obj 136 288 s~ \$0-sample;
+#X obj 516 59 r~ \$0-sample;
+#X obj 538 149 out~;
+#X obj 573 318 out~;
+#X obj 136 180 player~ ../../../../samples/bubul.wav 1 1, f 33;
+#X text 38 18 In this example we have a sample as the carrier instead
+of an oscillator \, which illustrates the usage of amplitude modulation
+as an effects processor rather than a "synthesis technique"., f 60
+;
+#X text 34 323 Let's test both the classic AM example and the RM one.
+In both cases \, the side band frequencies are created for each sine
+wave component in the carrier signal., f 63;
+#X obj 153 227 out~;
+#X text 34 376 Note how the AM still presents the original sound's
+components \, but the generated side band frequencies interfere with
+them. The RM example may sound more interes original components. example
+sounds less, f 63;
+#X text 38 83 Actually \, much of what we see as a synthesis technique
+topic is actually in respect to a processing technique. In the same
+way \, many effect processes are widely used in syhtesis (such as filtering).
+Hence \, there's only a fine line between synthesis techniques and
+audio processing.;
+#X obj 557 505 out~;
+#X obj 603 442 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 663 441 Hz;
+#X obj 557 467 rm~ 150;
+#X text 148 480 The ELSE library has a simple and straightforward Ring
+Modulation object called [rm~]. It uses [osc~] as the modulator and
+the frequency input is given as the argument or via the right inlet.
+, f 54;
+#X obj 557 413 r~ \$0-sample;
+#X obj 613 83 rescale~;
+#X connect 0 0 12 0;
+#X connect 0 0 12 1;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 1;
+#X connect 4 0 11 0;
+#X connect 4 0 11 1;
+#X connect 5 0 6 0;
+#X connect 6 0 25 0;
+#X connect 10 0 4 0;
+#X connect 13 0 9 0;
+#X connect 13 0 16 0;
+#X connect 13 0 16 1;
+#X connect 20 0 22 1;
+#X connect 22 0 19 0;
+#X connect 22 0 19 1;
+#X connect 24 0 22 0;
+#X connect 25 0 4 1;

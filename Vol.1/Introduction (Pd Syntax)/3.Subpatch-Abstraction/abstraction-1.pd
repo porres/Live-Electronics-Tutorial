@@ -1,0 +1,15 @@
+#N canvas 195 91 506 265 12;
+#X obj 66 71 inlet;
+#X obj 66 185 outlet;
+#X obj 182 185 outlet;
+#X obj 182 142 float \$2;
+#X obj 66 142 symbol \$1;
+#X text 239 102 This is an Abstraction!;
+#X obj 66 104 trigger bang bang;
+#X text 273 134 \$1 = 1st argument \; \$2 = 2nd argument.;
+#X connect 0 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 6 0 4 0;
+#X connect 6 1 3 0;
+#X coords 0 0 1 1 100 100 0;

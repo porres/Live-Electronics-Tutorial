@@ -1,0 +1,51 @@
+#N canvas 344 94 728 412 12;
+#X text 529 285 Cents;
+#X obj 576 259 ratio2cents;
+#X obj 576 314 cents2ratio;
+#X obj 594 163 nbx 3 14 -1e+37 1e+37 0 0 empty y empty 0 -8 0 10 -228856
+-1 -1 2 256;
+#X obj 576 184 hot;
+#X obj 576 138 nbx 3 14 -1e+37 1e+37 0 0 empty x empty 0 -8 0 10 -228856
+-1 -1 3 256;
+#X text 616 137 X;
+#X text 634 162 Y;
+#X obj 576 230 display;
+#X obj 576 282 display;
+#X obj 576 337 display;
+#X obj 576 208 /;
+#X obj 628 23 initmess \; x 3 \; y 2;
+#X text 30 17 Just Intervals are represented by the ratio of integers.
+In other words \, they are rational numbers. On the other hand \, a
+tempered interval such as the tritone (whose proportion is the square
+root of two) cannot be represented by an integer ratio \, and is therefore
+an irrational number., f 59;
+#X text 30 160 As an example \, the just interval obtained with the
+3/2 ratio is that of a Perfect Fifth \, and corresponds to the relationship
+between the third and second elements in the harmonic series., f 59
+;
+#X text 30 226 Now we can compare this interval with the one from the
+equal temperament. See the default values to the right \, we load a
+3/2 ratio and ser that it has about 702 cents. A perfect fifth in the
+equal temperament has 7 semitones and 700 cents. So there's a tiny
+difference where the just intonation interval is almost only 2 cents
+higher., f 59;
+#X text 30 321 This is what's more interesting about cents \, being
+able to compare intervals to the equal temperament. Try now other just
+interval ratios such as major third (5/4) \, perfect fourth (4/3) \,
+minor seventh (7/4) and others., f 59;
+#X text 500 101 Enter a ratio in the X/Y format:, f 16;
+#X text 495 233 Ratio (X/Y);
+#X text 495 339 Ratio (X/Y);
+#X text 30 95 Just Intervals relate to the Harmonic Series \, which
+is a series of integers that represent the ratio of harmonics. This
+implies that all harmonics are multiples of a fundamental tone., f
+59;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 4 1;
+#X connect 4 0 11 0;
+#X connect 4 1 11 1;
+#X connect 5 0 4 0;
+#X connect 8 0 1 0;
+#X connect 9 0 2 0;
+#X connect 11 0 8 0;

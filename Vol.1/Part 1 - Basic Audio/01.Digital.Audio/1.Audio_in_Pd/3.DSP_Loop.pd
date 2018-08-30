@@ -1,0 +1,38 @@
+#N canvas 510 23 502 667 12;
+#X obj 150 206 +~;
+#X obj 193 208 +~ 1;
+#X obj 150 164 sig~ 0;
+#X obj 90 527 +~;
+#X obj 146 530 +~ 1;
+#X obj 90 496 sig~ 0;
+#X obj 150 241 display~;
+#X obj 90 599 display~;
+#X obj 278 183 setdsp~ 1;
+#X text 30 19 All processes in a chain of audio objects are performed
+"at once" for each block. So if an output signal is inserted back as
+an input earlier in the chain \, we create an infinite loop \, and
+the computation of that audio chain is turned off., f 56;
+#X text 30 102 this happens below \, see how the terminal prints an
+error that says: "DSP loop detected (some tilde objects not scheduled)".
+;
+#X text 50 206 infinite loop;
+#X text 30 313 To avoid an infinite loop \, we need to perform a feedback
+with a delay of one block of audio. This can be done with native objects
+such as: [send~] / [receive~] \, [tabsend~] / [tabreceive~] \, [throw~]
+/ [catch~] e also the delay objects [delwrite~] / [delread~] and/or
+[delread4~].;
+#X obj 103 566 send~ \$0-signal;
+#X obj 146 503 receive~ \$0-signal;
+#X text 48 406 This example uses [send~] and [receive~] \, where the
+signal connected to [send~] arrives at [receive~] with a delay of one
+block \, preventing an infinite loop from happening., f 49;
+#X text 279 501 <= loop/feedback with one block delay, f 20;
+#X connect 0 0 1 0;
+#X connect 0 0 6 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 3 0 7 0;
+#X connect 3 0 13 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 0;
+#X connect 14 0 4 0;

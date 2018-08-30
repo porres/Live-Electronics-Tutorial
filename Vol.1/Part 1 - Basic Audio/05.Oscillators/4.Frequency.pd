@@ -1,0 +1,133 @@
+#N canvas 318 50 947 750 12;
+#X obj 397 680 v pi;
+#X obj 83 584 nbx 7 14 -1e+37 1e+37 0 0 hz empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 83 640 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 158 696 Hz;
+#X obj 83 696 nbx 7 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 640 393 *;
+#X obj 655 327 nbx 7 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
+-1 -1 300 256;
+#X text 733 325 Hz;
+#X obj 640 298 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 640 468 nbx 9 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X floatatom 655 371 9 0 0 0 - - -, f 9;
+#X text 736 467 x[n];
+#X floatatom 640 419 7 0 0 0 - - -, f 7;
+#X obj 640 442 sin;
+#X obj 86 559 hsl 128 15 0 22050 0 0 slider empty empty -2 -8 0 10
+-228856 -1 -1 0 1;
+#X obj 632 622 cnv 15 180 40 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 55 316 v sr;
+#X obj 99 122 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 99 183 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 99 150 expr 1000 / $f1;
+#X obj 250 152 expr 1000 / $f1;
+#X obj 250 177 nbx 5 14 -1e+37 1e+37 0 0 hz empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 250 125 nbx 5 14 -1e+37 1e+37 0 0 hz empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X text 312 123 ms;
+#X text 160 183 ms;
+#X obj 397 653 pi;
+#X obj 106 279 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 106 339 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 106 306 expr sr / $f1;
+#X text 650 634 x[n] = a*sin(n*w + ø);
+#X obj 83 670 expr $f1 * sr / (2*pi);
+#X obj 83 612 expr $f1 * 2*pi / sr;
+#X obj 237 337 nbx 5 14 -1e+37 1e+37 0 0 hz empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 237 278 nbx 5 14 -1e+37 1e+37 0 0 hz empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 237 305 expr sr / $f1;
+#X obj 588 142 cnv 15 120 23 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 55 294 sr~;
+#X obj 281 607 hz2rad;
+#X obj 281 656 rad2hz;
+#X text 157 583 Hz;
+#X text 109 259 Hz;
+#X text 242 356 Hz;
+#X obj 281 633 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 281 682 nbx 7 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 281 584 nbx 7 14 -1e+37 1e+37 0 0 empty slider empty 0 -8 0
+10 -228856 -1 -1 0 256;
+#X obj 655 348 hz2rad;
+#X text 23 10 Frequency was presented here as "angular velocity"! One
+measurement unit is hertz \, which is the same as "cycle per second".
+A frequency also determines a peiod of oscillation \, which is the
+inverse of frequency.;
+#X text 23 74 So 100 Hz gives us a period of 0.01 second (or 10 ms).
+Below we convert Hz to ms and vice versa with the same formula.;
+#X text 21 216 Another time measurement for period is thenumber of
+samples \, and you need the sample rate to convert it as below.;
+#X text 159 120 Hz;
+#X text 310 175 Hz;
+#X text 87 359 period (samples);
+#X text 231 256 period (samples);
+#X text 31 386 Angular velocity units need an angle and a time unit.
+A cycle per second defines a whole cycle (360 degrees) as the angle
+unit and seconds as the time unit. Othe units are possible. The angle
+can be in radians \, for instance \, and the time unit can be that
+of one sample. This gives us the "radians per sample" unit., f 58
+;
+#X text 31 478 To converter Hz to Radians per Sample you need to multiply
+by 2pi and divide by the sample rate. See below the conversion to and
+from and also the [hz2rad] and [rad2hz] objects from ELSE that do this
+conversion.;
+#X text 167 634 Radians per sample, f 10;
+#X text 488 92 Radians per sample is useful in computer music and defines
+the phase increment step for each sample. Below we have a formula of
+a sine wave in function of the sample number:;
+#X text 598 145 x[n] = sin(n*w);
+#X text 516 167 where \; - n is an integer that represents a sample
+number \; - x[n] is the amplitude as a function the sample number \;
+- sin is the sine function that takes an angle \; - w is the angular
+velocity in radians per sample;
+#X text 715 371 w = radians/sample;
+#X text 671 393 n.w = radians;
+#X text 690 419 radians;
+#X text 504 250 The patch below implements this formula:;
+#X text 700 296 n = sample;
+#X obj 553 331 initmess \; hz 300;
+#X text 543 545 A more complete and classic formula also tales into
+account "a" as the peak amplitude and "ø" as the initial phase., f
+37;
+#X connect 1 0 31 0;
+#X connect 2 0 30 0;
+#X connect 5 0 12 0;
+#X connect 6 0 45 0;
+#X connect 8 0 5 0;
+#X connect 10 0 5 1;
+#X connect 12 0 13 0;
+#X connect 13 0 9 0;
+#X connect 14 0 1 0;
+#X connect 17 0 19 0;
+#X connect 19 0 18 0;
+#X connect 20 0 21 0;
+#X connect 22 0 20 0;
+#X connect 25 0 0 0;
+#X connect 26 0 28 0;
+#X connect 28 0 27 0;
+#X connect 30 0 4 0;
+#X connect 31 0 2 0;
+#X connect 33 0 34 0;
+#X connect 34 0 32 0;
+#X connect 36 0 16 0;
+#X connect 37 0 42 0;
+#X connect 38 0 43 0;
+#X connect 42 0 38 0;
+#X connect 44 0 37 0;
+#X connect 45 0 10 0;

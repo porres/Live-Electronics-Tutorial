@@ -1,0 +1,72 @@
+#N canvas 395 53 868 545 12;
+#X obj 267 230 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X obj 98 190 s~ \$0-sample;
+#X obj 170 390 *~;
+#X obj 127 318 r~ \$0-sample;
+#X obj 224 205 nbx 5 14 0.01 20 1 1 empty \$0-LFO empty 0 -8 0 10 -228856
+-1 -1 1 256;
+#X text 313 230 Depth;
+#X text 283 203 LFO;
+#X obj 224 273 osc~;
+#X obj 127 437 out~;
+#X obj 535 128 r~ \$0-sample;
+#X obj 535 285 out~;
+#X obj 535 247 tremolo~ 5 0.75;
+#X obj 586 168 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 637 222 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 640 199 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X text 646 167 Hz;
+#X text 682 199 Depth;
+#X text 24 11 A tremolo effect is basically a low frequency amplitude
+modulation. What's new a "depth" parameter \, it goes from 0 to 1 and
+controls how much of the modulation/tremolo we have., f 56;
+#X obj 224 346 rescale~ 0 1;
+#X obj 264 272 expr 1 - $f1;
+#X floatatom 264 295 5 0 0 0 - - -, f 5;
+#X obj 247 377 sig2float~;
+#X obj 247 407 vsl 20 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 5385 1;
+#X obj 264 252 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 98 148 player~ ../../../../samples/violin.wav 1 1, f 34;
+#X text 272 500 0;
+#X text 271 400 1;
+#X text 24 75 Hence \, at "0" \, we have the no tremolo \, and "1"
+gives us a full tremolo \, and this is done with a simple rescaling
+of the modulating signal \, below we use [rescale~] for that., f 56
+;
+#X text 445 53 The [tremolo~] object \, from ELSE \, is an abstraction
+based on this idea \, but the implementation is a bit different (without
+[rescale~]). It has an internal sine wave oscillator and you can set
+the frequency and depth., f 57;
+#X text 399 380 In the example on left \, you could also try another
+waveform such as a triangular oscillator (such as [tri~]) for the modulating
+signal.;
+#X text 399 440 Note that if you increase the frequency you just have
+a plain "classic amplitude modulation" example and generate sided band
+partials.;
+#X obj 264 318 f2s~ 10;
+#X connect 0 0 23 0;
+#X connect 2 0 8 0;
+#X connect 2 0 8 1;
+#X connect 3 0 2 0;
+#X connect 4 0 7 0;
+#X connect 7 0 18 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 11 0 10 1;
+#X connect 12 0 11 1;
+#X connect 13 0 11 2;
+#X connect 14 0 13 0;
+#X connect 18 0 21 0;
+#X connect 18 0 2 1;
+#X connect 19 0 20 0;
+#X connect 20 0 31 0;
+#X connect 21 0 22 0;
+#X connect 23 0 19 0;
+#X connect 24 0 1 0;
+#X connect 31 0 18 1;

@@ -1,0 +1,48 @@
+#N canvas 400 166 942 549 12;
+#X obj 587 354 * 1000;
+#X obj 587 406 osc~;
+#X text 766 387 KHz;
+#X obj 587 280 nbx 3 19 0 100 0 0 empty osc empty 0 -8 0 14 -228856
+-1 -1 40 256;
+#X obj 587 450 out~;
+#X obj 201 132 display;
+#X obj 201 108 nyquist~;
+#X obj 667 349 fold;
+#X obj 667 375 nbx 6 15 -1e+37 1e+37 0 0 empty osc empty 0 -8 0 11
+-228856 -1 -1 4.1 256;
+#X obj 691 322 nyquist~ -khz;
+#X obj 232 341 pic foldover.gif;
+#X text 24 20 Nyquist's theorem says the highest frequency we can represent
+(also called "nyquist frequncy") is half the sample rate. Higher frequencies
+generate "Aliasing" or "Foldover". The [nyquist~] object \, from ELSE
+\, reports the Nyquist Frequency.;
+#X text 25 183 Let's imagine an over exagerated example \, where a
+digital sound has an extremely low rate of 20Hz. Well \, a middle A
+(with 440 hz) can never be represented in such a low rate.;
+#X text 34 452 Above we have an illustration where the original frequency
+signal (in red) is higher than the sample rate (which are represented
+by the blue dots). The resulting blue signal is what we end up representing
+and it has a lower frequency than the original.;
+#X text 467 31 If the frequency starts passing over the Nyquist \,
+it folds back and starts descending. For example \, in a Nyquist frequency
+of 22.05 Khz \, 23.1 Khz becomes 21.1 Khz. Mathematically speaking:
+, f 63;
+#X text 519 97 Frequency = Nyquist - (Frequency - Nyquist);
+#X text 467 142 This calculus is performed in the [fold] object from
+ELSE. By default \, we're sending a frequency of 40 Khz to [osc~] \,
+but the resulting oscillation has a frequency of 4.1 Khz. Change the
+number values to try it out., f 63;
+#X text 468 199 when the aliased frequency hits and passes 0 Hz \,
+it folds back again and starts raising up.;
+#X text 642 281 <= Kilohertz;
+#X text 740 374 <= Alias;
+#X text 408 329 <= [pic] object \, from ELSE, f 16;
+#X obj 830 282 e;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 0 4 1;
+#X connect 3 0 0 0;
+#X connect 3 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 9 0 7 2;

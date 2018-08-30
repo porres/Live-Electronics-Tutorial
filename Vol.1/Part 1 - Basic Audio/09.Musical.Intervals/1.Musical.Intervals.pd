@@ -1,0 +1,110 @@
+#N canvas 210 23 1014 643 12;
+#X floatatom 182 147 5 0 15 0 - - -, f 5;
+#X obj 156 489 sqrt;
+#X msg 156 460 2;
+#X floatatom 156 519 8 0 0 0 - - -, f 8;
+#X obj 156 550 pow 2;
+#X floatatom 156 582 5 0 0 0 - - -, f 5;
+#X floatatom 231 519 8 0 0 0 - - -, f 8;
+#X obj 231 488 expr pow(2 \, 0.5);
+#X obj 231 552 expr pow($f1 \, 2);
+#X obj 231 464 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X floatatom 231 582 5 0 0 0 - - -, f 5;
+#X text 205 489 =;
+#X text 206 550 =;
+#X floatatom 182 208 5 0 0 0 - - -, f 5;
+#X obj 182 244 expr log($f1)/log(2);
+#X floatatom 182 275 5 0 15 0 - - -, f 5;
+#X text 661 229 = 2;
+#X text 683 221 1/12;
+#X obj 722 431 sqrt;
+#X msg 722 400 2;
+#X obj 761 403 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X msg 684 433 2;
+#X obj 836 190 expr pow(2 \, 1/$f1);
+#X obj 722 468 expr log($f1)/log(2);
+#X text 140 243 Log2*;
+#X obj 836 216 display;
+#X obj 836 166 nbx 3 14 1 100 0 0 empty empty empty 0 -8 0 10 -228856
+-1 -1 1 256;
+#X obj 722 496 display;
+#X obj 182 173 expr pow(2 \, $f1);
+#X text 128 146 octaves;
+#X text 92 207 power of two;
+#X text 128 275 octaves;
+#X text 59 300 (* In any base \, a base 2 log can be obtained by dividing
+to the log of 2 in the same base);
+#X text 30 85 Hence \, the same linear frequency difference is not
+the same musical interval \, and music intervals are logarithmic! And
+a power of 2 represents a scale of octaves \, see below:, f 63;
+#X text 228 206 intervals;
+#X text 71 488 Square root;
+#X text 75 569 Multiplied by itself =, f 11;
+#X text 52 520 geometric mean;
+#X text 299 513 This is the proportion of the tritone interval, f
+23;
+#X text 254 463 (another way to calculate);
+#X text 275 583 Proportion of the octave.;
+#X text 19 351 A tritone divides the octave in two equally proportional
+intervals. this is a geometric mean and is the same as getting the
+square root. One way to calculate the square root is to raise to the
+power of 1/2 (or just "0.5"). Below we have the proportion of the tritone
+obtained from the square root \, and obviously \, if you multiply the
+tritone to itself again \, you get the octave ratio again., f 68;
+#X text 517 30 You can divide the octave in "x" equal parts if you
+raise 2 to the power of 1/x - the result is the interval of this part.
+The equal temperament divides the octave in 12 parts \, this gives
+us about 1.05946 \, which is the ratio/proportion of the semitone.
+Check it below:, f 64;
+#X obj 601 200 expr pow(2 \, 1/$f1);
+#X obj 601 144 initmess 12;
+#X obj 601 168 display;
+#X obj 601 224 display;
+#X text 479 170 Divide octave by:;
+#X text 497 226 Interval Ratio;
+#X text 30 21 A musical intervak is a proportional relationship. For
+example \, an octave is a proportion (or ratio) of two to one (2/1)
+\, as in: 220Hz/110Hz. in this way \, 220Hz is an octave above 110Hz
+\, and 440Hz an octave higher than 220Hz., f 63;
+#X text 777 219 Interval;
+#X text 756 134 Try other divisions of the octave:, f 13;
+#X obj 601 255 value semitone;
+#X obj 761 431 value semitone;
+#X text 541 323 Now let's have some more math fun \, and from the first
+formula \, which gives us the number of octaves \, we'll adapt and
+get the number of semitones by simply multiplying it by 12!, f 62
+;
+#X text 667 399 tritone;
+#X text 636 433 octave;
+#X text 668 498 Octaves;
+#X obj 722 555 display;
+#X text 653 558 Semitones;
+#X obj 722 529 * 12;
+#X connect 0 0 28 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 10 0;
+#X connect 9 0 7 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 18 0 23 0;
+#X connect 19 0 18 0;
+#X connect 20 0 53 0;
+#X connect 21 0 23 0;
+#X connect 22 0 25 0;
+#X connect 23 0 27 0;
+#X connect 26 0 22 0;
+#X connect 27 0 60 0;
+#X connect 28 0 13 0;
+#X connect 43 0 46 0;
+#X connect 44 0 45 0;
+#X connect 45 0 43 0;
+#X connect 46 0 52 0;
+#X connect 53 0 23 0;
+#X connect 60 0 58 0;

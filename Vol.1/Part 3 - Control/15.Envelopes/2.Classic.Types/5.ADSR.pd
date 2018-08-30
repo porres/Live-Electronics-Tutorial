@@ -1,0 +1,85 @@
+#N canvas 363 23 851 571 12;
+#X obj 585 176 *~;
+#X obj 665 182 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X text 688 272 0;
+#X text 688 178 1;
+#X obj 603 93 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 527 141 osc~ 440;
+#X text 571 95 gate;
+#X obj 616 445 *~;
+#X obj 557 401 osc~ 440;
+#X obj 607 360 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 634 390 timed.gate~ 150;
+#X obj 634 416 adsr~ 100 100 0.5 250;
+#X obj 603 124 adsr~ 100 100 0.5 250;
+#X obj 209 149 sig2float~;
+#X obj 209 175 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X obj 137 148 *~;
+#X obj 87 92 osc~ 440;
+#X obj 94 197 out~;
+#X obj 235 434 sig2float~;
+#X obj 235 460 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X obj 160 433 *~;
+#X obj 94 389 osc~ 440;
+#X obj 117 482 out~;
+#X obj 193 303 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X text 222 306 gate;
+#X text 182 66 ADSR;
+#X obj 193 331 select 0 1;
+#X obj 573 488 out~;
+#X obj 542 220 out~;
+#X text 95 284 With a "gate" input \, we have this:, f 21;
+#X text 456 15 The [adsr~] object from ELSE is dedicated to ADSR envelopes.
+It expects a gate input like [asr~] \, the new parameters are a decay
+time and a sustain point \, which is a ratio of the gate input., f
+51;
+#X obj 634 360 imp~ 1;
+#X text 465 314 You can also use [timed.gate~] to trigger it with bangs
+or impulses., f 34;
+#X obj 665 154 sig2float~;
+#X text 15 17 The ADSR ("Attack / Decay / Sustain / Release") has a
+Decay stage after the attack. Here's how it works on [envgen~].;
+#X obj 155 67 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X obj 155 97 envgen~ 50 1 50 0.5 500 0.5 500 0;
+#X msg 178 358 200 0;
+#X msg 226 362 50 1 50 0.5;
+#X obj 178 392 envgen~;
+#X connect 0 0 28 0;
+#X connect 0 0 28 1;
+#X connect 4 0 12 0;
+#X connect 5 0 0 0;
+#X connect 7 0 27 0;
+#X connect 7 0 27 1;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 1;
+#X connect 12 0 0 1;
+#X connect 12 0 33 0;
+#X connect 13 0 14 0;
+#X connect 15 0 17 1;
+#X connect 15 0 17 0;
+#X connect 16 0 15 0;
+#X connect 18 0 19 0;
+#X connect 20 0 22 1;
+#X connect 20 0 22 0;
+#X connect 21 0 20 0;
+#X connect 23 0 26 0;
+#X connect 26 0 37 0;
+#X connect 26 1 38 0;
+#X connect 31 0 10 0;
+#X connect 33 0 1 0;
+#X connect 35 0 36 0;
+#X connect 36 0 13 0;
+#X connect 36 0 15 1;
+#X connect 37 0 39 0;
+#X connect 38 0 39 0;
+#X connect 39 0 18 0;
+#X connect 39 0 20 1;

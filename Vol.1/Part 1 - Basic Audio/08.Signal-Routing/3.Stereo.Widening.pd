@@ -1,0 +1,63 @@
+#N canvas 378 23 907 557 12;
+#X obj 705 225 *~ -1;
+#X obj 97 364 s~ \$0-sample;
+#X obj 638 184 r~ \$0-sample;
+#X obj 98 409 r~ \$0-sample;
+#X obj 648 377 r~ \$0-sample;
+#X obj 561 250 out~;
+#X obj 662 249 out~;
+#X obj 98 471 out~;
+#X obj 648 465 out~;
+#X obj 97 338 player~ ../../../samples/bubul.wav 1 1;
+#X text 27 15 Stereo widening is any technique that increases the perceived
+stereo width or spread of a signal into the stereo field. Panning is
+one scuch technique \, but this example shows you other cheap and dirt
+tricks to create stereo images from mono sources., f 61;
+#X text 27 93 But first let's understand how we listen. We have two
+ears pointed to opposite direction. Our brain can perceive when a sound
+source reaches both of our ears \, and the delay from when it arrives
+to one ear and the other gives us a cue on where the sound source is
+located. A good stereo microphone recording places the microphones
+in a way to achieve this imaging effect., f 61;
+#X obj 218 376 hsl 128 15 7 21 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X obj 215 398 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 141 443 ffdelay~ 21;
+#X text 27 231 This delay trick is also known as the "Hass effect"
+\, and we can implement it by simply duplicating a mono signal but
+delaying one of the outputs. Try delay values from 7 to 21 ms as in
+the example below \, which is a good range for the haas effect (but
+you could go wilder than that if you want \, right? Why not?)., f
+61;
+#X text 27 204 Hass effect:;
+#X text 486 13 Polarity inversion:;
+#X text 486 44 While we're on the subject \, if you have a stereo track
+that you sum together into a mono source \, you can have cancelling
+issues. One way out is to invert or flip the polarity of one of the
+tracks. This is just multiplying by -1 and deals with cancelling issues.
+, f 55;
+#X text 485 121 Conversely \, we can also get one mono input and create
+a widened stereo effect by inverting the polarity of one of the tracks.
+See the difference below., f 55;
+#X obj 691 414 ffdelay~ 20;
+#X text 496 324 Now \, this is Pd and the crazy world of live electronic
+music \, why not do both? Have some fun!, f 39;
+#X obj 691 441 *~ -1;
+#X obj 215 418 f2s~ 10 7;
+#X connect 0 0 6 1;
+#X connect 2 0 0 0;
+#X connect 2 0 5 0;
+#X connect 2 0 5 1;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 3 0 14 0;
+#X connect 4 0 8 0;
+#X connect 4 0 20 0;
+#X connect 9 0 1 0;
+#X connect 12 0 13 0;
+#X connect 13 0 23 0;
+#X connect 14 0 7 1;
+#X connect 20 0 22 0;
+#X connect 22 0 8 1;
+#X connect 23 0 14 1;

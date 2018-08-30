@@ -1,0 +1,137 @@
+#N canvas 307 73 916 483 12;
+#X obj 50 185 nbx 5 14 1 3000 0 1 empty empty empty 0 -8 0 10 -228856
+-1 -1 23 256;
+#X obj 181 145 cnv 15 198 138 empty empty empty 20 12 0 14 -228856
+-66577 0;
+#N canvas 0 22 474 324 (subpatch) 0;
+#X array saw 4099 float 0;
+#X coords 0 1 4098 -1 200 140 1;
+#X restore 180 144 graph;
+#X text 163 142 1;
+#X text 158 263 -1;
+#X obj 70 334 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-228856 -1 -1 97.9989 256;
+#X text 43 333 Hz;
+#X obj 70 359 tabosc4~ saw;
+#N canvas 109 241 785 463 saw 0;
+#X obj 114 203 list prepend;
+#X text 115 157 p;
+#X obj 64 49 inlet;
+#X msg 286 167 1 0.5 0.333333 0.25 0.2 0.166667 0.142857 0.125 0.111111
+0.1 0.090909 0.0833333 0.076923 0.0714286 0.0666667 0.0625 0.0588235
+0.0555556 0.0526315 0.05 0.047619 0.0454545 0.0434782 0.0416667 0.04
+0.0384615 0.037037 0.0357143 0.0344827 0.0333333 0.0322581 0.03125
+;
+#X obj 64 141 loop;
+#X obj 214 228 list;
+#X obj 89 231 list;
+#X obj 89 261 list prepend sinesum 4096;
+#X msg 89 349 normalize 1;
+#X obj 233 389 send saw;
+#X obj 89 287 list trim;
+#X msg 64 115 1 \$1;
+#X obj 89 310 trigger bang anything;
+#X text 287 107 Sawtooth: partials decrease in an order of "1/p" \,
+owhere "p" is the patial number.;
+#X text 470 144 Example with 32 partials:;
+#X obj 64 90 trigger float bang, f 19;
+#X obj 114 175 expr 1/$f1;
+#X connect 0 0 5 0;
+#X connect 0 0 6 1;
+#X connect 2 0 15 0;
+#X connect 4 0 16 0;
+#X connect 4 1 6 0;
+#X connect 5 0 0 1;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 10 0 12 0;
+#X connect 11 0 4 0;
+#X connect 12 0 8 0;
+#X connect 12 1 9 0;
+#X connect 15 0 11 0;
+#X connect 15 1 0 1;
+#X connect 16 0 0 0;
+#X restore 50 209 pd saw;
+#X obj 70 393 out~;
+#X text 15 10 You can generate a sawtooth waveform from a sum of harmonic
+psartials \, which means we can use "sinesum" again and [tabosc4~].
+Open the [pd saw] subpatch to see how that works., f 61;
+#X text 31 166 # of harmonics;
+#X text 15 64 Enter the number of harmonics and see the resulting waveform
+below. Realize that \, in order to generate a perfect sawtooth \, you
+need an infinite harmonic series., f 61;
+#N canvas 212 77 267 219 sequencer 0;
+#X obj 38 94 sequencer 42 40 40 45 40 49 52 52 45 43 43 47 50 54 55
+55, f 29;
+#X obj 38 70 tempo 240;
+#X obj 38 45 inlet;
+#X obj 38 156 outlet;
+#X obj 38 132 mtof;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 3 0;
+#X restore 444 149 pd sequencer;
+#X obj 444 126 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 444 176 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-228856 -1 -1 92.4986 256;
+#X obj 444 204 saw~;
+#X obj 456 240 out~;
+#X obj 444 307 graph~ 441 8;
+#X obj 668 173 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-228856 -1 -1 164.814 256;
+#X obj 680 237 out~;
+#X obj 668 304 graph~ 441 8;
+#X obj 668 201 saw2~;
+#X text 470 27 The [saw~] object \, from ELSE \, is a "perfect" sawtooth
+wave generator \, which is a descending ramp \, basically. There's
+a [saw2~] variant in ELSE with an ascending ramp \, check the help
+file for more details., f 58;
+#N canvas 212 77 267 219 sequencer 0;
+#X obj 44 97 sequencer 42 40 40 45 40 49 52 52 45 43 43 47 50 54 55
+55, f 29;
+#X obj 44 73 tempo 240;
+#X obj 44 47 inlet;
+#X obj 44 161 outlet;
+#X obj 44 136 mtof;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 3 0;
+#X restore 668 149 pd sequencer;
+#X obj 668 126 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#N canvas 212 77 267 219 sequencer 0;
+#X obj 44 94 sequencer 42 40 40 45 40 49 52 52 45 43 43 47 50 54 55
+55, f 29;
+#X obj 44 70 tempo 240;
+#X obj 44 47 inlet;
+#X obj 44 147 outlet;
+#X obj 44 126 mtof;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 3 0;
+#X restore 70 307 pd sequencer;
+#X obj 70 284 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X connect 0 0 8 0;
+#X connect 5 0 7 0;
+#X connect 7 0 9 0;
+#X connect 7 0 9 1;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 16 0 17 1;
+#X connect 16 0 18 0;
+#X connect 19 0 22 0;
+#X connect 22 0 20 0;
+#X connect 22 0 20 1;
+#X connect 22 0 21 0;
+#X connect 24 0 19 0;
+#X connect 25 0 24 0;
+#X connect 26 0 5 0;
+#X connect 27 0 26 0;

@@ -1,0 +1,97 @@
+#N canvas 366 23 843 534 12;
+#X obj 178 355 nbx 5 14 -1e+37 1e+37 0 1 empty hz empty 0 -8 0 10 -228856
+-1 -1 164.814 256;
+#N canvas 278 23 689 610 triangular 0;
+#X obj 84 323 list prepend;
+#X obj 45 148 trigger float bang;
+#X text 88 220 p;
+#X msg 65 470 normalize 1;
+#X obj 65 441 trigger bang anything;
+#X obj 45 111 inlet;
+#X msg 240 134 1 0 -0.111111 0 0.04 0 -0.0204082 0 0.0123457 0 -0.00826446
+0 0.00591716 0 -0.00444444 0 0.00346021 0 -0.00277008 0 0.00226757
+0 -0.00189036 0 0.0016 0 -0.00137174 0 0.00118906 0 -0.00104058 0;
+#X obj 188 508 send tri;
+#X obj 84 239 expr if ($f1 % 2 == 0 \, 0 \, if ($f1 % 4 == 3 \, -1
+/ pow($f1 \, 2) \, 1 / (pow($f1 \, 2))));
+#X obj 179 329 list;
+#X obj 65 351 list;
+#X obj 65 377 list prepend sinesum 4096;
+#X obj 65 410 list trim;
+#X obj 45 197 loop;
+#X msg 44 171 1 \$1;
+#X text 248 45 Triangular: amplitude values are 1/(pˆ2) \, but each
+4n-1 term has the polarity inverted and even partials are zeroed.;
+#X text 338 108 Example with 32 partials.;
+#X connect 0 0 9 0;
+#X connect 0 0 10 1;
+#X connect 1 0 14 0;
+#X connect 1 1 0 1;
+#X connect 3 0 7 0;
+#X connect 4 0 3 0;
+#X connect 4 1 7 0;
+#X connect 5 0 1 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 1;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 4 0;
+#X connect 13 0 8 0;
+#X connect 13 1 10 0;
+#X connect 14 0 13 0;
+#X restore 174 140 pd triangular;
+#X obj 174 116 nbx 5 14 1 1000 0 1 empty empty empty 0 -8 0 10 -228856
+-1 -1 11 256;
+#X obj 91 179 cnv 15 198 138 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#N canvas 0 22 474 324 (subpatch) 0;
+#X array tri 4099 float 0;
+#X coords 0 1 4098 -1 200 140 1;
+#X restore 90 178 graph;
+#X text 73 171 1;
+#X text 68 306 -1;
+#X text 156 353 Hz;
+#X obj 178 422 out~;
+#X obj 178 380 tabosc4~ tri;
+#N canvas 212 77 569 360 sequencer 0;
+#X obj 195 193 mtof;
+#X obj 90 132 metro 200;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array sequencer 16 float 3;
+#A 0 -6 -8 -8 -3 -8 1 4 4 -3 -5 -5 -1 2 6 7 7;
+#X coords 0 12 16 -12 100 70 1;
+#X restore 272 103 graph;
+#X obj 90 193 v i;
+#X obj 195 221 outlet;
+#X obj 90 107 inlet;
+#X obj 90 155 expr (i + 1) % 16 \; sequencer[i] + 46;
+#X connect 0 0 4 0;
+#X connect 1 0 6 0;
+#X connect 5 0 1 0;
+#X connect 6 0 3 0;
+#X connect 6 1 0 0;
+#X restore 545 169 pd sequencer;
+#X obj 545 146 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 545 196 nbx 5 14 -1e+37 1e+37 0 1 hz empty empty 0 -8 0 10 -228856
+-1 -1 164.814 256;
+#X obj 557 260 out~;
+#X obj 545 327 graph~ 441 8;
+#X obj 545 224 tri~;
+#X text 22 24 You can also generate a triangular from a list of partials.
+Check the suboatch [pd triangular] for more details. As the earlier
+example \, enter the number of harmonics in the number box to generate
+the waveform. Realize also that you'd need an infinite sum of harmonics
+for a "perfect" triangular wave., f 61;
+#X text 494 86 The [tri~] object \, from ELSE \, is a perfect triangular
+wave with infinite harmonics., f 42;
+#X connect 0 0 9 0;
+#X connect 2 0 1 0;
+#X connect 9 0 8 0;
+#X connect 9 0 8 1;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 15 0;
+#X connect 15 0 13 0;
+#X connect 15 0 13 1;
+#X connect 15 0 14 0;

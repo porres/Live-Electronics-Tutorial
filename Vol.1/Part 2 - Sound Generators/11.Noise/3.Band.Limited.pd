@@ -1,0 +1,80 @@
+#N canvas 264 26 891 655 12;
+#X obj 615 401 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 6952 1;
+#X obj 496 403 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 9064 1;
+#X text 482 394 1;
+#X text 475 521 -1;
+#X text 600 392 1;
+#X text 593 519 -1;
+#X obj 615 343 rampnoise~ 1;
+#X obj 496 344 stepnoise~ 1;
+#X obj 496 372 sig2float~;
+#X obj 615 370 sig2float~;
+#X obj 152 91 noise~;
+#X obj 152 140 downsample~;
+#X obj 226 118 nbx 7 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 130 185 out~;
+#X obj 229 94 hsl 128 15 100 44100 1 0 empty empty empty -2 -8 0 10
+-228856 -1 -1 0 1;
+#X msg 70 96 interp \$1;
+#X obj 70 70 tgl 16 0 empty empty empty 17 7 0 10 -228856 -1 -1 0 1
+;
+#X msg 231 340 interp \$1;
+#X obj 231 313 tgl 16 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 179 418 else/out~;
+#X obj 159 483 else/graph~ 1500 10;
+#X obj 158 335 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 682 431 setdsp~ 1;
+#X obj 566 60 hsl 128 15 44.1 44100 1 0 empty empty empty -2 -8 0 10
+-228856 -1 -1 0 1;
+#X obj 563 84 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 520 172 else/out~;
+#X obj 563 141 drive~;
+#X obj 563 112 gbman~;
+#X text 301 118 hz;
+#X text 137 333 hz;
+#X text 540 80 Hz;
+#X text 431 565 Além de um possível uso sonoro. Geradores caóticos
+de banda limitada ou de baixa frequência podem ser usados também
+como um controle aleatório de diversos parâmetros.;
+#X obj 158 374 lfnoise~ 300;
+#X text 21 9 We can limit the frequêncy band of a noise source with
+downsampling. The external [downsample~] object can decrease the sample
+rate with or without interpolation., f 55;
+#X text 28 250 The ELSE library also provides [lfnoise~] (from "low
+frequency noise"). It is basically [noise~] going into [downsample~]
+but it also has a second inlet to reset the phase., f 50;
+#X text 427 11 Many of the chaotic generators in ELSE have a frequency
+input \, which is in fact a non interpolated downsampling process.
+;
+#X text 431 256 The ELSE library also has two objects other than [lfnoise~]
+dedicated to band limited noise. The [stepnoise~] object generates
+random steps (no interpolation) and [rampnoise~] generates random ramps
+(with interpolation).;
+#X connect 6 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 1 0;
+#X connect 9 0 0 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 11 0 13 1;
+#X connect 12 0 11 1;
+#X connect 14 0 12 0;
+#X connect 15 0 11 0;
+#X connect 16 0 15 0;
+#X connect 17 0 32 0;
+#X connect 18 0 17 0;
+#X connect 21 0 32 0;
+#X connect 23 0 24 0;
+#X connect 24 0 27 0;
+#X connect 26 0 25 0;
+#X connect 26 0 25 1;
+#X connect 27 0 26 0;
+#X connect 32 0 19 0;
+#X connect 32 0 19 1;
+#X connect 32 0 20 0;

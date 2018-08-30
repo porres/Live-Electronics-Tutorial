@@ -1,0 +1,38 @@
+#N canvas 548 42 490 683 12;
+#X obj 164 183 sin~;
+#X obj 156 360 osc~ 440;
+#X obj 164 146 phasor~ 440;
+#X obj 121 217 out~;
+#X obj 133 398 out~;
+#X obj 115 584 out~;
+#X obj 115 545 sine~ 440;
+#X obj 240 582 out~;
+#X obj 240 543 cosine~ 440;
+#X text 89 182 Sine Wave;
+#X obj 224 217 out~;
+#X obj 224 183 cos~;
+#X text 257 182 Cosine Wave;
+#X text 30 17 Both sine and cosine are basically the same thing. There's
+only an initial phase difference (a pahse quadrature difference). A
+proper sine wave \, though \, needs to have the initial phase of the
+sine function. If the initial phase is that of a cosine \, then we
+have a cosine wave oscillator. We can implement these oscillators with
+[phasor~] and the [sin~]/[cos~] functions.;
+#X text 35 295 The native [osc~] object is a cosine wave oscillator
+\, which is more CPU efficient that [phasor~] + [cos~]. In contrast
+\, [phasor~] + [cos~] allows phase modulation.;
+#X text 39 472 The ELSE library has Sine and Cosine wave oscillators
+\, both of wich allows phase reset (as with [osc~] and [phasor~] \,
+but they also allow phase modulation on the right inlet.;
+#X connect 0 0 3 0;
+#X connect 0 0 3 1;
+#X connect 1 0 4 0;
+#X connect 1 0 4 1;
+#X connect 2 0 0 0;
+#X connect 2 0 11 0;
+#X connect 6 0 5 0;
+#X connect 6 0 5 1;
+#X connect 8 0 7 0;
+#X connect 8 0 7 1;
+#X connect 11 0 10 0;
+#X connect 11 0 10 1;

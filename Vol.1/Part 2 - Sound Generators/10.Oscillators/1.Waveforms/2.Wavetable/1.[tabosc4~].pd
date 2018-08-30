@@ -1,0 +1,207 @@
+#N canvas 223 112 1003 562 12;
+#X obj 523 311 s harm;
+#X msg 523 286 0;
+#X obj 920 164 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 858 164 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 796 164 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 735 164 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 673 164 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 612 164 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 550 164 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 0 256;
+#X obj 634 284 cnv 15 248 138 empty empty empty 20 12 0 14 -228856
+-66577 0;
+#N canvas 0 22 474 324 (subpatch) 0;
+#X array \$0-wavetable 515 float 0;
+#X coords 0 1 514 -1 250 140 1 0 0;
+#X restore 633 283 graph;
+#X obj 75 400 nbx 4 18 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-228856 -1 -1 293 256;
+#X text 615 277 1;
+#X text 611 412 -1;
+#N canvas 317 87 1099 432 normalizado 0;
+#X obj 479 204 nbx 4 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 425 204 nbx 4 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 371 204 nbx 4 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 318 204 nbx 4 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 264 204 nbx 4 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 123 176 unpack float float float float float float float float
+;
+#X obj 211 204 nbx 4 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 157 204 nbx 4 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 104 205 nbx 4 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 1 256;
+#X text 135 148 <== lista normalizada;
+#X obj 123 88 inlet;
+#N canvas 178 61 728 505 normalizar 0;
+#X obj 277 85 array define \$0-partials 8;
+#X f 13;
+#X obj 256 123 array set \$0-partials;
+#X obj 194 158 array min \$0-partials;
+#X obj 232 188 array max \$0-partials;
+#X obj 217 215 max;
+#X obj 194 189 abs;
+#X obj 185 262 /;
+#X obj 104 159 list split 1;
+#X obj 116 199 list;
+#X obj 72 198 t b f;
+#X obj 106 318 list prepend;
+#X obj 111 353 t l;
+#X obj 74 353 list;
+#X obj 177 43 inlet;
+#X obj 74 400 outlet;
+#X obj 177 122 t l b b l;
+#X connect 2 0 5 0;
+#X connect 3 0 4 1;
+#X connect 4 0 6 1;
+#X connect 5 0 4 0;
+#X connect 6 0 10 0;
+#X connect 7 0 9 0;
+#X connect 7 1 8 1;
+#X connect 7 2 12 0;
+#X connect 7 2 10 1;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
+#X connect 9 1 6 0;
+#X connect 10 0 11 0;
+#X connect 10 0 12 1;
+#X connect 11 0 10 1;
+#X connect 12 0 14 0;
+#X connect 13 0 15 0;
+#X connect 15 0 7 0;
+#X connect 15 1 2 0;
+#X connect 15 2 3 0;
+#X connect 15 3 1 0;
+#X restore 123 118 pd normalizar;
+#X connect 5 0 8 0;
+#X connect 5 1 7 0;
+#X connect 5 2 6 0;
+#X connect 5 3 4 0;
+#X connect 5 4 3 0;
+#X connect 5 5 2 0;
+#X connect 5 6 1 0;
+#X connect 5 7 0 0;
+#X connect 10 0 11 0;
+#X connect 11 0 5 0;
+#X coords 0 -1 1 1 430 27 2 100 200;
+#X restore 503 228 pd normalizado;
+#N canvas 345 184 415 268 sequencer 1;
+#X obj 33 95 mtof;
+#X obj 144 175 *~;
+#X obj 144 204 outlet~;
+#X obj 162 40 tempo 240 -on;
+#X obj 173 88 sequencer 42 40 40 45 40 49 52 52 45 43 43 47 50 54 55
+55, f 29;
+#X obj 33 125 tabosc4~ \$0-wavetable, f 12;
+#X obj 162 141 envgen~ 50 1 150 1 50 0;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 0;
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 1;
+#X restore 246 435 pd sequencer;
+#X obj 507 150 cnv 1 1 1 empty empty 1st 0 0 0 14 -262144 -66577 0
+;
+#X obj 558 150 cnv 1 1 1 empty empty 2nd 0 0 0 14 -262144 -66577 0
+;
+#X obj 628 150 cnv 1 1 1 empty empty 3rd 0 0 0 14 -262144 -66577 0
+;
+#X obj 681 150 cnv 1 1 1 empty empty 4th 0 0 0 14 -262144 -66577 0
+;
+#X obj 744 150 cnv 1 1 1 empty empty 5th 0 0 0 14 -262144 -66577 0
+;
+#X obj 805 150 cnv 1 1 1 empty empty 6th 0 0 0 14 -262144 -66577 0
+;
+#X obj 869 150 cnv 1 1 1 empty empty 7th 0 0 0 14 -262144 -66577 0
+;
+#X obj 930 150 cnv 1 1 1 empty empty 8th 0 0 0 14 -262144 -66577 0
+;
+#X text 926 93 |;
+#X text 926 103 |;
+#X text 926 112 |;
+#X text 926 121 |;
+#X text 508 93 |;
+#X text 508 102 |;
+#X text 508 111 |;
+#X text 508 120 |;
+#X obj 489 191 pack2 float float float float float float float float
+, f 62;
+#X obj 246 472 out~;
+#X obj 489 164 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
+-191672 -1 -1 1 256;
+#X msg 489 454 normalize;
+#X obj 489 347 list prepend sinesum 512, f 12;
+#X obj 489 389 list trim;
+#X obj 564 446 display;
+#X obj 489 422 t b a;
+#X obj 75 476 out~;
+#X text 24 21 In this example we use [tabosc4~] \, a native object
+that uses an array as a waveform. We generate a waveform with the "sinesum"
+message sent to an array \, which needs an array size that's a power
+of two (512 in this case) and a list of partials (8 of them in this
+example).;
+#X obj 489 50 initmess 1;
+#X text 550 286 Reset;
+#X text 24 316 None of this information about extra points is needed
+for the patch \, this is just technical details in the background.
+;
+#X text 24 103 Play around with the number boxes to the right. Each
+box represents the amplitude of a partial from our partials list \,
+and draws a waveform composed of these 8 partials., f 60;
+#X text 24 159 Note that after sending the list of partials \, we do
+normalize the array. A suboatch also normalizes the partials for us
+to visualize the normalized values of each partial.;
+#X text 24 346 Test the resulting sound below with a frequency input
+or from a sequencer driving [tabosc4~]., f 60;
+#X text 128 400 Hz;
+#X text 24 210 The sinesum message is specially designed to generate
+waveforms for [tabosc4~]. In this example \, the table is drawn with
+512 points plus 3 extra points \, which are needed for interpolation
+in [tabosc4~] when indexes values are not integers. The interpolation
+type will be presented in detail later in this tutorial \, but know
+for now it concerns a 4 point interpolation \, hence the "4" in [tabosc4~].
+;
+#X text 541 104 (Negative values invert the polarity of a partial!)
+;
+#X text 514 82 --------------- Partial Amplitude list --------------------
+;
+#X obj 564 483 send \$0-wavetable;
+#X obj 75 433 tabosc4~ \$0-wavetable;
+#X connect 1 0 0 0;
+#X connect 2 0 32 7;
+#X connect 3 0 32 6;
+#X connect 4 0 32 5;
+#X connect 5 0 32 4;
+#X connect 6 0 32 3;
+#X connect 7 0 32 2;
+#X connect 8 0 32 1;
+#X connect 11 0 53 0;
+#X connect 15 0 33 0;
+#X connect 15 0 33 1;
+#X connect 32 0 14 0;
+#X connect 32 0 36 0;
+#X connect 34 0 32 0;
+#X connect 35 0 52 0;
+#X connect 36 0 37 0;
+#X connect 37 0 39 0;
+#X connect 38 0 52 0;
+#X connect 39 0 35 0;
+#X connect 39 1 38 0;
+#X connect 42 0 34 0;
+#X connect 53 0 40 0;
+#X connect 53 0 40 1;

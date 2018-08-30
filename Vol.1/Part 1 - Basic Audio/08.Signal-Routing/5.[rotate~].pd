@@ -1,0 +1,55 @@
+#N canvas 424 23 707 416 10;
+#X obj 525 239 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X msg 522 208 0;
+#X msg 550 208 0.5;
+#X msg 484 208 -0.5;
+#X obj 406 295 out~;
+#X obj 224 145 pan2~;
+#X obj 89 145 pan2~;
+#X obj 224 86 noise~;
+#X obj 224 175 meter2~;
+#X obj 51 175 meter2~;
+#X obj 292 70 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X obj 289 119 *~ -1;
+#X text 48 21 The rotation process is based on panning. When you have
+two pan objects with the inverted panning parameter \, you can rotate
+the channels. See the patch below., f 69;
+#X obj 138 175 meter2~;
+#X obj 138 333 out~;
+#X obj 406 264 rotate~;
+#X text 377 136 The [rotate~] object from the ELSE library performs
+this kind of rotation \, but not only in a two channel (stereo) setting.
+You can give it as many more as you want. Check its help file., f
+48;
+#X obj 425 236 noise~;
+#X obj 89 86 osc~ 440;
+#X obj 406 205 osc~ 440;
+#X obj 288 95 f2s~ 100;
+#X obj 522 262 f2s~ 100;
+#X connect 0 0 21 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 5 0 8 0;
+#X connect 5 0 13 0;
+#X connect 5 1 8 1;
+#X connect 5 1 13 1;
+#X connect 6 0 9 0;
+#X connect 6 0 13 0;
+#X connect 6 1 9 1;
+#X connect 6 1 13 1;
+#X connect 7 0 5 0;
+#X connect 10 0 20 0;
+#X connect 11 0 5 1;
+#X connect 13 0 14 0;
+#X connect 13 1 14 1;
+#X connect 15 0 4 0;
+#X connect 15 1 4 1;
+#X connect 17 0 15 1;
+#X connect 18 0 6 0;
+#X connect 19 0 15 0;
+#X connect 20 0 6 1;
+#X connect 20 0 11 0;
+#X connect 21 0 15 2;

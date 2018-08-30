@@ -1,0 +1,52 @@
+#N canvas 485 143 856 372 12;
+#X obj 225 218 sig2float~;
+#X obj 225 252 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X obj 150 225 *~;
+#X obj 96 163 osc~ 440;
+#X obj 107 265 out~;
+#X text 314 173 AR;
+#X obj 604 113 impseq~;
+#X obj 553 147 brown~;
+#X obj 667 217 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X text 690 310 0;
+#X text 690 211 1;
+#X obj 586 197 *~;
+#X obj 667 189 sig2float~;
+#X obj 604 81 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X obj 543 240 out~;
+#X obj 604 151 decay2~ 100 2000;
+#X msg 672 113 0.5;
+#X text 21 96 Here we have an attack stage of 50 ms and a release stage
+of 450 ms - the total duration of the envelope is 500 ms., f 59;
+#X text 461 25 The [decay2~] object from ELSE has an attack stage \,
+which is the first argument. But the total duration still depends on
+the decay time., f 51;
+#X obj 168 147 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 168 174 envgen~ 50 1 450 0;
+#X text 21 18 An "AR" envelope has an "attack" and a "release" stage.
+The attack is the first stage that starts at 0 and goes to the peak
+amplitude. Right after the attack is finished we have the release stage
+going back to 0 - let's see this first implemented with [envgen~].
+;
+#X text 245 343 0;
+#X text 245 244 1;
+#X connect 0 0 1 0;
+#X connect 2 0 4 1;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 6 0 15 0;
+#X connect 7 0 11 0;
+#X connect 11 0 14 1;
+#X connect 11 0 14 0;
+#X connect 12 0 8 0;
+#X connect 13 0 6 0;
+#X connect 15 0 11 1;
+#X connect 15 0 12 0;
+#X connect 16 0 15 0;
+#X connect 19 0 20 0;
+#X connect 20 0 0 0;
+#X connect 20 0 2 1;

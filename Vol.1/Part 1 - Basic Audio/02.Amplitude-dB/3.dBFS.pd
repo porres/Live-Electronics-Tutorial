@@ -1,0 +1,33 @@
+#N canvas 614 66 525 508 12;
+#X obj 138 218 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X obj 135 242 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 135 324 db2lin;
+#X obj 135 354 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 135 297 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 135 269 lin2db;
+#X text 197 296 dBFS;
+#X text 39 20 In analog audio \, we have different dB scales with different
+reference values in Watts or Volts for 0 dB \, but in digital audio
+we have a scale that has no such reference point in Watss/Volts \,
+because this can't be defined in the digital domain \, as it only depends
+on the analog system it is connected to.;
+#X text 39 113 In digital audio we only consider that 0 dB is the maximum
+amplitude the system can generate. This is called "dB Full Scale" -
+or"dBFS" for short. The conversion between linear amplitude and dBFS
+is possible with the [lin2db] and [db2lin] objects from ELSE., f 59
+;
+#X text 195 240 Linear Amp;
+#X text 195 355 Linear Amp;
+#X text 45 397 This is the scale used in all digital audio editors
+and workstations \, where minus infinite dB represents silence and
+0 dB a maximum peak amplitude of 1! But these objects have a minimum
+dB value of -999 instead of reaching minus infinity.;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;

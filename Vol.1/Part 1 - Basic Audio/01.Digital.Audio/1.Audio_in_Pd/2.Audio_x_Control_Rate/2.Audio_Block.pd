@@ -1,0 +1,114 @@
+#N canvas 95 71 980 635 12;
+#X obj 262 408 *;
+#X obj 262 431 display;
+#X obj 300 382 sr~ -ms;
+#X msg 262 382 64;
+#X obj 540 342 setdsp~ 1;
+#X obj 658 356 osc~ 440;
+#X obj 633 355 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 83 427 display;
+#X obj 83 398 blocksize~ -ms;
+#X obj 150 176 display;
+#X obj 150 147 blocksize~;
+#X obj 658 383 print~ áudio;
+#X floatatom 764 357 5 0 0 0 - - -, f 5;
+#X obj 764 384 print controle;
+#X text 179 179 <=;
+#X text 33 19 AUDIO BLOCK:;
+#X text 33 44 For the CPU to not compute every sample one at a time
+\, audio signals are usually processed in chucks \, or in a "block".
+This is also called the vector or buffer size \, and can be specified
+in number of samples or in ms. The standard in Pd is a block of 64
+samples! The [blocksize~] object from ELSE reports the current block
+size in the patch.;
+#X text 29 215 LATENCY:;
+#X text 32 235 Latency is the time it takes for an audio process to
+come out. Within any audio application \, the latency depends mostly
+on the block size and sample rate. The 64 block size then can represent
+a lower latency if the sample rate is higher. At 44.1 Khz \, this is
+about 1.45 ms \, but a sample rate of 88.2 khz would be half of that.
+See below how the [blocksize~] object can also report the block size
+in ms and how to calculate that as we've seen before.;
+#X text 197 381 click =>;
+#X text 123 459 block latency in ms;
+#X text 33 508 the block size is always 64 samples for [adc~] and [dac~]
+\, but we can change the block size with the native [block~] object.
+Despite being redundant \, we have this object below setting a block
+size of 64;
+#X text 103 585 standard block size:;
+#X text 497 123 In this tutorial we use [block~] to perform one sample
+feedbacks and to perform FFT analysis. The [block~] object can also
+locally change the sample rate and we'll see this in a bit., f 63
+;
+#X text 497 187 The [switch~] object has the same functions as [block~]
+but can also turn the audio process on or off locally \, just for the
+patch window it's contained in \, so this can be the whole patch or
+just a subptch! This is useful because audio objects will consume CPU
+power whenever the DSP is on \, so we can save a little when we're
+not using a patch or subpatch that is opened., f 63;
+#X text 497 283 One way to check the block size is with the [prnit~]
+object \, which prints the whole block size in Pd's terminal window
+when it receives a bang. Check it below., f 63;
+#X text 506 430 See also [print] \, the control version of this object.
+To reinforce the difference between audio and control objects \, not
+how the [print] object prints ininterruptly when requested \, but [print~]
+only operates when the DSP is on., f 63;
+#X text 510 511 Now click and open the subpatches for more examples:
+;
+#N canvas 267 308 632 267 [block~] 0;
+#X obj 119 172 osc~ 440;
+#X obj 69 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X obj 119 209 print~;
+#X obj 45 61 display;
+#X obj 45 30 blocksize~;
+#X text 239 61 here we have [block~] setting a block size of just 1
+sample! sthe [blocksize~] object confirms and reports thatjust for
+illustration., f 48;
+#X text 93 126 <= print;
+#X text 240 125 Now when you bang [print~] \, you can see how it only
+prints one single value instead of 64 as it's the case with the parent
+window., f 48;
+#X obj 142 29 block~ 1;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 4 0 3 0;
+#X restore 675 552 pd [block~];
+#N canvas 760 202 470 359 [switch~] 0;
+#X obj 76 237 osc~ 440;
+#X obj 117 183 switch~;
+#X obj 117 123 tgl 30 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X floatatom 117 161 5 0 0 0 - - -, f 5;
+#X obj 272 164 display;
+#X text 64 130 On/Off;
+#X obj 272 135 blocksize~;
+#X text 32 24 This other subpatch has no other block size definition
+\, therefore it loads the size defined in the parent window.;
+#X text 33 60 But you need to turn the process on with the toggle in
+order for the audio process to run., f 57;
+#X obj 76 273 display~ 6;
+#X text 132 276 <= [display~] from the ELSE library;
+#X text 213 168 samples;
+#X connect 0 0 9 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 6 0 4 0;
+#X restore 763 552 pd [switch~];
+#X obj 255 585 block~ 64;
+#X text 90 178 samples;
+#X text 198 178 [the display] object \, from ELSE displays control
+messages, f 30;
+#X text 498 50 Changing the block size to a value different than 64
+samples is usually done in a subpatch \, altering the block size only
+in that subwindow. One reason to do this is not to have conflicts with
+[adc~] and [dac~] objects in the patch's main window., f 62;
+#X connect 0 0 1 0;
+#X connect 2 0 0 1;
+#X connect 3 0 0 0;
+#X connect 5 0 11 0;
+#X connect 6 0 11 0;
+#X connect 8 0 7 0;
+#X connect 10 0 9 0;
+#X connect 12 0 13 0;

@@ -1,0 +1,68 @@
+#N canvas 153 23 940 470 12;
+#X text 193 213 LFO;
+#X text 567 123 LFO;
+#X obj 759 177 hsl 128 15 50 400 0 0 empty sl empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X text 786 176 portamento;
+#X obj 299 385 out~;
+#X obj 77 285 graph~ 5000 2;
+#X obj 226 213 vsaw~ 14 0.7;
+#X obj 299 288 rescale~ 100 400, f 8;
+#X obj 689 235 rescale~ 100 400;
+#X obj 408 287 graph~ 5000 2;
+#X obj 299 349 bl.saw~;
+#X obj 226 185 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 359 186 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 689 171 sh~;
+#X obj 596 123 vsaw~ 5.3 0.7;
+#X obj 689 273 bl.saw~;
+#X obj 707 136 impulse~ 3;
+#X obj 705 360 out~;
+#X obj 689 202 glide2~ 50;
+#X obj 596 93 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 707 98 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 359 212 phasor~ 9.11;
+#X obj 299 247 samphold~;
+#X text 16 11 The native [samphold~] object is a "sample and hold"
+unit designed to be triggered by [phasor~]. In fact \, it is triggered
+when the current input is smaller than the previous \, which is true
+for each new period of [phasor~] for positive frequencies smaller than
+the sample rate. The [sh~] object from ELSE is another sample and hold
+unit triggered by impulses or pulses and is more versatile., f 74
+;
+#X text 448 212 Trigger;
+#X text 572 22 Now we use [sh~] and [glide~] is also used to generate
+a smoothened output \, or a "portamento" between the sampled and held
+values., f 47;
+#X text 16 103 You can use sample and hold techniques to achieve interesting
+control gestures. See what happens when we pass an LFO into a sample
+and hold unit. Try different frequency values for both the LFO and
+the trigger rate \, this is what determines different patterns., f
+74;
+#X text 781 135 Trigger;
+#X obj 689 309 plateverb~ 50 0.6 0.25 0.8 0.5, f 16;
+#X connect 2 0 18 1;
+#X connect 6 0 5 0;
+#X connect 6 0 22 0;
+#X connect 7 0 10 0;
+#X connect 8 0 15 0;
+#X connect 10 0 4 0;
+#X connect 10 0 4 1;
+#X connect 11 0 6 0;
+#X connect 12 0 21 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 0;
+#X connect 15 0 28 0;
+#X connect 16 0 13 1;
+#X connect 18 0 8 0;
+#X connect 19 0 14 0;
+#X connect 20 0 16 0;
+#X connect 21 0 22 1;
+#X connect 22 0 7 0;
+#X connect 22 0 9 0;
+#X connect 28 0 17 0;
+#X connect 28 1 17 1;

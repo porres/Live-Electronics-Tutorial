@@ -1,0 +1,58 @@
+#N canvas 628 152 503 512 12;
+#X obj 201 232 else/downsample~ 1;
+#X obj 201 276 else/display~;
+#X obj 350 232 else/downsample~ 1;
+#X obj 350 273 else/display~;
+#X msg 350 135 507;
+#X obj 38 168 else/downsample~ 1;
+#X obj 38 193 else/display~;
+#X obj 201 142 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 38 143 pinknoise~ 1039;
+#X obj 201 198 pinknoise~;
+#X obj 350 193 pinknoise~;
+#X obj 38 254 else/downsample~ 1;
+#X obj 38 279 else/display~;
+#X obj 38 229 pinknoise~ 1039;
+#X obj 244 422 random 100;
+#X obj 244 378 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 348 422 random 100;
+#X msg 348 372 seed 123;
+#X obj 244 453 display;
+#X obj 348 454 display;
+#X text 376 134 <= set seed;
+#X text 30 329 Native objects like [noise~] and random also take a
+seed value via a seed message:;
+#X obj 116 419 noise~;
+#X obj 116 454 print~;
+#X obj 87 421 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X msg 116 386 seed 3e+06;
+#X text 40 21 Random generators usually have a "seed" parameter \,
+used to generate an initial random value. If two different instances
+of the same object have the same seed \, they can be synced together
+to generate the same sequence. As an example \, we set the seed of
+[pinknoise~] \, which goes through [downsample~].;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 4 0 9 0;
+#X connect 4 0 10 0;
+#X connect 5 0 6 0;
+#X connect 7 0 9 0;
+#X connect 7 0 10 0;
+#X connect 8 0 5 0;
+#X connect 9 0 0 0;
+#X connect 10 0 2 0;
+#X connect 11 0 12 0;
+#X connect 13 0 11 0;
+#X connect 14 0 18 0;
+#X connect 15 0 14 0;
+#X connect 15 0 16 0;
+#X connect 16 0 19 0;
+#X connect 17 0 14 0;
+#X connect 17 0 16 0;
+#X connect 22 0 23 0;
+#X connect 24 0 23 0;
+#X connect 25 0 22 0;
+#X connect 25 0 24 0;

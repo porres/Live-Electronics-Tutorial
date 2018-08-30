@@ -1,0 +1,27 @@
+#N canvas 576 149 452 411 12;
+#X obj 154 221 noise~;
+#X obj 236 222 list;
+#X obj 73 148 bicoeff eq 500 10 24;
+#X obj 268 177 bicoeff eq 900 10 24;
+#X obj 73 118 nbx 5 14 -1e+37 1e+37 0 0 empty hz1 empty 0 -8 0 10 -228856
+-1 -1 500 256;
+#X obj 236 144 t b f;
+#X obj 236 118 nbx 5 14 -1e+37 1e+37 0 0 empty hz2 empty 0 -8 0 10
+-228856 -1 -1 900 256;
+#X obj 154 278 biquads~;
+#X obj 154 323 out~;
+#X obj 308 322 initmess \; hz1 500 \; hz2 900;
+#X text 38 24 The [biquads~] object from ELSE is a series of biquad
+filters in cascade. Each biquad section is defined as a list of 5 coefficients
+(in the same way as Pd Vanilla's [biquad~]). Check its help file for
+more details., f 55;
+#X connect 0 0 7 0;
+#X connect 1 0 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 5 0 1 0;
+#X connect 5 1 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 7 0 8 1;

@@ -1,0 +1,84 @@
+#N canvas 376 79 951 422 12;
+#X obj 79 244 *~;
+#X obj 49 205 osc~;
+#X obj 509 169 metro 500;
+#X obj 509 142 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+1;
+#X obj 509 307 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 33.28 256;
+#X obj 509 246 pack float 500;
+#X obj 509 115 loadbang;
+#X obj 512 334 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 3328 1;
+#X obj 252 221 osc~;
+#X obj 49 132 rampnoise~ 5;
+#X obj 49 164 rescale~ 500 1500;
+#X obj 252 182 rescale~ 500 1500;
+#X obj 252 144 stepnoise~ 7;
+#X obj 97 208 rampnoise~ 3;
+#X obj 281 312 out~;
+#X obj 252 114 nbx 5 17 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-228856 -1 -1 0 256;
+#X obj 108 334 out~;
+#X obj 49 103 nbx 5 17 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-228856 -1 -1 0 256;
+#X obj 509 200 random 128;
+#X obj 509 276 line 0 5;
+#X obj 604 140 nbx 3 14 -1e+37 1e+37 0 0 empty empty ms 0 -8 0 12 -228856
+-1 -1 0 256;
+#X obj 509 224 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 28 256;
+#X obj 686 156 randi 10 20;
+#X obj 776 156 randf 10 20;
+#X obj 686 180 display;
+#X obj 776 180 display;
+#X obj 776 114 tempo 60 -on;
+#X obj 775 237 tempo~ 60 -on;
+#X obj 672 274 randi~ 10 20;
+#X obj 775 274 randf~ 10 20;
+#X obj 775 300 display~;
+#X obj 672 300 display~;
+#X text 473 17 The native object [random] is a randm number generator.
+You could use it to generate random control values and even random
+ramps (check below). The ELSE library also has randomnumber generators
+for btoh control ([randi]/[randf]) and audio signals ([randi~]/[randf~]).
+, f 63;
+#X obj 79 281 plateverb~ 50 0.6 0.25 0.8 0.666, f 18;
+#X obj 252 259 plateverb~ 50 0.6 0.25 0.8 0.666, f 18;
+#X text 11 13 Low frequency noise generators can be used as random
+controls in patches and replace random number generators. Below we
+have random ramps in the left and random steps in the right. And why
+not add some reverb so just it sounds cooler? See the [plateverb~]
+object from ELSE., f 63;
+#X connect 0 0 33 0;
+#X connect 1 0 0 0;
+#X connect 2 0 18 0;
+#X connect 3 0 2 0;
+#X connect 4 0 7 0;
+#X connect 5 0 19 0;
+#X connect 6 0 3 0;
+#X connect 8 0 34 0;
+#X connect 9 0 10 0;
+#X connect 10 0 1 0;
+#X connect 11 0 8 0;
+#X connect 12 0 11 0;
+#X connect 13 0 0 1;
+#X connect 15 0 12 0;
+#X connect 17 0 9 0;
+#X connect 18 0 21 0;
+#X connect 19 0 4 0;
+#X connect 20 0 5 1;
+#X connect 20 0 2 1;
+#X connect 21 0 5 0;
+#X connect 22 0 24 0;
+#X connect 23 0 25 0;
+#X connect 26 0 22 0;
+#X connect 26 0 23 0;
+#X connect 27 0 29 0;
+#X connect 27 0 28 0;
+#X connect 28 0 31 0;
+#X connect 29 0 30 0;
+#X connect 33 0 16 0;
+#X connect 33 1 16 1;
+#X connect 34 0 14 0;
+#X connect 34 1 14 1;

@@ -1,0 +1,181 @@
+#N canvas 188 103 890 575 12;
+#N canvas 308 211 308 379 voice1 0;
+#X obj 126 282 *~;
+#X obj 71 132 mtof;
+#X floatatom 71 162 5 0 0 0 - - -, f 5;
+#X obj 71 43 inlet;
+#X obj 71 74 unpack;
+#X floatatom 144 107 5 0 0 0 - - -, f 5;
+#X floatatom 71 105 5 0 0 0 - - -, f 5;
+#X obj 71 197 bl.saw~;
+#X obj 144 244 adsr~ 10 10 0.5 50;
+#X obj 144 134 / 127;
+#X obj 126 314 throw~ \$0-voice;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 1 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 1;
+#X connect 9 0 8 0;
+#X restore 98 388 pd voice1;
+#X obj 231 326 /~ 4;
+#X obj 98 288 voices 4 1;
+#X obj 231 360 out~;
+#X obj 231 298 catch~ \$0-voice;
+#N canvas 308 211 308 379 voice2 0;
+#X obj 126 282 *~;
+#X obj 71 132 mtof;
+#X floatatom 71 162 5 0 0 0 - - -, f 5;
+#X obj 71 43 inlet;
+#X obj 71 74 unpack;
+#X floatatom 144 107 5 0 0 0 - - -, f 5;
+#X floatatom 71 105 5 0 0 0 - - -, f 5;
+#X obj 71 197 bl.saw~;
+#X obj 144 244 adsr~ 10 10 0.5 50;
+#X obj 144 134 / 127;
+#X obj 126 314 throw~ \$0-voice;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 1 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 1;
+#X connect 9 0 8 0;
+#X restore 114 364 pd voice2;
+#N canvas 308 211 308 379 voice3 0;
+#X obj 126 282 *~;
+#X obj 71 132 mtof;
+#X floatatom 71 162 5 0 0 0 - - -, f 5;
+#X obj 71 43 inlet;
+#X obj 71 74 unpack;
+#X floatatom 144 107 5 0 0 0 - - -, f 5;
+#X floatatom 71 105 5 0 0 0 - - -, f 5;
+#X obj 71 197 bl.saw~;
+#X obj 144 244 adsr~ 10 10 0.5 50;
+#X obj 144 134 / 127;
+#X obj 126 314 throw~ \$0-voice;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 1 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 1;
+#X connect 9 0 8 0;
+#X restore 131 338 pd voice3;
+#N canvas 308 211 308 379 voice4 0;
+#X obj 126 282 *~;
+#X obj 71 132 mtof;
+#X floatatom 71 162 5 0 0 0 - - -, f 5;
+#X obj 71 43 inlet;
+#X obj 71 74 unpack;
+#X floatatom 144 107 5 0 0 0 - - -, f 5;
+#X floatatom 71 105 5 0 0 0 - - -, f 5;
+#X obj 71 197 bl.saw~;
+#X obj 144 244 adsr~ 10 10 0.5 50;
+#X obj 144 134 / 127;
+#X obj 126 314 throw~ \$0-voice;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 1 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 1;
+#X connect 9 0 8 0;
+#X restore 148 314 pd voice4;
+#X obj 98 173 keyboard 17 80 2 4;
+#X obj 98 112 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X obj 40 114 notein;
+#X obj 40 145 pack;
+#X obj 283 516 poly;
+#N canvas 470 55 378 320 random_chords 0;
+#X obj 86 246 pack f f;
+#X obj 86 283 outlet;
+#X obj 50 19 inlet;
+#X obj 86 221 makenote;
+#X obj 183 116 expr $f1 + random(2 \, 5);
+#X obj 199 140 expr $f1 + random(2 \, 5);
+#X obj 217 164 expr $f1 + random(2 \, 5);
+#X obj 50 43 expr random(60 \, 72) \; random(90 \, 127) \; random(500
+\, 1000);
+#X connect 0 0 1 0;
+#X connect 2 0 7 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;
+#X connect 4 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X connect 7 0 4 0;
+#X connect 7 1 3 1;
+#X connect 7 2 3 2;
+#X restore 98 145 pd random_chords;
+#X text 28 22 The [voices] object \, from ELSE \, manages. The first
+argument is the number of voices it handles and each voice is routed
+to a different output. Here we have a 4 voice polyphonic patch and
+each voice is implemented in a different subpatch., f 52;
+#X text 121 112 <= generate random chords if you don't have a controller
+, f 29;
+#X obj 532 313 voices 4 1 -list;
+#X obj 545 428 out~;
+#X obj 532 382 plateverb~ 50 0.6 0.25 0.8 0.8, f 16;
+#X text 647 350 <= click;
+#X text 33 424 The seconrd argument is "voice stealing" flag \, which
+replaces the last pressed note if you press more notes than it can
+handle. This object was inspired by Pd's native [poly] object \, but
+[voices] brings more functionalities and it's more convenient., f
+54;
+#X text 215 516 see also:;
+#X text 450 156 The first number argument of clone is the number of
+instances it loads from an abstraction. The second is the file name
+to load. We included a third argument \, which is equal to the number
+of instances to make a volume compensation inside the patch., f 56
+;
+#X text 450 31 The native [clone] object loads an abstraction multiple
+times \, which is quite useful for polyphony. When [clone] receives
+list messages \, the first number element is the number of the abstraction
+\, soit routes the rest of the message to that instance. The [voices]
+object can have a list output where the first number is the voice number
+(and the second and third third are: pitch/velocity) \, so you can
+just directly connect them., f 56;
+#X text 450 238 Click on the [clone] object to open the abstracion.
+Check its help file \, and also check the help file of [voices], f
+56;
+#X obj 532 350 clone 4 voice 4;
+#X connect 1 0 3 0;
+#X connect 1 0 3 1;
+#X connect 2 0 0 0;
+#X connect 2 1 5 0;
+#X connect 2 2 6 0;
+#X connect 2 3 7 0;
+#X connect 4 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 16 0;
+#X connect 9 0 13 0;
+#X connect 10 0 11 0;
+#X connect 10 1 11 1;
+#X connect 11 0 8 0;
+#X connect 13 0 8 0;
+#X connect 16 0 25 0;
+#X connect 18 0 17 0;
+#X connect 18 1 17 1;
+#X connect 25 0 18 0;
