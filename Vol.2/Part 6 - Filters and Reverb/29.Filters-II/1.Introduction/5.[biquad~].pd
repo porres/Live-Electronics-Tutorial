@@ -1,0 +1,46 @@
+#N canvas 436 102 578 451 12;
+#X obj 103 116 noise~;
+#X obj 60 192 out~;
+#X obj 321 201 v a0;
+#X obj 383 201 v a1;
+#X obj 197 201 v b1;
+#X floatatom 197 174 7 0 0.99 0 - - -, f 7;
+#X floatatom 383 174 7 0 0.99 0 - - -, f 7;
+#X floatatom 321 174 7 0 0.99 0 - - -, f 7;
+#X floatatom 259 174 7 0 0.99 0 - - -, f 7;
+#X obj 259 201 v b2;
+#X floatatom 446 174 7 0 0.99 0 - - -, f 7;
+#X obj 446 201 v a2;
+#X obj 197 149 unpack float float float float float;
+#X obj 196 270 noise~;
+#X obj 196 303 fexpr~ a0 * $x[0] + a1 * $x[-1] + a2 * $x[-2] + b1 *
+$y[-1] + b2 * $y[-2], f 36;
+#X text 198 223 fb1;
+#X text 265 223 fb2;
+#X text 388 221 ff1;
+#X text 451 221 ff2;
+#X obj 196 353 out~;
+#X text 319 220 gain;
+#X obj 197 117 initmess 1.99 -0.995 0.00246 0 -0.00246;
+#X obj 103 152 biquad~;
+#X text 86 29 A second order system is nothing but a [biquad~] filter!
+It expects a list of 5 coefficients that correspond to the coefficients:
+b1 \, b2 \, a0 \, a1 & a2. Compare it below., f 56;
+#X connect 0 0 22 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 0;
+#X connect 7 0 2 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 12 0 5 0;
+#X connect 12 1 8 0;
+#X connect 12 2 7 0;
+#X connect 12 3 6 0;
+#X connect 12 4 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 19 0;
+#X connect 14 0 19 1;
+#X connect 21 0 12 0;
+#X connect 21 0 22 0;
+#X connect 22 0 1 0;
+#X connect 22 0 1 1;

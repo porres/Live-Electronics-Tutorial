@@ -47,7 +47,7 @@
 #X obj 210 132 changed2~;
 #X text 281 226 change direction according to sawtooth's, f 16;
 #X text 36 132 Parabola;
-#X obj 102 132 power~ 2;
+#X obj 102 132 pow~ 2;
 #X connect 0 0 6 0;
 #X connect 0 0 9 0;
 #X connect 1 0 4 0;

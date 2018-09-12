@@ -1,0 +1,68 @@
+#N canvas 313 179 966 435 12;
+#X obj 170 163 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 170 200 impseq~;
+#X obj 127 308 out~;
+#X text 29 25 This example shows the decay time for a [resonant~] filter.
+It can take a resonance value as either Q or t60 (default).;
+#N canvas 19 175 371 586 analyze 0;
+#X floatatom 100 104 0 0 0 0 - - -;
+#X obj 137 260 - 60;
+#X obj 113 162 >;
+#X obj 113 137 t f f f;
+#X obj 137 216 f;
+#X obj 113 183 sel 1;
+#X floatatom 137 237 5 0 0 0 - - -;
+#X obj 99 354 sel 1;
+#X obj 152 346 b;
+#X obj 100 328 change;
+#X floatatom 152 441 0 0 0 0 - - -;
+#X obj 152 392 realtime;
+#X obj 100 35 inlet~;
+#X obj 152 474 outlet;
+#X obj 100 81 env~ 128;
+#X obj 100 305 <;
+#X connect 0 0 3 0;
+#X connect 0 0 15 0;
+#X connect 1 0 8 0;
+#X connect 1 0 15 1;
+#X connect 2 0 5 0;
+#X connect 3 0 2 1;
+#X connect 3 1 2 0;
+#X connect 3 2 4 1;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 1 0;
+#X connect 7 0 11 1;
+#X connect 8 0 11 0;
+#X connect 9 0 7 0;
+#X connect 10 0 13 0;
+#X connect 11 0 10 0;
+#X connect 12 0 14 0;
+#X connect 14 0 0 0;
+#X connect 15 0 9 0;
+#X restore 242 287 pd analyze;
+#X obj 170 240 resonant~ 1000 3000;
+#X obj 242 319 display 7;
+#X obj 623 208 else/resonbank~ 4 -freq 200 300 700 800 -decay 900 800
+700 900 -amp 0.4 0.3 0.2 0.2, f 28;
+#X text 29 64 Let's put it to the test. The subpatch below analyzes
+the output of the filter and sends a value when it falls under 60 dB
+of the attack. The analysis isn't perfect \, but it gets pretty close
+indeed to the default settings. Try it \, and check its help file.
+;
+#X text 497 64 So this type of filter acts as a resonator \, which
+is a kind of reverberator. See also the [resonbank~] object \, which
+is a bank of resonators. Below \, it filters a brown noise with 4 resonators.
+;
+#X obj 623 168 brown~;
+#X obj 623 275 out~;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 5 0 2 0;
+#X connect 5 0 2 1;
+#X connect 7 0 11 0;
+#X connect 7 0 11 1;
+#X connect 10 0 7 0;

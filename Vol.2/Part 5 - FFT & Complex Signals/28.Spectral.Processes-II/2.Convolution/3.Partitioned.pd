@@ -1,0 +1,46 @@
+#N canvas 266 191 984 455 12;
+#X obj 54 158 openfile http://williambrent.conflations.com/pages/research.html
+;
+#X obj 54 127 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X text 78 126 <= click;
+#X text 50 29 This example relies on an external not included in the
+ELSE library called [convolve~]. you can download it directly from
+deken. This external was developed by William Brent \, it is strongly
+recommended to see all of his work. Check his website below.;
+#X obj 41 324 cnv 15 418 78 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-IR 16384 float 2;
+#X coords 0 1 16384 -1 420 80 1 0 0;
+#X restore 40 323 graph;
+#X obj 58 268 soundfiler;
+#X obj 58 235 initmess read -resize ../../../../samples/IR.wav \$0-IR
+;
+#X obj 611 82 s~ \$0-input;
+#X obj 756 79 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X obj 756 105 tabplay~ \$0-IR;
+#X obj 756 143 out~;
+#X text 780 79 Play IR:;
+#X obj 591 40 sampler~ 1 ../../../../samples/didge.aif 1 1, f 45;
+#X obj 548 115 out~;
+#X obj 676 300 r~ \$0-input;
+#X obj 676 371 out~;
+#X text 609 333 click =>;
+#X obj 676 332 convolve~ 256 \$0-IR;
+#X text 514 217 The great advantage of the partitioned convolution
+is that it uses a much smaller window size \, which reflects in a much
+shorter latency. The partition size needs to be multiples of 64 (in
+this example \, it's 256). Check its help file for more details.;
+#X connect 1 0 0 0;
+#X connect 7 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 10 0 11 1;
+#X connect 13 0 8 0;
+#X connect 13 0 14 1;
+#X connect 13 0 14 0;
+#X connect 15 0 18 0;
+#X connect 18 0 16 0;
+#X connect 18 0 16 1;

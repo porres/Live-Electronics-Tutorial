@@ -1,8 +1,8 @@
-#N struct 1208-cell float x float y float cellsize float color;
+#N struct 1111-cell float x float y float cellsize float color;
 #N canvas 458 50 848 571 12;
 #X obj 39 33 vradio 15 1 0 5 empty empty empty 0 -8 0 10 -228856 -1
 -1 4;
-#X floatatom 39 139 5 0 0 0 - - -, f 5;
+#X floatatom 39 139 5 0 0 0 - - -;
 #X text 58 47 inlet 1;
 #X text 58 62 inlet 2;
 #X text 58 77 inlet 3;
@@ -21,7 +21,7 @@
 #X obj 214 392 noise~;
 #X obj 274 348 vradio 15 1 0 4 empty empty empty 0 -8 0 10 -228856
 -1 -1 0;
-#X floatatom 274 422 5 0 0 0 - - -, f 5;
+#X floatatom 274 422 5 0 0 0 - - -;
 #X text 293 346 nenhum;
 #X text 293 362 outlet 1;
 #X text 293 377 outlet 2;
@@ -63,7 +63,6 @@ It receives one signal and routes to different outputs with crossfading.
 #X text 686 406 1;
 #X obj 540 329 else/display;
 #X obj 540 279 else/mtx.ctl 4 2 15;
-#X obj 622 387 else/mtx~ 4 2 100;
 #X obj 628 433 else/out~;
 #X msg 604 246 clear;
 #X text 435 150 The [mtx~] object \, from ELSE \, performs more complex
@@ -71,6 +70,7 @@ routings with equal power crossfades. It can have any number of inputs
 and outputs \, and you can map any input to one or more outputs. This
 is more conveniently done with the [mtx.ctl] (from "matrix control")
 \, also provided in ELSE., f 55;
+#X obj 622 387 mtx~ 4 2 100, f 17;
 #X connect 0 0 1 0;
 #X connect 1 0 14 0;
 #X connect 6 0 14 0;
@@ -88,13 +88,13 @@ is more conveniently done with the [mtx.ctl] (from "matrix control")
 #X connect 28 0 25 0;
 #X connect 29 0 26 0;
 #X connect 30 0 27 0;
-#X connect 39 0 54 0;
-#X connect 40 0 54 1;
-#X connect 41 0 54 2;
-#X connect 42 0 54 3;
-#X connect 52 0 54 0;
+#X connect 39 0 57 0;
+#X connect 40 0 57 1;
+#X connect 41 0 57 2;
+#X connect 42 0 57 3;
+#X connect 52 0 57 0;
 #X connect 53 0 52 0;
-#X connect 54 0 55 0;
-#X connect 54 1 55 1;
-#X connect 56 0 54 0;
-#X connect 56 0 53 0;
+#X connect 55 0 53 0;
+#X connect 55 0 57 0;
+#X connect 57 0 54 0;
+#X connect 57 1 54 1;

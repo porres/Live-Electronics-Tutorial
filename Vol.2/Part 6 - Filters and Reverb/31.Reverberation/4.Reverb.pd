@@ -1,0 +1,246 @@
+#N canvas 345 47 835 748 12;
+#X obj 182 162 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 38 14 Reverberation/Reverb is a rich and complex topic not
+yet addressed in depth by this tutorial. Reverberation happens when
+there are sound reflections in a room.;
+#X obj 316 242 out~;
+#N canvas 526 230 693 242 IR 0;
+#X obj 231 127 soundfiler;
+#X obj 343 134 table \$0-IR;
+#X obj 231 100 initmess read -resize ../../../samples/church.wav \$0-IR
+;
+#X obj 110 183 outlet~;
+#X obj 109 109 tabplay~ \$0-IR;
+#X obj 109 56 inlet;
+#X connect 2 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X restore 182 201 pd IR;
+#X obj 182 238 out~;
+#X obj 316 141 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#N canvas 797 186 322 336 test 0;
+#X obj 36 155 osc~;
+#X obj 36 257 outlet~;
+#X obj 36 211 *~;
+#X obj 152 151 vline~;
+#X obj 36 37 inlet;
+#X obj 36 125 vline~;
+#X obj 36 68 trigger bang bang;
+#X msg 211 122 0 50;
+#X obj 211 84 delay 500;
+#X msg 36 97 440 \, 880 500;
+#X msg 152 111 0.5 50;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 9 0;
+#X connect 6 1 10 0;
+#X connect 6 1 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 3 0;
+#X restore 316 176 pd test;
+#X obj 316 208 convolve~ 512 \$0-IR;
+#X obj 71 163 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#N canvas 797 186 322 336 test 0;
+#X obj 36 155 osc~;
+#X obj 36 257 outlet~;
+#X obj 36 211 *~;
+#X obj 152 151 vline~;
+#X obj 36 37 inlet;
+#X obj 36 125 vline~;
+#X obj 36 68 trigger bang bang;
+#X msg 211 122 0 50;
+#X obj 211 84 delay 500;
+#X msg 36 97 440 \, 880 500;
+#X msg 152 111 0.5 50;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 9 0;
+#X connect 6 1 10 0;
+#X connect 6 1 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 3 0;
+#X restore 71 198 pd test;
+#X obj 71 238 out~;
+#X text 51 433 The [rev2~] object is based on G08.reverb \, also depicted
+in this tutorial. It contains 4 delay lines in feedback and a lowpass
+filter to atenuate higher frequencies. It takes 4 arguments \, check
+its help file., f 54;
+#X text 38 69 Let's first remember we've seen how to get the impulse
+response of a room and how we can use it as a reverb with convolution
+(using [concolve~] by William Brent). It's easy to find "IR" sound
+file libraries for convolution reverbs \, the one below is an IR of
+a church.;
+#X obj 102 633 rev1~;
+#X obj 46 539 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X msg 116 583 90;
+#X floatatom 116 606 3 0 0 0 - - -;
+#X msg 145 607 clear;
+#X obj 116 558 loadbang;
+#N canvas 797 186 322 336 test 0;
+#X obj 36 155 osc~;
+#X obj 36 257 outlet~;
+#X obj 36 211 *~;
+#X obj 152 151 vline~;
+#X obj 36 37 inlet;
+#X obj 36 125 vline~;
+#X obj 36 68 trigger bang bang;
+#X msg 211 122 0 50;
+#X obj 211 84 delay 500;
+#X msg 36 97 440 \, 880 500;
+#X msg 152 111 0.5 50;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 9 0;
+#X connect 6 1 10 0;
+#X connect 6 1 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 3 0;
+#X restore 46 582 pd test;
+#X obj 102 664 out~;
+#X obj 263 603 rev2~ 100 90 3000 20;
+#X obj 263 531 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#N canvas 797 186 322 336 test 0;
+#X obj 36 155 osc~;
+#X obj 36 257 outlet~;
+#X obj 36 211 *~;
+#X obj 152 151 vline~;
+#X obj 36 37 inlet;
+#X obj 36 125 vline~;
+#X obj 36 68 trigger bang bang;
+#X msg 211 122 0 50;
+#X obj 211 84 delay 500;
+#X msg 36 97 440 \, 880 500;
+#X msg 152 111 0.5 50;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 9 0;
+#X connect 6 1 10 0;
+#X connect 6 1 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 3 0;
+#X restore 263 574 pd test;
+#X obj 263 635 out~;
+#X obj 584 577 rev3~ 100 90 3000 20;
+#X obj 584 506 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#N canvas 797 186 322 336 test 0;
+#X obj 36 155 osc~;
+#X obj 36 257 outlet~;
+#X obj 36 211 *~;
+#X obj 152 151 vline~;
+#X obj 36 37 inlet;
+#X obj 36 125 vline~;
+#X obj 36 68 trigger bang bang;
+#X msg 211 122 0 50;
+#X obj 211 84 delay 500;
+#X msg 36 97 440 \, 880 500;
+#X msg 152 111 0.5 50;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 9 0;
+#X connect 6 1 10 0;
+#X connect 6 1 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 3 0;
+#X restore 584 549 pd test;
+#X obj 584 610 out~;
+#X text 491 39 Lastly \, [rev3~] is a variation/expansion of [rev2~]
+and accepts stereo signal sinput and has 16 feedback delay lines intenrally!
+Check its help file., f 41;
+#X obj 574 132 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 582 258 out~;
+#N canvas 797 186 322 336 test 0;
+#X obj 36 155 osc~;
+#X obj 36 257 outlet~;
+#X obj 36 211 *~;
+#X obj 152 151 vline~;
+#X obj 36 37 inlet;
+#X obj 36 125 vline~;
+#X obj 36 68 trigger bang bang;
+#X msg 211 122 0 50;
+#X obj 211 84 delay 500;
+#X msg 36 97 440 \, 880 500;
+#X msg 152 111 0.5 50;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 9 0;
+#X connect 6 1 10 0;
+#X connect 6 1 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 3 0;
+#X restore 574 175 pd test;
+#X text 503 453 Open its halp file for more details.;
+#X obj 574 204 plateverb~ 50 0.6 0.25 0.8 0.8, f 16;
+#X text 498 363 The [plateverb~] object is a reverb asbtraction available
+in the ELSE library. It is based on a patch by Tom Erbe implementing
+the Dattorro plate stereo reverb model., f 42;
+#X text 51 343 Pd comes with three native reverb abstractions. The
+first one - [rev1~] - consists in 10 stages of allpass filters. It
+has a decay parameter that indicates how much dB the output has after
+1 second in percentage of dB. Check its help file., f 54;
+#X connect 0 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 0;
+#X connect 7 0 2 1;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 9 0 10 1;
+#X connect 13 0 20 0;
+#X connect 13 0 20 1;
+#X connect 14 0 19 0;
+#X connect 15 0 16 0;
+#X connect 16 0 13 1;
+#X connect 17 0 13 2;
+#X connect 18 0 15 0;
+#X connect 19 0 13 0;
+#X connect 21 0 24 0;
+#X connect 21 1 24 1;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
+#X connect 25 0 28 0;
+#X connect 25 1 28 1;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 30 0 32 0;
+#X connect 32 0 34 0;
+#X connect 34 0 31 0;
+#X connect 34 1 31 1;

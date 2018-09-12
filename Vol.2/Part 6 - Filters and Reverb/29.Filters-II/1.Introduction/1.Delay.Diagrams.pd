@@ -1,0 +1,58 @@
+#N canvas 101 90 946 438 12;
+#X obj 523 213 +~;
+#X obj 523 237 *~ 0.5;
+#X obj 140 271 cnv 15 273 110 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X text 258 300 |;
+#X text 258 310 |;
+#X text 258 319 |;
+#X text 229 331 |;
+#X text 278 332 |;
+#X text 278 351 |;
+#X text 229 351 |;
+#X text 232 351 _______;
+#X text 193 323 |;
+#X text 193 333 |;
+#X text 193 303 |;
+#X text 193 313 |;
+#X text 258 294 ^;
+#X text 229 341 | z^-1 |;
+#X text 195 339 ---->;
+#X text 193 294 |;
+#X obj 541 185 ffdelay~ 1 -samps;
+#X obj 523 155 bl.saw~;
+#X obj 523 128 sig~ 300;
+#X obj 523 273 out~;
+#X obj 737 258 out~;
+#X obj 749 216 mov.avg~ 8;
+#X obj 748 168 sig~ 300;
+#X obj 748 194 bl.saw~;
+#X text 29 30 Let's look at filter diagram representations. Below \,
+"x" represents the input signal and "y" the output. The input and output
+are a function of "n" \, which is the sample number.;
+#X obj 139 90 cnv 15 200 30 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 149 94 x(n) => [filter] => y(n);
+#X text 232 321 _______;
+#X text 146 284 x(n) --------------(+)--(/2)--> y(n);
+#X text 30 153 Filters are usually implemented with delay lines \,
+mostly with very short delay times such as a few samples. Let's see
+a diagram with a feedforward delay line. This represents an average
+filter with two samples \, the input and the last input. Z raised to
+-1 indicates a one sample delay (this notation comes from the Z Transform).
+The diagram tells us we have a sum of the two samples divided by two
+(hence \, an average).;
+#X text 484 51 Here's this filter implemented with [ffdelay~]. But
+we also have the average filter object [mov.avg~]. Below it performs
+an average on 8 samples. See its help file for more details.;
+#X connect 0 0 1 0;
+#X connect 1 0 22 0;
+#X connect 1 0 22 1;
+#X connect 19 0 0 1;
+#X connect 20 0 0 0;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 24 0 23 0;
+#X connect 24 0 23 1;
+#X connect 25 0 26 0;
+#X connect 26 0 24 0;

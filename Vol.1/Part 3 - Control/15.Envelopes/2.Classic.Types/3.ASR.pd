@@ -1,4 +1,4 @@
-#N canvas 173 62 1148 693 12;
+#N canvas 245 55 1147 655 12;
 #X obj 271 198 sig2float~;
 #X obj 271 224 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
@@ -41,15 +41,15 @@
 #X text 963 111 gate;
 #X obj 511 230 out~;
 #X obj 558 544 out~;
-#X obj 285 554 sig2float~;
-#X obj 285 580 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+#X obj 240 506 sig2float~;
+#X obj 240 532 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 210 545 *~;
-#X obj 159 491 osc~ 440;
-#X obj 167 594 out~;
-#X obj 243 423 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 165 497 *~;
+#X obj 114 443 osc~ 440;
+#X obj 122 546 out~;
+#X obj 183 421 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X text 211 425 gate;
+#X text 209 419 gate;
 #X obj 922 454 *~;
 #X obj 868 418 osc~ 440;
 #X obj 940 378 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
@@ -61,15 +61,9 @@
 #X text 1020 480 1;
 #X text 964 378 gate;
 #X obj 940 417 glide2~ 500;
-#X obj 243 451 select 0 1;
 #X text 28 14 An "ASR" ("Attack / Sustain / Release") envelope has
 a sustain stage in the middle. So after the attack we have the amplitude
 being sustained before the release stage., f 56;
-#X text 30 330 You can trigger this kind of envelope with a gate \,
-which is the same as holding down a note on your MIDI controller. Here
-we use [select] to send different messages depending on the note on
-or note off event \, and the sustain depends on how long the gate is
-opened., f 53;
 #X text 479 335 You could trigger this envelope with an impulse or
 a bang and schedule a release with the [timed.gate~] object from ELSE.
 , f 40;
@@ -82,7 +76,6 @@ details., f 45;
 #X obj 627 161 sig2float~;
 #X obj 996 189 sig2float~;
 #X obj 997 456 sig2float~;
-#X obj 228 512 envgen~;
 #X obj 214 157 envgen~ 50 1 450 1 500 0;
 #X obj 214 130 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -90,8 +83,11 @@ details., f 45;
 generatin a line with a repeated destination. The attack is then 50
 ms \, the sustain stage takes 450 ms and the release is 500 ms long.
 , f 56;
-#X msg 228 478 750 0;
-#X msg 276 482 150 1;
+#X obj 183 464 envgen~ 150 1 750 0 -suspoint 1;
+#X text 30 330 You can trigger [envgen~] with a gate \, which is the
+same as pressing/releasing a note on your MIDI controller. You just
+need to define a sustain point and the sustain stage depends on how
+long the gate is on., f 53;
 #X connect 0 0 1 0;
 #X connect 2 0 4 1;
 #X connect 2 0 4 0;
@@ -108,35 +104,31 @@ ms \, the sustain stage takes 450 ms and the release is 500 ms long.
 #X connect 19 0 20 0;
 #X connect 20 0 22 0;
 #X connect 21 0 6 1;
-#X connect 21 0 57 0;
+#X connect 21 0 55 0;
 #X connect 22 0 17 1;
 #X connect 23 0 26 0;
 #X connect 23 0 26 1;
 #X connect 24 0 23 0;
 #X connect 25 0 27 0;
 #X connect 27 0 23 1;
-#X connect 27 0 58 0;
+#X connect 27 0 56 0;
 #X connect 34 0 35 0;
 #X connect 36 0 38 1;
 #X connect 36 0 38 0;
 #X connect 37 0 36 0;
-#X connect 39 0 50 0;
+#X connect 39 0 61 0;
 #X connect 41 0 44 0;
 #X connect 41 0 44 1;
 #X connect 42 0 41 0;
 #X connect 43 0 49 0;
 #X connect 49 0 41 1;
-#X connect 49 0 59 0;
-#X connect 50 0 64 0;
-#X connect 50 1 65 0;
-#X connect 56 0 20 0;
-#X connect 57 0 7 0;
-#X connect 58 0 28 0;
-#X connect 59 0 45 0;
-#X connect 60 0 34 0;
-#X connect 60 0 36 1;
-#X connect 61 0 0 0;
-#X connect 61 0 2 1;
-#X connect 62 0 61 0;
-#X connect 64 0 60 0;
-#X connect 65 0 60 0;
+#X connect 49 0 57 0;
+#X connect 54 0 20 0;
+#X connect 55 0 7 0;
+#X connect 56 0 28 0;
+#X connect 57 0 45 0;
+#X connect 58 0 0 0;
+#X connect 58 0 2 1;
+#X connect 59 0 58 0;
+#X connect 61 0 34 0;
+#X connect 61 0 36 1;

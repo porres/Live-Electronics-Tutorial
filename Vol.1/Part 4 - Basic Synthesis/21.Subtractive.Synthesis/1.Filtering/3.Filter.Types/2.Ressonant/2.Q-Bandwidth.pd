@@ -1,0 +1,53 @@
+#N canvas 308 61 618 528 12;
+#X obj 294 274 nbx 5 18 -1e+37 1e+37 0 0 empty empty Octave 68 10 0
+12 -228856 -1 -1 0 256;
+#X floatatom 305 323 8 0 0 0 - - -, f 8;
+#X text 369 325 Cents;
+#X obj 305 301 * 1200;
+#X text 139 282 f0;
+#X obj 164 283 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 57 174 f1;
+#X floatatom 294 388 0 0 0 0 - - -;
+#X obj 294 360 expr 1 / (2 * sinh($f1 * ln(2)/2));
+#X text 278 388 Q;
+#X obj 294 416 expr asinh(1/(2*$f1)) * 2/ln(2);
+#X floatatom 294 442 0 0 0 0 - - -;
+#X text 234 443 BW (oct);
+#X text 273 274 bw;
+#X obj 316 224 v f2;
+#X text 266 180 f2;
+#X obj 285 202 t b f;
+#X obj 164 235 expr sqrt(f1*f2) \; log(f2/f1) / log(2);
+#X obj 80 202 t b f;
+#X obj 112 244 v f1;
+#X obj 123 321 expr $f1 / (f2-f1);
+#X floatatom 123 359 0 0 0 0 - - -;
+#X text 122 383 Q = f0 / (f2-f1);
+#X text 223 281 Hz;
+#X text 88 158 Hz;
+#X text 297 161 Hz;
+#X floatatom 285 181 5 0 0 0 - - -, f 5;
+#X floatatom 80 177 5 0 0 0 - - -, f 5;
+#X text 59 41 Q & Bandwidth:;
+#X text 69 66 The value of Q is defined by the bandwidth (defined as
+f2 - f1) in which there's a 3dB drop in amplitude around the resonant
+frequency (f0). Here's how to calculate f0 and bandwidth from f2 and
+f1 \, and also how to convert from bandwidth to Q and vice versa.,
+f 52;
+#X connect 0 0 3 0;
+#X connect 0 0 8 0;
+#X connect 3 0 1 0;
+#X connect 5 0 20 0;
+#X connect 7 0 10 0;
+#X connect 8 0 7 0;
+#X connect 10 0 11 0;
+#X connect 16 0 17 0;
+#X connect 16 1 14 0;
+#X connect 17 0 5 0;
+#X connect 17 1 0 0;
+#X connect 18 0 17 0;
+#X connect 18 1 19 0;
+#X connect 20 0 21 0;
+#X connect 26 0 16 0;
+#X connect 27 0 18 0;

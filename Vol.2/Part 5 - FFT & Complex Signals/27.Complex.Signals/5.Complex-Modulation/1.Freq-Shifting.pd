@@ -1,0 +1,126 @@
+#N canvas 346 23 910 528 12;
+#X text 116 305 Re1;
+#X text 168 305 Im1;
+#X text 224 306 Re2;
+#X text 265 306 Im2;
+#X obj 487 338 cnv 15 298 138 empty empty empty 20 12 0 14 -174629
+-66577 0;
+#N canvas 0 22 478 328 (subpatch) 0;
+#X array \$0-Spectrum 128 float 0;
+#X coords 0 3248 127 0 300 140 1 0 0;
+#X restore 486 337 graph;
+#X text 578 477 500Hz;
+#X text 525 476 250Hz;
+#X text 485 476 50Hz;
+#X text 633 476 750Hz;
+#X text 692 476 1KHz;
+#X text 737 477 1.25KHz;
+#X obj 245 208 nbx 5 16 -2000 2000 0 0 empty empty empty 0 -8 0 13
+-228856 -1 -1 0 256;
+#X obj 245 278 cos~;
+#X obj 245 244 phasor~;
+#X obj 144 208 nbx 5 16 -2000 2000 0 0 empty empty empty 0 -8 0 13
+-228856 -1 -1 100 256;
+#X obj 72 254 adc~ 1;
+#X obj 144 254 bl.saw~;
+#X obj 106 414 out~;
+#X text 41 25 This is the same as a Ring Modulation (RM) \, but with
+complex signals. Remember that RM gives us two sideband \, but with
+complex signals \, we just have one sideband. \, hence \, this process
+is also called "Single Sideband Modulation". In practice \, we have
+components shifted upwards or downwards depending on the modulation
+frequency. So this is also known as a Frequency Shifter., f 56;
+#X text 472 24 Do not confuse with a Pitch Shifter \, because that
+requires a proportional shift of all components. When they are all
+shifted by the same frequency amount \, we turn a harmonic sound into
+an inharmonic one. More precisely \, if we sift it upwards \, the harmonic
+ratios are compressed \, and expanded otherwise., f 56;
+#X text 471 141 We can look at this form the perspective of complex
+math. By multplying two complex signals \, we multiply the amplitudes
+and sum the phases. Well \, we've how summing the phase is the same
+as summing the frequencies \, so the modulation frequency gets added.
+, f 56;
+#X text 83 208 Carrier;
+#X text 320 207 Modulator;
+#X obj 293 278 sin~;
+#N canvas 244 63 674 391 Complex-Modulation 0;
+#X obj 294 165 *~;
+#X obj 325 165 *~;
+#X obj 294 212 -~;
+#X text 242 189 Re1*Re2;
+#X text 333 189 Im1*Im2;
+#X text 333 215 (Re1*Re2 - Im1*Im2);
+#X obj 98 64 inlet~;
+#X obj 150 64 inlet~;
+#X obj 292 64 inlet~;
+#X obj 343 64 inlet~;
+#X text 102 37 Re1;
+#X text 294 34 Re2;
+#X text 159 36 Im1;
+#X text 346 33 Im2;
+#X obj 98 315 outlet~;
+#X obj 150 210 +~;
+#X obj 97 210 *~;
+#X obj 97 164 car2pol~;
+#X obj 165 165 car2pol~;
+#X obj 97 250 pol2car~;
+#X text 214 261 We just need the real part \, here's Um detalhe de
+implemhow to calculate this with both the polar and cartesian fomr.
+;
+#X text 368 162 Cartesian;
+#X text 43 163 Polar;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 6 0 0 0;
+#X connect 6 0 17 0;
+#X connect 7 0 1 0;
+#X connect 7 0 17 1;
+#X connect 8 0 0 1;
+#X connect 8 0 18 0;
+#X connect 9 0 1 1;
+#X connect 9 0 18 1;
+#X connect 15 0 19 1;
+#X connect 16 0 19 0;
+#X connect 17 0 16 0;
+#X connect 17 1 15 0;
+#X connect 18 0 16 1;
+#X connect 18 1 15 1;
+#X connect 19 0 14 0;
+#X restore 149 346 pd Complex-Modulation;
+#X obj 144 285 hilbert~;
+#X text 336 273 <= complex sinusoid, f 10;
+#N canvas 131 60 278 287 plot 0;
+#X obj 53 64 inlet~;
+#X obj 53 99 rfft~;
+#X obj 132 98 loadbang;
+#X obj 132 146 metro 250;
+#X obj 132 125 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X obj 89 224 block~ 4096;
+#X obj 41 137 car2pol~;
+#X obj 51 188 tabwrite~ \$0-Spectrum;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 1 1 6 1;
+#X connect 2 0 4 0;
+#X connect 3 0 7 0;
+#X connect 4 0 3 0;
+#X connect 6 0 7 0;
+#X restore 174 383 pd plot;
+#X obj 144 169 initmess 100;
+#X text 471 225 Note we need [hilbert~] to transform a real signal
+into a complex one. Check the subpatch [pd Complex-Modulation] how
+to implement this., f 56;
+#X connect 12 0 14 0;
+#X connect 13 0 25 2;
+#X connect 14 0 13 0;
+#X connect 14 0 24 0;
+#X connect 15 0 17 0;
+#X connect 17 0 26 0;
+#X connect 24 0 25 3;
+#X connect 25 0 18 1;
+#X connect 25 0 18 0;
+#X connect 25 0 28 0;
+#X connect 26 0 25 0;
+#X connect 26 1 25 1;
+#X connect 29 0 15 0;

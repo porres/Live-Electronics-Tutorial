@@ -1,0 +1,102 @@
+#N canvas 249 23 938 588 12;
+#X obj 266 430 loadbang;
+#X obj 47 285 s~ \$0-in;
+#X obj 47 227 sig~ 40;
+#X obj 47 201 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 551 126 r~ \$0-in;
+#X obj 614 406 r~ \$0-in;
+#X obj 737 438 r~ \$0-fb;
+#X obj 323 297 hsl 128 15 -0.999 0.999 0 0 empty fb empty -2 -6 0 8
+-228856 -1 -1 12071 1;
+#X text 354 296 feedback;
+#X floatatom 320 319 0 0 0 0 - - -;
+#X floatatom 134 206 5 0 0 0 - - -, f 5;
+#X floatatom 248 286 5 0 75 0 - - -, f 5;
+#X floatatom 182 234 5 1 100 0 - - -, f 5;
+#X obj 137 184 hsl 128 15 0.01 3 1 0 empty rate empty -2 -8 0 10 -228856
+-1 -1 4333 1;
+#X text 186 183 rate;
+#X obj 251 263 hsl 128 15 5 75 1 0 empty delmax empty -2 -8 0 10 -228856
+-1 -1 2204 1;
+#X obj 185 212 hsl 128 15 0 8 0 0 empty delmin empty -2 -8 0 10 -228856
+-1 -1 159 1;
+#X text 223 211 delay min.;
+#X text 281 262 delay max.;
+#X obj 134 240 osc~;
+#X obj 48 317 r~ \$0-in;
+#X text 49 177 Input;
+#X obj 320 376 s~ \$0-fb;
+#X obj 176 338 s~ \$0-ms;
+#X obj 644 437 r~ \$0-ms;
+#X obj 581 157 r~ \$0-ms;
+#X text 365 425 presets;
+#X text 489 19 The [comb.rev~] object can be used to implement flanger
+effects. First let's use just the feedforward line for a feedforward
+flanger (left) and with a feedback line (right)., f 55;
+#X obj 706 124 r~ \$0-in;
+#X obj 736 155 r~ \$0-ms;
+#X obj 829 156 r~ \$0-fb;
+#X text 496 318 Note however that if you have a negative feedback value
+\, the feed forward and feedback lines get cancelled because of the
+polarity inversion. We can avoid that by using the same coefficient
+for both feed forward and feed back lines., f 57;
+#X msg 266 461 \; rate 0.07 \; delmin 0.1 \; delmax 8 \; fb 0.9;
+#X msg 367 461 \; rate 0.04 \; delmin 0.4 \; delmax 16 \; fb -0.8;
+#X obj 98 427 out~;
+#X obj 614 504 out~;
+#X obj 614 465 comb.rev~ 75 1 1 0;
+#X obj 551 187 comb.rev~ 75 1 1 0;
+#X obj 706 185 comb.rev~ 75 1 1 0;
+#X obj 706 227 out~;
+#X obj 551 229 out~;
+#X obj 98 379 fbdelay~ 75 -gain;
+#X obj 156 301 rescale~;
+#X obj 47 257 bl.saw~;
+#X obj 182 258 f2s~ 10;
+#X obj 248 309 f2s~ 10;
+#X obj 320 342 f2s~ 10;
+#X text 36 100 You can implement a flange with both a feed forward
+and a feedback delay line. First \, let's see an example with just
+a single feedback line below.;
+#X text 36 20 Originally \, Flanger was developed by holding the "flange"
+of a tape roll to change its speed \, then mix with the original signal
+\, which generates phase cancelling because of the phase differences
+between the original and the delayed signal..;
+#X connect 0 0 32 0;
+#X connect 2 0 43 0;
+#X connect 3 0 2 0;
+#X connect 4 0 37 0;
+#X connect 5 0 36 0;
+#X connect 6 0 36 4;
+#X connect 6 0 36 3;
+#X connect 7 0 9 0;
+#X connect 9 0 46 0;
+#X connect 10 0 19 0;
+#X connect 11 0 45 0;
+#X connect 12 0 44 0;
+#X connect 13 0 10 0;
+#X connect 15 0 11 0;
+#X connect 16 0 12 0;
+#X connect 19 0 42 0;
+#X connect 20 0 41 0;
+#X connect 24 0 36 1;
+#X connect 25 0 37 1;
+#X connect 28 0 38 0;
+#X connect 29 0 38 1;
+#X connect 30 0 38 4;
+#X connect 36 0 35 0;
+#X connect 36 0 35 1;
+#X connect 37 0 40 0;
+#X connect 37 0 40 1;
+#X connect 38 0 39 0;
+#X connect 38 0 39 1;
+#X connect 41 0 34 0;
+#X connect 41 0 34 1;
+#X connect 42 0 23 0;
+#X connect 42 0 41 1;
+#X connect 43 0 1 0;
+#X connect 44 0 42 1;
+#X connect 45 0 42 2;
+#X connect 46 0 22 0;
+#X connect 46 0 41 2;

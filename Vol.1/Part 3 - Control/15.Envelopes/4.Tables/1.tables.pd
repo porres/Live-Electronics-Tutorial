@@ -11,8 +11,8 @@
 #X array \$0-hann 22050 float 0;
 #X coords 0 1 22049 0 300 200 1 0 0;
 #X restore 318 252 graph;
-#X text 455 117 ms;
-#X obj 480 118 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
+#X text 469 108 ms;
+#X obj 494 109 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
 -228856 -1 -1 500 256;
 #X text 303 683 0;
 #X text 305 486 1;
@@ -22,12 +22,12 @@
 #X array \$0-sine 22050 float 0;
 #X coords 0 1 22049 0 300 200 1 0 0;
 #X restore 318 493 graph;
-#X text 33 38 In this section we generate functions in tables and use
+#X text 47 29 In this section we generate functions in tables and use
 them as envelopes. The first is called "hann" \, which is nothing but
 an inverted cosine adjusted to the range from 0 to 1 (this is also
 one of the functions used in the [fader~] object)., f 55;
 #X obj 114 386 out~;
-#X obj 480 74 initmess 500;
+#X obj 494 65 initmess 500;
 #X obj 132 320 tabplay~ \$0-hann;
 #X obj 171 483 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -84,14 +84,14 @@ the frequency for the sine function because we just need half of it.
 #X connect 15 0 7 0;
 #X connect 16 0 17 0;
 #X connect 17 0 14 0;
-#X restore 480 149 pd generate \; tables;
-#X text 33 113 The next is here called "sine" but it's actually just
+#X restore 494 140 pd generate \; tables;
+#X text 47 104 The next is here called "sine" but it's actually just
 the first half the sine function (this is also used in [fader~]). Open
 the [pd tables] subpatch so see how to create these functions., f
 55;
-#X text 34 181 The native [tabplay~] object is used to load the table
+#X text 48 172 The native [tabplay~] object is used to load the table
 and trigger the envelope. Click on the bangs below., f 55;
-#X text 551 117 duration;
+#X text 565 108 duration;
 #X connect 0 0 16 0;
 #X connect 1 0 14 0;
 #X connect 1 0 14 1;

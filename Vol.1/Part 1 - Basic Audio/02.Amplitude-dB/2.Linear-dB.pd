@@ -1,19 +1,18 @@
 #N canvas 426 23 531 678 12;
 #X obj 117 306 nbx 8 14 1e-05 1 1 0 empty empty empty 18 -6 0 10 -228856
--1 -1 1e-05 256;
+-1 -1 0.637799 256;
 #X obj 117 449 nbx 8 14 0 100 0 0 empty empty empty 18 -6 0 10 -228856
--1 -1 0 256;
+-1 -1 96.0937 256;
 #X obj 120 284 hsl 128 15 1e-05 1 0 0 \$0-linear empty empty -2 -8
-0 10 -228856 -1 -1 0 1;
-#X obj 117 376 expr log10($f1);
+0 10 -228856 -1 -1 8100 1;
 #X floatatom 117 353 0 0 0 0 - - -;
 #X floatatom 117 399 0 0 0 0 - - -;
 #X obj 117 330 / 1e-05;
-#X floatatom 117 498 7 0 0 0 - - -, f 7;
+#X floatatom 117 498 7 0 0 0 - - -;
 #X obj 117 473 expr pow(10 \, $f1 / 20);
 #X obj 117 523 * 1e-05;
 #X obj 117 547 nbx 8 14 1e-05 1 1 0 empty empty empty 18 -6 0 10 -228856
--1 -1 1e-05 256;
+-1 -1 0.637799 256;
 #X text 221 534 linear;
 #X text 213 549 amplitude;
 #X text 66 398 log =>;
@@ -27,11 +26,11 @@
 #X text 236 381 escala logarítmica;
 #X obj 339 450 rmstodb;
 #X obj 339 475 nbx 8 14 0 100 0 0 empty empty empty 18 -6 0 10 -228856
--1 -1 0 256;
+-1 -1 96.0937 256;
 #X obj 339 527 nbx 8 14 1e-05 1 1 0 empty empty empty 18 -6 0 10 -228856
--1 -1 1e-05 256;
+-1 -1 0.637799 256;
 #X obj 339 426 nbx 8 14 1e-05 1 1 0 empty \$0-linear empty 18 -6 0
-10 -228856 -1 -1 1e-05 256;
+10 -228856 -1 -1 0.637799 256;
 #X obj 339 498 dbtorms;
 #X text 35 15 Amplitude values are normally expressed in dB. Amplitude
 values between -1 and 1 \, as we have in digital audio \, are linear
@@ -56,18 +55,19 @@ f 62;
 "linear" is a synonim of "rms" \, which is not true. The "RMS" can
 actually be expressed either as a linear amplitude or in dB., f 54
 ;
-#X connect 0 0 6 0;
-#X connect 1 0 8 0;
+#X obj 117 376 log 10;
+#X connect 0 0 5 0;
+#X connect 1 0 7 0;
 #X connect 2 0 0 0;
-#X connect 3 0 5 0;
-#X connect 4 0 3 0;
-#X connect 5 0 14 0;
-#X connect 6 0 4 0;
-#X connect 7 0 9 0;
-#X connect 8 0 7 0;
-#X connect 9 0 10 0;
-#X connect 14 0 1 0;
-#X connect 21 0 22 0;
-#X connect 22 0 25 0;
-#X connect 24 0 21 0;
-#X connect 25 0 23 0;
+#X connect 3 0 36 0;
+#X connect 4 0 13 0;
+#X connect 5 0 3 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 13 0 1 0;
+#X connect 20 0 21 0;
+#X connect 21 0 24 0;
+#X connect 23 0 20 0;
+#X connect 24 0 22 0;
+#X connect 36 0 4 0;

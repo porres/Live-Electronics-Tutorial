@@ -1,7 +1,7 @@
 #N canvas 546 114 503 413 12;
 #X obj 190 213 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 440 256;
-#N canvas 283 27 894 527 Resampling 0;
+#N canvas 283 27 894 527 Resampling 1;
 #X obj 233 368 samplerate~;
 #X obj 233 403 nbx 6 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
 -228856 -1 -1 0 256;
@@ -26,7 +26,7 @@
 #X text 307 188 Upsamping by 2x;
 #X text 313 212 Upsamping by 4x;
 #X text 319 242 Upsamping by 8x;
-#X text 464 84 The resampling is done by a ratio value that needs to
+#X text 463 64 The resampling is done by a ratio value that needs to
 be a power of two \, either for upsampling (2 \, 4 \, 8 \, 16 \, 32
 \, etc...) as well as downsampling (1/2 \, 1/4 \, 1/8 \, 1/16 \, 1/32
 \, etc...). Click on the messages to the left and see how [samplerate~]
@@ -35,10 +35,10 @@ reports us a new sample rate according to the resampling.;
 effect in the same way we've seen so far. This is because we also need
 to do an "upsampling" and either hold or create interpolated values.
 , f 59;
-#X text 422 329 Resampling is the 3rd argument [block~] receives. The
+#X text 451 333 Resampling is the 3rd argument [block~] receives. The
 first is the block size \, the second is the overlap (something we'll
 see in FFT).;
-#X text 464 212 Whenever there's an "upsamplig" \, new samples are
+#X text 464 226 Whenever there's an "upsamplig" \, new samples are
 created and need to be filled. this is done in the [inlet~] and [outlet~]
 objects. The argument specifies what to do with the extra samples \,
 "lin" performs a linear interpolation \, "hold" just holds the values.

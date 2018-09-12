@@ -1,5 +1,5 @@
-#N struct 1180-point float x0 float y0 float s;
-#N struct 1180-grid float x0 float y0 float s;
+#N struct 1009-point float x0 float y0 float s;
+#N struct 1009-grid float x0 float y0 float s;
 #N canvas 364 58 893 564 12;
 #X obj 40 266 osc~ 400;
 #X obj 262 267 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
@@ -7,7 +7,7 @@
 #X obj 259 293 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
 -228856 -1 -1 0.5 256;
 #X text 332 293 Posição (0-1);
-#X floatatom 614 176 5 0 0 0 - - -, f 5;
+#X floatatom 614 176 5 0 0 0 - - -;
 #X obj 617 154 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 6350 1;
 #X obj 369 357 v pi;
@@ -38,21 +38,21 @@ middle point \, we have a -3 dB attenuation for both channels., f
 #X obj 614 129 initmess 0;
 #X text 362 239 middle point;
 #X obj 259 244 initmess 0.5;
-#X floatatom 662 407 5 0 0 0 - - -, f 5;
-#X floatatom 731 406 5 0 0 0 - - -, f 5;
+#X floatatom 662 407 5 0 0 0 - - -;
+#X floatatom 731 406 5 0 0 0 - - -;
 #X obj 594 458 env~;
 #X obj 639 458 env~;
 #X obj 685 458 env~;
 #X obj 731 458 env~;
 #X obj 731 483 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.3564 256;
+-228856 -1 -1 89.2879 256;
 #X obj 594 349 noise~;
 #X obj 685 483 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.3564 256;
+-228856 -1 -1 89.2879 256;
 #X obj 639 482 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.3564 256;
+-228856 -1 -1 89.2879 256;
 #X obj 594 482 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.3564 256;
+-228856 -1 -1 89.2879 256;
 #X text 638 499 left;
 #X text 638 513 front;
 #X text 684 512 front;

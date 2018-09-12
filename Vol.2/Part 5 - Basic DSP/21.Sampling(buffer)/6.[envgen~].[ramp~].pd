@@ -1,0 +1,118 @@
+#N canvas 268 31 924 726 12;
+#X obj 544 17 r \$0-size;
+#X obj 505 83 random;
+#X obj 440 83 random;
+#X obj 440 22 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X obj 234 303 table \$0-buffer;
+#X obj 103 303 soundfiler;
+#X msg 182 331 \$1;
+#X obj 114 385 s \$0-hz;
+#X obj 114 359 /;
+#X obj 114 334 swap;
+#X obj 103 415 s \$0-size;
+#X obj 505 172 samps2ms;
+#X obj 430 219 pack float float float;
+#X obj 430 247 display;
+#X obj 430 335 tabread4~ \$0-buffer;
+#X obj 430 306 envgen~;
+#X obj 643 244 envelope 0 0.1 1 0.8 1 0.1 0;
+#X obj 640 357 envgen~;
+#X msg 640 212 duration \$1 \, bang;
+#X obj 430 363 *~;
+#X obj 387 398 out~;
+#X obj 182 360 /;
+#X obj 103 259 initmess read -resize ../../../samples/sax.wav \$0-buffer
+, f 34;
+#X floatatom 182 388 5 0 0 0 - - -, f 5;
+#X obj 214 360 sr~;
+#X obj 440 52 t b b;
+#X obj 601 120 *;
+#X obj 440 109 expr $f1 \; abs($f1-$f2) / $f3 \; $f2;
+#X obj 601 94 cents2ratio;
+#X obj 601 75 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 634 121 r \$0-ratio;
+#X obj 182 413 s \$0-ratio;
+#X obj 601 49 b;
+#X text 40 138 In this patch we draw random start/end points and get
+a duration period in ms from the difference. This period can be changed
+by a ratio input from a cents value. Note we also have a ratio parameter
+that is a compensation from the ratio between the sound file's sample
+rate and Pd's, f 49;
+#X text 436 275 <= start \, duration \, target;
+#X text 40 28 This example shows how to use [envgen~] to drive [tabread4~]
+instead of [phasor~] \, and how to play random bits of the file as
+an example of doing something more complex than just playing a file.
+We also have a second [envgen~] as an envelope to avoid clicks at the
+beggining and end of the file., f 49;
+#X obj 622 465 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 566 465 restart;
+#X obj 665 502 f2s~ 100 1;
+#X obj 655 543 ramp~;
+#X obj 655 623 out~;
+#X text 176 521 The [ramp~] object from the ELSE library is a linear
+ramp generator that can be used for different purposes \, but one of
+its main purposes is to be used to drive [tabread4~].;
+#X obj 764 506 r \$0-size;
+#X obj 665 476 *;
+#X obj 698 477 r \$0-ratio;
+#X obj 668 426 hsl 128 15 -2 2 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 1800 1;
+#X obj 665 452 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 -1.43307 256;
+#X obj 655 579 tabread4~ \$0-buffer;
+#X text 176 575 You can give [ramp~] an increment value and "1" plays
+the file at original speed \, but you can give it other values to play
+in different speeds as in this example. Note how we're also using a
+ratio compensation here.;
+#X connect 0 0 1 1;
+#X connect 0 0 2 1;
+#X connect 0 0 32 0;
+#X connect 1 0 27 1;
+#X connect 2 0 27 0;
+#X connect 3 0 25 0;
+#X connect 5 0 9 0;
+#X connect 5 0 10 0;
+#X connect 5 1 6 0;
+#X connect 6 0 9 1;
+#X connect 6 0 21 0;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
+#X connect 9 1 8 1;
+#X connect 11 0 12 1;
+#X connect 11 0 18 0;
+#X connect 12 0 13 0;
+#X connect 13 0 15 0;
+#X connect 14 0 19 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
+#X connect 17 0 19 1;
+#X connect 18 0 16 0;
+#X connect 19 0 20 0;
+#X connect 19 0 20 1;
+#X connect 21 0 23 0;
+#X connect 22 0 5 0;
+#X connect 23 0 31 0;
+#X connect 24 0 21 1;
+#X connect 25 0 2 0;
+#X connect 25 1 1 0;
+#X connect 26 0 27 2;
+#X connect 27 0 12 0;
+#X connect 27 1 11 0;
+#X connect 27 2 12 2;
+#X connect 28 0 26 0;
+#X connect 29 0 28 0;
+#X connect 30 0 26 1;
+#X connect 32 0 29 0;
+#X connect 36 0 39 0;
+#X connect 38 0 39 1;
+#X connect 39 0 47 0;
+#X connect 42 0 39 3;
+#X connect 43 0 38 0;
+#X connect 44 0 43 1;
+#X connect 45 0 46 0;
+#X connect 46 0 43 0;
+#X connect 47 0 40 0;
+#X connect 47 0 40 1;

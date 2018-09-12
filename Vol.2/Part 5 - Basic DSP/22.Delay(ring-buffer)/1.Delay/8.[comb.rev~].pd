@@ -1,0 +1,100 @@
+#N canvas 480 112 856 554 12;
+#X obj 573 387 +~;
+#X obj 573 413 +~;
+#X obj 663 411 *~;
+#X obj 591 358 *~;
+#X obj 489 344 *~;
+#X obj 489 232 r~ \$0-in;
+#X obj 500 180 s~ \$0-in;
+#X obj 587 450 delwrite~ \$0-fb 1000;
+#X obj 663 370 vd~ \$0-fb;
+#X obj 591 315 vd~ \$0-ff;
+#X obj 500 264 delwrite~ \$0-ff 1000;
+#X obj 60 347 r~ \$0-in;
+#X obj 663 273 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 614.173 256;
+#X obj 674 338 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.464567 256;
+#X obj 743 379 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.631417 256;
+#X obj 507 325 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.291339 256;
+#X obj 131 161 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 614.173 256;
+#X obj 292 357 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.631417 256;
+#X obj 207 325 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.464567 256;
+#X text 660 226 del-time;
+#X text 671 293 feedforward;
+#X text 739 329 feedback;
+#X obj 134 139 hsl 128 15 0 1000 0 1 empty empty empty -2 -8 0 10 -228856
+-1 -1 7800 1;
+#X text 170 138 del-time;
+#X obj 169 244 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.291339 256;
+#X obj 172 222 hsl 128 15 -1 1 0 1 empty empty empty -2 -8 0 10 -228856
+-1 -1 8200 1;
+#X obj 210 304 hsl 128 15 -1 1 0 1 empty empty empty -2 -8 0 10 -228856
+-1 -1 9300 1;
+#X text 241 303 feedforward;
+#X obj 296 339 hsl 128 15 -0.99 0.99 0 1 empty empty empty -2 -8 0
+10 -228856 -1 -1 10400 1;
+#X text 332 338 feedback;
+#X obj 94 467 out~;
+#X obj 530 484 out~;
+#X text 24 18 The [comb.rev~] object from ELSE is a comb reverberator.
+It'll be presented in more details later in this tutorial as a reverberator.
+What we need to know now is that it consists in two delay lines - a
+feedforward and feedback., f 57;
+#X obj 674 314 r \$0-ff;
+#X obj 743 353 r \$0-fb;
+#X obj 663 246 r \$0-ms;
+#X obj 500 133 sampler~ ../../../../samples/guitar.wav 1 1, f 34;
+#X obj 507 302 r \$0-gain;
+#X obj 151 185 s \$0-ms;
+#X obj 182 268 s \$0-gain;
+#X obj 216 350 s \$0-ff;
+#X obj 292 391 s \$0-fb;
+#X obj 94 433 comb.rev~ 1000 1 1 0.9;
+#X text 452 18 Let's see how to implement it with native Pd objects
+to see how it works. Compare the two patches below and see how they
+are the same. The arguments for [comb.rev~] are: initial and maximum
+delay time in ms \, then we have a gain \, feedforward and feedback
+coefficients., f 52;
+#X connect 0 0 1 0;
+#X connect 1 0 7 0;
+#X connect 1 0 31 1;
+#X connect 1 0 31 0;
+#X connect 2 0 1 1;
+#X connect 3 0 0 1;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
+#X connect 5 0 10 0;
+#X connect 8 0 2 0;
+#X connect 9 0 3 0;
+#X connect 11 0 42 0;
+#X connect 12 0 9 0;
+#X connect 12 0 8 0;
+#X connect 13 0 3 1;
+#X connect 14 0 2 1;
+#X connect 15 0 4 1;
+#X connect 16 0 38 0;
+#X connect 16 0 42 1;
+#X connect 17 0 41 0;
+#X connect 17 0 42 4;
+#X connect 18 0 40 0;
+#X connect 18 0 42 3;
+#X connect 22 0 16 0;
+#X connect 24 0 39 0;
+#X connect 24 0 42 2;
+#X connect 25 0 24 0;
+#X connect 26 0 18 0;
+#X connect 28 0 17 0;
+#X connect 33 0 13 0;
+#X connect 34 0 14 0;
+#X connect 35 0 12 0;
+#X connect 36 0 6 0;
+#X connect 37 0 15 0;
+#X connect 42 0 30 1;
+#X connect 42 0 30 0;

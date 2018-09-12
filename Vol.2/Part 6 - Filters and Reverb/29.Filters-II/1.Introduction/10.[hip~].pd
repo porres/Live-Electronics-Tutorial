@@ -1,0 +1,84 @@
+#N canvas 225 23 886 601 12;
+#X obj 500 329 rpole~;
+#X obj 500 356 rzero~ 1;
+#X obj 580 176 hip~;
+#X obj 605 132 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 500 106 noise~;
+#X obj 608 105 hsl 128 15 20 20000 1 0 empty empty empty -2 -8 0 10
+-228856 -1 -1 0 1;
+#X text 143 100 y[n] = x[n] - a[n] * x[n-1];
+#X obj 224 506 clip 0 1;
+#X floatatom 224 412 5 0 0 0 - - -, f 5;
+#X floatatom 224 534 5 0 0 0 - - -, f 5;
+#X text 198 411 Hz;
+#X obj 671 492 v a;
+#X obj 652 262 send \$0-a;
+#X obj 539 302 receive \$0-a;
+#X obj 671 468 receive \$0-a;
+#X obj 136 248 fexpr~ $x - $x[-1] + a * $y[-1];
+#X text 110 319 y[n] = x[n] - x[n-1] + a * y[n-1];
+#X obj 677 311 cnv 15 150 50 empty empty empty 5 12 0 14 -261234 -66577
+0;
+#X text 724 321 _____________;
+#X text 678 327 H(z) =;
+#X text 729 338 1 - a * z^-1;
+#X text 737 315 1 - z^-1;
+#X obj 171 132 fexpr~ $x - a*$x[-1];
+#X text 27 31 The [hip~] object is a 1 Pole / 1 Zero filter. It can
+then be implemented with the [rpole~] object plus the [rzero~] \, which
+is a one zero filter whose difference equation and [fexpr~] implementation
+is:, f 53;
+#X obj 85 102 rzero~;
+#X text 29 176 The zero coefficient for [hip~] is always 1 \, so we
+just have y[n] = x[n] - x[n-1]. Let's join that the one pole equation
+y[n] = x[n] + a * y[n-1] and we get:, f 53;
+#X text 72 293 Difference equation:;
+#X obj 428 514 out~;
+#X obj 500 397 out~;
+#X obj 224 446 hz2rad;
+#X obj 224 476 expr 1 - $f1;
+#X text 138 534 coefficient;
+#X text 22 368 The pole coefficient is now given as:;
+#X obj 537 222 out~;
+#X obj 652 232 clip 0 1;
+#X obj 652 178 hz2rad;
+#X obj 652 205 expr 1 - $f1;
+#X obj 428 471 fexpr~ $x - $x[-1] + a*$y1[-1];
+#X text 472 43 Compare below the [hip~] object to other equivalent
+implementations., f 34;
+#N canvas 622 45 456 398 H(z) 0;
+#X text 98 109 Y(z) = X(z) - X(z)z^-1 + a * Y(z)z^-1;
+#X text 105 134 X(z) - X(z)z^-1 = Y(z) - a * Y(z)z^-1;
+#X text 106 154 X(z) (1 - z^-1) = Y(z) - a * Y(z)z^-1;
+#X text 106 176 X(z) = Y(z) - a * Y(z)z^-1 / (1 - z^-1);
+#X text 79 205 H(z) = Y(z) * (1 - z^-1) / Y(z) - a * Y(z)z^-1;
+#X text 165 267 _____________;
+#X text 124 270 H(z) =;
+#X text 171 284 1 - a * z^-1;
+#X text 178 261 1 - z^-1;
+#X text 25 43 From: y[n] = x[n] - x[n-1] + a * y[n-1];
+#X text 27 78 We get:;
+#X restore 774 362 pd H(z);
+#X connect 0 0 1 0;
+#X connect 1 0 28 0;
+#X connect 1 0 28 1;
+#X connect 2 0 33 1;
+#X connect 2 0 33 0;
+#X connect 3 0 2 1;
+#X connect 3 0 35 0;
+#X connect 4 0 0 0;
+#X connect 4 0 2 0;
+#X connect 4 0 37 0;
+#X connect 5 0 3 0;
+#X connect 7 0 9 0;
+#X connect 8 0 29 0;
+#X connect 13 0 0 1;
+#X connect 14 0 11 0;
+#X connect 29 0 30 0;
+#X connect 30 0 7 0;
+#X connect 34 0 12 0;
+#X connect 35 0 36 0;
+#X connect 36 0 34 0;
+#X connect 37 0 27 0;
+#X connect 37 0 27 1;

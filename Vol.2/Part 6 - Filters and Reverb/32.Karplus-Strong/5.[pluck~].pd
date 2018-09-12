@@ -1,0 +1,34 @@
+#N canvas 459 213 590 412 12;
+#X obj 221 192 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 66.7696 256;
+#X text 277 191 Hz;
+#X obj 157 168 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 266 219 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 325 217 decay time (ms);
+#X obj 310 246 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 372 245 filter cutoff (hz);
+#X obj 89 314 out~;
+#X obj 157 216 impseq~;
+#X obj 97 226 brown~;
+#X obj 221 159 randf 50 300;
+#X obj 132 266 pluck~ 75 4000 10000, f 26;
+#X text 51 25 The ELSE library has the [pluck~] object \, which implements
+a Karplus Strong Algorythm. it takes an external excitatoin signal
+and is triggered by impulses. a frequency valuedetermines the delay
+period and the excitation signal gets automatically enveloped to that
+size. The feedback value is given as a decay time in ms (t60). Internally
+\, it has a 2nd order lowpass filter. See its help file for more details.
+, f 64;
+#X connect 0 0 11 2;
+#X connect 2 0 8 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 3;
+#X connect 5 0 11 4;
+#X connect 8 0 11 1;
+#X connect 9 0 11 0;
+#X connect 10 0 0 0;
+#X connect 11 0 7 0;
+#X connect 11 0 7 1;

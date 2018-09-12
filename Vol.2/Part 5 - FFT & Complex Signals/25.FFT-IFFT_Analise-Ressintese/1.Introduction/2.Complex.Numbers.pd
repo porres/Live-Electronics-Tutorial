@@ -1,0 +1,75 @@
+#N canvas 296 63 974 718 12;
+#X floatatom 577 220 8 0 0 0 - - -, f 8;
+#X text 495 221 Amplitude;
+#X floatatom 611 319 5 0 0 0 - - -, f 5;
+#X floatatom 748 318 5 0 0 0 - - -, f 5;
+#X text 571 317 Real;
+#X floatatom 777 221 8 0 0 0 - - -, f 8;
+#X floatatom 777 132 5 0 0 0 - - -, f 5;
+#X floatatom 577 133 5 0 0 0 - - -, f 5;
+#X obj 611 265 expr cos($f2) * $f1 \; sin($f2) * $f1;
+#X floatatom 650 407 8 0 0 0 - - -, f 8;
+#X text 579 407 Amplitude;
+#X floatatom 714 407 8 0 0 0 - - -, f 8;
+#X floatatom 710 478 5 0 0 1 imaginary - -, f 5;
+#X floatatom 657 478 5 0 0 0 real - -, f 5;
+#X obj 577 170 expr sqrt($f1*$f1 + $f2*$f2) \; atan2($f2 \, $f1);
+#X obj 235 322 pic euler.gif;
+#X obj 659 367 car2pol;
+#X obj 661 444 pol2car;
+#X obj 658 627 car2pol~;
+#X obj 737 627 pol2car~;
+#X text 43 25 A Complex number has a real and an imaginary part \,
+hence it's a bi dimensional number that can be represented in a cartesian
+plane as below \, where the real part is the horizontal axis and the
+imaginary the vertical axis. We can relate this to the last example
+\, where the Cosine amplitude is the real part and the Sine amplitude
+is the imaginary part., f 56;
+#X text 31 518 A complex number is defined as a + b*i \, where "a"
+is the real part \, and b is a real number mupltiplied by the imaginary
+unit "i" (which is the square root of -1). When dealing with complex
+math in Pd we just actually deal with the real numbers "a" and "b"
+\, though it is implied that b is multiplied by "i".;
+#X text 31 618 The cartesian representation of a complex number is
+by its (a \, b) coordinates \, but you can also represent it in the
+Polar form \, define as the magnitude (amplitude) and argument (Initial
+Phase).;
+#X text 504 133 real part;
+#X text 667 131 imaginary part;
+#X text 503 169 Cartesian to Polar, f 9;
+#X text 790 247 (in radians);
+#X text 539 263 Polar to Cartesian, f 9;
+#X text 673 318 Imaginary;
+#X text 466 40 We actually already did the conversion from cartesian
+to polar in the last example. Let's see now how to converto to and
+back with [expr] and objects from the ELSE library.;
+#X text 739 369 Cartesian to Polar;
+#X text 733 442 Polar to Cartesian;
+#X text 542 628 Audio versions:;
+#X text 774 407 Phase;
+#X text 840 222 Initial Phase;
+#X obj 658 513 mag;
+#X floatatom 658 550 8 0 0 0 - - -, f 8;
+#X text 587 550 Amplitude;
+#X text 739 528 [mag] returns the magnitude (amplitude) from real/imaginary
+parts., f 21;
+#X obj 817 626 mag~;
+#X connect 0 0 8 0;
+#X connect 2 0 16 0;
+#X connect 3 0 16 1;
+#X connect 5 0 8 1;
+#X connect 6 0 14 1;
+#X connect 7 0 14 0;
+#X connect 8 0 2 0;
+#X connect 8 1 3 0;
+#X connect 9 0 17 0;
+#X connect 11 0 17 1;
+#X connect 12 0 35 1;
+#X connect 13 0 35 0;
+#X connect 14 0 0 0;
+#X connect 14 1 5 0;
+#X connect 16 0 9 0;
+#X connect 16 1 11 0;
+#X connect 17 0 13 0;
+#X connect 17 1 12 0;
+#X connect 35 0 36 0;

@@ -1,84 +1,86 @@
-#N canvas 332 23 1026 474 12;
-#X obj 108 298 *~;
-#X obj 50 245 osc~ 440;
-#X obj 158 154 nbx 5 17 0 2000 0 0 empty empty empty 0 -8 0 12 -228856
+#N canvas 169 23 1067 484 12;
+#X obj 112 287 *~;
+#X obj 54 234 osc~ 440;
+#X obj 162 143 nbx 5 17 0 2000 0 0 empty empty empty 0 -8 0 12 -228856
 -1 -1 0 256;
-#X obj 118 151 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 122 140 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 108 339 out~;
-#X obj 126 189 f 500;
-#X text 161 132 ms;
-#X msg 126 218 0 \$1 1;
-#X obj 126 245 envgen~;
-#X obj 233 196 initmess \; \$0-hann cosinesum 1024 0.5 -0.5;
-#X text 300 170 Generates hann table;
-#X obj 359 234 table \$0-hann;
-#X obj 126 273 table~ \$0-hann;
-#X text 38 37 We now present more convenient solutions with objects
-from the ELSE library. We have a first superficial look into the [table~]
-object \, which is the same as [tabread4~] but the index input is from
-0 to 1 \, which makes us not worry about the table size. The [envgen~]
-is used instead of [vline~] as well.;
-#X obj 505 332 *~;
-#X obj 449 289 osc~ 440;
-#X obj 555 186 nbx 5 17 0 2000 0 0 empty empty empty 0 -8 0 12 -228856
+#X obj 112 328 out~;
+#X obj 130 178 f 500;
+#X text 165 121 ms;
+#X obj 130 234 envgen~;
+#X obj 217 186 initmess \; \$0-hann cosinesum 1024 0.5 -0.5;
+#X text 290 163 Generates hann table;
+#X obj 343 224 table \$0-hann;
+#X obj 130 262 table~ \$0-hann;
+#X obj 489 322 *~;
+#X obj 433 279 osc~ 440;
+#X obj 539 176 nbx 5 17 0 2000 0 0 empty empty empty 0 -8 0 12 -228856
 -1 -1 0 256;
-#X obj 515 183 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 499 173 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 505 373 out~;
-#X obj 523 219 f 500;
-#X text 558 164 ms;
-#X msg 523 248 0 \$1 1;
-#X obj 523 275 envgen~;
-#X obj 523 303 envelope~ hann;
-#X obj 687 309 osc~ 440;
-#X obj 762 350 *~;
-#X msg 706 214 0 \, 1 \$1;
-#X obj 719 392 out~;
-#X obj 780 307 function~ 0 0.5 1 0.5 0;
-#X obj 706 246 envgen~;
-#X msg 801 276 0 0.5 1 0.5 0;
-#X msg 780 217 0 0.25 1 0.5 0.75 0.25 0;
-#X text 810 252 triangular;
-#X text 877 194 trapezoid;
-#X obj 758 173 nbx 5 17 0 2000 0 0 empty empty empty 0 -8 0 12 -228856
+#X obj 489 363 out~;
+#X obj 507 209 f 500;
+#X text 542 154 ms;
+#X msg 507 238 0 \$1 1;
+#X obj 507 265 envgen~;
+#X obj 507 293 envelope~ hann;
+#X obj 653 322 osc~ 440;
+#X obj 728 363 *~;
+#X obj 685 405 out~;
+#X obj 746 320 function~ 0 0.5 1 0.5 0;
+#X obj 652 239 envgen~;
+#X obj 704 166 nbx 5 17 0 2000 0 0 empty empty empty 0 -8 0 12 -228856
 -1 -1 0 256;
-#X obj 706 145 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 652 138 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 706 183 f 500;
-#X text 761 151 ms;
-#X text 500 33 But for more common functions used as envelopes we have
+#X obj 652 176 f 500;
+#X text 707 144 ms;
+#X text 514 25 But for more common functions used as envelopes we have
 the [envelope~] object from ELSE \, which has "hann" \, "sin" (half
 the sine function) and triangular. It also needs an input from 0 to
 1 as indexes. Lastly \, there's a parallel here with [function~] \,
 which can also be considered a table that can be read with indices
-from 0 to 1!;
+from 0 to 1!, f 71;
+#X msg 652 207 0 \$1 1;
+#X msg 796 167 0 0.5 1 0.5 0;
+#X text 898 167 triangular;
+#X text 935 138 trapezoid;
+#X msg 779 138 0 0.25 1 0.5 1 0.25 0;
+#X obj 782 198 envelope 0 0.5 1 0.5 0;
+#X msg 130 207 0 \$1 1;
+#X text 52 24 We now present more convenient solutions with objects
+from the ELSE library. We have a first superficial look into the [table~]
+object \, which is similar to [tabread4~] \, but by default it has
+an index input is from 0 to 1 (excluding guard points) \, which makes
+us not worry about the table size and index range., f 58;
 #X connect 0 0 4 0;
 #X connect 0 0 4 1;
 #X connect 1 0 0 0;
 #X connect 2 0 5 1;
 #X connect 3 0 5 0;
-#X connect 5 0 7 0;
-#X connect 7 0 8 0;
-#X connect 8 0 12 0;
-#X connect 12 0 0 1;
-#X connect 14 0 18 0;
-#X connect 14 0 18 1;
-#X connect 15 0 14 0;
-#X connect 16 0 19 1;
+#X connect 5 0 38 0;
+#X connect 7 0 11 0;
+#X connect 11 0 0 1;
+#X connect 12 0 16 0;
+#X connect 12 0 16 1;
+#X connect 13 0 12 0;
+#X connect 14 0 17 1;
+#X connect 15 0 17 0;
 #X connect 17 0 19 0;
-#X connect 19 0 21 0;
-#X connect 21 0 22 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 12 1;
 #X connect 22 0 23 0;
-#X connect 23 0 14 1;
-#X connect 24 0 25 0;
-#X connect 25 0 27 1;
-#X connect 25 0 27 0;
-#X connect 26 0 29 0;
-#X connect 28 0 25 1;
-#X connect 29 0 28 0;
-#X connect 30 0 28 0;
-#X connect 31 0 28 0;
-#X connect 34 0 36 1;
-#X connect 35 0 36 0;
-#X connect 36 0 26 0;
+#X connect 23 0 24 1;
+#X connect 23 0 24 0;
+#X connect 25 0 23 1;
+#X connect 26 0 25 0;
+#X connect 27 0 29 1;
+#X connect 28 0 29 0;
+#X connect 29 0 32 0;
+#X connect 32 0 26 0;
+#X connect 33 0 37 0;
+#X connect 36 0 37 0;
+#X connect 37 0 25 0;
+#X connect 38 0 7 0;

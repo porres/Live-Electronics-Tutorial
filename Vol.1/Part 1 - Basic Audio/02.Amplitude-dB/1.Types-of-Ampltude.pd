@@ -9,7 +9,7 @@ amplitude" refers to the dynamic amplitude signal output such as the
 signal of any sound generator in Pd. Like an oscillator's \, for instance.
 , f 54;
 #X text 108 168 <= running amplitude;
-#X text 36 362 On the other hand \, we can think of amplitude as one
+#X text 36 357 On the other hand \, we can think of amplitude as one
 single amplitude value \, which is called the "instant amplitude".
 , f 54;
 #X obj 151 462 snapshot~;
@@ -32,6 +32,7 @@ or negative) in the time window, f 50;
 negative peaks in the time window, f 50;
 #X text 508 473 3- "Root Mean Square" (RMS): A mean of all samples
 in the time window, f 50;
+#X obj 334 452 setdsp~;
 #X connect 2 0 1 0;
 #X connect 7 0 10 0;
 #X connect 8 0 7 0;

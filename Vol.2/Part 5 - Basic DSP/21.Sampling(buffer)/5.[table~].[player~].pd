@@ -1,0 +1,39 @@
+#N canvas 362 209 641 371 12;
+#X obj 218 216 table \$0-buffer;
+#X obj 64 216 soundfiler;
+#X obj 427 177 phasor~;
+#X obj 427 254 out~;
+#X msg 131 244 \$1;
+#X obj 458 148 r \$0-hz;
+#X obj 64 298 s \$0-hz;
+#X obj 427 148 *~;
+#X obj 64 272 /;
+#X obj 64 247 swap;
+#X obj 64 177 initmess read -resize ../../../samples/violin.wav \$0-buffer
+, f 37;
+#X obj 427 214 table~ \$0-buffer;
+#X text 55 30 In this example we use [table~] from the ELSE library.
+One convenienc that makes it simpler is that we don't need to bother
+multiplying the output of [phasor~] \, as the index input is mapped
+from 0 to 1!, f 42;
+#X obj 427 112 display~ 8;
+#X text 498 116 Ratio;
+#X obj 427 50 rampnoise~ 0.25;
+#X obj 427 81 *~ 3;
+#X text 55 109 The ratio is now controlled by a random ramp generator.
+, f 42;
+#X connect 1 0 9 0;
+#X connect 1 1 4 0;
+#X connect 2 0 11 0;
+#X connect 4 0 9 1;
+#X connect 5 0 7 1;
+#X connect 7 0 2 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 0;
+#X connect 9 1 8 1;
+#X connect 10 0 1 0;
+#X connect 11 0 3 0;
+#X connect 11 0 3 1;
+#X connect 13 0 7 0;
+#X connect 15 0 16 0;
+#X connect 16 0 13 0;

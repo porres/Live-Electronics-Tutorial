@@ -1,5 +1,5 @@
-#N canvas 391 50 932 518 12;
-#X obj 227 321 tempo 60 50 -on;
+#N canvas 423 120 925 523 12;
+#X obj 193 322 tempo 60 50 -on;
 #X obj 641 247 out~;
 #X obj 644 126 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 120 256;
@@ -22,14 +22,14 @@ lots of shaprness to the sound., f 62;
 and [tabosc4~] do reset the oscillator \, but this is a control inlet
 \, so it's time resolution is not enough for a proper hard sync implementation.
 An audio rate inlet is needed for that!, f 62;
-#X msg 227 370 0;
-#X obj 131 385 sig2float~;
-#X obj 131 421 vsl 16 70 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 4791 1;
-#X obj 131 353 osc~ 0.25;
-#X obj 227 348 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+#X msg 193 371 0;
+#X obj 97 386 sig2float~;
+#X obj 97 422 vsl 16 70 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 6900 1;
+#X obj 97 354 osc~ 0.25;
+#X obj 193 349 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X text 257 372 <= reset to the beggining of the cycle, f 16;
+#X text 223 373 <= reset to the beggining of the cycle, f 16;
 #X obj 644 97 initmess 120;
 #X obj 644 184 impulse~;
 #X text 706 125 master;
@@ -58,7 +58,36 @@ master and the slave as the patch to the right. But before trying it
 #X text 29 15 These sare all the oscillators previously presented in
 the ELSE library. All of which can be synced with impulses. We'll also
 see band limited versions of them in the next section., f 41;
-#X restore 776 195 pd other \; oscillators;
+#X restore 780 165 pd other \; oscillators;
+#N canvas 655 361 544 422 vanilla 0;
+#X obj 244 153 *~;
+#X obj 244 236 graph~ 500 13 1 -1;
+#X obj 317 78 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-slave empty 0 -8
+0 10 -262144 -1 -1 170 256;
+#X obj 244 185 wrap~;
+#X obj 244 121 phasor~;
+#X obj 244 66 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-master empty 0 -8
+0 10 -262144 -1 -1 100 256;
+#X obj 317 146 /~;
+#X obj 112 299 out~;
+#X text 244 45 master;
+#X text 317 54 slave;
+#X obj 155 258 cos~;
+#X text 48 84 multiply the phase by a ratio of master/slave frequencies
+\, then wrap to have a synced phase., f 23;
+#X obj 393 113 initmess \; \$0-master 100 \; \$0-slave 170;
+#X connect 0 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 1 0;
+#X connect 3 0 10 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 1;
+#X connect 5 0 4 0;
+#X connect 6 0 0 1;
+#X connect 10 0 7 1;
+#X connect 10 0 7 0;
+#X restore 424 405 pd vanilla trick;
+#X text 403 358 Here's a vanilla trick to force hard sync, f 22;
 #X connect 0 0 13 0;
 #X connect 2 0 5 0;
 #X connect 2 0 16 0;

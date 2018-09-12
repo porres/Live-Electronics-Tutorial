@@ -1,0 +1,75 @@
+#N struct 1007-point float x0 float y0 float s;
+#N struct 1007-grid float x0 float y0 float s;
+#N canvas 362 124 789 613 12;
+#X obj 200 182 hsl 128 15 0.05 1 1 1 empty amp empty -2 -8 0 10 -228856
+-1 -1 9761 1;
+#X text 232 165 Amplitude;
+#X obj 70 152 hsl 128 15 0.05 2.5 1 0 empty hz empty -2 -8 0 10 -228856
+-1 -1 5225 1;
+#X floatatom 81 176 5 0 0 0 - - -, f 5;
+#X text 97 131 Hertz;
+#X floatatom 212 205 5 0 0 0 - - -, f 5;
+#N canvas 414 81 380 431 Senóide-Complexa 0;
+#X obj 175 51 inlet;
+#X text 222 50 Amp;
+#X obj 160 177 *~;
+#X obj 121 177 *~;
+#X obj 209 127 *~ 360;
+#X obj 121 202 sig2float~ 10;
+#X obj 160 223 sig2float~ 10;
+#X obj 209 158 sig2float~ 10;
+#X obj 209 182 s \$0-angle;
+#X obj 100 279 s x;
+#X obj 177 257 s y;
+#X msg 133 338 set \$1 \$2;
+#X obj 133 281 pack2;
+#X obj 133 307 changed;
+#X obj 133 362 outlet;
+#X obj 269 263 initmess \; pd dsp 1 \; hz 0.25 \; amp 0.5;
+#X obj 65 50 inlet;
+#X obj 66 92 phasor~;
+#X obj 66 128 cos~;
+#X obj 105 128 sin~;
+#X connect 0 0 2 1;
+#X connect 0 0 3 1;
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
+#X connect 4 0 7 0;
+#X connect 5 0 9 0;
+#X connect 5 0 12 0;
+#X connect 6 0 10 0;
+#X connect 6 0 12 1;
+#X connect 7 0 8 0;
+#X connect 11 0 14 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 17 0 19 0;
+#X connect 18 0 3 0;
+#X connect 19 0 2 0;
+#X restore 67 205 pd Senóide-Complexa;
+#X text 349 557 === Projection in Time ===>;
+#X text 447 355 Seno;
+#X text 428 484 Cosseno;
+#X obj 459 396 pic sc2.gif;
+#X obj 67 354 slider2d -range -1 1;
+#X text 19 25 A complex signal has a real and imaginary part. The output
+of a FTT is a complex signal but is the frequency domain. Now we're
+talking about a complex signal in the time domain \, which is totally
+different., f 43;
+#X text 371 36 To turn a real signal into a complex signal \, all we
+need to do is add the imaginary part \, which is a copy of the real
+signal \, but with a phase quadrature difference of (90 degrees). A
+complex sine is then composed of two sine waves with this phase difference.
+, f 54;
+#X text 371 117 The two dimentional slider to the right represents
+the complex sine in a cartesian plane \, with the real part in the
+horizontal axis and the imaginary part in the vertical axis. By adding
+a third dimension of time we have a helicoidal projection of this complex
+sinusoid., f 54;
+#X connect 0 0 6 1;
+#X connect 0 0 5 0;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 6 0 11 0;

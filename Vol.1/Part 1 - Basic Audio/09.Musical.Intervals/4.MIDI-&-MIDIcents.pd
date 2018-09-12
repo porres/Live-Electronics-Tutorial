@@ -1,9 +1,9 @@
-#N canvas 278 23 885 714 12;
-#X obj 109 628 ftom;
-#X obj 139 594 nbx 5 14 -1e+37 1e+37 0 0 empty empty Hz 18 -6 0 10
+#N canvas 278 23 885 739 12;
+#X obj 109 643 ftom;
+#X obj 139 609 nbx 5 14 -1e+37 1e+37 0 0 empty empty Hz 18 -6 0 10
 -228856 -1 -1 0 256;
-#X text 159 626 =;
-#X obj 109 669 nbx 5 14 -1e+37 1e+37 0 0 empty empty MIDI 18 -6 0 10
+#X text 159 641 =;
+#X obj 109 684 nbx 5 14 -1e+37 1e+37 0 0 empty empty MIDI 18 -6 0 10
 -228856 -1 -1 0 256;
 #X obj 250 147 nbx 5 14 0 127 0 0 empty empty MIDI 60 7 0 10 -228856
 -1 -1 0 256;
@@ -12,15 +12,15 @@
 -1 -1 0 256;
 #X msg 250 94 60;
 #X msg 270 119 69;
-#X obj 180 477 + 69;
-#X obj 180 441 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
-#X obj 180 505 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+#X obj 180 487 + 69;
+#X obj 180 457 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.311942 256;
+#X obj 180 515 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 69.3119 256;
 #X obj 180 376 / 440;
 #X obj 180 351 nbx 5 14 20 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
--1 -1 20 256;
-#X obj 191 668 nbx 5 14 -1e+37 1e+37 0 0 empty empty MIDI 18 -6 0 10
+-1 -1 448 256;
+#X obj 191 683 nbx 5 14 -1e+37 1e+37 0 0 empty empty MIDI 18 -6 0 10
 -228856 -1 -1 0 256;
 #X obj 595 109 nbx 5 14 -1e+37 1e+37 0 0 empty empty MIDI 60 7 0 10
 -228856 -1 -1 0 256;
@@ -40,16 +40,13 @@
 #X text 278 94 Middle C;
 #X text 298 120 Middle A;
 #X text 237 350 Frequency in Hertz;
-#X obj 180 403 expr 12 * log($f1)/log(2);
-#X text 242 431 Difference in semitones to middle A, f 12;
-#X text 217 477 Sum to middle A in MIDI;
-#X text 243 505 MIDI Pitch;
+#X text 243 515 MIDI Pitch;
 #X text 227 376 Interval ratio to middle A;
-#X text 42 540 This is the opposite conversion from [mtof] \, and we
+#X text 42 555 This is the opposite conversion from [mtof] \, and we
 also have a native object for that - [ftom].;
 #X text 485 62 If we invert the formula \, we get the [mtof] expression:
 , f 28;
-#X obj 191 627 expr 12 * log($f1/440)/log(2) + 69;
+#X obj 191 642 expr 12 * log($f1/440)/log(2) + 69;
 #X obj 595 140 expr pow(2 \, ($f1 - 69)/12) * 440;
 #X obj 645 449 nbx 5 14 -1e+37 1e+37 0 0 empty midi empty 0 -8 0 10
 -228856 -1 -1 0 256;
@@ -81,29 +78,34 @@ So any frequency input becomes an interval ratio to 440Hz., f 53;
 have a finer resolution after the decimal point. You can also consider
 this extra resolution as "MIDI-Cents" \, where 0.01 is equal to one
 cent!, f 57;
+#X text 238 449 semitones difference to middle A, f 20;
+#X text 217 487 sum to middle A in MIDI;
+#X obj 180 403 log 2;
+#X obj 180 429 * 12;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
-#X connect 1 0 35 0;
+#X connect 1 0 32 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 7 0 4 0;
 #X connect 8 0 4 0;
 #X connect 9 0 11 0;
 #X connect 10 0 9 0;
-#X connect 12 0 28 0;
+#X connect 12 0 50 0;
 #X connect 13 0 12 0;
 #X connect 15 0 16 0;
-#X connect 15 0 36 0;
+#X connect 15 0 33 0;
 #X connect 16 0 17 0;
 #X connect 20 0 21 0;
 #X connect 21 0 23 0;
 #X connect 21 0 23 1;
 #X connect 24 0 20 0;
-#X connect 28 0 10 0;
-#X connect 35 0 14 0;
-#X connect 36 0 19 0;
-#X connect 37 0 42 1;
-#X connect 38 0 42 0;
-#X connect 39 0 38 0;
-#X connect 41 0 39 0;
-#X connect 42 0 24 0;
+#X connect 32 0 14 0;
+#X connect 33 0 19 0;
+#X connect 34 0 39 1;
+#X connect 35 0 39 0;
+#X connect 36 0 35 0;
+#X connect 38 0 36 0;
+#X connect 39 0 24 0;
+#X connect 50 0 51 0;
+#X connect 51 0 10 0;

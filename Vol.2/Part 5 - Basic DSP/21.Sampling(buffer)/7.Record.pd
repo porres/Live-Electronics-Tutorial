@@ -1,0 +1,63 @@
+#N canvas 601 51 496 652 12;
+#X obj 120 245 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 67 280 adc~ 1;
+#X msg 307 153 open \$1;
+#X obj 307 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 307 130 savepanel;
+#X msg 123 165 stop;
+#X obj 179 604 soundfiler;
+#X obj 179 505 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 179 527 savepanel;
+#X obj 120 354 tabwrite~ \$0-sample;
+#X msg 213 314 stop;
+#X msg 138 310 start \$1;
+#X obj 138 288 nbx 6 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 73 108 adc~ 1;
+#X msg 179 579 write \$1 \$2;
+#X obj 179 553 list append \$0-sample;
+#X obj 108 197 writesf~;
+#X obj 307 350 send \$0-sample;
+#X floatatom 307 301 0 0 0 0 - - -;
+#X obj 307 226 nbx 5 14 100 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
+-1 -1 100 256;
+#X msg 307 325 resize \$1;
+#X obj 320 275 s size;
+#X msg 108 138 open ./Test.wav \, start;
+#X obj 307 249 ms2samps;
+#X text 311 89 choose where;
+#X text 332 103 to record;
+#X text 69 245 Record;
+#X text 301 206 set array size;
+#X text 364 224 in ms;
+#X text 139 270 index to record;
+#X text 58 436 You can also export an array into a sound file with
+the [soundfiler] object as below.;
+#X text 199 503 <= choose where to save;
+#X text 34 16 Similarly to [readsf~] \, the native [writesf~] object
+records directly to your hard drive. The native [tabwrite~] object
+records into an array - check help files for more info.;
+#X obj 200 398 table \$0-sample 4410;
+#X connect 0 0 9 0;
+#X connect 1 0 9 0;
+#X connect 2 0 16 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 16 0;
+#X connect 7 0 8 0;
+#X connect 8 0 15 0;
+#X connect 10 0 9 0;
+#X connect 11 0 9 0;
+#X connect 12 0 11 0;
+#X connect 13 0 16 0;
+#X connect 14 0 6 0;
+#X connect 15 0 14 0;
+#X connect 18 0 20 0;
+#X connect 19 0 23 0;
+#X connect 20 0 17 0;
+#X connect 22 0 16 0;
+#X connect 23 0 18 0;
+#X connect 23 0 21 0;

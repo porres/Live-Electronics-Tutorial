@@ -1,0 +1,107 @@
+#N canvas 461 45 624 783 12;
+#X msg 148 324 0;
+#X text 177 325 reset;
+#X obj 102 349 phasor~;
+#X obj 225 353 expr~ 1000 / $v1;
+#X obj 206 606 *~;
+#X obj 341 655 +~;
+#X obj 102 326 *~;
+#X obj 190 249 /~ 100;
+#X obj 190 274 expr~ 1 - $v1;
+#X obj 52 213 loadbang;
+#X obj 102 516 +~;
+#X obj 236 500 *~;
+#X obj 478 328 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
+0 10 -228856 -1 -1 0 256;
+#X text 539 324 Cents;
+#X obj 478 375 expr~ 1 - $v1;
+#X obj 359 622 *~;
+#X obj 431 502 *~;
+#X obj 298 545 +~;
+#X obj 236 539 *~;
+#X obj 460 533 *~;
+#X obj 190 225 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
+0 10 -228856 -1 -1 100 256;
+#X text 91 237 buffer (ms);
+#X text 49 381 posição;
+#X obj 405 260 hsl 128 15 0 1000 0 0 empty \$0-size grain-ms -2 -8
+0 10 -228856 -1 -1 1270 1;
+#X obj 402 284 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 100 256;
+#X msg 52 237 6000;
+#X obj 298 143 sampler~ ../../../../../samples/bubul.wav 1 1, f 36
+;
+#X obj 298 703 out~;
+#X obj 298 188 delwrite~ \$0-buffer 6000;
+#X obj 102 545 delread4~ \$0-buffer, f 9;
+#X obj 298 571 delread4~ \$0-buffer, f 9;
+#X obj 377 583 envelope~;
+#X obj 298 512 sh~;
+#X obj 298 474 sh~;
+#X obj 225 403 pimp~;
+#X obj 377 448 pimp~ 0 0.5, f 6;
+#X obj 102 380 *~ 6000;
+#X obj 52 265 expr 1000 / $f1;
+#X obj 224 573 envelope~;
+#X obj 478 351 cents2ratio;
+#X obj 478 504 sh~;
+#X obj 102 481 sh~;
+#X obj 402 313 f2s~ 50;
+#X obj 463 636 initmess \; \$0-speed 100 \; \$0-size 100 \; \$0-cents
+0;
+#X text 187 203 speed (%);
+#X text 45 23 In this example we put together the last two for a pitch
+shift / time stretch patch! As in the first example \, we multiply
+a transposition ratio to the grain reading speed \, but to the phase
+not frequency. We do this to make this adjusment go through another
+sample and hold and only change at grain transitions. This is useful
+for not to make this adjustment change the reading speed., f 70;
+#X connect 0 0 2 1;
+#X connect 2 0 36 0;
+#X connect 3 0 34 0;
+#X connect 3 0 35 0;
+#X connect 4 0 5 0;
+#X connect 5 0 27 0;
+#X connect 5 0 27 1;
+#X connect 6 0 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 1;
+#X connect 9 0 25 0;
+#X connect 10 0 29 0;
+#X connect 11 0 18 0;
+#X connect 12 0 39 0;
+#X connect 14 0 33 0;
+#X connect 14 0 40 0;
+#X connect 15 0 5 1;
+#X connect 16 0 19 0;
+#X connect 17 0 30 0;
+#X connect 18 0 10 1;
+#X connect 19 0 17 1;
+#X connect 20 0 7 0;
+#X connect 23 0 24 0;
+#X connect 24 0 42 0;
+#X connect 25 0 37 0;
+#X connect 26 0 28 0;
+#X connect 29 0 4 0;
+#X connect 30 0 15 0;
+#X connect 31 0 15 1;
+#X connect 32 0 17 0;
+#X connect 33 0 18 1;
+#X connect 34 0 11 0;
+#X connect 34 0 38 0;
+#X connect 34 1 33 1;
+#X connect 34 1 41 1;
+#X connect 35 0 16 0;
+#X connect 35 0 31 0;
+#X connect 35 1 40 1;
+#X connect 35 1 32 1;
+#X connect 36 0 32 0;
+#X connect 36 0 41 0;
+#X connect 37 0 6 0;
+#X connect 38 0 4 1;
+#X connect 39 0 14 0;
+#X connect 40 0 19 1;
+#X connect 41 0 10 0;
+#X connect 42 0 11 1;
+#X connect 42 0 16 1;
+#X connect 42 0 3 0;

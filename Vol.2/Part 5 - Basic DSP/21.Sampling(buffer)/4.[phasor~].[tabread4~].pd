@@ -1,0 +1,90 @@
+#N canvas 323 55 932 699 12;
+#X obj 316 371 table \$0-buffer;
+#X obj 162 371 soundfiler;
+#X obj 715 316 phasor~;
+#X obj 715 375 tabread4~ \$0-buffer;
+#X obj 635 203 nbx 5 18 -1e+37 1e+37 0 0 empty tempo empty 0 -8 0 13
+-228856 -1 -1 100 256;
+#X floatatom 88 459 0 0 0 0 - - -;
+#X floatatom 162 456 0 0 0 0 - - -;
+#X obj 88 483 s \$0-size;
+#X obj 635 226 / 100;
+#X obj 715 203 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
+-228856 -1 -1 0 256;
+#X obj 715 265 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 1 256;
+#X text 786 203 Cents;
+#X obj 715 229 cents2ratio;
+#X obj 715 415 out~;
+#X msg 229 399 \$1;
+#X text 219 456 <= Reading frequency, f 21;
+#X text 561 203 Speed (%);
+#X text 776 264 Ratio;
+#X obj 540 392 initmess \; tempo 100;
+#X obj 715 343 *~;
+#X obj 746 343 r \$0-size;
+#X obj 746 287 r \$0-hz;
+#X obj 162 483 s \$0-hz;
+#X obj 715 287 *~;
+#X obj 162 331 initmess read -resize ../../../samples/sax.wav \$0-buffer
+, f 37;
+#X obj 162 427 /;
+#X obj 162 402 swap;
+#X floatatom 229 427 5 0 0 0 - - -, f 5;
+#X text 273 427 <= sample rate, f 15;
+#X text 494 45 We use a ratio value to set the speed \, this can also
+be set as a percentage value or in cents. All you need is to multiply
+the ratio by the frequency in hertz. Note that negative percentage/ratio
+values plays the file backwards., f 58;
+#X text 494 115 We need to multiply the output of [phasor~] by the
+number of samples in the file so we can access the indexes from the
+array., f 58;
+#X text 35 21 If you want to play a sound file at different speeds
+or even backwards \, you need objects that perform interpolation such
+as the native [tabread4~] object or [table~] from ELSE., f 61;
+#X text 36 71 With them you can then set any reading speed (such as
+1.5x) which means the reading point will fall in between samples \,
+hence you need to interpolate. We'll see the interpolation type of
+[tabread4~] a bit later., f 61;
+#X text 37 139 These objects also allow you to play files with a different
+sample rate than Pd is running \, because since you can play the file
+at different speeds \, you can also compensate the difference.;
+#X text 37 210 In this example we use [phasor~] to read from [tabread4~].
+The [phasor~] object is used to play the sample in a loop \, and we
+need to find the frequency corresponding to the sound file's period.
+We do that by dividing the sample rate of the file (even if it's different
+than Pd's) by the number of samples (both information are given by
+[soundfiler])., f 61;
+#X obj 334 518 cnv 15 385 140 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X text 352 522 Interpolation error:;
+#X obj 539 349 sr~ 44100;
+#X text 353 542 Interpolation can add noise artifacts. To reduce this
+error you can work with files with higher sample rates than Pd is running
+\, such as 88.2 KHz sound file when running at 44.1 Khz as in this
+example., f 50;
+#X text 353 617 You can use a good resampling software to upsample
+a sound file as was done here for this example., f 50;
+#X connect 1 0 5 0;
+#X connect 1 0 26 0;
+#X connect 1 1 14 0;
+#X connect 2 0 19 0;
+#X connect 3 0 13 0;
+#X connect 3 0 13 1;
+#X connect 4 0 8 0;
+#X connect 5 0 7 0;
+#X connect 6 0 22 0;
+#X connect 8 0 10 0;
+#X connect 9 0 12 0;
+#X connect 10 0 23 0;
+#X connect 12 0 10 0;
+#X connect 14 0 26 1;
+#X connect 14 0 27 0;
+#X connect 19 0 3 0;
+#X connect 20 0 19 1;
+#X connect 21 0 23 1;
+#X connect 23 0 2 0;
+#X connect 24 0 1 0;
+#X connect 25 0 6 0;
+#X connect 26 0 25 0;
+#X connect 26 1 25 1;

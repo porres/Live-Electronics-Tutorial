@@ -1,0 +1,79 @@
+#N canvas 638 59 511 574 12;
+#X obj 106 171 r~ \$0-sample;
+#X obj 244 253 s~ \$0-sample;
+#X obj 154 394 r~ \$0-sample;
+#N canvas 537 23 360 507 delay 0;
+#X obj 79 49 inlet~;
+#X obj 79 144 rfft~;
+#X obj 205 278 block~ 1024 4;
+#X obj 129 450 outlet~;
+#X obj 129 306 rifft~;
+#X obj 129 395 /~ 1536;
+#X floatatom 247 167 5 0 0 0 - - -, f 5;
+#X obj 251 45 inlet;
+#X obj 55 238 ffdelay~ -samps;
+#X obj 175 236 ffdelay~ -samps;
+#X obj 79 104 hann~;
+#X obj 129 363 hann~;
+#X connect 0 0 10 0;
+#X connect 1 0 8 0;
+#X connect 1 1 9 0;
+#X connect 4 0 11 0;
+#X connect 5 0 3 0;
+#X connect 6 0 8 1;
+#X connect 6 0 9 1;
+#X connect 7 0 6 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 1;
+#X connect 10 0 1 0;
+#X connect 11 0 5 0;
+#X restore 154 456 pd delay;
+#X obj 207 432 nbx 5 14 1 12 0 0 empty empty empty 0 -8 0 10 -228856
+-1 -1 3 256;
+#N canvas 537 23 678 457 shift 0;
+#X obj 77 37 inlet~;
+#X obj 77 132 rfft~;
+#X obj 140 123 block~ 1024 4;
+#X obj 77 398 outlet~;
+#X obj 77 284 rifft~;
+#X obj 77 373 /~ 1536;
+#X obj 48 212 lrshift~ 12;
+#X obj 136 213 lrshift~ 12;
+#X obj 77 92 hann~;
+#X obj 77 348 hann~;
+#X text 235 206 positive numbers shift to the left \; negative numbers
+shift to the right;
+#X text 236 183 Try other numbers;
+#X connect 0 0 8 0;
+#X connect 1 0 6 0;
+#X connect 1 1 7 0;
+#X connect 4 0 9 0;
+#X connect 5 0 3 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 1;
+#X connect 8 0 1 0;
+#X connect 9 0 5 0;
+#X restore 106 203 pd shift;
+#X obj 106 241 out~;
+#X obj 154 494 out~;
+#X text 49 17 This example shifts the frequency bins of a FFT analysis.
+The result is that the frequency points are shifted \, but this does
+not implement a pitch shifter \, just shifts the harmonics of the FFT
+up or down. The effect actually sounds quite inharmonic as the original
+harmonic content is lost.;
+#X text 49 101 We use the native [lrshift~] object to shift frquencies
+to the right or left., f 59;
+#X obj 244 208 sampler~ ../../../samples/bubul.wav 1 1, f 30;
+#X text 89 339 Another alternative is to use [ffdelay~] to shift bins
+to the right., f 41;
+#X text 268 432 <= # of bins;
+#X text 88 457 click =>;
+#X text 38 205 click =>;
+#X connect 0 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 7 1;
+#X connect 3 0 7 0;
+#X connect 4 0 3 1;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 10 0 1 0;

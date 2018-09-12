@@ -1,0 +1,35 @@
+#N canvas 389 36 562 472 12;
+#X obj 95 318 complex-mod~;
+#X obj 95 289 hilbert~;
+#X obj 176 288 nbx 5 16 -2000 2000 0 0 empty mod empty 0 -8 0 13 -228856
+-1 -1 100 256;
+#X obj 95 258 osc~ 440;
+#X obj 95 350 out~;
+#X text 179 265 Modulator;
+#X text 61 41 Pd Vanilla also proveds an extra abstraction for complex
+modulation. It needs a complex signal input and a modulating frequency.
+;
+#X obj 377 283 nbx 5 16 -2000 2000 0 0 empty mod empty 0 -8 0 13 -228856
+-1 -1 0 256;
+#X obj 296 278 osc~ 440;
+#X obj 296 347 out~;
+#X text 380 260 Modulator;
+#X obj 296 314 freqshift~;
+#X text 61 95 This abstraction also provides a second output \, which
+is a separate and opposite sideband. That is a frequency shift to the
+opposite direction. Thinking of a Ring Modulator \, is like you the
+two sidebands appart.;
+#X text 60 163 The ELSE library also provides a similar object \, called
+[freqshift~]. The difference is that it doesn't need a comples signal
+input \, but a real one \, because the conversion to a complex signal
+is done internally.;
+#X connect 0 0 4 0;
+#X connect 0 1 4 1;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 0 2;
+#X connect 3 0 1 0;
+#X connect 7 0 11 1;
+#X connect 8 0 11 0;
+#X connect 11 0 9 0;
+#X connect 11 1 9 1;

@@ -1,16 +1,16 @@
-#N canvas 400 166 942 549 12;
+#N canvas 354 140 942 549 12;
 #X obj 587 354 * 1000;
 #X obj 587 406 osc~;
 #X text 766 387 KHz;
 #X obj 587 280 nbx 3 19 0 100 0 0 empty osc empty 0 -8 0 14 -228856
--1 -1 40 256;
+-1 -1 0 256;
 #X obj 587 450 out~;
 #X obj 201 132 display;
 #X obj 201 108 nyquist~;
 #X obj 667 349 fold;
 #X obj 667 375 nbx 6 15 -1e+37 1e+37 0 0 empty osc empty 0 -8 0 11
--228856 -1 -1 4.1 256;
-#X obj 691 322 nyquist~ -khz;
+-228856 -1 -1 0 256;
+#X obj 692 322 nyquist~ -khz;
 #X obj 232 341 pic foldover.gif;
 #X text 24 20 Nyquist's theorem says the highest frequency we can represent
 (also called "nyquist frequncy") is half the sample rate. Higher frequencies
@@ -37,7 +37,6 @@ it folds back again and starts raising up.;
 #X text 642 281 <= Kilohertz;
 #X text 740 374 <= Alias;
 #X text 408 329 <= [pic] object \, from ELSE, f 16;
-#X obj 830 282 e;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 1 0 4 1;

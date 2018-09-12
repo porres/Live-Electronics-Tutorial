@@ -1,0 +1,189 @@
+#N canvas 423 196 937 458 12;
+#X obj 629 134 nbx 4 14 0 44.1 0 0 empty Khz Khz 0 -6 0 10 -228856
+-1 -1 5 256;
+#X floatatom 512 176 0 0 0 0 - - -;
+#X text 492 175 Hz;
+#X obj 689 133 nbx 4 14 0 1 0 0 empty empty phase 0 -6 0 10 -228856
+-1 -1 0 256;
+#X msg 699 158 0;
+#X msg 730 158 0.25;
+#X msg 769 158 0.5;
+#X msg 803 158 0.75;
+#X obj 629 208 osc~ 5000;
+#X obj 629 239 fft~;
+#X text 20 17 The [fft~] object performs a "Fast Fourier Transform".
+It's called a "transform" because it transforms from the time domain
+to the frequency domain. The operation is done in a whole block of
+audio - defined by [block~].;
+#X text 19 305 Each sample in the block (real or imaginary) represents
+a frequency point (a.k.a frequency bands or bins). The frequency band
+is calculated by dividing the sample rate by the block size \, and
+the frequency points are then a harmonic series formed by multiples
+of this frequency band! Open the subpatch below:;
+#X text 669 259 Imaginary;
+#X text 591 255 Real;
+#N canvas 151 65 942 581 plot 0;
+#X text 102 355 Amplitude;
+#X obj 556 189 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+1;
+#X obj 556 210 metro 205;
+#X obj 573 150 loadbang;
+#X obj 650 194 del 500;
+#X obj 49 289 tabwrite~ \$0-Re;
+#X obj 371 289 tabwrite~ \$0-Im;
+#X obj 171 482 tabwrite~ \$0-Amplitude;
+#X obj 650 228 \$0;
+#X obj 171 333 car2pol~;
+#X text 236 358 Phase;
+#X obj 556 236 s \$0-bang;
+#X obj 388 233 r \$0-bang;
+#X obj 239 408 r \$0-bang;
+#X obj 224 453 tabwrite~ \$0-Phase;
+#X obj 172 45 inlet~;
+#X obj 371 54 inlet~;
+#X text 379 87 Imaginary;
+#X text 185 84 Real;
+#X obj 171 144 expr~ if($v1 < 0.01 \, 0 \, $v1) \; if($v2 < 0.01 \,
+0 \, $v2);
+#X msg 650 268 \; pd dsp 1 \; Khz 5 \; \$1-Re xticks 0 32 1 \; \$1-Im
+xticks 0 32 1 \; \$1-Phase xticks 0 32 1 \; \$1-Amplitude xticks 0
+32 1;
+#X connect 1 0 2 0;
+#X connect 2 0 11 0;
+#X connect 3 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 8 0;
+#X connect 8 0 20 0;
+#X connect 9 0 7 0;
+#X connect 9 1 14 0;
+#X connect 12 0 6 0;
+#X connect 12 0 5 0;
+#X connect 13 0 7 0;
+#X connect 13 0 14 0;
+#X connect 15 0 19 0;
+#X connect 16 0 19 1;
+#X connect 19 0 5 0;
+#X connect 19 0 9 0;
+#X connect 19 1 6 0;
+#X connect 19 1 9 1;
+#X restore 614 285 pd plot;
+#X obj 512 134 nbx 3 14 0 127 0 0 empty empty empty 0 -8 0 12 -228856
+-1 -1 0 256;
+#X text 494 114 "Harmonic";
+#X obj 629 165 * 1000;
+#X obj 512 152 expr $i1 * band;
+#X text 19 227 A FFT decomposes a periodic function into pure tones
+defined by Cosine (real) and Sine (imaginary) amplitudes. Hence \,
+we have two outputs in the frequency domain - where the left outlet
+is the real part \, and the right outlet is the imaginary part.;
+#N canvas 420 107 662 630 graphs 0;
+#X obj 10 6 cnv 15 630 610 empty empty empty 20 12 0 14 -33289 -66577
+0;
+#X obj 25 15 cnv 15 600 280 empty empty Cartesian 20 12 0 14 -262130
+-4160 0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-Re 128 float 0;
+#X coords 0 128 127 -128 256 200 1;
+#X restore 57 67 graph;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-Im 128 float 0;
+#X coords 0 128 127 -128 256 200 1;
+#X restore 333 66 graph;
+#X obj 58 68 cnv 15 254 198 empty empty empty 20 12 0 14 -236717 -66577
+0;
+#X text 161 264 Nyquist;
+#X text 55 263 0;
+#X text 302 263 sr;
+#X text 437 265 Nyquist;
+#X text 331 264 0;
+#X text 574 263 sr;
+#X obj 334 67 cnv 15 254 198 empty empty empty 20 12 0 14 -257521 -66577
+0;
+#X text 42 155 0;
+#X text 320 157 0;
+#X obj 25 328 cnv 15 600 280 empty empty Polar 20 12 0 14 -262130 -4160
+0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-Amplitude 128 float 0;
+#X coords 0 128 127 0 256 200 1;
+#X restore 56 372 graph;
+#X obj 57 373 cnv 15 254 198 empty empty empty 20 12 0 14 -204786 -66577
+0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-Phase 128 float 0;
+#X coords 0 -3.14 127 3.14 256 200 1 0 0;
+#X restore 333 373 graph;
+#X obj 334 374 cnv 15 254 198 empty empty empty 20 12 0 14 -203904
+-66577 0;
+#X text 437 572 Nyquist;
+#X text 331 571 0;
+#X text 574 570 sr;
+#X text 160 572 Nyquist;
+#X text 54 571 0;
+#X text 300 570 sr;
+#X text 320 463 0;
+#X text 162 41 Cosine;
+#X text 445 43 Sine;
+#X restore 781 248 pd graphs;
+#N canvas 389 161 734 515 Frequency-Bands/Harmonic-Series 0;
+#X obj 146 196 nbx 7 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
+-228856 -1 -1 344.531 256;
+#X floatatom 146 125 5 0 0 0 - - -;
+#X text 38 195 Frequency band;
+#X text 245 198 Hertz;
+#X text 150 263 It needs to be clear that the block size defines a
+frequency resolution! The bigger the block size \, the more frequency
+points we have and the smaller the frequency band is. In this examples
+we have just 128 frequency points \, which are values from 0 to 127
+multiplied by this frequency band (0 Hz to about 43.755 KHz).;
+#X text 150 361 Let's stress that a FFT decomposes a PERIODIC Signal
+into pure tones. A periodic signal needs to be harmonic and the implication
+is that the signal is decomposed into a harmonic series that depends
+on the sample rate and block size.;
+#X obj 452 164 nbx 7 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
+-228856 -1 -1 344.531 256;
+#X obj 452 135 blocksize~ -hz;
+#X obj 452 195 v band;
+#X floatatom 342 175 5 0 0 0 - - -;
+#X obj 342 151 blocksize~;
+#X obj 146 159 / 128;
+#X text 194 153 divide by block size, f 11;
+#X text 284 68 The [blocksize~] object from the ELSE library gives
+you both the block size and also the corresponding frequency., f 49
+;
+#X obj 146 96 sr~;
+#X connect 1 0 11 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X connect 10 0 9 0;
+#X connect 11 0 0 0;
+#X connect 14 0 1 0;
+#X restore 187 403 pd Frequency-Bands/Harmonic-Series;
+#X text 475 29 Below we have a sine wave being analyzed. Note that
+we have a stable analysis graph only if the frequency matches a harmonic
+of the FFT. Open [pd graphs] for the analysis results., f 53;
+#X text 20 135 The FFT is an optimized algorythm for Fourier Analysis
+in the digital domain and requires the block of audio to be a power
+of 2! In Pd and live electronics \, we're dealing mostly with FFT and
+\, more specifically STFT ("Short Time Fourier Transform") \, which
+are analysis of reasonably small audio snippets.;
+#X text 772 222 Click/open:;
+#X text 478 327 Note there's a mirroring of frequencies after Nyquist.
+This will be discussed further. The output of [fft~] is in the cartesian
+form \, but musicians are used to the polar form representation \,
+whith Amplitude and Initial Phase - thus we convert to polar as well.The
+amplitude values are up to half the block size and the Initial Phase
+is in radians.;
+#X obj 205 96 block~ 128;
+#X connect 0 0 17 0;
+#X connect 1 0 8 0;
+#X connect 3 0 8 1;
+#X connect 4 0 8 1;
+#X connect 5 0 8 1;
+#X connect 6 0 8 1;
+#X connect 7 0 8 1;
+#X connect 8 0 9 0;
+#X connect 9 0 14 0;
+#X connect 9 1 14 1;
+#X connect 15 0 18 0;
+#X connect 17 0 8 0;

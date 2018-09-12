@@ -1,0 +1,60 @@
+#N canvas 404 121 913 418 12;
+#X obj 161 293 readsf~;
+#X msg 116 259 stop;
+#X obj 236 295 spigot;
+#X obj 275 272 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X text 291 271 loop;
+#X obj 161 218 openpanel;
+#X obj 161 196 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X msg 161 268 open \$1 \, 1;
+#X obj 118 323 out~;
+#X obj 161 244 symbol ../../../samples/bubul.wav;
+#X obj 137 219 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 181 194 Choose file;
+#X text 92 218 play;
+#X text 35 89 An open message with a sound file is needed every time
+before playing the file. A "start" message (or a non zero number) plays
+the file \, and a "stop" (or zero) stops it. When its done playing
+\, a bang is sent out the right outlet. We use this bang for a loop
+below., f 58;
+#X text 35 27 The simplest way to play a sound file in Pd Vanilla is
+with the [readsf~] object. It plays directly from your hard drive and
+offer not that many features. Check help file for more details.;
+#X obj 650 318 out~;
+#X obj 569 219 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 569 266 sampler~ ../../../samples/violin.wav;
+#X text 486 30 The [sampler~] obhect from ELSE is an abstraction that
+relies on the [readsf~] object. A big convenience is that it has multi
+channel support and can query the number of channels from a sound file
+given as an argument., f 54;
+#X obj 621 162 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X text 532 219 play;
+#X msg 621 184 loop \$1;
+#X msg 625 212 open;
+#X text 666 213 Choose file;
+#X msg 626 238 stop;
+#X text 488 116 Check its help file for more details and features.
+;
+#X connect 0 0 8 0;
+#X connect 0 0 8 1;
+#X connect 0 1 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 9 0;
+#X connect 3 0 2 1;
+#X connect 5 0 9 0;
+#X connect 6 0 5 0;
+#X connect 7 0 0 0;
+#X connect 9 0 7 0;
+#X connect 10 0 9 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 17 1 15 1;
+#X connect 19 0 21 0;
+#X connect 21 0 17 0;
+#X connect 22 0 17 0;
+#X connect 24 0 17 0;

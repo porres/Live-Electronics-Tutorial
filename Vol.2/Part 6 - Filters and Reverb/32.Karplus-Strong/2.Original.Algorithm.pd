@@ -1,0 +1,79 @@
+#N canvas 244 44 950 603 12;
+#X obj 133 364 *~;
+#X obj 395 463 *~;
+#X obj 413 432 *~;
+#X obj 395 493 delwrite~ \$0-Kp 1000;
+#X floatatom 413 362 5 0 0 0 - - -;
+#X obj 416 341 hsl 128 15 0 1 0 0 empty \$0-fb empty -2 -8 0 10 -228856
+-1 -1 12446 1;
+#X text 448 340 feedback;
+#X floatatom 617 355 0 0 0 0 - - -;
+#X obj 620 328 hsl 128 15 0 1 0 0 empty \$0-blend empty -2 -8 0 10
+-228856 -1 -1 12700 1;
+#X text 662 327 blend;
+#X obj 487 388 noise~;
+#X obj 487 436 expr~ if($v1 < $v2 \, 1 \, -1), f 19;
+#X text 61 366 envelope;
+#X obj 220 504 out~;
+#X obj 263 402 mov.avg~ 2;
+#X obj 487 412 rescale~;
+#X obj 413 387 f2s~ 10;
+#X obj 151 332 timed.gate~;
+#X obj 263 333 display~ 5;
+#X text 309 333 ms;
+#X obj 263 363 delread4~ \$0-Kp;
+#X obj 133 270 clipnoise~;
+#X obj 263 277 randi~ 50 500;
+#X obj 263 302 expr~ 1000 / $v1;
+#X obj 263 253 tempo~ 60 100 -on;
+#X obj 617 381 f2s~ 10;
+#X obj 674 438 initmess \; \$0-fb 0.98 \; \$0-blend 1;
+#X text 465 172 The Karplus Strong algorythm is from the late 70s and
+is the simplest case of Physical Modelings. More precisely \, an example
+of Waveguide Synthesis. Despite being simple it can achieve good results
+modeling plucked instruments., f 58;
+#X text 39 30 Let's now closely recreate the original Karplus-Strong
+algorythm. Its noise input consisted only in 1 or -1 values stored
+in a table \, we're using a live input from [clipnoise~] instead.,
+f 55;
+#X text 461 34 The original feedback happens for a blend of 1 \, 0
+gives us a negative feedback. Values torwards 0.5 insert random changes
+between 0 and 1 \, 0.5 being white noise (and noise is what it sounds
+like) - was aimed to more percussive sounds., f 58;
+#X text 40 96 For the feedback \, the ideal would be to do it in a
+subpatch with a block size of 1 \, for very high frequencies. We'll
+do this later., f 55;
+#X text 47 147 An important detail is that we have now is a mean filter
+of two samples inside the feedback loop \, this is a lowpass (high
+cut) filter. The original algorythm also describes a "blend" parameter
+which alters the feedback value., f 54;
+#X text 466 244 As a kind od Waveguide model \, the Karplus-Strong
+is considered a "Wavetable Modification" algorithm \, for at each iteration
+\, the sound clip gets filtered and modified., f 58;
+#X text 461 113 A negative feedback promotes inversion of the polarity
+for each iteration \, which makes it sound an octave lower \, besides
+changing the harmonic content.;
+#X connect 0 0 14 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 4 0 16 0;
+#X connect 5 0 4 0;
+#X connect 7 0 25 0;
+#X connect 8 0 7 0;
+#X connect 10 0 15 0;
+#X connect 11 0 2 1;
+#X connect 14 0 1 0;
+#X connect 14 0 13 0;
+#X connect 14 0 13 1;
+#X connect 15 0 11 0;
+#X connect 16 0 2 0;
+#X connect 17 0 0 1;
+#X connect 18 0 20 0;
+#X connect 20 0 14 0;
+#X connect 21 0 0 0;
+#X connect 22 0 23 0;
+#X connect 23 0 18 0;
+#X connect 23 0 17 1;
+#X connect 24 0 17 0;
+#X connect 24 0 22 0;
+#X connect 25 0 11 1;

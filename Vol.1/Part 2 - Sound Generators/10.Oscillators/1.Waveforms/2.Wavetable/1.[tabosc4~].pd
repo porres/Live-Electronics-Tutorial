@@ -98,7 +98,7 @@
 #X connect 11 0 5 0;
 #X coords 0 -1 1 1 430 27 2 100 200;
 #X restore 503 228 pd normalizado;
-#N canvas 345 184 415 268 sequencer 1;
+#N canvas 345 184 415 268 sequencer 0;
 #X obj 33 95 mtof;
 #X obj 144 175 *~;
 #X obj 144 204 outlet~;

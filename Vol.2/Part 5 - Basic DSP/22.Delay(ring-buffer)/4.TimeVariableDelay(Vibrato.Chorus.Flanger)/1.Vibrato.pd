@@ -1,0 +1,38 @@
+#N canvas 523 110 640 445 12;
+#X obj 81 190 sampler~ ../../../../samples/guitar.wav 1 1, f 34;
+#X obj 353 170 nbx 5 14 0.1 20 0 0 empty \$0-LFO empty 0 -8 0 10 -228856
+-1 -1 0.1 256;
+#X text 353 152 Rate;
+#X obj 434 170 nbx 5 14 0 200 0 0 empty \$0-depth empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X text 441 151 Depth;
+#X obj 272 259 ffdelay~ 200;
+#X obj 353 226 rescale~ 0, f 12;
+#X obj 353 198 osc~ 0.5;
+#X obj 434 198 f2s~ 10 10;
+#X obj 253 314 xfade~;
+#X obj 253 350 out~;
+#X obj 381 293 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X obj 378 317 f2s~ 10 0;
+#X text 516 291 vibrato;
+#X text 311 291 original;
+#X text 412 291 dry/wet;
+#X text 86 28 Varying the delay time can generate vibrato \, chorus
+and flanger affects. In this example an LFO controls the delay time
+\, which ascellerates and deascelerates the reading speed \, promoting
+a vibrato effect. The LFO's frequency is the vibrato "rate" \, and
+its amplitude the "depth". A crossfade allows you to mix between the
+original (or dry) and processed (or wet) output.;
+#X connect 0 0 5 0;
+#X connect 0 0 9 0;
+#X connect 1 0 7 0;
+#X connect 3 0 8 0;
+#X connect 5 0 9 1;
+#X connect 6 0 5 1;
+#X connect 7 0 6 0;
+#X connect 8 0 6 2;
+#X connect 9 0 10 0;
+#X connect 9 0 10 1;
+#X connect 11 0 12 0;
+#X connect 12 0 9 2;

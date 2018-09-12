@@ -1,0 +1,45 @@
+#N canvas 581 25 579 737 12;
+#X obj 364 262 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X floatatom 361 293 0 0 0 0 - - -;
+#X text 71 600 BUG:;
+#X obj 46 393 out~;
+#X obj 318 425 out~;
+#X obj 89 310 player~ ../../../../samples/bubul.wav 1 1, f 33;
+#X msg 361 326 500 \$1;
+#X obj 361 356 envgen~;
+#X text 68 108 A signal input allows a smooth and continuous change
+in the read position. Note however that such changes promote a speed
+change. Thinking again of a magnetic tape \, for the read head to move
+from one point to another \, its moving speed is sumed to the normal
+reading speed of the tape., f 58;
+#X text 69 187 But when the read head reaches its destination and rests
+there \, only the reading speed of the tape is acting \, this the original
+speed is restored. Fool around with the slider below and see how that
+happens., f 58;
+#X obj 361 388 delread4~ \$0-delay;
+#X obj 112 359 delwrite~ \$0-delay 1000;
+#X text 70 480 Interpolation:;
+#X text 70 504 Since it uses the same interpolation as [tabread4~]
+\, the [delread4~] object also ignores the first recorded sample \,
+as it is supposed to be a guard point. In practical terms \, the object's
+minimum delay is 1 sample (whereas [delread~] can have a minimum delay
+of 0).;
+#X text 72 625 Up to Pd 0.48-2 \, [delread~] e [delread4~] cannot read
+up to the maximum delay line \, but they go up to a block of audio
+less. A workaround is to specify a buffer size a block longer than
+you actually need., f 58;
+#X text 68 12 The [delread~] object only has control input and does
+not interpolate \, so it can only read back in a buffer at a specific
+sample behind. On the other hand \, the native [delread4~] object can
+read in between samples \, with the same kind of interpolation used
+in [tabread4~] and accepts signal inputs.;
+#X connect 0 0 1 0;
+#X connect 1 0 6 0;
+#X connect 5 0 3 0;
+#X connect 5 0 3 1;
+#X connect 5 0 11 0;
+#X connect 6 0 7 0;
+#X connect 7 0 10 0;
+#X connect 10 0 4 0;
+#X connect 10 0 4 1;

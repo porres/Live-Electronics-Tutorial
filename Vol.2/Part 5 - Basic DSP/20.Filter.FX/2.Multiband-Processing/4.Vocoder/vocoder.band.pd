@@ -1,0 +1,43 @@
+#N canvas 596 80 427 572 12;
+#X obj 208 233 inlet;
+#X obj 160 470 *~;
+#X obj 208 298 mtof;
+#X obj 87 330 mtof;
+#X obj 178 417 mov.rms~ 512;
+#X obj 160 511 outlet~;
+#X obj 57 232 inlet~;
+#X obj 146 233 inlet~;
+#X obj 208 264 route freq q;
+#X obj 57 389 bandpass~;
+#X obj 178 389 bandpass~;
+#X obj 271 328 f2s~ 10;
+#X obj 208 320 f2s~ 10;
+#X obj 87 355 f2s~ 10;
+#X text 256 234 frequency/Q;
+#X text 277 410 Amplitude Analysis, f 9;
+#X text 61 207 synth;
+#X text 144 207 speech;
+#X text 47 26 This abstraction is used as part of the vocoder example
+inside a [clone] object., f 43;
+#X text 44 76 Each of the 28 instances receive a different central
+frequency. The synth is filtered by a [bandpass~] object and the gain
+output depends on the analysis of the speech input \, done with the
+[mov.rms~] object - which gives us a mean value for each sample.,
+f 44;
+#X text 194 467 <= gain adjustment;
+#X connect 0 0 8 0;
+#X connect 1 0 5 0;
+#X connect 2 0 12 0;
+#X connect 3 0 13 0;
+#X connect 4 0 1 1;
+#X connect 6 0 9 0;
+#X connect 7 0 10 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 1 11 0;
+#X connect 9 0 1 0;
+#X connect 10 0 4 0;
+#X connect 11 0 9 2;
+#X connect 11 0 10 2;
+#X connect 12 0 10 1;
+#X connect 13 0 9 1;
