@@ -1,7 +1,7 @@
 #N canvas 404 125 842 507 12;
 #X obj 68 255 s~ \$0-sample;
 #X obj 108 325 r~ \$0-sample;
-#N canvas 134 154 414 468 phase-shift 1;
+#N canvas 134 154 414 468 phase-shift 0;
 #X obj 107 27 inlet~;
 #X obj 107 132 rfft~;
 #X obj 218 256 block~ 1024 4;
@@ -12,13 +12,12 @@
 #X obj 107 170 car2pol~;
 #X obj 107 242 pol2car~;
 #X obj 107 92 hann~;
-#X obj 107 328 hann~;
 #X obj 187 29 inlet~;
-#X obj 213 137 display~;
+#X obj 107 328 hann~;
 #X connect 0 0 9 0;
 #X connect 1 0 7 0;
 #X connect 1 1 7 1;
-#X connect 4 0 10 0;
+#X connect 4 0 11 0;
 #X connect 5 0 3 0;
 #X connect 6 0 8 1;
 #X connect 7 0 8 0;
@@ -26,15 +25,14 @@
 #X connect 8 0 4 0;
 #X connect 8 1 4 1;
 #X connect 9 0 1 0;
-#X connect 10 0 5 0;
-#X connect 11 0 6 1;
-#X connect 11 0 12 0;
+#X connect 10 0 6 1;
+#X connect 11 0 5 0;
 #X restore 122 368 pd phase-shift;
 #X obj 564 198 nbx 5 14 0.1 10 1 0 empty rate empty 0 -8 0 10 -228856
 -1 -1 0.5 256;
 #X obj 640 171 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 1 256;
-#X obj 643 148 hsl 128 15 0 1 0 0 empty depth empty -2 -8 0 10 -228856
+-228856 -1 -1 5 256;
+#X obj 643 148 hsl 128 15 0 5 0 0 empty depth empty -2 -8 0 10 -228856
 -1 -1 12700 1;
 #X text 569 175 Rate;
 #X text 684 146 Depth;
@@ -80,12 +78,12 @@ The classic way to implement this process is with filters \, and we'll
 see how to implement it with allpass filters. But let's see first a
 FFT interpretation of this process., f 53;
 #X obj 220 263 hsl 128 15 5 30 1 0 empty depth empty -2 -8 0 10 -228856
--1 -1 11900 1;
+-1 -1 0 1;
 #X obj 217 341 *~;
 #X obj 252 341 pi;
 #X obj 217 308 rampnoise~ 10;
 #X obj 217 286 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 26.7981 256;
+-228856 -1 -1 5 256;
 #X text 41 117 Let's start by changing the phase of a signal by summing
 the initial phase information to random ramp values. Changing the phase
 to a fixed value does not alter the tonal quality. But a continuous

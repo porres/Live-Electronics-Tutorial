@@ -1,12 +1,12 @@
 #N canvas 290 86 871 366 12;
-#X obj 221 225 nbx 5 14 0 10 0 0 \$0-reson \$0-reson-set empty 0 -8
-0 10 -228856 -1 -1 0 256;
-#X obj 158 192 nbx 5 14 20 20000 0 0 \$0-freq \$0-freq-set empty 0
--8 0 10 -228856 -1 -1 20 256;
-#X obj 161 167 hsl 200 15 200 10000 1 0 empty \$0-freq-slider-set empty
--2 -8 0 10 -228856 -1 -1 0 1;
-#X obj 224 203 hsl 150 15 0 10 0 0 empty \$0-reson-slider-set empty
--2 -8 0 10 -228856 -1 -1 0 1;
+#X obj 250 252 nbx 5 14 0 10 0 0 \$0-reson \$0-reson-set empty 0 -8
+0 10 -228856 -1 -1 9.79866 256;
+#X obj 158 202 nbx 5 14 20 20000 0 0 \$0-freq \$0-freq-set empty 0
+-8 0 10 -228856 -1 -1 302.217 256;
+#X obj 161 177 hsl 200 15 200 10000 1 0 empty \$0-freq-slider-set empty
+-2 -8 0 10 -228856 -1 -1 2100 1;
+#X obj 253 230 hsl 150 15 0 10 0 0 empty \$0-reson-slider-set empty
+-2 -8 0 10 -228856 -1 -1 14600 1;
 #X obj 487 120 noise~;
 #X obj 75 207 bl.saw~;
 #X obj 104 291 out~;
@@ -19,11 +19,9 @@
 -2 -8 0 10 -228856 -1 -1 0 1;
 #X obj 638 136 hsl 150 15 10 100 0 0 empty \$0-reson-slider-set empty
 -2 -8 0 10 -228856 -1 -1 0 1;
-#X obj 158 228 f2s~ 10;
-#X obj 104 255 lowpass~ 500 4.5;
 #X obj 75 182 sig~ 50;
-#X text 196 166 Resonant Frequency;
-#X text 254 202 Q/Resonance;
+#X text 196 176 Resonant Frequency;
+#X text 283 229 Q/Resonance;
 #X obj 505 159 bandpass~ 500 50;
 #X text 589 109 Resonant Frequency;
 #X text 665 135 Q/Resonance;
@@ -40,19 +38,21 @@ can be generalized as simply applying filtering into a sound source
 #X text 446 22 Noise sources are also usable for filtering in subtractive
 synthesis. Here's [noise~] through [bandpass~]. For a vey high Q/Resonance
 \, note how we can perceive a clear pitch., f 47;
-#X connect 0 0 13 2;
-#X connect 1 0 12 0;
+#X obj 158 228 f2s~ 10 500;
+#X obj 104 254 lowpass~ 500 4.5;
+#X connect 0 0 23 2;
+#X connect 1 0 22 0;
 #X connect 2 0 1 0;
 #X connect 3 0 0 0;
-#X connect 4 0 17 0;
-#X connect 5 0 13 0;
-#X connect 8 0 17 2;
-#X connect 9 0 17 1;
+#X connect 4 0 15 0;
+#X connect 5 0 23 0;
+#X connect 8 0 15 2;
+#X connect 9 0 15 1;
 #X connect 10 0 9 0;
 #X connect 11 0 8 0;
-#X connect 12 0 13 1;
-#X connect 13 0 6 0;
-#X connect 13 0 6 1;
-#X connect 14 0 5 0;
-#X connect 17 0 7 0;
-#X connect 17 0 7 1;
+#X connect 12 0 5 0;
+#X connect 15 0 7 0;
+#X connect 15 0 7 1;
+#X connect 22 0 23 1;
+#X connect 23 0 6 0;
+#X connect 23 0 6 1;

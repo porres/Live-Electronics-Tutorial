@@ -1,7 +1,7 @@
 #N canvas 479 51 688 535 12;
 #X obj 106 267 mtof;
 #X obj 106 303 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 46.2493 256;
+-228856 -1 -1 43.6535 256;
 #X text 85 301 Hz;
 #X obj 106 166 tgl 30 0 empty empty empty 0 -6 0 8 -228856 -1 -1 1
 1;
