@@ -83,7 +83,7 @@ response of a room and how we can use it as a reverb with convolution
 (using [concolve~] by William Brent). It's easy to find "IR" sound
 file libraries for convolution reverbs \, the one below is an IR of
 a church.;
-#X obj 102 633 rev1~;
+#X obj 100 633 rev1~;
 #X obj 46 539 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
 #X msg 116 583 90;
@@ -115,7 +115,7 @@ a church.;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
 #X restore 46 582 pd test;
-#X obj 102 664 out~;
+#X obj 100 664 out~;
 #X obj 263 603 rev2~ 100 90 3000 20;
 #X obj 263 531 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -205,7 +205,6 @@ Check its help file., f 41;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
 #X restore 574 175 pd test;
-#X text 503 453 Open its halp file for more details.;
 #X obj 574 204 plateverb~ 50 0.6 0.25 0.8 0.8, f 16;
 #X text 498 363 The [plateverb~] object is a reverb asbtraction available
 in the ELSE library. It is based on a patch by Tom Erbe implementing
@@ -214,6 +213,7 @@ the Dattorro plate stereo reverb model., f 42;
 first one - [rev1~] - consists in 10 stages of allpass filters. It
 has a decay parameter that indicates how much dB the output has after
 1 second in percentage of dB. Check its help file., f 54;
+#X text 503 453 Open its help file for more details.;
 #X connect 0 0 3 0;
 #X connect 3 0 4 0;
 #X connect 3 0 4 1;
@@ -241,6 +241,6 @@ has a decay parameter that indicates how much dB the output has after
 #X connect 26 0 27 0;
 #X connect 27 0 25 0;
 #X connect 30 0 32 0;
-#X connect 32 0 34 0;
-#X connect 34 0 31 0;
-#X connect 34 1 31 1;
+#X connect 32 0 33 0;
+#X connect 33 0 31 0;
+#X connect 33 1 31 1;

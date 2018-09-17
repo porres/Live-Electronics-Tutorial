@@ -1,15 +1,13 @@
-#N canvas 308 148 954 562 12;
-#X floatatom 613 158 5 0 1000 0 - - -, f 5;
-#X floatatom 689 197 5 0 0 0 - - -, f 5;
+#N canvas 308 148 956 574 12;
+#X floatatom 613 158 5 0 1000 0 - - -;
+#X floatatom 689 197 5 0 0 0 - - -;
 #X obj 175 334 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 692 175 hsl 128 15 -0.999 0.999 0 0 empty g ganho -2 -8 0 10
 -228856 -1 -1 629 1;
 #X obj 616 136 hsl 128 15 1 100 1 0 empty ms empty -2 -8 0 10 -191407
 -1 -1 5366 0;
-#X text 733 198 ganho de feedforward;
-#X text 788 212 e feedback;
-#X obj 624 190 s \$0-del;
+#X obj 621 190 s \$0-del;
 #X obj 198 432 *~;
 #X obj 160 402 noise~;
 #X obj 69 76 cnv 15 310 120 empty empty empty 20 12 0 14 -228856 -66577
@@ -68,24 +66,24 @@
 with native Pd objects., f 55;
 #N canvas 345 152 510 380 allpass 0;
 #X obj 67 128 * -1;
-#X obj 52 155 *~;
-#X obj 75 191 +~;
-#X obj 75 218 +~;
-#X obj 237 188 *~;
-#X obj 89 250 delwrite~ \$0-y 100;
+#X obj 49 155 *~;
+#X obj 72 191 +~;
+#X obj 72 218 +~;
+#X obj 247 189 *~;
+#X obj 86 250 delwrite~ \$0-y 100;
 #X obj 69 64 delwrite~ \$0-x 100;
-#X obj 75 300 outlet~;
+#X obj 72 300 outlet~;
 #X obj 341 198 block~ 1;
-#X obj 52 24 inlet~;
-#X text 132 301 y[n] = -g*x[n] + x[n-d] + g*y[n-d];
+#X obj 49 24 inlet~;
+#X text 129 301 y[n] = -g*x[n] + x[n-d] + g*y[n-d];
 #X text 106 47 feedforward;
-#X text 235 252 feedback;
+#X text 224 252 feedback;
 #X obj 198 125 r \$0-del;
 #X obj 90 157 delread4~ \$0-x;
 #X obj 198 157 delread4~ \$0-y;
-#X text 265 125 <= delay time;
-#X text 310 78 <= gain coefficient;
-#X obj 252 78 r \$0-g;
+#X text 272 125 <= delay time;
+#X text 323 79 <= gain coefficient;
+#X obj 265 79 r \$0-g;
 #X connect 0 0 1 1;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -103,35 +101,37 @@ with native Pd objects., f 55;
 #X restore 654 459 pd allpass;
 #X text 36 28 The [allpass.rev~] object from ELSE is a delay reverberator
 whose diagram is:, f 45;
-#X text 32 222 It's the same diagram as shown before for allpass filters
-\, but now we have a delay time parameter (d) which defiens the number
-of samples. Note that this is something new and different from order
-filters \, this is why this object is better defined as a reverberator
-rather than a filter.;
 #X obj 216 404 xselect~ 2 100 1;
 #X obj 728 280 initmess \; ms 7 \; g -0.9;
 #X text 472 28 This reverberator acts on the frequency content at the
 release. This is why we have short bursts of noise in this example
 \, so it affects transients and percussive sounds. Check its help file.
 ;
-#X connect 0 0 7 0;
-#X connect 0 0 50 1;
-#X connect 1 0 50 2;
-#X connect 1 0 59 0;
-#X connect 2 0 56 0;
+#X text 32 222 It's the same diagram as shown earlier for allpass filters
+\, but now we have a delay time parameter (d) which defines the number
+of samples. Note this is different than an 'n' order allpass filter
+and this is why this object is better defined as a reverberator rather
+than a filter.;
+#X text 733 198 ganin (feedforward;
+#X text 782 212 and feedback);
+#X connect 0 0 5 0;
+#X connect 0 0 48 1;
+#X connect 1 0 48 2;
+#X connect 1 0 57 0;
+#X connect 2 0 54 0;
 #X connect 3 0 1 0;
 #X connect 4 0 0 0;
-#X connect 8 0 49 0;
-#X connect 8 0 49 1;
-#X connect 8 0 52 0;
-#X connect 9 0 8 0;
-#X connect 50 0 47 0;
-#X connect 50 0 47 1;
-#X connect 51 0 50 0;
-#X connect 53 0 62 0;
-#X connect 54 0 65 0;
-#X connect 55 0 65 1;
-#X connect 56 0 65 0;
-#X connect 62 0 48 0;
-#X connect 62 0 48 1;
-#X connect 65 0 8 1;
+#X connect 6 0 47 0;
+#X connect 6 0 47 1;
+#X connect 6 0 50 0;
+#X connect 7 0 6 0;
+#X connect 48 0 45 0;
+#X connect 48 0 45 1;
+#X connect 49 0 48 0;
+#X connect 51 0 60 0;
+#X connect 52 0 62 0;
+#X connect 53 0 62 1;
+#X connect 54 0 62 0;
+#X connect 60 0 46 0;
+#X connect 60 0 46 1;
+#X connect 62 0 6 1;

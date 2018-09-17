@@ -1,0 +1,128 @@
+#N canvas 356 50 909 566 12;
+#X floatatom 647 239 5 -1 1 0 - a -;
+#X floatatom 690 299 5 -1 1 0 - b -;
+#X floatatom 733 360 5 -1 1 0 - c -;
+#X floatatom 604 185 5 0 100 0 - del -;
+#X obj 110 382 noise~;
+#X obj 660 266 s \$0-a;
+#X obj 702 329 s \$0-b;
+#X obj 754 392 s \$0-c;
+#X obj 617 210 s \$0-del;
+#N canvas 4 23 457 347 comb 0;
+#X obj 149 194 +~;
+#X obj 149 234 +~;
+#X obj 104 65 delwrite~ \$0-x 1000;
+#X obj 164 118 vd~ \$0-x;
+#X obj 165 273 delwrite~ \$0-y 1000;
+#X obj 241 154 vd~ \$0-y;
+#X obj 241 202 *~;
+#X obj 256 179 r \$0-c;
+#X obj 241 78 r \$0-del;
+#X obj 164 165 *~;
+#X obj 179 143 r \$0-b;
+#X obj 92 143 *~;
+#X obj 107 119 r \$0-a;
+#X obj 92 31 inlet~;
+#X obj 335 176 block~ 1;
+#X obj 149 305 outlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 0 15 0;
+#X connect 3 0 9 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 1;
+#X connect 7 0 6 1;
+#X connect 8 0 3 0;
+#X connect 8 0 5 0;
+#X connect 9 0 0 1;
+#X connect 10 0 9 1;
+#X connect 11 0 0 0;
+#X connect 12 0 11 1;
+#X connect 13 0 2 0;
+#X connect 13 0 11 0;
+#X restore 314 436 pd comb;
+#X obj 79 76 cnv 15 320 140 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 135 94 |;
+#X text 135 106 |;
+#X text 135 118 |;
+#X text 116 129 |;
+#X text 165 129 |;
+#X text 165 149 |;
+#X text 116 149 |;
+#X text 119 120 _______;
+#X text 119 149 _______;
+#X text 135 121 v;
+#X text 197 121 |;
+#X text 197 132 |;
+#X text 197 102 |;
+#X text 197 111 |;
+#X text 197 97 ^;
+#X text 281 95 |;
+#X text 281 107 |;
+#X text 281 119 |;
+#X text 262 130 |;
+#X text 311 130 |;
+#X text 311 150 |;
+#X text 262 150 |;
+#X text 265 121 _______;
+#X text 265 150 _______;
+#X text 281 122 v;
+#X text 227 123 |;
+#X text 227 133 |;
+#X text 227 101 |;
+#X text 227 111 |;
+#X text 227 96 ^;
+#X text 335 88 >;
+#X text 228 139 -(*c)-;
+#X text 92 88 x[n] -----(*a)--(+)--(+)----------- y[n];
+#X text 116 139 | z^-d |;
+#X text 262 140 | z^-d |;
+#X text 96 186 y[n] = a * x[n] + b * x[n-d] + c * y[n-d];
+#X obj 143 411 *~;
+#X text 749 329 feedforward;
+#X text 800 392 feedback;
+#X text 164 138 -(*b)-;
+#X obj 100 469 out~;
+#X text 45 31 The [comb.rev~] object from ELSE is a comb reverberator
+\, whose diagram is:;
+#X obj 561 397 comb.rev~ 100 0.8 0.5 0.9;
+#X obj 561 434 out~;
+#X obj 161 383 pulse~ 1;
+#X text 708 267 gain;
+#X obj 314 473 out~;
+#X text 51 306 The subpatch below implements a comb reverberator with
+native objects \, and to the right we have the external from ELSE.
+Check its help file for more information.;
+#X obj 163 442 s~ \$0-in;
+#X obj 314 407 r~ \$0-in;
+#X obj 532 236 r~ \$0-in;
+#X text 645 184 delay time;
+#X text 51 237 This is very similar to [allpass.rev~] \, but now we
+have independent coefficients for the input \, feedforward and feedback
+lines. This is also similar to [comb.filt~] but is more flexible and
+takes a delay period in ms instead.;
+#X text 474 76 Note that it acts as a reverberator \, much like the
+allpass reverberator \, but it does filter the input sound (unlike
+an allpass). Note how the white noise input becomes a pitched output
+in this process \, and how the fundamental pitch depends on the delay
+time period., f 51;
+#X connect 0 0 5 0;
+#X connect 0 0 53 2;
+#X connect 1 0 6 0;
+#X connect 1 0 53 3;
+#X connect 2 0 7 0;
+#X connect 2 0 53 4;
+#X connect 3 0 8 0;
+#X connect 3 0 53 1;
+#X connect 4 0 47 0;
+#X connect 9 0 57 0;
+#X connect 9 0 57 1;
+#X connect 47 0 51 0;
+#X connect 47 0 51 1;
+#X connect 47 0 59 0;
+#X connect 53 0 54 1;
+#X connect 53 0 54 0;
+#X connect 55 0 47 1;
+#X connect 60 0 9 0;
+#X connect 61 0 53 0;

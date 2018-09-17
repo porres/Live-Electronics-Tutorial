@@ -1,0 +1,51 @@
+#N canvas 356 50 967 364 12;
+#X floatatom 763 197 5 -0.99 0.99 0 - a -;
+#X floatatom 687 194 5 0 100 0 - del -;
+#X obj 91 158 cnv 15 320 140 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 270 181 |;
+#X text 270 193 |;
+#X text 270 205 |;
+#X text 251 216 |;
+#X text 300 216 |;
+#X text 300 236 |;
+#X text 251 236 |;
+#X text 254 207 _______;
+#X text 254 236 _______;
+#X text 270 208 v;
+#X text 216 209 |;
+#X text 216 219 |;
+#X text 216 187 |;
+#X text 216 197 |;
+#X text 216 182 ^;
+#X text 307 173 >;
+#X text 217 225 -(*c)-;
+#X text 251 226 | z^-d |;
+#X obj 612 267 out~;
+#X text 683 166 delay time;
+#X text 125 172 x[n] -------(+)----------- y[n];
+#X text 158 268 y[n] = x[n] + a * y[n-d];
+#X text 46 31 The [ffdelay~] object can also be used as a reverberator
+for reflections in a reverb system. It can be viewed as a simplification
+of the comb filter diagram \, with just the feedback section. With
+[comb.rev~] you could achieve the same by just zeroing the feedforward
+gain and setting the input gain to 1!;
+#X obj 612 230 fbdelay~ 100 0.8 -gain;
+#X obj 557 171 noise~;
+#X obj 590 200 *~;
+#X obj 608 172 pulse~ 1;
+#X text 496 27 And it sounds much like a comb filter/reverberator as
+well. Note how it can filter frequencies by promoting harmonic peaks
+that depend on the delay period.;
+#X text 806 197 feedback;
+#X text 496 79 One difference between [ffdelay~] and [comb.rev~] is
+that [fbdelay~] can also set the feedback parameter from an input in
+t60 - this is actually the default setting \, but here we have a gain
+coefficient instead.;
+#X connect 0 0 26 2;
+#X connect 1 0 26 1;
+#X connect 26 0 21 1;
+#X connect 26 0 21 0;
+#X connect 27 0 28 0;
+#X connect 28 0 26 0;
+#X connect 29 0 28 1;
