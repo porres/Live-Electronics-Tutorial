@@ -1,4 +1,4 @@
-#N canvas 237 45 587 611 12;
+#N canvas 653 70 587 611 12;
 #X obj 68 247 hradio 15 1 0 10 empty \$0-size empty 0 -8 0 10 -228856
 -1 -1 4;
 #X obj 68 295 nbx 5 14 64 1e+37 0 0 \$0-w_size \$0-w_size-set empty
@@ -20,15 +20,13 @@
 #X obj 68 270 expr pow(2 \, $f1 + 7);
 #X obj 254 288 out~;
 #X obj 392 288 out~;
-#X obj 111 106 sampler~ ../../../../samples/kantele.wav 1 1;
-#X obj 111 165 sampler~ ../../../../samples/numbers.wav 1 1;
 #X obj 123 499 out~;
 #N canvas 413 239 432 499 Morph 0;
 #X obj 108 42 inlet~;
 #X obj 176 41 inlet~;
 #X obj 105 451 outlet~;
 #X obj 267 41 inlet;
-#X floatatom 267 173 8 0 0 0 - - -, f 8;
+#X floatatom 267 173 8 0 0 0 - - -;
 #X obj 105 323 rifft~;
 #X obj 176 174 rfft~;
 #X obj 108 174 rfft~;
@@ -82,18 +80,20 @@
 #X text 60 26 In this variation we "morph" from one amplitude to another
 \, but it's just a simple crossfade. This goes from a original sound
 to a cross synthesis. Open the subpatch to the right.;
+#X obj 111 106 player~ ../../../../samples/kantele.wav 1 1;
+#X obj 111 165 player~ ../../../../samples/numbers.wav 1 1;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;
-#X connect 6 0 14 0;
-#X connect 7 0 15 0;
-#X connect 9 0 8 0;
-#X connect 9 0 8 1;
-#X connect 10 0 4 0;
-#X connect 10 0 4 1;
-#X connect 11 0 5 0;
-#X connect 11 0 5 1;
-#X connect 12 0 9 0;
-#X connect 13 0 9 1;
-#X connect 16 0 17 0;
-#X connect 17 0 9 2;
+#X connect 7 0 6 0;
+#X connect 7 0 6 1;
+#X connect 8 0 4 0;
+#X connect 8 0 4 1;
+#X connect 9 0 5 0;
+#X connect 9 0 5 1;
+#X connect 10 0 7 0;
+#X connect 11 0 7 1;
+#X connect 14 0 15 0;
+#X connect 15 0 7 2;
+#X connect 21 0 12 0;
+#X connect 22 0 13 0;

@@ -1,12 +1,12 @@
 #N canvas 579 23 638 521 12;
 #X obj 123 319 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
-0 10 -228856 -1 -1 10 256;
+0 10 -228856 -1 -1 100 256;
 #X obj 198 319 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-transpo empty 0
--8 0 10 -228856 -1 -1 -333 256;
+-8 0 10 -228856 -1 -1 0 256;
 #X obj 484 316 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X obj 83 319 tgl 18 0 empty \$0-play empty 17 7 0 10 -228856 -1 -1
-0 1;
+1 1;
 #X text 76 300 Play;
 #X text 203 299 Cents;
 #X obj 289 241 nbx 5 14 256 1e+37 0 0 \$0-window_size \$0-window_size-set
@@ -36,14 +36,14 @@ empty 0 -8 0 10 -228856 -1 -1 3;
 #X obj 174 175 rfft~;
 #X obj 174 129 hann~;
 #N canvas 278 23 634 731 read-grains 0;
-#X floatatom 326 346 8 0 0 0 - - -, f 8;
+#X floatatom 326 346 8 0 0 0 - - -;
 #X obj 97 52 inlet;
 #X obj 166 52 inlet;
 #X obj 326 53 inlet;
 #X obj 166 93 nbx 5 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--228856 -1 -1 10 256;
+-228856 -1 -1 100 256;
 #X obj 326 93 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-transpo empty 0 -8
-0 15 -228856 -1 -1 -333 256;
+0 15 -228856 -1 -1 0 256;
 #X text 100 26 play;
 #X obj 112 246 +;
 #X obj 58 278 f;
@@ -54,15 +54,15 @@ empty 0 -8 0 10 -228856 -1 -1 3;
 #X obj 246 151 r \$0-window_size;
 #X obj 58 301 spigot;
 #X obj 280 402 +;
-#X obj 97 179 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 97 179 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X text 330 27 cents;
 #X text 170 26 %;
 #X obj 213 434 pack f f f;
 #X obj 166 232 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 51.2 256;
+-228856 -1 -1 512 256;
 #X obj 326 435 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 422.41 256;
+-228856 -1 -1 512 256;
 #X obj 326 192 cents2ratio;
 #X obj 112 278 wrap2;
 #X text 386 433 new hop;
@@ -74,7 +74,7 @@ empty 0 -8 0 10 -228856 -1 -1 3;
 #X obj 326 233 hot;
 #X obj 326 264 *;
 #X obj 246 281 samps2ms;
-#X floatatom 246 321 5 0 0 0 - - -, f 5;
+#X floatatom 246 321 5 0 0 0 - - -;
 #X obj 256 613 tabread4~ \$0-sample;
 #X obj 416 607 tabread4~ \$0-sample;
 #X obj 256 652 outlet~;
@@ -317,7 +317,7 @@ as the amplitudes are equal to one., f 31;
 #X connect 7 0 2 0;
 #X restore 151 227 pd sampler;
 #X obj 347 317 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
-0 10 -228856 -1 -1 1 256;
+0 10 -228856 -1 -1 0 256;
 #X obj 422 317 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-transpo empty 0
 -8 0 10 -228856 -1 -1 0 256;
 #X obj 296 317 tgl 18 0 empty \$0-play empty 17 7 0 10 -228856 -1 -1
@@ -342,12 +342,12 @@ as the amplitudes are equal to one., f 31;
 #X obj 192 175 rfft~;
 #X obj 192 129 hann~;
 #N canvas 278 23 634 731 read-grains 0;
-#X floatatom 326 346 8 0 0 0 - - -, f 8;
+#X floatatom 326 346 8 0 0 0 - - -;
 #X obj 97 52 inlet;
 #X obj 166 52 inlet;
 #X obj 326 53 inlet;
 #X obj 166 93 nbx 5 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--228856 -1 -1 1 256;
+-228856 -1 -1 0 256;
 #X obj 326 93 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-transpo empty 0 -8
 0 15 -228856 -1 -1 0 256;
 #X text 100 26 play;
@@ -366,7 +366,7 @@ as the amplitudes are equal to one., f 31;
 #X text 170 26 %;
 #X obj 213 434 pack f f f;
 #X obj 166 232 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 5.12 256;
+-228856 -1 -1 0 256;
 #X obj 326 435 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 512 256;
 #X obj 326 192 cents2ratio;
@@ -380,7 +380,7 @@ as the amplitudes are equal to one., f 31;
 #X obj 326 233 hot;
 #X obj 326 264 *;
 #X obj 246 281 samps2ms;
-#X floatatom 246 321 5 0 0 0 - - -, f 5;
+#X floatatom 246 321 5 0 0 0 - - -;
 #X obj 256 613 tabread4~ \$0-sample;
 #X obj 416 607 tabread4~ \$0-sample;
 #X obj 256 652 outlet~;

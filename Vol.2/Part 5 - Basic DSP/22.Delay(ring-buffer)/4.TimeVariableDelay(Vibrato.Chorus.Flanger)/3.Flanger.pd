@@ -11,16 +11,16 @@
 -228856 -1 -1 12071 1;
 #X text 354 296 feedback;
 #X floatatom 320 319 0 0 0 0 - - -;
-#X floatatom 134 206 5 0 0 0 - - -, f 5;
-#X floatatom 248 286 5 0 75 0 - - -, f 5;
-#X floatatom 182 234 5 1 100 0 - - -, f 5;
+#X floatatom 134 206 5 0 0 0 - - -;
+#X floatatom 248 286 5 0 75 0 - - -;
+#X floatatom 182 234 5 1 100 0 - - -;
 #X obj 137 184 hsl 128 15 0.01 3 1 0 empty rate empty -2 -8 0 10 -228856
 -1 -1 4333 1;
 #X text 186 183 rate;
 #X obj 251 263 hsl 128 15 5 75 1 0 empty delmax empty -2 -8 0 10 -228856
--1 -1 2204 1;
+-1 -1 12700 1;
 #X obj 185 212 hsl 128 15 0 8 0 0 empty delmin empty -2 -8 0 10 -228856
--1 -1 159 1;
+-1 -1 12700 1;
 #X text 223 211 delay min.;
 #X text 281 262 delay max.;
 #X obj 134 240 osc~;

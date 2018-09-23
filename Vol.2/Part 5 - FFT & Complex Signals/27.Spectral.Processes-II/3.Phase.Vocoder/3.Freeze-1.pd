@@ -1,31 +1,33 @@
-#N canvas 505 83 526 539 12;
+#N canvas 505 83 526 555 12;
 #X obj 87 224 sigmund~ -npts 2048 -hop 512 -npeak 50 tracks;
-#X obj 230 356 tgl 25 1 empty freee empty 17 7 0 10 -228856 -1 -1 0
+#X obj 230 356 tgl 25 1 empty freee empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X obj 230 300 bng 50 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 191 388 spigot;
 #X obj 326 300 bng 50 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 326 363 del 15;
 #X obj 191 454 out~;
 #X text 227 262 Freeze \; Unfreeze;
 #X obj 191 420 clone 50 oscillator;
-#X text 78 39 We just adapt the last example to add a [spigot] \, used
+#X text 86 37 We just adapt the last example to add a [spigot] \, used
 here to let the sigmund data through or not. When the [spigot] is closed
 \, the sound remains frozen in that last snapshot., f 49;
-#X obj 87 193 sampler~ 1 ../../../../samples/didge.aif 1 1;
 #X text 321 272 Snapshot (when frozen);
-#X text 78 106 We have a bang to freeze and unfreeze \, but when the
+#X text 86 104 We have a bang to freeze and unfreeze \, but when the
 sound is frozen \, you can take new snapshots with a second bang.,
 f 49;
-#X connect 0 0 3 0;
-#X connect 1 0 3 1;
+#X obj 191 388 spigot;
+#X obj 192 320 lb;
+#X obj 87 193 sampler~ 1 ../../../../samples/didge.aif 1 1;
+#X connect 0 0 11 0;
+#X connect 1 0 11 1;
 #X connect 2 0 1 0;
-#X connect 3 0 8 0;
+#X connect 3 0 2 0;
+#X connect 3 0 4 0;
 #X connect 4 0 2 0;
-#X connect 4 0 5 0;
-#X connect 5 0 2 0;
-#X connect 8 0 6 0;
-#X connect 8 0 6 1;
-#X connect 10 0 0 0;
+#X connect 7 0 5 0;
+#X connect 7 0 5 1;
+#X connect 11 0 7 0;
+#X connect 12 0 1 0;
+#X connect 13 0 0 0;

@@ -1,4 +1,4 @@
-#N canvas 625 91 553 548 12;
+#N canvas 625 91 507 520 12;
 #N canvas 673 189 440 375 pvoc-freeze 0;
 #X obj 163 306 outlet~;
 #X obj 134 31 inlet~;
@@ -131,38 +131,36 @@ obtained by a delay., f 40;
 #X connect 10 0 4 0;
 #X connect 12 0 5 0;
 #X connect 12 1 5 1;
-#X restore 187 373 pd pvoc-freeze;
-#X obj 196 211 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 196 289 s \$0-freeze;
-#X obj 310 291 tgl 30 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X restore 121 348 pd pvoc-freeze;
+#X obj 287 270 s \$0-freeze;
+#X obj 244 246 tgl 30 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X msg 310 261 1;
-#X text 345 297 Unfreeze;
-#X text 236 212 snapshot;
-#X text 235 229 freeze;
-#X obj 161 437 out~;
-#X obj 161 403 xfade~ 1;
-#X obj 310 380 f2s~ 200;
-#X obj 196 258 t b b;
-#X obj 161 339 sampler~ 1 ../../../../samples/didge.aif 1 1;
-#X text 80 34 Now here's a freeze patch based on the phase accumulation
+#X obj 95 422 out~;
+#X obj 95 388 xfade~ 1;
+#X obj 244 364 f2s~ 200;
+#X text 35 20 Now here's a freeze patch based on the phase accumulation
 and time stretch (when the speed is equal to zero). We just take snapshots
 of the input sound and send them to tables that are considered the
 front and back grains and perform the phase accumulation. The thing
 is that the output is always frozen \, but we freeze and unfreeze by
 crossfading.;
-#X text 82 139 The bang freezes the audio \, but can also furtherly
+#X text 37 125 The bang freezes the audio \, but can also furtherly
 used to take other snapshots. To unfreeze \, just use the toggle.;
-#X text 131 373 open =>;
-#X connect 0 0 9 1;
-#X connect 1 0 11 0;
-#X connect 3 0 10 0;
+#X text 65 348 open =>;
+#X obj 95 304 sampler~ 1 ../../../../samples/violin.wav 1 1;
+#X obj 244 339 expr if($f1 == 0 \, -1 \, $f1);
+#X obj 287 242 sel 1;
+#X msg 244 190 1;
+#X msg 287 190 0;
+#X connect 0 0 4 1;
+#X connect 2 0 10 0;
 #X connect 4 0 3 0;
-#X connect 9 0 8 0;
-#X connect 9 0 8 1;
-#X connect 10 0 9 2;
-#X connect 11 0 2 0;
-#X connect 11 1 4 0;
-#X connect 12 0 0 0;
-#X connect 12 0 9 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 2;
+#X connect 9 0 0 0;
+#X connect 9 0 4 0;
+#X connect 10 0 5 0;
+#X connect 11 0 1 0;
+#X connect 12 0 11 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;

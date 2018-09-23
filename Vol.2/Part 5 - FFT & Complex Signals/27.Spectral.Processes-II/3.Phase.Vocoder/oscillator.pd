@@ -1,57 +1,53 @@
-#N canvas 215 23 892 488 12;
-#X text 116 37 freq \, amp \, flag;
-#X obj 70 38 inlet;
-#X msg 70 68 \$3 \$1 \$2;
-#X obj 70 101 route -1 0 1;
-#X msg 78 167 0;
-#X msg 124 167 0;
-#X obj 140 328 osc~;
-#X obj 189 398 *~;
-#X msg 165 167 8;
-#X obj 201 169 unpack;
-#X text 144 67 muda ordem da lista;
-#X obj 189 433 outlet~;
-#X obj 361 228 cents2ratio;
-#X obj 140 299 *~;
-#X obj 207 239 f2s~ 8;
-#X obj 165 139 t b l;
-#X text 165 94 Route according to flag (-1 discard/0 keep/1 new),
+#N canvas 215 23 846 493 12;
+#X text 99 41 freq \, amp \, flag;
+#X obj 53 42 inlet;
+#X msg 53 72 \$3 \$1 \$2;
+#X obj 53 105 route -1 0 1;
+#X msg 53 171 0;
+#X msg 107 171 0;
+#X obj 156 332 osc~;
+#X obj 205 402 *~;
+#X msg 148 171 8;
+#X obj 184 173 unpack;
+#X obj 205 437 outlet~;
+#X obj 347 252 cents2ratio;
+#X obj 223 243 f2s~ 8;
+#X obj 148 143 t b l;
+#X text 148 98 Route according to flag (-1 discard/0 keep/1 new),
 f 25;
-#X obj 140 237 f2s~;
-#X obj 361 48 inlet;
-#X text 483 177 The [sigmund~] object sends components' track information
+#X obj 156 241 f2s~;
+#X obj 347 52 inlet;
+#X text 462 155 The [sigmund~] object sends components' track information
 as a list \, where the first number is the track number \, and [clone]
 uses it to route to different instances., f 46;
-#X text 483 243 The list that arrives inside the abstraction is formed
+#X text 462 221 The list that arrives inside the abstraction is formed
 by: frequency \, amplitude and "flag". The flag can be "-1" \, which
 means the track is disapearing \, "0" \, which means it's being kept
 \, and "1" \, which means we have a new track. So we use this information
 to route inside this patch and turn the oscillator on or off., f 46
 ;
-#X text 253 170 freq/amp;
-#X text 467 82 This is an abstraction used in inside [clone] for one
-of the examples in this series., f 48;
-#X obj 388 163 loadbang;
-#X msg 389 187 1;
+#X text 236 174 freq/amp;
+#X text 127 71 change list order;
+#X obj 156 303 *~ 1;
+#X text 462 93 This is an abstraction to be used in inside [clone].
+, f 27;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 3 1 15 0;
+#X connect 3 1 13 0;
 #X connect 3 2 4 0;
 #X connect 3 2 5 0;
-#X connect 4 0 14 0;
-#X connect 5 0 17 1;
+#X connect 4 0 12 0;
+#X connect 5 0 15 1;
 #X connect 6 0 7 0;
-#X connect 7 0 11 0;
-#X connect 8 0 17 1;
-#X connect 9 0 17 0;
-#X connect 9 1 14 0;
-#X connect 12 0 13 1;
-#X connect 13 0 6 0;
-#X connect 14 0 7 1;
-#X connect 15 0 8 0;
-#X connect 15 1 9 0;
-#X connect 17 0 13 0;
-#X connect 18 0 12 0;
-#X connect 23 0 24 0;
-#X connect 24 0 12 0;
+#X connect 7 0 10 0;
+#X connect 8 0 15 1;
+#X connect 9 0 15 0;
+#X connect 9 1 12 0;
+#X connect 11 0 21 1;
+#X connect 12 0 7 1;
+#X connect 13 0 8 0;
+#X connect 13 1 9 0;
+#X connect 15 0 21 0;
+#X connect 16 0 11 0;
+#X connect 21 0 6 0;
