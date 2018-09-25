@@ -1,9 +1,9 @@
 #N canvas 384 67 946 582 12;
-#X floatatom 94 251 5 0 0 0 - - -, f 5;
-#X floatatom 94 317 5 0 0 0 - - -, f 5;
-#X floatatom 147 250 5 0 0 0 - - -, f 5;
-#X floatatom 147 316 5 0 0 0 - - -, f 5;
-#X obj 306 320 dac~;
+#X floatatom 81 252 5 0 0 0 - - -;
+#X floatatom 81 318 5 0 0 0 - - -;
+#X floatatom 134 251 5 0 0 0 - - -;
+#X floatatom 134 317 5 0 0 0 - - -;
+#X obj 293 321 dac~;
 #N canvas 281 177 369 315 sum 0;
 #X obj 83 95 inlet;
 #X obj 83 183 outlet;
@@ -23,7 +23,7 @@
 #X connect 2 0 1 0;
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;
-#X restore 102 282 pd sum;
+#X restore 89 283 pd sum;
 #X text 45 210 Subpatches:;
 #N canvas 682 233 270 222 On/Off 0;
 #X obj 61 31 inlet~;
@@ -33,21 +33,19 @@
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 1;
-#X restore 306 283 pd On/Off;
-#X obj 292 250 osc~ 440;
-#X msg 366 252 0.1;
-#X msg 387 283 0;
-#X text 157 284 <= click to open =>;
-#X symbolatom 665 306 10 0 0 0 - - -, f 10;
-#X floatatom 753 305 5 0 0 0 - - -, f 5;
-#X msg 665 224 bang;
-#X text 540 258 click to open =>;
-#X floatatom 614 373 5 0 0 0 - - -, f 5;
-#X floatatom 614 519 5 0 0 0 - - -, f 5;
-#X obj 665 258 abstraction-1 example 1, f 13;
-#X obj 614 405 abstraction-2;
-#X text 726 443 <= right click and chose "open", f 16;
-#X text 541 191 Abstractions:;
+#X restore 293 284 pd On/Off;
+#X obj 279 251 osc~ 440;
+#X msg 353 253 0.1;
+#X msg 374 284 0;
+#X text 144 285 <= click to open =>;
+#X symbolatom 548 317 10 0 0 0 - - -;
+#X floatatom 636 316 5 0 0 0 - - -;
+#X msg 548 235 bang;
+#X floatatom 687 178 5 0 0 0 - - -;
+#X floatatom 687 324 5 0 0 0 - - -;
+#X obj 548 269 abstraction-1 example 1, f 13;
+#X obj 687 210 abstraction-2;
+#X text 516 183 Abstractions:;
 #X text 40 23 A subpatch is a subwindow of a pacth \, and saved within
 the same patch file \, mostly used to better organize your code into
 sections as a single box. To create a subpatch \, just use the [pd]
@@ -76,6 +74,14 @@ external \, opposed to a compiled object. For a patch to be loaded
 as an abstraction \, it must be in a folder that Pd automatically searches
 for such as the user added paths (Pd => Preferences => Path) or in
 the same folder as the patch that loads it.;
+#X text 482 270 click to open =>, f 9;
+#X text 794 244 <= right click and chose "open", f 16;
+#X obj 659 486 savestate;
+#X obj 799 486 clone;
+#X text 491 385 Check out the [savestate] and [clone] objects. The
+first one can save the abstraction's status when you reopen the patch
+\, and the second can load multiple instances of an abstraction in
+a Pd patch. Open their help file for more info.;
 #X connect 0 0 5 0;
 #X connect 2 0 5 1;
 #X connect 5 0 1 0;
@@ -85,8 +91,8 @@ the same folder as the patch that loads it.;
 #X connect 8 0 7 0;
 #X connect 9 0 7 1;
 #X connect 10 0 7 1;
-#X connect 14 0 18 0;
-#X connect 16 0 19 0;
-#X connect 18 0 12 0;
-#X connect 18 1 13 0;
-#X connect 19 0 17 0;
+#X connect 14 0 17 0;
+#X connect 15 0 18 0;
+#X connect 17 0 12 0;
+#X connect 17 1 13 0;
+#X connect 18 0 16 0;
