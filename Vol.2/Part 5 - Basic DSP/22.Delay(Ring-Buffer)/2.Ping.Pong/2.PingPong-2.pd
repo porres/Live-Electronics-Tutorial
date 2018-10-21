@@ -14,10 +14,10 @@
 #X obj 193 354 r~ \$0-fb;
 #X obj 119 319 *~;
 #X obj 293 338 *~;
-#X obj 309 128 hsl 128 15 -0.99 0.99 0 1 empty empty empty -2 -8 0
-10 -228856 -1 -1 6800 1;
-#X floatatom 306 152 5 -0.99 0.99 0 - - -, f 5;
-#X obj 181 122 nbx 5 16 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 12
+#X obj 309 128 hsl 128 15 -0.99 0.99 0 0 empty empty empty -2 -8 0
+10 -228856 -1 -1 12400 1;
+#X floatatom 306 152 5 -0.99 0.99 0 - - -;
+#X obj 181 122 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
 -228856 -1 -1 508 256;
 #X text 159 122 ms;
 #X text 346 127 Feedback;
@@ -37,11 +37,11 @@
 #X obj 311 302 decay2~ 50 150;
 #X obj 60 254 sig~ 100;
 #X obj 293 262 osc~ 670;
-#X obj 306 182 f2s~ 10 0.85;
 #X text 62 33 This other implementation takes a stereo input and alternates
 the channels. At each iteration \, the delay output is fed into another
 channel and vice versa. Headphones might be better to notice the ping
 pong effects., f 53;
+#X obj 306 182 f2s~ 10 0.85;
 #X connect 0 0 2 0;
 #X connect 0 0 26 0;
 #X connect 1 0 3 0;
@@ -57,7 +57,7 @@ pong effects., f 53;
 #X connect 13 0 0 0;
 #X connect 14 0 1 0;
 #X connect 15 0 16 0;
-#X connect 16 0 35 0;
+#X connect 16 0 36 0;
 #X connect 17 0 31 0;
 #X connect 21 0 13 0;
 #X connect 22 0 13 1;
@@ -73,4 +73,4 @@ pong effects., f 53;
 #X connect 32 0 14 1;
 #X connect 33 0 21 0;
 #X connect 34 0 14 0;
-#X connect 35 0 10 0;
+#X connect 36 0 10 0;

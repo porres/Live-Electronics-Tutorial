@@ -20,7 +20,7 @@
 #X obj 68 270 expr pow(2 \, $f1 + 7);
 #X obj 254 288 out~;
 #X obj 392 288 out~;
-#X obj 123 499 out~;
+#X obj 153 526 out~;
 #N canvas 413 239 432 499 Morph 0;
 #X obj 108 42 inlet~;
 #X obj 176 41 inlet~;
@@ -62,21 +62,21 @@
 #X connect 16 0 6 0;
 #X connect 17 0 13 0;
 #X connect 18 0 17 2;
-#X restore 123 451 pd Morph;
+#X restore 153 478 pd Morph;
 #X obj 254 248 r~ \$0-A;
 #X obj 392 251 r~ \$0-B;
-#X obj 70 407 r~ \$0-A;
-#X obj 149 408 r~ \$0-B;
+#X obj 100 405 r~ \$0-A;
+#X obj 179 406 r~ \$0-B;
 #X obj 111 133 s~ \$0-A;
 #X obj 111 191 s~ \$0-B;
-#X obj 246 426 hsl 128 15 -1 1 0 0 empty \$0-xfade empty -2 -8 0 10
--228856 -1 -1 12700 1;
-#X obj 243 453 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 1 256;
-#X text 225 422 A;
-#X text 379 424 B (cross synthesis);
+#X obj 281 409 hsl 128 15 -1 1 0 0 empty \$0-xfade empty -2 -8 0 10
+-228856 -1 -1 6350 1;
+#X obj 278 436 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 260 405 A;
+#X text 414 407 B (cross synthesis);
 #X text 131 294 window size;
-#X text 56 451 click =>;
+#X text 86 478 click =>;
 #X text 60 26 In this variation we "morph" from one amplitude to another
 \, but it's just a simple crossfade. This goes from a original sound
 to a cross synthesis. Open the subpatch to the right.;

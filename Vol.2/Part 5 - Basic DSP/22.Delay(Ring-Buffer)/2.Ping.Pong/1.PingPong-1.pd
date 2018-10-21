@@ -1,37 +1,50 @@
-#N canvas 561 91 548 481 12;
-#X obj 106 286 +~;
-#X obj 148 285 +~;
-#X obj 166 255 *~;
-#X obj 360 170 hsl 128 15 -0.99 0.99 0 0 empty \$0-fb empty -2 -8 0
+#N canvas 504 23 563 689 12;
+#X obj 104 290 +~;
+#X obj 146 289 +~;
+#X obj 164 259 *~;
+#X obj 358 174 hsl 128 15 -0.99 0.99 0 0 empty \$0-fb empty -2 -8 0
 10 -228856 -1 -1 11481 1;
-#X floatatom 357 192 5 0 0 0 - - -, f 5;
-#X floatatom 312 160 5 0 0 0 - - -, f 5;
-#X obj 312 194 / 2;
-#X floatatom 312 256 5 0 0 0 - - -, f 5;
-#X obj 315 136 hsl 128 15 50 500 0 0 empty \$0-tempo empty -2 -8 0
+#X floatatom 355 196 5 0 0 0 - - -;
+#X floatatom 310 164 5 0 0 0 - - -;
+#X obj 310 198 / 2;
+#X floatatom 310 260 5 0 0 0 - - -;
+#X obj 313 140 hsl 128 15 50 500 0 0 empty \$0-tempo empty -2 -8 0
 10 -228856 -1 -1 5644 1;
-#X obj 106 197 *~;
-#X obj 50 33 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+#X obj 104 201 *~;
+#X obj 48 37 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
-#X obj 50 140 mtof;
-#X text 395 169 Feedback;
-#X obj 106 397 out~;
-#X obj 50 167 bl.saw~;
-#X obj 124 153 timed.gate~ 50;
-#X obj 166 217 delread4~ \$0-ping;
-#X obj 312 337 delread4~ \$0-pong;
-#X obj 148 315 delwrite~ \$0-pong 1000;
-#X obj 117 338 delwrite~ \$0-ping 1000;
-#X obj 405 260 initmess \; \$0-tempo 250 \; \$0-fb 0.8;
-#X obj 50 111 trigger f b;
-#X obj 50 81 randi 36 60;
-#X obj 166 193 f2s~ 50;
-#X obj 357 216 f2s~ 50;
-#X text 362 135 Time;
-#X obj 312 306 f2s~ 50;
-#X text 164 38 A Ping-pong delay is an effect that alternates the delay
+#X obj 48 144 mtof;
+#X text 393 173 Feedback;
+#X obj 104 401 out~;
+#X obj 48 171 bl.saw~;
+#X obj 122 157 timed.gate~ 50;
+#X obj 164 221 delread4~ \$0-ping;
+#X obj 310 341 delread4~ \$0-pong;
+#X obj 146 319 delwrite~ \$0-pong 1000;
+#X obj 115 342 delwrite~ \$0-ping 1000;
+#X obj 403 264 initmess \; \$0-tempo 250 \; \$0-fb 0.8;
+#X obj 48 115 trigger f b;
+#X obj 48 85 randi 36 60;
+#X obj 164 197 f2s~ 50;
+#X obj 355 220 f2s~ 50;
+#X text 360 139 Time;
+#X obj 310 310 f2s~ 50;
+#X text 162 42 A Ping-pong delay is an effect that alternates the delay
 echoes by alternating the left and right outputs. This pretty much
 sounds like watching a ping pong match indeed., f 46;
+#X obj 278 467 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 347 494 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 426 494 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 350 469 time;
+#X text 424 473 feedback;
+#X obj 278 498 impseq~;
+#X obj 314 538 ping.pong~ 200 0.7, f 10;
+#X obj 314 593 out~;
+#X text 110 547 This is the base of the [ping.pong~] object \, an abstraction
+from ELSE., f 24;
 #X connect 0 0 13 0;
 #X connect 0 0 19 0;
 #X connect 1 0 18 0;
@@ -58,3 +71,9 @@ sounds like watching a ping pong match indeed., f 46;
 #X connect 23 0 16 0;
 #X connect 24 0 2 1;
 #X connect 26 0 17 0;
+#X connect 28 0 33 0;
+#X connect 29 0 34 1;
+#X connect 30 0 34 2;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
+#X connect 34 1 35 1;
