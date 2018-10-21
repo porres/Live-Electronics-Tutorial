@@ -1,19 +1,19 @@
 #N canvas 459 213 586 399 12;
-#X obj 101 224 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 193.441 256;
-#X text 77 221 Hz;
-#X obj 199 157 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 117 226 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 138.215 256;
+#X text 93 223 Hz;
+#X obj 215 159 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 259 201 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 275 203 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 318 199 decay time (ms);
-#X obj 319 228 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X text 334 201 decay time (ms);
+#X obj 335 230 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 381 227 filter cutoff (hz);
-#X obj 97 303 out~;
-#X obj 199 205 impseq~;
-#X obj 101 191 randf 50 300;
-#X obj 140 255 pluck~ 0 4000 10000, f 26;
+#X text 397 229 filter cutoff (hz);
+#X obj 113 305 out~;
+#X obj 215 207 impseq~;
+#X obj 117 193 randf 50 300;
+#X obj 156 257 pluck~ 0 4000 10000, f 26;
 #X text 67 25 The ELSE library has the [pluck~] object \, which implements
 a Karplus Strong Algorythm. By default \, it uses an internal white
 noise generator as an excitation signal and can be triggered by impulses.
