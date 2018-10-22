@@ -7,9 +7,9 @@
 #X obj 118 123 osc~ 400;
 #X obj 125 420 *~;
 #X obj 227 377 hsl 128 15 0 4 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 0 1;
+-1 -1 12700 1;
 #X obj 224 399 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 4 256;
 #X obj 125 452 sin~;
 #X obj 518 172 osc~ 100;
 #X obj 518 208 *~;
@@ -33,7 +33,7 @@
 #X obj 118 245 throw~ \$0-out;
 #X obj 510 638 throw~ \$0-out;
 #X obj 518 327 throw~ \$0-out;
-#X obj 211 562 graph~ 446 11 1 -1;
+#X obj 211 562 graph~ 446 11 -1 1;
 #X obj 104 621 out~;
 #X obj 190 169 f2s~ 50;
 #X obj 301 215 drive~;
@@ -141,7 +141,7 @@ of tunrnind sine waves into triangular waves., f 39;
 #X connect 19 0 5 0;
 #X connect 19 0 4 0;
 #X connect 20 0 15 0;
-#X restore 950 16 pd plot;
+#X restore 943 13 pd plot;
 #N canvas 4 23 450 300 (subpatch) 0;
 #X array tanh 441 float 1;
 #A 0 -1 -0.999999 -0.999999 -0.999999 -0.999999 -0.999999 -0.999999

@@ -2,17 +2,17 @@
 #X obj 167 174 display~;
 #X obj 167 148 pulse~ 0.5 0.5;
 #X obj 167 207 sig2float~, f 13;
-#X obj 167 237 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 167 237 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 481 62 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 557 42 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 2300 1;
-#X floatatom 554 69 5 0 0 0 - - -, f 5;
+-1 -1 4100 1;
+#X floatatom 554 69 5 0 0 0 - - -;
 #X text 460 61 Hz;
 #X obj 495 125 out~;
 #X obj 481 94 pulse~ 100 0.75;
-#X obj 481 196 graph~ 441 9 1.1 -1.1;
+#X obj 481 196 graph~ 441 9 -1.1 1.1;
 #X text 567 20 Pulse width;
 #X text 41 32 A pulse train is when we have a chain of consecutive
 impulses. The [pulse~] object from ELSE is a pulse train oscillator

@@ -8,7 +8,7 @@
 #X text 195 135 width;
 #X obj 132 135 rescale~;
 #X obj 65 232 out~;
-#X obj 175 210 graph~ 500 7 1.1 -1.1;
+#X obj 175 210 graph~ 500 7 -1.1 1.1;
 #X obj 108 163 square~ 200;
 #X obj 434 279 out~;
 #X obj 477 197 vsaw~ 300;

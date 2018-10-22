@@ -1,6 +1,6 @@
 #N canvas 334 90 925 553 12;
 #X obj 625 203 pic amp.gif;
-#X obj 98 196 graph~ 441 19 1 -1;
+#X obj 98 196 graph~ 441 19 -1 1;
 #X obj 98 139 osc~ 111;
 #X text 31 17 The amplitude of a sound represents the sound source's
 wave propagation \, as in the motion of your speakers., f 54;

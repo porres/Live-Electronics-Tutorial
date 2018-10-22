@@ -31,20 +31,20 @@
 #X connect 6 0 3 0;
 #X connect 6 1 0 0;
 #X restore 468 277 pd sequencer;
-#X obj 468 254 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 468 254 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X obj 569 263 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 0 1;
+-1 -1 11500 1;
 #X obj 566 288 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
-#X obj 609 354 else/graph~ 950 5 1.1 -1.1;
+-228856 -1 -1 0.905512 256;
+#X obj 609 354 else/graph~ 950 5 -1.1 1.1;
 #X text 25 31 And yet again \, we can generate square waves with a
 sum of partials. See [pd square] howit's done. As before \, enter the
 number of harmonics into the number box. Not suprisingly \, a perfect
 square wave need an infinite sum of psrtials., f 54;
 #N canvas 292 30 650 509 square 0;
 #X obj 51 30 inlet;
-#X floatatom 51 64 5 0 0 0 - - -, f 5;
+#X floatatom 51 64 5 0 0 0 - - -;
 #X obj 66 246 list prepend;
 #X text 69 185 p;
 #X msg 51 395 normalize 1;

@@ -97,7 +97,7 @@
 #X text 220 220 <== Positive Phase;
 #X text 148 343 Negative Phase ==>;
 #X text 535 576 1;
-#X obj 552 581 graph~ 400 20 1 0;
+#X obj 552 581 graph~ 400 20 0 1;
 #X text 537 710 0;
 #X obj 870 599 setdsp~ 1;
 #X obj 33 533 cnv 15 448 198 empty empty empty 20 12 0 14 -228856 -66577

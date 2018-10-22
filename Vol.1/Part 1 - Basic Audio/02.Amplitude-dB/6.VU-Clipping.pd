@@ -1,9 +1,9 @@
 #N canvas 297 23 1025 521 12;
-#X obj 126 227 hsl 128 15 0 5 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 129 227 hsl 128 15 0 5 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 108 274 *~;
 #X obj 108 198 osc~ 200;
-#X floatatom 123 251 5 0 0 0 - - -, f 5;
+#X floatatom 126 251 5 0 0 0 - - -;
 #X obj 607 277 osc~ 200;
 #X obj 777 274 osc~ 200;
 #X obj 607 307 meter~;
