@@ -44,13 +44,7 @@ times for each sample \, which means different frequency bins will
 have different delay times., f 48;
 #X obj 104 297 hsl 180 23 0 200 0 0 \$0-del-depth \$0-del-depth-set
 Delay-Depth 40 11 0 19 -66577 -228856 -262144 0 0;
-#X obj 94 187 envelope;
 #X obj 91 153 initmess 0 0.5 1 0.5 0;
-#X text 394 23 For such \, we need a table for the delay times for
-each sample. We generate one with the [envelope] object \, where the
-horizontal axis represent the frequency points and the vertical axis
-the delay time. The delay depth controls the overall amplitude (that
-is the time parameter) of the envelope., f 43;
 #N canvas 644 170 432 436 delay-time-table 0;
 #X obj 90 151 phasor~;
 #X obj 249 226 block~ 256 1 1;
@@ -73,9 +67,15 @@ is the time parameter) of the envelope., f 43;
 #X connect 8 0 7 0;
 #X coords 0 436 1 435 213 184 0;
 #X restore 91 334 pd delay-time-table;
+#X obj 94 187 function;
+#X text 394 23 For such \, we need a table for the delay times for
+each sample. We generate one with the [function] object \, where the
+horizontal axis represent the frequency points and the vertical axis
+the delay time. The delay depth controls the overall amplitude (that
+is the time parameter) of the envelope., f 43;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 2 0 1 1;
-#X connect 5 0 8 0;
-#X connect 6 0 5 0;
+#X connect 5 0 7 0;
+#X connect 7 0 6 0;
 #X coords 0 0 1 1 560 350 0;

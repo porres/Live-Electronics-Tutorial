@@ -1,4 +1,4 @@
-#N canvas 169 23 1067 484 12;
+#N canvas 271 132 1067 484 12;
 #X obj 112 287 *~;
 #X obj 54 234 osc~ 440;
 #X obj 162 143 nbx 5 17 0 2000 0 0 empty empty empty 0 -8 0 12 -228856
@@ -47,19 +47,19 @@ from 0 to 1!, f 71;
 #X text 898 167 triangular;
 #X text 935 138 trapezoid;
 #X msg 779 138 0 0.25 1 0.5 1 0.25 0;
-#X obj 782 198 envelope 0 0.5 1 0.5 0;
 #X msg 130 207 0 \$1 1;
 #X text 52 24 We now present more convenient solutions with objects
 from the ELSE library. We have a first superficial look into the [table~]
 object \, which is similar to [tabread4~] \, but by default it has
 an index input is from 0 to 1 (excluding guard points) \, which makes
 us not worry about the table size and index range., f 58;
+#X obj 782 198 function 0 0.5 1 0.5 0;
 #X connect 0 0 4 0;
 #X connect 0 0 4 1;
 #X connect 1 0 0 0;
 #X connect 2 0 5 1;
 #X connect 3 0 5 0;
-#X connect 5 0 38 0;
+#X connect 5 0 37 0;
 #X connect 7 0 11 0;
 #X connect 11 0 0 1;
 #X connect 12 0 16 0;
@@ -80,7 +80,7 @@ us not worry about the table size and index range., f 58;
 #X connect 28 0 29 0;
 #X connect 29 0 32 0;
 #X connect 32 0 26 0;
-#X connect 33 0 37 0;
-#X connect 36 0 37 0;
-#X connect 37 0 25 0;
-#X connect 38 0 7 0;
+#X connect 33 0 39 0;
+#X connect 36 0 39 0;
+#X connect 37 0 7 0;
+#X connect 39 0 25 0;

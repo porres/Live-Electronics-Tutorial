@@ -1,5 +1,5 @@
 #N canvas 718 23 563 687 12;
-#X floatatom 205 429 5 0 0 0 - - -, f 5;
+#X floatatom 205 429 5 0 0 0 - - -;
 #X obj 205 526 *~;
 #X obj 291 490 hsl 128 15 10 500 0 0 empty depth empty -2 -8 0 10 -228856
 -1 -1 389 1;
@@ -8,7 +8,6 @@
 #X text 351 516 depth;
 #X obj 124 611 out~;
 #X obj 205 453 phasor~;
-#X obj 280 372 envelope 0 0.33 1 0.34 1 0.33 0;
 #X obj 288 542 f2s~ 50;
 #X obj 205 490 function~;
 #X obj 124 269 sampler~ ../../../../samples/violin.wav 1 1;
@@ -30,16 +29,17 @@ yet a higher pitch. asceleração.;
 #X text 166 428 rate;
 #X text 69 209 So we have a sort of arpeggio with three different pitches
 that depend on the rate and depth. Have fun.;
+#X obj 280 372 function 0 0.33 1 0.34 1 0.33 0;
 #X connect 0 0 6 0;
-#X connect 1 0 11 1;
+#X connect 1 0 10 1;
 #X connect 2 0 3 0;
-#X connect 3 0 8 0;
-#X connect 6 0 9 0;
-#X connect 7 0 9 0;
-#X connect 8 0 1 1;
-#X connect 9 0 1 0;
-#X connect 10 0 11 0;
-#X connect 11 0 5 0;
-#X connect 11 0 5 1;
-#X connect 12 0 0 0;
-#X connect 13 0 7 0;
+#X connect 3 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 1 1;
+#X connect 8 0 1 0;
+#X connect 9 0 10 0;
+#X connect 10 0 5 0;
+#X connect 10 0 5 1;
+#X connect 11 0 0 0;
+#X connect 12 0 18 0;
+#X connect 18 0 8 0;

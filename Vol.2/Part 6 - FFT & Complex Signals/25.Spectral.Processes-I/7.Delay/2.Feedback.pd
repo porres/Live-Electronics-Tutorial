@@ -68,18 +68,18 @@
 Delay-Depth 15 11 0 19 -66577 -204800 -262144 0 0;
 #X obj 347 397 hsl 160 23 0 1 0 0 \$0-feedback \$0-feedback-set Feedback
 40 11 0 19 -66577 -204800 -262144 0 0;
-#X obj 331 253 envelope;
-#X obj 114 253 envelope;
 #X obj 328 211 initmess 0 0.5 1 0.5 0;
 #X text 242 99 As a variation of the last example \, we have also a
 feedback line and use the [comb.rev~] object for both feedforward and
 feedback lines. We also have an envelope for different feedback values
 for each frequency bin., f 47;
+#X obj 114 253 function;
+#X obj 331 253 function;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
 #X connect 3 0 2 1;
-#X connect 6 0 0 1;
-#X connect 7 0 0 0;
-#X connect 8 0 6 0;
-#X connect 8 0 7 0;
+#X connect 6 0 8 0;
+#X connect 6 0 9 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 1;
 #X coords 0 0 1 1 560 350 0;

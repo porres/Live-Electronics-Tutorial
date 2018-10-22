@@ -7,7 +7,7 @@
 #X obj 107 265 out~;
 #X text 314 173 AR;
 #X obj 604 113 impseq~;
-#X obj 553 147 brown~;
+#X obj 543 151 brown~;
 #X obj 667 217 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
 -1 -1 0 1;
 #X text 690 310 0;
