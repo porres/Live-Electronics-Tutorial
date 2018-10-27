@@ -5,7 +5,6 @@
 #X text 71 600 BUG:;
 #X obj 46 393 out~;
 #X obj 318 425 out~;
-#X obj 89 310 player~ ../../../../samples/bubul.wav 1 1, f 33;
 #X msg 361 326 500 \$1;
 #X obj 361 356 envgen~;
 #X text 68 108 A signal input allows a smooth and continuous change
@@ -34,12 +33,13 @@ not interpolate \, so it can only read back in a buffer at a specific
 sample behind. On the other hand \, the native [delread4~] object can
 read in between samples \, with the same kind of interpolation used
 in [tabread4~] and accepts signal inputs.;
+#X obj 89 310 play.file~ ../../../../samples/bubul.wav 1 1, f 33;
 #X connect 0 0 1 0;
-#X connect 1 0 6 0;
-#X connect 5 0 3 0;
-#X connect 5 0 3 1;
-#X connect 5 0 11 0;
-#X connect 6 0 7 0;
-#X connect 7 0 10 0;
-#X connect 10 0 4 0;
-#X connect 10 0 4 1;
+#X connect 1 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 9 0;
+#X connect 9 0 4 0;
+#X connect 9 0 4 1;
+#X connect 15 0 3 0;
+#X connect 15 0 3 1;
+#X connect 15 0 10 0;

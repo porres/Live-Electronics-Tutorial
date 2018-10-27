@@ -8,9 +8,9 @@
 #X obj 88 243 /~;
 #X obj 106 204 clip~ 1 1;
 #X obj 195 33 inlet;
-#X floatatom 195 206 5 0 0 0 - - -, f 5;
-#X floatatom 381 201 5 0 0 0 - - -, f 5;
-#X floatatom 195 78 5 0 100 0 - - -, f 5;
+#X floatatom 195 206 5 0 0 0 - - -;
+#X floatatom 381 201 5 0 0 0 - - -;
+#X floatatom 195 78 5 0 100 0 - - -;
 #X obj 195 139 expr 1 - ($f1 / 100) \; if ($f1 <= 1 \, 1 \, $f1 * $f1)
 ;
 #X obj 308 62 r \$0-set-block;
@@ -52,15 +52,15 @@
 #X obj 245 300 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X text 265 275 Original;
-#X obj 107 138 sampler~ ../../../samples/bubul.wav 1 1;
 #X obj 107 277 out~;
 #X text 264 175 Compressed/Normalized;
 #X text 54 43 This is basically the same as last example but we have
 a slider control to morph between the original and normalized or "compressed"
 output. The math is simple and relies on the [clip~] object.;
 #X text 39 223 click =>;
-#X connect 0 0 5 0;
-#X connect 0 0 5 1;
+#X obj 107 138 play.file~ ../../../samples/bubul.wav 1 1;
+#X connect 0 0 4 0;
+#X connect 0 0 4 1;
 #X connect 1 0 2 0;
 #X connect 1 0 0 1;
-#X connect 4 0 0 0;
+#X connect 8 0 0 0;

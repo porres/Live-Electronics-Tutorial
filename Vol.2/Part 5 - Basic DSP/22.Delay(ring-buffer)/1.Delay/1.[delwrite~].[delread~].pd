@@ -9,7 +9,6 @@
 #X obj 70 438 out~;
 #X obj 166 533 out~;
 #X obj 370 530 out~;
-#X obj 113 358 player~ ../../../../samples/bubul.wav 1 1;
 #X text 99 35 The "delay" is the basis of echo and reverberation effects.
 We'll see also how they can be used to implement pitch shifters and
 later in this tutorial how they are the basis of filters., f 55;
@@ -25,12 +24,13 @@ same delay line \, can access the buffer at different length points
 (set in ms with the second argument or inlet). Multiple [delread~]
 objects can read from the same line defined in [delwrite~]., f 55
 ;
+#X obj 113 358 play.file~ ../../../../samples/bubul.wav 1 1;
 #X connect 0 0 3 0;
 #X connect 1 0 4 0;
 #X connect 3 0 6 0;
 #X connect 3 0 6 1;
 #X connect 4 0 7 0;
 #X connect 4 0 7 1;
-#X connect 8 0 2 0;
-#X connect 8 0 5 0;
-#X connect 8 0 5 1;
+#X connect 11 0 2 0;
+#X connect 11 0 5 0;
+#X connect 11 0 5 1;

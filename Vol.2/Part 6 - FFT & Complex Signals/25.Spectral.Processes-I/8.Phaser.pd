@@ -31,16 +31,15 @@
 #X obj 564 198 nbx 5 14 0.1 10 1 0 empty rate empty 0 -8 0 10 -228856
 -1 -1 0.5 256;
 #X obj 640 171 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 5 256;
+-228856 -1 -1 1 256;
 #X obj 643 148 hsl 128 15 0 5 0 0 empty depth empty -2 -8 0 10 -228856
--1 -1 12700 1;
+-1 -1 2540 1;
 #X text 569 175 Rate;
 #X text 684 146 Depth;
 #X obj 461 274 r~ \$0-sample;
 #X obj 564 232 osc~;
 #X obj 122 410 out~;
 #X obj 461 364 out~;
-#X obj 68 219 sampler~ ../../../samples/guitar.wav 1 1;
 #X obj 608 362 initmess \; rate 0.5 \; depth 1;
 #X obj 640 195 *;
 #X obj 640 226 f2s~ 50;
@@ -83,7 +82,7 @@ FFT interpretation of this process., f 53;
 #X obj 252 341 pi;
 #X obj 217 308 rampnoise~ 10;
 #X obj 217 286 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 5 256;
+-228856 -1 -1 1 256;
 #X text 41 117 Let's start by changing the phase of a signal by summing
 the initial phase information to random ramp values. Changing the phase
 to a fixed value does not alter the tonal quality. But a continuous
@@ -92,25 +91,26 @@ shift is like phase modulation and changes the pitch., f 53;
 for the modulation. Summing to the original input promotes phase canceling
 of some of the frequency points \, which is the key to the phaser effect.
 , f 47;
+#X obj 68 219 play.file~ ../../../samples/guitar.wav 1 1;
 #X connect 1 0 2 0;
 #X connect 2 0 10 1;
 #X connect 2 0 10 0;
 #X connect 3 0 9 0;
-#X connect 4 0 14 0;
+#X connect 4 0 13 0;
 #X connect 5 0 4 0;
-#X connect 8 0 18 0;
+#X connect 8 0 17 0;
 #X connect 8 0 11 0;
 #X connect 8 0 11 1;
-#X connect 9 0 16 0;
-#X connect 12 0 0 0;
-#X connect 14 0 15 0;
-#X connect 15 0 16 1;
-#X connect 16 0 18 1;
-#X connect 17 0 14 1;
-#X connect 18 0 11 1;
-#X connect 18 0 11 0;
-#X connect 20 0 24 0;
-#X connect 21 0 2 1;
-#X connect 22 0 21 1;
-#X connect 23 0 21 0;
-#X connect 24 0 23 0;
+#X connect 9 0 15 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 1;
+#X connect 15 0 17 1;
+#X connect 16 0 13 1;
+#X connect 17 0 11 1;
+#X connect 17 0 11 0;
+#X connect 19 0 23 0;
+#X connect 20 0 2 1;
+#X connect 21 0 20 1;
+#X connect 22 0 20 0;
+#X connect 23 0 22 0;
+#X connect 26 0 0 0;

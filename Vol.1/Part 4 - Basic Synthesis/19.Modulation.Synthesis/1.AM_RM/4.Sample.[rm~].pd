@@ -14,7 +14,6 @@
 #X obj 516 59 r~ \$0-sample;
 #X obj 538 149 out~;
 #X obj 573 318 out~;
-#X obj 136 180 player~ ../../../../samples/bubul.wav 1 1, f 33;
 #X text 38 18 In this example we have a sample as the carrier instead
 of an oscillator \, which illustrates the usage of amplitude modulation
 as an effects processor rather than a "synthesis technique"., f 60
@@ -43,6 +42,8 @@ the frequency input is given as the argument or via the right inlet.
 , f 54;
 #X obj 557 413 r~ \$0-sample;
 #X obj 613 83 rescale~;
+#X obj 136 180 play.file~ ../../../../samples/bubul.wav 1 1, f 33
+;
 #X connect 0 0 12 0;
 #X connect 0 0 12 1;
 #X connect 1 0 0 0;
@@ -51,13 +52,13 @@ the frequency input is given as the argument or via the right inlet.
 #X connect 4 0 11 0;
 #X connect 4 0 11 1;
 #X connect 5 0 6 0;
-#X connect 6 0 25 0;
+#X connect 6 0 24 0;
 #X connect 10 0 4 0;
-#X connect 13 0 9 0;
-#X connect 13 0 16 0;
-#X connect 13 0 16 1;
-#X connect 20 0 22 1;
-#X connect 22 0 19 0;
-#X connect 22 0 19 1;
-#X connect 24 0 22 0;
-#X connect 25 0 4 1;
+#X connect 19 0 21 1;
+#X connect 21 0 18 0;
+#X connect 21 0 18 1;
+#X connect 23 0 21 0;
+#X connect 24 0 4 1;
+#X connect 25 0 9 0;
+#X connect 25 0 15 0;
+#X connect 25 0 15 1;

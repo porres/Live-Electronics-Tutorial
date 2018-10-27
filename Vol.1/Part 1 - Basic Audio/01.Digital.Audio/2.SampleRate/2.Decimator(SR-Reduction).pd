@@ -18,8 +18,6 @@
 #X obj 471 89 send~ \$0-audio;
 #X obj 488 130 receive~ \$0-audio;
 #X obj 677 116 receive~ \$0-audio;
-#X text 472 24 [player~] plays audio files;
-#X obj 471 50 player~ ../../../../samples/bubul.wav 1 1, f 33;
 #X text 24 37 The "decimator" is a process that consist in reducing
 the sample rate of a signal. Im other words \, it reduces the sample
 rate \, or performs a "downsampling"., f 59;
@@ -35,6 +33,8 @@ The frequency at wich it receives impulses is the downsampled frequency.
 , f 59;
 #X text 25 250 A simpler alternative is to use [downsample~] from ELSE
 \, which only needs a downsampling frequency value., f 59;
+#X obj 471 50 play.file~ ../../../../samples/bubul.wav 1 1, f 33;
+#X text 472 24 [play.file~] plays audio files;
 #X connect 0 0 11 0;
 #X connect 0 0 11 1;
 #X connect 2 0 7 0;
@@ -46,4 +46,4 @@ The frequency at wich it receives impulses is the downsampled frequency.
 #X connect 9 0 8 0;
 #X connect 13 0 6 0;
 #X connect 14 0 0 0;
-#X connect 16 0 12 0;
+#X connect 19 0 12 0;

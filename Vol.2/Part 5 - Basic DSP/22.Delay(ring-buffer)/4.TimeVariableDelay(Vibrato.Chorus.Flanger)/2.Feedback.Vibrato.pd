@@ -1,4 +1,4 @@
-#N canvas 160 55 683 543 12;
+#N canvas 524 23 701 543 12;
 #X obj 92 200 loadbang;
 #X msg 92 227 \; pd dsp 1 \; LFO 0.2 \; depth 100 \; delay 20 \; feedback
 0.85;
@@ -6,24 +6,23 @@
 ;
 #X msg 92 410 \; LFO 0.05 \; depth 15 \; delay 5 \; feedback 0.91;
 #X obj 535 327 hsl 128 15 -0.999 0.999 0 0 empty feedback empty -2
--6 0 8 -228856 -1 -1 12134 1;
+-6 0 8 -228856 -1 -1 11753 1;
 #X text 566 326 feedback;
 #X floatatom 532 349 0 0 0 0 - - -;
 #X obj 294 440 out~;
 #X obj 294 401 fbdelay~ 200 -gain;
 #X obj 300 274 osc~ 0.1;
-#X floatatom 300 240 5 0 0 0 - - -, f 5;
-#X floatatom 447 320 5 0 1000 0 - - -, f 5;
-#X floatatom 381 268 5 1 100 0 - - -, f 5;
+#X floatatom 300 240 5 0 0 0 - - -;
+#X floatatom 447 320 5 0 1000 0 - - -;
+#X floatatom 381 268 5 1 100 0 - - -;
 #X obj 303 218 hsl 128 15 0.01 3 1 0 empty LFO empty -2 -8 0 10 -228856
--1 -1 3584 1;
+-1 -1 6670 1;
 #X text 265 241 rate;
 #X obj 450 297 hsl 128 15 60 200 1 0 empty depth empty -2 -8 0 10 -228856
--1 -1 0 1;
+-1 -1 5388 1;
 #X obj 384 244 hsl 128 15 0 50 0 0 empty delay empty -2 -8 0 10 -228856
--1 -1 1270 1;
+-1 -1 5080 1;
 #X obj 355 355 rescale~;
-#X obj 234 182 sampler~ ../../../../samples/guitar.wav 1 1;
 #X obj 532 372 f2s~ 10;
 #X obj 381 292 f2s~ 10;
 #X obj 447 343 f2s~ 10;
@@ -37,20 +36,21 @@ set with [rescale~]. Depending on the parameters \, you can generate
 chorus and flanger like effects. Experiment with all parameters and
 check the presets below.;
 #X text 91 172 presets:;
+#X obj 234 182 play.file~ ../../../../samples/guitar.wav 1 1;
 #X connect 0 0 1 0;
 #X connect 4 0 6 0;
-#X connect 6 0 19 0;
+#X connect 6 0 18 0;
 #X connect 8 0 7 0;
 #X connect 8 0 7 1;
 #X connect 9 0 17 0;
 #X connect 10 0 9 0;
-#X connect 11 0 21 0;
-#X connect 12 0 20 0;
+#X connect 11 0 20 0;
+#X connect 12 0 19 0;
 #X connect 13 0 10 0;
 #X connect 15 0 11 0;
 #X connect 16 0 12 0;
 #X connect 17 0 8 1;
-#X connect 18 0 8 0;
-#X connect 19 0 8 2;
-#X connect 20 0 17 1;
-#X connect 21 0 17 2;
+#X connect 18 0 8 2;
+#X connect 19 0 17 1;
+#X connect 20 0 17 2;
+#X connect 26 0 8 0;

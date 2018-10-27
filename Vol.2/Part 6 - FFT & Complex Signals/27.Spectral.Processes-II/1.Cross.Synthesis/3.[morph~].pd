@@ -13,8 +13,6 @@
 #X obj 285 453 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X text 267 424 A;
-#X obj 107 150 player~ ../../../../samples/kantele.wav 1 1;
-#X obj 107 209 player~ ../../../../samples/numbers.wav 1 1;
 #X obj 173 495 morph~;
 #X obj 300 488 hsl 128 15 -1 1 0 0 empty \$0-xfade empty -2 -8 0 10
 -228856 -1 -1 0 1;
@@ -29,17 +27,19 @@ and phases. This means you can perform cross synthesis in both ways
 and a full morph between the two sound sources. By default \, it performs
 a cross synthesis with amplitudes from "B" and initial phases from
 "A"., f 61;
+#X obj 107 150 play.file~ ../../../../samples/kantele.wav 1 1;
+#X obj 107 209 play.file~ ../../../../samples/numbers.wav 1 1;
 #X connect 3 0 0 0;
 #X connect 3 0 0 1;
 #X connect 4 0 1 0;
 #X connect 4 0 1 1;
-#X connect 5 0 14 0;
-#X connect 6 0 14 1;
+#X connect 5 0 12 0;
+#X connect 6 0 12 1;
 #X connect 9 0 10 0;
-#X connect 10 0 14 2;
-#X connect 12 0 7 0;
-#X connect 13 0 8 0;
-#X connect 14 0 2 0;
-#X connect 14 0 2 1;
-#X connect 15 0 16 0;
-#X connect 16 0 14 3;
+#X connect 10 0 12 2;
+#X connect 12 0 2 0;
+#X connect 12 0 2 1;
+#X connect 13 0 14 0;
+#X connect 14 0 12 3;
+#X connect 19 0 7 0;
+#X connect 20 0 8 0;

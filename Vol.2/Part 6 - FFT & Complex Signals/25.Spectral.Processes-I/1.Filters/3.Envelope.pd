@@ -27,7 +27,6 @@
 0 -8 0 10 -228856 -1 -1 4 256;
 #X text 460 406 overlaps;
 #X obj 211 363 out~;
-#X obj 211 287 sampler~ ../../../../samples/didge.aif 1 1;
 #N canvas 385 106 731 354 filter-table 0;
 #X obj 95 153 phasor~;
 #X obj 231 93 r \$0-w_size;
@@ -94,11 +93,12 @@ envelope generator to generate the filter table. We can also say we're
 applying a "Spectral Envelope" into a FFT analysis. Open subpatches
 below to see the implementation.;
 #X obj 61 161 function 1 1 1 -height 100 -width 500;
+#X obj 211 287 play.file~ ../../../../samples/didge.aif 1 1;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 4 0 3 1;
-#X connect 7 0 9 0;
-#X connect 9 0 6 0;
-#X connect 9 0 6 1;
+#X connect 8 0 6 0;
+#X connect 8 0 6 1;
+#X connect 12 0 7 0;
 #X connect 13 0 8 0;

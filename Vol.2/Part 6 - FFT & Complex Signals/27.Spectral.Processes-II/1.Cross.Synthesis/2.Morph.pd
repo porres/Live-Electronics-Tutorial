@@ -80,8 +80,8 @@
 #X text 60 26 In this variation we "morph" from one amplitude to another
 \, but it's just a simple crossfade. This goes from a original sound
 to a cross synthesis. Open the subpatch to the right.;
-#X obj 111 106 player~ ../../../../samples/kantele.wav 1 1;
-#X obj 111 165 player~ ../../../../samples/numbers.wav 1 1;
+#X obj 111 106 play.file~ ../../../../samples/kantele.wav 1 1;
+#X obj 111 165 play.file~ ../../../../samples/numbers.wav 1 1;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;

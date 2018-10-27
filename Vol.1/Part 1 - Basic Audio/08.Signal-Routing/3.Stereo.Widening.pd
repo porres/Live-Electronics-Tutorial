@@ -1,14 +1,13 @@
 #N canvas 378 23 907 557 12;
 #X obj 705 225 *~ -1;
 #X obj 97 364 s~ \$0-sample;
-#X obj 638 184 r~ \$0-sample;
+#X obj 662 184 r~ \$0-sample;
 #X obj 98 409 r~ \$0-sample;
 #X obj 648 377 r~ \$0-sample;
 #X obj 561 250 out~;
 #X obj 662 249 out~;
 #X obj 98 471 out~;
-#X obj 648 465 out~;
-#X obj 97 338 player~ ../../../samples/bubul.wav 1 1;
+#X obj 648 467 out~;
 #X text 27 15 Stereo widening is any technique that increases the perceived
 stereo width or spread of a signal into the stereo field. Panning is
 one scuch technique \, but this example shows you other cheap and dirt
@@ -45,19 +44,20 @@ See the difference below., f 55;
 music \, why not do both? Have some fun!, f 39;
 #X obj 691 441 *~ -1;
 #X obj 215 418 f2s~ 10 7;
+#X obj 97 338 play.file~ ../../../samples/bubul.wav 1 1;
 #X connect 0 0 6 1;
 #X connect 2 0 0 0;
 #X connect 2 0 5 0;
 #X connect 2 0 5 1;
 #X connect 2 0 6 0;
 #X connect 3 0 7 0;
-#X connect 3 0 14 0;
+#X connect 3 0 13 0;
 #X connect 4 0 8 0;
-#X connect 4 0 20 0;
-#X connect 9 0 1 0;
-#X connect 12 0 13 0;
-#X connect 13 0 23 0;
-#X connect 14 0 7 1;
-#X connect 20 0 22 0;
-#X connect 22 0 8 1;
-#X connect 23 0 14 1;
+#X connect 4 0 19 0;
+#X connect 11 0 12 0;
+#X connect 12 0 22 0;
+#X connect 13 0 7 1;
+#X connect 19 0 21 0;
+#X connect 21 0 8 1;
+#X connect 22 0 13 1;
+#X connect 23 0 1 0;

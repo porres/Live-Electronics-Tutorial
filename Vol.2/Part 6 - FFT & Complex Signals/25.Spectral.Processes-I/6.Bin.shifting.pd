@@ -9,7 +9,7 @@
 #X obj 129 450 outlet~;
 #X obj 129 306 rifft~;
 #X obj 129 395 /~ 1536;
-#X floatatom 247 167 5 0 0 0 - - -, f 5;
+#X floatatom 247 167 5 0 0 0 - - -;
 #X obj 251 45 inlet;
 #X obj 55 238 ffdelay~ -samps;
 #X obj 175 236 ffdelay~ -samps;
@@ -29,7 +29,7 @@
 #X connect 11 0 5 0;
 #X restore 154 456 pd delay;
 #X obj 207 432 nbx 5 14 1 12 0 0 empty empty empty 0 -8 0 10 -228856
--1 -1 3 256;
+-1 -1 1 256;
 #N canvas 537 23 678 457 shift 0;
 #X obj 77 37 inlet~;
 #X obj 77 132 rfft~;
@@ -63,12 +63,12 @@ up or down. The effect actually sounds quite inharmonic as the original
 harmonic content is lost.;
 #X text 49 101 We use the native [lrshift~] object to shift frquencies
 to the right or left., f 59;
-#X obj 244 208 sampler~ ../../../samples/bubul.wav 1 1, f 30;
 #X text 89 339 Another alternative is to use [ffdelay~] to shift bins
 to the right., f 41;
 #X text 268 432 <= # of bins;
 #X text 88 457 click =>;
 #X text 38 205 click =>;
+#X obj 244 208 play.file~ ../../../samples/bubul.wav 1 1, f 30;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
 #X connect 3 0 7 1;
@@ -76,4 +76,4 @@ to the right., f 41;
 #X connect 4 0 3 1;
 #X connect 5 0 6 0;
 #X connect 5 0 6 1;
-#X connect 10 0 1 0;
+#X connect 14 0 1 0;

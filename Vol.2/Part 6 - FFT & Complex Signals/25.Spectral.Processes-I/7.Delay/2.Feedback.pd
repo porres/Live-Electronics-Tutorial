@@ -20,7 +20,6 @@
 #X connect 10 0 0 0;
 #X coords 0 400 1 399 430 184 0;
 #X restore 261 366 pd control;
-#X obj 78 53 sampler~ ../../../../samples/guitar.wav 1 1;
 #X obj 78 135 out~;
 #N canvas 489 65 578 521 Feedback-Delay 0;
 #X obj 136 136 block~ 512 4;
@@ -75,11 +74,12 @@ feedback lines. We also have an envelope for different feedback values
 for each frequency bin., f 47;
 #X obj 114 253 function;
 #X obj 331 253 function;
-#X connect 1 0 3 0;
-#X connect 3 0 2 0;
-#X connect 3 0 2 1;
-#X connect 6 0 8 0;
-#X connect 6 0 9 0;
-#X connect 8 0 0 0;
-#X connect 9 0 0 1;
+#X obj 78 53 play.file~ ../../../../samples/guitar.wav 1 1;
+#X connect 2 0 1 0;
+#X connect 2 0 1 1;
+#X connect 5 0 7 0;
+#X connect 5 0 8 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 1;
+#X connect 9 0 2 0;
 #X coords 0 0 1 1 560 350 0;

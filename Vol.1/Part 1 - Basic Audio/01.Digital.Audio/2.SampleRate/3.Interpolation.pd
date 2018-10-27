@@ -27,7 +27,7 @@
 1;
 #X obj 110 270 pack f 1;
 #X obj 61 193 osc~ 200;
-#X floatatom 207 198 5 0 0 0 - - -, f 5;
+#X floatatom 207 198 5 0 0 0 - - -;
 #X obj 207 248 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 1 256;
 #X obj 207 224 expr 1000 / $f1;
@@ -56,7 +56,6 @@ there).;
 #X connect 10 0 11 0;
 #X connect 11 0 7 0;
 #X restore 180 515 pd vanila;
-#X obj 98 205 player~ ../../../../samples/bubul.wav 1 1, f 33;
 #X text 27 45 Besides just holding values \, another alternative when
 upsampling is to interpolate between two sample values. The [downsample~]
 object also performs a simple linear interpolation. Test it below and
@@ -67,6 +66,7 @@ cwith interpolation with just native Pd Vanilla objects, f 50;
 #X text 27 127 To the right we have a graphical representation of the
 resulting waveforms in both interpolated and sample and hold downsampling.
 , f 51;
+#X obj 98 205 play.file~ ../../../../samples/bubul.wav 1 1, f 33;
 #X connect 0 0 1 0;
 #X connect 0 0 6 0;
 #X connect 0 0 7 0;
@@ -79,4 +79,4 @@ resulting waveforms in both interpolated and sample and hold downsampling.
 #X connect 13 0 8 0;
 #X connect 14 0 13 0;
 #X connect 15 0 10 0;
-#X connect 17 0 8 0;
+#X connect 21 0 8 0;

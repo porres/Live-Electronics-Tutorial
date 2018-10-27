@@ -181,12 +181,12 @@ locations marked with * for that reason.;
 #X text 48 39 Now we adapt the pitch shifter from the granular examples
 to include the phase accumulation process \, which is implemented in
 the cartesian form with phase lock on. Open the subpatch.;
-#X obj 93 112 sampler~ ../../../../../samples/bubul.wav 1 1;
 #X obj 93 146 delwrite~ \$0-buffer 500;
 #X text 107 383 Compare this pitch shifter with the earlier version
 that only relies in granulation., f 43;
+#X obj 93 112 play.file~ ../../../../../samples/bubul.wav 1 1;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
 #X connect 3 0 4 1;
-#X connect 6 0 7 0;
+#X connect 8 0 6 0;

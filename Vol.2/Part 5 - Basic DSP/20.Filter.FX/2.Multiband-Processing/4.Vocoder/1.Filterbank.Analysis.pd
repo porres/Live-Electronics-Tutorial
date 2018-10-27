@@ -1,4 +1,4 @@
-#N canvas 162 37 604 698 12;
+#N canvas 721 29 604 698 12;
 #N canvas 325 327 856 358 band-analyzer 0;
 #X obj 151 81 cnv 15 538 194 empty empty empty 20 12 0 14 -128992 -66577
 0;
@@ -23,7 +23,7 @@
 #X obj 312 87 vsl 15 180 20 100 0 0 empty \$0-amp-9 empty 0 -9 0 10
 -228856 -1 -1 0 1;
 #X obj 331 87 vsl 15 180 20 100 0 0 empty \$0-amp-10 empty 0 -9 0 10
--196150 -1 -1 361 1;
+-196150 -1 -1 362 1;
 #X obj 351 87 vsl 15 180 20 100 0 0 empty \$0-amp-11 empty 0 -9 0 10
 -196150 -1 -1 3157 1;
 #X obj 370 87 vsl 15 180 20 100 0 0 empty \$0-amp-12 empty 0 -9 0 10
@@ -60,7 +60,7 @@
 #X restore 27 471 pd band-analyzer;
 #X obj 131 233 nbx 5 14 16 110 0 0 \$0-note \$0-note-set empty 0 -8
 0 10 -228856 -1 -1 64 256;
-#N canvas 431 110 711 402 gate 0;
+#N canvas 431 110 748 381 gate 0;
 #X obj 263 145 mtof;
 #X obj 263 167 nbx 5 14 -1e+37 1e+37 0 0 \$0-ramp_freq \$0-ramp_freq-set
 empty 0 -8 0 10 -228856 -1 -1 329.628 256;
@@ -77,8 +77,8 @@ empty 0 -8 0 10 -228856 -1 -1 329.628 256;
 #X text 121 154 Sample;
 #X text 120 138 Audio input;
 #X text 120 123 Sawtooth;
-#X obj 342 192 sampler~ ../../../../../samples/numbers.wav 1 1;
 #X text 120 108 Sine;
+#X obj 342 192 play.file~ ../../../../../samples/numbers.wav 1 1;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 1 0 8 0;
@@ -89,7 +89,7 @@ empty 0 -8 0 10 -228856 -1 -1 329.628 256;
 #X connect 8 0 9 1;
 #X connect 9 0 5 0;
 #X connect 10 0 7 0;
-#X connect 14 0 9 3;
+#X connect 15 0 9 3;
 #X coords 0 -1 1 1 105 75 2 100 100;
 #X restore 131 262 pd gate;
 #X obj 88 395 out~;

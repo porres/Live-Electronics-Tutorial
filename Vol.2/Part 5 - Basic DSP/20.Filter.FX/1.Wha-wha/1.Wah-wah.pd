@@ -1,14 +1,14 @@
 #N canvas 552 55 534 535 12;
-#X floatatom 325 354 5 0 0 0 - - -, f 5;
+#X floatatom 325 354 5 0 0 0 - - -;
 #X obj 159 250 hsl 128 15 0.1 5 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X floatatom 156 277 5 0 0 0 - - -, f 5;
+#X floatatom 156 277 5 0 0 0 - - -;
 #X obj 229 276 hsl 128 15 50 500 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 273 298 hsl 128 15 1000 3000 1 0 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
-#X floatatom 270 322 5 0 0 0 - - -, f 5;
-#X floatatom 226 302 5 0 0 0 - - -, f 5;
+#X floatatom 270 322 5 0 0 0 - - -;
+#X floatatom 226 302 5 0 0 0 - - -;
 #X obj 328 325 hsl 128 15 1 15 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 173 388 vcf~ 10;
@@ -19,7 +19,6 @@
 #X obj 173 422 drive~;
 #X obj 173 461 out~;
 #X obj 196 325 rescale~ 500 2000, f 9;
-#X obj 60 213 player~ ../../../../samples/guitar2.wav 1 1;
 #X text 373 274 Min Freq.;
 #X text 413 295 Max Freq.;
 #X text 50 24 The Wah-wah effect stompbox quite known around and used
@@ -30,6 +29,7 @@ of a pedal. You can try with other filters \, but here we use [vcf~]
 and also have a [drive~] unit \, cause it sounded alright like that.
 Besides an LFO rate/frequency and filter Q \, we also have controls
 for the minumum and maximum frequency in the filter sweep., f 57;
+#X obj 60 213 play.file~ ../../../../samples/guitar2.wav 1 1;
 #X connect 0 0 8 2;
 #X connect 1 0 2 0;
 #X connect 2 0 9 0;
@@ -44,4 +44,4 @@ for the minumum and maximum frequency in the filter sweep., f 57;
 #X connect 13 0 14 0;
 #X connect 13 0 14 1;
 #X connect 15 0 8 1;
-#X connect 16 0 8 0;
+#X connect 20 0 8 0;

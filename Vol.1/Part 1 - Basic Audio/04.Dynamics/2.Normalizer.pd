@@ -20,7 +20,6 @@
 #X obj 278 168 display~ 5;
 #X obj 489 253 norm~ -30 -size 1024;
 #X obj 489 281 meter~ 4096 4096;
-#X obj 35 44 player~ 1 ../../../samples/kantele.wav 1 1, f 32;
 #X text 325 171 <= ratio;
 #X text 440 67 It is also based on [mov.rms~] to give us a running
 RMS analysis. The adjustment is with a simple division between the
@@ -28,12 +27,13 @@ target amplitude and the running RMS. The result is a ratio that we
 use to multiply the input so we can reach the target., f 61;
 #X text 469 168 This patch is implemented in the [norm~] abstraction
 from the ELSE library. Check it below \, open its help file.;
-#X obj 489 225 player~ 1 ../../../samples/MouthBow.wav 1 1;
 #X text 561 316 This process can be used in conjunction to a noise
 gate (in an earlier stage) to avoid that a noise floor is raised to
 the normalized value!, f 41;
 #X text 440 26 This realtime normalizer patch continuously adjusts
 the gain to a fixed RMS value., f 61;
+#X obj 489 225 play.file~ 1 ../../../samples/MouthBow.wav 1 1;
+#X obj 35 44 play.file~ 1 ../../../samples/kantele.wav 1 1, f 32;
 #X connect 2 0 3 1;
 #X connect 2 0 3 0;
 #X connect 5 0 7 0;
@@ -49,7 +49,7 @@ the gain to a fixed RMS value., f 61;
 #X connect 15 0 5 0;
 #X connect 16 0 15 1;
 #X connect 17 0 18 0;
-#X connect 19 0 11 0;
-#X connect 19 0 2 0;
-#X connect 19 0 15 0;
-#X connect 23 0 17 0;
+#X connect 24 0 17 0;
+#X connect 25 0 11 0;
+#X connect 25 0 2 0;
+#X connect 25 0 15 0;

@@ -1,4 +1,4 @@
-#N canvas 517 74 564 645 12;
+#N canvas 572 145 564 645 12;
 #X obj 206 307 osc~ 0.1;
 #X text 95 282 sample;
 #X text 97 303 synth;
@@ -45,7 +45,7 @@
 #X obj 64 274 pol2car~;
 #X obj 142 48 inlet;
 #X obj 142 194 expr 1 - $f1;
-#X floatatom 142 222 5 0 0 0 - - -, f 5;
+#X floatatom 142 222 5 0 0 0 - - -;
 #X obj 161 160 lb;
 #X obj 117 247 *~;
 #X text 150 248 <= phase information;
@@ -70,7 +70,6 @@
 #X connect 17 0 12 1;
 #X restore 156 485 pd Zero-Phase;
 #X text 96 322 noise;
-#X obj 156 271 sampler~ ../../../samples/kantele.wav 1 1;
 #X obj 206 343 rescale~ 40 800;
 #X text 76 25 This is a very simple spectral process that only removes
 the initial phase information. It's been noted that the initial phase
@@ -90,18 +89,19 @@ synthesis.;
 see how the original tonal quality is lost and we just hear the same
 harmonic series as a result. Try different input sources.;
 #X text 85 486 click =>;
-#X connect 0 0 16 0;
-#X connect 3 0 22 2;
-#X connect 4 0 22 1;
+#X obj 156 271 play.file~ ../../../samples/kantele.wav 1 1;
+#X connect 0 0 15 0;
+#X connect 3 0 21 2;
+#X connect 4 0 21 1;
 #X connect 6 0 9 0;
 #X connect 7 0 8 0;
 #X connect 8 0 6 0;
 #X connect 10 0 9 1;
 #X connect 13 0 5 0;
 #X connect 13 0 5 1;
-#X connect 15 0 22 0;
-#X connect 16 0 4 0;
-#X connect 19 0 13 1;
+#X connect 15 0 4 0;
+#X connect 18 0 13 1;
+#X connect 19 0 20 0;
 #X connect 20 0 21 0;
-#X connect 21 0 22 0;
-#X connect 22 0 13 0;
+#X connect 21 0 13 0;
+#X connect 25 0 21 0;

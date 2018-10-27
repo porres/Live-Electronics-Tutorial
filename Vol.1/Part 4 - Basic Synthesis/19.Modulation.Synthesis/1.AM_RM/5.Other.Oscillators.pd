@@ -36,7 +36,6 @@
 15 -228856 -1 -1 50.5 256;
 #X obj 166 431 out~;
 #X obj 166 389 *~;
-#X obj 58 193 player~ ../../../../samples/bubul.wav 1 1, f 33;
 #X obj 356 333 cnv 15 298 138 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #N canvas 0 22 478 328 (subpatch) 0;
@@ -97,7 +96,7 @@
 #X coords 0 -1 1 1 108 80 2 100 100;
 #X restore 405 86 pd oscillator;
 #X obj 405 53 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-mod empty 82 9 0
-15 -228856 -1 -1 500 256;
+15 -228856 -1 -1 50.5 256;
 #N canvas 179 95 483 427 oscillator 0;
 #X obj 175 343 outlet~;
 #X obj 175 270 sine~;
@@ -131,7 +130,7 @@
 #X coords 0 -1 1 1 108 80 2 100 100;
 #X restore 546 86 pd oscillator;
 #X obj 546 53 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-mod empty 82 9 0
-15 -228856 -1 -1 100 256;
+15 -228856 -1 -1 50.5 256;
 #X text 51 389 Ring Modulation;
 #X obj 546 174 rescale~;
 #X text 402 32 carrier;
@@ -144,16 +143,17 @@ be enough \, specially as an effects processor. As for synthesis \,
 a more interesting and efficient technique to generating complex sounds
 is with frequency and phase modulation \, as we'll see next., f 45
 ;
+#X obj 58 193 play.file~ ../../../../samples/bubul.wav 1 1, f 33;
 #X connect 0 0 4 1;
 #X connect 2 0 0 0;
 #X connect 4 0 3 0;
 #X connect 4 0 3 1;
-#X connect 5 0 4 0;
+#X connect 15 0 14 0;
+#X connect 15 0 14 1;
+#X connect 15 0 13 0;
 #X connect 16 0 15 0;
-#X connect 16 0 15 1;
-#X connect 16 0 14 0;
 #X connect 17 0 16 0;
-#X connect 18 0 17 0;
-#X connect 19 0 22 0;
-#X connect 20 0 19 0;
-#X connect 22 0 16 1;
+#X connect 18 0 21 0;
+#X connect 19 0 18 0;
+#X connect 21 0 15 1;
+#X connect 26 0 4 0;

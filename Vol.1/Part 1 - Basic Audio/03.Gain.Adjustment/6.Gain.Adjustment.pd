@@ -1,5 +1,5 @@
 #N canvas 773 32 501 559 12;
-#X floatatom 296 222 8 0 0 0 - - -, f 8;
+#X floatatom 296 222 8 0 0 0 - - -;
 #X obj 278 282 *~;
 #X obj 296 164 nbx 5 17 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
 -228856 -1 -1 0 256;
@@ -9,7 +9,6 @@
 #X obj 58 366 meter~;
 #X obj 182 365 meter~;
 #X obj 278 375 out~;
-#X obj 59 217 player~ ../../../samples/bubul.wav 1 1, f 30;
 #X text 178 508 adjusted;
 #X text 43 21 This example shows how to adjust the gain of an incoming
 audio \, in this case from a sample. The adjustment is made with a
@@ -21,12 +20,13 @@ dB values or decrease its intensity with negative values., f 57;
 #X obj 296 253 f2s~ 10 1;
 #X text 42 123 Compare the VU meter of the original sound with the
 gain adjusted one.;
-#X connect 0 0 15 0;
+#X obj 59 217 play.file~ ../../../samples/bubul.wav 1 1, f 30;
+#X connect 0 0 14 0;
 #X connect 1 0 7 0;
 #X connect 1 0 8 0;
 #X connect 1 0 8 1;
 #X connect 2 0 5 0;
 #X connect 5 0 0 0;
-#X connect 9 0 1 0;
-#X connect 9 0 6 0;
-#X connect 15 0 1 1;
+#X connect 14 0 1 1;
+#X connect 16 0 1 0;
+#X connect 16 0 6 0;

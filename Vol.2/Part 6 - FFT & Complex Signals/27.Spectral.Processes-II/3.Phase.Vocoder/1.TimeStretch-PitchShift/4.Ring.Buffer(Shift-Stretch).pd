@@ -11,7 +11,7 @@
 #X obj 60 112 bang~;
 #X obj 104 139 +;
 #X obj 60 151 f;
-#X floatatom 123 72 5 0 0 0 - - -, f 5;
+#X floatatom 123 72 5 0 0 0 - - -;
 #X text 169 71 speed (%);
 #X obj 123 24 inlet;
 #X text 449 69 cents;
@@ -194,23 +194,23 @@
 #X restore 194 324 pd pvoc;
 #X text 300 280 cents;
 #X obj 240 280 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
-0 10 -228856 -1 -1 -548.031 256;
+0 10 -228856 -1 -1 -100 256;
 #X obj 243 260 hsl 128 15 -2400 2400 0 0 empty empty empty -2 -8 0
-10 -228856 -1 -1 4900 1;
+10 -228856 -1 -1 0 1;
 #X obj 166 274 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
 0 10 -228856 -1 -1 90 256;
 #X text 169 253 speed;
 #X obj 151 371 out~;
-#X obj 97 170 sampler~ ../../../../../samples/bubul.wav 1 1;
 #X text 255 327 <= click;
-#X obj 97 200 delwrite~ \$0-buffer 60000;
+#X obj 80 191 delwrite~ \$0-buffer 60000;
 #X text 65 41 Again we adapt a previously presented patch in the granulation
 series. Now is time to check out the Pitch Shifter and Time Stretch
 on a ring buffer with the phase accumulation. Nothing should be new
 \, just the same kind of adaptation., f 57;
+#X obj 80 161 play.file~ ../../../../../samples/bubul.wav 1 1;
 #X connect 0 0 6 0;
 #X connect 0 0 6 1;
 #X connect 2 0 0 1;
 #X connect 3 0 2 0;
 #X connect 4 0 0 0;
-#X connect 7 0 9 0;
+#X connect 10 0 8 0;

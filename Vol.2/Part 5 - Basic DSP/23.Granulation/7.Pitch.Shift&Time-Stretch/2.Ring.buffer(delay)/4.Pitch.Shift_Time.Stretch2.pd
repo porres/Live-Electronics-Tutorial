@@ -1,9 +1,9 @@
 #N canvas 788 70 551 449 12;
 #X text 335 265 cents;
 #X obj 317 287 nbx 5 16 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
-0 13 -228856 -1 -1 -403 256;
+0 13 -228856 -1 -1 -400 256;
 #X obj 224 286 nbx 4 16 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
-0 13 -228856 -1 -1 -26 256;
+0 13 -228856 -1 -1 50 256;
 #X obj 410 286 nbx 4 16 64 8192 0 0 empty \$0-block empty 0 -8 0 13
 -228856 -1 -1 2048 256;
 #X msg 424 170 512;
@@ -18,7 +18,7 @@
 #N canvas 475 45 840 752 pitch-shift/time-stretch 0;
 #X obj 51 257 bang~;
 #X obj 123 246 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--204800 -1 -1 2580.48 256;
+-204800 -1 -1 1024 256;
 #X obj 152 695 outlet~;
 #X obj 123 34 inlet;
 #X obj 354 34 inlet;
@@ -26,9 +26,9 @@
 #X obj 235 543 phasor~;
 #X obj 239 34 inlet;
 #X obj 239 94 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--236782 -1 -1 -403 256;
+-236782 -1 -1 -400 256;
 #X obj 123 95 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--183865 -1 -1 -26 256;
+-183865 -1 -1 50 256;
 #X obj 354 253 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
 -257904 -1 -1 2048 256;
 #X obj 217 614 *~;
@@ -36,7 +36,7 @@
 #X obj 373 318 block~;
 #X obj 105 275 +;
 #X obj 152 633 *~;
-#X floatatom 354 570 4 0 0 0 - - -, f 4;
+#X floatatom 354 570 4 0 0 0 - - -;
 #X obj 354 509 / 2;
 #X floatatom 239 163 0 0 0 0 - - -;
 #X obj 567 94 loadbang;
@@ -152,9 +152,9 @@ to half the new grain size instead of subtracting because this means
 stretch patch in which the grain size depends on the block size. As
 the earlier one \, this is the basis of a Phase Vocoder example presented
 later. Open the subpatch for details., f 52;
-#X obj 55 161 sampler~ ../../../../../samples/bubul.wav 1 1;
 #X obj 55 254 initmess \; \$0-speed 50 \; \$0-cents -400 \; \$0-block
 2048;
+#X obj 55 161 play.file~ ../../../../../samples/bubul.wav 1 1;
 #X connect 1 0 13 1;
 #X connect 2 0 13 0;
 #X connect 3 0 13 2;
@@ -165,4 +165,4 @@ later. Open the subpatch for details., f 52;
 #X connect 8 0 3 0;
 #X connect 13 0 9 0;
 #X connect 13 0 9 1;
-#X connect 15 0 10 0;
+#X connect 16 0 10 0;

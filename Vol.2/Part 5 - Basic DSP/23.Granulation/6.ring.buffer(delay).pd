@@ -102,7 +102,6 @@
 #X obj 344 279 rescale~;
 #X obj 86 258 rescale~;
 #X obj 214 269 rescale~;
-#X obj 159 371 sampler~ ../../../samples/bubul.wav 1 1, f 40;
 #X text 57 16 Now we adapt what we've seen for ring buffers (delay
 lines). This is useful for live input \, since the past examples needed
 pre recorded samples to be loaded into buffers., f 61;
@@ -111,6 +110,7 @@ by [delread4~]. There are major differences though \, as the buffer
 read head is always running. in this example we have a 5 seconds delay
 line \, open [pd delread4~] for details. You may use [adc~] for an
 actual live input., f 61;
+#X obj 159 371 play.file~ ../../../samples/bubul.wav 1 1;
 #X connect 0 0 16 0;
 #X connect 3 0 13 0;
 #X connect 4 0 21 0;
@@ -127,4 +127,4 @@ actual live input., f 61;
 #X connect 19 0 15 0;
 #X connect 20 0 1 0;
 #X connect 21 0 2 0;
-#X connect 22 0 0 0;
+#X connect 24 0 0 0;

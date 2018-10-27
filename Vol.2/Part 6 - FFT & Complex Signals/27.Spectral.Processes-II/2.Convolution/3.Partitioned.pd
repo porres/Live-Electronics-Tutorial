@@ -17,14 +17,13 @@ recommended to see all of his work. Check his website below.;
 #X obj 58 268 soundfiler;
 #X obj 58 235 initmess read -resize ../../../../samples/IR.wav \$0-IR
 ;
-#X obj 611 82 s~ \$0-input;
-#X obj 756 79 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+#X obj 602 82 s~ \$0-input;
+#X obj 764 79 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
-#X obj 756 105 tabplay~ \$0-IR;
-#X obj 756 143 out~;
-#X text 780 79 Play IR:;
-#X obj 591 40 sampler~ 1 ../../../../samples/didge.aif 1 1, f 45;
-#X obj 548 115 out~;
+#X obj 764 105 tabplay~ \$0-IR;
+#X obj 764 143 out~;
+#X text 788 79 Play IR:;
+#X obj 539 115 out~;
 #X obj 676 300 r~ \$0-input;
 #X obj 676 371 out~;
 #X text 609 333 click =>;
@@ -33,14 +32,15 @@ recommended to see all of his work. Check his website below.;
 is that it uses a much smaller window size \, which reflects in a much
 shorter latency. The partition size needs to be multiples of 64 (in
 this example \, it's 256). Check its help file for more details.;
+#X obj 582 40 play.file~ 1 ../../../../samples/didge.aif 1 1;
 #X connect 1 0 0 0;
 #X connect 7 0 6 0;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 10 0 11 1;
-#X connect 13 0 8 0;
-#X connect 13 0 14 1;
-#X connect 13 0 14 0;
-#X connect 15 0 18 0;
-#X connect 18 0 16 0;
-#X connect 18 0 16 1;
+#X connect 14 0 17 0;
+#X connect 17 0 15 0;
+#X connect 17 0 15 1;
+#X connect 19 0 8 0;
+#X connect 19 0 13 1;
+#X connect 19 0 13 0;

@@ -1,4 +1,4 @@
-#N canvas 125 81 882 419 12;
+#N canvas 379 84 882 419 12;
 #X obj 506 158 nbx 2 14 1 50 0 0 \$0-peaks empty empty 0 -8 0 10 -228856
 -1 -1 1 256;
 #X text 463 155 peaks;
@@ -22,7 +22,6 @@ this example we just perform a simple pitch shift., f 50;
 and can also spit separate tone components to feed a bank of oscillators.
 it is based on FFT so we give it parameters like window size (-npts)
 and hop size (-hop)., f 50;
-#X obj 87 250 sampler~ ../../../../samples/bubul.wav 1 1;
 #X text 655 268 <= open;
 #X text 422 26 For the oscillator bank we use an abstraction loaded
 50 times in [clone]. The "tracks" arguments send the highest energy
@@ -34,14 +33,15 @@ we perform a simple transposition. Open the subpatch for more info.
 #X obj 506 267 clone 50 oscillator;
 #X text 665 313 compare this pitch shifter with the last two we've
 seen, f 20;
+#X obj 87 250 play.file~ ../../../../samples/bubul.wav 1 1;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 16 0;
+#X connect 3 0 15 0;
 #X connect 5 0 3 0;
 #X connect 8 0 10 0;
-#X connect 10 0 16 1;
-#X connect 13 0 4 0;
-#X connect 13 0 6 0;
-#X connect 13 0 6 1;
-#X connect 16 0 7 0;
-#X connect 16 0 7 1;
+#X connect 10 0 15 1;
+#X connect 15 0 7 0;
+#X connect 15 0 7 1;
+#X connect 17 0 4 0;
+#X connect 17 0 6 0;
+#X connect 17 0 6 1;

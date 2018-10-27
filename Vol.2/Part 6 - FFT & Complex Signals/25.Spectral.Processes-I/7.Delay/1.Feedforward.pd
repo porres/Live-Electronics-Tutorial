@@ -1,5 +1,4 @@
 #N canvas 648 23 747 399 12;
-#X obj 421 172 sampler~ ../../../../samples/guitar.wav 1 1, f 35;
 #X obj 421 264 out~;
 #N canvas 507 133 431 572 Spectral-Delay 0;
 #X obj 262 422 block~ 512 4;
@@ -73,9 +72,11 @@ each sample. We generate one with the [function] object \, where the
 horizontal axis represent the frequency points and the vertical axis
 the delay time. The delay depth controls the overall amplitude (that
 is the time parameter) of the envelope., f 43;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
-#X connect 2 0 1 1;
-#X connect 5 0 7 0;
-#X connect 7 0 6 0;
+#X obj 421 172 play.file~ ../../../../samples/guitar.wav 1 1, f 35
+;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X connect 8 0 1 0;
 #X coords 0 0 1 1 560 350 0;

@@ -1,4 +1,4 @@
-#N canvas 240 23 730 479 12;
+#N canvas 637 55 730 479 12;
 #X obj 464 166 hradio 15 1 0 10 empty \$0-window empty 0 -8 0 10 -228856
 -1 -1 4;
 #X obj 464 214 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
@@ -13,10 +13,7 @@
 #X coords 0 0 1 1 120 60 0;
 #X restore 464 236 pd Window;
 #X obj 464 189 expr pow(2 \, $f1 + 7);
-#X obj 103 39 sampler~ 1 ../../../../samples/kantele.wav 1 1, f 35
-;
 #X obj 103 81 s~ \$0-Phase;
-#X obj 429 66 sampler~ ../../../../samples/numbers.wav 1 1, f 35;
 #X obj 429 108 s~ \$0-Amp;
 #X text 501 109 (or "filter");
 #N canvas 156 23 694 514 xsynth 0;
@@ -108,16 +105,20 @@ quality of the input. We then have a tonal source for the phase information
 and a noisy speech for the amplitude (or filter control). Listen to
 both below and the crossed synthesized to the right, f 47;
 #X text 522 211 window size;
+#X obj 103 39 play.file~ 1 ../../../../samples/kantele.wav 1 1, f
+35;
+#X obj 429 66 play.file~ ../../../../samples/numbers.wav 1 1, f 35
+;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;
-#X connect 4 0 5 0;
-#X connect 6 0 7 0;
-#X connect 9 0 12 0;
-#X connect 9 0 12 1;
-#X connect 10 0 9 0;
-#X connect 11 0 9 1;
-#X connect 16 0 14 0;
-#X connect 16 0 14 1;
-#X connect 17 0 15 0;
-#X connect 17 0 15 1;
+#X connect 7 0 10 0;
+#X connect 7 0 10 1;
+#X connect 8 0 7 0;
+#X connect 9 0 7 1;
+#X connect 14 0 12 0;
+#X connect 14 0 12 1;
+#X connect 15 0 13 0;
+#X connect 15 0 13 1;
+#X connect 18 0 4 0;
+#X connect 19 0 5 0;
