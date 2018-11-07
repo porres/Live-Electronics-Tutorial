@@ -1,59 +1,67 @@
-#N canvas 227 27 988 680 12;
+#N canvas 338 85 988 680 12;
 #X obj 640 294 float 5.5;
 #X msg 640 262 bang;
-#X floatatom 640 327 5 0 0 0 - - -, f 5;
+#X floatatom 640 327 5 0 0 0 - - -;
 #X msg 700 261 1;
 #X text 716 296 <= argument;
 #X text 734 262 <= cold inlet;
 #X text 540 262 hot inlet =>;
-#X msg 614 548 0;
-#X text 648 548 reset;
-#X msg 582 510 bang;
-#X obj 764 562 + 1;
-#X floatatom 764 606 5 0 0 0 - - -, f 5;
-#X text 754 517 Danger! Infinite Loop!;
-#X msg 715 518 bang;
-#X text 517 511 Counter:;
-#X text 800 557 See the Error at Pd's window, f 15;
-#X floatatom 640 609 5 0 0 0 - - -, f 5;
-#X obj 640 579 + 1;
-#X obj 582 579 float;
-#X obj 715 562 float;
-#X msg 156 259 4;
-#X msg 145 299 1 oi 3 5;
-#X msg 156 196 bang;
-#X text 112 197 bang;
-#X msg 156 232 symbol oi;
-#X msg 146 325 list um 2;
-#X text 106 232 Symbol;
-#X text 210 299 (implicit);
-#X text 103 312 List;
-#X text 186 258 (implicit);
-#X text 109 260 float;
-#X msg 315 242 turn on;
-#X msg 315 274 open file4.aif;
-#X floatatom 287 621 5 0 0 0 - - -, f 5;
-#X symbolatom 116 601 15 0 0 0 - - -, f 15;
-#X msg 116 534 symbol nice;
-#X msg 116 565 symbol \$1!!!;
-#X text 74 491 Dollar sign variables:;
-#X msg 287 587 \$2;
-#X msg 287 524 13 12 11;
-#X msg 260 493 list one 2 three;
-#X msg 303 554 Midi Note 69;
-#X text 40 21 A message selector is the first symbol in a message and
-defines its data type. The special types are float \, symbol \, list
-and bang \, but the "float" selector doesn't need to be specified and
-neither does "list" if the first element in the list is a float. Other
-message types can be anything \, and the first element in the message
-specifies the selector - clearly distinguishing from the special cases.
-, f 55;
-#X text 52 160 Special selectors:;
-#X text 39 373 A dollar sign followed by a number behaves like a variable
+#X msg 598 543 0;
+#X text 632 543 reset;
+#X obj 772 579 + 1;
+#X floatatom 772 623 5 0 0 0 - - -;
+#X text 756 541 Danger! Infinite Loop!;
+#X text 501 506 Counter:;
+#X text 808 574 See the Error at Pd's window, f 15;
+#X floatatom 624 604 5 0 0 0 - - -;
+#X obj 624 574 + 1;
+#X obj 566 574 float;
+#X obj 723 579 float;
+#X msg 121 251 4;
+#X msg 110 291 1 oi 3 5;
+#X msg 121 188 bang;
+#X text 77 189 bang;
+#X msg 121 224 symbol oi;
+#X msg 111 317 list um 2;
+#X text 71 224 Symbol;
+#X text 175 291 (implicit);
+#X text 68 304 List;
+#X text 151 250 (implicit);
+#X text 74 252 float;
+#X msg 280 234 turn on;
+#X msg 280 266 open file4.aif;
+#X floatatom 277 611 5 0 0 0 - - -;
+#X symbolatom 106 591 15 0 0 0 - - -;
+#X msg 106 524 symbol nice;
+#X msg 106 555 symbol \$1!!!;
+#X text 64 481 Dollar sign variables:;
+#X msg 277 577 \$2;
+#X msg 277 514 13 12 11;
+#X msg 250 483 list one 2 three;
+#X msg 293 544 Midi Note 69;
+#X text 52 150 Special selectors:;
+#X text 39 364 A dollar sign followed by a number behaves like a variable
 in messages. The dollar sign number correspond correspond to elements
 of an incoming message (number or symbol) so "\$1" is the 1st element
 \, \$2 the 2nd and so on. Note that the message selector does not count
 as a message element.;
+#X text 258 190 Other selectors:, f 11;
+#X text 492 178 Usually the left inlet is the "hot" one as it forces
+an output \, whereas the others do not and "cold". This is only in
+respect to control data objects - since audio objects generate data
+constantly \, the hot/cold idea is not pertinent!, f 63;
+#X obj 566 507 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 593 505 <= bang GUI (same as "bang" message);
+#X obj 723 542 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 502 362 Now let's implement a counter. On the left we have
+a correct way of doing it. The [float] object outputs the stored value
+on bang messages \, which is added to “1” and stored back in the
+cold inlet. The example to the right is wrong as the added number goes
+back to the hot inlet \, creating an infinite loop \, where Pd would
+freeze if it didn’t have a mechanism to break it and report an error
+(stack overflow). Click on the bangs and try it out.;
 #X text 492 26 Most objects take creation "arguments" \, which are
 initializing parameters. If none are given \, default values are loaded.
 For instance \, the [float] object stores numbers it receives on its
@@ -62,35 +70,32 @@ If no argument is given \, [float] initially stores “0”. The Argument
 "5.5" is the initially stored value of the [float] object below. The
 inlet to the right stores a new value and overwrites the argument \,
 but note that it is not updated inside the object box and the given
-argument will still be there when the patch is reloaded. (see example
+argument will still be there when the patch is reloaded (see example
 below)., f 63;
-#X text 293 198 Other selectors:, f 11;
-#X text 492 178 Usually the left inlet is the "hot" one as it forces
-an output \, whereas the others do not and "cold". This is only in
-respect to control data objects - since audio objects generate data
-constantly \, the hot/cold idea is not pertinent!, f 63;
-#X text 502 372 Now let's implement a counter. On the left we have
-a correct way of doing it. The [float] object outputs the stored value
-on bang messages \, which is added to “1” and stored back in the
-cold inlet. The example to the right is wrong as the added number goes
-back to the hot inlet \, creating an infinite loop \, where Pd would
-freeze if it didn’t have a mechanism to break it and report an error
-(stack overflow).;
+#X msg 280 296 stop;
+#X text 40 21 A message selector is the first symbol in a message and
+defines its data type. The special types are: float \, symbol \, list
+and bang \, but the "float" selector doesn't need to be specified and
+neither does "list" if its first element is a float. Other message
+types can be anything. If a message contains only one symbol \, like
+"stop" \, it is considered a selector even though if there's no message
+attached., f 55;
+#X msg 346 234 turn off;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 3 0 0 1;
-#X connect 7 0 18 1;
-#X connect 9 0 18 0;
-#X connect 10 0 11 0;
-#X connect 10 0 19 0;
-#X connect 13 0 19 0;
-#X connect 17 0 16 0;
-#X connect 17 0 18 1;
-#X connect 18 0 17 0;
-#X connect 19 0 10 0;
-#X connect 35 0 36 0;
-#X connect 36 0 34 0;
-#X connect 38 0 33 0;
-#X connect 39 0 38 0;
-#X connect 40 0 38 0;
-#X connect 41 0 38 0;
+#X connect 7 0 16 1;
+#X connect 9 0 10 0;
+#X connect 9 0 17 0;
+#X connect 15 0 14 0;
+#X connect 15 0 16 1;
+#X connect 16 0 15 0;
+#X connect 17 0 9 0;
+#X connect 33 0 34 0;
+#X connect 34 0 32 0;
+#X connect 36 0 31 0;
+#X connect 37 0 36 0;
+#X connect 38 0 36 0;
+#X connect 39 0 36 0;
+#X connect 44 0 16 0;
+#X connect 46 0 17 0;

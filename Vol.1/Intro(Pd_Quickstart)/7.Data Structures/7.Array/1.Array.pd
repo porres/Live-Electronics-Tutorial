@@ -1,0 +1,99 @@
+#N struct DS-7 float x float y array table f;
+#N struct f float y;
+#N canvas 178 37 820 703 12;
+#N canvas 1021 161 316 192 display 1;
+#X scalar DS-7 25 75 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; \;;
+#X coords 0 192 1 191 0 0 0;
+#X restore 220 238 pd display;
+#X obj 647 151 pointer;
+#X obj 71 268 loadbang;
+#X obj 545 142 r coords;
+#X text 37 31 This example shows how to add and set an "array". An
+array is a collection of elements the same data type \, which can be
+a float \, a symbol \, a text and even an array itself., f 49;
+#N canvas 297 42 537 224 element 0;
+#X obj 186 135 struct f float y;
+#X text 77 38 The element is defined as a struct of name "f" containing
+only a float named "y". Since this is also the special variable name
+for the vertical coordinate \, this means you can drag this element
+vertically \, as in Pd's arrays.;
+#X restore 219 185 pd element;
+#X obj 545 183 append DS-7 x y;
+#X obj 422 217 setsize DS-7 table;
+#X obj 422 156 r size;
+#X obj 422 190 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 266 256;
+#X text 421 32 when creating an array \, you also need to set an array
+size with the [setsize] object. In a similar fashion \, this object
+needs a struct name \, the array name and a pointer to it in the right
+inlet., f 44;
+#N canvas 391 208 519 392 template 0;
+#X text 76 50 Data Structure named "DS-7" holding coordinates floats
+"x/y" and an array named "table" using the struct named "element" defined
+in the other subpatch., f 53;
+#X obj 280 266 plot table;
+#X text 94 202 The drawing instruction for the array is given by the
+[plot] object. It needs the array name ("table")., f 40;
+#X obj 90 132 struct DS-7 float x float y array table f;
+#X restore 220 211 pd template;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array array 266 float 2;
+#X coords 0 1 266 -1 200 140 1 0 0;
+#X restore 390 276 graph;
+#X text 38 97 Now things get a little bit more complicated as we need
+a [struct] to define the element in a separate subpatch ([pd element]).
+Check the subpatches below., f 49;
+#X msg 71 299 \; pd-display clear \, vis 1 \; pointer traverse pd-display
+\, bang \; coords 25 75 \; size 266;
+#X obj 647 121 r pointer;
+#X text 609 303 Now you can click at a point in the array and drag
+just like you normally do in Pd's arrays to the left., f 22;
+#X obj 509 635 getsize DS-7 table;
+#X obj 509 607 pointer;
+#X obj 509 664 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 266 256;
+#X msg 509 575 traverse pd-display \, next;
+#X text 400 442 The [getsize] object is similar to [setsize]. It needs
+a struct name and an array name \, which can be given as arguments.
+It sends the array size when it receives a pointer to it. Here we use
+the [pointer] object to send it a pointer. We use the "traverse" message
+and then ask for the "next" object \, so we get the pointer to the
+first object instead of the head of the list., f 54;
+#X text 73 488 When you create a subpatch \, on its properties you
+have "Y units per pixel" set to "-1"., f 39;
+#X text 73 550 This makes the array values inverted \, so you need
+to change it to "1" in the propeties., f 39;
+#X text 73 610 Check the properties for [pd display] (right click on
+it and select "properties")., f 39;
+#X text 57 450 IMPORTANT NOTE:, f 19;
+#X text 438 573 click =>;
+#X connect 1 0 6 2;
+#X connect 2 0 14 0;
+#X connect 3 0 6 0;
+#X connect 6 0 7 1;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 15 0 1 0;
+#X connect 17 0 19 0;
+#X connect 18 0 17 0;
+#X connect 20 0 18 0;

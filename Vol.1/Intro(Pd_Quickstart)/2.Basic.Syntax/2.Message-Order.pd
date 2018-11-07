@@ -1,4 +1,4 @@
-#N canvas 86 37 1040 693 12;
+#N canvas 156 38 1040 693 12;
 #X msg 376 258 1;
 #X obj 225 230 trigger bang bang bang;
 #X msg 300 259 2;
@@ -10,40 +10,39 @@
 #X obj 97 308 print ORDER;
 #X msg 97 227 bang;
 #X msg 225 191 bang;
-#X obj 160 500 swap;
-#X floatatom 191 471 3 0 0 0 - - -, f 3;
-#X floatatom 160 471 3 0 0 0 - - -, f 3;
-#X obj 160 576 /;
-#X floatatom 191 536 3 0 0 0 - - -, f 3;
-#X floatatom 160 535 3 0 0 0 - - -, f 3;
-#X floatatom 328 474 5 0 0 0 - - -, f 5;
-#X floatatom 266 474 5 0 0 0 - - -, f 5;
-#X floatatom 389 579 5 0 0 0 - - -, f 5;
-#X floatatom 266 580 5 0 0 0 - - -, f 5;
-#X obj 266 549 float;
-#X obj 266 506 trigger bang float;
-#X floatatom 160 609 0 0 0 0 - - -;
-#X text 248 609 The [swap] object implemented with [trigger] & [float]
+#X obj 115 511 swap;
+#X floatatom 146 482 3 0 0 0 - - -;
+#X floatatom 115 482 3 0 0 0 - - -;
+#X obj 115 587 /;
+#X floatatom 146 547 3 0 0 0 - - -;
+#X floatatom 115 546 3 0 0 0 - - -;
+#X floatatom 283 485 5 0 0 0 - - -;
+#X floatatom 221 485 5 0 0 0 - - -;
+#X floatatom 344 590 5 0 0 0 - - -;
+#X floatatom 221 591 5 0 0 0 - - -;
+#X obj 221 560 float;
+#X obj 221 517 trigger bang float;
+#X floatatom 115 620 0 0 0 0 - - -;
+#X text 203 620 The [swap] object implemented with [trigger] & [float]
 , f 29;
-#X text 49 474 swapping the output order:, f 13;
-#X msg 518 184 1;
-#X obj 518 210 trigger float float;
-#X obj 648 238 trigger float float;
-#X obj 648 270 + 1;
-#X obj 950 303 + 1;
-#X obj 950 334 + 1;
-#X obj 950 364 + 1;
-#X obj 950 394 + 1;
-#X obj 864 303 + 1;
-#X obj 864 334 + 1;
-#X obj 864 364 + 1;
-#X obj 778 303 + 1;
-#X obj 778 334 + 1;
-#X obj 725 435 print Sequence;
-#X obj 778 267 trigger float float float;
-#X text 558 182 <= depth first;
-#X msg 727 572 1 \, 2 \, 3 \, 4 \, five \, six \, 7;
-#X obj 727 608 print Several_Messages;
+#X text 21 498 swapping the output order:, f 13;
+#X msg 516 188 1;
+#X obj 516 214 trigger float float;
+#X obj 646 242 trigger float float;
+#X obj 646 274 + 1;
+#X obj 948 295 + 1;
+#X obj 948 319 + 1;
+#X obj 948 343 + 1;
+#X obj 948 367 + 1;
+#X obj 862 295 + 1;
+#X obj 862 319 + 1;
+#X obj 862 343 + 1;
+#X obj 776 295 + 1;
+#X obj 776 319 + 1;
+#X obj 776 426 print Sequence;
+#X obj 776 271 trigger float float float;
+#X msg 489 532 1 \, 2 \, 3 \, 4 \, five \, six \, 7, f 12;
+#X obj 488 596 print Several_Messages;
 #X text 32 21 Pd's Hot/Cold structure demands an order where things
 need to first reach the rightmost inlets (cold) and then the leftmost
 (hot) one. Hence \, most objects output data via its outlets in a right
@@ -70,9 +69,20 @@ of the next [trigger] object and then again to the last [trigger] rightmost
 outlet. Once it reaches that branch \, the data needs to go to the
 end of the chain and into the [print] object before it moves on to
 the next output of the [trigger] object and so on., f 69;
-#X text 589 497 Now \, let it be clear that messages separated by commas
-are sent in the left to right order \, as common sense would predict.
-, f 48;
+#X text 394 459 Messages separated by commas are sent in the left to
+right order \, as common sense would predict., f 32;
+#X obj 723 600 +;
+#X msg 723 564 1 3;
+#X floatatom 723 634 5 0 0 0 - - -;
+#X msg 765 564 10 20;
+#X text 550 186 <= click (depth first);
+#X text 677 469 A list sent to an object may also spread the elements
+into different inlets. This happens when the left inlet doesn't take
+lists. The right to left order is respected \, of course., f 45;
+#X obj 860 601 pack f f f f;
+#X msg 860 565 1 3 5;
+#X obj 860 633 print;
+#X floatatom 941 567 5 0 0 0 - - -;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 1 1 2 0;
@@ -116,4 +126,10 @@ are sent in the left to right order \, as common sense would predict.
 #X connect 40 0 37 0;
 #X connect 40 1 34 0;
 #X connect 40 2 30 0;
-#X connect 42 0 43 0;
+#X connect 41 0 42 0;
+#X connect 49 0 51 0;
+#X connect 50 0 49 0;
+#X connect 52 0 49 0;
+#X connect 55 0 57 0;
+#X connect 56 0 55 0;
+#X connect 58 0 55 3;

@@ -1,0 +1,163 @@
+#N struct DS-1 float number;
+#N canvas 385 28 898 531 12;
+#N canvas 112 26 450 323 graphic 0;
+#X scalar DS-1 666 \;;
+#X restore 148 461 pd graphic;
+#X text 227 410 - data structure template;
+#X text 227 462 - graphical display;
+#X text 231 437 - some code;
+#N canvas 198 85 998 554 code 1;
+#X obj 739 314 pointer;
+#X obj 616 394 append DS-1 number;
+#X obj 616 110 loadbang;
+#X obj 616 177 trigger float bang bang;
+#X msg 774 211 clear;
+#X msg 739 287 traverse pd-graphic \, bang;
+#X text 895 236 <= clear subpatch, f 8;
+#X text 526 284 add data structure template =>, f 11;
+#X obj 774 240 send pd-graphic;
+#X text 47 424 The patch to the right deals with all that and it starts
+by clearing the [pd graphic] subptach before adding the data structure.
+You will then see a data structure object in the [pd graphic] subpatch
+that you can click and drag to change values or also click and type
+a new value., f 61;
+#X text 749 345 <= send pointer of the head of the list, f 22;
+#X msg 616 143 666;
+#X text 47 23 In this subpatch we concentrate the code for managing
+data structures. Here \, we simply create an instance of the template
+we defined in the previous suboatch. This is a graphical object and
+also called a "scalar" in Pd (but the term is confusing as it relates
+to something else in math and computing)., f 61;
+#X text 47 117 We then use the [append] object to create and add this
+Data Structure in the [pd graphic] subpatch based on information it
+receives. In this case we only have a simple data structure that contains
+one float \, so [append] only needs a float in the left inlet to add
+it., f 61;
+#X text 47 197 The first argument in [append] is the data structure
+template name as defined in a [struct] object ("DS-1" in our example)
+\, the remaining arguments are the declared data types ("number" in
+this case)., f 61;
+#X text 47 264 The [append] object needs to know where to add the scalar
+\, this is done by receiving a pointer in the right inlet. In Pd \,
+a "pointer" points at a certain data structure object in a subptach
+used for display. We then use the [pointer] object do deal with pointers
+\, and the "traverse" message tells which subpatch to look for data
+structures objects., f 61;
+#X text 47 357 Next \, a "bang" message outputs the head of the list
+of objects in that subpatch area - think of it as a pointer to the
+beginning of an empty list of objects \, with this pointer we can then
+"append" an object after the head with [append]., f 61;
+#X connect 0 0 1 1;
+#X connect 2 0 11 0;
+#X connect 3 0 1 0;
+#X connect 3 1 5 0;
+#X connect 3 2 4 0;
+#X connect 4 0 8 0;
+#X connect 5 0 0 0;
+#X connect 11 0 3 0;
+#X restore 167 436 pd code;
+#X text 31 42 A data structure is a data organization \, management
+and storage format that enables access and modification of the data.
+Pd also offers the ability to attach shapes and colors to the data
+in order to visualize it and/or edit it graphically., f 61;
+#N canvas 392 56 506 366 template-1 0;
+#X obj 115 320 drawnumber number;
+#X text 40 113 Below we define a data structure template named "struct1"
+\, which only holds a float data type called "number".;
+#X text 248 320 - drawing instruction;
+#X obj 85 169 struct DS-1 float number;
+#X text 40 29 The [struct] object declares and defines a data structure
+\, which is also called in Pd as a "template". You can only use one
+[struct] object per window. The first argument is the structure's name
+and then we have variables declared as the following arguments.;
+#X text 264 167 - template;
+#X text 41 213 Now that we have our data structure declared and defined
+\, we can have drawing instructions for graphical display. These are
+part of the Data Structure and must be in the same window as the [struct]
+object. Here we use the [drawnumber] to draw the float of name "number".
+;
+#X restore 125 411 pd template-1;
+#X text 502 342 All of the contents of a display subpatch can also
+be saved as a text file \, and also restored from a file., f 50;
+#X msg 570 412 write DS.txt \, clear;
+#X msg 589 444 read DS.txt;
+#X text 716 411 <= save and clear;
+#X text 681 442 <= reload;
+#X obj 570 477 s pd-graphic;
+#X text 502 277 You can also right-click on a data structure object
+object and ask for properties \, where a textual representation of
+the data is given for visualization and editing., f 50;
+#X text 504 154 Editing:;
+#N canvas 112 26 450 323 display 0;
+#X restore 640 143 pd display;
+#N canvas 450 153 879 423 template-2 0;
+#X obj 75 310 drawnumber number;
+#X text 203 150 - struct template;
+#X text 204 310 - drawing instruction;
+#X obj 86 140 struct coords float number float x float y, f 15;
+#X obj 589 303 pointer;
+#X msg 589 276 traverse pd-display \, bang;
+#X obj 471 180 trigger list bang bang;
+#X obj 439 245 unpack f f f;
+#X floatatom 439 300 3 0 0 0 - - -;
+#X floatatom 479 301 3 0 0 0 - - -;
+#X floatatom 520 300 3 0 0 0 - - -;
+#X text 448 276 a;
+#X text 488 276 x;
+#X text 528 276 y;
+#X text 35 226 Note that the "float x" and "float y" declarations can
+be defined in any order position in [struct]., f 50;
+#X text 86 63 Data Structure named "coords" holding a float called
+"number" plus "x" and "y" coordinates., f 32;
+#X text 548 147 <= click;
+#X text 424 44 Now we also have in this subpatch the code to append
+an object. And since we have declared coordinates \, the [append] object
+can also receive values for "x" and "y" when appending an object to
+the list \, see below., f 50;
+#X msg 471 149 127 50 50;
+#X obj 424 335 append coords number x y;
+#X msg 622 211 \; pd-display clear, f 17;
+#X obj 643 179 loadbang;
+#X connect 4 0 19 3;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 6 1 5 0;
+#X connect 6 2 20 0;
+#X connect 7 0 8 0;
+#X connect 7 1 9 0;
+#X connect 7 2 10 0;
+#X connect 8 0 19 0;
+#X connect 9 0 19 1;
+#X connect 10 0 19 2;
+#X connect 18 0 6 0;
+#X connect 21 0 20 0;
+#X restore 618 117 pd template-2;
+#X text 494 22 Coordinates:;
+#X text 502 48 Each [struct] object has a special variable field named
+"x" and "y" for "x/y" coordinates. Check the [pd template-2] subpatch.
+, f 50;
+#X text 720 116 - template;
+#X text 719 144 - graphics;
+#X text 502 183 When in edit mode \, you can select a graphical data
+structure object and do the usual cut \, copy \, paste and duplicate
+operations. You can also drag and move them around (but not that in
+order to be moved \, the object needs to have "x/y" coordinates declared
+in the [struct])., f 50;
+#X text 31 184 In Pd we have four data types for data structures \,
+which are: float \, symbol \, text and array. Different data types
+can be grouped in a "Struct" \, declared in Pd with the [struct] object.
+, f 61;
+#X text 31 119 Thus \, a Data Structure is a graphical object to be
+used in different ways \, such as a simple visual representation of
+data or as a graphical score that controls a patch. It can also be
+used to design graphical interface objects (GUI)., f 61;
+#X text 31 253 It's advisable to use dedicated subpatches when dealing
+with Data Structures in Pd. Most importantly \, one is necessary to
+display the graphical objects and another is needed as a data structure
+template (containing a data structure declaration with [struct] along
+with drawing instructions). We can also have yet another subpatch to
+organize some of the code that dealw with the data structures \, but
+it's not essential that this code is treated appart. See the example
+below., f 61;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;

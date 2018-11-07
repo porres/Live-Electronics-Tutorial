@@ -1,18 +1,18 @@
 #N canvas 432 28 858 481 12;
-#X floatatom 175 257 0 0 0 0 - - -;
-#X floatatom 176 171 0 0 0 0 - - -;
-#X obj 176 198 send volume;
-#X obj 175 230 receive midinote;
-#X obj 340 214 hsl 128 15 -1 1 0 0 slider empty empty -2 -8 0 10 -262144
+#X floatatom 203 336 0 0 0 0 - - -;
+#X floatatom 204 250 0 0 0 0 - - -;
+#X obj 204 277 send volume;
+#X obj 203 309 receive midinote;
+#X obj 392 213 hsl 128 15 -1 1 0 0 slider empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 340 245 hsl 128 15 -1 1 0 0 empty slider empty -2 -8 0 10 -262144
+#X obj 392 244 hsl 128 15 -1 1 0 0 empty slider empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 55 323 send slider;
-#X floatatom 55 296 5 0 0 0 - - -, f 5;
-#X obj 56 353 receive slider;
-#X floatatom 56 379 5 0 0 0 - - -, f 5;
-#X msg 57 192 \; slider 99 \; volume 56;
-#X text 332 186 built-in send/receive;
+#X obj 52 280 send slider;
+#X floatatom 52 253 5 0 0 0 - - -;
+#X obj 53 310 receive slider;
+#X floatatom 53 336 5 0 0 0 - - -;
+#X msg 160 173 \; slider 99 \; volume 56;
+#X text 384 185 built-in send/receive;
 #X text 20 85 A semicolon in messages behaves as a [send] object \,
 which is useful to send things to several places at one click. GUI
 elements also have built in send and receive functionalities. You can
@@ -36,33 +36,22 @@ from a [send] object that has the array's name as the address., f
 48;
 #X msg 672 226 \; array const 0.5;
 #N canvas 0 22 450 278 (subpatch) 0;
-#X array array 100 float 3;
-#A 0 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598
-0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598
-0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598
-0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598
-0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598
-0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598
-0.212598 0.212598 0.212598 0.212598 0.212598 -0.414286 -0.414286 -0.414286
--0.414286 -0.414286 -0.428571 -0.449998 -0.471426 -0.499996 -0.521424
--0.542851 -0.578564 -0.614277 -0.635705 -0.657132 -0.699987 -0.742843
--0.799983 -0.857123 -0.885694 -1.09997 -1.05711 -1.09997 0.212598 0.212598
-0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598
-0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598
-0.212598 0.212598 0.212598 0.212598 0.212598 0.212598 0.212598;
-#X coords 0 1 100 -1 200 140 1;
+#X array array 100 float 2;
+#X coords 0 1 100 -1 200 140 1 0 0;
 #X restore 607 306 graph;
-#X obj 337 304 send array;
-#X msg 337 275 const \$1;
+#X obj 389 303 send array;
+#X msg 389 274 const \$1;
 #X text 614 118 DSP On;
 #X text 630 148 DSP Off;
-#X obj 259 421 send~;
-#X obj 305 421 receive~;
-#X obj 402 421 throw~;
-#X obj 455 420 catch~;
-#X text 201 351 There are also audio object versions \, but besides
+#X obj 306 425 send~;
+#X obj 352 425 receive~;
+#X obj 449 425 throw~;
+#X obj 502 424 catch~;
+#X text 272 355 There are also audio object versions \, but besides
 [send~]/[receive~] and we also have [throw~]/[catch~]. Check their
-help files., f 54;
+help files., f 43;
+#X text 33 392 Semicolons will always break \; lines \, this also happens
+on \; objects and comments!;
 #X connect 1 0 2 0;
 #X connect 3 0 0 0;
 #X connect 5 0 24 0;
