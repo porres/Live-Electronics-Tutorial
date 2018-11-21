@@ -1,5 +1,4 @@
 #N canvas 485 143 856 372 12;
-#X obj 225 218 sig2float~;
 #X obj 225 252 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
 #X obj 150 225 *~;
@@ -13,7 +12,6 @@
 #X text 690 310 0;
 #X text 690 211 1;
 #X obj 586 197 *~;
-#X obj 667 189 sig2float~;
 #X obj 604 81 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
 #X obj 543 240 out~;
@@ -34,19 +32,21 @@ going back to 0 - let's see this first implemented with [envgen~].
 ;
 #X text 245 343 0;
 #X text 245 244 1;
-#X connect 0 0 1 0;
-#X connect 2 0 4 1;
-#X connect 2 0 4 0;
-#X connect 3 0 2 0;
-#X connect 6 0 15 0;
-#X connect 7 0 11 0;
-#X connect 11 0 14 1;
-#X connect 11 0 14 0;
-#X connect 12 0 8 0;
-#X connect 13 0 6 0;
-#X connect 15 0 11 1;
-#X connect 15 0 12 0;
-#X connect 16 0 15 0;
-#X connect 19 0 20 0;
-#X connect 20 0 0 0;
-#X connect 20 0 2 1;
+#X obj 667 189 s2f~;
+#X obj 225 218 s2f~;
+#X connect 1 0 3 1;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 5 0 13 0;
+#X connect 6 0 10 0;
+#X connect 10 0 12 1;
+#X connect 10 0 12 0;
+#X connect 11 0 5 0;
+#X connect 13 0 10 1;
+#X connect 13 0 22 0;
+#X connect 14 0 13 0;
+#X connect 17 0 18 0;
+#X connect 18 0 1 1;
+#X connect 18 0 23 0;
+#X connect 22 0 7 0;
+#X connect 23 0 0 0;

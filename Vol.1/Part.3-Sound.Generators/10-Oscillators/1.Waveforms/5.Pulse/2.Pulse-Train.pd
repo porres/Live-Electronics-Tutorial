@@ -1,13 +1,12 @@
 #N canvas 460 70 761 386 10;
 #X obj 167 174 display~;
 #X obj 167 148 pulse~ 0.5 0.5;
-#X obj 167 207 sig2float~, f 13;
-#X obj 167 237 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 167 237 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X obj 481 62 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 557 42 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 4100 1;
+-1 -1 0 1;
 #X floatatom 554 69 5 0 0 0 - - -;
 #X text 460 61 Hz;
 #X obj 495 125 out~;
@@ -25,12 +24,13 @@ is kind of an on/off switch like a toggle., f 61;
 width parameter. Similarly \, a 0.5 value (the default) is 50/50 \,
 a width of 0 is just one single impulse \, and a width of 1 is a waveform
 with only the last sample of the period equal to 0!, f 62;
-#X connect 0 0 2 0;
+#X obj 167 207 s2f~;
+#X connect 0 0 14 0;
 #X connect 1 0 0 0;
-#X connect 2 0 3 0;
-#X connect 4 0 9 0;
-#X connect 5 0 6 0;
-#X connect 6 0 9 1;
-#X connect 9 0 8 0;
-#X connect 9 0 8 1;
-#X connect 9 0 10 0;
+#X connect 3 0 8 0;
+#X connect 4 0 5 0;
+#X connect 5 0 8 1;
+#X connect 8 0 7 0;
+#X connect 8 0 7 1;
+#X connect 8 0 9 0;
+#X connect 14 0 2 0;

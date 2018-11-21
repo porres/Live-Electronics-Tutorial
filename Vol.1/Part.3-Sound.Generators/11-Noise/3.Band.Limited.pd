@@ -1,16 +1,14 @@
 #N canvas 264 26 891 655 12;
 #X obj 615 401 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 6952 1;
+-1 -1 6822 1;
 #X obj 496 403 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 9064 1;
+-1 -1 6349 1;
 #X text 482 394 1;
 #X text 475 521 -1;
 #X text 600 392 1;
 #X text 593 519 -1;
 #X obj 615 343 rampnoise~ 1;
 #X obj 496 344 stepnoise~ 1;
-#X obj 496 372 sig2float~;
-#X obj 615 370 sig2float~;
 #X obj 152 91 noise~;
 #X obj 152 140 downsample~;
 #X obj 226 118 nbx 7 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
@@ -56,25 +54,27 @@ input \, which is in fact a non interpolated downsampling process.
 dedicated to band limited noise. The [stepnoise~] object generates
 random steps (no interpolation) and [rampnoise~] generates random ramps
 (with interpolation).;
-#X connect 6 0 9 0;
-#X connect 7 0 8 0;
-#X connect 8 0 1 0;
-#X connect 9 0 0 0;
-#X connect 10 0 11 0;
-#X connect 11 0 13 0;
-#X connect 11 0 13 1;
-#X connect 12 0 11 1;
-#X connect 14 0 12 0;
-#X connect 15 0 11 0;
+#X obj 496 372 s2f~;
+#X obj 615 370 s2f~;
+#X connect 6 0 36 0;
+#X connect 7 0 35 0;
+#X connect 8 0 9 0;
+#X connect 9 0 11 0;
+#X connect 9 0 11 1;
+#X connect 10 0 9 1;
+#X connect 12 0 10 0;
+#X connect 13 0 9 0;
+#X connect 14 0 13 0;
+#X connect 15 0 30 0;
 #X connect 16 0 15 0;
-#X connect 17 0 32 0;
-#X connect 18 0 17 0;
-#X connect 21 0 32 0;
-#X connect 23 0 24 0;
-#X connect 24 0 27 0;
-#X connect 26 0 25 0;
-#X connect 26 0 25 1;
-#X connect 27 0 26 0;
-#X connect 32 0 19 0;
-#X connect 32 0 19 1;
-#X connect 32 0 20 0;
+#X connect 19 0 30 0;
+#X connect 21 0 22 0;
+#X connect 22 0 25 0;
+#X connect 24 0 23 0;
+#X connect 24 0 23 1;
+#X connect 25 0 24 0;
+#X connect 30 0 17 0;
+#X connect 30 0 17 1;
+#X connect 30 0 18 0;
+#X connect 35 0 1 0;
+#X connect 36 0 0 0;

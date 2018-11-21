@@ -15,13 +15,11 @@
 #X obj 634 390 timed.gate~ 150;
 #X obj 634 416 adsr~ 100 100 0.5 250;
 #X obj 603 124 adsr~ 100 100 0.5 250;
-#X obj 209 149 sig2float~;
 #X obj 209 175 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
 #X obj 137 148 *~;
 #X obj 87 92 osc~ 440;
 #X obj 94 197 out~;
-#X obj 229 421 sig2float~;
 #X obj 229 447 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
 #X obj 154 420 *~;
@@ -40,7 +38,6 @@ time and a sustain point \, which is a ratio of the gate input., f
 #X obj 634 360 imp~ 1;
 #X text 465 314 You can also use [timed.gate~] to trigger it with bangs
 or impulses., f 34;
-#X obj 665 154 sig2float~;
 #X text 15 17 The ADSR ("Attack / Decay / Sustain / Release") has a
 Decay stage after the attack. Here's how it works on [envgen~].;
 #X obj 155 67 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856 -1
@@ -48,31 +45,34 @@ Decay stage after the attack. Here's how it works on [envgen~].;
 #X obj 155 97 envgen~ 50 1 50 0.5 500 0.5 500 0;
 #X obj 172 379 envgen~ 50 1 50 0.5 200 0 -suspoint 2;
 #X text 58 299 With a "gate" input:, f 21;
-#X connect 0 0 27 0;
-#X connect 0 0 27 1;
+#X obj 209 149 s2f~;
+#X obj 229 421 s2f~;
+#X obj 665 154 s2f~;
+#X connect 0 0 25 0;
+#X connect 0 0 25 1;
 #X connect 4 0 12 0;
 #X connect 5 0 0 0;
-#X connect 7 0 26 0;
-#X connect 7 0 26 1;
+#X connect 7 0 24 0;
+#X connect 7 0 24 1;
 #X connect 8 0 7 0;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 7 1;
 #X connect 12 0 0 1;
-#X connect 12 0 31 0;
-#X connect 13 0 14 0;
-#X connect 15 0 17 1;
-#X connect 15 0 17 0;
-#X connect 16 0 15 0;
-#X connect 18 0 19 0;
-#X connect 20 0 22 1;
-#X connect 20 0 22 0;
-#X connect 21 0 20 0;
-#X connect 23 0 35 0;
-#X connect 29 0 10 0;
-#X connect 31 0 1 0;
-#X connect 33 0 34 0;
+#X connect 12 0 36 0;
+#X connect 14 0 16 1;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 18 0 20 1;
+#X connect 18 0 20 0;
+#X connect 19 0 18 0;
+#X connect 21 0 32 0;
+#X connect 27 0 10 0;
+#X connect 30 0 31 0;
+#X connect 31 0 14 1;
+#X connect 31 0 34 0;
+#X connect 32 0 18 1;
+#X connect 32 0 35 0;
 #X connect 34 0 13 0;
-#X connect 34 0 15 1;
-#X connect 35 0 18 0;
-#X connect 35 0 20 1;
+#X connect 35 0 17 0;
+#X connect 36 0 1 0;

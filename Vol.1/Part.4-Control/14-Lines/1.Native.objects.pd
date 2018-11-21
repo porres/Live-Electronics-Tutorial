@@ -1,7 +1,7 @@
 #N canvas 428 23 905 558 12;
 #X msg 105 190 \$1 1000;
 #X obj 105 220 line 0 1;
-#X floatatom 105 166 2 0 0 0 - - -, f 2;
+#X floatatom 105 166 2 0 0 0 - - -;
 #X obj 105 144 tgl 16 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 120 483 line;
@@ -20,10 +20,8 @@
 #X obj 564 196 line~;
 #X obj 567 247 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 564 222 sig2float~;
 #X obj 543 477 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 540 449 sig2float~;
 #X obj 108 251 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 120 430 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -35,8 +33,8 @@ it. The 1st argument of [line] defines the starting point. By default
 \, it generates a value at an interval rate of 20 ms \, but you can
 change it with the 2nd rgument or third inlet.., f 55;
 #X text 127 145 <= click;
-#X text 157 190 ramp of 1000 ms;
-#X text 161 220 one value at every 1 ms;
+#X text 160 190 ramp of 1000 ms;
+#X text 171 220 one value at every 1 ms;
 #X text 140 383 <= click;
 #X text 13 290 If we send it a single value \, it considers the time
 period to be 0 and jumps immediately to that value. We could then send
@@ -54,20 +52,22 @@ resolution. It can start and finish a ramp at any point in time. Moreover
 \, it accepts a third scheduling parameter \, which is the time in
 ms before starting the ramp. You can then send it several messages
 and schedule different line segments at once.;
+#X obj 564 222 s2f~;
+#X obj 540 449 s2f~;
 #X connect 0 0 1 0;
-#X connect 1 0 19 0;
+#X connect 1 0 17 0;
 #X connect 2 0 0 0;
 #X connect 3 0 2 0;
 #X connect 4 0 5 0;
 #X connect 6 0 4 0;
-#X connect 7 0 20 0;
+#X connect 7 0 18 0;
 #X connect 8 0 7 0;
-#X connect 9 0 18 0;
+#X connect 9 0 30 0;
 #X connect 10 0 9 0;
 #X connect 11 0 14 0;
 #X connect 12 0 11 0;
 #X connect 13 0 12 0;
-#X connect 14 0 16 0;
-#X connect 16 0 15 0;
-#X connect 18 0 17 0;
-#X connect 20 0 6 0;
+#X connect 14 0 29 0;
+#X connect 18 0 6 0;
+#X connect 29 0 15 0;
+#X connect 30 0 16 0;

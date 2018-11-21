@@ -56,18 +56,18 @@ ratio/transposition frequency \, we multiply it by the grain size frequency.
 #X obj 744 425 pimp~ 0 0.5;
 #X obj 536 387 pimp~;
 #X obj 491 67 delwrite~ \$0-buffer 500;
-#X obj 464 166 pshift~;
 #X obj 464 208 out~;
-#X obj 487 116 nbx 5 14 -2400 2400 0 0 empty \$0-cents empty 0 -8 0
+#X obj 504 116 nbx 5 14 -2400 2400 0 0 empty \$0-cents empty 0 -8 0
 10 -228856 -1 -1 -400 256;
-#X text 548 115 transposition;
+#X text 565 115 transposition;
+#X obj 464 32 play.file~ ../../../../../samples/bubul.wav 1 1;
+#X obj 464 166 pitch.shift~;
 #X text 34 550 Again \, we have two overlapping grains and we're done.
 The grain sizes in this example range from 5 to 200 ms. The grain size
 only affects the result if it is too small or too big \, so we usually
 have it at a fixed reasonable value. Check how this works to the right
-and see the [pshift~] object from ELSE \, which is implemented this
-way., f 53;
-#X obj 464 32 play.file~ ../../../../../samples/bubul.wav 1 1;
+and see the [pitch.shift~] object from ELSE \, which is implemented
+this way., f 53;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 1 0 9 1;
@@ -103,8 +103,8 @@ way., f 53;
 #X connect 40 0 11 0;
 #X connect 41 0 3 0;
 #X connect 41 0 10 0;
-#X connect 43 0 44 0;
-#X connect 43 0 44 1;
-#X connect 45 0 43 1;
-#X connect 48 0 42 0;
-#X connect 48 0 43 0;
+#X connect 44 0 47 1;
+#X connect 46 0 42 0;
+#X connect 46 0 47 0;
+#X connect 47 0 43 0;
+#X connect 47 0 43 1;

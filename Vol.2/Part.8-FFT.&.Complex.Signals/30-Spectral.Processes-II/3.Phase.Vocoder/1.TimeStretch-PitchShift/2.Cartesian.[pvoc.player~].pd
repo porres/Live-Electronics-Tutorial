@@ -1,9 +1,9 @@
-#N canvas 579 23 638 521 12;
+#N canvas 579 23 642 666 12;
 #X obj 123 319 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
 0 10 -228856 -1 -1 100 256;
 #X obj 198 319 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-transpo empty 0
 -8 0 10 -228856 -1 -1 0 256;
-#X obj 484 316 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 484 316 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 83 319 tgl 18 0 empty \$0-play empty 17 7 0 10 -228856 -1 -1
 1 1;
@@ -317,7 +317,7 @@ as the amplitudes are equal to one., f 31;
 #X connect 7 0 2 0;
 #X restore 151 227 pd sampler;
 #X obj 347 317 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
-0 10 -228856 -1 -1 0 256;
+0 10 -228856 -1 -1 100 256;
 #X obj 422 317 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-transpo empty 0
 -8 0 10 -228856 -1 -1 0 256;
 #X obj 296 317 tgl 18 0 empty \$0-play empty 17 7 0 10 -228856 -1 -1
@@ -347,7 +347,7 @@ as the amplitudes are equal to one., f 31;
 #X obj 166 52 inlet;
 #X obj 326 53 inlet;
 #X obj 166 93 nbx 5 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--228856 -1 -1 0 256;
+-228856 -1 -1 100 256;
 #X obj 326 93 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-transpo empty 0 -8
 0 15 -228856 -1 -1 0 256;
 #X text 100 26 play;
@@ -366,7 +366,7 @@ as the amplitudes are equal to one., f 31;
 #X text 170 26 %;
 #X obj 213 434 pack f f f;
 #X obj 166 232 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 512 256;
 #X obj 326 435 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 512 256;
 #X obj 326 192 cents2ratio;
@@ -583,6 +583,9 @@ very slow speeds \, or even when freezing (with a speed of 0)., f
 63;
 #X text 312 381 This example is equivalent to the Pd example I07.phase.vocoder
 , f 32;
+#X obj 346 587 pvoc.player~;
+#X text 90 537 The [pvoc.player~] \, from the ELSE library \, is based
+on this patch. Check its help file.;
 #X connect 0 0 11 1;
 #X connect 1 0 11 2;
 #X connect 2 0 22 3;

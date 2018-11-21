@@ -1,9 +1,9 @@
-#N canvas 217 31 945 502 12;
+#N canvas 410 104 945 502 12;
 #X obj 140 213 nbx 5 16 -2000 2000 0 0 empty Portadora empty 0 -8 0
-13 -228856 -1 -1 500 256;
+13 -228856 -1 -1 0 256;
 #X obj 243 280 *~;
 #X obj 243 243 osc~;
-#N canvas 1110 191 273 274 PM_ssb 1;
+#N canvas 1110 191 273 274 PM_ssb 0;
 #X obj 89 225 outlet~;
 #X obj 142 160 +~;
 #X obj 78 31 inlet~;
@@ -22,16 +22,16 @@
 #X restore 605 333 pd PM_ssb;
 #X obj 96 259 adc~;
 #X obj 243 213 nbx 5 16 -2000 2000 0 0 empty Moduladora empty 0 -8
-0 13 -228856 -1 -1 102 256;
+0 13 -228856 -1 -1 0 256;
 #X obj 326 234 nbx 5 16 0 2000 0 0 empty indice empty 0 -8 0 13 -228856
--1 -1 250 256;
+-1 -1 0 256;
 #X obj 569 239 nbx 5 16 -2000 2000 0 0 empty Portadora empty 0 -8 0
-13 -228856 -1 -1 500 256;
+13 -228856 -1 -1 0 256;
 #X obj 665 306 *~;
 #X obj 665 239 nbx 5 16 -2000 2000 0 0 empty Moduladora empty 0 -8
-0 13 -228856 -1 -1 2 256;
+0 13 -228856 -1 -1 0 256;
 #X obj 748 260 nbx 5 16 0 2000 0 0 empty indice empty 0 -8 0 13 -228856
--1 -1 250 256;
+-1 -1 0 256;
 #X obj 524 285 adc~;
 #X obj 569 285 osc~;
 #X obj 140 259 phasor~ 500;
@@ -40,13 +40,11 @@ into any signal. This is not exactly like FM because changing the frequency
 on a sawtooth oscillator changes the pitch \, and (as prviously mentioned)
 we're not doing pitch shifting! But it is the same thing for a sinisoid
 anyway..., f 57;
-#X obj 176 321 freqshift~;
 #X obj 326 266 f2s~ 10;
 #X text 336 211 Index;
 #X text 141 192 Carrier;
 #X text 244 192 Modulating;
-#X obj 133 376 out~;
-#X obj 188 348 s~ \$0-plot;
+#X obj 126 376 out~;
 #X obj 562 374 out~;
 #X obj 748 292 f2s~ 10;
 #X text 569 218 Carrier;
@@ -63,22 +61,22 @@ of the modulator has a different result (a triangular waveform acts
 like a square wave in frequency modulation).;
 #X text 43 143 You can try other signal inputs \, such as a live input.
 ;
+#X obj 169 321 freq.shift~;
 #X connect 0 0 13 0;
-#X connect 1 0 15 1;
+#X connect 1 0 29 1;
 #X connect 2 0 1 0;
-#X connect 3 0 22 0;
-#X connect 3 0 22 1;
+#X connect 3 0 20 0;
+#X connect 3 0 20 1;
 #X connect 5 0 2 0;
-#X connect 6 0 16 0;
+#X connect 6 0 15 0;
 #X connect 7 0 12 0;
 #X connect 8 0 3 1;
-#X connect 9 0 28 0;
-#X connect 10 0 23 0;
+#X connect 9 0 26 0;
+#X connect 10 0 21 0;
 #X connect 12 0 3 0;
-#X connect 13 0 15 0;
-#X connect 15 0 20 0;
-#X connect 15 0 20 1;
-#X connect 15 0 21 0;
-#X connect 16 0 1 1;
-#X connect 23 0 8 1;
-#X connect 28 0 8 0;
+#X connect 13 0 29 0;
+#X connect 15 0 1 1;
+#X connect 21 0 8 1;
+#X connect 26 0 8 0;
+#X connect 29 0 19 0;
+#X connect 29 0 19 1;

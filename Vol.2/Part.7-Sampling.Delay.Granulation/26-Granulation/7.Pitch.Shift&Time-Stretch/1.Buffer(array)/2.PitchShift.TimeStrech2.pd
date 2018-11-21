@@ -3,14 +3,14 @@
 #X obj 480 90 soundfiler;
 #X obj 480 146 samplerate~;
 #X obj 557 175 /;
-#X msg 253 393 \; speed 8 \; cents -4200 \; grain 400;
-#X msg 132 396 \; speed -36 \; cents 200 \; grain 1000;
-#X msg 132 468 \; speed 8 \; cents -3400 \; grain 400;
-#X msg 132 324 \; speed 50 \; cents -4200 \; grain 100;
-#X msg 253 466 \; speed 4 \; cents -2400 \; grain 14;
-#X text 149 297 presets:;
-#X obj 254 299 loadbang;
-#X msg 254 324 \; speed 100 \; grain 25 \; cents 0;
+#X msg 211 434 \; speed 8 \; cents -4200 \; grain 400;
+#X msg 90 437 \; speed -36 \; cents 200 \; grain 1000;
+#X msg 90 509 \; speed 8 \; cents -3400 \; grain 400;
+#X msg 90 365 \; speed 50 \; cents -4200 \; grain 100;
+#X msg 211 507 \; speed 4 \; cents -2400 \; grain 14;
+#X text 107 338 presets:;
+#X obj 212 340 loadbang;
+#X msg 212 365 \; speed 100 \; grain 25 \; cents 0;
 #X obj 728 275 nbx 5 18 -1e+37 1e+37 0 0 empty speed empty 0 -8 0 13
 -228856 -1 -1 100 256;
 #X obj 643 508 +~;
@@ -125,24 +125,26 @@ are combined and the sample is accessed.;
 #X text 591 397 transp;
 #X text 689 399 Hz;
 #X text 684 431 speed;
-#X text 35 48 In this example we can choose any grain size and have
+#X text 23 29 In this example we can choose any grain size and have
 a quite different approach. The buffer is read by [pimp~] and [phasor~]
 objects \, one affects the pitch and the other the speed., f 57;
-#X text 35 111 These two are combined and need to be compensated for
+#X text 23 92 These two are combined and need to be compensated for
 the desired result. We do that by subtracting the speed ratio from
 the transposition ratio.;
-#X text 35 161 The speed frequency is calculated by the speed ratio
+#X text 23 142 The speed frequency is calculated by the speed ratio
 and the sample frequency. The transposition frequency needs to correspond
 to the grain size \, so we multiply the resulting ratio by the grain
 frequency \, obtained by the grain size., f 57;
-#X text 35 244 Open [pd grain-1] for more details. Below we have some
-presets.;
 #X obj 728 307 / 100;
+#X obj 291 275 gran.player~;
+#X text 23 225 Open [pd grain-1] for more details. Below we have some
+presets. The [gran.player~] object \, from ELSE \, is based on this
+patch \, check its help file:;
 #X connect 1 0 30 0;
 #X connect 2 0 3 0;
 #X connect 3 0 37 0;
 #X connect 10 0 11 0;
-#X connect 12 0 48 0;
+#X connect 12 0 47 0;
 #X connect 13 0 19 0;
 #X connect 13 0 19 1;
 #X connect 14 0 23 0;
@@ -166,5 +168,5 @@ presets.;
 #X connect 35 0 18 0;
 #X connect 38 0 20 0;
 #X connect 39 0 38 1;
-#X connect 48 0 17 1;
-#X connect 48 0 38 0;
+#X connect 47 0 17 1;
+#X connect 47 0 38 0;

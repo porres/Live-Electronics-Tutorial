@@ -4,9 +4,8 @@
 #X obj 100 272 out~;
 #X obj 161 172 glide~ 1000;
 #X obj 360 186 setdsp~ 1;
-#X obj 228 217 sig2float~;
 #X obj 228 243 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 2278 1;
+-1 -1 3751 1;
 #X obj 161 108 pulse~ 0.5;
 #X obj 161 136 display~;
 #X obj 488 225 *~;
@@ -14,25 +13,26 @@
 #X obj 445 275 out~;
 #X obj 576 220 sig2float~;
 #X obj 576 246 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 52 1;
+-1 -1 8416 1;
 #X obj 506 111 pulse~ 0.5;
 #X obj 506 139 display~;
 #X obj 506 175 glide2~ 1000;
 #X text 75 51 The [glide~] and [glide2~] objetcs can also be used as
 faders., f 34;
+#X obj 228 217 s2f~;
 #X connect 0 0 2 0;
 #X connect 0 0 2 1;
 #X connect 1 0 0 0;
 #X connect 3 0 0 1;
-#X connect 3 0 5 0;
-#X connect 5 0 6 0;
-#X connect 7 0 8 0;
-#X connect 8 0 3 0;
-#X connect 9 0 11 0;
-#X connect 9 0 11 1;
-#X connect 10 0 9 0;
-#X connect 12 0 13 0;
+#X connect 3 0 17 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 0;
+#X connect 8 0 10 0;
+#X connect 8 0 10 1;
+#X connect 9 0 8 0;
+#X connect 11 0 12 0;
+#X connect 13 0 14 0;
 #X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X connect 16 0 9 1;
-#X connect 16 0 12 0;
+#X connect 15 0 8 1;
+#X connect 15 0 11 0;
+#X connect 17 0 5 0;
