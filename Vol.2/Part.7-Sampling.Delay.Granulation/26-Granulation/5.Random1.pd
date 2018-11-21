@@ -4,13 +4,13 @@
 -8 0 10 -228856 -1 -1 2 256;
 #X obj 42 188 noise~;
 #X obj 469 228 nbx 5 14 -1e+37 1e+37 0 0 empty freq-offset empty 0
--8 0 10 -228856 -1 -1 2 256;
+-8 0 10 -228856 -1 -1 10 256;
 #X obj 155 211 nbx 5 14 -1e+37 1e+37 0 0 empty pos-amp empty 0 -8 0
 10 -228856 -1 -1 10000 256;
 #X obj 96 210 nbx 5 14 -1e+37 1e+37 0 0 empty pos-offset empty 0 -8
 0 10 -228856 -1 -1 0 256;
 #X obj 513 259 nbx 5 14 -1e+37 1e+37 0 0 empty freq-amp empty 0 -8
-0 10 -228856 -1 -1 4 256;
+0 10 -228856 -1 -1 8 256;
 #X obj 425 319 s~ \$0-freq;
 #X obj 425 191 stepnoise~;
 #X obj 445 426 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -21,7 +21,7 @@ controls for wilder granularing effects. Ten presets are provided with
 quite different results \, which shows how flexible and versatile this
 process can be., f 64;
 #X obj 42 241 rescale~ 0 10000;
-#N canvas 424 23 843 403 presets 0;
+#N canvas 176 397 843 403 presets 0;
 #X obj 58 67 loadbang;
 #X msg 345 88 \; lfnoise-freq 2 \; freq-amp 60 \; freq-offset 0 \;
 grao-amp 50 \; grao-offset 0 \; pos-amp 10000 \; pos-offset 0;
@@ -49,7 +49,7 @@ grao-amp 3 \; grao-offset 30 \; pos-amp 200 \; pos-offset 50;
 #X restore 94 469 pd presets;
 #X obj 229 163 noise~;
 #X obj 339 197 nbx 5 14 -1e+37 1e+37 0 0 empty grao-amp empty 0 -8
-0 10 -228856 -1 -1 500 256;
+0 10 -228856 -1 -1 100 256;
 #X obj 276 198 nbx 5 14 -1e+37 1e+37 0 0 empty grao-offset empty 0
 -8 0 10 -228856 -1 -1 100 256;
 #X obj 250 280 ms2samps~;

@@ -1,9 +1,9 @@
-#N canvas 433 226 924 555 12;
-#X floatatom 430 206 5 0 0 0 - - -, f 5;
+#N canvas 506 234 924 555 12;
+#X floatatom 430 206 5 0 0 0 - - -;
 #X obj 433 181 hsl 128 15 1 100 1 0 empty freq-amp empty -2 -8 0 10
 -228856 -1 -1 3823 1;
-#X floatatom 381 173 5 0 0 0 - - -, f 5;
-#X floatatom 332 148 5 0 0 0 - - -, f 5;
+#X floatatom 381 173 5 0 0 0 - - -;
+#X floatatom 332 148 5 0 0 0 - - -;
 #X obj 335 123 hsl 128 15 0.01 10 1 0 empty lfo-freq empty -2 -8 0
 10 -228856 -1 -1 7192 1;
 #X obj 384 151 hsl 128 15 1 100 1 0 empty freq-offset empty -2 -8 0
@@ -14,7 +14,7 @@
 #X obj 225 152 nbx 5 14 -1e+37 1e+37 0 0 empty grao-offset empty 0
 -8 0 10 -228856 -1 -1 100 256;
 #X obj 125 184 nbx 5 14 -1e+37 1e+37 0 0 empty pos-amp empty 0 -8 0
-10 -228856 -1 -1 10000 256;
+10 -228856 -1 -1 0 256;
 #X obj 98 160 nbx 5 14 -1e+37 1e+37 0 0 empty pos-offset empty 0 -8
 0 10 -228856 -1 -1 0 256;
 #X obj 332 182 osc~;
@@ -29,7 +29,7 @@
 #X obj 221 360 nbx 5 14 -1e+37 1e+37 0 0 empty grao-offset empty 0
 -8 0 10 -228856 -1 -1 100 256;
 #X obj 122 384 nbx 5 14 -1e+37 1e+37 0 0 empty pos-amp empty 0 -8 0
-10 -228856 -1 -1 10000 256;
+10 -228856 -1 -1 0 256;
 #X obj 95 361 nbx 5 14 -1e+37 1e+37 0 0 empty pos-offset empty 0 -8
 0 10 -228856 -1 -1 0 256;
 #X obj 72 281 s~ \$0-pos_L;
@@ -71,9 +71,9 @@ controlling the amplitude output.;
 #X obj 195 447 ms2samps~;
 #X obj 195 413 rescale~;
 #X obj 195 486 s~ \$0-grain_R;
-#X floatatom 425 418 5 0 0 0 - - -, f 5;
-#X floatatom 376 385 5 0 0 0 - - -, f 5;
-#X floatatom 327 360 5 0 0 0 - - -, f 5;
+#X floatatom 425 418 5 0 0 0 - - -;
+#X floatatom 376 385 5 0 0 0 - - -;
+#X floatatom 327 360 5 0 0 0 - - -;
 #X obj 327 394 osc~;
 #X obj 350 444 rescale~;
 #X obj 350 487 s~ \$0-freq_R;
