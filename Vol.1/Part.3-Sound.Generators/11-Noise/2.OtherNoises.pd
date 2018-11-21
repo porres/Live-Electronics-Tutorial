@@ -1,4 +1,4 @@
-#N canvas 386 89 921 429 12;
+#N canvas 640 410 921 429 12;
 #X obj 226 90 pinknoise~;
 #X obj 226 130 out~;
 #X obj 191 339 out~;

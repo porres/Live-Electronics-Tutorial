@@ -1,11 +1,11 @@
-#N canvas 149 120 958 515 12;
+#N canvas 220 134 958 515 12;
 #X obj 637 338 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 788 336 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 76 275 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
-#X obj 76 330 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 76 330 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X obj 76 248 loadbang;
 #X obj 637 305 threshold~ 0.5 0 0.5 0;
@@ -47,11 +47,6 @@ ms., f 62;
 #X text 57 451 ms;
 #X text 308 451 ms;
 #X text 162 394 ms;
-#X text 30 140 Now \, on the right \, we have a pulse generator (with
-[pulse~] from ELSE) alternating between 0 e 1 at every 500 ms. The
-[status~] object sends an impulse at every transition and the [elapsed~]
-object from ELSE also measures the time interval to the same perfect
-result: 500 ms., f 62;
 #X text 507 108 The issue comes when we use an object like [trig2bang~]
 \, from ELSE. It generates a bang when it receives an impulse. But
 there's a time precision loss because hte bang is always in sync with
@@ -63,6 +58,11 @@ and the rest of the signal is zero amplitudes. This is used as a sample
 accurate trigger and can be thought of the audio counterpart of a bang.
 ;
 #X obj 181 362 detect~ ms;
+#X text 30 140 Now \, on the right \, we have a pulse generator (with
+[pulse~] from ELSE) alternating between 0 e 1 at every 500 ms. The
+[status~] object sends an impulse at every transition and we can the
+measures the time interval with [detect~] object from ELSE and get
+the same perfect result: 500 ms., f 62;
 #X connect 0 0 20 0;
 #X connect 1 0 20 1;
 #X connect 2 0 24 0;
@@ -71,9 +71,9 @@ accurate trigger and can be thought of the audio counterpart of a bang.
 #X connect 5 0 0 0;
 #X connect 5 1 1 0;
 #X connect 6 0 12 0;
-#X connect 6 0 35 0;
+#X connect 6 0 34 0;
 #X connect 6 1 13 0;
-#X connect 6 1 35 0;
+#X connect 6 1 34 0;
 #X connect 7 0 6 0;
 #X connect 8 0 9 1;
 #X connect 9 0 21 0;
@@ -90,4 +90,4 @@ accurate trigger and can be thought of the audio counterpart of a bang.
 #X connect 24 0 3 0;
 #X connect 25 0 7 0;
 #X connect 26 0 5 0;
-#X connect 35 0 17 0;
+#X connect 34 0 17 0;

@@ -1,0 +1,110 @@
+#N canvas 334 97 954 616 12;
+#X obj 573 400 out~;
+#X obj 577 366 zerocross~;
+#X obj 259 195 randi~ 10 20;
+#X obj 259 222 display~;
+#X obj 259 168 pulse~ 1;
+#X obj 250 343 dust~ 1;
+#X obj 307 343 dust2~ 1;
+#X obj 264 372 out~;
+#X obj 95 372 out~;
+#X obj 166 502 nbx 5 14 -50 50 0 0 empty empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 166 566 else/display~ 7;
+#X obj 166 531 randpulse~ 1;
+#X obj 570 133 status~;
+#X obj 723 146 toggleff~;
+#X obj 288 502 nbx 5 14 -50 50 0 0 empty empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 288 566 else/display~ 7;
+#X obj 288 531 randpulse2~ 1;
+#X obj 570 95 pulse~ 1;
+#X obj 484 162 trig2bang~;
+#X obj 484 192 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 570 160 trig2bang~;
+#X obj 570 190 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 616 191 trig2bang~;
+#X obj 616 221 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 723 103 impulse~ 1;
+#X obj 723 175 display~;
+#X obj 807 174 display~;
+#X obj 807 146 timed.gate~ 500;
+#X obj 577 334 rampnoise~ 10;
+#X obj 763 369 schmitt~;
+#X obj 763 396 changed~;
+#X obj 763 421 changed2~;
+#X text 20 98 It all depends on how the triggered object was programmed.
+The [randi~] object is trigered at positive to negative or negative
+to positive transitions \, so you can use either an impulse or a gate
+to trigger it., f 59;
+#X text 26 262 Many other objects in the ELSE library generate impulses
+or gates. The [tempo~] object is a metronome that sends impulses \,
+[dust~] and [dust2~] also generate impulses \, but at random intervals
+and with random values.;
+#X text 26 445 The [randpulse~] generates random gate values and [randpulse2~]
+alternates between entre 0 e 1 at irregular time intervals.;
+#X text 466 13 Other objects from the ELSE library convert pulses into
+impulses and vice versa. See below.;
+#X text 723 81 impulse to pulse:;
+#X text 503 69 pulse to impulse:;
+#X obj 484 132 gate2imp~;
+#X text 20 10 Pulse and Impulse generators are widely used to control
+patches as "triggers" and the ELSE library has many objects that respond
+to them. A single impulse can be thought of as a "bang" \, whereas
+pulses are gates \, which can be thought of as on/off switches \, like
+a toggle.;
+#X obj 122 169 impulse~ 1;
+#X obj 122 196 randi~ 10 20;
+#X obj 122 223 display~;
+#X text 470 247 Other objects in ELSE generate impulses as part of
+a signal analysis. See [zerocross~] \, for instance \, that outputs
+impulses when a signal crosses from negative to positive or positive
+to negative. Check also these other objects related to [zerocross~]:
+, f 65;
+#X text 747 343 related:;
+#X obj 689 540 impulse 1;
+#X obj 783 540 pulse 1;
+#X obj 689 574 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 783 574 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 549 574 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 95 342 tempo~ 60 100 -on;
+#X obj 549 540 tempo 60 100 -on;
+#X text 477 466 The ELSE library also provides control version objects
+for impulse and pulse generators. In the case of [impulse] and [tempo]
+\, the outputs are bangs.;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 1;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 12 0 20 0;
+#X connect 12 1 22 0;
+#X connect 13 0 25 0;
+#X connect 14 0 16 0;
+#X connect 16 0 15 0;
+#X connect 17 0 12 0;
+#X connect 17 0 38 0;
+#X connect 18 0 19 0;
+#X connect 20 0 21 0;
+#X connect 22 0 23 0;
+#X connect 24 0 13 0;
+#X connect 24 0 27 0;
+#X connect 27 0 26 0;
+#X connect 28 0 1 0;
+#X connect 38 0 18 0;
+#X connect 40 0 41 0;
+#X connect 41 0 42 0;
+#X connect 45 0 47 0;
+#X connect 46 0 48 0;
+#X connect 50 0 8 0;
+#X connect 50 0 8 1;
+#X connect 51 0 49 0;

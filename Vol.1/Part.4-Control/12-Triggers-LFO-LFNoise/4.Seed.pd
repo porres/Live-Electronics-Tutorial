@@ -1,0 +1,61 @@
+#N canvas 306 142 514 564 12;
+#X obj 237 470 random 100;
+#X obj 237 426 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 341 470 random 100;
+#X msg 341 420 seed 123;
+#X obj 237 501 display;
+#X obj 341 502 display;
+#X obj 109 467 noise~;
+#X obj 109 502 print~;
+#X obj 80 469 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X msg 109 434 seed 3e+06;
+#X obj 200 305 else/display~;
+#X obj 349 302 else/display~;
+#X msg 349 164 507;
+#X obj 37 222 else/display~;
+#X obj 200 171 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 37 172 pinknoise~ 1039;
+#X obj 37 308 else/display~;
+#X obj 37 258 pinknoise~ 1039;
+#X text 375 163 <= set seed;
+#X obj 200 261 downsample~ 1;
+#X obj 349 261 downsample~ 1;
+#X obj 37 283 downsample~ 1;
+#X obj 37 197 downsample~ 1;
+#X obj 200 227 brown~;
+#X obj 349 222 brown~;
+#X text 30 367 The native objects [noise~] and random also take a seed
+value via a seed message:;
+#X text 39 20 Random generators usually have a "seed" parameter \,
+used to generate an initial random value. If two different instances
+of the same object have the same seed \, they can be synced together
+to generate the same sequence. As an example \, we set the seed of
+[pinknoise~] and [brown~] \, which go through [downsample~] and become
+low frequency noise generators. We could also use [gray~] \, from ELSE
+\, and [noise~] to downsample and use as low frequency nose generators..
+;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
+#X connect 3 0 2 0;
+#X connect 6 0 7 0;
+#X connect 8 0 7 0;
+#X connect 9 0 6 0;
+#X connect 9 0 8 0;
+#X connect 12 0 23 0;
+#X connect 12 0 24 0;
+#X connect 14 0 23 0;
+#X connect 14 0 24 0;
+#X connect 15 0 22 0;
+#X connect 17 0 21 0;
+#X connect 19 0 10 0;
+#X connect 20 0 11 0;
+#X connect 21 0 16 0;
+#X connect 22 0 13 0;
+#X connect 23 0 19 0;
+#X connect 24 0 20 0;
