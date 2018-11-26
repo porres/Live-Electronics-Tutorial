@@ -1,0 +1,36 @@
+#N canvas 530 23 510 658 12;
+#X obj 68 213 sigmund~ -npts 2048 -hop 512 -npeak 50 tracks;
+#X obj 211 345 tgl 25 1 empty freee empty 17 7 0 10 -228856 -1 -1 1
+1;
+#X obj 211 289 bng 50 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 307 289 bng 50 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 307 352 del 15;
+#X obj 172 443 out~;
+#X text 208 251 Freeze \; Unfreeze;
+#X obj 172 409 clone 50 oscillator;
+#X text 67 26 We just adapt the last example to add a [spigot] \, used
+here to let the sigmund data through or not. When the [spigot] is closed
+\, the sound remains frozen in that last snapshot., f 49;
+#X text 302 261 Snapshot (when frozen);
+#X text 67 93 We have a bang to freeze and unfreeze \, but when the
+sound is frozen \, you can take new snapshots with a second bang.,
+f 49;
+#X obj 172 377 spigot;
+#X obj 173 309 lb;
+#X obj 68 182 play.file~ 1 ../../../../samples/didge.aif 1 1;
+#X obj 216 603 freeze~;
+#X text 79 538 The freeze object \, from the ELSE library \, is based
+on this patch. Check its help file., f 50;
+#X connect 0 0 11 0;
+#X connect 1 0 11 1;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 7 0 5 0;
+#X connect 7 0 5 1;
+#X connect 11 0 7 0;
+#X connect 12 0 1 0;
+#X connect 13 0 0 0;
