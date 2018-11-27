@@ -12,12 +12,12 @@ signal of any sound generator in Pd. Like an oscillator's \, for instance.
 #X text 36 357 On the other hand \, we can think of amplitude as one
 single amplitude value \, which is called the "instant amplitude".
 , f 54;
-#X obj 151 462 snapshot~;
-#X obj 164 433 noise~;
-#X obj 151 406 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 233 467 snapshot~;
+#X obj 143 423 noise~;
+#X obj 233 431 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 151 488 display;
-#X text 171 406 <= get instant amplitude;
+#X obj 233 493 display;
+#X text 253 431 <= get instant amplitude;
 #X text 449 29 But an "instant amplitude" doesn't tell us much about
 what's going on with the signal as a whole \, just that moment in time...
 that's why we have other types of amplitude measures \, and all take
@@ -32,8 +32,12 @@ or negative) in the time window, f 50;
 negative peaks in the time window, f 50;
 #X text 508 473 3- "Root Mean Square" (RMS): A mean of all samples
 in the time window, f 50;
-#X obj 334 452 setdsp~;
+#X obj 343 224 setdsp~;
+#X obj 100 477 out~;
+#X text 41 421 white noise => generator, f 14;
 #X connect 2 0 1 0;
 #X connect 7 0 10 0;
 #X connect 8 0 7 0;
+#X connect 8 0 18 1;
+#X connect 8 0 18 0;
 #X connect 9 0 7 0;

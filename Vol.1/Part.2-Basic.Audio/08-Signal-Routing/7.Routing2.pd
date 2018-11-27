@@ -1,0 +1,82 @@
+#N canvas 411 64 913 564 12;
+#X obj 125 223 out~;
+#X obj 149 370 noise~;
+#X obj 338 427 setdsp~ 1;
+#X obj 247 495 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.435404 256;
+#X obj 193 495 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.389447 256;
+#X obj 141 495 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 247 468 rms~;
+#X obj 193 468 rms~;
+#X obj 141 468 rms~;
+#X text 334 183 check the help file for more details, f 19;
+#X obj 161 139 osc~ 300;
+#X obj 226 139 osc~ 350;
+#X obj 291 139 osc~ 400;
+#X obj 358 139 osc~ 450;
+#X text 160 116 inlet 1;
+#X text 229 117 inlet 2;
+#X text 294 116 inlet 3;
+#X text 360 116 inlet 4;
+#X obj 144 183 xselect2~ 4, f 24;
+#X obj 79 87 hsl 128 15 0 3 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X obj 76 138 f2s~ 10;
+#X floatatom 76 112 6 0 0 0 - - -;
+#X obj 149 433 xgate2~ 3;
+#X obj 212 354 hsl 128 15 0 2 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 6500 1;
+#X obj 209 405 f2s~ 10;
+#X floatatom 209 379 6 0 0 0 - - -;
+#X text 510 60 The [spread~] object \, from the ELSE library \, spreads
+any number of input signals to any number of output signals. Check
+its help file., f 52;
+#X text 81 298 Similarly \, [xgates~] also lets you specify the crossfading
+point. Check its help file., f 46;
+#X text 93 32 The [xselect2~] lets you perform the crossfade between
+channels. Check its help file., f 46;
+#X obj 573 311 xgate2~ 3;
+#X obj 578 151 hsl 128 15 0 2 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X obj 575 202 f2s~ 10;
+#X floatatom 575 176 6 0 0 0 - - -;
+#X obj 798 201 osc~ 880;
+#X obj 569 361 spread~ 3 2;
+#X obj 578 411 out~;
+#X obj 633 245 xselect2~ 3, f 24;
+#X obj 668 202 osc~ 440;
+#X obj 743 201 noise~;
+#X connect 1 0 22 0;
+#X connect 6 0 3 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
+#X connect 10 0 18 1;
+#X connect 11 0 18 2;
+#X connect 12 0 18 3;
+#X connect 13 0 18 4;
+#X connect 18 0 0 0;
+#X connect 18 0 0 1;
+#X connect 19 0 21 0;
+#X connect 20 0 18 0;
+#X connect 21 0 20 0;
+#X connect 22 0 8 0;
+#X connect 22 1 7 0;
+#X connect 22 2 6 0;
+#X connect 23 0 25 0;
+#X connect 24 0 22 1;
+#X connect 25 0 24 0;
+#X connect 29 0 34 0;
+#X connect 29 1 34 1;
+#X connect 29 2 34 2;
+#X connect 30 0 32 0;
+#X connect 31 0 29 1;
+#X connect 31 0 36 0;
+#X connect 32 0 31 0;
+#X connect 33 0 36 3;
+#X connect 34 0 35 0;
+#X connect 34 1 35 1;
+#X connect 36 0 29 0;
+#X connect 37 0 36 1;
+#X connect 38 0 36 2;

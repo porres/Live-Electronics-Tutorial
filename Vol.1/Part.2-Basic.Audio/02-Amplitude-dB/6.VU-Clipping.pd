@@ -4,16 +4,14 @@
 #X obj 108 274 *~;
 #X obj 108 198 osc~ 200;
 #X floatatom 126 251 5 0 0 0 - - -;
-#X obj 607 277 osc~ 200;
-#X obj 777 274 osc~ 200;
-#X obj 607 307 meter~;
-#X obj 777 305 meter2~;
+#X obj 602 287 meter~;
+#X obj 772 285 meter2~;
 #X obj 175 312 graph~ 349 14;
 #X obj 108 316 vu~;
 #X obj 109 351 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
 #X text 53 400 [vu] =>;
-#X text 688 371 [meter2~] =>;
-#X text 523 372 [meter~] =>;
+#X text 683 351 [meter2~] =>;
+#X text 518 352 [meter~] =>;
 #X text 25 26 Setting a maximum value of 0 dB is a practice that comes
 from the usage of "Volume Meters" (VU) in analog audio. This device
 is calibrated so that 0 dB is the maximum value it can handle without
@@ -23,28 +21,36 @@ distortion is a special type \, known as "clipping"., f 66;
 are "clipped" \, which means they become 1 as that's the maximum representable
 value. In practice \, we have resulting waves that are a bit square
 (see below the graphical representation of clipping)., f 66;
-#X text 521 40 Within Pd we can still have values outside the -1 to
+#X text 516 26 Within Pd we can still have values outside the -1 to
 1 range. It is in the digital to analog conversion that the clipping
 occurs. Pd has a native [vu] object that is a kind of VU Meter \, but
 it doesn't really perform any signal analysys. Now the [vu~] object
 from ELSE analyses a signal and we can feed its output to [vu]., f
 66;
-#X text 521 126 The [vu] object accepts both peak and RMS amplitudes.
+#X text 516 112 The [vu] object accepts both peak and RMS amplitudes.
 See below to the left how it can still represent values over 0 dB \,
 but note also how they become red \, as a sign of "DANGER"! Or "warning
 \, this is being clipped"., f 66;
-#X obj 842 273 noise~;
-#X text 522 194 Below \, to the right \, we have other objects from
+#X obj 837 253 noise~;
+#X text 517 180 Below \, to the right \, we have other objects from
 ELSE \, [meter~] and [meter2~] \, which are convenient abstractions
 based on [vu~] and [vu] that automatically performs analysis on the
 input signals., f 66;
+#X obj 769 439 out~;
+#X obj 602 257 osc~ 440;
+#X obj 772 254 osc~ 440;
+#X obj 581 440 out~;
 #X connect 0 0 3 0;
-#X connect 1 0 8 0;
-#X connect 1 0 9 0;
+#X connect 1 0 6 0;
+#X connect 1 0 7 0;
 #X connect 2 0 1 0;
 #X connect 3 0 1 1;
-#X connect 4 0 6 0;
-#X connect 5 0 7 0;
-#X connect 9 0 10 0;
-#X connect 9 1 10 1;
-#X connect 18 0 7 1;
+#X connect 4 0 21 0;
+#X connect 4 0 21 1;
+#X connect 5 0 18 0;
+#X connect 5 1 18 1;
+#X connect 7 0 8 0;
+#X connect 7 1 8 1;
+#X connect 16 0 5 1;
+#X connect 19 0 4 0;
+#X connect 20 0 5 0;

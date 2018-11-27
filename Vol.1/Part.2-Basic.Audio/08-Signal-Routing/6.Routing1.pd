@@ -1,4 +1,4 @@
-#N struct 1111-cell float x float y float cellsize float color;
+#N struct 1058-cell float x float y float cellsize float color;
 #N canvas 458 50 848 571 12;
 #X obj 39 33 vradio 15 1 0 5 empty empty empty 0 -8 0 10 -228856 -1
 -1 4;
