@@ -1,64 +1,65 @@
-#N canvas 461 45 624 783 12;
-#X msg 148 324 0;
-#X text 177 325 reset;
-#X obj 102 349 phasor~;
-#X obj 225 353 expr~ 1000 / $v1;
-#X obj 206 606 *~;
-#X obj 341 655 +~;
-#X obj 102 326 *~;
-#X obj 190 249 /~ 100;
-#X obj 190 274 expr~ 1 - $v1;
-#X obj 52 213 loadbang;
-#X obj 102 516 +~;
-#X obj 236 500 *~;
-#X obj 478 328 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
+#N canvas 454 45 631 792 12;
+#X msg 151 342 0;
+#X text 180 343 reset;
+#X obj 105 367 phasor~;
+#X obj 228 371 expr~ 1000 / $v1;
+#X obj 209 624 *~;
+#X obj 344 671 +~;
+#X obj 105 344 *~;
+#X obj 193 267 /~ 100;
+#X obj 193 292 expr~ 1 - $v1;
+#X obj 55 231 loadbang;
+#X obj 105 534 +~;
+#X obj 239 518 *~;
+#X obj 481 346 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
 0 10 -228856 -1 -1 0 256;
-#X text 539 324 Cents;
-#X obj 478 375 expr~ 1 - $v1;
-#X obj 359 622 *~;
-#X obj 431 502 *~;
-#X obj 298 545 +~;
-#X obj 236 539 *~;
-#X obj 460 533 *~;
-#X obj 190 225 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
+#X text 542 342 Cents;
+#X obj 481 393 expr~ 1 - $v1;
+#X obj 362 640 *~;
+#X obj 434 520 *~;
+#X obj 301 563 +~;
+#X obj 239 557 *~;
+#X obj 463 551 *~;
+#X obj 193 243 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
 0 10 -228856 -1 -1 100 256;
-#X text 91 237 buffer (ms);
-#X obj 405 260 hsl 128 15 0 1000 0 0 empty \$0-size grain-ms -2 -8
+#X text 94 255 buffer (ms);
+#X obj 408 278 hsl 128 15 0 1000 0 0 empty \$0-size grain-ms -2 -8
 0 10 -228856 -1 -1 1270 1;
-#X obj 402 284 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 405 302 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 100 256;
-#X msg 52 237 6000;
-#X obj 298 703 out~;
-#X obj 319 203 delwrite~ \$0-buffer 6000;
-#X obj 102 545 delread4~ \$0-buffer, f 9;
-#X obj 298 571 delread4~ \$0-buffer, f 9;
-#X obj 377 583 envelope~;
-#X obj 298 512 sh~;
-#X obj 298 474 sh~;
-#X obj 225 403 pimp~;
-#X obj 377 448 pimp~ 0 0.5, f 6;
-#X obj 102 380 *~ 6000;
-#X obj 52 265 expr 1000 / $f1;
-#X obj 224 573 envelope~;
-#X obj 478 351 cents2ratio;
-#X obj 478 504 sh~;
-#X obj 102 481 sh~;
-#X obj 402 313 f2s~ 50;
-#X obj 463 636 initmess \; \$0-speed 100 \; \$0-size 100 \; \$0-cents
+#X msg 55 255 6000;
+#X obj 301 710 out~;
+#X obj 312 207 delwrite~ \$0-buffer 6000;
+#X obj 105 563 delread4~ \$0-buffer, f 9;
+#X obj 301 589 delread4~ \$0-buffer, f 9;
+#X obj 380 601 envelope~;
+#X obj 301 530 sh~;
+#X obj 301 492 sh~;
+#X obj 228 421 pimp~;
+#X obj 380 466 pimp~ 0 0.5, f 6;
+#X obj 105 398 *~ 6000;
+#X obj 55 283 expr 1000 / $f1;
+#X obj 227 591 envelope~;
+#X obj 481 369 cents2ratio;
+#X obj 481 522 sh~;
+#X obj 105 499 sh~;
+#X obj 405 331 f2s~ 50;
+#X obj 467 653 initmess \; \$0-speed 100 \; \$0-size 100 \; \$0-cents
 0;
-#X text 187 203 speed (%);
-#X text 34 381 position;
-#X obj 319 158 play.file~ ../../../../../samples/bubul.wav 1 1, f
+#X text 190 221 speed (%);
+#X text 37 399 position;
+#X obj 312 162 play.file~ ../../../../../samples/bubul.wav 1 1, f
 36;
-#X obj 132 152 stretch~;
-#X text 45 19 In this example we put together the last two for a pitch
+#X obj 139 162 stretch.shift~;
+#X text 55 22 In this example we put together the last two for a pitch
 shift / time stretch patch! As in the first example \, we multiply
 a transposition ratio to the grain reading speed \, but to the phase
 not frequency. We do this to make this adjusment go through another
 sample and hold and only change at grain transitions. This is useful
-for not to make this adjustment change the reading speed. The [stretch~]
+for not to make this adjustment change the reading speed. The [stretch.shift~]
 object \, from ELSE \, is based on this patch \, check its help file.
 , f 70;
+#X text 30 162 Check it out =>;
 #X connect 0 0 2 1;
 #X connect 2 0 34 0;
 #X connect 3 0 32 0;
