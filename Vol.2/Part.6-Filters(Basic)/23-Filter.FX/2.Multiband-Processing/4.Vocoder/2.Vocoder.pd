@@ -1,4 +1,4 @@
-#N canvas 369 137 983 506 12;
+#N canvas 369 137 981 512 12;
 #X obj 45 289 mtof;
 #X obj 45 268 nbx 5 14 25 74 0 0 \$0-ramp_note \$0-pitch empty 0 -8
 0 10 -228856 -1 -1 30 256;
@@ -11,7 +11,7 @@ as an instrument/synth \, and another input (usually a speech) that
 gets analysed to control the filter. Hence \, both audios are sort
 of "combined". The term "Cross Synthesis" is also used in respect to
 vocoders to denote a hybrid result., f 56;
-#X obj 225 347 r \$0-clone;
+#X obj 189 320 r \$0-clone;
 #N canvas 739 92 552 215 Vocoder 0;
 #X obj 21 21 cnv 15 308 148 empty empty empty 20 12 0 14 -228856 -66577
 0;
@@ -82,18 +82,18 @@ empty 0 -8 0 10 -125407 -262144 -1 27 256;
 #X obj 403 53 initmess \; \$0-bottom 27 \; \$0-steps 3;
 #X coords 0 -1 1 1 310 150 2 20 20;
 #X restore 629 225 pd Vocoder;
-#X obj 418 451 s \$0-pitch;
-#X obj 457 425 s \$0-Q;
-#X obj 418 396 unpack;
-#X msg 418 312 30 50;
-#X msg 429 338 45 25;
-#X msg 441 366 25 100;
-#X obj 418 287 loadbang;
-#X obj 527 393 unpack;
-#X obj 527 447 s \$0-bottom;
-#X obj 566 419 s \$0-steps;
-#X msg 527 309 20 4;
-#X msg 537 334 27 3;
+#X obj 450 469 s \$0-pitch;
+#X obj 489 443 s \$0-Q;
+#X obj 450 414 unpack;
+#X msg 450 330 30 50;
+#X msg 461 356 45 25;
+#X msg 473 384 25 100;
+#X obj 450 305 loadbang;
+#X obj 312 414 unpack;
+#X obj 312 468 s \$0-bottom;
+#X obj 351 440 s \$0-steps;
+#X msg 312 330 20 4;
+#X msg 322 355 27 3;
 #X text 59 162 Now we have now a bank with 28 bandpass filters \, where
 each parameter can be set independently. The left input is our synth
 with tonal quality. It gets filtered and the output amplitude depends
@@ -282,22 +282,25 @@ sent to number boxes., f 48;
 #X connect 84 0 42 0;
 #X connect 85 0 43 0;
 #X connect 86 0 2 0;
-#X restore 844 388 pd Get-freq/Q;
-#X text 502 273 Presets;
+#X restore 844 206 pd Get-freq/Q;
 #X obj 45 418 out~;
 #X obj 45 380 norm~ -6;
-#X msg 545 360 30 2;
+#X msg 330 381 30 2;
 #X text 500 94 A logic routine sets a base frequency and semitones
 steps for the frequencies - open:;
 #X text 501 164 Depending on the Q \, the output gain changes \, this
 is why it's useful to have a normalizer.;
 #X obj 45 351 clone 28 vocoder.band;
-#X obj 117 295 play.file~ ../../../../../samples/numbers.wav 1 1,
+#X obj 117 275 play.file~ ../../../../../samples/numbers.wav 1 1,
 f 38;
+#X text 218 407 Presets:;
+#X text 596 423 See also the [vocoder~] object from the ELSE library
+\, based on this patch., f 44;
+#X obj 828 454 vocoder~ 24;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
-#X connect 2 0 29 0;
-#X connect 5 0 29 2;
+#X connect 2 0 28 0;
+#X connect 5 0 28 2;
 #X connect 9 0 7 0;
 #X connect 9 1 8 0;
 #X connect 10 0 9 0;
@@ -308,8 +311,8 @@ f 38;
 #X connect 14 1 16 0;
 #X connect 17 0 14 0;
 #X connect 18 0 14 0;
-#X connect 25 0 24 0;
-#X connect 25 0 24 1;
-#X connect 26 0 14 0;
-#X connect 29 0 25 0;
-#X connect 30 0 29 1;
+#X connect 24 0 23 0;
+#X connect 24 0 23 1;
+#X connect 25 0 14 0;
+#X connect 28 0 24 0;
+#X connect 29 0 28 1;

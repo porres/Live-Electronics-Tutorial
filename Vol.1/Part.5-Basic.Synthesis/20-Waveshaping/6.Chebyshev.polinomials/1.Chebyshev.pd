@@ -83,16 +83,15 @@
 #X array t11 1024 float 0;
 #X coords 0 1 1023 -1 150 100 1;
 #X restore 788 201 graph;
-#N canvas 145 164 696 300 plot 0;
+#N canvas 145 164 955 317 plot 0;
 #X obj 52 32 r \$0-shape;
-#X obj 438 145 r amp;
-#X obj 438 168 trigger bang float;
+#X obj 499 168 trigger bang float;
 #X obj 103 91 trigger bang bang;
 #X obj 360 43 pi;
 #X obj 360 71 v pi;
-#X obj 379 148 delay 5;
+#X obj 440 148 delay 5;
 #X obj 274 46 initmess \; amp-set 0 \; hz 200;
-#X obj 438 194 loop 1024;
+#X obj 499 194 loop 1024;
 #X obj 52 61 loop 1024;
 #X obj 202 136 f \$0;
 #X msg 202 157 \; shape_\$1 normalize 1;
@@ -100,20 +99,21 @@
 * c2 + t3[$f1] * c3 + t4[$f1] * c4 + t5[$f1] * c5 + t6[$f1] * c6 +
 t7[$f1] * c7 + t8[$f1] * c8 + t9[$f1] * c9 + t10[$f1] * c10 + t11[$f1]
 * c11, f 59;
-#X obj 438 219 expr output_\$0[$f1] = shape_\$0[(sin($f1 * 2*pi / 1023)
+#X obj 499 219 expr output_\$0[$f1] = shape_\$0[(sin($f1 * 2*pi / 1023)
 * $f2) * 512 + 512], f 39;
-#X connect 0 0 9 0;
-#X connect 1 0 2 0;
-#X connect 2 0 8 0;
-#X connect 2 1 13 1;
-#X connect 3 0 6 0;
-#X connect 3 1 10 0;
-#X connect 4 0 5 0;
-#X connect 6 0 8 0;
-#X connect 8 0 13 0;
-#X connect 9 0 12 0;
-#X connect 9 1 3 0;
-#X connect 10 0 11 0;
+#X obj 499 145 r \$0-amp;
+#X connect 0 0 8 0;
+#X connect 1 0 7 0;
+#X connect 1 1 12 1;
+#X connect 2 0 5 0;
+#X connect 2 1 9 0;
+#X connect 3 0 4 0;
+#X connect 5 0 7 0;
+#X connect 7 0 12 0;
+#X connect 8 0 11 0;
+#X connect 8 1 2 0;
+#X connect 9 0 10 0;
+#X connect 13 0 1 0;
 #X restore 299 433 pd plot;
 #N canvas 45 80 1015 521 (subpatch) 0;
 #X obj 240 303 v c0;
@@ -170,13 +170,13 @@ t7[$f1] * c7 + t8[$f1] * c8 + t9[$f1] * c9 + t10[$f1] * c10 + t11[$f1]
 -1 -1 0 256;
 #X text 142 105 t0;
 #X obj 187 125 nbx 4 18 -100 100 0 0 T1(x) empty empty 0 -8 0 14 -261561
--1 -1 0 256;
+-1 -1 1 256;
 #X obj 255 125 nbx 4 18 -100 100 0 0 T2(x) empty empty 0 -8 0 14 -261561
--1 -1 0 256;
+-1 -1 1 256;
 #X obj 321 125 nbx 4 18 -100 100 0 0 T3(x) empty empty 0 -8 0 14 -261561
--1 -1 0 256;
+-1 -1 2 256;
 #X obj 387 125 nbx 4 18 -100 100 0 0 T4(x) empty empty 0 -8 0 14 -261561
--1 -1 0 256;
+-1 -1 2.63 256;
 #X obj 453 125 nbx 4 18 -100 100 0 0 T5(x) empty empty 0 -8 0 14 -261561
 -1 -1 0 256;
 #X text 208 105 t1;
@@ -239,7 +239,7 @@ t7[$f1] * c7 + t8[$f1] * c8 + t9[$f1] * c9 + t10[$f1] * c10 + t11[$f1]
 #X connect 46 0 9 0;
 #X connect 47 0 11 0;
 #X coords 0 -1 1 1 840 52 2 100 100;
-#X restore 94 132 pd;
+#X restore 98 132 pd;
 #X obj 761 449 *~;
 #X text 40 445 1;
 #X text 34 588 -1;
@@ -250,7 +250,7 @@ t7[$f1] * c7 + t8[$f1] * c8 + t9[$f1] * c9 + t10[$f1] * c10 + t11[$f1]
 #X obj 761 409 osc~ 200;
 #X obj 761 485 shaper~ shape_\$0;
 #X obj 834 449 f2s~ 10;
-#X text 12 155 Coefficients:;
+#X text 6 153 Coefficients:;
 #X text 15 322 Chebyshev polinomials as transfer functions generate
 harmonics for a sine wave input. For instance \, t2 generates the 2nd
 harmonic (an octave above) \, t5 the 5th and so on - t0 generates a
@@ -446,8 +446,8 @@ f 33;
 #X connect 90 2 78 0;
 #X connect 91 0 9 0;
 #X restore 627 411 pd polinomials;
-#X obj 837 416 hsl 100 20 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 0 1;
+#X obj 837 416 hsl 100 20 0 1 0 0 \$0-amp empty empty -2 -8 0 10 -228856
+-1 -1 7900 1;
 #X text 856 418 Amplitude;
 #X connect 30 0 38 0;
 #X connect 37 0 30 0;
