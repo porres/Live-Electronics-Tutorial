@@ -44,10 +44,10 @@ phases., f 52;
 -4034 -1 -1 33 256;
 #X obj 127 305 nbx 9 18 -1e+37 1e+37 0 0 empty empty Re -18 9 0 12
 -245290 -1 -1 -102 256;
-#X floatatom 679 347 8 0 0 0 - - -, f 8;
-#X floatatom 742 348 8 0 0 0 - - -, f 8;
-#X floatatom 510 348 8 0 0 0 - - -, f 8;
-#X floatatom 573 349 8 0 0 0 - - -, f 8;
+#X floatatom 679 347 8 0 0 0 - - -;
+#X floatatom 742 348 8 0 0 0 - - -;
+#X floatatom 510 348 8 0 0 0 - - -;
+#X floatatom 573 349 8 0 0 0 - - -;
 #X obj 603 414 *;
 #X obj 649 413 +;
 #X obj 513 283 nbx 4 18 -1e+37 1e+37 0 0 empty \$0-Re1 Re1 0 -8 0 12
@@ -124,7 +124,7 @@ the amplitudes and summing the initial phases., f 41;
 #X connect 41 0 32 0;
 #X connect 41 1 33 0;
 #X restore 584 132 pd Complex-Multiply;
-#N canvas 235 23 969 732 Complex-Division 1;
+#N canvas 235 23 969 732 Complex-Division 0;
 #X text 470 198 Amplitudes;
 #X obj 494 109 nbx 4 18 -1e+37 1e+37 0 0 empty \$0-Re1 Re1 0 -8 0 12
 -262130 -1 -1 30 256;
@@ -164,7 +164,7 @@ the amplitudes and summing the initial phases., f 41;
 -245290 -1 -1 0.899807 256;
 #X obj 249 669 nbx 7 18 -1e+37 1e+37 0 0 empty empty Im -18 7 0 12
 -171620 -1 -1 0.317919 256;
-#X obj 368 668 v norm;
+#X obj 387 668 v norm;
 #X obj 111 583 bng 22 250 50 0 empty expr empty 17 7 0 10 -262130 -1
 -1;
 #X obj 114 238 v Re1;
@@ -204,13 +204,7 @@ the amplitudes and summing the initial phases., f 41;
 #X text 578 615 Amp;
 #X obj 111 609 expr ((Re1 * Re2) + (Im1 * Im2)) / norm \; ((Im1 * Re2)
 - (Re1 * Im2)) / norm \; (pow(Re2 \, 2) + pow(Im2 \, 2));
-#X text 95 39 Re: (Re1 * Re2) + (Im1 * Im2) / normalização \; Im: (Im1
-* Re2) - (Re1 * Im2) / normalização;
-#X obj 66 238 s expr;
-#X text 697 638 igual;
-#X text 755 616 Fase;
-#X text 115 154 insira valores da direita para a esquerda:;
-#X text 617 636 diferente;
+#X obj 56 238 s expr;
 #X obj 631 573 car2pol;
 #X obj 578 273 pol2car;
 #X obj 501 145 car2pol;
@@ -224,10 +218,16 @@ the amplitudes and summing the initial phases., f 41;
 #X text 468 51 Polar:;
 #X text 505 382 The normalization factor only affects the amplitude
 \, the phase remains the same., f 41;
-#X connect 1 0 59 0;
-#X connect 2 0 60 0;
-#X connect 3 0 59 1;
-#X connect 4 0 60 1;
+#X text 115 154 insert values from right to left:;
+#X text 95 39 Re: (Re1 * Re2) + (Im1 * Im2) / normalization \; Im:
+(Im1 * Re2) - (Re1 * Im2) / normalization;
+#X text 606 637 different;
+#X text 689 637 the same;
+#X text 755 616 Phase;
+#X connect 1 0 54 0;
+#X connect 2 0 55 0;
+#X connect 3 0 54 1;
+#X connect 4 0 55 1;
 #X connect 5 0 45 0;
 #X connect 6 0 43 0;
 #X connect 8 0 14 0;
@@ -259,27 +259,27 @@ the amplitudes and summing the initial phases., f 41;
 #X connect 31 0 34 0;
 #X connect 32 0 36 0;
 #X connect 33 0 29 0;
-#X connect 33 0 52 0;
+#X connect 33 0 51 0;
 #X connect 37 0 15 0;
 #X connect 37 1 15 1;
-#X connect 38 0 57 0;
-#X connect 39 0 57 1;
+#X connect 38 0 52 0;
+#X connect 39 0 52 1;
 #X connect 40 0 47 0;
-#X connect 43 0 58 1;
-#X connect 45 0 58 0;
+#X connect 43 0 53 1;
+#X connect 45 0 53 0;
 #X connect 47 0 38 0;
 #X connect 47 1 39 0;
 #X connect 50 0 25 0;
 #X connect 50 1 26 0;
 #X connect 50 2 27 0;
-#X connect 57 0 46 0;
-#X connect 57 1 44 0;
-#X connect 58 0 41 0;
-#X connect 58 1 42 0;
-#X connect 59 0 5 0;
-#X connect 59 1 6 0;
-#X connect 60 0 5 1;
-#X connect 60 1 6 1;
+#X connect 52 0 46 0;
+#X connect 52 1 44 0;
+#X connect 53 0 41 0;
+#X connect 53 1 42 0;
+#X connect 54 0 5 0;
+#X connect 54 1 6 0;
+#X connect 55 0 5 1;
+#X connect 55 1 6 1;
 #X restore 573 272 pd Complex-Division;
 #X text 438 174 For complex division \, we have a similar property
 \, where we have the same result by dividing the amplitudes and subtracting
