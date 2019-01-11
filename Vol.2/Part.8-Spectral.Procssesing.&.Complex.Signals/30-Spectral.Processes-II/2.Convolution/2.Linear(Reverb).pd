@@ -1,101 +1,31 @@
-#N canvas 257 52 886 576 12;
-#X text 231 123 A) 1 2 \; B) 2 4 6;
-#X obj 511 192 s~ \$0-input;
-#X obj 607 410 r~ \$0-input;
-#X obj 656 189 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
+#N canvas 449 44 958 688 12;
+#X obj 576 110 s~ \$0-input;
+#X obj 672 514 r~ \$0-input;
+#X obj 723 111 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 656 215 tabplay~ \$0-IR;
-#X text 24 87 The convolution operation consists in multiplying and
-adding two arrays point by point. For instance the following A & B
-arrays:, f 50;
-#X text 24 171 The B elements multiplied by A gives us:;
-#X text 102 196 2 4 6 (2 \, 4 \, 6 multiplied by 1);
-#X text 114 211 4 8 12 (2 \, 4 \, 6 multiplied by 2);
-#X text 24 19 A convoluçtion in the time domain is the same as a multiplication
-in the frequemcy domain and vice versa! But it's more efficient to
-perform the convolution operation in the frequency domain., f 50;
-#X text 22 250 A sum returns: 2 8 14 12! The output has a number of
-elements that sum the number of elements of both list minus one (2
-+ 3 - 1 = 4). Let it be clear this is for the linear convolution \,
-which is used for implementing reverbs by convoluting a signal to an
-"Impulse Response" (IR). An IR is the result of an impulse into a filter
-\, which can be a room. Thus \, it captures how the room responds and
-reverbs., f 50;
-#X text 23 384 We need to perform an FFT in the whole IR table \, so
-normally we have big FFT windows \, which generate latency. A solution
-is to use partitioned convolution \, which we'll see next., f 50;
-#X obj 656 253 out~;
-#X text 680 189 Play IR:;
-#X obj 431 39 cnv 15 418 78 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 723 137 tabplay~ \$0-IR;
+#X text 57 104 The B elements multiplied by A gives us:;
+#X text 135 129 2 4 6 (2 \, 4 \, 6 multiplied by 1);
+#X text 147 144 4 8 12 (2 \, 4 \, 6 multiplied by 2);
+#X obj 723 175 out~;
+#X obj 39 570 cnv 15 398 78 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-IR 32768 float 2;
-#X coords 0 1 32768 -1 420 80 1 0 0;
-#X restore 430 38 graph;
-#X obj 607 481 out~;
-#X text 23 450 For this example \, we have the overlap-add method.
-This also "patitions" the input signal in bits that are equal to the
-IR's window size. But this window size is actually twice as big and
-"zero padded" - the window size is 16.384 samples and the window size
-is 32.768., f 50;
-#X obj 448 225 out~;
-#X text 644 55 "zero-padded";
-#N canvas 252 23 948 380 IR-FFT 0;
-#X obj 341 141 bang~;
-#X msg 410 201 1;
-#X obj 90 119 rfft~;
-#X obj 90 180 tabwrite~ \$0-re;
-#X obj 212 180 tabwrite~ \$0-im;
-#X msg 359 177 0;
-#X obj 341 201 f;
-#X obj 372 201 + 1;
-#X msg 341 252 0;
-#X obj 341 228 sel 1;
-#X obj 486 297 switch~;
-#X obj 335 38 loadbang;
-#X obj 335 106 trigger bang bang bang;
-#X msg 348 64 \; pd dsp 1;
-#X obj 147 225 table \$0-re 32768;
-#X obj 147 248 table \$0-im 32768;
-#X obj 90 85 tabreceive~ \$0-IR;
-#X msg 486 147 set 32768 1;
-#X obj 534 235 soundfiler;
-#X obj 534 202 initmess read ../../../../samples/IR.wav \$0-IR;
-#X connect 0 0 6 0;
-#X connect 1 0 10 0;
-#X connect 2 0 3 0;
-#X connect 2 1 4 0;
-#X connect 5 0 6 1;
-#X connect 6 0 7 0;
-#X connect 6 0 9 0;
-#X connect 7 0 6 1;
-#X connect 8 0 10 0;
-#X connect 9 0 8 0;
-#X connect 11 0 13 0;
-#X connect 11 0 12 0;
-#X connect 12 0 4 0;
-#X connect 12 0 3 0;
-#X connect 12 1 1 0;
-#X connect 12 2 5 0;
-#X connect 12 2 17 0;
-#X connect 16 0 2 0;
-#X connect 17 0 10 0;
-#X connect 19 0 18 0;
-#X restore 673 349 pd IR-FFT;
-#X text 461 342 First \, the FFT of the IR is done and stored into
-tables:, f 28;
-#X text 540 443 click =>;
-#N canvas 453 30 702 579 linear.convolution 1;
-#X obj 68 273 rfft~;
-#X obj 109 429 rifft~;
-#X obj 109 506 outlet~;
-#X obj 68 213 *~;
-#X text 324 172 0;
-#X text 111 83 1;
-#X text 323 84 1;
-#X text 111 170 0;
-#X msg 329 438 set \$1 2;
-#X obj 123 87 cnv 15 198 98 empty empty empty 20 12 0 14 -233017 -66577
+#X coords 0 1 32768 -1 400 80 1 0 0;
+#X restore 38 569 graph;
+#X obj 672 585 out~;
+#X obj 515 147 out~;
+#X text 252 586 "zero-padded";
+#X text 605 547 click =>;
+#N canvas 370 70 476 633 linear.convolution 0;
+#X obj 66 284 rfft~;
+#X obj 88 411 rifft~;
+#X obj 88 528 outlet~;
+#X obj 66 224 *~;
+#X text 119 145 1;
+#X text 119 232 0;
+#X obj 131 149 cnv 15 198 98 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-zero_padding 32768 float 1;
@@ -1083,56 +1013,100 @@ tables:, f 28;
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 1.05 32767 -0.05 200 100 1 0 0;
-#X restore 122 86 graph;
-#X obj 118 214 tabreceive~ \$0-zero_padding;
-#X obj 147 263 tabreceive~ \$0-re;
-#X obj 200 292 tabreceive~ \$0-im;
-#X obj 329 463 block~;
-#X obj 68 24 inlet~;
-#X text 435 409 window size;
-#X obj 329 408 initmess 32768;
-#X text 168 497 [outlet~] sums the overlaps!, f 15;
-#X text 191 363 Complex Multiply;
-#X obj 68 319 car2pol~;
-#X obj 147 321 car2pol~;
-#X obj 68 360 *~;
-#X obj 154 361 +~;
-#X obj 101 398 pol2car~;
-#X text 375 129 The zero padding is a windowing type that discards
-the second half of the input. But this half is considered in the next
-overlapped window and summed up (remember the sum happens automatically
-with [outlet~])., f 38;
-#X text 375 227 This patch needs another normalization factor \, see
-below, f 38;
-#X obj 109 458 /~;
-#X connect 0 0 20 0;
-#X connect 0 1 20 1;
-#X connect 1 0 27 0;
+#X restore 130 148 graph;
+#X obj 84 95 tabreceive~ \$0-zero_padding;
+#X obj 66 45 inlet~;
+#X text 75 558 [outlet~] sums the overlaps!, f 15;
+#X obj 76 355 else/cmul~;
+#X obj 120 284 tabreceive~ \$0-IR-re;
+#X obj 143 315 tabreceive~ \$0-IR-im;
+#X obj 88 480 /~ 32768;
+#X text 156 480 <= normalization (divide by window size);
+#X obj 165 424 block~ 32768 2;
+#X text 275 418 window size: 32768 and overlap of 2!, f 18;
+#X text 160 355 <= Complex Multiplication;
+#X text 129 250 0;
+#X text 289 250 32768;
+#X connect 0 0 11 0;
+#X connect 0 1 11 1;
+#X connect 1 0 14 0;
 #X connect 3 0 0 0;
-#X connect 8 0 14 0;
-#X connect 11 0 3 1;
-#X connect 12 0 21 0;
-#X connect 13 0 21 1;
-#X connect 15 0 3 0;
-#X connect 17 0 8 0;
-#X connect 17 0 27 1;
-#X connect 20 0 22 0;
-#X connect 20 1 23 0;
-#X connect 21 0 22 1;
-#X connect 21 1 23 1;
-#X connect 22 0 24 0;
-#X connect 23 0 24 1;
-#X connect 24 0 1 0;
-#X connect 24 1 1 1;
-#X connect 27 0 2 0;
-#X restore 607 442 pd linear.convolution;
-#X obj 491 150 play.file~ 1 ../../../../samples/didge.aif 1 1;
-#X connect 2 0 23 0;
-#X connect 3 0 4 0;
-#X connect 4 0 12 0;
-#X connect 4 0 12 1;
-#X connect 23 0 16 0;
-#X connect 23 0 16 1;
-#X connect 24 0 1 0;
-#X connect 24 0 18 1;
-#X connect 24 0 18 0;
+#X connect 8 0 3 1;
+#X connect 9 0 3 0;
+#X connect 11 0 1 0;
+#X connect 11 1 1 1;
+#X connect 12 0 11 2;
+#X connect 13 0 11 3;
+#X connect 14 0 2 0;
+#X restore 672 546 pd linear.convolution;
+#X obj 558 72 play.file~ 1 ../../../../samples/didge.aif 1 1;
+#N canvas 552 358 561 330 IR-FFT 0;
+#X obj 59 102 rfft~;
+#X msg 226 132 \; pd dsp 1;
+#X obj 59 68 tabreceive~ \$0-IR;
+#X obj 249 94 soundfiler;
+#X obj 203 201 switch~ 32768;
+#X obj 203 38 initmess read ../../../../samples/IR.wav \$0-IR;
+#X obj 203 67 t b b a;
+#X obj 373 92 table \$0-IR-re 32768;
+#X obj 373 115 table \$0-IR-im 32768;
+#X obj 119 237 tabwrite~ \$0-IR-im;
+#X obj 57 261 tabwrite~ \$0-IR-re;
+#X connect 0 0 10 0;
+#X connect 0 1 9 0;
+#X connect 2 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 6 1 1 0;
+#X connect 6 1 9 0;
+#X connect 6 1 10 0;
+#X connect 6 2 3 0;
+#X restore 265 517 pd IR-FFT;
+#X text 55 400 The FFT needs to be done over the whole IR \, so we
+needs big FFT windows that generate latency. A solution is to use partitioned
+convolution \, which we'll see next. The [pd IR-FFT] subpatch below
+loads an IR sound file into a table and performs the FFT on it once.
+By precomputing this FFT we can make things more efficient by avoiding
+a redundant FFT in the same input over and over., f 53;
+#X text 495 26 Play the input sound and the IR below:;
+#X text 747 111 <= Play IR:;
+#X text 57 20 A convolution operation multiplies and adds two arrays
+point by point. For instance \, in the following A & B arrays:, f
+50;
+#X text 230 52 A) 1 2 \; B) 2 4 6 \;;
+#X text 55 173 The sum returns: 2 8 14 12! The output has a number
+of elements that's the sum of the number of elements from both lists
+minus one (2 + 3 - 1 = 4)., f 53;
+#X text 55 225 Let it be clear this is for the linear convolution \,
+not the circular convolution from the last example! The linear convolution
+is used to implement reverbs by convoluting a signal to an "Impulse
+Response" (IR). An IR is the result of an impulse into a filter \,
+which can be a room. Thus \, it captures how the room responds and
+reverbs., f 53;
+#X text 55 332 A convolution in the time domain is the same as a multiplication
+in the frequency domain and vice versa! It's more efficient to implement
+it in the frequency domain with FFT and complex multiplication., f
+53;
+#X text 475 251 Here we're using the overlap-add method technique \,
+which needs zero-padding. The IR size is 16.384 samples \, but we have
+an FFT window size of 32.768 (twice as big). The second half of the
+table is filled with zeroes (hence \, zero-padded)., f 61;
+#X text 475 315 Let's remember that zero padding still enable us to
+extract the frequency domain information. Actually \, that is done
+with more accuracy \, since we have a bigger FFT window., f 61;
+#X text 475 372 For the signal input \, we apply a zero-padding window
+\, which discards the second half of the input and replaces it with
+zeros. But since we have an overlap of two \, this second half is not
+lost as it's considered in the next overlapped window. The signal is
+then reconstructed and summed up in the end (remember the sum happens
+automatically with [outlet~]). Click and open the subpatch below to
+see the implementation., f 61;
+#X connect 1 0 14 0;
+#X connect 2 0 3 0;
+#X connect 3 0 7 0;
+#X connect 3 0 7 1;
+#X connect 14 0 10 0;
+#X connect 14 0 10 1;
+#X connect 15 0 0 0;
+#X connect 15 0 11 1;
+#X connect 15 0 11 0;

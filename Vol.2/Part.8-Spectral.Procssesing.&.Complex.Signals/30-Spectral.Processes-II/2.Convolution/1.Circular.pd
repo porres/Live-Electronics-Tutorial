@@ -42,50 +42,54 @@
 #X obj 251 313 out~;
 #X text 346 136 window size;
 #X obj 544 326 out~;
-#N canvas 377 23 795 584 Circular-Convolutoin 0;
-#X obj 54 56 inlet~;
-#X obj 142 56 inlet~;
-#X text 50 32 Sample 1;
-#X text 133 29 Sample 2;
-#X obj 99 487 outlet~;
-#X obj 54 160 rfft~;
-#X obj 142 160 rfft~;
-#X obj 91 256 *~;
-#X obj 144 255 +~;
-#X obj 99 346 rifft~;
-#X text 404 201 Re = (Re1 * Re2) - (Im1 * Im2) \; Im = (Im1 * Re2)
+#N canvas 377 23 813 561 Circular-Convolutoin 1;
+#X obj 54 64 inlet~;
+#X obj 142 64 inlet~;
+#X text 50 40 Sample 1;
+#X text 133 37 Sample 2;
+#X obj 99 495 outlet~;
+#X obj 54 168 rfft~;
+#X obj 142 168 rfft~;
+#X obj 91 264 *~;
+#X obj 144 263 +~;
+#X obj 99 354 rifft~;
+#X text 414 151 Re = (Re1 * Re2) - (Im1 * Im2) \; Im = (Im1 * Re2)
 + (Re1 * Im2);
-#X obj 184 323 r \$0-set-block;
-#X obj 184 350 block~;
-#X obj 54 203 car2pol~;
-#X obj 91 300 pol2car~;
-#X obj 54 110 hann~;
-#X obj 142 114 hann~;
-#X obj 99 391 hann~;
-#X obj 142 203 car2pol~;
-#X obj 499 328 expr~ ($v1 * $v3) - ($v2 * $v4) \; ($v2 * $v3) + ($v1
+#X obj 184 331 r \$0-set-block;
+#X obj 184 358 block~;
+#X obj 54 211 car2pol~;
+#X obj 91 308 pol2car~;
+#X obj 54 118 hann~;
+#X obj 142 122 hann~;
+#X obj 99 399 hann~;
+#X obj 142 211 car2pol~;
+#X obj 509 278 expr~ ($v1 * $v3) - ($v2 * $v4) \; ($v2 * $v3) + ($v1
 * $v4);
-#X obj 499 280 rfft~;
-#X obj 646 280 rfft~;
-#X obj 585 404 rifft~;
-#X obj 155 438 expr 1 / ($f1 * 1.5);
-#X obj 99 438 *~;
-#X obj 155 411 blocksize~;
-#X text 320 89 The properties of complex math says that a multiplication
+#X obj 509 230 rfft~;
+#X obj 656 230 rfft~;
+#X obj 595 354 rifft~;
+#X obj 155 446 expr 1 / ($f1 * 1.5);
+#X obj 99 446 *~;
+#X obj 155 419 blocksize~;
+#X text 330 49 The properties of complex math says that a multiplication
 is done in the polar form by multiplying the amplitudes and suming
 the phases.;
-#X obj 347 343 *~;
-#X obj 379 343 *~;
-#X obj 347 370 -~;
-#X obj 412 343 *~;
-#X obj 444 343 *~;
-#X obj 426 375 +~;
-#X obj 347 276 rfft~;
-#X obj 430 273 rfft~;
-#X obj 387 414 rifft~;
-#X text 320 149 Let's remember how the complex multiplication works
+#X obj 357 293 *~;
+#X obj 389 293 *~;
+#X obj 357 320 -~;
+#X obj 422 293 *~;
+#X obj 454 293 *~;
+#X obj 436 325 +~;
+#X obj 357 226 rfft~;
+#X obj 440 223 rfft~;
+#X obj 397 364 rifft~;
+#X text 330 99 Let's remember how the complex multiplication works
 in the cartesian form \, here's the formula below and how to implement
 with native Pd objects:;
+#X text 364 416 The cartesian form is more accurate and efficient.
+For optimal efficiency you can also use the [cmul~] object from the
+ELSE library.;
+#X obj 587 477 cmul~;
 #X connect 0 0 15 0;
 #X connect 1 0 16 0;
 #X connect 5 0 13 0;
