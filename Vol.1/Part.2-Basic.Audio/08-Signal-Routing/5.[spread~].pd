@@ -1,0 +1,17 @@
+#N canvas 580 322 503 438 12;
+#X obj 211 339 else/out~;
+#X obj 195 179 osc~ 440;
+#X text 49 26 The [spread~] object \, from the ELSE library can be
+used to "spread" any number of input channels across any number of
+output channels with equal power panning., f 59;
+#X obj 233 214 osc~ 660;
+#X obj 269 248 osc~ 880;
+#X obj 195 287 spread~ 3 2;
+#X text 49 81 The default is two inputs sent to two outputs \, but
+you can use more input sources and spread them in the stereo field.
+This is better noticeable with headphones.;
+#X connect 1 0 5 0;
+#X connect 3 0 5 1;
+#X connect 4 0 5 2;
+#X connect 5 0 0 0;
+#X connect 5 1 0 1;

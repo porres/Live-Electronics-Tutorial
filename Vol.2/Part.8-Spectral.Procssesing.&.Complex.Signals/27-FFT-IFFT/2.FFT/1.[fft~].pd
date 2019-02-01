@@ -15,11 +15,6 @@
 It's called a "transform" because it transforms from the time domain
 to the frequency domain. The operation is done in a whole block of
 audio - defined by [block~].;
-#X text 19 305 Each sample in the block (real or imaginary) represents
-a frequency point (a.k.a frequency bands or bins). The frequency band
-is calculated by dividing the sample rate by the block size \, and
-the frequency points are then a harmonic series formed by multiples
-of this frequency band! Open the subpatch below:;
 #X text 669 259 Imaginary;
 #X text 591 255 Real;
 #N canvas 151 65 942 581 plot 0;
@@ -162,11 +157,6 @@ you both the block size and also the corresponding frequency., f 49
 #X text 475 29 Below we have a sine wave being analyzed. Note that
 we have a stable analysis graph only if the frequency matches a harmonic
 of the FFT. Open [pd graphs] for the analysis results., f 53;
-#X text 20 135 The FFT is an optimized algorythm for Fourier Analysis
-in the digital domain and requires the block of audio to be a power
-of 2! In Pd and live electronics \, we're dealing mostly with FFT and
-\, more specifically STFT ("Short Time Fourier Transform") \, which
-are analysis of reasonably small audio snippets.;
 #X text 772 222 Click/open:;
 #X text 478 327 Note there's a mirroring of frequencies after Nyquist.
 This will be discussed further. The output of [fft~] is in the cartesian
@@ -175,7 +165,17 @@ whith Amplitude and Initial Phase - thus we convert to polar as well.The
 amplitude values are up to half the block size and the Initial Phase
 is in radians.;
 #X obj 205 96 block~ 128;
-#X connect 0 0 17 0;
+#X text 20 135 The FFT is an optimized algorythm for Fourier Analysis
+in the digital domain and requires that the block of audio is a power
+of 2! In Pd and live electronics \, we're dealing mostly with FFT and
+- more specifically STFT ("Short Time Fourier Transform") \, which
+are analysis of reasonably small audio snippets.;
+#X text 19 305 Each sample in the block (real or imaginary) represents
+a frequency point (a.k.a frequency bands or bins). The frequency band
+is calculated by dividing the sample rate by the block size \, and
+the frequency points are then a harmonic series formed by multiples
+of this frequency value! Open the subpatch below:;
+#X connect 0 0 16 0;
 #X connect 1 0 8 0;
 #X connect 3 0 8 1;
 #X connect 4 0 8 1;
@@ -183,7 +183,7 @@ is in radians.;
 #X connect 6 0 8 1;
 #X connect 7 0 8 1;
 #X connect 8 0 9 0;
-#X connect 9 0 14 0;
-#X connect 9 1 14 1;
-#X connect 15 0 18 0;
-#X connect 17 0 8 0;
+#X connect 9 0 13 0;
+#X connect 9 1 13 1;
+#X connect 14 0 17 0;
+#X connect 16 0 8 0;

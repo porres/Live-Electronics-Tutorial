@@ -1,5 +1,5 @@
-#N canvas 830 23 487 438 12;
-#X floatatom 146 150 5 0 0 0 - - -;
+#N canvas 830 23 503 338 12;
+#X floatatom 146 150 5 0 0 0 - - -, f 5;
 #X obj 146 177 sig~ 100;
 #X obj 146 201 bl.saw~;
 #X obj 268 158 setdsp~;
@@ -75,7 +75,6 @@ one fourth of the block size., f 31;
 #X connect 1 0 3 0;
 #X connect 3 0 0 0;
 #X restore 146 250 pd FFT-Graphs;
-#X text 95 334 MINIMUM OVERLAP/HOP IS 64!!!!!!!;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 6 0;

@@ -1,53 +1,47 @@
-#N canvas 366 196 502 339 12;
+#N canvas 387 260 502 339 12;
 #X obj 106 198 osc~ 5000;
 #X text 150 249 Imaginary;
 #X text 68 245 Real;
-#N canvas 151 65 942 581 plot 0;
-#X text 102 355 Amplitude;
-#X obj 556 189 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+#N canvas 0 204 850 541 plot 0;
+#X text 116 357 Amplitude;
+#X obj 562 221 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
 1;
-#X obj 556 210 metro 205;
-#X obj 573 150 loadbang;
-#X obj 650 194 del 500;
-#X obj 49 289 tabwrite~ \$0-Re;
-#X obj 371 289 tabwrite~ \$0-Im;
-#X obj 171 482 tabwrite~ \$0-Amplitude;
-#X obj 650 228 \$0;
-#X msg 650 268 \; pd dsp 1 \; Khz 5 \; \$1-Re xticks 0 32 1 \; \$1-Im
-xticks 0 32 1 \; \$1-Fase xticks 0 32 1 \; \$1-Amplitude xticks 0 32
-1;
-#X obj 171 333 car2pol~;
-#X text 236 358 Phase;
-#X obj 556 236 s \$0-bang;
-#X obj 388 233 r \$0-bang;
-#X obj 239 408 r \$0-bang;
-#X obj 224 453 tabwrite~ \$0-Phase;
-#X obj 172 45 inlet~;
-#X obj 371 54 inlet~;
-#X text 379 87 Imaginary;
-#X text 185 84 Real;
-#X obj 171 144 expr~ if($v1 < 0.01 \, 0 \, $v1) \; if($v2 < 0.01 \,
+#X obj 562 242 metro 205;
+#X obj 63 291 tabwrite~ \$0-Re;
+#X obj 385 291 tabwrite~ \$0-Im;
+#X obj 185 484 tabwrite~ \$0-Amplitude;
+#X obj 185 335 car2pol~;
+#X text 250 360 Phase;
+#X obj 562 268 s \$0-bang;
+#X obj 402 235 r \$0-bang;
+#X obj 253 410 r \$0-bang;
+#X obj 238 455 tabwrite~ \$0-Phase;
+#X obj 186 47 inlet~;
+#X obj 385 56 inlet~;
+#X text 393 89 Imaginary;
+#X text 199 86 Real;
+#X obj 185 146 expr~ if($v1 < 0.01 \, 0 \, $v1) \; if($v2 < 0.01 \,
 0 \, $v2);
+#X obj 562 125 initmess bang \; \$0-Re xticks 0 32 1 \; \$0-Im xticks
+0 32 1 \; \$0-Phase xticks 0 32 1 \; \$0-Amplitude xticks 0 32 1 \;
+pd dsp 1;
 #X connect 1 0 2 0;
-#X connect 2 0 12 0;
-#X connect 3 0 1 0;
-#X connect 3 0 4 0;
-#X connect 4 0 8 0;
-#X connect 8 0 9 0;
-#X connect 10 0 7 0;
-#X connect 10 1 15 0;
-#X connect 13 0 6 0;
-#X connect 13 0 5 0;
-#X connect 14 0 7 0;
-#X connect 14 0 15 0;
-#X connect 16 0 20 0;
-#X connect 17 0 20 1;
-#X connect 20 0 5 0;
-#X connect 20 0 10 0;
-#X connect 20 1 6 0;
-#X connect 20 1 10 1;
+#X connect 2 0 8 0;
+#X connect 6 0 5 0;
+#X connect 6 1 11 0;
+#X connect 9 0 4 0;
+#X connect 9 0 3 0;
+#X connect 10 0 5 0;
+#X connect 10 0 11 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 1;
+#X connect 16 0 3 0;
+#X connect 16 0 6 0;
+#X connect 16 1 4 0;
+#X connect 16 1 6 1;
+#X connect 17 0 1 0;
 #X restore 106 275 pd plot;
-#N canvas 607 99 662 630 graphs 0;
+#N canvas 896 101 662 630 graphs 1;
 #X obj 10 6 cnv 15 630 610 empty empty empty 20 12 0 14 -33289 -66577
 0;
 #X obj 25 15 cnv 15 600 280 empty empty Cartesian 20 12 0 14 -262130
