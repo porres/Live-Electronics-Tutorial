@@ -42,19 +42,20 @@ to play from it as a list. Check help file for more details., f 52
 #X text 550 380 This is already more flexible as it allows you to play
 parts and snippets (or even "grains" in a granular perspective).,
 f 47;
-#X text 40 22 For more playing flexibility \, we need to store the
-file in a "buffer" (term that indicates allocated memory). For such
-\, we load the file in an array with the native [soundfiler] object
-\, which needs a "read" message followed by a sound file. The -resize
-flag resizes the table according to the sound file's number of samples
-(which is given in the outlet). Check help file for more details.,
-f 61;
 #X obj 700 504 table;
 #X obj 760 503 array;
 #X text 550 438 You can also use the native [table] or [array] objects
 to load an array - check their help files., f 47;
 #X obj 55 188 initmess read -resize ../../../samples/bubul.wav \$0-sample
 , f 26;
+#X text 40 22 For more playing flexibility \, we need to store the
+file in a "buffer" (term that indicates allocated memory). For such
+\, we load the file in an array with the native [soundfiler] object
+\, which needs a "read" message followed by a sound file. The -resize
+flag resizes the table according to the sound file's number of samples
+\, which is given in the left outlet (right outlet sends more information
+like number of channels and sample rate). Check help file for more
+details., f 61;
 #X connect 0 0 20 0;
 #X connect 0 0 20 1;
 #X connect 1 0 2 0;
@@ -74,4 +75,4 @@ to load an array - check their help files., f 47;
 #X connect 18 0 0 0;
 #X connect 19 0 3 0;
 #X connect 25 0 12 1;
-#X connect 33 0 1 0;
+#X connect 32 0 1 0;

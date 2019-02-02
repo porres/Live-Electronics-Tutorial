@@ -4,13 +4,13 @@
 #X obj 440 83 random;
 #X obj 440 22 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
-#X obj 234 303 table \$0-buffer;
-#X obj 103 303 soundfiler;
-#X msg 182 331 \$1;
-#X obj 114 385 s \$0-hz;
-#X obj 114 359 /;
-#X obj 114 334 swap;
-#X obj 103 415 s \$0-size;
+#X obj 229 355 table \$0-buffer;
+#X obj 98 355 soundfiler;
+#X msg 177 383 \$1;
+#X obj 109 437 s \$0-hz;
+#X obj 109 411 /;
+#X obj 109 386 swap;
+#X obj 98 467 s \$0-size;
 #X obj 505 172 samps2ms;
 #X obj 430 219 pack float float float;
 #X obj 430 247 display;
@@ -20,11 +20,11 @@
 #X msg 640 207 duration \$1 \, bang;
 #X obj 430 363 *~;
 #X obj 387 398 out~;
-#X obj 182 360 /;
-#X obj 103 259 initmess read -resize ../../../samples/sax.wav \$0-buffer
+#X obj 177 412 /;
+#X obj 98 311 initmess read -resize ../../../samples/sax.wav \$0-buffer
 , f 34;
-#X floatatom 182 388 5 0 0 0 - - -;
-#X obj 214 360 sr~;
+#X floatatom 177 440 5 0 0 0 - - -;
+#X obj 209 412 sr~;
 #X obj 440 52 t b b;
 #X obj 601 120 *;
 #X obj 440 109 expr $f1 \; abs($f1-$f2) / $f3 \; $f2;
@@ -32,7 +32,7 @@
 #X obj 601 75 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 634 121 r \$0-ratio;
-#X obj 182 413 s \$0-ratio;
+#X obj 177 465 s \$0-ratio;
 #X obj 601 49 b;
 #X text 40 138 In this patch we draw random start/end points and get
 a duration period in ms from the difference. This period can be changed
@@ -67,6 +67,8 @@ the file at original speed \, but you can give it other values to play
 in different speeds as in this example. Note how we're also using a
 ratio compensation here.;
 #X obj 643 236 function 0 0.1 1 0.8 1 0.1 0;
+#X text 53 258 Let's just use [soundfiler] again for a change:, f
+30;
 #X connect 0 0 1 1;
 #X connect 0 0 2 1;
 #X connect 0 0 31 0;
