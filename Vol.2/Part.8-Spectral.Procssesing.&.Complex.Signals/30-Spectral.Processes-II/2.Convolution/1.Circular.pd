@@ -1,4 +1,4 @@
-#N canvas 306 69 900 438 12;
+#N canvas 465 182 900 438 12;
 #X obj 132 270 r~ \$0-sample1;
 #X obj 251 269 r~ \$0-sample2;
 #X obj 702 240 r~ \$0-sample2;
@@ -42,7 +42,7 @@
 #X obj 251 313 out~;
 #X text 346 136 window size;
 #X obj 544 326 out~;
-#N canvas 377 23 813 561 Circular-Convolutoin 1;
+#N canvas 377 23 813 561 Circular-Convolutoin 0;
 #X obj 54 64 inlet~;
 #X obj 142 64 inlet~;
 #X text 50 40 Sample 1;
@@ -138,17 +138,18 @@ ELSE library.;
 #X msg 82 91 list bubul numbers;
 #X msg 101 117 list kantele MouthBow;
 #X msg 116 145 list kantele numbers;
-#X text 480 48 The convolution operation is a complex multiplication
-of two FFT analysis. As any other multiplication \, this is a commutative
-operation. That is \, it doesn't matter if you're convolution A with
-B or B with A \, it's the same output., f 54;
 #X text 480 127 Here we have an example of a circular convolution \,
 we'll see the linear example next. The result of this example is a
 hybrid that combines both amplitude and phase information. Open the
 subpatch below., f 54;
 #X obj 89 309 out~;
-#X connect 0 0 20 0;
-#X connect 0 0 20 1;
+#X text 480 39 The convolution of two signals can be implemented via
+a complex multiplication of two FFT analysis. As any other multiplication
+\, this is a commutative operation. That is \, it doesn't matter if
+you're convolution A with B or B with A \, it's the same output.,
+f 54;
+#X connect 0 0 19 0;
+#X connect 0 0 19 1;
 #X connect 1 0 9 0;
 #X connect 1 0 9 1;
 #X connect 2 0 12 1;

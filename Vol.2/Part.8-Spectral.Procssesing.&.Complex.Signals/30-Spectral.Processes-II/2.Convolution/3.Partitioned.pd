@@ -1,48 +1,46 @@
-#N canvas 461 164 1020 618 12;
-#X obj 47 475 cnv 15 418 78 empty empty empty 20 12 0 14 -233017 -66577
+#N canvas 454 324 1036 484 12;
+#X obj 68 370 cnv 15 418 78 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-IR 16384 float 2;
 #X coords 0 1 16384 -1 420 80 1 0 0;
-#X restore 46 474 graph;
-#X obj 64 399 soundfiler;
-#X obj 601 94 s~ \$0-input;
-#X obj 769 99 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
--1;
-#X obj 769 125 tabplay~ \$0-IR;
-#X obj 769 163 out~;
-#X text 793 99 Play IR:;
-#X obj 538 127 out~;
-#X obj 616 233 r~ \$0-input;
-#X obj 616 304 out~;
-#X obj 581 52 play.file~ 1 ../../../../samples/didge.aif 1 1;
-#X obj 64 367 initmess read -resize ../../../../samples/IR.wav \$0-IR
+#X restore 67 369 graph;
+#X obj 84 318 soundfiler;
+#X obj 623 125 s~ \$0-input;
+#X obj 791 130 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 791 156 tabplay~ \$0-IR;
+#X obj 791 194 out~;
+#X text 815 130 Play IR:;
+#X obj 560 158 out~;
+#X obj 686 334 r~ \$0-input;
+#X obj 686 405 out~;
+#X obj 603 83 play.file~ 1 ../../../../samples/didge.aif 1 1;
+#X obj 84 286 initmess read -resize ../../../../samples/IR.wav \$0-IR
 ;
-#X text 53 32 Partitioned convolution divides the IR into smaller bits
-so we get much shorter latencies. The convolution is done in each partition
-separately then added together at the right place. We can implement
-this in Pd by loading different instances of each partition inside
-[clone]. All partitions are computed at the same time but then delayed
+#X obj 686 366 conv~ 512 ../../../../samples/IR.wav;
+#X text 60 35 Partitioned convolution divides the IR into smaller bits
+so we get much shorter latencies suitable for live input. The convolution
+is done in each partition separately.;
+#X text 65 94 We can implement this in a Pd patch by loading different
+instances of each partition inside [clone]. In this way \, an input
+is convoluted to all partitions at the same time \, but they're delayed
 accordingly so they get added at the right time.;
-#X text 52 140 But having a single small window size for all partitions
-requires several instances and increases the CPU load. WG Gardner described
-how to use a mix of partitions sizes to improve efficiency without
-sacrificing latency. This is because only the first windows need to
-be smaller to reduce latencey.;
-#X text 52 232 The smallest size then defines the latency \, say 256
-\, for example. So we start with two partitions of 256 and the next
-two can increase to 512 \, then 1024 and so on., f 59;
-#X text 51 283 The [conv~] object from the ELSE library is an abstraction
-that uses this partition scheme and uses [clone] to perform the convolution
-in each instance.;
-#X obj 616 265 conv~ 512 ../../../../samples/IR.wav;
+#X text 64 177 The [conv~] object from the ELSE library is an abstraction
+that implements partitioned convolution this way. It needs a partition
+size and an audio file to load as an IR. Below we load the same IR
+file into a table just so we can listen to it separately.;
+#X text 562 33 Play the input sound and the IR below:;
+#X text 546 272 And now for the paritioned convolution with a partition
+size of 512 samples. See the help file of [conv~] for more details.
+;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 5 0 6 1;
-#X connect 9 0 17 0;
+#X connect 9 0 13 0;
 #X connect 11 0 3 0;
 #X connect 11 0 8 1;
 #X connect 11 0 8 0;
 #X connect 12 0 2 0;
-#X connect 17 0 10 0;
-#X connect 17 0 10 1;
+#X connect 13 0 10 0;
+#X connect 13 0 10 1;
