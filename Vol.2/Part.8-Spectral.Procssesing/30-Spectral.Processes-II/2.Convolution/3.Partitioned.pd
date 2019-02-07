@@ -1,0 +1,51 @@
+#N canvas 389 23 1042 619 12;
+#X obj 66 418 cnv 15 418 78 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array \$0-IR 62079 float 2;
+#X coords 0 1 62079 -1 420 80 1 0 0;
+#X restore 65 417 graph;
+#X obj 57 352 soundfiler;
+#X obj 765 109 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 765 135 tabplay~ \$0-IR;
+#X obj 765 173 out~;
+#X text 789 109 Play IR:;
+#X obj 593 163 out~;
+#X obj 695 496 out~;
+#X text 64 68 Partitioned convolution divides the IR into smaller bits
+so we get much shorter latencies suitable for live input. The convolution
+is done in each partition separately.;
+#X text 65 126 We can implement this in a Pd patch by loading different
+instances of each partition inside [clone]. In this way \, an input
+is convoluted to all partitions at the same time \, but they're delayed
+accordingly so they get added at the right time.;
+#X text 64 209 The [conv~] object from the ELSE library is an abstraction
+that implements partitioned convolution this way. It needs a partition
+size and an audio file to load as an IR. Below we load the same IR
+file into a table just so we can listen to it separately.;
+#X text 562 33 Play the input sound and the IR below:;
+#X text 546 272 And now for the paritioned convolution with a partition
+size of 512 samples. See the help file of [conv~] for more details.
+;
+#X obj 695 419 *~;
+#X obj 713 347 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 695 457 conv~ 512 ../../../../samples/voice.wav;
+#X obj 57 320 initmess read -resize ../../../../samples/voice.wav \$0-IR
+;
+#X obj 713 376 envgen~ 500 1 350 1 150 0;
+#X obj 593 112 standard~ 75;
+#X obj 590 377 standard~ 75;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 4 0 5 0;
+#X connect 14 0 16 0;
+#X connect 15 0 18 0;
+#X connect 16 0 8 0;
+#X connect 16 0 8 1;
+#X connect 17 0 2 0;
+#X connect 18 0 14 1;
+#X connect 19 0 7 1;
+#X connect 19 0 7 0;
+#X connect 20 0 14 0;

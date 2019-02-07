@@ -1,23 +1,23 @@
 #N canvas 449 44 958 688 12;
-#X obj 572 108 s~ \$0-input;
-#X obj 650 534 r~ \$0-input;
-#X obj 719 109 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 554 166 s~ \$0-input;
+#X obj 650 543 r~ \$0-input;
+#X obj 701 167 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 719 135 tabplay~ \$0-IR;
+#X obj 701 193 tabplay~ \$0-IR;
 #X text 49 101 The B elements multiplied by A gives us:;
 #X text 127 126 2 4 6 (2 \, 4 \, 6 multiplied by 1);
 #X text 139 141 4 8 12 (2 \, 4 \, 6 multiplied by 2);
-#X obj 719 173 out~;
+#X obj 701 231 out~;
 #X obj 39 587 cnv 15 398 78 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-IR 32768 float 2;
 #X coords 0 1 32768 -1 400 80 1 0 0;
 #X restore 38 586 graph;
-#X obj 650 605 out~;
-#X obj 511 145 out~;
+#X obj 650 607 out~;
+#X obj 493 203 out~;
 #X text 252 603 "zero-padded";
-#X text 583 567 click =>;
+#X text 583 576 click =>;
 #N canvas 613 163 476 633 linear.convolution 0;
 #X obj 66 284 rfft~;
 #X obj 88 411 rifft~;
@@ -1038,8 +1038,8 @@
 #X connect 12 0 11 2;
 #X connect 13 0 11 3;
 #X connect 14 0 2 0;
-#X restore 650 566 pd linear.convolution;
-#X obj 554 70 play.file~ 1 ../../../../samples/didge.aif 1 1;
+#X restore 650 575 pd linear.convolution;
+#X obj 536 128 play.file~ 1 ../../../../samples/didge.aif 1 1;
 #N canvas 552 358 561 330 IR-FFT 0;
 #X obj 59 102 rfft~;
 #X msg 226 132 \; pd dsp 1;
@@ -1062,13 +1062,12 @@
 #X connect 6 1 10 0;
 #X connect 6 2 3 0;
 #X restore 308 551 pd IR-FFT;
-#X text 491 24 Play the input sound and the IR below:;
-#X text 743 109 <= Play IR:;
+#X text 725 167 <= Play IR:;
 #X text 244 49 A) 1 2 \; B) 2 4 6 \;;
 #X text 47 170 The sum returns: 2 8 14 12! The output has a number
 of elements that's the sum of the number of elements from both lists
 minus one (2 + 3 - 1 = 4)., f 53;
-#X text 476 255 Here we're using the overlap-add method technique \,
+#X text 477 300 Here we're using the overlap-add method technique \,
 which needs zero-padding. The IR size is 16.384 samples \, but we have
 an FFT window size of 32.768 (twice as big). The second half of the
 table is filled with zeroes (hence \, zero-padded)., f 61;
@@ -1085,7 +1084,7 @@ which can be a room. Thus \, it captures how the room reverbs and responds.
 in the frequency domain and vice versa! But it's more efficient to
 implement it in the frequency domain with FFT and complex multiplication.
 , f 53;
-#X text 47 468 The [pd IR-FFT] subpatch below loads an IR sound file
+#X text 47 470 The [pd IR-FFT] subpatch below loads an IR sound file
 into a table and performs the FFT on it once. By precomputing this
 FFT we can make things more efficient by avoiding a redundant FFT in
 the same input over and over., f 53;
@@ -1093,17 +1092,23 @@ the same input over and over., f 53;
 over the whole IR \, which may require quite big FFT windows that generate
 noticeable latency. A solution is to use partitioned convolution \,
 which we'll see next., f 53;
-#X text 477 326 Let's remember that zero padding still enables us to
+#X text 477 364 Let's remember that zero padding still enables us to
 extract the frequency domain information. Actually \, that is done
 with more frequency accuracy \, since we have a bigger FFT window.
 , f 61;
-#X text 477 383 For the signal input \, we apply a zero-padding window
+#X text 477 413 For the signal input \, we apply a zero-padding window
 \, which discards the second half of the input and replaces it with
 zeros. But since we have an overlap of two \, this second half is not
 lost as it's considered in the next overlapped window. The signal is
 then reconstructed and summed up in the end (remember that the sum
 happens automatically with [outlet~]). Click and open the subpatch
 below to see the implementation., f 61;
+#X text 478 16 Note that this is not a proper Impulse Response file
+that was recorded from an actual room. This is just a "clap" sample
+\, which is also interesting to show how you can experiment with all
+sorts of files and use the convolution as a general sound processor
+rather than just a reverberator. Play the input sound and the IR below:
+;
 #X connect 1 0 14 0;
 #X connect 2 0 3 0;
 #X connect 3 0 7 0;

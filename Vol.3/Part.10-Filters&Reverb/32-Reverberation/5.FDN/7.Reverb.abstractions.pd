@@ -1,4 +1,4 @@
-#N canvas 345 47 835 748 12;
+#N canvas 483 44 835 748 12;
 #X obj 182 162 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X text 38 14 Reverberation/Reverb is a rich and complex topic not
@@ -8,14 +8,14 @@ there are sound reflections in a room.;
 #N canvas 526 230 693 242 IR 0;
 #X obj 231 127 soundfiler;
 #X obj 343 134 table \$0-IR;
-#X obj 231 100 initmess read -resize ../../../samples/church.wav \$0-IR
-;
 #X obj 110 183 outlet~;
 #X obj 109 109 tabplay~ \$0-IR;
 #X obj 109 56 inlet;
-#X connect 2 0 0 0;
+#X obj 231 100 initmess read -resize ../../../../samples/church.wav
+\$0-IR;
+#X connect 3 0 2 0;
 #X connect 4 0 3 0;
-#X connect 5 0 4 0;
+#X connect 5 0 0 0;
 #X restore 182 201 pd IR;
 #X obj 182 238 out~;
 #X obj 316 141 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -45,7 +45,6 @@ there are sound reflections in a room.;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
 #X restore 316 176 pd test;
-#X obj 316 208 convolve~ 512 \$0-IR;
 #X obj 71 163 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
 #N canvas 797 186 322 336 test 0;
@@ -214,33 +213,34 @@ first one - [rev1~] - consists in 10 stages of allpass filters. It
 has a decay parameter that indicates how much dB the output has after
 1 second in percentage of dB. Check its help file., f 54;
 #X text 503 453 Open its help file for more details.;
+#X obj 316 208 conv~ 512 \$0-IR;
 #X connect 0 0 3 0;
 #X connect 3 0 4 0;
 #X connect 3 0 4 1;
 #X connect 5 0 6 0;
-#X connect 6 0 7 0;
-#X connect 7 0 2 0;
-#X connect 7 0 2 1;
+#X connect 6 0 36 0;
+#X connect 7 0 8 0;
 #X connect 8 0 9 0;
-#X connect 9 0 10 0;
-#X connect 9 0 10 1;
-#X connect 13 0 20 0;
-#X connect 13 0 20 1;
-#X connect 14 0 19 0;
-#X connect 15 0 16 0;
-#X connect 16 0 13 1;
-#X connect 17 0 13 2;
-#X connect 18 0 15 0;
-#X connect 19 0 13 0;
-#X connect 21 0 24 0;
-#X connect 21 1 24 1;
-#X connect 22 0 23 0;
-#X connect 23 0 21 0;
-#X connect 25 0 28 0;
-#X connect 25 1 28 1;
-#X connect 26 0 27 0;
-#X connect 27 0 25 0;
-#X connect 30 0 32 0;
-#X connect 32 0 33 0;
-#X connect 33 0 31 0;
-#X connect 33 1 31 1;
+#X connect 8 0 9 1;
+#X connect 12 0 19 0;
+#X connect 12 0 19 1;
+#X connect 13 0 18 0;
+#X connect 14 0 15 0;
+#X connect 15 0 12 1;
+#X connect 16 0 12 2;
+#X connect 17 0 14 0;
+#X connect 18 0 12 0;
+#X connect 20 0 23 0;
+#X connect 20 1 23 1;
+#X connect 21 0 22 0;
+#X connect 22 0 20 0;
+#X connect 24 0 27 0;
+#X connect 24 1 27 1;
+#X connect 25 0 26 0;
+#X connect 26 0 24 0;
+#X connect 29 0 31 0;
+#X connect 31 0 32 0;
+#X connect 32 0 30 0;
+#X connect 32 1 30 1;
+#X connect 36 0 2 0;
+#X connect 36 0 2 1;
