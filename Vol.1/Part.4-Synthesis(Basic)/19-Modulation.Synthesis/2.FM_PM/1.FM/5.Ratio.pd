@@ -8,7 +8,6 @@
 #X obj 273 303 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-index empty 0 -8
 0 10 -228856 -1 -1 100 256;
 #X text 330 301 Index;
-#X text 285 173 Ratio;
 #X obj 207 231 *~;
 #X obj 225 200 f2s~ 10 1;
 #X obj 273 328 f2s~ 10;
@@ -23,24 +22,25 @@
 #X text 142 154 Hz;
 #X text 86 282 carrier =>;
 #X text 219 254 <= modulator;
+#X text 285 173 Ratio;
 #X text 27 19 It is common to set the modulator frequency as a ratio
 of the carrier frequency. By doing so \, you only have one frequency
 input. This structure also keeps the same sonority for different picthes
 as the ratio relationship is intact. After all \, it is this ratio
-that determines how the extra partials are created Let's remember that
-it is th/spaced. And that harmonic ratios (such as 0.5 or ) produce
-harmonic sounds.;
+that determines how the extra partials are spaced in the spectrum.
+Note that harmonic ratios (such as 0.5) produce harmonic sounds as
+a result.;
 #X connect 1 0 0 0;
 #X connect 1 0 0 1;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
-#X connect 3 0 9 0;
+#X connect 3 0 8 0;
 #X connect 4 0 5 0;
 #X connect 5 0 2 1;
-#X connect 6 0 11 0;
-#X connect 9 0 4 0;
-#X connect 10 0 9 1;
-#X connect 11 0 5 1;
-#X connect 12 0 10 0;
-#X connect 13 0 3 0;
-#X connect 15 0 12 0;
+#X connect 6 0 10 0;
+#X connect 8 0 4 0;
+#X connect 9 0 8 1;
+#X connect 10 0 5 1;
+#X connect 11 0 9 0;
+#X connect 12 0 3 0;
+#X connect 14 0 11 0;
