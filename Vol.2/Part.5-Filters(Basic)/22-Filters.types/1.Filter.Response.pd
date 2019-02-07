@@ -1,4 +1,4 @@
-#N canvas 294 107 957 571 12;
+#N canvas 363 77 944 649 12;
 #N canvas 139 108 1029 577 (subpatch) 0;
 #N canvas 1021 22 212 339 freq-response 0;
 #N canvas 212 87 712 441 init 0;
@@ -372,3 +372,9 @@ below is an example \, in which the horizontal axis represents the
 frequency in kilohertz and the vertical axis is the amplitude in dB.
 Values above 0 dB mean the frequency has a gain \, while values below
 mean they are being removed.;
+#X text 56 564 Besides the frequency response \, there's also a Phase
+Response \, because every filter also promotes phase deviation as a
+function of frequency., f 53;
+#X text 454 562 Nevertheless \, in this introductory section on filters
+\, we'll not bother with phase response yet. This is better discussed
+in the later section on this tutorial about filters.;

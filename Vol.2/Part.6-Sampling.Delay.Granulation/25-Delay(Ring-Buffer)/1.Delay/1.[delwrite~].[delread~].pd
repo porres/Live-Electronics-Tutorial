@@ -1,4 +1,4 @@
-#N canvas 447 23 594 636 12;
+#N canvas 410 164 594 636 12;
 #X obj 209 467 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 370 464 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -9,9 +9,6 @@
 #X obj 70 438 out~;
 #X obj 166 533 out~;
 #X obj 370 530 out~;
-#X text 99 35 The "delay" is the basis of echo and reverberation effects.
-We'll see also how they can be used to implement pitch shifters and
-later in this tutorial how they are the basis of filters., f 55;
 #X text 99 104 The native [delwrite~] object creates a "ring buffer"
 \, which is a buffer to continuously record to. You can think of a
 magnetic tape in a loop \, so when you record the whole length of the
@@ -25,12 +22,16 @@ same delay line \, can access the buffer at different length points
 objects can read from the same line defined in [delwrite~]., f 55
 ;
 #X obj 113 358 play.file~ ../../../../samples/bubul.wav 1 1;
+#X text 99 35 The "delay" is the basis of many processes and FX as
+we'll see throughout this tutorial \, such as flanger \, chorus \,
+echo and reverberation effects \, pitch shifters and also how they
+are the basis of filters., f 55;
 #X connect 0 0 3 0;
 #X connect 1 0 4 0;
 #X connect 3 0 6 0;
 #X connect 3 0 6 1;
 #X connect 4 0 7 0;
 #X connect 4 0 7 1;
-#X connect 11 0 2 0;
-#X connect 11 0 5 0;
-#X connect 11 0 5 1;
+#X connect 10 0 2 0;
+#X connect 10 0 5 0;
+#X connect 10 0 5 1;

@@ -1,4 +1,4 @@
-#N canvas 308 61 822 406 12;
+#N canvas 484 23 873 862 12;
 #X obj 110 114 cnv 15 210 224 empty empty empty 20 12 0 14 -1 -66577
 0;
 #X obj 116 131 cnv 15 198 198 empty empty empty 20 12 0 14 -237047
@@ -324,3 +324,55 @@ The higher the "Q" \, the more resonance we have. We calculate the
 "Q" by dividing f0 by the bandwidth (f2-f1)., f 52;
 #X text 148 343 FREQUENCY (log);
 #X text 269 343 =;
+#X obj 442 642 nbx 5 18 -1e+37 1e+37 0 0 empty empty Octave 68 10 0
+12 -228856 -1 -1 0 256;
+#X floatatom 453 691 8 0 0 0 - - -;
+#X text 517 693 Cents;
+#X obj 453 669 * 1200;
+#X text 287 650 f0;
+#X obj 312 651 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 205 542 f1;
+#X floatatom 442 756 0 0 0 0 - - -;
+#X obj 442 728 expr 1 / (2 * sinh($f1 * ln(2)/2));
+#X text 426 756 Q;
+#X obj 442 784 expr asinh(1/(2*$f1)) * 2/ln(2);
+#X floatatom 442 810 0 0 0 0 - - -;
+#X text 382 811 BW (oct);
+#X text 421 642 bw;
+#X obj 464 592 v f2;
+#X text 414 548 f2;
+#X obj 433 570 t b f;
+#X obj 312 603 expr sqrt(f1*f2) \; log(f2/f1) / log(2);
+#X obj 228 570 t b f;
+#X obj 260 612 v f1;
+#X obj 271 689 expr $f1 / (f2-f1);
+#X floatatom 271 727 0 0 0 0 - - -;
+#X text 270 751 Q = f0 / (f2-f1);
+#X text 371 649 Hz;
+#X text 236 526 Hz;
+#X text 445 529 Hz;
+#X floatatom 433 549 5 0 0 0 - - -;
+#X floatatom 228 545 5 0 0 0 - - -;
+#X text 207 409 Q & Bandwidth:;
+#X text 217 434 The value of Q is defined by the bandwidth (defined
+as f2 - f1) in which there's a 3dB drop in amplitude around the resonant
+frequency (f0). Here's how to calculate f0 and bandwidth from f2 and
+f1 \, and also how to convert from bandwidth to Q and vice versa.,
+f 52;
+#X connect 31 0 34 0;
+#X connect 31 0 39 0;
+#X connect 34 0 32 0;
+#X connect 36 0 51 0;
+#X connect 38 0 41 0;
+#X connect 39 0 38 0;
+#X connect 41 0 42 0;
+#X connect 47 0 48 0;
+#X connect 47 1 45 0;
+#X connect 48 0 36 0;
+#X connect 48 1 31 0;
+#X connect 49 0 48 0;
+#X connect 49 1 50 0;
+#X connect 51 0 52 0;
+#X connect 57 0 47 0;
+#X connect 58 0 49 0;

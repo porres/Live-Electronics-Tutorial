@@ -25,11 +25,6 @@
 #X text 683 166 delay time;
 #X text 125 172 x[n] -------(+)----------- y[n];
 #X text 158 268 y[n] = x[n] + a * y[n-d];
-#X text 46 31 The [ffdelay~] object can also be used as a reverberator
-for reflections in a reverb system. It can be viewed as a simplification
-of the comb filter diagram \, with just the feedback section. With
-[comb.rev~] you could achieve the same by just zeroing the feedforward
-gain and setting the input gain to 1!;
 #X obj 612 230 fbdelay~ 100 0.8 -gain;
 #X obj 557 171 noise~;
 #X obj 590 200 *~;
@@ -42,10 +37,15 @@ that depend on the delay period.;
 that [fbdelay~] can also set the feedback parameter from an input in
 t60 - this is actually the default setting \, but here we have a gain
 coefficient instead.;
-#X connect 0 0 26 2;
-#X connect 1 0 26 1;
-#X connect 26 0 21 1;
-#X connect 26 0 21 0;
-#X connect 27 0 28 0;
-#X connect 28 0 26 0;
-#X connect 29 0 28 1;
+#X text 46 31 The [fbdelay~] object can also be used as a reverberator
+for reflections in a reverb system. It can be viewed as a simplification
+of the comb filter diagram \, with just the feedback section. With
+[comb.rev~] you could achieve the same by just zeroing the feedforward
+gain and setting the input gain to 1!;
+#X connect 0 0 25 2;
+#X connect 1 0 25 1;
+#X connect 25 0 21 1;
+#X connect 25 0 21 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 28 0 27 1;

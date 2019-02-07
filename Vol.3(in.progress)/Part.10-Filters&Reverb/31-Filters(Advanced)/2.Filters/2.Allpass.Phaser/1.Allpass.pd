@@ -1,14 +1,14 @@
 #N canvas 297 269 857 532 12;
 #X obj 512 131 rzero_rev~;
-#X text 582 129 =;
-#X text 583 105 =;
+#X text 592 130 =;
+#X text 593 106 =;
 #X obj 524 105 rpole~;
 #X obj 569 79 v a;
 #X obj 178 175 rpole~;
 #X obj 178 150 rzero_rev~;
 #X obj 275 126 hsl 128 15 0 0.9999 0 0 \$0-a empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
-#X floatatom 272 148 5 0 0 0 - - -, f 5;
+#X floatatom 272 148 5 0 0 0 - - -;
 #N canvas 172 85 1026 565 (subpatch) 0;
 #X obj 101 101 cnv 15 808 192 empty empty empty 20 12 0 14 -1 -262144
 0;
@@ -209,8 +209,8 @@
 #X text 300 497 0.2;
 #X text 220 497 0.1;
 #X obj 510 165 fexpr~ -a * $x + $x[-1] + a * $y[-1];
-#X obj 604 105 fexpr~ $x + a * $y[-1];
-#X obj 601 130 fexpr~ -a * $x + $x[-1];
+#X obj 614 106 fexpr~ $x + a * $y[-1];
+#X obj 611 131 fexpr~ -a * $x + $x[-1];
 #X floatatom 357 234 0 0 0 0 - - -;
 #X floatatom 438 234 0 0 0 0 - - -;
 #N canvas 268 208 449 335 Polo-Zero 0;

@@ -4,7 +4,7 @@
 #X obj 701 167 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 701 193 tabplay~ \$0-IR;
-#X text 49 101 The B elements multiplied by A gives us:;
+#X text 49 102 The B elements multiplied by A gives us:;
 #X text 127 126 2 4 6 (2 \, 4 \, 6 multiplied by 1);
 #X text 139 141 4 8 12 (2 \, 4 \, 6 multiplied by 2);
 #X obj 701 231 out~;
@@ -1063,7 +1063,7 @@
 #X connect 6 2 3 0;
 #X restore 308 551 pd IR-FFT;
 #X text 725 167 <= Play IR:;
-#X text 244 49 A) 1 2 \; B) 2 4 6 \;;
+#X text 219 60 A) 1 2 \; B) 2 4 6 \;;
 #X text 47 170 The sum returns: 2 8 14 12! The output has a number
 of elements that's the sum of the number of elements from both lists
 minus one (2 + 3 - 1 = 4)., f 53;
@@ -1071,9 +1071,6 @@ minus one (2 + 3 - 1 = 4)., f 53;
 which needs zero-padding. The IR size is 16.384 samples \, but we have
 an FFT window size of 32.768 (twice as big). The second half of the
 table is filled with zeroes (hence \, zero-padded)., f 61;
-#X text 49 16 The actual convolution operation multiplies and adds
-two arrays point by point. For instance \, in the following A & B arrays:
-, f 50;
 #X text 47 222 Let it be clear this is for the linear convolution \,
 not the circular convolution from the last example! The linear convolution
 is used to implement reverbs by convoluting a signal to an "Impulse
@@ -1108,6 +1105,10 @@ that was recorded from an actual room. This is just a "clap" sample
 \, which is also interesting to show how you can experiment with all
 sorts of files and use the convolution as a general sound processor
 rather than just a reverberator. Play the input sound and the IR below:
+;
+#X text 49 16 In mathematical terms \, the convolution operation multiplies
+and adds two arrays point by point., f 50;
+#X text 48 51 For instance \, in the following A & B arrays:, f 23
 ;
 #X connect 1 0 14 0;
 #X connect 2 0 3 0;

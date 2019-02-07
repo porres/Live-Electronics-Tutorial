@@ -1,4 +1,4 @@
-#N canvas 417 45 899 636 12;
+#N canvas 417 45 924 663 12;
 #N canvas 9 255 1099 569 (subpatch) 0;
 #N canvas 649 293 231 309 freq-response 0;
 #N canvas 324 327 712 441 init 0;
@@ -360,37 +360,38 @@
 #X text 215 129 0.05;
 #X text 115 129 0.02;
 #X coords 0 -1 1 1 850 402 1 100 100;
-#X restore 23 218 pd;
-#X obj 596 129 out~;
-#X obj 629 38 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
+#X restore 33 245 pd;
+#X obj 609 134 out~;
+#X obj 652 43 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
 0 10 -228856 -1 -1 6477 0;
-#X obj 701 68 hsl 128 17 0.5 20 1 0 empty \$0-Q-set empty 5 9 0 10
+#X obj 724 73 hsl 128 17 0.5 20 1 0 empty \$0-Q-set empty 5 9 0 10
 -228856 -1 -1 10314 0;
-#X obj 698 90 nbx 8 14 -1e+37 1e+37 0 0 \$0-Q empty empty 0 -8 0 10
+#X obj 721 95 nbx 8 14 -1e+37 1e+37 0 0 \$0-Q empty empty 0 -8 0 10
 -228856 -1 -1 10 256;
-#X obj 626 71 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq empty empty 0 -8 0
+#X obj 649 76 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq empty empty 0 -8 0
 10 -228856 -1 -1 500 256;
-#X obj 560 51 noise~;
-#X text 637 38 Resonant Frequency;
-#X text 720 68 Q/Resonance;
-#X obj 596 95 resonant~;
-#X text 74 11 There are two types of bandpass filters. We've seen "constant
-gain" filters \, where the maximum amplitude is always at 0 dB., f
-61;
-#X text 75 49 The [resonant~] object from ELSE \, on the other hand
-\, is a "constant skirt" filter \, which means it'll have a gain boost
+#X obj 583 56 noise~;
+#X text 660 43 Resonant Frequency;
+#X text 743 73 Q/Resonance;
+#X text 55 12 There's a distinct type of bandpass filter. We've seen
+"constant gain" filters \, where the maximum amplitude is always at
+0 dB. But the [resonant~] object from ELSE \, on the other hand \,
+is a "constant skirt" filter \, which means it'll have a gain boost
 at the resonant frequency depending on the resonance parameter., f
-61;
-#X text 75 112 it's common to see a distinction where constant gain
-filters are "bandpass" and constant are "resonant" \, even though both
-are bandpass and resonant by definition. This is because this filter
-can actually resonate to an impulse \, and you can set the resonance
-as the resonating time - see its help file for more details., f 61
-;
+64;
+#X obj 609 100 resonant~ -q;
+#X text 55 90 It's common to distinguish "constant gain" as "bandpass"
+and "constant skirt" as "resonant" \, even though both are bandpass
+and resonant by definition. This is because this filter can actually
+resonate to an impulse in the reverberation/resonating sense \, and
+you can set the resonance as the reverberating time. We'll get back
+to this later in this tutorial when we treat filters more in depth
+and present other such kinds of filters like the comb filter. For now
+\, check its help file for more details., f 64;
 #X connect 2 0 5 0;
 #X connect 3 0 4 0;
-#X connect 4 0 9 2;
-#X connect 5 0 9 1;
-#X connect 6 0 9 0;
-#X connect 9 0 1 0;
-#X connect 9 0 1 1;
+#X connect 4 0 10 2;
+#X connect 5 0 10 1;
+#X connect 6 0 10 0;
+#X connect 10 0 1 0;
+#X connect 10 0 1 1;
