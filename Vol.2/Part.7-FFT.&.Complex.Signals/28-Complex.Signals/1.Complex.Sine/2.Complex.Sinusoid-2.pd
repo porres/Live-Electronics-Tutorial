@@ -1,4 +1,4 @@
-#N canvas 221 24 1030 502 12;
+#N canvas 317 75 1030 502 12;
 #X obj 624 145 cos~;
 #X text 582 144 Real;
 #X obj 624 202 *~;
@@ -6,10 +6,10 @@
 #X obj 698 178 hsl 128 15 0 1 0 0 empty amp Amplitude 35 8 0 10 -228856
 -1 -1 12700 1;
 #X obj 742 316 hsl 128 15 -3.14 3.14 0 0 empty empty empty -2 -8 0
-10 -191407 -1 -1 7439 1;
+10 -191407 -1 -1 7041 1;
 #X text 553 314 Amplitude;
 #X obj 838 178 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -191407
--1 -1 1089 1;
+-1 -1 691 1;
 #X text 801 331 0;
 #X text 863 330 pi;
 #X text 732 329 -pi;
@@ -43,7 +43,7 @@
 #X text 889 177 Phase;
 #X text 791 315 Phase;
 #X obj 624 317 nbx 7 15 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
--228856 -1 -1 0.99999 256;
+-228856 -1 -1 0.999991 256;
 #X text 80 39 A complex sinusoid can be created in Pd with [phasor~]
 connected to a [cos~] (representing the real part) and [sin~] (imaginary).
 Both parts are plotted below:;
