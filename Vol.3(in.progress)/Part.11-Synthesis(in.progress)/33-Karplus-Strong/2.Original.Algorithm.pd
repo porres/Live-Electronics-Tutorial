@@ -28,18 +28,10 @@
 #X obj 263 253 tempo~ 60 100 -on;
 #X obj 617 381 f2s~ 10;
 #X obj 674 438 initmess \; \$0-fb 0.98 \; \$0-blend 1;
-#X text 465 172 The Karplus Strong algorythm is from the late 70s and
-is the simplest case of Physical Modelings. More precisely \, an example
-of Waveguide Synthesis. Despite being simple it can achieve good results
-modeling plucked instruments., f 58;
 #X text 39 30 Let's now closely recreate the original Karplus-Strong
 algorythm. Its noise input consisted only in 1 or -1 values stored
 in a table \, we're using a live input from [clipnoise~] instead.,
 f 55;
-#X text 461 34 The original feedback happens for a blend of 1 \, 0
-gives us a negative feedback. Values torwards 0.5 insert random changes
-between 0 and 1 \, 0.5 being white noise (and noise is what it sounds
-like) - was aimed to more percussive sounds., f 58;
 #X text 40 96 For the feedback \, the ideal would be to do it in a
 subpatch with a block size of 1 \, for very high frequencies. We'll
 do this later., f 55;
@@ -53,6 +45,15 @@ is considered a "Wavetable Modification" algorithm \, for at each iteration
 #X text 461 113 A negative feedback promotes inversion of the polarity
 for each iteration \, which makes it sound an octave lower \, besides
 changing the harmonic content.;
+#X text 461 34 The original feedback happens for a blend of 1 \, 0
+gives us a negative feedback. Values torwards 0.5 insert random changes
+between 0 and 1 \, 0.5 being white noise (and noise is what it sounds
+like) - this noisiness was aimed to emulate more percussive sounds.
+, f 58;
+#X text 465 172 The Karplus Strong algorythm is from the late 70s and
+is the simplest case of Physical Modelings. More precisely \, an example
+of Waveguide Synthesis. Despite being simple \, it can achieve good
+results modeling plucked instruments., f 58;
 #X connect 0 0 14 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 1;
