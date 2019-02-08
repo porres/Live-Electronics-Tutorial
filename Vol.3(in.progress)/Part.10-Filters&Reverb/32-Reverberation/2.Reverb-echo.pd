@@ -1,10 +1,10 @@
-#N canvas 792 23 600 715 12;
-#X obj 112 276 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#N canvas 792 23 576 632 12;
+#X obj 76 171 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X obj 205 151 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 241 256 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 112 363 out~;
-#X obj 241 373 out~;
+#X obj 76 258 out~;
+#X obj 205 268 out~;
 #N canvas 797 186 322 276 test 0;
 #X obj 63 116 osc~;
 #X obj 96 218 outlet~;
@@ -18,7 +18,7 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X connect 5 0 0 0;
-#X restore 241 299 pd test;
+#X restore 205 194 pd test;
 #N canvas 830 223 313 262 test 0;
 #X obj 60 114 osc~;
 #X obj 93 216 outlet~;
@@ -32,10 +32,10 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X connect 5 0 0 0;
-#X restore 112 319 pd test;
-#X obj 383 256 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#X restore 76 214 pd test;
+#X obj 347 151 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 383 373 out~;
+#X obj 347 268 out~;
 #N canvas 797 186 322 276 test 0;
 #X obj 63 116 osc~;
 #X obj 96 218 outlet~;
@@ -49,7 +49,7 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X connect 5 0 0 0;
-#X restore 383 299 pd test;
+#X restore 347 194 pd test;
 #N canvas 1050 23 491 773 echo(8-stages) 0;
 #X obj 114 91 inlet~;
 #X obj 115 178 +~;
@@ -119,7 +119,7 @@
 #X connect 26 0 16 1;
 #X connect 26 0 15 1;
 #X connect 27 0 19 0;
-#X restore 383 336 pd echo(8-stages);
+#X restore 347 231 pd echo(8-stages);
 #N canvas 698 23 458 651 echo(6-stages) 0;
 #X obj 251 92 inlet~;
 #X obj 113 575 outlet~;
@@ -173,34 +173,30 @@
 #X connect 18 0 21 0;
 #X connect 20 0 1 0;
 #X connect 21 0 2 0;
-#X restore 241 336 pd echo(6-stages);
-#X text 62 23 Natural reverberation is a product of complex sound reflections
-patterns \, where a sound source keeps moving and bouncing around innumerous
-spots in a room/space. This can be digitally modeled with delay lines.
-Ideally \, we'd need thousands of delay lines to properly model every
-possible reflection \, but there are efficient techniques that involve
-less delay lines with good results., f 64;
-#X text 71 519 The output of each stage gets added using a rotation
-matrix - this means that the polarity of the signals get flipped and
-this is done with a simple [-~] object \, where the signal gets summed
-with the inverted polarity of the signal to the right., f 64;
-#X text 71 453 At each stage the number of echoes of the input is doubled.
-So there 64 reflections in the end of the chain of the 6-stages example
-\, and 256 in the 8-stages example. At the end we have a gain compensation
-for all the added signals., f 64;
-#X text 72 588 The choice of the delay lines can be arbitrary \, but
+#X restore 205 231 pd echo(6-stages);
+#X text 49 21 As a first reverberator example with delay lines \, we
+have a simple patch with only feedforward lines that emulates echoes.
+Echoes are short delays from 30 ms (they can't be too short \, otherwise
+they'll act as a filter). Below to the left we have a test sound (a
+sine wave sweep) to be compared to the exmaples on the right. We have
+a mono input but a stereo output. Open the suboatches for implementation
+details., f 64;
+#X text 57 351 At each stage the number of echoes of the input is doubled.
+So there are 64 reflections in the end of the chain of the 6-stages
+example \, and 256 in the 8-stages example. At the end we have a gain
+compensation for all the added signals., f 65;
+#X text 57 419 The output of each stage gets added using a rotation
+matrix. This means that the polarity of the signals get flipped and
+this is done with a simple [-~] object \, where the left signal gets
+summed with the inverted polarity of the signal of the right one.,
+f 65;
+#X text 58 487 The choice of the delay lines can be arbitrary \, but
 we need to be careful not to choose delay lines that are multiples
-of each other. This example uses a fibonacci series to lay down the
-delay times. Furtherly \, arbitrary fractions are added in an attempt
+of each other. The 6-stage example uses a fibonacci series to lay down
+the delay times. Furtherly \, arbitrary fractions are added in an attempt
 to produce even more complex reflection patterns. Alternatively \,
-you can try prime numbers as a basis instead., f 64;
-#X text 62 131 As a first reverberator example \, we have a simple
-patch with only feedforward lines to emulate echoes. Echoes are short
-delays from 30 ms (they can't be too short \, otherwise they'll act
-like a filter). Below to the left we have a test sound (a sine wave
-sweep) to be compared to the exmaples on the right. We have a mono
-input but a stereo output. Open the suboatches for implementation details.
-, f 64;
+you can try prime numbers as a basis instead as in the 8-stage example.
+, f 65;
 #X connect 0 0 5 0;
 #X connect 1 0 4 0;
 #X connect 4 0 10 0;

@@ -1,0 +1,58 @@
+#N canvas 780 25 731 688 12;
+#X obj 259 72 s~ \$0-in;
+#X obj 405 163 r~ \$0-in;
+#X obj 469 216 r~ \$0-in;
+#X obj 500 270 r~ \$0-in;
+#X obj 521 323 r~ \$0-in;
+#X obj 469 437 *~ 0.25;
+#X obj 159 381 r~ \$0-in;
+#X obj 448 513 out~;
+#X obj 147 608 out~;
+#X obj 199 98 out~;
+#X obj 159 569 drive~;
+#X obj 469 470 drive~;
+#X obj 159 540 allpass.rev~ 65 0.8 1;
+#X obj 159 509 allpass.rev~ 85 0.66 1;
+#X obj 159 477 allpass.rev~ 95 0.77 1;
+#X obj 159 447 allpass.rev~ 75 0.99 1;
+#X obj 159 415 allpass.rev~ 45 0.88 1;
+#X obj 469 410 allpass.rev~ 95 0.88 1;
+#X obj 469 378 allpass.rev~ 75 0.77 1;
+#X obj 520 345 comb.rev~ 80 1 0 0.7;
+#X obj 500 293 comb.rev~ 70 1 0 0.6;
+#X obj 469 239 comb.rev~ 50 1 0 0.5;
+#X obj 405 187 comb.rev~ 30 1 0 0.4;
+#X obj 242 43 play.file~ 1 ../../../samples/didge.aif 1 1;
+#X text 64 184 Common setups known as "Schroeder Reverbs" combines
+allpass and comb reverberators with short delay times to create reverb
+effects., f 42;
+#X text 354 594 (Further revisions of this Tutorial will add more info
+\, hold on)., f 36;
+#X text 63 248 The early models described by Schroeder described 2
+algorithms: a series of allpass reverberators (as in below and in [rev1~])
+and parallel comb reverberators going into a series of allpass reverberators
+(as on the right)., f 42;
+#X connect 1 0 22 0;
+#X connect 2 0 21 0;
+#X connect 3 0 20 0;
+#X connect 4 0 19 0;
+#X connect 5 0 11 0;
+#X connect 6 0 16 0;
+#X connect 10 0 8 0;
+#X connect 10 0 8 1;
+#X connect 11 0 7 0;
+#X connect 11 0 7 1;
+#X connect 12 0 10 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 14 0;
+#X connect 16 0 15 0;
+#X connect 17 0 5 0;
+#X connect 18 0 17 0;
+#X connect 19 0 18 0;
+#X connect 20 0 18 0;
+#X connect 21 0 18 0;
+#X connect 22 0 18 0;
+#X connect 23 0 0 0;
+#X connect 23 0 9 0;
+#X connect 23 0 9 1;

@@ -1,0 +1,76 @@
+#N canvas 645 57 573 413 12;
+#X obj 316 285 rev1~;
+#X obj 262 191 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#N canvas 797 186 322 336 test 0;
+#X obj 36 155 osc~;
+#X obj 36 257 outlet~;
+#X obj 36 211 *~;
+#X obj 152 151 vline~;
+#X obj 36 37 inlet;
+#X obj 36 125 vline~;
+#X obj 36 68 trigger bang bang;
+#X msg 211 122 0 50;
+#X obj 211 84 delay 500;
+#X msg 36 97 440 \, 880 500;
+#X msg 152 111 0.5 50;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 9 0;
+#X connect 6 1 10 0;
+#X connect 6 1 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 3 0;
+#X restore 262 234 pd test;
+#X obj 316 316 out~;
+#X obj 146 206 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#N canvas 797 186 322 336 test 0;
+#X obj 36 155 osc~;
+#X obj 36 257 outlet~;
+#X obj 36 211 *~;
+#X obj 152 151 vline~;
+#X obj 36 37 inlet;
+#X obj 36 125 vline~;
+#X obj 36 68 trigger bang bang;
+#X msg 211 122 0 50;
+#X obj 211 84 delay 500;
+#X msg 36 97 440 \, 880 500;
+#X msg 152 111 0.5 50;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 0 0;
+#X connect 6 0 9 0;
+#X connect 6 1 10 0;
+#X connect 6 1 8 0;
+#X connect 7 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 5 0;
+#X connect 10 0 3 0;
+#X restore 146 249 pd test;
+#X obj 131 305 out~;
+#X obj 332 210 initmess 90;
+#X obj 332 245 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 90 256;
+#X text 76 81 The [rev1~] abstraction that comes with Pd Vanilla uses
+10 stages of allpass filters. It's a very simple reverb with only a
+decay parameter \, which indicates how much dB the output has after
+1 second in percentage of dB. Check its help file.;
+#X text 80 35 Allpass filters can be used in series to emulate a more
+complex recverb model.;
+#X connect 0 0 3 0;
+#X connect 0 0 3 1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 7 0 8 0;
+#X connect 8 0 0 1;

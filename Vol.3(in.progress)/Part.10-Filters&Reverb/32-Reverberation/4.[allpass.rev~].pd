@@ -1,0 +1,147 @@
+#N canvas 364 32 933 664 12;
+#X floatatom 613 221 5 0 1000 0 - - -;
+#X floatatom 689 260 5 0 0 0 - - -;
+#X obj 123 423 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 692 238 hsl 128 15 -0.999 0.999 0 0 empty g ganho -2 -8 0 10
+-228856 -1 -1 629 1;
+#X obj 616 199 hsl 128 15 1 100 1 0 empty ms empty -2 -8 0 10 -191407
+-1 -1 5366 0;
+#X obj 621 253 s \$0-del;
+#X obj 146 521 *~;
+#X obj 108 491 noise~;
+#X obj 77 105 cnv 15 310 120 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X text 133 120 |;
+#X text 133 131 |;
+#X text 133 141 |;
+#X text 118 152 |;
+#X text 118 162 | z^-d |;
+#X text 167 153 |;
+#X text 167 172 |;
+#X text 118 172 |;
+#X text 121 143 _______;
+#X text 121 172 _______;
+#X text 165 163 -----;
+#X text 133 144 v;
+#X text 193 146 |;
+#X text 193 127 |;
+#X text 193 136 |;
+#X text 193 122 ^;
+#X text 281 121 |;
+#X text 281 130 |;
+#X text 281 139 |;
+#X text 260 154 |;
+#X text 260 163 | z^-d |;
+#X text 309 153 |;
+#X text 309 173 |;
+#X text 260 173 |;
+#X text 263 144 _______;
+#X text 263 173 _______;
+#X text 281 142 v;
+#X text 223 148 |;
+#X text 223 157 |;
+#X text 223 128 |;
+#X text 223 138 |;
+#X text 223 122 ^;
+#X text 335 113 >;
+#X text 99 199 y[n] = -g*x[n] + x[n-d] + g*y[n-d];
+#X text 226 163 -(*g)-;
+#X text 85 113 x[n] -----(*-g)--(+)--(+)----------- y[n];
+#X obj 539 346 out~;
+#X obj 648 559 out~;
+#X obj 103 577 out~;
+#X obj 538 298 allpass.rev~ 100 0.8 1;
+#X obj 525 237 r~ \$0-in;
+#X obj 160 549 s~ \$0-in;
+#X obj 648 498 r~ \$0-in;
+#X obj 273 453 sig~ 1;
+#X obj 123 450 + 1;
+#X text 193 157 |;
+#X text 627 170 delay time (ms);
+#X obj 716 297 s \$0-g;
+#X text 59 491 Input;
+#X text 506 435 In the subpatch below we have an allpass implementation
+with native Pd objects., f 55;
+#N canvas 345 152 510 380 allpass 0;
+#X obj 67 128 * -1;
+#X obj 49 155 *~;
+#X obj 72 191 +~;
+#X obj 72 218 +~;
+#X obj 247 189 *~;
+#X obj 86 250 delwrite~ \$0-y 100;
+#X obj 69 64 delwrite~ \$0-x 100;
+#X obj 72 300 outlet~;
+#X obj 341 198 block~ 1;
+#X obj 49 24 inlet~;
+#X text 129 301 y[n] = -g*x[n] + x[n-d] + g*y[n-d];
+#X text 106 47 feedforward;
+#X text 224 252 feedback;
+#X obj 198 125 r \$0-del;
+#X obj 90 157 delread4~ \$0-x;
+#X obj 198 157 delread4~ \$0-y;
+#X text 272 125 <= delay time;
+#X text 323 79 <= gain coefficient;
+#X obj 265 79 r \$0-g;
+#X connect 0 0 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 0 7 0;
+#X connect 4 0 3 1;
+#X connect 9 0 1 0;
+#X connect 9 0 6 0;
+#X connect 13 0 14 0;
+#X connect 13 0 15 0;
+#X connect 14 0 2 1;
+#X connect 15 0 4 0;
+#X connect 18 0 4 1;
+#X connect 18 0 0 0;
+#X restore 648 526 pd allpass;
+#X obj 164 493 xselect~ 2 100 1;
+#X obj 728 343 initmess \; ms 7 \; g -0.9;
+#X text 733 261 ganin (feedforward;
+#X text 782 275 and feedback);
+#X text 28 27 Now let's start using delay lines with feedback \, and
+we can start with the [allpass.rev~] object from ELSE \, which is a
+delay reverberator whose diagram is:, f 54;
+#X text 33 259 It's the same diagram as shown earlier for allpass filters
+\, but now we have a delay time parameter (d) which defines the number
+of samples. Note this is different than an 'n' order allpass filter
+and this is why this object is better defined as a reverberator rather
+than a filter.;
+#X text 35 344 The reverberation comes from the feedback in the delay
+line that keeps reflecting the input signal. The feedback gainis an
+index of how much energy gets lost at each iteration and defines the
+reverberation decay.;
+#X text 147 421 <= change from steady to enveloped input;
+#X obj 164 453 pulse~ 0.5 0.2;
+#X text 480 23 For being an "allpass" type \, this reverberator does
+not affect or collorate the frequency content but promotes high echo
+density.;
+#X text 480 74 You can actually hear colloration in the reflections
+after the input ceases (note the ringing frequencies). Therefore \,
+it affects more transients and percussive sounds and this is noticeable
+with the short noise bursts of this example. Check its help file for
+more details.;
+#X connect 0 0 5 0;
+#X connect 0 0 48 1;
+#X connect 1 0 48 2;
+#X connect 1 0 56 0;
+#X connect 2 0 53 0;
+#X connect 3 0 1 0;
+#X connect 4 0 0 0;
+#X connect 6 0 47 0;
+#X connect 6 0 47 1;
+#X connect 6 0 50 0;
+#X connect 7 0 6 0;
+#X connect 48 0 45 0;
+#X connect 48 0 45 1;
+#X connect 49 0 48 0;
+#X connect 51 0 59 0;
+#X connect 52 0 60 1;
+#X connect 53 0 60 0;
+#X connect 59 0 46 0;
+#X connect 59 0 46 1;
+#X connect 60 0 6 1;
+#X connect 68 0 60 0;
