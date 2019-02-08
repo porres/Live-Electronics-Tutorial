@@ -7,7 +7,7 @@ Link: http://alexandre-torres.wixsite.com/el-locus-solus/cursos
 
 Author: Alexandre Torres Porres (porres@gmail.com) 
 
-[version 1.0 beta-6 release from February 2nd 2019]
+[version 1.0 beta-7 release from February 9th, 2019]
 
 This work is licenced via Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) which allows downloading and sharing with proper creditd. It also forbids its usage for comercial purposes. Check the license at: visite https://creativecommons.org/licenses/by-nc-nd/4.0/
    
