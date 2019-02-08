@@ -1100,16 +1100,16 @@ lost as it's considered in the next overlapped window. The signal is
 then reconstructed and summed up in the end (remember that the sum
 happens automatically with [outlet~]). Click and open the subpatch
 below to see the implementation., f 61;
-#X text 478 16 Note that this is not a proper Impulse Response file
-that was recorded from an actual room. This is just a "clap" sample
-\, which is also interesting to show how you can experiment with all
-sorts of files and use the convolution as a general sound processor
-rather than just a reverberator. Play the input sound and the IR below:
-;
 #X text 49 16 In mathematical terms \, the convolution operation multiplies
 and adds two arrays point by point., f 50;
 #X text 48 51 For instance \, in the following A & B arrays:, f 23
 ;
+#X text 477 16 Note that this is not a proper Impulse Response file
+that was recorded from an actual room. This is just a "clap" sample
+\, which is also interesting to show how you can experiment with all
+sorts of files and use the convolution as a general sound processor
+rather than just an actual reverberator. Play the input sound and the
+IR below:;
 #X connect 1 0 14 0;
 #X connect 2 0 3 0;
 #X connect 3 0 7 0;

@@ -1,5 +1,5 @@
-#N canvas 253 23 1187 707 12;
-#X obj 639 496 cnv 15 498 148 empty empty empty 20 12 0 14 -228856
+#N canvas 253 23 1179 672 12;
+#X obj 634 484 cnv 15 498 148 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-Fase 2048 float 1;
@@ -233,8 +233,8 @@
 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383
 3.15383 3.15383 3.15383 3.15383;
 #X coords 0 3.14 2047 -3.14 500 150 1;
-#X restore 638 495 graph;
-#X obj 636 323 cnv 15 498 148 empty empty empty 20 12 0 14 -228856
+#X restore 633 483 graph;
+#X obj 631 311 cnv 15 498 148 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-Amp 2048 float 1;
@@ -555,17 +555,17 @@
 0.000416693 0.000620789 0.000249836 0.000524253 0.000158231 0.000472337
 0.000208011;
 #X coords 0 131.141 2048 0 500 150 1;
-#X restore 635 322 graph;
+#X restore 630 310 graph;
 #X obj 82 182 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
-#X obj 139 423 tabplay~ \$0-IR;
-#X obj 139 400 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 323 418 tabplay~ \$0-IR;
+#X obj 323 389 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 800 123 noise~;
+#X obj 795 111 noise~;
 #X obj 226 224 biquad~ 1.98889 -0.993945 0.0354811 0 -0.0354811;
 #X obj 226 201 biquad~ 1.98889 -0.993945 0.0354811 0 -0.0354811;
-#X obj 800 154 biquad~ 1.98889 -0.993945 0.0354811 0 -0.0354811;
-#X obj 800 180 biquad~ 1.98889 -0.993945 0.0354811 0 -0.0354811;
+#X obj 795 142 biquad~ 1.98889 -0.993945 0.0354811 0 -0.0354811;
+#X obj 795 168 biquad~ 1.98889 -0.993945 0.0354811 0 -0.0354811;
 #X obj 82 211 impseq~;
 #X obj 226 170 impseq~;
 #X obj 82 243 out~;
@@ -579,44 +579,42 @@ by [impse~] and its response to a 4th order filter., f 65;
 #X obj 226 143 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 226 262 out~;
-#X text 337 276 <= IR;
-#X text 81 341 The output was recorded and is loaded in the array below.
-;
-#X text 160 398 Play IR;
-#X obj 124 466 out~;
-#X text 112 566 The FFT of the IR is given to the right \, and shows
-us the filter response and how it acts on the amplitudes and phases.
-Let's remember that you can use an IR as a rverb via convolution as
-we did before. Well \, you can use it as a filter too! And you can
-even record an IR from your bathroom to get its response and use it
-in Pd as a filter or reverb.;
-#X obj 800 221 out~;
-#X obj 613 219 out~;
-#X text 658 46 Below we can prove that convoluting to an IR works by
+#X text 344 387 Play IR;
+#X obj 323 461 out~;
+#X obj 795 209 out~;
+#X obj 604 199 out~;
+#X text 653 34 Below we can prove that convoluting to an IR works by
 comparing the [convolve~] object to the filter that generated the IR.
 , f 63;
-#X obj 398 274 initmess write IR \$0-IR;
-#X obj 282 424 sample~ \$0-IR IR.wav;
-#X obj 613 180 conv~ 256 IR.wav;
-#X obj 623 149 impseq~;
-#X obj 622 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 604 128 impseq~;
+#X obj 119 419 sample~ \$0-IR files/IR.wav;
+#X obj 604 160 conv~ 256 files/IR.wav;
+#X obj 604 100 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
+#X text 58 344 The output was recorded and is loaded in [sample~].
+;
+#X text 99 539 The FFT of the IR was precomputed and is given to the
+right. It shows us the filter response and how it acts on the amplitudes
+and phases. Let's remember that you can use an IR as a rverb via convolution
+as we did before. Well \, you can use it as a filter too! And you can
+even record an IR from your bathroom to get its response and use it
+in Pd as a filter or reverb.;
 #X connect 4 0 12 0;
-#X connect 5 0 22 0;
-#X connect 5 0 22 1;
+#X connect 5 0 20 0;
+#X connect 5 0 20 1;
 #X connect 6 0 5 0;
 #X connect 7 0 10 0;
 #X connect 8 0 18 0;
 #X connect 8 0 18 1;
 #X connect 9 0 8 0;
 #X connect 10 0 11 0;
-#X connect 11 0 24 0;
-#X connect 11 0 24 1;
+#X connect 11 0 21 0;
+#X connect 11 0 21 1;
 #X connect 12 0 14 0;
 #X connect 12 0 14 1;
 #X connect 13 0 9 0;
 #X connect 17 0 13 0;
-#X connect 29 0 25 0;
-#X connect 29 0 25 1;
-#X connect 30 0 29 0;
-#X connect 31 0 30 0;
+#X connect 24 0 26 0;
+#X connect 26 0 22 0;
+#X connect 26 0 22 1;
+#X connect 27 0 24 0;
