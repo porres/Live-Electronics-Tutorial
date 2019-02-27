@@ -1,4 +1,5 @@
- Computer Music / Live Electronics Tutorial   
+The Art of Patching: Techniques for Live Electronics and Sound Design with examples in Pure Data
+
  by Alexandre Torres Porres (EL Locus Solus)
 
 Link: http://alexandre-torres.wixsite.com/el-locus-solus/cursos

@@ -1,9 +1,9 @@
-#N canvas 702 38 600 764 12;
-#X obj 244 316 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+#N canvas 648 72 577 770 12;
+#X obj 217 298 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 203 666 out~;
-#X obj 244 392 out~;
-#X obj 280 559 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 210 660 out~;
+#X obj 217 374 out~;
+#X obj 287 553 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
@@ -29,8 +29,8 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 203 586 pd test;
-#X obj 89 315 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+#X restore 210 580 pd test;
+#X obj 62 297 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
@@ -56,41 +56,39 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 89 350 pd test;
-#X obj 89 390 out~;
-#X text 74 17 Natural reverberation is a product of complex sound reflections
-patterns \, where a sound source keeps moving and bouncing around innumerous
-spots in a room/space. This can be digitally modeled with delay lines.
-Ideally \, we'd need thousands of delay lines to properly model every
-possible reflection \, but there are efficient techniques that involve
-less delay lines with good results., f 64;
-#X obj 280 596 impseq~;
-#X obj 203 550 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+#X restore 62 332 pd test;
+#X obj 62 372 out~;
+#X obj 287 590 impseq~;
+#X obj 210 544 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 244 355 play.file~ 1 ../../../samples/church.wav;
-#X text 81 480 Note that by sending it an impulse \, you should get
+#X obj 217 337 play.file~ 1 ../../../samples/church.wav;
+#X text 88 474 Note that by sending it an impulse \, you should get
 the IR file as an output \, because that's how the room responds to
 an impulse.;
-#X obj 203 632 conv~ 2048 ../../../samples/church.wav;
-#X text 74 128 Besides using delay lines \, let's remember about the
-convolution tecnhique \, which is also used to model reverbs. We've
-also seen that it can act as a general filter \, but this is only to
-say filters and reverbs are intertwined concepts., f 64;
-#X text 74 192 Convolution depends on Impulse Responses that capture
-the reverberation or colloration model of a space. It's easy to find
-"IR" sound file libraries for convolution reverbs out there. If you
-have one \, you got yourself a convolution reverb in Pd. Otherwise
-you can still record an IR from your bathroom or something. The example
-below uses an IR of a church., f 64;
-#X connect 0 0 11 0;
-#X connect 3 0 9 0;
-#X connect 4 0 13 0;
+#X obj 210 626 conv~ 2048 ../../../samples/church.wav;
+#X text 58 23 Natural reverberation is a product of complex sound reflections
+patterns \, where a sound source keeps moving and bouncing around innumerous
+spots in a room/space. This can be digitally modeled with delay lines
+as we'll see later \, but before that let's recapitulate the convolution
+tecnhique. We've also seen how convolution can also act as a general
+filter \, but this is only to say and reinforce how filters and reverbs
+are intertwined concepts., f 64;
+#X text 58 147 Convolution reverbs depends on "Impulse Responses" ("IR").
+These are sound recordings of an impulse in a reverberant space that
+capture the reverberation or colloration model of the space. It's easy
+to find "IR" sound file libraries for convolution reverbs out there
+in wave and aif files. That's all you need for a convolution reverb
+in Pd. Otherwise you can still record an IR from your bathroom or something.
+The example below uses an IR of a church., f 64;
+#X connect 0 0 10 0;
+#X connect 3 0 8 0;
+#X connect 4 0 12 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
 #X connect 6 0 7 1;
-#X connect 9 0 13 0;
-#X connect 10 0 4 0;
-#X connect 11 0 2 0;
-#X connect 11 0 2 1;
-#X connect 13 0 1 0;
-#X connect 13 0 1 1;
+#X connect 8 0 12 0;
+#X connect 9 0 4 0;
+#X connect 10 0 2 0;
+#X connect 10 0 2 1;
+#X connect 12 0 1 0;
+#X connect 12 0 1 1;

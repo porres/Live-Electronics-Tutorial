@@ -1,0 +1,65 @@
+#N canvas 383 112 891 541 12;
+#X msg 282 34 \$0-x;
+#X obj 282 75 print;
+#X text 31 36 It's been noted how "\$0" doesn't work in messages \,
+it actually becomes "0". As in this example:, f 32;
+#X msg 434 411 receive \\\$0-x;
+#X text 29 115 This means "\$0" doesn't get expanded into a patch ID
+number. So one can use something like this instead., f 43;
+#X obj 197 188 symbol \$0-x;
+#X obj 197 162 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X symbolatom 197 222 10 0 0 0 - - -;
+#X text 32 271 Note \, however \, that now "\$0" gets expanded \, and
+you don't have access to a literal "\$0"., f 47;
+#X symbolatom 574 182 10 0 0 0 - - -;
+#X obj 574 151 makefilename $%d-x;
+#X msg 574 123 0;
+#X text 607 124 <= click;
+#X obj 702 322 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 23 256;
+#X obj 551 459 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-y empty 0 -8 0 10
+-262144 -1 -1 23 256;
+#X msg 551 420 receive \$1;
+#X obj 551 362 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 551 389 symbol \\\$0-y;
+#X obj 705 386 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 23 256;
+#X obj 705 412 send \$0-y;
+#X obj 702 348 send \$0-x;
+#X obj 143 423 symbol \$0-x;
+#X obj 143 397 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 143 492 nbx 5 14 -1e+37 1e+37 0 0 empty 1022-x empty 0 -8 0
+10 -262144 -1 -1 0 256;
+#X msg 143 458 receive \$1;
+#X text 162 394 <= click;
+#X text 32 309 Say you want \, for instance \, to set and save a receive
+message as "\$0-x" in a GUI. The example below doesn't work. If you
+check properties \, you'll see that the expanded symbol gets stored
+and saved., f 47;
+#X text 202 489 <= check properties;
+#X text 415 37 The [makefilename] object is an object that can help
+us here. It uses variables to create symbol names. In the example below
+\, %d is used to get the integer value from the incomming message.
+Check its help file for more details on how it works.;
+#X text 421 226 The output is a "\\\$0-x" message symbol \, and this
+means that a backslash can be used to define literal dollar sign characters.
+Hence \, the options below enable a literal "\$0" and the receive symbol
+gets saved unexpanded in the patch., f 56;
+#X text 610 456 <= check properties;
+#X connect 0 0 1 0;
+#X connect 3 0 14 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 13 0 20 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 18 0 19 0;
+#X connect 21 0 24 0;
+#X connect 22 0 21 0;
+#X connect 24 0 23 0;
