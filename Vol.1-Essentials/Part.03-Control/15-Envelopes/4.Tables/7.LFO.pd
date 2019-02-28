@@ -1,6 +1,6 @@
 #N canvas 129 87 915 492 12;
 #X obj 626 87 hsl 128 15 0.1 0.9 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 5100 1;
+-1 -1 0 1;
 #X floatatom 623 114 5 0 0 0 - - -;
 #X text 648 85 pulse width;
 #X obj 185 206 vsaw~ 2 0.5;
@@ -16,14 +16,14 @@
 #X obj 209 177 f2s~ 10 0.5;
 #X obj 532 289 *~;
 #X obj 532 222 osc~ 440;
-#X obj 683 177 hsl 128 15 100 500 1 0 empty empty empty -2 -8 0 10
--228856 -1 -1 9500 1;
+#X obj 683 177 hsl 128 15 50 500 1 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 7400 1;
 #X obj 606 185 pulse~ 2;
 #X obj 489 335 out~;
 #X obj 606 298 graph~ 20000 0 0 1;
 #X obj 606 222 glide2~ 150;
 #X obj 680 199 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 333.312 256;
+-262144 -1 -1 191.27 256;
 #X obj 623 145 f2s~ 10 0.5;
 #X text 23 26 So yeah \, why not use actual oscillators as LFOs and
 treat them as envelopes? Here are a few examples. First \, [vsaw~]

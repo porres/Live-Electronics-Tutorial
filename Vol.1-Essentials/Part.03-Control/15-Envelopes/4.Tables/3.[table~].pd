@@ -1,0 +1,30 @@
+#N canvas 721 229 511 481 12;
+#X obj 109 331 *~;
+#X obj 51 278 osc~ 440;
+#X obj 159 187 nbx 5 17 0 2000 0 0 empty empty empty 0 -8 0 12 -228856
+-1 -1 0 256;
+#X obj 119 184 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 109 372 out~;
+#X obj 127 222 f 500;
+#X text 162 165 ms;
+#X obj 127 278 envgen~;
+#X obj 214 230 initmess \; \$0-hann cosinesum 1024 0.5 -0.5;
+#X text 287 207 Generates hann table;
+#X obj 340 268 table \$0-hann;
+#X obj 127 306 table~ \$0-hann;
+#X msg 127 251 0 \$1 1;
+#X text 49 43 Now let's see some more convenient solutions with objects
+from the ELSE library. We have a first superficial look into the [table~]
+object \, which is similar to [tabread4~] \, but by default it has
+an index input is from 0 to 1 (excluding guard points) \, which makes
+us not worry about the table size and index range., f 58;
+#X connect 0 0 4 0;
+#X connect 0 0 4 1;
+#X connect 1 0 0 0;
+#X connect 2 0 5 1;
+#X connect 3 0 5 0;
+#X connect 5 0 12 0;
+#X connect 7 0 11 0;
+#X connect 11 0 0 1;
+#X connect 12 0 7 0;
