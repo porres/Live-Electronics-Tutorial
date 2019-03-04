@@ -1,18 +1,18 @@
-#N canvas 307 73 916 483 12;
-#X obj 50 185 nbx 5 14 1 3000 0 1 empty empty empty 0 -8 0 10 -228856
+#N canvas 307 73 851 497 12;
+#X obj 59 188 nbx 5 14 1 3000 0 1 empty empty empty 0 -8 0 10 -228856
 -1 -1 23 256;
-#X obj 181 145 cnv 15 198 138 empty empty empty 20 12 0 14 -228856
+#X obj 190 148 cnv 15 198 138 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #N canvas 0 22 474 324 (subpatch) 0;
 #X array saw 4099 float 0;
 #X coords 0 1 4098 -1 200 140 1;
-#X restore 180 144 graph;
-#X text 163 142 1;
-#X text 158 263 -1;
-#X obj 70 334 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X restore 189 147 graph;
+#X text 172 145 1;
+#X text 167 266 -1;
+#X obj 79 337 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -228856 -1 -1 97.9989 256;
-#X text 43 333 Hz;
-#X obj 70 359 tabosc4~ saw;
+#X text 52 336 Hz;
+#X obj 79 362 tabosc4~ saw;
 #N canvas 109 241 785 463 saw 0;
 #X obj 114 203 list prepend;
 #X text 115 157 p;
@@ -52,15 +52,12 @@ owhere "p" is the patial number.;
 #X connect 15 0 11 0;
 #X connect 15 1 0 1;
 #X connect 16 0 0 0;
-#X restore 50 209 pd saw;
-#X obj 70 393 out~;
-#X text 15 10 You can generate a sawtooth waveform from a sum of harmonic
+#X restore 59 212 pd saw;
+#X obj 79 396 out~;
+#X text 24 13 You can generate a sawtooth waveform from a sum of harmonic
 psartials \, which means we can use "sinesum" again and [tabosc4~].
 Open the [pd saw] subpatch to see how that works., f 61;
-#X text 31 166 # of harmonics;
-#X text 15 64 Enter the number of harmonics and see the resulting waveform
-below. Realize that \, in order to generate a perfect sawtooth \, you
-need an infinite harmonic series., f 61;
+#X text 40 169 # of harmonics;
 #N canvas 212 77 267 219 sequencer 0;
 #X obj 38 94 sequencer 42 40 40 45 40 49 52 52 45 43 43 47 50 54 55
 55, f 29;
@@ -72,37 +69,14 @@ need an infinite harmonic series., f 61;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 4 0 3 0;
-#X restore 444 149 pd sequencer;
-#X obj 444 126 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X restore 557 150 pd sequencer;
+#X obj 557 127 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 444 176 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 557 177 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -228856 -1 -1 92.4986 256;
-#X obj 444 204 saw~;
-#X obj 456 240 out~;
-#X obj 444 307 graph~ 441 8;
-#X obj 668 173 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--228856 -1 -1 164.814 256;
-#X obj 680 237 out~;
-#X obj 668 304 graph~ 441 8;
-#X obj 668 201 saw2~;
-#X text 470 27 The [saw~] object \, from ELSE \, is a "perfect" sawtooth
-wave generator \, which is a descending ramp \, basically. There's
-a [saw2~] variant in ELSE with an ascending ramp \, check the help
-file for more details., f 58;
-#N canvas 212 77 267 219 sequencer 0;
-#X obj 44 97 sequencer 42 40 40 45 40 49 52 52 45 43 43 47 50 54 55
-55, f 29;
-#X obj 44 73 tempo 240;
-#X obj 44 47 inlet;
-#X obj 44 161 outlet;
-#X obj 44 136 mtof;
-#X connect 0 0 4 0;
-#X connect 1 0 0 0;
-#X connect 2 0 1 0;
-#X connect 4 0 3 0;
-#X restore 668 149 pd sequencer;
-#X obj 668 126 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
-1;
+#X obj 557 205 saw~;
+#X obj 569 241 out~;
+#X obj 557 308 graph~ 441 8;
 #N canvas 212 77 267 219 sequencer 0;
 #X obj 44 94 sequencer 42 40 40 45 40 49 52 52 45 43 43 47 50 54 55
 55, f 29;
@@ -114,24 +88,25 @@ file for more details., f 58;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 4 0 3 0;
-#X restore 70 307 pd sequencer;
-#X obj 70 284 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X restore 79 310 pd sequencer;
+#X obj 79 287 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
+#X text 24 67 Enter the number of harmonics and see the resulting waveform
+below. Realize that \, in order to generate a perfect sawtooth \, you
+need an infinite harmonic series. See [pd saw] for more details.,
+f 61;
+#X text 514 31 The [saw~] object \, from ELSE \, is a "perfect" sawtooth
+wave generator \, which is basically a descending ramp. Check its help
+file for more details., f 38;
 #X connect 0 0 8 0;
 #X connect 5 0 7 0;
 #X connect 7 0 9 0;
 #X connect 7 0 9 1;
-#X connect 13 0 15 0;
-#X connect 14 0 13 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
 #X connect 15 0 16 0;
-#X connect 16 0 17 0;
-#X connect 16 0 17 1;
-#X connect 16 0 18 0;
-#X connect 19 0 22 0;
-#X connect 22 0 20 0;
-#X connect 22 0 20 1;
-#X connect 22 0 21 0;
-#X connect 24 0 19 0;
-#X connect 25 0 24 0;
-#X connect 26 0 5 0;
-#X connect 27 0 26 0;
+#X connect 15 0 16 1;
+#X connect 15 0 17 0;
+#X connect 18 0 5 0;
+#X connect 19 0 18 0;

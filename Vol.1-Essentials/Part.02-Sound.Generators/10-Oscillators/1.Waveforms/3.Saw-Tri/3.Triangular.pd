@@ -85,6 +85,7 @@ the waveform. Realize also that you'd need an infinite sum of harmonics
 for a "perfect" triangular wave., f 61;
 #X text 494 86 The [tri~] object \, from ELSE \, is a perfect triangular
 wave with infinite harmonics., f 42;
+#X text 275 140 <= open;
 #X connect 0 0 9 0;
 #X connect 2 0 1 0;
 #X connect 9 0 8 0;
