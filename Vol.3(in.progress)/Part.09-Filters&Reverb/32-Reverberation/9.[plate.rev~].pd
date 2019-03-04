@@ -27,7 +27,6 @@
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
 #X restore 247 292 pd test;
-#X obj 247 321 plateverb~ 50 0.6 0.25 0.8 0.8, f 16;
 #X text 76 47 The [plateverb~] object is a reverb asbtraction available
 in the ELSE library. It is based on a patch by Tom Erbe implementing
 the Dattorro plate stereo reverb model (it turns a mono input into
@@ -37,7 +36,8 @@ It has an internal filter to control the crossover frequency and high
 frequency dammping as [rev2~] and [rev3~].;
 #X text 77 189 Check its help file for more details on how it works.
 ;
+#X obj 247 321 plate.rev~ 50 0.6 0.25 0.8 0.8, f 16;
 #X connect 0 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 1 0;
-#X connect 3 1 1 1;
+#X connect 2 0 6 0;
+#X connect 6 0 1 0;
+#X connect 6 1 1 1;
