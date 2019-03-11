@@ -1,7 +1,5 @@
-Live Electronics Tutorial 
-with examples in Pure Data and the ELSE Library
-
- by Alexandre Torres Porres (porres@gmail.com) 
+Live Electronic Music Tutorial with examples in Pure Data and the ELSE Library
+By Alexandre Torres Porres (porres@gmail.com) 
 
 This tutorial presents theory and practice on Live Electronics without prerequisits, it is aimed at newbies, dummies, enthusiasts and also experts. The choice of adopting Pure Data in the examples is its accessibility and also because it is considered a powerful didactic tool to present the topics of Live Electronics.
 
