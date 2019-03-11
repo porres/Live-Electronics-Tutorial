@@ -1,11 +1,11 @@
 #N canvas 606 71 720 585 12;
-#X obj 310 346 *~;
+#X obj 307 366 *~;
 #X obj 325 166 nbx 5 14 -1e+37 1e+37 0 0 empty Hz2 empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 249 166 nbx 5 14 -1e+37 1e+37 0 0 empty Hz1 empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 325 191 osc~ 90;
-#X obj 267 449 out~;
+#X obj 264 463 out~;
 #X obj 249 190 osc~ 300;
 #X obj 51 277 graph~ 500 16;
 #X obj 385 405 graph~ 500 17;
