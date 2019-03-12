@@ -1,6 +1,6 @@
 #N canvas 381 72 908 589 12;
 #X obj 267 243 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 8400 1;
+-1 -1 9800 1;
 #X obj 112 198 s~ \$0-sample;
 #X obj 170 428 *~;
 #X obj 109 365 r~ \$0-sample;
@@ -10,65 +10,66 @@
 #X text 158 252 LFO;
 #X obj 193 278 osc~;
 #X obj 127 475 out~;
-#X obj 551 168 r~ \$0-sample;
-#X obj 551 332 out~;
-#X obj 551 289 tremolo~ 5 0.75;
-#X obj 602 210 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 559 195 r~ \$0-sample;
+#X obj 559 359 out~;
+#X obj 559 316 tremolo~ 5 0.75;
+#X obj 610 237 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 653 264 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 661 291 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 656 241 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 664 268 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X text 662 209 Hz;
-#X text 698 240 Depth;
-#X text 24 23 A tremolo effect is basically a low frequency amplitude
-modulation. What's new a "depth" parameter \, it goes from 0 to 1 and
-controls how much of the modulation/tremolo we have., f 56;
+#X text 669 236 Hz;
+#X text 706 267 Depth;
 #X obj 224 368 rescale~ 0 1;
 #X obj 264 288 expr 1 - $f1;
 #X floatatom 264 314 5 0 0 0 - - -;
 #X obj 248 454 vsl 20 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 7030 1;
+-1 -1 8757 1;
 #X obj 264 266 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0.661417 256;
+-228856 -1 -1 0.771654 256;
 #X text 273 546 0;
 #X text 272 447 1;
-#X text 24 87 Hence \, at "0" \, we have the no tremolo \, and "1"
-gives us a full tremolo \, and this is done with a simple rescaling
-of the modulating signal \, below we use [rescale~] for that., f 56
-;
-#X text 425 420 In the example on left \, you could also try another
+#X text 425 461 In the example on left \, you could also try another
 waveform such as a triangular oscillator (such as [tri~]) for the modulating
 signal.;
-#X text 425 474 Note that if you increase the frequency you just have
+#X text 425 515 Note that if you increase the frequency you just have
 a plain "classic amplitude modulation" example and generate sided band
 partials., f 59;
 #X obj 264 340 f2s~ 10;
 #X obj 112 156 play.file~ ../../../../samples/violin.wav 1 1, f 34
 ;
 #X obj 248 424 s2f~;
-#X text 461 46 The [tremolo~] object \, from ELSE \, is an abstraction
+#X text 461 32 The [tremolo~] object \, from ELSE \, is an abstraction
 based on this idea \, but the implementation is a bit different (without
 [rescale~]). It has an internal sine wave oscillator and you can set
 the frequency and depth. With a depth level of 1 \, it is basically
 performs Amplitude Modulation., f 57;
-#X connect 0 0 22 0;
+#X text 462 129 A 0 Hz input \, like [rm~] \, is also treated as a
+bypass.;
+#X text 24 23 A tremolo effect is basically a low frequency amplitude
+modulation. What's new is a "depth" parameter that goes from 0 to 1
+and controls how much of the modulation we have., f 56;
+#X text 24 87 Hence \, at "0" we have the no tremolo and "1" gives
+us a full tremolo. This is done with a simple rescaling of the modulating
+signal \, below we use [rescale~] for that., f 56;
+#X connect 0 0 21 0;
 #X connect 2 0 8 0;
 #X connect 2 0 8 1;
 #X connect 3 0 2 0;
 #X connect 4 0 7 0;
-#X connect 7 0 18 0;
+#X connect 7 0 17 0;
 #X connect 9 0 11 0;
 #X connect 11 0 10 0;
 #X connect 11 0 10 1;
 #X connect 12 0 11 1;
 #X connect 13 0 11 2;
 #X connect 14 0 13 0;
-#X connect 18 0 2 1;
-#X connect 18 0 30 0;
-#X connect 19 0 20 0;
-#X connect 20 0 28 0;
-#X connect 22 0 19 0;
-#X connect 28 0 18 1;
-#X connect 29 0 1 0;
-#X connect 30 0 21 0;
+#X connect 17 0 2 1;
+#X connect 17 0 28 0;
+#X connect 18 0 19 0;
+#X connect 19 0 26 0;
+#X connect 21 0 18 0;
+#X connect 26 0 17 1;
+#X connect 27 0 1 0;
+#X connect 28 0 20 0;
