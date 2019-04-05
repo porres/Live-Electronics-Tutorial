@@ -5,7 +5,7 @@
 -1 -1 0 1;
 #X text 131 202 Clipping;
 #X msg 96 178 1;
-#N canvas 192 26 538 370 input 1;
+#N canvas 192 26 538 370 input 0;
 #X obj 183 304 outlet~;
 #X obj 107 200 + 1;
 #X obj 107 121 vradio 20 1 0 3 empty empty empty 0 -8 0 10 -228856
