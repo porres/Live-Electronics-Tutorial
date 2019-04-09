@@ -1,0 +1,81 @@
+#N canvas 630 23 686 598 12;
+#X obj 129 304 r \$0-release;
+#X obj 48 416 *~;
+#X obj 133 329 r \$0-attack;
+#X obj 66 223 -~;
+#X obj 100 120 r \$0-thresh;
+#X obj 301 422 nbx 5 14 1 100 0 0 \$0-ratio empty empty 0 -8 0 10 -228856
+-1 -1 1 256;
+#X obj 301 403 nbx 5 14 -100 0 0 0 \$0-thresh empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 301 460 nbx 5 14 0 100 0 0 \$0-release empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 301 441 nbx 5 14 0 100 0 0 \$0-attack empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 362 402 Threshold (dB), f 20;
+#X text 362 440 Attack (ms), f 20;
+#X text 362 459 Release (ms), f 20;
+#X text 362 421 Ratio (x:1), f 20;
+#X obj 84 80 mov.rms~ 512 -db;
+#X obj 66 353 slew~;
+#X obj 48 28 play.file~ 1 ../../../samples/kantele.wav 1 1;
+#X obj 127 465 *~;
+#X obj 145 411 db2lin;
+#X obj 100 144 f2s~ 10;
+#X obj 301 479 nbx 5 14 0 100 0 0 \$0-gain empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X text 362 478 Gain adjustnent (dB);
+#X obj 145 436 f2s~ 10;
+#X obj 85 519 out~;
+#X obj 145 386 r \$0-gain;
+#X obj 66 300 min~ 0;
+#X obj 66 384 db2lin~;
+#X text 241 170 This is the dB gain adjustment we need to perform on
+the input. If the signal is less then the threshold \, we'd have a
+positive gain adjustment \, so we fix that with [min~ 0]., f 58;
+#X text 241 220 The [slew~] object is used here to generate two separate
+ramps. When ther volume decreases \, it's because the compressor starts
+acting. A ramp value here represents an attack time \, which is the
+time the compressor takes to perform the gain adjustment. Conversely
+\, we have a release time for when the gain adjustment goes up again.
+;
+#X text 241 310 In the end we need to perform the gain adjustment so
+we convert the dB value to linear. We also have a final overall gain
+adjustment that you can use to compensate the gain loss., f 58;
+#X obj 527 547 compress~;
+#X obj 118 258 else/f2s~ 10;
+#X obj 118 203 max 1;
+#X obj 118 177 r \$0-ratio;
+#X obj 118 230 expr 1 - 1/$f1;
+#X obj 66 249 *~;
+#X text 241 373 Try messing with the parameters below:, f 58;
+#X text 241 65 This is a simple compressor patch. The [mov.rms~] object
+gives us a running RMS measure that we subtract from a threshold point.
+The ratio parameter controls how much the signal is attenuated. For
+a difference of -10 and a ratio of 3 \, the gain is: -10 * (1 - 1/3)
+= -6.6666! This means the signal has exceeded 10 dB above the threshold
+but gets attenuates to 3.3333 dB above the threshold., f 58;
+#X text 275 533 This patch is the basis of the [compress~] object from
+ELSE =====>, f 35;
+#X connect 0 0 14 1;
+#X connect 1 0 16 0;
+#X connect 2 0 14 2;
+#X connect 3 0 34 0;
+#X connect 4 0 18 0;
+#X connect 13 0 3 1;
+#X connect 14 0 25 0;
+#X connect 15 0 1 0;
+#X connect 15 0 13 0;
+#X connect 16 0 22 1;
+#X connect 16 0 22 0;
+#X connect 17 0 21 0;
+#X connect 18 0 3 0;
+#X connect 21 0 16 1;
+#X connect 23 0 17 0;
+#X connect 24 0 14 0;
+#X connect 25 0 1 1;
+#X connect 30 0 34 1;
+#X connect 31 0 33 0;
+#X connect 32 0 31 0;
+#X connect 33 0 30 0;
+#X connect 34 0 24 0;
