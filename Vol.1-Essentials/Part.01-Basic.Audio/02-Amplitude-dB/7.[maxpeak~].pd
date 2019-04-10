@@ -1,0 +1,26 @@
+#N canvas 573 111 463 467 12;
+#X obj 175 215 maxpeak~;
+#X obj 295 310 setdsp~;
+#X obj 228 180 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 166 315 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 175 276 s2f~ 100;
+#X text 249 177 <= reset;
+#X obj 228 245 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+-1 -1;
+#X text 248 244 <= clipped;
+#X text 35 27 The [maxpeak~] object from the ELSE library reports the
+maximum peak amplitude. This is useful to keep track of your input
+values and see if they are clipping. It has a right outlet that sends
+bangs when the peak amplitude exceeds 0 dB. The right inlet resets
+the maximum amplitude value., f 55;
+#X obj 175 148 adc~ 1;
+#X obj 175 181 *~ 2;
+#X obj 175 242 else/display~ 4;
+#X connect 0 0 11 0;
+#X connect 0 1 6 0;
+#X connect 2 0 0 1;
+#X connect 4 0 3 1;
+#X connect 9 0 10 0;
+#X connect 10 0 0 0;
+#X connect 11 0 4 0;
