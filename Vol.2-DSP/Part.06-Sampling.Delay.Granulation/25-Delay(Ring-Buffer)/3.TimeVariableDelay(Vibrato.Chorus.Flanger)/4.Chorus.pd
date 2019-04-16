@@ -1,0 +1,88 @@
+#N canvas 272 37 1011 536 12;
+#X obj 44 227 loadbang;
+#X obj 157 230 s~ \$0-in;
+#X msg 163 264 \; LFO 0.1 \; depth 50 \; feedback 0.75;
+#X msg 44 264 \; LFO 0.7 \; depth 5 \; feedback -0.6;
+#X text 42 200 Presets;
+#X text 499 90 try also:, f 5;
+#X msg 401 264 \; LFO 3 \; depth 1 \; feedback -0.7;
+#X msg 285 264 \; LFO 0.15 \; depth 10 \; feedback -0.8;
+#X text 43 110 The original sound is then combined to the feedback
+delay objects and we have a gain compensation in the [out~] object.
+, f 61;
+#X text 64 341 Try the presets and other settings. You could also use
+the [rampnoise~] object instead of a LFO., f 59;
+#X obj 157 199 play.file~ ../../../../samples/guitar.wav 1 1;
+#X floatatom 634 60 0 0 0 0 - - -;
+#X obj 637 35 hsl 128 15 0.01 3 0 0 empty LFO empty -2 -8 0 10 -228856
+-1 -1 2931 1;
+#X obj 563 255 +~;
+#X obj 850 87 hsl 128 15 -0.95 0.95 0 0 empty feedback empty -2 -8
+0 10 -228856 -1 -1 2339 1;
+#X text 886 86 Feedback;
+#X floatatom 847 115 0 0 0 0 - - -;
+#X floatatom 776 59 0 0 0 0 - - -;
+#X obj 779 35 hsl 128 15 1 20 1 0 empty depth empty -2 -8 0 10 -228856
+-1 -1 6823 1;
+#X text 819 33 Depth;
+#X text 675 34 Rate;
+#X obj 608 256 +~;
+#X obj 634 87 osc~;
+#X obj 776 85 f2s~ 10;
+#X obj 847 143 f2s~ 10;
+#X obj 634 135 rescale~ 0;
+#X obj 736 129 rescale~ 0 0;
+#X obj 563 135 r~ \$0-in;
+#X obj 608 194 fbdelay~ 50 -gain, f 8;
+#X obj 710 194 fbdelay~ 50 -gain, f 8;
+#X obj 545 99 rampnoise~;
+#X obj 823 217 r~ \$0-in;
+#X obj 823 253 chorus~ 0.7 5 -0.9;
+#X obj 823 295 out~;
+#X text 43 150 The [chorus~] object from the ELSE library is based
+on this patch., f 61;
+#X text 43 34 A chorus adds an input to one or more copies with slight
+pitch deviations. Here we use two extra voices from delay lines with
+feedback whose time are controlled by the same LFO \, but note that
+the control is inverted by two different [rescale~] objects., f 61
+;
+#X obj 696 372 r~ \$0-in;
+#X obj 797 449 out~;
+#X obj 696 408 chorus2~ 2 0.7 5 -0.9;
+#X obj 563 297 out~ 0.333333;
+#X text 225 412 You can also try a ramp noise generator as the waveform.
+The [chorus2~] object \, from the ELSE library use it and is a more
+sophisticated chorus object., f 56;
+#X text 224 462 You can also specify the number of extra voices. Check
+its help file., f 56;
+#X connect 0 0 3 0;
+#X connect 10 0 1 0;
+#X connect 11 0 22 0;
+#X connect 11 0 30 0;
+#X connect 12 0 11 0;
+#X connect 13 0 39 0;
+#X connect 13 0 39 1;
+#X connect 14 0 16 0;
+#X connect 16 0 24 0;
+#X connect 17 0 23 0;
+#X connect 18 0 17 0;
+#X connect 21 0 13 1;
+#X connect 22 0 26 0;
+#X connect 22 0 25 0;
+#X connect 23 0 25 2;
+#X connect 23 0 26 1;
+#X connect 24 0 28 2;
+#X connect 24 0 29 2;
+#X connect 25 0 28 1;
+#X connect 26 0 29 1;
+#X connect 27 0 13 0;
+#X connect 27 0 28 0;
+#X connect 27 0 29 0;
+#X connect 28 0 21 0;
+#X connect 29 0 21 1;
+#X connect 31 0 32 0;
+#X connect 32 0 33 0;
+#X connect 32 0 33 1;
+#X connect 36 0 38 0;
+#X connect 38 0 37 0;
+#X connect 38 1 37 1;
