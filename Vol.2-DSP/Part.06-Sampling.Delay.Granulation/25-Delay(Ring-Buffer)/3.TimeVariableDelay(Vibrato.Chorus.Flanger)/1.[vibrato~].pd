@@ -25,22 +25,23 @@ its amplitude the "depth". A crossfade allows you to mix between the
 original (or dry) and processed (or wet) output. When in the middle
 and summing both of them \, you get a bit of a chorus effect., f 62
 ;
-#X obj 289 583 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 323 582 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 351 583 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 385 582 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 295 563 rate;
-#X text 358 563 depth;
-#X text 83 451 The [vibrato~] object \, an abstraction from ELSE \,
-is actually based on a pitch shifter \, that we'll see later. Here
-it performs a vibrato where the depth is the pitch deviation in cents.
-;
+#X text 329 562 rate;
+#X text 392 562 depth;
 #X obj 61 294 s~ \$0-in;
-#X obj 245 535 r~ \$0-in;
-#X obj 245 609 vibrato~ 3 30;
-#X obj 225 649 out~;
+#X obj 279 534 r~ \$0-in;
+#X obj 279 608 vibrato~ 3 30;
+#X obj 259 648 out~;
 #X obj 61 205 play.file~ ../../../../samples/guitar.wav 1 1, f 34
 ;
+#X text 443 578 cents;
+#X text 83 451 The [vibrato~] object \, an abstraction from ELSE \,
+is actually based on a granular pitch shifter \, that we'll see later.
+Here it performs a vibrato where the depth is the pitch deviation in
+cents.;
 #X connect 0 0 6 0;
 #X connect 2 0 7 0;
 #X connect 4 0 8 1;
@@ -51,11 +52,11 @@ it performs a vibrato where the depth is the pitch deviation in cents.
 #X connect 8 0 9 1;
 #X connect 10 0 14 0;
 #X connect 14 0 8 2;
-#X connect 16 0 23 1;
-#X connect 17 0 23 2;
+#X connect 16 0 22 1;
+#X connect 17 0 22 2;
+#X connect 21 0 22 0;
 #X connect 22 0 23 0;
-#X connect 23 0 24 0;
-#X connect 23 0 24 1;
-#X connect 25 0 4 0;
-#X connect 25 0 8 0;
-#X connect 25 0 21 0;
+#X connect 22 0 23 1;
+#X connect 24 0 4 0;
+#X connect 24 0 8 0;
+#X connect 24 0 20 0;

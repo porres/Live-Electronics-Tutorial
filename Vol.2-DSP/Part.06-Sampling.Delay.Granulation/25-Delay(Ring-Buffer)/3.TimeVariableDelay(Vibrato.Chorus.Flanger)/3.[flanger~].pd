@@ -1,113 +1,116 @@
-#N canvas 249 23 938 588 12;
-#X obj 349 458 loadbang;
-#X obj 45 306 s~ \$0-in;
-#X obj 45 248 sig~ 40;
-#X obj 45 222 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 90 256;
-#X obj 551 107 r~ \$0-in;
+#N canvas 453 43 938 588 12;
+#X obj 349 456 loadbang;
+#X obj 45 314 s~ \$0-in;
+#X obj 45 256 sig~ 40;
+#X obj 45 230 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 547 107 r~ \$0-in;
 #X obj 497 418 r~ \$0-in;
 #X obj 634 446 r~ \$0-fb;
-#X obj 321 318 hsl 128 15 -0.999 0.999 0 0 empty fb empty -2 -6 0 8
+#X obj 321 326 hsl 128 15 -0.999 0.999 0 0 empty fb empty -2 -6 0 8
 -228856 -1 -1 12071 1;
-#X text 352 317 feedback;
-#X floatatom 318 340 0 0 0 0 - - -;
-#X floatatom 132 227 5 0 0 0 - - -;
-#X floatatom 247 296 5 0 75 0 - - -;
-#X floatatom 180 255 5 1 100 0 - - -;
-#X obj 135 205 hsl 128 15 0.01 3 1 0 empty rate empty -2 -8 0 10 -228856
--1 -1 4333 1;
-#X text 184 204 rate;
-#X obj 250 273 hsl 128 15 5 75 1 0 empty delmax empty -2 -8 0 10 -228856
--1 -1 2204 1;
-#X obj 183 233 hsl 128 15 0 8 0 0 empty delmin empty -2 -8 0 10 -228856
+#X text 352 325 feedback;
+#X floatatom 318 348 0 0 0 0 - - -;
+#X floatatom 132 235 5 0 0 0 - - -;
+#X floatatom 247 304 5 0 75 0 - - -;
+#X floatatom 180 263 5 1 100 0 - - -;
+#X obj 135 213 hsl 128 15 0.01 3 1 0 empty rate empty -2 -8 0 10 -228856
+-1 -1 6670 1;
+#X text 184 212 rate;
+#X obj 250 281 hsl 128 15 5 75 1 0 empty delmax empty -2 -8 0 10 -228856
+-1 -1 1004 1;
+#X obj 183 241 hsl 128 15 0 8 0 0 empty delmin empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X text 221 232 delay min.;
-#X text 280 272 delay max.;
-#X obj 132 261 osc~;
-#X obj 46 338 r~ \$0-in;
-#X text 47 198 Input;
-#X obj 318 397 s~ \$0-fb;
-#X text 489 19 The [comb.rev~] object can be used to implement flanger
-effects. First let's use just the feedforward line for a feedforward
-flanger (left) and with a feedback line (right)., f 55;
-#X obj 706 105 r~ \$0-in;
-#X obj 829 137 r~ \$0-fb;
-#X msg 349 489 \; rate 0.07 \; delmin 0.1 \; delmax 8 \; fb 0.9;
-#X msg 240 489 \; rate 0.04 \; delmin 0.4 \; delmax 16 \; fb -0.8;
-#X obj 95 484 out~;
+#X text 221 240 delay min.;
+#X text 280 280 delay max.;
+#X obj 132 269 osc~;
+#X obj 46 346 r~ \$0-in;
+#X text 47 206 Input;
+#X obj 318 405 s~ \$0-fb;
+#X obj 719 105 r~ \$0-in;
+#X obj 842 137 r~ \$0-fb;
+#X msg 349 487 \; rate 0.07 \; delmin 0.1 \; delmax 8 \; fb 0.9;
+#X msg 240 487 \; rate 0.04 \; delmin 0.4 \; delmax 16 \; fb -0.8;
+#X obj 95 492 out~;
 #X obj 542 512 out~;
 #X obj 542 473 comb.rev~ 75 1 1 0;
-#X obj 551 168 comb.rev~ 75 1 1 0;
-#X obj 706 166 comb.rev~ 75 1 1 0;
-#X obj 706 208 out~;
-#X obj 551 210 out~;
-#X obj 96 400 fbdelay~ 75 -gain;
-#X obj 154 322 rescale~;
-#X obj 45 278 bl.saw~;
-#X obj 180 279 f2s~ 10;
-#X obj 247 319 f2s~ 10;
-#X obj 318 363 f2s~ 10;
+#X obj 547 168 comb.rev~ 75 1 1 0;
+#X obj 719 166 comb.rev~ 75 1 1 0;
+#X obj 719 208 out~;
+#X obj 547 210 out~;
+#X obj 96 408 fbdelay~ 75 -gain;
+#X obj 154 330 rescale~;
+#X obj 45 286 bl.saw~;
+#X obj 180 287 f2s~ 10;
+#X obj 247 327 f2s~ 10;
+#X obj 318 371 f2s~ 10;
 #X obj 744 504 out~;
 #X obj 744 431 r~ \$0-in;
-#X obj 174 359 s~ \$0-lfo;
-#X obj 581 138 r~ \$0-lfo;
-#X obj 736 136 r~ \$0-lfo;
+#X obj 174 367 s~ \$0-lfo;
+#X obj 577 138 r~ \$0-lfo;
+#X obj 749 136 r~ \$0-lfo;
 #X obj 572 418 r~ \$0-lfo;
 #X text 34 23 Originally \, the Flanger FX was developed by holding
 the "flange" of a tape roll to change its speed \, then mix with the
 original signal \, which generates phase cancelling because of the
 phase differences between the original and the delayed signal., f
-60;
-#X text 34 100 A flanger can be implemented with both a feedforward
-and a feedback delay line. First \, let's see an example with just
-a single feedback line below. A LFO controls the delay time in ms.
-The rate is the frequency of the LFO and a "depth" is given by the
-minimum and maximum delay times.;
-#X text 239 459 Presets:;
+61;
+#X text 239 467 Presets:;
 #X obj 744 462 flanger~ 0.1 10 0.8;
-#X text 497 283 Note however that if you have a negative feedback value
-\, the feed forward and feedback lines get cancelled because of the
-polarity inversion. We can avoid that by using the same coefficient
-for both feed forward and feed back lines. This is the base of the
-simple [flanger~] object from the ELSE library \, which takes directly
-a rate \, depth and feedback values - check its help file., f 57;
-#X connect 0 0 26 0;
-#X connect 2 0 37 0;
+#X text 34 99 A flanger can be implemented with both a feedforward
+and a feedback delay line. First \, let's see an example with just
+a single feedback line below (the same as last example). The rate is
+the frequency of the LFO that controls the delay time in ms \, and
+a "depth" is given by the minimum and maximum delay times., f 61;
+#X text 499 19 The [comb.rev~] object below now uses just a feedforward
+line for a feedforward flanger \, but also just a feedback line as
+the patch to the left.;
+#X text 529 78 feedforward flanger;
+#X text 718 78 feedback flanger;
+#X text 497 283 And now for a flanger with both feedforward and feedback
+lines. Note that a negative feedback value can cancel the feed forward
+line because of the polarity inversion. We avoid it by using the same
+coefficient for both feed forward and feed back lines. This is the
+base of the simple [flanger~] object from the ELSE library \, which
+takes directly a rate \, depth and coefficient values - check its help
+file., f 57;
+#X connect 0 0 25 0;
+#X connect 2 0 36 0;
 #X connect 3 0 2 0;
-#X connect 4 0 31 0;
-#X connect 5 0 30 0;
-#X connect 6 0 30 4;
-#X connect 6 0 30 3;
+#X connect 4 0 30 0;
+#X connect 5 0 29 0;
+#X connect 6 0 29 4;
+#X connect 6 0 29 3;
 #X connect 7 0 9 0;
-#X connect 9 0 40 0;
+#X connect 9 0 39 0;
 #X connect 10 0 19 0;
-#X connect 11 0 39 0;
-#X connect 12 0 38 0;
+#X connect 11 0 38 0;
+#X connect 12 0 37 0;
 #X connect 13 0 10 0;
 #X connect 15 0 11 0;
 #X connect 16 0 12 0;
-#X connect 19 0 36 0;
-#X connect 20 0 35 0;
-#X connect 24 0 32 0;
-#X connect 25 0 32 4;
-#X connect 30 0 29 0;
-#X connect 30 0 29 1;
-#X connect 31 0 34 0;
-#X connect 31 0 34 1;
-#X connect 32 0 33 0;
-#X connect 32 0 33 1;
-#X connect 35 0 28 0;
-#X connect 35 0 28 1;
-#X connect 36 0 35 1;
-#X connect 36 0 43 0;
-#X connect 37 0 1 0;
-#X connect 38 0 36 1;
-#X connect 39 0 36 2;
-#X connect 40 0 22 0;
-#X connect 40 0 35 2;
-#X connect 42 0 50 0;
+#X connect 19 0 35 0;
+#X connect 20 0 34 0;
+#X connect 23 0 31 0;
+#X connect 24 0 31 4;
+#X connect 29 0 28 0;
+#X connect 29 0 28 1;
+#X connect 30 0 33 0;
+#X connect 30 0 33 1;
+#X connect 31 0 32 0;
+#X connect 31 0 32 1;
+#X connect 34 0 27 0;
+#X connect 34 0 27 1;
+#X connect 35 0 42 0;
+#X connect 35 0 34 1;
+#X connect 36 0 1 0;
+#X connect 37 0 35 1;
+#X connect 38 0 35 2;
+#X connect 39 0 22 0;
+#X connect 39 0 34 2;
+#X connect 41 0 48 0;
+#X connect 43 0 30 1;
 #X connect 44 0 31 1;
-#X connect 45 0 32 1;
-#X connect 46 0 30 1;
-#X connect 50 0 41 0;
-#X connect 50 0 41 1;
+#X connect 45 0 29 1;
+#X connect 48 0 40 0;
+#X connect 48 0 40 1;

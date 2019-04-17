@@ -1,88 +1,62 @@
-#N canvas 272 37 1011 536 12;
-#X obj 44 227 loadbang;
-#X obj 157 230 s~ \$0-in;
-#X msg 163 264 \; LFO 0.1 \; depth 50 \; feedback 0.75;
-#X msg 44 264 \; LFO 0.7 \; depth 5 \; feedback -0.6;
-#X text 42 200 Presets;
-#X text 499 90 try also:, f 5;
-#X msg 401 264 \; LFO 3 \; depth 1 \; feedback -0.7;
-#X msg 285 264 \; LFO 0.15 \; depth 10 \; feedback -0.8;
-#X text 43 110 The original sound is then combined to the feedback
-delay objects and we have a gain compensation in the [out~] object.
-, f 61;
-#X text 64 341 Try the presets and other settings. You could also use
-the [rampnoise~] object instead of a LFO., f 59;
-#X obj 157 199 play.file~ ../../../../samples/guitar.wav 1 1;
-#X floatatom 634 60 0 0 0 0 - - -;
-#X obj 637 35 hsl 128 15 0.01 3 0 0 empty LFO empty -2 -8 0 10 -228856
+#N canvas 179 110 1032 424 12;
+#X obj 54 269 loadbang;
+#X obj 167 272 s~ \$0-in;
+#X text 52 242 Presets;
+#X obj 167 241 play.file~ ../../../../samples/guitar.wav 1 1;
+#X floatatom 573 81 0 0 0 0 - - -;
+#X obj 576 56 hsl 128 15 0.01 3 0 0 empty rate empty -2 -8 0 10 -228856
 -1 -1 2931 1;
-#X obj 563 255 +~;
-#X obj 850 87 hsl 128 15 -0.95 0.95 0 0 empty feedback empty -2 -8
-0 10 -228856 -1 -1 2339 1;
-#X text 886 86 Feedback;
-#X floatatom 847 115 0 0 0 0 - - -;
-#X floatatom 776 59 0 0 0 0 - - -;
-#X obj 779 35 hsl 128 15 1 20 1 0 empty depth empty -2 -8 0 10 -228856
--1 -1 6823 1;
-#X text 819 33 Depth;
-#X text 675 34 Rate;
-#X obj 608 256 +~;
-#X obj 634 87 osc~;
-#X obj 776 85 f2s~ 10;
-#X obj 847 143 f2s~ 10;
-#X obj 634 135 rescale~ 0;
-#X obj 736 129 rescale~ 0 0;
-#X obj 563 135 r~ \$0-in;
-#X obj 608 194 fbdelay~ 50 -gain, f 8;
-#X obj 710 194 fbdelay~ 50 -gain, f 8;
-#X obj 545 99 rampnoise~;
-#X obj 823 217 r~ \$0-in;
-#X obj 823 253 chorus~ 0.7 5 -0.9;
-#X obj 823 295 out~;
-#X text 43 150 The [chorus~] object from the ELSE library is based
-on this patch., f 61;
-#X text 43 34 A chorus adds an input to one or more copies with slight
-pitch deviations. Here we use two extra voices from delay lines with
-feedback whose time are controlled by the same LFO \, but note that
-the control is inverted by two different [rescale~] objects., f 61
-;
-#X obj 696 372 r~ \$0-in;
-#X obj 797 449 out~;
-#X obj 696 408 chorus2~ 2 0.7 5 -0.9;
-#X obj 563 297 out~ 0.333333;
-#X text 225 412 You can also try a ramp noise generator as the waveform.
-The [chorus2~] object \, from the ELSE library use it and is a more
-sophisticated chorus object., f 56;
-#X text 224 462 You can also specify the number of extra voices. Check
-its help file., f 56;
-#X connect 0 0 3 0;
-#X connect 10 0 1 0;
-#X connect 11 0 22 0;
-#X connect 11 0 30 0;
-#X connect 12 0 11 0;
-#X connect 13 0 39 0;
-#X connect 13 0 39 1;
-#X connect 14 0 16 0;
-#X connect 16 0 24 0;
-#X connect 17 0 23 0;
-#X connect 18 0 17 0;
-#X connect 21 0 13 1;
-#X connect 22 0 26 0;
-#X connect 22 0 25 0;
-#X connect 23 0 25 2;
-#X connect 23 0 26 1;
-#X connect 24 0 28 2;
-#X connect 24 0 29 2;
-#X connect 25 0 28 1;
-#X connect 26 0 29 1;
-#X connect 27 0 13 0;
-#X connect 27 0 28 0;
-#X connect 27 0 29 0;
-#X connect 28 0 21 0;
-#X connect 29 0 21 1;
-#X connect 31 0 32 0;
-#X connect 32 0 33 0;
-#X connect 32 0 33 1;
-#X connect 36 0 38 0;
-#X connect 38 0 37 0;
-#X connect 38 1 37 1;
+#X obj 786 88 hsl 128 15 -1 0 0 0 empty feedback empty -2 -8 0 10 -228856
+-1 -1 3810 1;
+#X text 822 87 Feedback;
+#X floatatom 783 116 0 0 0 0 - - -;
+#X floatatom 715 80 0 0 0 0 - - -;
+#X obj 718 56 hsl 128 15 1 30 1 0 empty depth empty -2 -8 0 10 -228856
+-1 -1 8598 1;
+#X text 758 54 Depth;
+#X text 614 55 Rate;
+#X obj 715 106 f2s~ 10;
+#X obj 783 151 f2s~ 10;
+#X obj 648 151 rescale~ 0;
+#X obj 577 151 r~ \$0-in;
+#X obj 573 111 rampnoise~;
+#X obj 852 252 r~ \$0-in;
+#X obj 852 330 out~;
+#X obj 604 230 out~;
+#X obj 604 188 comb.rev~ 30 1 1 -0.7, f 26;
+#X msg 54 306 \; rate 0.7 \; depth 10 \; feedback -0.7;
+#X msg 411 306 \; rate 3 \; depth 1 \; feedback -0.6;
+#X text 54 32 In the vibrato example \, we've seen how mixing a dry
+signal with a processed vibrato gives us a chorus like effect. Indded
+\, a chorus adds an input to one or more copies with slight pitch deviations
+(vibratos)., f 63;
+#X text 54 94 Here we do that with a comb filter that mixes the input
+to a pitch deviated feedforward line controlled by [rampnoise~] (you
+can also try a basic [osc~] object instead)., f 63;
+#X text 55 147 We also use the feedback delay line with negative coefficients.
+Let's not that it can cancel the feedforwars line \, so when this is
+at a -1 \, we only have the dry signal \, and this acts like a dry/wet
+parameter., f 63;
+#X msg 173 306 \; rate 0.1 \; depth 50 \; feedback -0.25;
+#X msg 295 306 \; rate 0.15 \; depth 10 \; feedback -0.8;
+#X obj 852 288 chorus~ 0.7 5 0.1;
+#X text 577 314 The [chorus~] object from the ELSE library is based
+on this patch. Check its help file., f 35;
+#X connect 0 0 22 0;
+#X connect 3 0 1 0;
+#X connect 4 0 17 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 0;
+#X connect 8 0 14 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 13 0 15 2;
+#X connect 14 0 21 4;
+#X connect 15 0 21 1;
+#X connect 16 0 21 0;
+#X connect 17 0 15 0;
+#X connect 18 0 29 0;
+#X connect 21 0 20 0;
+#X connect 21 0 20 1;
+#X connect 29 0 19 0;
+#X connect 29 0 19 1;

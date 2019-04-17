@@ -1,10 +1,5 @@
-#N canvas 524 23 701 543 12;
-#X obj 92 200 loadbang;
-#X msg 92 227 \; pd dsp 1 \; LFO 0.2 \; depth 100 \; delay 20 \; feedback
-0.85;
-#X msg 92 325 \; LFO 0.1 \; depth 30 \; delay 10 \; feedback -0.75
-;
-#X msg 92 410 \; LFO 0.05 \; depth 15 \; delay 5 \; feedback 0.91;
+#N canvas 67 51 701 543 12;
+#X obj 92 213 loadbang;
 #X obj 535 327 hsl 128 15 -0.999 0.999 0 0 empty feedback empty -2
 -6 0 8 -228856 -1 -1 11753 1;
 #X text 566 326 feedback;
@@ -15,42 +10,49 @@
 #X floatatom 300 240 5 0 0 0 - - -;
 #X floatatom 447 320 5 0 1000 0 - - -;
 #X floatatom 381 268 5 1 100 0 - - -;
-#X obj 303 218 hsl 128 15 0.01 3 1 0 empty LFO empty -2 -8 0 10 -228856
+#X obj 303 218 hsl 128 15 0.01 3 1 0 empty rate empty -2 -8 0 10 -228856
 -1 -1 6670 1;
 #X text 265 241 rate;
 #X obj 450 297 hsl 128 15 60 200 1 0 empty depth empty -2 -8 0 10 -228856
--1 -1 5388 1;
+-1 -1 1188 1;
 #X obj 384 244 hsl 128 15 0 50 0 0 empty delay empty -2 -8 0 10 -228856
--1 -1 5080 1;
+-1 -1 0 1;
 #X obj 355 355 rescale~;
 #X obj 532 372 f2s~ 10;
 #X obj 381 292 f2s~ 10;
 #X obj 447 343 f2s~ 10;
 #X text 421 267 delay min.;
 #X text 489 319 max;
-#X text 145 27 A vibrato with feedback delay generates more psychodelic
-results. Since the output is fed back \, the vibrato adds up at each
-iteration and keep rising and falling.;
+#X text 91 185 presets:;
+#X obj 234 182 play.file~ ../../../../samples/guitar.wav 1 1;
+#X text 145 17 A vibrato with feedback delay instead of a feedforward
+generates rather psychodelic results. Since the output is fed back
+\, the vibrato adds up at each iteration and keep rising and falling
+in pitch.;
 #X text 145 82 The "depth" now has a minimum and maximum delay time
-set with [rescale~]. Depending on the parameters \, you can generate
+set with [rescale~]. Depending on the parameters \, you can also generate
 chorus and flanger like effects. Experiment with all parameters and
 check the presets below.;
-#X text 91 172 presets:;
-#X obj 234 182 play.file~ ../../../../samples/guitar.wav 1 1;
-#X connect 0 0 1 0;
-#X connect 4 0 6 0;
-#X connect 6 0 18 0;
-#X connect 8 0 7 0;
-#X connect 8 0 7 1;
-#X connect 9 0 17 0;
-#X connect 10 0 9 0;
-#X connect 11 0 20 0;
-#X connect 12 0 19 0;
-#X connect 13 0 10 0;
-#X connect 15 0 11 0;
-#X connect 16 0 12 0;
-#X connect 17 0 8 1;
-#X connect 18 0 8 2;
-#X connect 19 0 17 1;
-#X connect 20 0 17 2;
-#X connect 26 0 8 0;
+#X msg 92 240 \; rate 0.2 \; depth 100 \; delay 20 \; feedback 0.85
+;
+#X msg 92 325 \; rate 0.1 \; depth 30 \; delay 10 \; feedback -0.75
+;
+#X msg 92 410 \; rate 0.05 \; depth 15 \; delay 5 \; feedback 0.91
+;
+#X connect 0 0 24 0;
+#X connect 1 0 3 0;
+#X connect 3 0 15 0;
+#X connect 5 0 4 0;
+#X connect 5 0 4 1;
+#X connect 6 0 14 0;
+#X connect 7 0 6 0;
+#X connect 8 0 17 0;
+#X connect 9 0 16 0;
+#X connect 10 0 7 0;
+#X connect 12 0 8 0;
+#X connect 13 0 9 0;
+#X connect 14 0 5 1;
+#X connect 15 0 5 2;
+#X connect 16 0 14 1;
+#X connect 17 0 14 2;
+#X connect 21 0 5 0;
