@@ -1,4 +1,4 @@
-#N canvas 284 229 1004 629 12;
+#N canvas 278 23 1004 629 12;
 #X obj 648 85 table \$0-buffer;
 #X obj 480 90 soundfiler;
 #X obj 480 146 samplerate~;
@@ -30,7 +30,7 @@ frequency \, obtained by the grain size., f 57;
 presets. The [gran.player~] object \, from ELSE \, is based on this
 patch \, check its help file:;
 #X obj 728 275 nbx 5 18 -1e+37 1e+37 0 0 empty speed empty 0 -8 0 13
--228856 -1 -1 20 256;
+-228856 -1 -1 100 256;
 #X obj 643 521 +~;
 #X obj 635 275 nbx 4 18 -1e+37 1e+37 0 0 empty cents empty 0 -8 0 13
 -228856 -1 -1 0 256;
