@@ -1,27 +1,55 @@
-#N canvas 550 87 648 507 12;
-#X obj 85 386 else/out~;
-#X obj 118 270 else/rescale~ 100 1000;
-#X obj 100 142 else/play.file~ ../../../../../samples/guitar.wav 1
+#N canvas 476 23 656 591 12;
+#X obj 84 338 else/out~;
+#X obj 117 222 else/rescale~ 100 1000;
+#X obj 116 114 else/play.file~ ../../../../../samples/guitar.wav 1
 1;
-#X obj 100 182 s~ \$0-in;
-#X obj 42 269 r~ \$0-in;
-#X obj 427 261 else/rescale~ 100 1000;
-#X obj 334 250 r~ \$0-in;
-#X obj 334 380 else/out~;
-#X obj 334 334 +~;
-#X obj 172 299 hsl 80 17 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 116 154 s~ \$0-in;
+#X obj 41 221 r~ \$0-in;
+#X obj 431 204 else/rescale~ 100 1000;
+#X obj 338 193 r~ \$0-in;
+#X obj 338 323 else/out~;
+#X obj 338 277 +~;
+#X obj 171 251 hsl 80 17 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X msg 169 325 wet \$1;
-#X obj 118 241 osc~ 0.2;
-#X obj 427 232 osc~ 0.2;
-#X obj 352 300 else/allpass.filt~ 12, f 22;
-#X text 139 298 dry;
-#X text 260 298 wet;
-#X text 121 47 You can also use [allpass.filt~] to implement a phaser
+#X msg 168 277 wet \$1;
+#X obj 117 193 osc~ 0.2;
+#X obj 431 175 osc~ 0.2;
+#X obj 356 243 else/allpass.filt~ 12, f 22;
+#X text 138 250 dry;
+#X text 259 250 wet;
+#X text 141 29 You can also use [allpass.filt~] to implement a phaser
 effect. The ELSE library includes a [phaser~] object that is an abstraction
 based on the [allpass.filt~] object. It's just a bit more convenient.
 , f 55;
-#X obj 85 350 phaser~ 12;
+#X obj 84 302 phaser~ 12;
+#N canvas 465 62 574 363 phaser-stereo 0;
+#X obj 76 292 outlet~;
+#X obj 203 291 outlet~;
+#X obj 203 50 sig~ 40;
+#X obj 203 97 +~ 0.5;
+#X obj 76 116 bl.saw~;
+#X obj 203 124 bl.saw~;
+#X obj 76 203 phaser~ 16;
+#X obj 203 204 phaser~ 14;
+#X obj 376 158 s~ \$0-lfo;
+#X obj 236 155 r~ \$0-lfo;
+#X obj 376 84 osc~ 0.2;
+#X obj 376 122 rescale~ 100 1000;
+#X connect 2 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 0 0;
+#X connect 7 0 1 0;
+#X connect 9 0 7 1;
+#X connect 9 0 6 1;
+#X connect 10 0 11 0;
+#X connect 11 0 8 0;
+#X restore 327 456 pd phaser-stereo;
+#X obj 327 495 out~;
+#X text 151 441 Here's a stereo setting with [phaser~] click ==>,
+f 25;
 #X connect 1 0 17 1;
 #X connect 2 0 3 0;
 #X connect 4 0 17 0;
@@ -37,3 +65,5 @@ based on the [allpass.filt~] object. It's just a bit more convenient.
 #X connect 13 0 8 1;
 #X connect 17 0 0 0;
 #X connect 17 0 0 1;
+#X connect 18 0 19 0;
+#X connect 18 1 19 1;
