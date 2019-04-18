@@ -1,7 +1,7 @@
-#N canvas 155 23 1040 491 12;
-#X obj 336 120 hilbert~;
+#N canvas 238 23 1042 569 12;
+#X obj 337 119 hilbert~;
 #N canvas 167 73 1108 572 (subpatch) 0;
-#N canvas 169 136 442 367 plot 0;
+#N canvas 606 377 646 467 plot 0;
 #N canvas 259 145 659 527 init 0;
 #X obj 110 66 loadbang;
 #X obj 180 353 s \$0-dbrange;
@@ -131,16 +131,16 @@
 #X connect 11 0 12 0;
 #X restore 220 131 pd init \; tables;
 #X obj 135 209 trigger float float;
-#N canvas 38 68 941 561 H(z) 0;
+#N canvas 114 66 1193 683 H(z) 0;
 #X obj 88 65 inlet;
-#X obj 454 77 inlet;
+#X obj 504 77 inlet;
 #X text 135 66 index;
-#X text 493 77 coeficientes;
+#X text 543 77 coeficientes;
 #X obj 144 294 -;
-#X obj 413 378 expr $f1 / pi_\$0;
-#X obj 413 468 outlet;
-#X obj 523 295 -;
-#X obj 467 171 expr $f4 + ($f5 * cosW_\$0[$f1]) + ($f6 * cos2W_\$0[$f1])
+#X obj 463 378 expr $f1 / pi_\$0;
+#X obj 463 468 outlet;
+#X obj 573 295 -;
+#X obj 517 171 expr $f4 + ($f5 * cosW_\$0[$f1]) + ($f6 * cos2W_\$0[$f1])
 \; ($f5 * sinW_\$0[$f1]) + ($f6 * sin2W_\$0[$f1]) \; 1 - ($f2 * cosW_\$0[$f1])
 - ($f3 * cos2W_\$0[$f1]) \; 0 - ($f2 * sinW_\$0[$f1]) - ($f3 * sin2W_\$0[$f1])
 ;
@@ -148,15 +148,15 @@
 \; ($f5 * sinW_\$0[$f1]) + ($f6 * sin2W_\$0[$f1]) \; 1 - ($f2 * cosW_\$0[$f1])
 - ($f3 * cos2W_\$0[$f1]) \; 0 - ($f2 * sinW_\$0[$f1]) - ($f3 * sin2W_\$0[$f1])
 ;
-#X obj 454 104 list split 5;
+#X obj 504 104 list split 5;
 #X obj 88 135 list;
-#X obj 467 143 list;
-#X obj 413 346 +;
-#X obj 556 261 car2pol;
-#X obj 467 261 car2pol;
+#X obj 517 143 list;
+#X obj 463 346 +;
+#X obj 606 261 car2pol;
+#X obj 517 261 car2pol;
 #X obj 177 260 car2pol;
 #X obj 88 260 car2pol;
-#X obj 413 414 wrap2 -1 1;
+#X obj 463 414 wrap2 -1 1;
 #X connect 0 0 11 0;
 #X connect 0 0 12 0;
 #X connect 1 0 10 0;
@@ -449,13 +449,20 @@
 #X text 953 131 pi/2;
 #X text 954 106 pi;
 #X coords 0 -1 1 1 890 290 2 100 100;
-#X restore 95 163 pd;
-#X text 55 226 REAL;
-#X text 23 344 IMAGINARY;
-#X text 587 32 Each [biquad~] implements a 2nd order allpass filter.
+#X restore 96 162 pd;
+#X text 56 225 REAL;
+#X text 24 343 IMAGINARY;
+#X text 587 31 Each [biquad~] implements a 2nd order allpass filter.
 Since they are a cascaded pair \, we have a 4th order filter. See the
 phase response of both outputs below. We don't plot the amplitudes
 because they are unchanged., f 53;
-#X text 129 36 The [hilbert~] object is a pair of 4th order allpass
-filters \, where the outputs have a phase difference of 90 degrees.
-It is implemented with [biquad~] filters., f 61;
+#X text 130 35 The [hilbert~] object is an extra vanilla object and
+consists of a pair of 4th order allpass filters \, where the outputs
+have a phase difference of 90 degrees. It is an abstraction implemented
+with [biquad~] filters. Open it., f 61;
+#X text 133 472 Note how when compared to the 2nd order filter \, the
+4th order allpass is able to distort the phase twice as much. Hence
+it is able of two cycles instead of one.;
+#X text 551 472 An the first order filter could only distort to half
+a cycle. Therefore \, at each 2nd order stage \, an allpass is able
+to shift one full cycle.;
