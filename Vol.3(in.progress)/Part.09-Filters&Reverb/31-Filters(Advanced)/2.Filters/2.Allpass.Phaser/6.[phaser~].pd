@@ -1,0 +1,39 @@
+#N canvas 550 87 648 507 12;
+#X obj 85 386 else/out~;
+#X obj 118 270 else/rescale~ 100 1000;
+#X obj 100 142 else/play.file~ ../../../../../samples/guitar.wav 1
+1;
+#X obj 100 182 s~ \$0-in;
+#X obj 42 269 r~ \$0-in;
+#X obj 427 261 else/rescale~ 100 1000;
+#X obj 334 250 r~ \$0-in;
+#X obj 334 380 else/out~;
+#X obj 334 334 +~;
+#X obj 172 299 hsl 80 17 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X msg 169 325 wet \$1;
+#X obj 118 241 osc~ 0.2;
+#X obj 427 232 osc~ 0.2;
+#X obj 352 300 else/allpass.filt~ 12, f 22;
+#X text 139 298 dry;
+#X text 260 298 wet;
+#X text 121 47 You can also use [allpass.filt~] to implement a phaser
+effect. The ELSE library includes a [phaser~] object that is an abstraction
+based on the [allpass.filt~] object. It's just a bit more convenient.
+, f 55;
+#X obj 85 350 phaser~ 12;
+#X connect 1 0 17 1;
+#X connect 2 0 3 0;
+#X connect 4 0 17 0;
+#X connect 5 0 13 1;
+#X connect 6 0 8 0;
+#X connect 6 0 13 0;
+#X connect 8 0 7 0;
+#X connect 8 0 7 1;
+#X connect 9 0 10 0;
+#X connect 10 0 17 2;
+#X connect 11 0 1 0;
+#X connect 12 0 5 0;
+#X connect 13 0 8 1;
+#X connect 17 0 0 0;
+#X connect 17 0 0 1;

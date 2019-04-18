@@ -1,19 +1,19 @@
-#N canvas 331 70 759 424 12;
-#X obj 65 110 rpole~;
-#X obj 65 85 rzero_rev~;
-#X obj 65 159 rpole~;
-#X obj 65 134 rzero_rev~;
-#X obj 65 207 rpole~;
-#X obj 65 182 rzero_rev~;
-#X obj 65 256 rpole~;
-#X obj 65 231 rzero_rev~;
-#X obj 47 291 +~;
-#X obj 152 101 r~ \$0-coef;
-#X obj 376 81 s~ \$0-coef;
-#X obj 149 143 r~ \$0-coef;
-#X obj 147 186 r~ \$0-coef;
-#X obj 149 243 r~ \$0-coef;
-#X text 333 56 LFO;
+#N canvas 456 101 748 430 12;
+#X obj 66 119 rpole~;
+#X obj 66 94 rzero_rev~;
+#X obj 66 168 rpole~;
+#X obj 66 143 rzero_rev~;
+#X obj 66 216 rpole~;
+#X obj 66 191 rzero_rev~;
+#X obj 66 265 rpole~;
+#X obj 66 240 rzero_rev~;
+#X obj 48 300 +~;
+#X obj 153 110 r~ \$0-coef;
+#X obj 392 78 s~ \$0-coef;
+#X obj 150 152 r~ \$0-coef;
+#X obj 148 195 r~ \$0-coef;
+#X obj 150 252 r~ \$0-coef;
+#X text 349 53 LFO;
 #N canvas 345 151 606 411 phaser-stereo 0;
 #X obj 59 280 +~;
 #N canvas 172 23 283 355 4stages 0;
@@ -302,23 +302,22 @@ stages. A [drive~] object compresses so many sums., f 30;
 #X connect 15 0 8 0;
 #X connect 16 0 7 0;
 #X connect 17 0 4 0;
-#X restore 440 310 pd phaser-stereo;
-#X obj 46 30 sig~ 80;
-#X obj 46 55 bl.saw~;
-#X obj 376 59 rescale~ 0.62 0.98;
-#X obj 455 345 out~;
-#X obj 47 323 out~;
-#X text 260 128 A "Phaser" adds a signal to the output of an allpass
-filter (a 4th order allpass filter on the example to the left) whose
-frequency is controlled by a LFO. This promotes phase canceliing in
-some frequencies and this depends on the order of the filter.;
-#X obj 376 36 tri~ 0.1;
-#X text 259 213 The LFO here controls the coefficient of the filter
-directly. We have the same filter as the last example \, but four of
-them in cascade. Other configurations are possible (6 \, 8 \, 10 \,
-12 stages \, etc). Below we have a stereo patch with 16 and 14 stages.
-Open.;
-#X text 564 308 <= click;
+#X restore 384 300 pd phaser-stereo;
+#X obj 47 39 sig~ 80;
+#X obj 47 64 bl.saw~;
+#X obj 392 56 rescale~ 0.62 0.98;
+#X obj 399 335 out~;
+#X obj 48 332 out~;
+#X obj 392 33 tri~ 0.1;
+#X text 508 298 <= click;
+#X text 276 125 A "Phaser" filters a signal through a series of allpass
+filters and sums that to the input In practice \, we have many bandstop
+filters. The example to the left is based on the H15 Pd example and
+is a 4th order allpass filter. An LFO controls the filter coefficient
+\, which affects the frequency sweep of the bandstop filtering.;
+#X text 276 225 Other configurations are possible with a different
+number of stages (such as 6 \, 8 \, 10 \, 12 stages \, etc). Below
+we have a stereo patch with 16 and 14 stages. Open it.;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 2 0 5 0;
@@ -343,4 +342,4 @@ Open.;
 #X connect 17 0 8 0;
 #X connect 17 0 1 0;
 #X connect 18 0 10 0;
-#X connect 22 0 18 0;
+#X connect 21 0 18 0;
