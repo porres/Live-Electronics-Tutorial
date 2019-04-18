@@ -1,0 +1,55 @@
+#N canvas 595 34 657 653 12;
+#X obj 196 52 s~ \$0-in;
+#X obj 366 84 r~ \$0-in;
+#X obj 410 137 r~ \$0-in;
+#X obj 441 191 r~ \$0-in;
+#X obj 462 244 r~ \$0-in;
+#X obj 410 358 *~ 0.25;
+#X obj 96 361 r~ \$0-in;
+#X obj 367 395 out~;
+#X obj 76 566 out~;
+#X obj 136 78 out~;
+#X obj 96 520 allpass.rev~ 65 0.8 1;
+#X obj 96 489 allpass.rev~ 85 0.66 1;
+#X obj 96 457 allpass.rev~ 95 0.77 1;
+#X obj 96 427 allpass.rev~ 75 0.99 1;
+#X obj 96 395 allpass.rev~ 45 0.88 1;
+#X obj 410 331 allpass.rev~ 95 0.88 1;
+#X obj 410 299 allpass.rev~ 75 0.77 1;
+#X obj 461 266 comb.rev~ 80 1 0 0.7;
+#X obj 441 214 comb.rev~ 70 1 0 0.6;
+#X obj 410 160 comb.rev~ 50 1 0 0.5;
+#X obj 366 108 comb.rev~ 30 1 0 0.4;
+#X text 42 233 The early models described by Schroeder described 2
+algorithms: a series of allpass reverberators (as in below and in [rev1~])
+and parallel comb reverberators going into a series of allpass reverberators
+(as on the right)., f 42;
+#X obj 179 23 play.file~ 1 ../../../../samples/didge.aif 1 1;
+#X text 319 486 The examples here are very simple and the delay line
+lenghts are quite arbitrary. But you can see how it works reasonably
+well with little sophistication., f 41;
+#X text 43 169 Common setups known as "Schroeder/Moorer Reverbs" combines
+allpass and comb reverberators with short delay times to create reverb
+effects., f 42;
+#X connect 1 0 20 0;
+#X connect 2 0 19 0;
+#X connect 3 0 18 0;
+#X connect 4 0 17 0;
+#X connect 5 0 7 1;
+#X connect 5 0 7 0;
+#X connect 6 0 14 0;
+#X connect 10 0 8 0;
+#X connect 10 0 8 1;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 5 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 18 0 16 0;
+#X connect 19 0 16 0;
+#X connect 20 0 16 0;
+#X connect 22 0 0 0;
+#X connect 22 0 9 0;
+#X connect 22 0 9 1;

@@ -1,6 +1,6 @@
-#N canvas 723 23 532 702 12;
-#X obj 272 291 rev2~ 100 90 3000 20;
-#X obj 272 219 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#N canvas 723 23 532 690 12;
+#X obj 270 281 rev2~ 100 90 3000 20;
+#X obj 270 209 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
@@ -26,10 +26,10 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 272 262 pd test;
-#X obj 272 323 out~;
-#X obj 209 552 rev3~ 100 90 3000 20;
-#X obj 209 481 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#X restore 270 252 pd test;
+#X obj 270 313 out~;
+#X obj 207 542 rev3~ 100 90 3000 20;
+#X obj 207 471 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
@@ -55,13 +55,13 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 209 524 pd test;
-#X obj 209 585 out~;
-#X text 52 121 In this way \, we can set the crossover frequency and
+#X restore 207 514 pd test;
+#X obj 207 575 out~;
+#X text 51 131 In this way \, we can set the crossover frequency and
 how much the high frequencies get damped. The 4 arguments are the parameters:
 output level \, decay \, crossover frequency and damping. Check its
 help file for more details.;
-#X obj 154 230 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 152 220 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
@@ -87,16 +87,18 @@ help file for more details.;
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 154 273 pd test;
-#X obj 112 321 out~;
-#X text 52 38 Pd Vanilla comes with a few native reverb abstractions.
-The [rev2~] object is quite similar to the last example as it uses
-the same FDN and early reflections. The new addition is that we now
-have a lowpass filter in the feedback loop. This enables us to to atenuate
-higher frequencies.;
-#X text 56 414 On the other hand \, [rev3~] is basically the same thing
+#X restore 152 263 pd test;
+#X obj 110 311 out~;
+#X text 54 404 On the other hand \, [rev3~] is basically the same thing
 \, but it has more richness by adopting a more complex network of 16
 feedback delay lines! Check its help file., f 60;
+#X text 51 23 Pd Vanilla comes with a few native reverb abstractions.
+The [rev2~] object is quite similar to the last example as it uses
+the same echoes for early reflections and the same FDN for the late
+reflexions. The new addition is that we now have a lowpass filter in
+the feedback loop. This enables us to to atenuate higher frequencies.
+This is a usual parameter in reverb design called 'high frequency damping'.
+;
 #X connect 0 0 3 0;
 #X connect 0 1 3 1;
 #X connect 1 0 2 0;

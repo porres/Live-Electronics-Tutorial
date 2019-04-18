@@ -1,10 +1,10 @@
-#N canvas 792 23 576 632 12;
-#X obj 76 171 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+#N canvas 315 87 947 475 12;
+#X obj 54 152 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
-#X obj 205 151 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 183 132 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 76 258 out~;
-#X obj 205 268 out~;
+#X obj 54 239 out~;
+#X obj 183 249 out~;
 #N canvas 797 186 322 276 test 0;
 #X obj 63 116 osc~;
 #X obj 96 218 outlet~;
@@ -18,7 +18,7 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X connect 5 0 0 0;
-#X restore 205 194 pd test;
+#X restore 183 175 pd test;
 #N canvas 830 223 313 262 test 0;
 #X obj 60 114 osc~;
 #X obj 93 216 outlet~;
@@ -32,10 +32,10 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X connect 5 0 0 0;
-#X restore 76 214 pd test;
-#X obj 347 151 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#X restore 54 195 pd test;
+#X obj 325 132 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 347 268 out~;
+#X obj 325 249 out~;
 #N canvas 797 186 322 276 test 0;
 #X obj 63 116 osc~;
 #X obj 96 218 outlet~;
@@ -49,8 +49,8 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X connect 5 0 0 0;
-#X restore 347 194 pd test;
-#N canvas 1050 23 491 773 echo(8-stages) 0;
+#X restore 325 175 pd test;
+#N canvas 730 71 491 773 echo(8-stages) 0;
 #X obj 114 91 inlet~;
 #X obj 115 178 +~;
 #X obj 294 180 -~;
@@ -119,7 +119,7 @@
 #X connect 26 0 16 1;
 #X connect 26 0 15 1;
 #X connect 27 0 19 0;
-#X restore 347 231 pd echo(8-stages);
+#X restore 325 212 pd echo(8-stages);
 #N canvas 698 23 458 651 echo(6-stages) 0;
 #X obj 251 92 inlet~;
 #X obj 113 575 outlet~;
@@ -173,30 +173,58 @@
 #X connect 18 0 21 0;
 #X connect 20 0 1 0;
 #X connect 21 0 2 0;
-#X restore 205 231 pd echo(6-stages);
-#X text 49 21 As a first reverberator example with delay lines \, we
-have a simple patch with only feedforward lines that emulates echoes.
-Echoes are short delays from 30 ms (they can't be too short \, otherwise
-they'll act as a filter). Below to the left we have a test sound (a
-sine wave sweep) to be compared to the exmaples on the right. We have
-a mono input but a stereo output. Open the suboatches for implementation
-details., f 64;
-#X text 57 351 At each stage the number of echoes of the input is doubled.
+#X restore 183 212 pd echo(6-stages);
+#X text 32 324 At each stage the number of echoes of the input is doubled.
 So there are 64 reflections in the end of the chain of the 6-stages
 example \, and 256 in the 8-stages example. At the end we have a gain
 compensation for all the added signals., f 65;
-#X text 57 419 The output of each stage gets added using a rotation
+#X text 32 392 The output of each stage gets added using a rotation
 matrix. This means that the polarity of the signals get flipped and
 this is done with a simple [-~] object \, where the left signal gets
 summed with the inverted polarity of the signal of the right one.,
 f 65;
-#X text 58 487 The choice of the delay lines can be arbitrary \, but
+#X text 511 26 The choice of the delay lines can be arbitrary \, but
 we need to be careful not to choose delay lines that are multiples
 of each other. The 6-stage example uses a fibonacci series to lay down
 the delay times. Furtherly \, arbitrary fractions are added in an attempt
 to produce even more complex reflection patterns. Alternatively \,
 you can try prime numbers as a basis instead as in the 8-stage example.
-, f 65;
+, f 55;
+#X obj 599 383 else/out~;
+#X obj 599 344 else/echo.rev~ 8 1;
+#X obj 725 293 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X obj 599 269 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#N canvas 830 223 313 262 test 0;
+#X obj 60 114 osc~;
+#X obj 93 216 outlet~;
+#X obj 93 170 *~;
+#X obj 111 31 inlet;
+#X obj 111 125 envgen~ 50 1 450 1 50 0;
+#X obj 60 84 envgen~ 440 500 800;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 1;
+#X connect 5 0 0 0;
+#X restore 599 312 pd test;
+#X text 26 16 As a first reverberator example with delay lines \, we
+have a simple patch with only feedforward lines that emulates echoes
+with short delay times \, which can be used to produce early reflections
+in a reverb algorithm. Below to the left we have a test sound (a sine
+wave sweep) to be compared to the exmaples on the right. We have a
+mono input but a stereo output. Open the suboatches for implementation
+details., f 64;
+#X text 511 153 [echo.rev~] is an echo/reverb asbtraction based on
+this patch. You can set the number of echo stages with the first argument
+and the room size with the second argument/inlet. A typical value is
+the default. It uses a prime sequence and the size parameter expands
+the delay times., f 55;
+#X obj 722 316 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 781 315 size;
 #X connect 0 0 5 0;
 #X connect 1 0 4 0;
 #X connect 4 0 10 0;
@@ -208,3 +236,9 @@ you can try prime numbers as a basis instead as in the 8-stage example.
 #X connect 9 1 7 1;
 #X connect 10 0 3 0;
 #X connect 10 1 3 1;
+#X connect 15 0 14 0;
+#X connect 15 0 14 1;
+#X connect 16 0 21 0;
+#X connect 17 0 18 0;
+#X connect 18 0 15 0;
+#X connect 21 0 15 1;

@@ -1,7 +1,7 @@
-#N canvas 595 49 589 485 12;
-#X obj 247 249 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#N canvas 595 49 557 463 12;
+#X obj 210 254 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 255 375 out~;
+#X obj 218 380 out~;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
 #X obj 36 257 outlet~;
@@ -26,18 +26,21 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 247 292 pd test;
-#X text 76 47 The [plateverb~] object is a reverb asbtraction available
+#X restore 210 297 pd test;
+#X text 72 210 Check its help file for more details on how it works.
+;
+#X obj 210 326 plate.rev~ 50 0.6 0.25 0.8 0.8, f 16;
+#X text 71 22 The [plate.rev~] object is a reverb asbtraction available
 in the ELSE library. It is based on a patch by Tom Erbe implementing
 the Dattorro plate stereo reverb model (it turns a mono input into
 a stereo output).;
-#X text 76 126 It combines allpass filters and a feedback delay network.
+#X text 71 101 It combines allpass filters and a feedback delay network.
 It has an internal filter to control the crossover frequency and high
 frequency dammping as [rev2~] and [rev3~].;
-#X text 77 189 Check its help file for more details on how it works.
-;
-#X obj 247 321 plate.rev~ 50 0.6 0.25 0.8 0.8, f 16;
+#X text 70 160 One important characteristic of this reverb is that
+it uses LFOs to modulate some of the allpass filters as a way to produce
+more dinamic results.;
 #X connect 0 0 2 0;
-#X connect 2 0 6 0;
-#X connect 6 0 1 0;
-#X connect 6 1 1 1;
+#X connect 2 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 1 1;

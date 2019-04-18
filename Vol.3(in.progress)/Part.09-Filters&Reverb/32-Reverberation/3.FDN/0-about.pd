@@ -1,7 +1,0 @@
-#N canvas 473 60 609 397 12;
-#X text 59 23 Natural reverberation is a product of complex sound reflections
-patterns \, where a sound source keeps moving and bouncing around innumerous
-spots in a room/space. This can be digitally modeled with delay lines.
-Ideally \, we'd need thousands of delay lines to properly model every
-possible reflection \, but there are efficient techniques that involve
-less delay lines with good results., f 64;
