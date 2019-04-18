@@ -17,4 +17,4 @@ This work is licenced via Creative Commons Attribution-NonCommercial-NoDerivativ
 
 This is still in the early drafts from the first translation round. Many typos and mistakes may exist. This work is now depending on the softare development in the ELSE library to include more examples. Since the ELSE library is still in an early beta stage of development, some objects may change in functionality, new objects are being developed and others might even be deleted until a final version is out. If so, future updates of this didactc material will reflect these changes.  
 
-At this moment, the first two volumes of this work are virtually finished and a third volume is in progress, yet to be revised and include more examples and topics.
+There are plans to include more topics and examples in this tutorial, which can furtherly be split into 3 volumes.
