@@ -1,0 +1,58 @@
+#N struct DS-5 float x float y symbol sym;
+#N canvas 385 30 533 505 12;
+#N canvas 976 104 358 171 display 1;
+#X scalar DS-5 50 50 shfgkdhgf \;;
+#X restore 379 164 pd display;
+#N canvas 440 205 535 580 template 0;
+#X obj 57 348 filledpolygon 999 0 5 5 5 105 5 105 55 5 55;
+#X obj 66 98 struct DS-5 float x float y symbol sym;
+#X text 64 34 Data Structure named "DS-5" holding coordinates floats
+"x/y" and a symbol named "sym"., f 37;
+#X text 43 143 We now use the [drawnumber] object \, which is actually
+the same as [drawsymbol] . There is literal no difference \, it is
+really the same object. Maybe in the future they will become actual
+different objects \, but so far is just an alias., f 57;
+#X text 194 231 The instruction is to draw the "sym" variable in the
+20/25 coordinates., f 36;
+#X text 60 297 We also have a [filledpolygon] as a frame around the
+symbol., f 31;
+#X obj 38 238 drawsymbol sym 20 25;
+#X obj 291 423 drawnumber x 115 10 900 x=;
+#X obj 290 456 drawnumber y 115 25 900 y=;
+#X text 80 423 For last \, we also draw and display the coordinates
+of the Data Structure., f 26;
+#X text 111 512 You may drag the object around in the edit mode and
+see how the coordinates get updted., f 45;
+#X restore 379 137 pd template;
+#X symbolatom 59 338 10 0 0 0 - - -;
+#X obj 59 369 set -symbol DS-5 sym;
+#X msg 59 272 symbol banana;
+#X msg 67 307 symbol apple;
+#X obj 298 307 pointer;
+#X obj 196 124 loadbang;
+#X msg 347 215 \; pd-display clear \, vis 1, f 12;
+#X msg 298 280 traverse pd-display \, bang;
+#X obj 196 339 append DS-5 x y;
+#X obj 196 184 trigger list bang bang;
+#X msg 196 153 50 50;
+#X text 39 18 This example shows how to add and set a symbol variable.
+See [pd template] for the declaration and drawing instructions.;
+#X text 40 57 We use [append] to add our Data Structure object in [pd
+dysplay]. Note that you cannot set the symbol variable with [append]
+when adding the object. We need to use the [set] object for that.,
+f 65;
+#X text 51 423 When setting a symbol with [set] \, you need an extra
+"-symbol" argument. Unfortunately \, you cannot set floats and symbols
+with the same [set] object., f 62;
+#X text 52 238 set symbol:;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 10 2;
+#X connect 7 0 12 0;
+#X connect 9 0 6 0;
+#X connect 10 0 3 1;
+#X connect 11 0 10 0;
+#X connect 11 1 9 0;
+#X connect 11 2 8 0;
+#X connect 12 0 11 0;

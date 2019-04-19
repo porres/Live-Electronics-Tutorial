@@ -1,0 +1,72 @@
+#N struct DS-2 float x float y float a;
+#N canvas 507 50 471 699 12;
+#X obj 172 272 pointer;
+#X obj 69 103 loadbang;
+#X msg 172 245 traverse pd-display \, bang;
+#N canvas 1015 77 161 169 display 1;
+#X scalar DS-2 64 64 127 \;;
+#X restore 319 140 pd display;
+#X obj 56 404 get DS-2 a;
+#N canvas 378 383 439 197 template 0;
+#X obj 79 127 drawnumber a;
+#X text 177 128 Drawing instruction for "a";
+#X obj 91 74 struct DS-2 float x float y float a;
+#X text 61 30 Data Structure named "DS-2" holding a pair of coordinates
+"x/y" and float called "a", f 43;
+#X restore 314 114 pd template;
+#X obj 119 470 set DS-2 a;
+#X obj 56 376 trigger point point;
+#X msg 220 185 \; pd-display clear \, vis 1, f 17;
+#X obj 56 437 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+-228856 -1 -1 127 256;
+#X obj 235 371 trigger point point, f 21;
+#X obj 235 464 nbx 3 16 0 127 0 0 empty empty empty 0 -8 0 12 -228856
+-1 -1 64 256;
+#X obj 325 465 nbx 3 16 0 127 0 0 empty empty empty 0 -8 0 12 -228856
+-1 -1 64 256;
+#X obj 298 494 hot;
+#X msg 316 434 set \$1;
+#X obj 298 527 set DS-2 x y;
+#X obj 235 399 get DS-2 x y;
+#X obj 69 155 trigger bang bang bang;
+#X text 25 437 "a";
+#X text 207 453 "x";
+#X text 294 464 "y";
+#X obj 69 129 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X obj 56 301 append DS-2 a x y;
+#X msg 56 228 127 64 64;
+#X text 43 20 In this example we'll "get" and "set" the value of the
+float and its coordinates with the [get] and [set] objects. These objects
+need a pointer to the data structure \, but this is given as the output
+of [append]., f 55;
+#X text 32 574 The [trigger] object also deals with pointers and we
+use it to send the pointer to the [set] and [get] objects. See above
+how the number box gets the value from "a" in the left \, and how you
+can set its value by using the number box as well. You can also get
+and set the coordinates as in the right., f 55;
+#X text 68 334 <= pointer of the added Data Structure;
+#X connect 0 0 22 3;
+#X connect 1 0 21 0;
+#X connect 2 0 0 0;
+#X connect 4 0 9 0;
+#X connect 7 0 4 0;
+#X connect 7 1 6 1;
+#X connect 7 1 10 0;
+#X connect 9 0 6 0;
+#X connect 10 0 16 0;
+#X connect 10 1 15 2;
+#X connect 11 0 13 0;
+#X connect 12 0 13 1;
+#X connect 13 0 15 0;
+#X connect 13 1 15 1;
+#X connect 14 0 12 0;
+#X connect 14 0 13 1;
+#X connect 16 0 11 0;
+#X connect 16 1 14 0;
+#X connect 17 0 23 0;
+#X connect 17 1 2 0;
+#X connect 17 2 8 0;
+#X connect 21 0 17 0;
+#X connect 22 0 7 0;
+#X connect 23 0 22 0;
