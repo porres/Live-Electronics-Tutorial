@@ -1,4 +1,4 @@
-#N canvas 210 23 1014 643 12;
+#N canvas 329 93 1014 643 12;
 #X floatatom 182 147 5 0 15 0 - - -;
 #X obj 156 489 sqrt;
 #X msg 156 460 2;
@@ -61,10 +61,6 @@ Check it below:, f 64;
 #X obj 601 224 display;
 #X text 479 170 Divide octave by:;
 #X text 497 226 Interval Ratio;
-#X text 30 21 A musical intervak is a proportional relationship. For
-example \, an octave is a proportion (or ratio) of two to one (2/1)
-\, as in: 220Hz/110Hz. in this way \, 220Hz is an octave above 110Hz
-\, and 440Hz an octave higher than 220Hz., f 63;
 #X text 777 219 Interval;
 #X text 756 134 Try other divisions of the octave:, f 13;
 #X obj 601 255 value semitone;
@@ -82,29 +78,33 @@ get the number of semitones by simply multiplying it by 12!, f 62
 #X obj 722 468 log 2;
 #X obj 182 244 log 2;
 #X obj 231 552 expr $f1*$f1;
+#X text 30 21 A musical interval is a proportional relationship. For
+example \, an octave is a proportion (or ratio) of two to one (2/1)
+\, as in: 220Hz/110Hz. in this way \, 220Hz is an octave above 110Hz
+\, and 440Hz an octave higher than 220Hz., f 63;
 #X connect 0 0 25 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
-#X connect 6 0 60 0;
+#X connect 6 0 59 0;
 #X connect 7 0 6 0;
 #X connect 8 0 7 0;
-#X connect 12 0 59 0;
-#X connect 16 0 58 0;
+#X connect 12 0 58 0;
+#X connect 16 0 57 0;
 #X connect 17 0 16 0;
-#X connect 18 0 50 0;
-#X connect 19 0 58 0;
+#X connect 18 0 49 0;
+#X connect 19 0 57 0;
 #X connect 20 0 22 0;
 #X connect 23 0 20 0;
-#X connect 24 0 57 0;
+#X connect 24 0 56 0;
 #X connect 25 0 12 0;
 #X connect 40 0 43 0;
 #X connect 41 0 42 0;
 #X connect 42 0 40 0;
-#X connect 43 0 49 0;
-#X connect 50 0 58 0;
-#X connect 57 0 55 0;
-#X connect 58 0 24 0;
-#X connect 59 0 13 0;
-#X connect 60 0 9 0;
+#X connect 43 0 48 0;
+#X connect 49 0 57 0;
+#X connect 56 0 54 0;
+#X connect 57 0 24 0;
+#X connect 58 0 13 0;
+#X connect 59 0 9 0;

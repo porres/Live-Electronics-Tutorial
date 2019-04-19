@@ -1,9 +1,9 @@
-#N canvas 369 23 558 587 12;
+#N canvas 488 49 558 587 12;
 #X obj 215 113 sqrt;
 #X msg 215 90 2;
 #X msg 177 111 2;
 #X obj 215 206 nbx 5 18 -1e+37 1e+37 0 0 empty empty Cents 68 10 0
-12 -228856 -1 -1 1200 256;
+12 -228856 -1 -1 0 256;
 #X text 86 367 Cents;
 #X obj 127 340 ratio2cents;
 #X obj 127 395 cents2ratio;
