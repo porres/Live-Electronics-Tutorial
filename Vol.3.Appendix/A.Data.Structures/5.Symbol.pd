@@ -1,7 +1,7 @@
 #N struct DS-5 float x float y symbol sym;
 #N canvas 385 30 533 505 12;
 #N canvas 976 104 358 171 display 1;
-#X scalar DS-5 50 50 shfgkdhgf \;;
+#X scalar DS-5 70 42 symbol \;;
 #X restore 379 164 pd display;
 #N canvas 440 205 535 580 template 0;
 #X obj 57 348 filledpolygon 999 0 5 5 5 105 5 105 55 5 55;

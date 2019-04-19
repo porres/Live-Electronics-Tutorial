@@ -36,16 +36,16 @@
 -1;
 #X obj 56 301 append DS-2 a x y;
 #X msg 56 228 127 64 64;
-#X text 43 20 In this example we'll "get" and "set" the value of the
-float and its coordinates with the [get] and [set] objects. These objects
-need a pointer to the data structure \, but this is given as the output
-of [append]., f 55;
 #X text 32 574 The [trigger] object also deals with pointers and we
 use it to send the pointer to the [set] and [get] objects. See above
 how the number box gets the value from "a" in the left \, and how you
 can set its value by using the number box as well. You can also get
 and set the coordinates as in the right., f 55;
 #X text 68 334 <= pointer of the added Data Structure;
+#X text 43 20 In this example we'll "get" and "set" the value of the
+float and its coordinates with the [get] and [set] objects. These objects
+need a pointer to the data structure \, which is given by the outlet
+of [append]., f 55;
 #X connect 0 0 22 3;
 #X connect 1 0 21 0;
 #X connect 2 0 0 0;

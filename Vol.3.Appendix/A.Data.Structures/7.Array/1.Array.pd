@@ -1,38 +1,11 @@
-#N struct DS-7 float x float y array DS-table f;
-#N struct f float y;
-#N canvas 268 93 820 703 12;
+#N canvas 110 98 820 703 12;
 #N canvas 1089 316 316 192 display 1;
-#X scalar DS-7 25 75 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
-0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
-\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
-0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
-\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
-0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 5 \; 8 \; 9 \; 10 \; 10.5
-\; 11 \; 11.3333 \; 11.6667 \; 12 \; 12 \; 12 \; 12 \; 12.25 \; 12.5
-\; 12.75 \; 13 \; 13.3333 \; 13.6667 \; 14 \; 14 \; 14 \; 14 \; 14
-\; 14.5 \; 15 \; 15 \; 15 \; -44 \; -44 \; -44 \; -44 \; -43.5556 \;
--43.1111 \; -42.6667 \; -42.2222 \; -41.7778 \; -41.3333 \; -40.8889
-\; -40.4445 \; -40 \; -39.2727 \; -38.5455 \; -37.8182 \; -37.0909
-\; -36.3636 \; -35.6364 \; -34.9091 \; -34.1818 \; -33.4546 \; -32.7273
-\; -32 \; -31.25 \; -30.5 \; -29.75 \; -29 \; -28.25 \; -27.5 \; -26.75
-\; -26 \; -25.25 \; -24.5 \; -23.75 \; -23 \; -22.25 \; -21.5 \; -20.75
-\; -20 \; -19.25 \; -18.5 \; -17.75 \; -17 \; -16.2 \; -15.4 \; -14.6
-\; -13.8 \; -13 \; -12.2 \; -11.4 \; -10.6 \; -9.8 \; -9 \; -8 \; -7
-\; -6.25 \; -5.5 \; -4.75 \; -4 \; -3 \; -2 \; -1 \; 0 \; 0 \; 0 \;
-0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
-\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
-0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
-\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
-0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
-\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
-0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
-\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; \;;
 #X coords 0 192 1 191 0 0 0;
 #X restore 220 238 pd display;
 #X obj 668 151 pointer;
 #X obj 71 268 loadbang;
 #X obj 566 142 r coords;
-#N canvas 527 434 537 224 element 0;
+#N canvas 692 43 537 224 element 0;
 #X obj 186 135 struct f float y;
 #X text 77 38 The element is defined as a struct of name "f" containing
 only a float named "y". Since this is also the special variable name
@@ -47,14 +20,14 @@ vertically \, as in Pd's arrays.;
 size with the [setsize] object. In a similar fashion \, this object
 needs a struct name \, the array name and a pointer to it in the right
 inlet., f 44;
-#N canvas 670 377 519 392 template 0;
-#X text 76 50 Data Structure named "DS-7" holding coordinates floats
-"x/y" and an array named "table" using the struct named "element" defined
-in the other subpatch., f 53;
+#N canvas 520 486 519 392 template 0;
 #X text 94 202 The drawing instruction for the array is given by the
 [plot] object. It needs the array name ("table")., f 40;
 #X obj 90 132 struct DS-7 float x float y array DS-table f;
 #X obj 280 266 plot DS-table;
+#X text 76 41 Data Structure named "DS-7" holding coordinates floats
+"x/y" and an array named "DS-table" using the array's element struct
+named "f" defined in the other subpatch., f 53;
 #X restore 220 211 pd template;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array array 266 float 2;
@@ -70,7 +43,7 @@ Check the subpatches below., f 49;
 just like you normally do in Pd's arrays to the left., f 22;
 #X obj 509 607 pointer;
 #X obj 509 664 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 266 256;
+-228856 -1 -1 0 256;
 #X msg 509 575 traverse pd-display \, next;
 #X text 400 442 The [getsize] object is similar to [setsize]. It needs
 a struct name and an array name \, which can be given as arguments.

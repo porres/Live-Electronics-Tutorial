@@ -1,9 +1,9 @@
 #N struct DS-8 float x float y array table f;
 #N struct f float y;
-#N canvas 228 69 746 401 12;
+#N canvas 228 267 746 401 12;
 #N canvas 1024 168 334 221 display 1;
-#X scalar DS-8 10 105 \; 0 \; 0 \; 0 \; 0 \; 0 \; 100 \; 0 \; 0 \;
-0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; \;;
+#X scalar DS-8 10 105 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; \;;
 #X coords 0 221 1 220 0 0 0;
 #X restore 201 169 pd display;
 #X obj 629 129 pointer;
@@ -19,7 +19,7 @@ vertically \, as in Pd's arrays.;
 #X text 82 187 draw a black dot to represent the value:;
 #X restore 119 142 pd element;
 #X obj 374 134 r size;
-#N canvas 391 208 509 380 template 0;
+#N canvas 216 312 509 380 template 0;
 #X text 61 46 Data Structure named "DS-8" holding coordinates floats
 "x/y" and an array named "table" using the struct named "element" defined
 in the other subpatch., f 53;
@@ -40,7 +40,7 @@ pair and a spacing value (20) between the floats in the array., f
 #X obj 404 263 nbx 3 16 0 15 0 0 empty index empty 0 -8 0 12 -228856
 -1 -1 5 256;
 #X obj 336 261 nbx 4 16 -100 100 0 0 empty empty empty 0 -8 0 12 -228856
--1 -1 100 256;
+-1 -1 0 256;
 #X text 411 239 index;
 #X text 340 237 value;
 #X msg 43 219 \; pd-display clear \, vis 1 \; pointer traverse pd-display
