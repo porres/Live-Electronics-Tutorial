@@ -1,5 +1,5 @@
 #N canvas 565 61 546 438 12;
-#N canvas 577 236 694 425 Compressor 0;
+#N canvas 899 361 694 425 Compressor 0;
 #X obj 56 33 inlet~;
 #X obj 56 370 outlet~;
 #X obj 56 118 rfft~;
@@ -13,22 +13,21 @@
 #X floatatom 195 78 5 0 100 0 - - -;
 #X obj 195 139 expr 1 - ($f1 / 100) \; if ($f1 <= 1 \, 1 \, $f1 * $f1)
 ;
-#X obj 308 62 r \$0-set-block;
-#X obj 308 86 block~;
 #X text 393 146 <==;
 #X obj 106 166 mag~;
 #X obj 56 78 hann~;
 #X obj 56 308 hann~;
 #X obj 56 340 *~;
-#X obj 119 336 expr 1 / ($f1 * overlap_\$0 * 0.375);
 #X obj 119 304 blocksize~;
 #X text 423 145 clip values to 1 or lets them through, f 19;
-#X connect 0 0 16 0;
+#X obj 308 86 block~ 2048 4;
+#X obj 119 336 expr 1 / ($f1 * 4 * 0.375);
+#X connect 0 0 14 0;
 #X connect 2 0 4 0;
-#X connect 2 0 15 0;
+#X connect 2 0 13 0;
 #X connect 2 1 5 0;
-#X connect 2 1 15 1;
-#X connect 3 0 17 0;
+#X connect 2 1 13 1;
+#X connect 3 0 15 0;
 #X connect 4 0 3 0;
 #X connect 5 0 3 1;
 #X connect 6 0 5 1;
@@ -39,13 +38,12 @@
 #X connect 11 0 8 0;
 #X connect 11 1 6 2;
 #X connect 11 1 9 0;
-#X connect 12 0 13 0;
-#X connect 15 0 6 0;
-#X connect 16 0 2 0;
-#X connect 17 0 18 0;
-#X connect 18 0 1 0;
-#X connect 19 0 18 1;
-#X connect 20 0 19 0;
+#X connect 13 0 6 0;
+#X connect 14 0 2 0;
+#X connect 15 0 16 0;
+#X connect 16 0 1 0;
+#X connect 17 0 20 0;
+#X connect 20 0 16 1;
 #X restore 107 223 pd Compressor;
 #X obj 245 183 vsl 15 100 0 100 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
