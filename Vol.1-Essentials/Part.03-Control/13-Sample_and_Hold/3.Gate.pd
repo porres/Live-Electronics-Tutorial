@@ -28,9 +28,6 @@
 #X obj 670 333 bl.saw~;
 #X obj 670 417 out~;
 #X obj 670 305 rescale~ 50 250;
-#X obj 148 375 plateverb~ 50 0.6 0.25 0.8 0.6, f 18;
-#X obj 459 391 plateverb~ 50 0.6 0.25 0.8 0.6, f 18;
-#X obj 670 365 plateverb~ 50 0.6 0.25 0.8 0.6, f 18;
 #X text 16 17 By default \, [sh~] operates in "gate" mode \, in which
 it lets the signal through if the trigger signal is above s threshold
 (0 by default)., f 55;
@@ -46,10 +43,13 @@ the input is sampled and held. The object will only be retriggered
 if the trigger signal falls below the threshold first. You can set
 a new threshold value with the "thresh" message. Check both examples
 below.;
+#X obj 148 375 plate.rev~ 50 0.6 0.25 0.8 0.6, f 18;
+#X obj 459 391 plate.rev~ 50 0.6 0.25 0.8 0.6, f 18;
+#X obj 670 365 plate.rev~ 50 0.6 0.25 0.8 0.6, f 18;
 #X connect 0 0 7 0;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
-#X connect 3 0 27 0;
+#X connect 3 0 30 0;
 #X connect 4 0 0 0;
 #X connect 5 0 2 1;
 #X connect 7 0 3 0;
@@ -59,7 +59,7 @@ below.;
 #X connect 11 0 13 1;
 #X connect 12 0 11 0;
 #X connect 13 0 10 0;
-#X connect 14 0 28 0;
+#X connect 14 0 31 0;
 #X connect 16 0 14 0;
 #X connect 17 0 19 0;
 #X connect 18 0 26 0;
@@ -68,11 +68,11 @@ below.;
 #X connect 21 0 19 0;
 #X connect 22 0 21 0;
 #X connect 23 0 22 0;
-#X connect 24 0 29 0;
+#X connect 24 0 32 0;
 #X connect 26 0 24 0;
-#X connect 27 0 6 0;
-#X connect 27 1 6 1;
-#X connect 28 0 15 0;
-#X connect 28 1 15 1;
-#X connect 29 0 25 0;
-#X connect 29 1 25 1;
+#X connect 30 0 6 0;
+#X connect 30 1 6 1;
+#X connect 31 0 15 0;
+#X connect 31 1 15 1;
+#X connect 32 0 25 0;
+#X connect 32 1 25 1;

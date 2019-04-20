@@ -29,7 +29,7 @@
 #X obj 43 335 tabwrite im1_\$0;
 #X obj 50 182 expr cos($f1) \; sin($f1) \; cos($f1 * 2) \; sin($f1
 * 2) \; $f2;
-#N canvas 11 46 935 668 loop 1;
+#N canvas 64 46 935 668 loop 1;
 #X obj 106 192 until;
 #X obj 144 241 + 1;
 #X msg 124 216 0;

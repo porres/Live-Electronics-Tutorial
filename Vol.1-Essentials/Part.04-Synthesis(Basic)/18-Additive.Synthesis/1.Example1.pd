@@ -2,7 +2,7 @@
 #X obj 502 303 mtof;
 #X obj 502 330 trigger float bang;
 #X obj 502 278 nbx 2 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
--228856 -1 -1 39 256;
+-228856 -1 -1 0 256;
 #N canvas 680 54 531 551 parcial 0;
 #X obj 201 201 cnv 15 186 78 empty empty empty 20 12 0 14 -249661 -66577
 0;
@@ -42,7 +42,6 @@
 #X obj 502 359 send \$0-fund;
 #X text 544 278 MIDI;
 #X obj 625 400 out~;
-#X obj 502 248 randi 36 60;
 #N canvas 680 54 531 551 parcial 0;
 #X obj 201 201 cnv 15 186 78 empty empty empty 20 12 0 14 -249661 -66577
 0;
@@ -303,15 +302,16 @@ of a partial (also not possible with the "sinesum" command). Though
 it does change the waveform \, you can note how it doesn't change our
 perception of the resulting sound., f 49;
 #X obj 502 164 loadbang;
-#X obj 502 191 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 502 191 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X obj 502 219 tempo 30 100;
+#X obj 502 248 rand.i 36 60;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 2 0 0 0;
 #X connect 4 0 7 0;
 #X connect 4 0 7 1;
-#X connect 8 0 2 0;
+#X connect 19 0 20 0;
 #X connect 20 0 21 0;
 #X connect 21 0 22 0;
-#X connect 22 0 8 0;
+#X connect 22 0 2 0;

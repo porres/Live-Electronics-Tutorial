@@ -1,7 +1,7 @@
 #N canvas 750 114 482 502 12;
 #X obj 185 324 mtof;
 #X obj 185 292 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
--228856 -1 -1 41 256;
+-228856 -1 -1 0 256;
 #X obj 185 183 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X obj 185 157 loadbang;
@@ -337,17 +337,17 @@ with different random control parameters \, check it out., f 55;
 #X restore 185 355 pd additive;
 #X obj 185 396 out~;
 #X obj 185 225 tempo 15 50;
-#X obj 185 258 randi 36 61;
 #X text 30 19 Taking the idea of the last example one step further
 \, we now have independent envelopes for each pair of oscillators \,
 as well as an independent panoramic control. The attacks of each envelope
 happens also at a random delayed time after the attack.;
 #X text 33 96 Open [pd additive] for more details.;
+#X obj 185 259 rand.i 36 61;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 2 0 6 0;
 #X connect 3 0 2 0;
 #X connect 4 0 5 0;
 #X connect 4 1 5 1;
-#X connect 6 0 7 0;
-#X connect 7 0 1 0;
+#X connect 6 0 9 0;
+#X connect 9 0 1 0;

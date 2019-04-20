@@ -2,18 +2,18 @@
 #X obj 119 395 *~;
 #X obj 73 202 mtof;
 #X obj 73 238 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 38.8909 256;
+-228856 -1 -1 87.3071 256;
 #X text 131 236 Hz;
 #X obj 283 291 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 1500 256;
+-228856 -1 -1 0 256;
 #X obj 73 132 tgl 25 0 empty empty empty 0 -6 0 8 -228856 -1 -1 1 1
 ;
-#X obj 186 203 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 186 203 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X text 356 231 Envelope Filter;
 #X text 208 202 Note On/Off;
 #X obj 286 269 hsl 128 15 500 3000 0 0 empty empty empty -2 -8 0 10
--228856 -1 -1 6200 1;
+-228856 -1 -1 0 1;
 #X obj 73 106 loadbang;
 #X obj 186 349 adsr~ 50 200 0.8 250;
 #X obj 202 277 rescale~ 50 1500, f 8;
@@ -24,18 +24,18 @@
 #X obj 141 220 outlet;
 #X obj 74 218 outlet;
 #X obj 52 29 inlet;
-#X obj 52 120 randi 24 51;
 #X obj 74 183 mono;
 #X obj 74 151 makenote 1 500;
 #X obj 52 85 tempo 90 50;
-#X connect 0 0 7 0;
+#X obj 52 120 rand.i 24 51;
+#X connect 0 0 6 0;
 #X connect 3 0 0 0;
-#X connect 4 0 6 0;
-#X connect 5 0 2 0;
-#X connect 5 1 1 0;
-#X connect 6 0 5 0;
-#X connect 6 1 5 1;
-#X connect 7 0 4 0;
+#X connect 4 0 2 0;
+#X connect 4 1 1 0;
+#X connect 5 0 4 0;
+#X connect 5 1 4 1;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
 #X restore 73 171 pd note-in;
 #X text 53 27 The "envelope filter" technique uses an envelope to control
 the filter frequency. Here we have two envelopes \, one to control

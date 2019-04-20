@@ -1,4 +1,4 @@
-#N canvas 216 23 693 397 12;
+#N canvas 519 194 693 397 12;
 #X obj 376 234 hsl 200 15 1 40 0 0 \$0-width \$0-width-set Sustain
 -2 -8 1 12 -191407 -1 -1 3572 1;
 #X obj 376 269 hsl 200 15 0.9 0.999 0 0 \$0-feedback \$0-feedback-set
@@ -476,12 +476,12 @@ Feedback -2 -8 1 12 -228856 -1 -1 19096 1;
 #X obj 199 240 catch~ \$0-out;
 #X obj 199 264 drive~;
 #X obj 199 290 out~;
-#X obj 205 154 randi 1 8;
 #X text 336 63 This example has eigth 6-voice chords \, which are stored
 in tables and randomly picked. Each voice is played by a different
 subpatch and also attacked with a random delay., f 40;
 #X text 336 143 Not much else is new \, we have the same duration/sustain
 parameter from the last example., f 40;
+#X obj 205 154 rand.i 1 8;
 #X connect 3 0 9 0;
 #X connect 4 0 9 1;
 #X connect 5 0 4 0;
@@ -491,9 +491,9 @@ parameter from the last example., f 40;
 #X connect 7 0 13 0;
 #X connect 7 0 14 0;
 #X connect 7 0 15 0;
-#X connect 7 1 19 0;
+#X connect 7 1 21 0;
 #X connect 9 0 7 0;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
 #X connect 17 0 18 1;
-#X connect 19 0 6 0;
+#X connect 21 0 6 0;
