@@ -1,0 +1,27 @@
+#N canvas 530 166 588 457 12;
+#X obj 115 247 spectrograph~;
+#X msg 383 161 size \$1;
+#X obj 410 185 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X msg 410 206 db \$1;
+#X msg 455 206 log \$1;
+#X obj 455 185 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+1;
+#X msg 383 138 1024;
+#X msg 344 138 256;
+#X obj 218 146 setdsp~;
+#X text 81 27 The ELSE library offers [spectrograph~] \, which is an
+abstraction that plost spectral amplitude information based on what
+we've seen so far. You can set its size and how to display the amplitude
+(linear or dB) and frequency (linear or log)., f 53;
+#X obj 115 201 bl.saw~;
+#X obj 115 173 sig~ 100;
+#X connect 1 0 0 1;
+#X connect 2 0 3 0;
+#X connect 3 0 0 1;
+#X connect 4 0 0 1;
+#X connect 5 0 4 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 0;
+#X connect 10 0 0 0;
+#X connect 11 0 10 0;
