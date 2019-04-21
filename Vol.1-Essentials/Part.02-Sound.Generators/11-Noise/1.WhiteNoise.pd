@@ -9,7 +9,7 @@
 #X obj 233 330 rms~ -db;
 #X obj 677 153 rms~ -db;
 #X obj 233 358 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 -4.69746 256;
+-228856 -1 -1 0 256;
 #X obj 677 183 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 601 333 out~;
@@ -41,6 +41,7 @@ White noise has energy equally distributed over the whole spectral
 range (from 0 Hz to Nyquist). Calling it white is an analogy to white
 light \, which is a combination of lights of different wavelengths
 in the visible spectrum.;
+#X obj 343 337 rand.f~;
 #X connect 0 0 3 0;
 #X connect 0 0 3 1;
 #X connect 1 0 12 0;
