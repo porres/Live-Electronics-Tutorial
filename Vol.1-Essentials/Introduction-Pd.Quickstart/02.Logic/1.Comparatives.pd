@@ -1,0 +1,107 @@
+#N canvas 430 66 906 513 12;
+#X floatatom 196 124 7 -6 6 0 - - -;
+#X obj 64 179 == 5;
+#X obj 131 179 != 5;
+#X obj 196 179 > 5;
+#X obj 258 179 < 5;
+#X floatatom 64 206 5 0 0 0 - - -;
+#X floatatom 131 206 5 0 0 0 - - -;
+#X floatatom 196 206 5 0 0 0 - - -;
+#X floatatom 258 206 5 0 0 0 - - -;
+#X floatatom 326 206 5 0 0 0 - - -;
+#X floatatom 388 206 5 0 0 0 - - -;
+#X obj 326 179 >= 5;
+#X obj 388 179 <= 5;
+#X obj 64 228 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 131 228 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 196 228 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 326 228 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 388 228 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 258 228 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 0
+1;
+#X obj 111 296 ==;
+#X obj 136 355 >;
+#X obj 167 412 <;
+#X obj 151 384 >=;
+#X obj 182 442 <=;
+#X obj 124 324 !=;
+#X text 144 293 equal to;
+#X text 160 324 different than;
+#X text 169 354 bigger than;
+#X text 198 412 smaller than;
+#X text 181 385 bigger than or equal to;
+#X text 216 441 smaller than or equal to;
+#X text 85 262 Comparatives:;
+#X text 253 124 click and change values;
+#X text 54 29 These objects give 1 for true and 0 for false! They are
+"conditionals" because they can tell you if something (or a "condition")
+is "true" or "false". The conditinals are \, obviously \, purely mathematical.
+, f 57;
+#X obj 569 168 &&;
+#X obj 569 139 hot;
+#X obj 569 200 display;
+#X obj 562 104 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 587 104 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 686 139 hot;
+#X obj 686 200 display;
+#X obj 679 104 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 704 104 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 686 168 ||;
+#X text 519 167 "And";
+#X text 726 169 "Or";
+#X text 529 31 We also have objects for logical "And" and "Or"., f
+32;
+#X text 591 195 both are = 1, f 7;
+#X text 711 195 one and/or the other = 1, f 14;
+#X text 504 275 All of these operators are available in the [expr]
+family of objects., f 38;
+#X obj 552 450 display;
+#X floatatom 745 328 5 0 0 0 - - -;
+#X floatatom 648 329 5 0 0 0 - - -;
+#X floatatom 552 328 5 0 0 0 - - -;
+#X obj 552 417 expr $f1 > $f2 && $f2 == $f3;
+#X obj 552 370 hot 3, f 28;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 0 0 4 0;
+#X connect 0 0 11 0;
+#X connect 0 0 12 0;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 18 0;
+#X connect 9 0 16 0;
+#X connect 10 0 17 0;
+#X connect 11 0 9 0;
+#X connect 12 0 10 0;
+#X connect 34 0 36 0;
+#X connect 35 0 34 0;
+#X connect 35 1 34 1;
+#X connect 37 0 35 0;
+#X connect 38 0 35 1;
+#X connect 39 0 43 0;
+#X connect 39 1 43 1;
+#X connect 41 0 39 0;
+#X connect 42 0 39 1;
+#X connect 43 0 40 0;
+#X connect 51 0 55 2;
+#X connect 52 0 55 1;
+#X connect 53 0 55 0;
+#X connect 54 0 50 0;
+#X connect 55 0 54 0;
+#X connect 55 1 54 1;
+#X connect 55 2 54 2;

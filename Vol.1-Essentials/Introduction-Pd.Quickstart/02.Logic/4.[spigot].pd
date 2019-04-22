@@ -1,0 +1,31 @@
+#N canvas 725 85 459 494 12;
+#X obj 92 114 spigot;
+#X floatatom 92 87 4 0 0 0 - - -;
+#X floatatom 92 144 5 0 0 0 - - -;
+#X obj 131 89 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X text 59 25 The [spigot] object lets messages through or not depending
+on a condition., f 44;
+#X text 153 88 If open \, let message through;
+#X obj 176 355 != 0;
+#X obj 176 324 f;
+#X obj 235 260 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 166 284 t b f;
+#X obj 176 381 sel 1;
+#X obj 201 409 float;
+#X floatatom 166 253 5 0 0 0 - - -;
+#X floatatom 201 439 5 0 0 0 - - -;
+#X text 60 182 Here's a way to implement it with [select] and comparatives
+\, again for didactical reasons., f 42;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 0 1;
+#X connect 6 0 10 0;
+#X connect 7 0 6 0;
+#X connect 8 0 7 1;
+#X connect 9 0 7 0;
+#X connect 9 1 11 1;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 12 0 9 0;

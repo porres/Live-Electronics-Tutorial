@@ -1,0 +1,89 @@
+#N canvas 234 150 1209 814 12;
+#X msg 64 553 menufont;
+#X msg 89 614 font 16 100 100;
+#X msg 624 250 findagain;
+#X obj 3 11 cnv 15 400 40 empty empty Send_Menssges_To_Patch: 20 12
+0 24 -262144 -66577 0;
+#X text 490 34 FIND:;
+#X msg 587 450 msg 10 10 bang;
+#X msg 609 505 obj 10 40 metro 500;
+#X msg 602 478 floatatom 100 10 7 50 5000;
+#X msg 621 540 connect 0 0 2 0;
+#X msg 634 563 connect 1 0 2 1;
+#X msg 659 625 connect 2 0 3 0;
+#X obj 602 692 send pd-subpatch;
+#X msg 647 599 obj 10 70 bng;
+#X msg 577 166 find patch 0;
+#X msg 600 212 find patch 1;
+#X msg 530 625 clear;
+#X msg 448 591 vis \$1;
+#X obj 448 564 tgl 15 0 empty empty empty 17 7 0 10 -261682 -1 -1 0
+1;
+#X text 21 80 We wont see here all messages we can send to Pd. You
+can check more examples inside the browser at: manuals/pd-msg/;
+#X obj 25 264 send pd-1.Messages_To_Patch.pd;
+#X msg 25 231 obj 350 230 pd subpatch;
+#X text 37 146 This message creates the [pd] object (a subpatch) with
+the name/argument "subpatch". The numbers are the coordinates (horizontal
+\, vertical) where it will be placed.;
+#X text 199 230 <- click: voilá ->;
+#X text 34 316 Now \, the message is being sent to This Patch! so you
+need to specify this patch's name \, the format is sending to "pd-"
+plus the file name with the ".pd" extension.;
+#X text 23 390 Messages are actually sent to Pd \, and you can also
+send messages to other patches from this patch! Just have it opened
+and its name as the sending address.;
+#X text 21 459 Attributes from Menus can also be edited via messages.
+;
+#X obj 77 655 s pd-1.Messages_To_Patch.pd;
+#X text 133 552 Font Menu;
+#X text 205 596 Change Font;
+#X msg 77 585 font 12 110 100;
+#X text 549 30 Check the "Find" Menu. This feature is very useful to
+find words \, objects \, GUIs. It searches the whole patch including
+subwindows and abstractions.;
+#X text 554 98 We can also look for stuff and "find" them with dynamic
+patching:;
+#X obj 600 289 s pd-1.Messages_To_Patch.pd;
+#X text 687 164 searches for "patch" \, 0 is not to look for it as
+a whole word \, so it also finds "subpatch";
+#X text 698 211 searches "patch" as a whole word;
+#X text 706 250 to find others \, keep clicking here.;
+#X text 568 333 Pd can't find "\$0" \, so don't search for whole word
+and exclude it!;
+#X text 528 403 We can also send messages to subpatches \, like the
+one we created in the beggining! Open it and click these messages:
+;
+#X text 697 449 creates "bang message";
+#X text 796 476 creates atom number box;
+#X text 757 505 creates object;
+#X text 760 539 connects obecjts (# order it was created \, outlet
+# \; # order it was created \, outlet #);
+#X text 761 598 creates "bng object" \, which is a GUI bang;
+#X text 820 657 creates comment;
+#X msg 660 658 text 10 130 Yeah!;
+#N canvas 0 22 450 300 subpatch 0;
+#X restore 350 230 pd subpatch;
+#X text 444 539 Other commands:;
+#X text 469 563 Open/Close;
+#X text 527 597 Erase;
+#X text 571 732 You the have to send it to "pd-" plus the subpatch
+name.;
+#X connect 0 0 26 0;
+#X connect 1 0 26 0;
+#X connect 2 0 32 0;
+#X connect 5 0 11 0;
+#X connect 6 0 11 0;
+#X connect 7 0 11 0;
+#X connect 8 0 11 0;
+#X connect 9 0 11 0;
+#X connect 10 0 11 0;
+#X connect 12 0 11 0;
+#X connect 13 0 32 0;
+#X connect 14 0 32 0;
+#X connect 15 0 11 0;
+#X connect 16 0 11 0;
+#X connect 17 0 16 0;
+#X connect 20 0 19 0;
+#X connect 29 0 26 0;
+#X connect 44 0 11 0;

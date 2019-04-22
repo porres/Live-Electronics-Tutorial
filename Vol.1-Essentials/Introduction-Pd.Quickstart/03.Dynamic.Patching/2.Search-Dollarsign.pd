@@ -1,0 +1,34 @@
+#N canvas 782 22 576 797 12;
+#X obj -116 19 cnv 15 400 40 empty empty Search_Dollarsign 20 19 0
+24 -262144 -66577 0;
+#X text -137 348 ============================================================
+;
+#X msg -70 159 find \$1-Frequencia 1;
+#X msg -62 503 find \$1 1;
+#X obj -62 451 bng 15 250 50 0 empty empty empty 17 7 0 10 -232576
+-1 -1;
+#X msg -51 256 find \$1 1;
+#X obj -51 204 bng 15 250 50 0 empty empty empty 17 7 0 10 -232576
+-1 -1;
+#X obj -51 228 symbol \$1-Frequencia;
+#X obj -62 475 symbol \$0-Frequencia;
+#X text -146 86 If you hit a message with a dollarsign so you can search
+for it \, it won't work because it won't be sent as a message!;
+#X text 87 159 Doesn't Work;
+#X text -30 201 It Works.;
+#X text -96 391 But you can't look for "\$0"!;
+#X text -84 417 Not even like this;
+#X obj -70 304 send pd-2.Search-Dollarsign.pd;
+#X obj -62 541 send pd-2.Search-Dollarsign.pd;
+#X msg 38 674 symbol \$0-Frequencia;
+#X symbolatom 38 712 18 0 0 0 - - -;
+#X text -130 627 Click on the message to see that \, instead of "\$0"
+\, what you you get is just "0".;
+#X connect 2 0 14 0;
+#X connect 3 0 15 0;
+#X connect 4 0 8 0;
+#X connect 5 0 14 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 3 0;
+#X connect 16 0 17 0;

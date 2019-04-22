@@ -1,0 +1,41 @@
+#N canvas 253 23 495 637 12;
+#X floatatom 69 329 5 0 0 0 - - -;
+#X floatatom 69 388 5 0 0 0 - - -;
+#X obj 69 357 expr if($f1 > 10 \, 10 \, if($f1 < -10 \, -10 \, $f1))
+;
+#X text 119 387 <= clips at -10 and 10;
+#X obj 211 532 clip -10 10;
+#X floatatom 211 499 5 0 0 0 - - -;
+#X floatatom 211 566 5 0 0 0 - - -;
+#X obj 186 154 moses 10;
+#X floatatom 126 102 5 -20 20 0 - - -;
+#X floatatom 186 182 5 0 0 0 - - -;
+#X text 88 157 then;
+#X text 188 200 then;
+#X text 237 203 else;
+#X text 40 20 We can have more than one [moses] to implement a nested
+conditional. Something like this:;
+#X msg 126 157 -10;
+#X msg 239 183 10;
+#X obj 186 246 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 4 256;
+#X text 256 153 else if < 10;
+#X obj 126 128 moses -10;
+#X text 201 127 if < -10;
+#X text 128 308 In [exprx] you can also nest an if function as a true/false
+expression:, f 36;
+#X text 248 243 <= clips at -10 and 10;
+#X text 87 446 The above patches implements a 'clip' function as in
+the [clip] object., f 38;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 7 0 9 0;
+#X connect 7 1 15 0;
+#X connect 8 0 18 0;
+#X connect 9 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X connect 18 0 14 0;
+#X connect 18 1 7 0;
