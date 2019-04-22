@@ -1,46 +1,7 @@
 #N struct 1003-DS float x float y array 1003-table 1003-f;
 #N struct 1003-f float y;
 #N canvas 259 98 820 539 12;
-#N canvas 1089 316 316 192 display 1;
-#X scalar 1003-DS 25 75 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
-0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
-\; 0 \; 0 \; 0 \; 0 \; 0 \; 4 \; 5.4 \; 6.8 \; 8.2 \; 9.6 \; 11 \;
-12 \; 13 \; 14 \; 15 \; 16 \; 17 \; 18 \; 9 \; 8.5 \; 8 \; 8.125 \;
-8.25 \; 8.375 \; 8.5 \; 8.625 \; 8.75 \; 8.875 \; 9 \; 9.16667 \; 9.33333
-\; 9.5 \; 9.66667 \; 9.83333 \; 10 \; 10.6 \; 11.2 \; 11.8 \; 12.4
-\; 13 \; 13.6 \; 14.2 \; 14.8 \; 15.4 \; 16 \; 16.6 \; 17.2 \; 17.8
-\; 18.4 \; 19 \; 19.7333 \; 20.4667 \; 21.2 \; 21.9333 \; 22.6667 \;
-23.4 \; 24.1333 \; 24.8667 \; 25.6 \; 26.3333 \; 27.0667 \; 27.8 \;
-28.5333 \; 29.2667 \; 30 \; 30.75 \; 31.5 \; 32.25 \; 33 \; 33.75 \;
-34.5 \; 35.25 \; 36 \; 36.75 \; 37.5 \; 38.25 \; 39 \; 39.6429 \; 40.2857
-\; 40.9286 \; 41.5714 \; 42.2143 \; 42.8571 \; 43.5 \; 44.1429 \; 44.7857
-\; 45.4286 \; 46.0714 \; 46.7143 \; 47.3571 \; 48 \; 48.5517 \; 49.1034
-\; 49.6552 \; 50.2069 \; 50.7586 \; 51.3103 \; 51.8621 \; 52.4138 \;
-52.9655 \; 53.5172 \; 54.069 \; 54.6207 \; 55.1724 \; 55.7241 \; 56.2759
-\; 56.8276 \; 57.3793 \; 57.931 \; 58.4827 \; 59.0345 \; 59.5862 \;
-60.1379 \; 60.6896 \; 61.2414 \; 61.7931 \; 62.3448 \; 62.8965 \; 63.4483
-\; 64 \; 64.3214 \; 64.6429 \; 64.9643 \; 65.2857 \; 65.6071 \; 65.9286
-\; 66.25 \; 66.5714 \; 66.8928 \; 67.2143 \; 67.5357 \; 67.8571 \;
-68.1785 \; 68.5 \; 68.8214 \; 69.1428 \; 69.4642 \; 69.7857 \; 70.1071
-\; 70.4285 \; 70.75 \; 71.0714 \; 71.3928 \; 71.7142 \; 72.0357 \;
-72.3571 \; 72.6785 \; 72.9999 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \;
-73 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73
-\; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \; 73 \;
-73 \; 72.9091 \; 72.8182 \; 72.7273 \; 72.6364 \; 72.5454 \; 72.4545
-\; 72.3636 \; 72.2727 \; 72.1818 \; 72.0909 \; 72 \; 71.9091 \; 71.8181
-\; 71.7272 \; 71.6363 \; 71.5454 \; 71.4545 \; 71.3636 \; 71.2727 \;
-71.1818 \; 71.0909 \; 70.9999 \; 70.7059 \; 70.4118 \; 70.1176 \; 69.8235
-\; 69.5294 \; 69.2353 \; 68.9412 \; 68.647 \; 68.3529 \; 68.0588 \;
-67.7647 \; 67.4706 \; 67.1764 \; 66.8823 \; 66.5882 \; 66.2941 \; 65.9999
-\; 65.3077 \; 64.6154 \; 63.9231 \; 63.2308 \; 62.5385 \; 61.8462 \;
-61.1539 \; 60.4615 \; 59.7692 \; 59.0769 \; 58.3846 \; 57.6923 \; 57
-\; 53 \; 49 \; 45 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
-\; 0 \; 0 \; \;;
-#X coords 0 192 1 191 0 0 0;
-#X restore 281 168 pd display;
 #X obj 693 140 pointer;
-#X obj 68 195 loadbang;
-#X obj 584 130 r coords;
 #N canvas 692 43 537 224 element 0;
 #X obj 199 151 struct \$0-f float y;
 #X text 77 38 The element of an array specifies the data type the array
@@ -48,10 +9,9 @@ includes. It is here defined as a struct of name "\$0-f" containing
 only a float named "y". Since 'y' is also the special variable name
 for the vertical coordinate \, this means you can drag this element
 vertically \, as in Pd's arrays.;
-#X restore 189 153 pd element;
-#X obj 433 139 r size;
+#X restore 181 154 pd element;
 #X obj 433 173 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 267 256;
+-228856 -1 -1 266 256;
 #N canvas 505 382 518 264 template 0;
 #X obj 73 116 struct \$0-DS float x float y array \$0-table \$0-f;
 #X obj 339 183 plot \$0-table;
@@ -61,14 +21,10 @@ named "\$0-table" using the array's element struct named "\$0-f" defined
 in the other subpatch., f 58;
 #X text 75 169 The [plot] object is used to give drawing instructions
 for arrays. It needs the array name ("\$0-table")., f 35;
-#X restore 189 179 pd template;
-#X msg 68 226 \; pd-display clear \, vis 1 \; pointer traverse pd-display
-\, bang \; coords 25 75 \; size 266;
-#X obj 693 113 r pointer;
-#X obj 506 414 pointer;
-#X obj 506 471 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 267 256;
-#X msg 506 382 traverse pd-display \, next;
+#X restore 181 180 pd template;
+#X obj 469 429 pointer;
+#X obj 469 486 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
 #X text 397 248 The [getsize] object is similar to [setsize]. It needs
 a struct name and an array name \, which can be given as arguments.
 It sends the array size when it receives a pointer to it. Here we use
@@ -79,10 +35,7 @@ first object instead of the head of the list., f 54;
 have "Y units per pixel" set to "-1"., f 39;
 #X text 83 398 This makes the array values inverted \, so you need
 to change it to "1" in the propeties., f 39;
-#X text 83 446 Check the properties for [pd display] (right click on
-it and select "properties")., f 39;
 #X text 51 326 IMPORTANT NOTE:, f 19;
-#X text 435 380 click =>;
 #X text 39 17 This example shows how to add and set an "array". An
 array is a collection of elements of the same data type \, which can
 be a float \, a symbol \, a text and even an array itself., f 49;
@@ -91,18 +44,55 @@ to define the element of an array in a separate subpatch ([pd element]).
 Check the subpatches below., f 49;
 #X obj 584 169 append \$0-DS x y;
 #X obj 433 200 setsize \$0-DS \$0-table;
-#X obj 506 442 getsize \$0-DS \$0-table;
+#X obj 469 457 getsize \$0-DS \$0-table;
 #X text 422 17 When creating an array \, you also need to set its size.
 We do it here with the [setsize] object. In a similar fashion \, this
 object needs a struct name \, the array name and a pointer to it in
 the right inlet., f 44;
-#X connect 1 0 21 2;
-#X connect 2 0 8 0;
-#X connect 3 0 21 0;
-#X connect 5 0 6 0;
-#X connect 6 0 22 0;
-#X connect 9 0 1 0;
-#X connect 10 0 23 0;
-#X connect 12 0 10 0;
-#X connect 21 0 22 1;
-#X connect 23 0 11 0;
+#X text 83 446 Check the properties for [pd display] and see that it
+has been corrected (right click on it and select "properties")., f
+39;
+#N canvas 1089 316 316 192 \$0-display 1;
+#X scalar 1003-DS 25 75 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
+\; 0 \; \;;
+#X coords 0 192 1 191 0 0 0;
+#X restore 281 168 pd \$0-display;
+#X obj 433 139 r \$0-size;
+#X obj 584 130 r \$0-coords;
+#X obj 693 113 r \$0-pointer;
+#X obj 469 400 message traverse pd-\$0-display \, next;
+#X obj 469 379 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 490 375 <= click;
+#X obj 75 219 initmess \; pd-\$0-display clear \, vis 1 \; \$0-pointer
+traverse pd-\$0-display \, bang \; \$0-coords 25 75 \; \$0-size 266
+;
+#X connect 0 0 12 2;
+#X connect 2 0 13 0;
+#X connect 4 0 14 0;
+#X connect 12 0 13 1;
+#X connect 14 0 5 0;
+#X connect 18 0 2 0;
+#X connect 19 0 12 0;
+#X connect 20 0 0 0;
+#X connect 21 0 4 0;
+#X connect 22 0 21 0;

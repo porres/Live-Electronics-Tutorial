@@ -1,8 +1,5 @@
-#N struct 1003-DS float x float y symbol sym;
-#N canvas 385 30 533 505 12;
-#N canvas 976 104 358 171 display 1;
-#X scalar 1003-DS 50 50 apple \;;
-#X restore 379 168 pd display;
+#N struct 1013-DS float x float y symbol sym;
+#N canvas 385 30 590 477 12;
 #N canvas 440 205 535 580 template 0;
 #X obj 57 348 filledpolygon 999 0 5 5 5 105 5 105 55 5 55;
 #X text 194 231 The instruction is to draw the "sym" variable in the
@@ -23,36 +20,41 @@ see how the coordinates get updted., f 45;
 the same as [dranumberl] . There is literal no difference \, it is
 really the same object. Maybe in the future they will become actual
 different objects \, but so far is just an alias., f 57;
-#X restore 379 141 pd template;
-#X symbolatom 52 342 10 0 0 0 - - -;
-#X msg 52 276 symbol banana;
-#X msg 60 311 symbol apple;
-#X obj 305 311 pointer;
-#X obj 196 128 loadbang;
-#X msg 347 219 \; pd-display clear \, vis 1, f 12;
-#X msg 305 284 traverse pd-display \, bang;
-#X obj 196 188 trigger list bang bang;
-#X msg 196 157 50 50;
-#X text 39 22 This example shows how to add and set a symbol variable.
+#X restore 298 158 pd template;
+#X symbolatom 49 302 10 0 0 0 - - -;
+#X msg 49 236 symbol banana;
+#X msg 57 271 symbol apple;
+#X obj 302 275 pointer;
+#X obj 192 142 loadbang;
+#X msg 192 171 50 50;
+#X text 59 24 This example shows how to add and set a symbol variable.
 See [pd template] for the declaration and drawing instructions.;
-#X text 51 427 When setting a symbol with [set] \, you need an extra
+#X text 79 388 When setting a symbol with [set] \, you need an extra
 "-symbol" argument. Unfortunately \, you cannot set floats and symbols
 with the same [set] object., f 62;
-#X text 45 242 set symbol:;
-#X obj 52 373 set -symbol \$0-DS sym;
-#X obj 196 343 append \$0-DS x y;
-#X text 40 61 We use [append] to add our Data Structure object in [pd
+#X text 42 202 set symbol:;
+#X obj 49 333 set -symbol \$0-DS sym;
+#X obj 193 303 append \$0-DS x y;
+#X text 60 63 We use [append] to add our Data Structure object in [pd
 display]. Note that you cannot set the symbol variable with [append]
 when adding the object. We need to use the [set] object for that.,
 f 65;
-#X connect 2 0 14 0;
-#X connect 3 0 2 0;
-#X connect 4 0 2 0;
-#X connect 5 0 15 2;
-#X connect 6 0 10 0;
-#X connect 8 0 5 0;
-#X connect 9 0 15 0;
-#X connect 9 1 8 0;
-#X connect 9 2 7 0;
-#X connect 10 0 9 0;
-#X connect 15 0 14 1;
+#N canvas 976 104 358 171 \$0-display 1;
+#X scalar 1013-DS 50 50 symbol \;;
+#X restore 388 158 pd \$0-display;
+#X obj 413 266 s pd-\$0-display;
+#X msg 413 240 clear \, vis 1;
+#X obj 192 202 trigger2 list pd-\$0-display bang;
+#X msg 302 232 traverse \$1 \, bang, f 12;
+#X connect 1 0 10 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 11 2;
+#X connect 5 0 6 0;
+#X connect 6 0 16 0;
+#X connect 11 0 10 1;
+#X connect 15 0 14 0;
+#X connect 16 0 11 0;
+#X connect 16 1 17 0;
+#X connect 16 2 15 0;
+#X connect 17 0 4 0;

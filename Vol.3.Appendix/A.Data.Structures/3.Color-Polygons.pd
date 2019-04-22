@@ -1,9 +1,7 @@
-#N struct 1004-DS float color;
-#N struct 1004-fill float color;
-#N canvas 102 149 824 398 12;
-#X obj 230 298 pointer;
-#X obj 105 115 loadbang;
-#X msg 105 144 500;
+#N struct 1007-DS float color;
+#N struct 1007-fill float color;
+#N canvas 251 298 855 330 12;
+#X obj 163 243 pointer;
 #N canvas 167 397 985 322 template-1 0;
 #X obj 611 198 drawpolygon color 20 0 25 95 25;
 #X obj 145 270 drawnumber color 100 20 color color=;
@@ -26,13 +24,8 @@ a single graphic object.;
 #X text 96 45 Data Structure named "\$0-DS" holding a float called
 "color"., f 35;
 #X obj 120 107 struct \$0-DS float color;
-#X restore 301 120 pd template-1;
-#N canvas 976 104 358 171 display-1 1;
-#X scalar 1004-DS 500 \;;
-#X restore 301 147 pd display-1;
-#X msg 263 206 \; pd-display-1 clear \, vis 1, f 12;
-#X msg 230 271 traverse pd-display-1 \, bang;
-#N canvas 547 174 421 518 template-2 0;
+#X restore 162 122 pd template-1;
+#N canvas 547 174 421 518 template-2 1;
 #X obj 67 171 drawnumber color 105 50 color color=;
 #X text 53 142 Draw instructions for the "color" float.;
 #X text 61 224 here we have a polygon with four coordinate pair points
@@ -46,38 +39,51 @@ enough to draw the shape., f 40;
 #X obj 58 98 struct \$0-fill float color;
 #X text 58 38 Data Structure named "\$0-fill" holding a float called
 "color"., f 31;
-#X restore 629 110 pd template-2;
-#N canvas 976 317 390 291 display-2 1;
-#X scalar 1004-fill 450 \;;
-#X restore 629 138 pd display-2;
-#X obj 105 175 trigger float bang bang;
-#X obj 565 308 pointer;
-#X msg 644 217 \; pd-display-2 clear \, vis 1, f 12;
-#X obj 486 124 loadbang;
-#X msg 565 278 traverse pd-display-2 \, bang;
-#X obj 486 184 trigger float bang bang;
-#X text 24 25 Now let's have more fun with drawing instructions and
+#X restore 548 110 pd template-2;
+#X text 34 26 Now let's have more fun with drawing instructions and
 insert a simple line shape with [drawpolygon]. See the [pd template-1]
 subpatch. In the [pd display-1] subpatch \, click and drag the number
 to see the colors change., f 55;
-#X text 438 27 Next \, we draw a bit less simple shapes and also use
+#X text 448 26 Next \, we draw a bit less simple shapes and also use
 the [filledpolygon] object. See the [pd template-1] subpatch for more
 details. You can also click and drag the number to change colors.,
 f 49;
-#X msg 486 153 450;
-#X obj 107 330 append \$0-DS color;
-#X obj 428 340 append \$0-fill color;
-#X connect 0 0 18 1;
-#X connect 1 0 2 0;
-#X connect 2 0 9 0;
-#X connect 6 0 0 0;
-#X connect 9 0 18 0;
-#X connect 9 1 6 0;
-#X connect 9 2 5 0;
-#X connect 10 0 19 1;
-#X connect 12 0 17 0;
-#X connect 13 0 10 0;
-#X connect 14 0 19 0;
-#X connect 14 1 13 0;
-#X connect 14 2 11 0;
-#X connect 17 0 14 0;
+#X obj 40 271 append \$0-DS color;
+#N canvas 976 104 358 171 \$0-display-1 0;
+#X scalar 1007-DS 500 \;;
+#X restore 277 122 pd \$0-display-1;
+#N canvas 962 346 383 313 \$0-display-2 0;
+#X scalar 1007-fill 450 \;;
+#X restore 653 110 pd \$0-display-2;
+#X msg 289 190 clear \, vis 1;
+#X msg 163 196 traverse \$1 \, bang, f 12;
+#X obj 40 206 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 500 256;
+#X obj 289 217 s pd-\$0-display-1;
+#X obj 40 160 trigger2 500 pd-\$0-display-1 bang, f 36;
+#X obj 40 128 loadbang;
+#X obj 594 226 pointer;
+#X msg 706 178 clear \, vis 1;
+#X msg 594 179 traverse \$1 \, bang, f 12;
+#X obj 457 194 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 450 256;
+#X obj 457 148 trigger2 450 pd-\$0-display-2 bang, f 36;
+#X obj 706 205 s pd-\$0-display-2;
+#X obj 457 259 append \$0-fill color;
+#X obj 457 116 loadbang;
+#X connect 0 0 5 1;
+#X connect 8 0 11 0;
+#X connect 9 0 0 0;
+#X connect 10 0 5 0;
+#X connect 12 0 10 0;
+#X connect 12 1 9 0;
+#X connect 12 2 8 0;
+#X connect 13 0 12 0;
+#X connect 14 0 20 1;
+#X connect 15 0 19 0;
+#X connect 16 0 14 0;
+#X connect 17 0 20 0;
+#X connect 18 0 17 0;
+#X connect 18 1 16 0;
+#X connect 18 2 15 0;
+#X connect 21 0 18 0;
