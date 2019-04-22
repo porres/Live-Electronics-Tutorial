@@ -1,4 +1,4 @@
-#N struct 1013-DS float x float y symbol sym;
+#N struct 1007-DS float x float y symbol sym;
 #N canvas 385 30 590 477 12;
 #N canvas 440 205 535 580 template 0;
 #X obj 57 348 filledpolygon 999 0 5 5 5 105 5 105 55 5 55;
@@ -40,7 +40,7 @@ display]. Note that you cannot set the symbol variable with [append]
 when adding the object. We need to use the [set] object for that.,
 f 65;
 #N canvas 976 104 358 171 \$0-display 1;
-#X scalar 1013-DS 50 50 symbol \;;
+#X scalar 1007-DS 50 50 symbol \;;
 #X restore 388 158 pd \$0-display;
 #X obj 413 266 s pd-\$0-display;
 #X msg 413 240 clear \, vis 1;

@@ -1,4 +1,4 @@
-#N struct 1003-DS float color float x float y;
+#N struct 1006-DS float color float x float y;
 #N canvas 341 131 460 376 12;
 #N canvas 408 46 478 607 template 0;
 #X obj 144 301 drawcurve color 2 0 0 50 100 100 0;
@@ -25,7 +25,7 @@ dots are connected to form a closed shape, f 43;
 template] subpatch for details. As in the last example \, click and
 drag the "color" number to see the colors changing., f 52;
 #N canvas 840 215 282 196 \$0-display 1;
-#X scalar 1003-DS 500 50 50 \;;
+#X scalar 1006-DS 500 50 50 \;;
 #X restore 196 142 pd \$0-display;
 #X obj 213 283 pointer;
 #X obj 62 117 loadbang;
