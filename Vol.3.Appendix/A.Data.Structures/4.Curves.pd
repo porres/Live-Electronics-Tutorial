@@ -1,13 +1,10 @@
 #N struct DS-4 float color float x float y;
 #N canvas 254 108 524 400 12;
-#X obj 245 291 pointer;
+#X obj 252 291 pointer;
 #X obj 101 125 loadbang;
-#N canvas 408 46 478 607 template 0;
-#X obj 96 83 struct DS-4 float color float x float y;
+#N canvas 408 46 478 607 template 1;
 #X obj 144 301 drawcurve color 2 0 0 50 100 100 0;
 #X obj 106 549 filledcurve color 0 5 0 100 100 100 50 50;
-#X text 94 26 Data Structure named "DS-4" holding a float called "color"
-and x/y coordinates., f 43;
 #X text 123 126 draw the color number variable;
 #X obj 105 153 drawnumber color 100 50 color color=;
 #X text 44 210 And now we include curved shapes. The [drawcurve] works
@@ -22,22 +19,25 @@ drawn to connect these three dots., f 51;
 #X text 84 473 The [filledcurve] object is also similar to [filledpolygon]
 \, it needs an extra first argument to set interior color and now all
 dots are connected to form a closed shape, f 43;
+#X obj 96 83 struct \$0-DS float color float x float y;
+#X text 94 26 Data Structure named "\$0-DS" holding a float called
+"color" and x/y coordinates., f 43;
 #X restore 297 130 pd template;
 #N canvas 831 146 282 196 display 1;
-#X scalar DS-4 294 50 50 \;;
+#X scalar DS-4 500 50 50 \;;
 #X restore 297 157 pd display;
 #X msg 252 216 \; pd-display clear \, vis 1;
-#X msg 245 264 traverse pd-display \, bang;
+#X msg 252 264 traverse pd-display \, bang;
 #X msg 101 154 500 50 50;
-#X obj 101 320 append DS-4 color x y;
 #X obj 101 185 trigger list bang bang;
 #X text 38 26 Now let's have more fun with curved shapes. See the [pd
 template] subpatch for details. As in the last example \, click and
 drag the "color" number to see the colors changing., f 52;
-#X connect 0 0 7 3;
+#X obj 101 320 append \$0-DS color x y;
+#X connect 0 0 9 3;
 #X connect 1 0 6 0;
 #X connect 5 0 0 0;
-#X connect 6 0 8 0;
-#X connect 8 0 7 0;
-#X connect 8 1 5 0;
-#X connect 8 2 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 0;
+#X connect 7 1 5 0;
+#X connect 7 2 4 0;

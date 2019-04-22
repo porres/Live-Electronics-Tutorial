@@ -1,0 +1,79 @@
+#N struct 1008-DS float x float y array 1008-table 1008-s;
+#N struct 1008-s symbol sym float y;
+#N canvas 319 72 559 641 12;
+#N canvas 715 191 725 334 display 1;
+#X scalar 1008-DS 10 250 \; symbol 0 \; \;;
+#X coords 0 334 1 333 0 0 0;
+#X restore 411 159 pd display;
+#X obj 431 408 pointer;
+#X obj 53 111 loadbang;
+#X obj 322 397 r coords;
+#N canvas 431 307 458 362 element 0;
+#X text 42 28 The element of the array is defined as a struct of name
+"\$0-s" containing a symbol named "sym"., f 47;
+#X obj 59 224 filledpolygon 0 0 1 -2 -2 2 -2 2 2 -2 2;
+#X text 58 194 draw a black dot to represent the value:;
+#X obj 202 286 drawsymbol sym 0 -5;
+#X text 58 268 We add a drawing instruction for it as well, f 17;
+#X obj 120 141 struct \$0-s symbol sym float y;
+#X text 41 63 We also include the field name 'y' \, which is the vertical
+coordinate. This allows the element to be dragged horizontally., f
+48;
+#X restore 316 148 pd element;
+#N canvas 317 275 503 265 template 0;
+#X text 74 45 Data Structure named "\$0-DS" holding coordinates floats
+"x/y" and an array named "\$0-table" using the element struct named
+"\$0-s" defined in the other subpatch., f 53;
+#X obj 88 127 struct \$0-DS float x float y array \$0-table \$0-s;
+#X text 91 183 Drawing instructions;
+#X obj 243 184 plot \$0-table 900 2 0 0 120;
+#X restore 316 174 pd template;
+#X obj 431 378 r pointer;
+#X obj 322 438 append \$0-DS x y;
+#X text 75 19 This example shows how to create an array composed only
+of symbols. In this case \, the [array] object can't be used instead
+of [element] and [set]. But we can still use [array] instead of [setsize]/[getsize].
+, f 53;
+#X msg 69 391 n \, dump;
+#X msg 53 142 \; pd-display clear \, vis 1 \; pointer traverse pd-display
+\, bang \; coords 10 250;
+#X obj 69 475 t s b;
+#X obj 202 450 + 1;
+#X obj 171 450 f;
+#X obj 190 553 array size -s \$0-DS \$0-table;
+#X text 217 528 <= sets size;
+#X floatatom 190 527 3 0 0 0 - - -;
+#X obj 69 423 dir;
+#X obj 34 553 set -symbol \$0-s sym;
+#X obj 171 479 element \$0-DS \$0-table;
+#X obj 107 425 t f b;
+#X msg 189 426 0;
+#X text 129 390 <= click;
+#X text 58 238 When loading the array \, we have only one element \,
+not initialized. With the [dir] object from else \, we get the file
+names contained in this folder and insert them into the array. The
+'n' message sends the number of files in the folder to the right outlet
+\, which we use to set the array's size. Then \, the dump message sends
+a series of symbols with the file names that we use to populate the
+array with the [element] and [set] objects.;
+#X text 38 595 To set a symbol \, the [set] object needs a -symbol
+flag!;
+#X connect 1 0 7 2;
+#X connect 2 0 10 0;
+#X connect 3 0 7 0;
+#X connect 6 0 1 0;
+#X connect 7 0 14 1;
+#X connect 7 0 19 1;
+#X connect 9 0 17 0;
+#X connect 11 0 18 0;
+#X connect 11 1 13 0;
+#X connect 12 0 13 1;
+#X connect 13 0 12 0;
+#X connect 13 0 19 0;
+#X connect 16 0 14 0;
+#X connect 17 0 11 0;
+#X connect 17 1 20 0;
+#X connect 19 0 18 1;
+#X connect 20 0 16 0;
+#X connect 20 1 21 0;
+#X connect 21 0 13 1;

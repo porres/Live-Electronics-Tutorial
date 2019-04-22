@@ -1,40 +1,39 @@
-#N struct DS-6 float x float y text z;
+#N struct 1003-DS float x float y text z;
 #N canvas 183 102 813 435 12;
 #N canvas 1031 127 329 194 display 1;
-#X scalar DS-6 25 25 \; \;;
+#X scalar 1003-DS 25 25 \; a b c d e f g h i j \\\; \;;
 #X restore 234 129 pd display;
 #N canvas 440 205 535 532 template 0;
 #X obj 299 433 drawnumber x 165 10 900 x=;
 #X obj 298 466 drawnumber y 165 25 900 y=;
-#X text 76 145 We now use the [drawtext] object \, which again is actually
-just another alias for [drawsymbol] \, at least so far.;
 #X text 242 216 The instruction is to draw the "z" text variable in
 the 10/10 coordinates., f 30;
 #X text 136 306 We also have a [filledpolygon] as a frame around the
 text., f 31;
 #X text 65 431 And again \, rather gratuitously \, the x/y coordinates
 drawn one more time., f 31;
-#X obj 99 100 struct DS-6 float x float y text z;
-#X text 97 36 Data Structure named "DS-6" holding coordinates floats
-"x/y" and a text named "z"., f 37;
 #X obj 117 351 filledpolygon 999 0 5 5 5 155 5 155 55 5 55;
 #X obj 108 228 drawtext z 10 10;
+#X obj 99 100 struct \$0-DS float x float y text z;
+#X text 97 36 Data Structure named "\$0-DS" holding coordinates floats
+"x/y" and a text named "z"., f 37;
+#X text 39 155 We now use the [drawtext] object \, which again is actually
+just another alias for [drawnumber]/[drawsymbol] \, at least so far.
+;
 #X restore 234 102 pd template;
-#X obj 700 308 pointer;
+#X obj 714 308 pointer;
 #X obj 57 143 loadbang;
 #X text 38 19 This example shows how to add and set a "text" data type
 in Data Structures. See [pd template] for the declaration and drawing
 instructions., f 48;
-#X obj 598 340 append DS-6 x y;
-#X obj 475 368 text set -s DS-6 z;
-#X obj 516 275 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -228856
+#X obj 517 275 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -228856
 -1 -1 1;
-#X floatatom 516 330 2 0 0 0 - - -;
-#X obj 598 311 r coords;
+#X floatatom 517 330 2 0 0 0 - - -;
+#X obj 605 311 r coords;
 #X msg 475 207 1 2 3 4 a b c d e;
 #X msg 459 181 1 2 3 4;
 #X msg 489 241 list a b c d e f g h i j;
-#X text 539 274 <= set line;
+#X text 540 274 <= set line;
 #X msg 435 153 symbol text;
 #X floatatom 387 154 5 0 0 0 - - -;
 #X text 53 278 A text can have many lines with lists of one or more
@@ -49,16 +48,18 @@ needs the "-s" flag followed by a struct name and the variable name.
 , f 43;
 #X msg 57 174 \; pd-display clear \, vis 1 \; pointer traverse pd-display
 \, bang \; coords 25 25;
-#X obj 700 278 r pointer;
-#X connect 2 0 5 2;
-#X connect 3 0 20 0;
-#X connect 5 0 6 3;
-#X connect 7 0 8 0;
-#X connect 8 0 6 1;
-#X connect 9 0 5 0;
-#X connect 10 0 6 0;
-#X connect 11 0 6 0;
-#X connect 12 0 6 0;
-#X connect 14 0 6 0;
-#X connect 15 0 6 0;
-#X connect 21 0 2 0;
+#X obj 714 278 r pointer;
+#X obj 475 367 text set -s \$0-DS z;
+#X obj 605 340 append \$0-DS x y;
+#X connect 2 0 21 2;
+#X connect 3 0 18 0;
+#X connect 5 0 6 0;
+#X connect 6 0 20 1;
+#X connect 7 0 21 0;
+#X connect 8 0 20 0;
+#X connect 9 0 20 0;
+#X connect 10 0 20 0;
+#X connect 12 0 20 0;
+#X connect 13 0 20 0;
+#X connect 19 0 2 0;
+#X connect 21 0 20 3;
