@@ -1,0 +1,74 @@
+#N canvas 540 88 797 393 12;
+#X declare -path else;
+#X obj 136 151 impseq~;
+#X obj 82 185 brown~;
+#X obj 196 255 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X text 219 348 0;
+#X text 219 249 1;
+#X obj 118 235 *~;
+#X obj 136 125 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 136 189 decay~ 2000;
+#X obj 75 278 out~;
+#X obj 469 254 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X obj 405 227 *~;
+#X obj 352 168 osc~ 440;
+#X obj 362 267 out~;
+#X msg 423 133 1;
+#X msg 458 133 0.5;
+#X msg 196 152 0.5;
+#X text 30 16 Envelopes are widely used to generate sounds when triggered.
+The [decay~] object from ELSE is an extremely simple envelope \, with
+just an exponential decay stage. The envelope function starts at a
+maximum amplitude and just decays (until reachinng 0). It can be triggered
+by bangs \, control data numbers and audio impulses., f 56;
+#X obj 673 258 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X obj 606 231 *~;
+#X obj 553 172 osc~ 440;
+#X obj 563 271 out~;
+#X msg 624 131 1;
+#X msg 660 132 0.5;
+#X msg 624 168 \$1 500 0;
+#X obj 624 196 envgen~;
+#X obj 423 192 vline~;
+#X msg 423 164 \$1 \, 0 500;
+#X text 465 51 Here we use the [vline~] and [envgen~] objects as envelope
+generators \, but these are linear instead., f 41;
+#X text 490 343 0;
+#X text 490 250 1;
+#X text 693 346 0;
+#X text 693 253 1;
+#X obj 196 227 s2f~;
+#X obj 469 225 s2f~;
+#X obj 673 229 s2f~;
+#X obj 607 17 declare -path else;
+#X connect 0 0 7 0;
+#X connect 1 0 5 0;
+#X connect 5 0 8 1;
+#X connect 5 0 8 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 1;
+#X connect 7 0 32 0;
+#X connect 10 0 12 1;
+#X connect 10 0 12 0;
+#X connect 11 0 10 0;
+#X connect 13 0 26 0;
+#X connect 14 0 26 0;
+#X connect 15 0 7 0;
+#X connect 18 0 20 1;
+#X connect 18 0 20 0;
+#X connect 19 0 18 0;
+#X connect 21 0 23 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 18 1;
+#X connect 24 0 34 0;
+#X connect 25 0 10 1;
+#X connect 25 0 33 0;
+#X connect 26 0 25 0;
+#X connect 32 0 2 0;
+#X connect 33 0 9 0;
+#X connect 34 0 17 0;

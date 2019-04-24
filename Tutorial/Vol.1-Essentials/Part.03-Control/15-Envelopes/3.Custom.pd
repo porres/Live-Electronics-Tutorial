@@ -1,0 +1,60 @@
+#N canvas 335 40 889 525 12;
+#X declare -path else;
+#X obj 200 346 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X obj 125 319 *~;
+#X obj 59 275 osc~ 440;
+#X obj 82 368 out~;
+#X obj 143 199 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X text 166 199 gate;
+#X obj 442 260 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 705 165 1;
+#X obj 334 314 *~;
+#X obj 291 391 else/out~;
+#X text 704 261 0;
+#X obj 334 245 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 200 256;
+#X msg 493 312 0 200 1 200 0.6 400 0.6 200 1 200 0;
+#X obj 442 407 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X text 88 72 The [envgen~] object`can be used for more complex and
+custom envelope types. Below we have an example where there's the release
+is preceeded by another attack., f 42;
+#X text 709 212 <= envelope;
+#X obj 334 216 initmess 200;
+#X obj 143 228 envgen~ 50 1 50 0.5 200 1 100 0 -suspoint 2, f 15;
+#X obj 493 138 initmess 0 200 1 200 0.6 400 0.6 200 1 200 0;
+#X obj 334 278 bl.tri~;
+#X obj 442 340 envgen~;
+#X obj 493 284 setmess;
+#X text 575 402 Check the help file of [envgen~] and [envelope] for
+more details., f 32;
+#X obj 496 171 function 0 200 1 200 0.6 400 0.6 200 1 200 0;
+#X text 412 70 You can also use [function] to generate breakpoints
+functions for [envgen~]. Below we also have an attack before the release.
+, f 52;
+#X obj 442 381 s2f~;
+#X obj 200 320 s2f~;
+#X obj 656 20 declare -path else;
+#X connect 1 0 3 1;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 4 0 17 0;
+#X connect 6 0 20 0;
+#X connect 8 0 9 1;
+#X connect 8 0 9 0;
+#X connect 11 0 19 0;
+#X connect 16 0 11 0;
+#X connect 17 0 1 1;
+#X connect 17 0 26 0;
+#X connect 18 0 23 0;
+#X connect 19 0 8 0;
+#X connect 20 0 8 1;
+#X connect 20 0 25 0;
+#X connect 21 0 12 0;
+#X connect 21 0 20 0;
+#X connect 23 0 21 0;
+#X connect 25 0 13 0;
+#X connect 26 0 0 0;

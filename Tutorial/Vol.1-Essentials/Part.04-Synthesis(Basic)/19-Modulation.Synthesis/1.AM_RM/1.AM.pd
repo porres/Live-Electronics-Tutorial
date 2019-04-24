@@ -1,0 +1,45 @@
+#N canvas 492 28 829 634 12;
+#X declare -path else;
+#X obj 369 399 *~;
+#X obj 387 179 nbx 5 14 -1e+37 1e+37 0 0 empty Hz2 empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 311 179 nbx 5 14 -1e+37 1e+37 0 0 empty Hz1 empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 387 204 osc~ 90;
+#X obj 326 491 out~;
+#X obj 311 203 osc~ 300;
+#X obj 113 309 graph~ 500 16;
+#X obj 447 459 graph~ 500 17;
+#X obj 448 288 graph~ 500 17;
+#X text 22 22 Amplitude Modulation (AM), f 32;
+#X text 21 51 We can modulate the amplitude of any signal (called the
+"carrier" signal) by multiplying it by any oscillating signal (called
+"modulator" signal). The modulating signal is usually an oscillator
+\, whose frequency is the modulating frequency., f 51;
+#X text 413 53 Here we have an amplitude modulation example where both
+the carrier and modulator signals are sine wave oscillators. This is
+"classic" amplitude modulation because the modulator signal has a DC-Offset
+so that it is "unipolar" and only has positive values (from 0 to 1).
+, f 52;
+#X obj 387 237 rescale~;
+#X text 453 238 DC-Offset (from 0 to 1);
+#X text 651 419 -1;
+#X text 657 351 0;
+#X text 656 283 1;
+#X text 651 590 -1;
+#X text 657 522 0;
+#X text 656 454 1;
+#X text 91 440 -1;
+#X text 97 372 0;
+#X text 96 304 1;
+#X obj 645 23 declare -path else;
+#X connect 0 0 4 0;
+#X connect 0 0 4 1;
+#X connect 0 0 7 0;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 12 0;
+#X connect 5 0 0 0;
+#X connect 5 0 6 0;
+#X connect 12 0 0 1;
+#X connect 12 0 8 0;

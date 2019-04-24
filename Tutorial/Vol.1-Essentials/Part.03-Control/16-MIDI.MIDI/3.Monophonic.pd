@@ -1,0 +1,47 @@
+#N canvas 649 46 575 527 12;
+#X declare -path else;
+#X obj 212 183 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+127;
+#X msg 212 215 30 \$1;
+#X obj 265 183 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+127;
+#X msg 265 215 33 \$1;
+#X obj 321 184 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+127;
+#X msg 321 216 36 \$1;
+#X obj 373 185 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+127;
+#X msg 373 217 39 \$1;
+#X obj 254 382 *~;
+#X obj 212 320 mtof;
+#X obj 272 319 / 127;
+#X obj 272 288 else/display;
+#X obj 212 289 else/display;
+#X obj 272 349 adsr~ 200 50 0.75 500;
+#X obj 212 350 bl.saw~;
+#X obj 212 263 mono, f 9;
+#X text 89 73 The [mono] object \, from ELSE \, manages note messages
+and emulates the behaviour of classic monophonic synthesizers.;
+#X text 88 109 The object keeps track of up the pressed notes. By default
+\, any new note is played \, but when you release it \, it plays back
+the last pressed note. Check the help file for more information.;
+#X obj 254 433 out~;
+#X obj 380 29 declare -path else;
+#X connect 0 0 1 0;
+#X connect 1 0 15 0;
+#X connect 2 0 3 0;
+#X connect 3 0 15 0;
+#X connect 4 0 5 0;
+#X connect 5 0 15 0;
+#X connect 6 0 7 0;
+#X connect 7 0 15 0;
+#X connect 8 0 18 0;
+#X connect 8 0 18 1;
+#X connect 9 0 14 0;
+#X connect 10 0 13 0;
+#X connect 11 0 10 0;
+#X connect 12 0 9 0;
+#X connect 13 0 8 1;
+#X connect 14 0 8 0;
+#X connect 15 0 12 0;
+#X connect 15 1 11 0;

@@ -1,0 +1,19 @@
+#N canvas 653 23 523 374 12;
+#X declare -path else;
+#X obj 168 196 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 136 263 pan2~;
+#X obj 136 302 out~;
+#X obj 101 210 brown~;
+#X obj 168 231 envgen~ 1500 1 1000 -1 1500 1 1500 0;
+#X text 54 72 The usage of line generators can be used to control any
+parameter you desire. You can use it as a control of amplitude (such
+as an envelope) or just about anything., f 56;
+#X text 54 129 In this example \, we use [envgen~] to control the panning
+of a brown noise source., f 56;
+#X obj 300 29 declare -path else;
+#X connect 0 0 4 0;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 3 0 1 0;
+#X connect 4 0 1 1;

@@ -1,0 +1,28 @@
+#N canvas 631 49 541 502 12;
+#X declare -path else;
+#X obj 218 357 *~;
+#X obj 162 314 osc~ 440;
+#X obj 268 211 nbx 5 17 0 2000 0 0 empty empty empty 0 -8 0 12 -228856
+-1 -1 0 256;
+#X obj 228 208 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 218 398 out~;
+#X obj 236 244 f 500;
+#X text 271 189 ms;
+#X msg 236 273 0 \$1 1;
+#X obj 236 300 envgen~;
+#X obj 236 328 envelope~ hann;
+#X text 77 82 For more common functions used as envelopes we have the
+[envelope~] object from ELSE \, which has "hann" \, "sin" (half the
+sine function) and triangular. Like [table~] \, the input are indexes
+from 0 to 1!, f 52;
+#X obj 318 37 declare -path else;
+#X connect 0 0 4 0;
+#X connect 0 0 4 1;
+#X connect 1 0 0 0;
+#X connect 2 0 5 1;
+#X connect 3 0 5 0;
+#X connect 5 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 0 1;

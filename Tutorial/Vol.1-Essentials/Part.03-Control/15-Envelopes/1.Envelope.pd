@@ -1,0 +1,47 @@
+#N canvas 246 93 1010 454 12;
+#X declare -path else;
+#X obj 146 210 osc~ 440;
+#X obj 196 269 *~;
+#X obj 248 298 tabwrite~ env;
+#X obj 477 85 cnv 15 498 298 empty empty empty 20 12 0 14 -249661 -66577
+0;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array env 2205 float 0;
+#X array output 2205 float 0;
+#X coords 0 1 2204 -1 500 300 1;
+#X restore 476 84 graph;
+#X obj 214 190 phasor~ 20;
+#X obj 214 234 sin~;
+#X obj 214 212 /~ 2;
+#X obj 247 262 loadbang;
+#X text 247 219 Envelope;
+#X obj 228 325 tabwrite~ output;
+#X obj 270 390 env~;
+#X obj 270 415 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 270 365 noise~;
+#X text 28 22 The envelope of a signal is a function that delineates
+its peaks of amplitude. An audio signal has an upper (positive) and
+lower (negative). \, ambos podem gerar um mesmo desenho \, como é
+o caso deste exemplo - apesar de estarmos apenas destacando o envelope
+superior.;
+#X text 499 100 Upper envelope ==>;
+#X text 100 210 Signal;
+#X text 28 101 In the context of electronic music \, the envelope can
+mean a function that controls the overall amplitude. In order to apply
+an envelope into a signal \, we just multiply the signal to this function.
+Below we have the first half of a sine function as the envelope.,
+f 59;
+#X text 77 369 The [env~] object is from "envelope" \, as it analyzes
+the overal amplitude envelope of a signal., f 26;
+#X obj 790 31 declare -path else;
+#X connect 0 0 1 0;
+#X connect 1 0 10 0;
+#X connect 5 0 7 0;
+#X connect 6 0 2 0;
+#X connect 6 0 1 1;
+#X connect 7 0 6 0;
+#X connect 8 0 2 0;
+#X connect 8 0 10 0;
+#X connect 11 0 12 0;
+#X connect 13 0 11 0;
