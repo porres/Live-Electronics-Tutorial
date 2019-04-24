@@ -1,5 +1,6 @@
-#N canvas 555 39 580 562 12;
-#X floatatom 66 210 5 0 0 0 - - -;
+#N canvas 555 39 679 638 12;
+#X declare -path else;
+#X floatatom 86 256 5 0 0 0 - - -;
 #N canvas 786 159 450 300 sequencer 0;
 #X obj 188 195 mtof;
 #X obj 84 136 metro 200;
@@ -17,22 +18,23 @@
 #X connect 5 0 1 0;
 #X connect 6 0 3 0;
 #X connect 6 1 0 0;
-#X restore 66 183 pd sequencer;
-#X obj 66 160 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X restore 86 229 pd sequencer;
+#X obj 86 206 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 149 410 else/out~;
-#X obj 259 375 else/graph~ 800 10 -1.1 1.1;
-#X obj 66 235 phasor~ 100;
-#X obj 192 300 function~;
-#X obj 192 130 initmess 0 0.25 1 0.15 1 0.35 0 0.05 -1 0.1 -1 0.1 0
+#X obj 169 456 else/out~;
+#X obj 279 421 else/graph~ 800 10 -1.1 1.1;
+#X obj 86 281 phasor~ 100;
+#X obj 212 346 function~;
+#X obj 212 176 initmess 0 0.25 1 0.15 1 0.35 0 0.05 -1 0.1 -1 0.1 0
 , f 31;
-#X obj 195 175 function 0 0.25 1 0.15 1 0.35 0 0.05 -1 0.1 -1 0.1 0
-;
-#X text 410 213 <= [function];
-#X text 67 31 The [function~] object from ELSE can be used to generate
+#X text 430 259 <= [function];
+#X text 87 77 The [function~] object from ELSE can be used to generate
 crazy and different waveforms. Check its help file. Here we also use
 the [function] object from ELSE that allows you to draw waveforms on
 the fly.;
+#X obj 215 221 function 0 0.25 1 0.15 1 0.35 0 0.05 -1 0.1 -1 0.1 0
+;
+#X obj 345 26 declare -path else;
 #X connect 0 0 5 0;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
@@ -40,5 +42,5 @@ the fly.;
 #X connect 6 0 3 0;
 #X connect 6 0 3 1;
 #X connect 6 0 4 0;
-#X connect 7 0 8 0;
-#X connect 8 0 6 0;
+#X connect 7 0 10 0;
+#X connect 10 0 6 0;

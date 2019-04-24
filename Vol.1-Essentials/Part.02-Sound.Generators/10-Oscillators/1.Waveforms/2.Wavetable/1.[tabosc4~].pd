@@ -1,4 +1,5 @@
-#N canvas 223 112 1020 566 12;
+#N canvas 250 107 1020 566 12;
+#X declare -path else;
 #X obj 542 312 s harm;
 #X msg 542 287 0;
 #X obj 939 165 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
@@ -182,6 +183,7 @@ for now it concerns a 4 point interpolation \, hence the "4" in [tabosc4~].
 ;
 #X obj 583 484 send \$0-wavetable;
 #X obj 101 439 tabosc4~ \$0-wavetable;
+#X obj 818 28 declare -path else;
 #X connect 1 0 0 0;
 #X connect 2 0 32 7;
 #X connect 3 0 32 6;

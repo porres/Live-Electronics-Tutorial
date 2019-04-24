@@ -1,23 +1,25 @@
-#N canvas 285 88 932 398 12;
-#X obj 598 121 nbx 5 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
+#N canvas 285 88 947 455 12;
+#X declare -path else;
+#X obj 604 168 nbx 5 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X obj 87 109 nbx 5 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
+#X obj 93 156 nbx 5 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X obj 555 253 out~;
-#X obj 59 214 graph~ 441 30;
-#X obj 87 162 expr~ -pow($v1 \, 2) * 2 + 1 \; pow($v1 \, 2) * 2 - 1
+#X obj 561 300 out~;
+#X obj 65 261 graph~ 441 30;
+#X obj 93 209 expr~ -pow($v1 \, 2) * 2 + 1 \; pow($v1 \, 2) * 2 - 1
 ;
-#X obj 273 213 graph~ 441 30;
-#X obj 665 202 graph~ 441 30;
-#X obj 598 155 parabolic~ 300;
-#X obj 87 133 saw~ 600;
-#X text 514 26 The [parabolic~] oscillator from ELSE has a waveform
+#X obj 279 260 graph~ 441 30;
+#X obj 671 249 graph~ 441 30;
+#X obj 604 202 parabolic~ 300;
+#X obj 93 180 saw~ 600;
+#X text 520 73 The [parabolic~] oscillator from ELSE has a waveform
 that joins the two parabolas to the left. Although it looks just like
 a sine wave \, it is not one as it contains odd partials., f 52;
-#X text 27 23 We can derive parabolas from sawtooth and triangular
+#X text 33 70 We can derive parabolas from sawtooth and triangular
 waves by first raising to the power of 2 as below \, where we have
 parabola waveforms from a sawtooth signal. They are actually the same
 \, but with the polarity inverted., f 66;
+#X obj 728 26 declare -path else;
 #X connect 0 0 7 0;
 #X connect 1 0 8 0;
 #X connect 4 0 3 0;

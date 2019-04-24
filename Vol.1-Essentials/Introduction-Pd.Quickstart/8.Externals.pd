@@ -6,15 +6,15 @@ binary. The first case is the classic library format and needs to be
 loaded in Pd's startup (Preferences => Startup). The second case doesn't
 need any of that but you need to add the library's folder to the search
 paths (Preferences => Path)., f 49;
-#X obj 649 246 sine~;
-#X obj 610 560 rev1~;
-#X obj 663 560 rev2~, f 8;
-#X obj 737 560 rev3~, f 8;
-#X obj 722 246 pluck~;
-#X text 425 283 For single binaries \, as is the case with else \,
+#X obj 660 261 sine~;
+#X obj 610 580 rev1~;
+#X obj 663 580 rev2~, f 8;
+#X obj 737 580 rev3~, f 8;
+#X obj 733 261 pluck~;
+#X text 425 303 For single binaries \, as is the case with else \,
 you can also use "namespaces" \, this means loading the external by
 setting a relative path \, such as:;
-#X obj 645 330 else/fbdelay~;
+#X obj 626 347 else/fbdelay~;
 #X text 38 28 You can download and install many externals directly
 from the "Help => Find Externals" menu. Just search for the name of
 an external or external library ("else" \, for example) and get it.
@@ -25,12 +25,12 @@ load both kinds of libraries with the "-lib" and "-path" flags. This
 loads the libraries just for the patch containing the [declare] object.
 Hence \, adding to the Path or Statup installs permanently and you
 can use in any patch., f 49;
-#X text 425 366 This will only work if the folder containing the external
+#X text 425 386 This will only work if the folder containing the external
 library is included in a folder that Pd automatically searches for
 files \, as is the case with Pd's externals folder \, the usual folder
 for externals in Pd., f 59;
-#X obj 504 561 sigmund~;
-#X text 425 438 In techical terms \, an external is any object not
+#X obj 504 581 sigmund~;
+#X text 425 458 In techical terms \, an external is any object not
 part of Pd's binary. Pd Vanilla itself includes extra objects that
 are technically externals and they're included in a folder called "extra"
 inside Pd's application \, which is searched automatically. One example
@@ -52,7 +52,7 @@ an advantage of using [declare] \, because it'll force a priority to
 the path declared (or to the first path if you declare more than one)
 \, so you can control and make sure to load the right objects., f
 49;
-#X obj 485 246 declare -path else;
+#X obj 496 261 declare -path else;
 #X text 426 28 If you haven't \, please download "else" \, which is
 needed for this tutorial and widely used from this point forward. It's
 a library that comes with separate binaries \, so it must be added
@@ -62,6 +62,7 @@ for 'else'.;
 this tutorial. Note you can also manually download and install else
 from all the available versions in its repository. Check the readme
 of this tutorial for more information.;
-#X text 426 179 Here is an example on how to use [declare] to load
-objects from the ELSE library and a couple of objects from it ([sine~]
-and [pluck~]).;
+#X text 426 176 Here's how to use [declare] to load objects from the
+ELSE library. If the objects don't show is because youhaven't downloaded
+it yet. Download and reload the patch so you can instantiate [sine~]
+and [pluck~].;

@@ -1,4 +1,5 @@
 #N canvas 328 139 887 433 12;
+#X declare -path else;
 #X obj 249 339 out~;
 #X obj 249 301 bl.saw~;
 #X obj 272 260 impulse~;
@@ -54,6 +55,7 @@ modulation., f 55;
 #X text 480 286 Hard sync generates aliasing because any significant
 discontinuity in the signal can generate artifacts and components over
 the Nyquist., f 52;
+#X obj 671 22 declare -path else;
 #X connect 1 0 0 0;
 #X connect 1 0 0 1;
 #X connect 2 0 1 1;

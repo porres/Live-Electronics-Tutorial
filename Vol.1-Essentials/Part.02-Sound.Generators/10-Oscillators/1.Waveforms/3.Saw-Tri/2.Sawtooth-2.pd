@@ -1,4 +1,5 @@
-#N canvas 307 73 831 510 12;
+#N canvas 307 73 831 529 12;
+#X declare -path else;
 #X obj 58 220 nbx 5 14 1 3000 0 1 empty empty empty 0 -8 0 10 -228856
 -1 -1 26 256;
 #X obj 189 180 cnv 15 198 138 empty empty empty 20 12 0 14 -228856
@@ -14,11 +15,11 @@
 #X text 51 368 Hz;
 #X obj 78 428 out~;
 #X text 39 201 # of harmonics;
-#X obj 553 167 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+#X obj 573 214 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
 -228856 -1 -1 164.814 256;
-#X obj 565 231 out~;
-#X obj 553 298 graph~ 441 8;
-#X obj 553 195 saw2~;
+#X obj 585 278 out~;
+#X obj 573 345 graph~ 441 8;
+#X obj 573 242 saw2~;
 #N canvas 212 77 267 219 sequencer 0;
 #X obj 44 97 sequencer 42 40 40 45 40 49 52 52 45 43 43 47 50 54 55
 55, f 29;
@@ -30,8 +31,8 @@
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 4 0 3 0;
-#X restore 553 143 pd sequencer;
-#X obj 553 120 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X restore 573 190 pd sequencer;
+#X obj 573 167 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #N canvas 212 77 267 219 sequencer 0;
 #X obj 44 94 sequencer 42 40 40 45 40 49 52 52 45 43 43 47 50 54 55
@@ -96,9 +97,10 @@ polarity;
 below. Realize that \, in order to generate a perfect sawtooth \, you
 need an infinite harmonic series. Open the [pd saw2] subpatch for more
 details., f 61;
-#X text 477 34 The else library also provides a [saw2~] variant waveform
+#X text 497 81 The else library also provides a [saw2~] variant waveform
 \, but with infinite harmonics. Check its help file for more details.
 , f 41;
+#X obj 616 35 declare -path else;
 #X connect 0 0 19 0;
 #X connect 5 0 17 0;
 #X connect 9 0 12 0;

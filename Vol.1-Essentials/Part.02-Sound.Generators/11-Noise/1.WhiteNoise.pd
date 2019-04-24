@@ -1,20 +1,21 @@
-#N canvas 438 58 900 440 12;
+#N canvas 438 58 910 444 12;
+#X declare -path else;
 #X obj 185 105 noise~;
-#X obj 644 284 expr~ if($v1 > 0 \, 1 \, -1);
-#X obj 644 257 noise~;
+#X obj 653 308 expr~ if($v1 > 0 \, 1 \, -1);
+#X obj 653 281 noise~;
 #X obj 166 148 out~;
 #X obj 119 340 out~;
-#X obj 571 159 out~;
-#X obj 614 111 clipnoise~;
+#X obj 580 183 out~;
+#X obj 623 135 clipnoise~;
 #X obj 233 330 rms~ -db;
-#X obj 677 153 rms~ -db;
+#X obj 686 177 rms~ -db;
 #X obj 233 358 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 677 183 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 686 207 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 601 333 out~;
-#X obj 708 328 rms~ -db;
-#X obj 708 358 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 610 357 out~;
+#X obj 717 352 rms~ -db;
+#X obj 717 382 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X text 30 214 White noise is a good source for audio testing \, filtering
 and as a random number generator. This is because a random sequence
@@ -30,9 +31,9 @@ each sample. Initial values are from -1000 to 1000 and then divided
 by 1000 to fall within the -1 to 1 range.;
 #X connect 2 0 0 0;
 #X restore 162 294 pd White_Noise;
-#X text 517 245 An implementation of [clipnoise~] from [noise~] =>
+#X text 526 269 An implementation of [clipnoise~] from [noise~] =>
 , f 17;
-#X text 465 26 The [clipnoise~] object from ELSE is a white noise variant
+#X text 479 54 The [clipnoise~] object from ELSE is a white noise variant
 that only outputs either -1 or 1 amplitude values. Check that this
 doesn't affect the sound quality of the white noise \, it only reflects
 on a higher RMS of 0 dBFS!;
@@ -42,6 +43,7 @@ range (from 0 Hz to Nyquist). Calling it white is an analogy to white
 light \, which is a combination of lights of different wavelengths
 in the visible spectrum.;
 #X obj 343 337 rand.f~;
+#X obj 716 16 declare -path else;
 #X connect 0 0 3 0;
 #X connect 0 0 3 1;
 #X connect 1 0 12 0;

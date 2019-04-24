@@ -1,4 +1,5 @@
-#N canvas 184 23 1096 542 12;
+#N canvas 223 41 1118 555 12;
+#X declare -path else;
 #N canvas 232 59 415 307 plot 0;
 #X obj 56 28 inlet~;
 #X obj 56 56 rfft~;
@@ -22,28 +23,28 @@
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 10 0 6 0;
-#X restore 345 104 pd plot;
-#X obj 162 23 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-Hz empty 0 -8 0 15
+#X restore 356 106 pd plot;
+#X obj 173 25 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-Hz empty 0 -8 0 15
 -228856 -1 -1 2000 256;
-#X obj 162 126 out~;
-#X obj 299 129 out~;
-#X obj 162 66 saw~;
-#X text 492 508 Nyquist;
-#X text 18 510 0 Hz;
-#X text 1032 508 Nyquist;
-#X text 558 510 0 Hz;
-#X obj 21 386 cnv 15 510 118 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 173 128 out~;
+#X obj 310 131 out~;
+#X obj 173 68 saw~;
+#X text 503 510 Nyquist;
+#X text 29 512 0 Hz;
+#X text 1043 510 Nyquist;
+#X text 569 512 0 Hz;
+#X obj 32 388 cnv 15 510 118 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 561 386 cnv 15 510 118 empty empty empty 20 12 0 14 -228856
+#X obj 572 388 cnv 15 510 118 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-fft-non-limited 2048 float 0;
 #X coords 0 100 2047 40 512 120 1 0 0;
-#X restore 20 385 graph;
+#X restore 31 387 graph;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-fft-band-limited 2048 float 0;
 #X coords 0 100 2047 40 512 120 1 0 0;
-#X restore 560 385 graph;
+#X restore 571 387 graph;
 #N canvas 232 59 446 351 plot 0;
 #X obj 102 53 inlet~;
 #X obj 102 88 rfft~;
@@ -68,9 +69,9 @@
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 11 0 6 0;
-#X restore 206 95 pd plot;
-#X obj 289 198 graph~;
-#X obj 54 198 graph~;
+#X restore 217 97 pd plot;
+#X obj 300 200 graph~;
+#X obj 65 200 graph~;
 #N canvas 756 56 532 501 bl.saw~ 0;
 #X obj 45 437 outlet~;
 #X obj 85 76 cnv 15 280 40 empty empty empty 20 12 0 14 -233017 -66577
@@ -93,30 +94,32 @@ has a 60dB decay per octave \, which is quite steep)., f 59;
 #X connect 3 0 5 0;
 #X connect 4 0 0 0;
 #X connect 5 0 4 0;
-#X restore 289 73 pd bl.saw~;
-#X text 537 99 A Band Limited oscillator has only frequency components
+#X restore 300 75 pd bl.saw~;
+#X text 548 101 A Band Limited oscillator has only frequency components
 up to the nyquist \, which means that its frequency band is limited
 to the range from 0 to Nyquist. There are many techniques for implementing
 digital band limited oscillators. This examples shows the oversampling
 + filtering technique., f 74;
-#X text 537 294 This is where using higher original rates than the
+#X text 548 296 This is where using higher original rates than the
 usual 44.1 Khz can be quite useful \, for it gives us even more room
 to filter and prevent aliasing., f 74;
-#X text 537 229 This needs to be done in a subpatch with [block~].
+#X text 548 231 This needs to be done in a subpatch with [block~].
 So check [pd bl.saw~] for more details! Thren compare to the left and
 below the difference between the aliased and anti aliased outputs.
 Check also the spectrographs below., f 74;
-#X text 537 162 The oversampling increases the sample rate gives us
+#X text 548 164 The oversampling increases the sample rate gives us
 a much higher Nyquist frequency to deal with. Then we filter frequencies
 over the original nyquist to remove them and prevent them from being
 aliased! After this simple process you can downsample to the original
 rate., f 74;
-#X text 537 22 All of the waveforms we studied could be obtained with
+#X text 548 24 All of the waveforms we studied could be obtained with
 a sum of partials. But in order to achieve a "perfect" sawtooth \,
 for example \, you need an infinite sum of partials. Now \, because
 of the Nyquist theorem \, we know that there's a frequency limit in
 digital audio. If you cross this limit \, we have aliasing \, which
 sounds bad!, f 74;
+#X obj 356 25 declare -path else;
+#X obj 456 82 setdsp~ 1;
 #X connect 1 0 16 0;
 #X connect 1 0 4 0;
 #X connect 4 0 2 1;

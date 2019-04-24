@@ -1,4 +1,5 @@
 #N canvas 366 23 843 534 12;
+#X declare -path else;
 #X obj 178 355 nbx 5 14 -1e+37 1e+37 0 1 empty hz empty 0 -8 0 10 -228856
 -1 -1 164.814 256;
 #N canvas 278 23 689 610 triangular 0;
@@ -86,6 +87,7 @@ for a "perfect" triangular wave., f 61;
 #X text 494 86 The [tri~] object \, from ELSE \, is a perfect triangular
 wave with infinite harmonics., f 42;
 #X text 275 140 <= open;
+#X obj 636 36 declare -path else;
 #X connect 0 0 9 0;
 #X connect 2 0 1 0;
 #X connect 9 0 8 0;
