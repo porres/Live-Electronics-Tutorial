@@ -1,4 +1,5 @@
 #N canvas 410 138 719 406 12;
+#X declare -path else;
 #X text 454 29 1;
 #X text 448 163 -1;
 #X text 454 96 0;
@@ -68,7 +69,7 @@
 -0.0427204 -0.0284822 -0.0142383;
 #X coords 0 1 440 -1 200 140 1 0 0;
 #X restore 469 35 graph;
-#N canvas 465 194 438 356 plot 0;
+#N canvas 556 235 622 375 plot 0;
 #X obj 101 155 t b f;
 #X obj 120 196 osc~ 100;
 #X obj 245 158 t b f;
@@ -80,16 +81,16 @@
 #X msg 77 90 0.75 0.25;
 #X obj 236 64 r sin-cos;
 #X obj 63 62 r oposicao;
-#X obj 334 38 loadbang;
-#X msg 337 86 \; pd dsp 1;
 #X obj 245 256 tabwrite~ wave-2;
 #X obj 101 253 tabwrite~ wave-1;
-#X connect 0 0 14 0;
+#X obj 420 172 setdsp~ 1;
+#X obj 373 71 declare -path else;
+#X connect 0 0 12 0;
 #X connect 0 1 1 1;
-#X connect 1 0 14 0;
-#X connect 2 0 13 0;
+#X connect 1 0 12 0;
+#X connect 2 0 11 0;
 #X connect 2 1 3 1;
-#X connect 3 0 13 0;
+#X connect 3 0 11 0;
 #X connect 4 0 0 0;
 #X connect 4 1 2 0;
 #X connect 5 0 6 0;
@@ -98,7 +99,6 @@
 #X connect 8 0 4 0;
 #X connect 9 0 7 0;
 #X connect 10 0 8 0;
-#X connect 11 0 12 0;
 #X restore 617 347 pd plot;
 #X obj 206 240 bng 30 250 50 0 em-fase empty empty 17 7 0 10 -228856
 -1 -1;

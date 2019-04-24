@@ -1,0 +1,46 @@
+#N canvas 262 51 1049 543 12;
+#X obj 48 353 send pd-1.Messages_To_Patch.pd;
+#X obj 198 134 send pd;
+#X msg 198 104 dsp \$1;
+#X obj 198 81 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X text 31 18 Dynamic patching is when you send messages to Pd so you
+can edit the patch. We've seen how we can send messages to Pd like
+this where you turn the DSP enginge on or off.;
+#X text 215 307 <= click: voilá =>;
+#X text 30 170 You can also send a message to a patch or a subpatch.
+Below we're sending to a patch (this patch by the way \, but it could
+be any other). We need to send a message to "pd-" plus the file name
+with the ".pd" extension. See that in action below. The "obj" message
+creates an object at given coordinates (350 330 below) the object [metro
+100]., f 61;
+#X msg 48 307 obj 360 300 metro 100;
+#N canvas 751 551 201 125 \$0-subpatch 0;
+#X restore 661 449 pd \$0-subpatch;
+#X text 45 411 You can send messages to a specific subpatch. Just send
+a message to "pd-name" \, where 'name' is the name of the subpatch.
+In this case it's useful to have suboatches names with the locality
+variable '\$0' \, because you can have multiple instances of this patch
+opened.;
+#X msg 625 287 menuclose;
+#X msg 604 201 connect 0 0 1 0;
+#X msg 613 247 menusave;
+#X text 729 122 Creates message;
+#X text 776 162 Creates atom symbol box;
+#X text 724 202 Connects both;
+#X text 693 240 Saves the file into your computer (check and see that
+now it is there), f 36;
+#X text 704 287 Closes the Patch;
+#X obj 572 332 send pd-\$0-subpatch;
+#X msg 572 121 msg 40 40 symbol Hi!;
+#X msg 588 161 symbolatom 40 100 0 0 0 0;
+#X msg 550 87 clear \, vis 1;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 7 0 0 0;
+#X connect 10 0 18 0;
+#X connect 11 0 18 0;
+#X connect 12 0 18 0;
+#X connect 19 0 18 0;
+#X connect 20 0 18 0;
+#X connect 21 0 18 0;

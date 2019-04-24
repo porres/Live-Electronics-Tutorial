@@ -1,4 +1,5 @@
 #N canvas 318 50 947 750 12;
+#X declare -path else;
 #X obj 397 680 v pi;
 #X obj 83 584 nbx 7 14 -1e+37 1e+37 0 0 hz empty empty 0 -8 0 10 -228856
 -1 -1 0 256;
@@ -15,9 +16,9 @@
 -1 -1 0 256;
 #X obj 640 468 nbx 9 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X floatatom 655 371 9 0 0 0 - - -, f 9;
+#X floatatom 655 371 9 0 0 0 - - -;
 #X text 736 467 x[n];
-#X floatatom 640 419 7 0 0 0 - - -, f 7;
+#X floatatom 640 419 7 0 0 0 - - -;
 #X obj 640 442 sin;
 #X obj 86 559 hsl 128 15 0 22050 0 0 slider empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
@@ -105,6 +106,7 @@ velocity in radians per sample;
 #X text 543 545 A more complete and classic formula also tales into
 account "a" as the peak amplitude and "ø" as the initial phase., f
 37;
+#X obj 739 22 declare -path else;
 #X connect 1 0 31 0;
 #X connect 2 0 30 0;
 #X connect 5 0 12 0;

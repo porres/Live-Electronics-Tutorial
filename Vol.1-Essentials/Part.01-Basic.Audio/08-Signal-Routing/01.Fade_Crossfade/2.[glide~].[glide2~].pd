@@ -1,11 +1,12 @@
 #N canvas 365 23 704 415 12;
+#X declare -path else;
 #X obj 143 222 *~;
 #X obj 84 136 osc~ 440;
 #X obj 100 272 out~;
 #X obj 161 172 glide~ 1000;
 #X obj 360 186 setdsp~ 1;
 #X obj 228 243 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 3751 1;
+-1 -1 0 1;
 #X obj 161 108 pulse~ 0.5;
 #X obj 161 136 display~;
 #X obj 488 225 *~;
@@ -13,13 +14,14 @@
 #X obj 445 275 out~;
 #X obj 576 220 sig2float~;
 #X obj 576 246 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 8416 1;
+-1 -1 0 1;
 #X obj 506 111 pulse~ 0.5;
 #X obj 506 139 display~;
 #X obj 506 175 glide2~ 1000;
 #X text 75 51 The [glide~] and [glide2~] objetcs can also be used as
 faders., f 34;
 #X obj 228 217 s2f~;
+#X obj 478 50 declare -path else;
 #X connect 0 0 2 0;
 #X connect 0 0 2 1;
 #X connect 1 0 0 0;

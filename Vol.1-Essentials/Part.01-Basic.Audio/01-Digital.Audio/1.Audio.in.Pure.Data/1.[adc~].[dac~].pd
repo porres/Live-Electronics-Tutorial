@@ -1,10 +1,11 @@
 #N canvas 302 59 948 509 12;
+#X declare -path else;
 #X obj 158 89 adc~;
 #X obj 158 121 dac~;
 #X obj 321 408 adc~ 1 3 5;
 #X obj 321 439 dac~ 2 4 6;
-#X obj 559 292 out~;
-#X obj 578 228 osc~ 440;
+#X obj 570 307 out~;
+#X obj 589 243 osc~ 440;
 #X text 32 28 The audio input/output objects in Pd are \, respectively
 \, [adc~] (from "Analog to Digital Converter") and [dac~] (from "Digital
 to Analog Converter")., f 55;
@@ -24,27 +25,29 @@ in Pd., f 56;
 with the arguments., f 56;
 #X text 52 408 Here's audio input channels 1 \, 3 & 5:;
 #X text 191 440 outputs 2 \, 4 & 6:;
-#X text 640 228 <= oscillator;
-#X text 473 259 left channel;
-#X text 605 260 right channel;
-#X text 658 323 <= click and drag;
+#X text 651 243 <= oscillator;
+#X text 484 274 left channel;
+#X text 616 275 right channel;
+#X text 669 338 <= click and drag;
 #X text 195 123 audio output;
-#X obj 813 251 setdsp~;
-#X text 718 279 [setdsp~] =>;
-#X text 459 137 The first two inlets are the audio connection to the
+#X obj 824 266 setdsp~;
+#X text 729 294 [setdsp~] =>;
+#X text 470 152 The first two inlets are the audio connection to the
 left and right outputs. Above \, click and drag the slider. If your
 system is configured with an audio sound card connected to speakers
 \, you should listem the oscillator at 440 Hertz!, f 61;
-#X text 479 376 Note that the [out~] object automatically turns the
+#X text 490 391 Note that the [out~] object automatically turns the
 DSP On when dragging the slider \, and that it has a toggle for turning
 the DSP On and Off. The [setdsp~] object from ELSE may also turn the
 audio on and off with a toggle so audio objects can operate. It also
 force the audio to be turned on or off when we open the patch. Check
 its help file., f 58;
-#X text 459 30 The ELSE library \, that you were told to install in
-the last example \, if you haven't already \, contains the [out~] object
-\, which is in fact just a Pd patch (an abstraction) with [dac~] inside.
-This is just for convenience and uses the default stereo output configuration
-(output channels 1 and 2). Check its help file., f 61;
+#X obj 768 9 declare -path else;
+#X text 470 45 The ELSE library \, that you were told to install in
+the last example (so you should have it already) \, contains the [out~]
+object \, which is in fact just a Pd patch (an abstraction) with [dac~]
+inside. This is just for convenience and uses the default stereo output
+configuration (output channels 1 and 2). Check its help file., f 61
+;
 #X connect 5 0 4 0;
 #X connect 5 0 4 1;

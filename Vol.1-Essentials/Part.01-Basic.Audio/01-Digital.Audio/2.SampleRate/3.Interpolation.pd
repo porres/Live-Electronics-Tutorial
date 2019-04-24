@@ -1,23 +1,24 @@
 #N canvas 611 61 760 637 12;
-#X obj 404 17 osc~ 100;
-#X obj 446 54 graph~ 444 8;
-#X obj 404 445 graph~ 444 8;
-#X obj 423 246 graph~ 444 8;
-#X text 657 119 Original;
-#X text 612 502 Sample and Hold;
-#X obj 423 221 downsample~ 1000 1;
-#X obj 404 412 downsample~ 1000;
-#X obj 99 335 downsample~;
-#X obj 173 312 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X declare -path else;
+#X obj 409 40 osc~ 100;
+#X obj 451 77 graph~ 444 8;
+#X obj 409 468 graph~ 444 8;
+#X obj 428 269 graph~ 444 8;
+#X text 662 142 Original;
+#X text 617 525 Sample and Hold;
+#X obj 428 244 downsample~ 1000 1;
+#X obj 409 435 downsample~ 1000;
+#X obj 104 358 downsample~;
+#X obj 178 335 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 44100 256;
-#X obj 176 289 hsl 100 15 400 44099 1 0 empty \$0-sr empty -2 -8 0
+#X obj 181 312 hsl 100 15 400 44099 1 0 empty \$0-sr empty -2 -8 0
 10 -228856 -1 -1 9900 1;
-#X text 231 313 Hertz;
-#X obj 99 371 out~;
-#X msg 23 273 interp \$1;
-#X obj 23 246 tgl 16 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X text 236 336 Hertz;
+#X obj 104 394 out~;
+#X msg 28 296 interp \$1;
+#X obj 28 269 tgl 16 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 173 263 initmess 44100;
+#X obj 178 286 initmess 44100;
 #N canvas 669 119 473 520 vanila 0;
 #X obj 110 242 vsnapshot~;
 #X obj 110 294 vline~;
@@ -55,18 +56,20 @@ there).;
 #X connect 10 0 4 0;
 #X connect 10 0 11 0;
 #X connect 11 0 7 0;
-#X restore 180 515 pd vanila;
-#X text 27 45 Besides just holding values \, another alternative when
+#X restore 185 538 pd vanila;
+#X text 32 68 Besides just holding values \, another alternative when
 upsampling is to interpolate between two sample values. The [downsample~]
 object also performs a simple linear interpolation. Test it below and
 check the difference., f 51;
-#X text 631 301 Interpolated;
-#X text 28 467 The subpatch below shows how to implement downsampling
+#X text 636 324 Interpolated;
+#X text 33 490 The subpatch below shows how to implement downsampling
 cwith interpolation with just native Pd Vanilla objects, f 50;
-#X text 27 127 To the right we have a graphical representation of the
+#X text 32 150 To the right we have a graphical representation of the
 resulting waveforms in both interpolated and sample and hold downsampling.
 , f 51;
-#X obj 98 205 play.file~ ../../../../samples/bubul.wav 1 1, f 33;
+#X obj 103 228 play.file~ ../../../../samples/bubul.wav 1 1, f 33
+;
+#X obj 600 16 declare -path else;
 #X connect 0 0 1 0;
 #X connect 0 0 6 0;
 #X connect 0 0 7 0;

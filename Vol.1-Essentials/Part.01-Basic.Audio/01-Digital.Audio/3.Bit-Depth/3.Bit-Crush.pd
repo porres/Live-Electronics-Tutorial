@@ -1,4 +1,5 @@
 #N canvas 355 43 961 534 12;
+#X declare -path else;
 #X obj 52 336 else/graph~ 230 48;
 #X obj 150 192 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
@@ -23,18 +24,18 @@
 #X obj 52 205 osc~ 440;
 #X msg 399 219 4;
 #X text 414 255 bits;
-#X floatatom 628 150 0 1 10000 0 - - -;
-#X obj 631 129 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X floatatom 634 177 0 1 10000 0 - - -;
+#X obj 637 156 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X floatatom 693 182 0 1 10000 0 - - -;
-#X obj 696 161 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X floatatom 699 209 0 1 10000 0 - - -;
+#X obj 702 188 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 559 258 else/out~;
-#X obj 558 143 osc~ 100;
-#X obj 670 222 else/graph~ 143 50;
-#X obj 558 121 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 565 285 else/out~;
+#X obj 564 170 osc~ 100;
+#X obj 676 249 else/graph~ 143 50;
+#X obj 564 148 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 602 184 crusher~;
+#X obj 608 211 crusher~;
 #X text 21 29 With a simple rounding process \, we can simulate a bit
 depth reduction. This adds noise and reduces the dynamic range and
 is known as a "bit-crusher" effecr \, used as a type of distortion.
@@ -44,15 +45,16 @@ types of rounding and can be used for this. It receives a step value
 and rounds to multiples of it. In this example \, we find a step value
 according to a bit depth resolution., f 64;
 #X obj 366 279 expr pow(2 \, $f1);
-#X text 513 36 Another external from ELSE \, [crusher~] \, is an abstraction
+#X text 519 63 Another external from ELSE \, [crusher~] \, is an abstraction
 based on [quantizer~] and [downsample~] \, because it is common that
 a Bit Crushing effect is used in conjunction with decimation and vice
 versa.;
-#X text 558 394 the parameters vary from 0 to 1 \, where 0 is the original
+#X text 564 421 the parameters vary from 0 to 1 \, where 0 is the original
 sound and the higher the parameter is \, the more crushing/decimation
 we have., f 50;
-#X text 649 127 crush (0-1);
-#X text 709 160 decimate (0-1);
+#X text 655 154 crush (0-1);
+#X text 715 187 decimate (0-1);
+#X obj 792 24 declare -path else;
 #X connect 1 0 2 0;
 #X connect 2 0 6 1;
 #X connect 6 0 0 0;

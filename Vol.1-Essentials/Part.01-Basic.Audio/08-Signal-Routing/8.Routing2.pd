@@ -1,4 +1,5 @@
 #N canvas 411 64 913 564 12;
+#X declare -path else;
 #X obj 125 223 out~;
 #X obj 210 396 noise~;
 #X obj 335 407 setdsp~ 1;
@@ -7,7 +8,7 @@
 #X obj 180 507 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 128 507 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0.577547 256;
+-228856 -1 -1 0 256;
 #X obj 234 480 rms~;
 #X obj 180 480 rms~;
 #X obj 128 480 rms~;
@@ -30,24 +31,25 @@
 -1 -1 0 1;
 #X obj 130 409 f2s~ 10;
 #X floatatom 130 383 6 0 0 0 - - -;
-#X text 510 60 The [spread~] object \, from the ELSE library \, spreads
+#X text 508 103 The [spread~] object \, from the ELSE library \, spreads
 any number of input signals to any number of output signals. Check
 its help file., f 52;
 #X text 81 298 Similarly \, [xgates~] also lets you specify the crossfading
 point. Check its help file., f 46;
 #X text 93 32 The [xselect2~] lets you perform the crossfade between
 channels. Check its help file., f 46;
-#X obj 561 311 xgate2~ 3;
-#X obj 565 151 hsl 128 15 0 2 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 559 354 xgate2~ 3;
+#X obj 563 194 hsl 128 15 0 2 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 561 202 f2s~ 10;
-#X floatatom 561 176 6 0 0 0 - - -;
-#X obj 786 201 osc~ 880;
-#X obj 554 361 spread~ 3 2;
-#X obj 563 411 out~;
-#X obj 621 245 xselect2~ 3, f 24;
-#X obj 656 202 osc~ 440;
-#X obj 731 201 noise~;
+#X obj 559 245 f2s~ 10;
+#X floatatom 559 219 6 0 0 0 - - -;
+#X obj 784 244 osc~ 880;
+#X obj 552 404 spread~ 3 2;
+#X obj 561 454 out~;
+#X obj 619 288 xselect2~ 3, f 24;
+#X obj 654 245 osc~ 440;
+#X obj 729 244 noise~;
+#X obj 664 47 declare -path else;
 #X connect 1 0 22 1;
 #X connect 6 0 3 0;
 #X connect 7 0 4 0;

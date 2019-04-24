@@ -1,8 +1,9 @@
-#N canvas 387 92 834 645 12;
-#X obj 112 108 cnv 15 198 198 empty empty empty 20 12 0 14 -228856
+#N canvas 387 92 836 656 12;
+#X declare -path else;
+#X obj 114 127 cnv 15 198 198 empty empty empty 20 12 0 14 -228856
 -66577 0;
-#X text 289 264 dB;
-#X text 214 234 pow-4;
+#X text 291 283 dB;
+#X text 216 253 pow-4;
 #N canvas 0 22 452 302 (subpatch) 0;
 #X array dB 441 float 1;
 #A 0 0 1.02645e-05 1.0536e-05 1.08147e-05 1.11007e-05 1.13943e-05 1.16957e-05
@@ -135,37 +136,37 @@
 0.912336 0.920833 0.929388 0.938004 0.946679 0.955414 0.96421 0.973066
 0.981982 0.990961;
 #X coords 0 1.01 441 0 200 200 1;
-#X restore 112 107 graph;
-#X obj 582 229 gain~;
-#X obj 524 168 osc~ 440;
-#X obj 557 355 dac~;
-#X obj 352 114 setdsp~ 1;
-#X msg 595 196 mode \$1;
-#X obj 595 119 vradio 15 1 0 3 \$0-dummy \$0-dummy-set empty 0 -8 0
+#X restore 114 126 graph;
+#X obj 589 270 gain~;
+#X obj 531 209 osc~ 440;
+#X obj 564 396 dac~;
+#X obj 354 133 setdsp~ 1;
+#X msg 602 237 mode \$1;
+#X obj 602 160 vradio 15 1 0 3 \$0-dummy \$0-dummy-set empty 0 -8 0
 10 -228856 -1 -1 0;
-#X text 614 134 dB;
-#X text 614 148 linear;
-#X floatatom 595 172 5 0 0 0 - - -, f 5;
-#X text 505 270 [gain~] =>;
-#X obj 201 417 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X text 621 175 dB;
+#X text 621 189 linear;
+#X floatatom 602 213 5 0 0 0 - - -;
+#X text 512 311 [gain~] =>;
+#X obj 203 436 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 151 557 *~;
-#X obj 198 439 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 153 576 *~;
+#X obj 200 458 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 123 498 osc~ 440;
-#X obj 198 460 pow 4;
-#X obj 143 591 dac~;
-#X obj 198 485 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 125 517 osc~ 440;
+#X obj 200 479 pow 4;
+#X obj 145 610 dac~;
+#X obj 200 504 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 553 440 osc~ 440;
-#X obj 553 481 out~;
-#X msg 640 441 mode \$1;
-#X obj 640 364 vradio 15 1 0 3 \$0-dummy \$0-dummy-set empty 0 -8 0
+#X obj 560 481 osc~ 440;
+#X obj 560 522 out~;
+#X msg 647 482 mode \$1;
+#X obj 647 405 vradio 15 1 0 3 \$0-dummy \$0-dummy-set empty 0 -8 0
 10 -228856 -1 -1 0;
-#X text 659 379 dB;
-#X text 659 393 linear;
-#X floatatom 640 417 5 0 0 0 - - -, f 5;
-#X text 20 18 an alternative to the usage of a dB scale is the quartic
+#X text 666 420 dB;
+#X text 666 434 linear;
+#X floatatom 647 458 5 0 0 0 - - -;
+#X text 22 37 an alternative to the usage of a dB scale is the quartic
 scale \, which is the same as raising a linear input to the power of
 4 - compare the difference between both curves below.;
 #N canvas 512 150 323 279 plot 0;
@@ -187,18 +188,19 @@ scale \, which is the same as raising a linear input to the power of
 #X connect 6 0 5 0;
 #X connect 7 0 1 0;
 #X connect 7 1 3 0;
-#X restore 260 88 pd plot;
-#X text 41 344 Note how the dB scale has a steeper curve. The quartic
+#X restore 262 107 pd plot;
+#X text 43 363 Note how the dB scale has a steeper curve. The quartic
 scale generates more audible signals with a smaller slider value. We
 can use the native [pow] object to perform a quartic rescaling.;
-#X text 470 44 The [gain~] and [out~] objects \, from ELSE \, adopt
+#X text 477 85 The [gain~] and [out~] objects \, from ELSE \, adopt
 a quartic scaling by default \, but can also offer dB and linear.,
 f 43;
-#X text 613 118 quartic;
-#X text 658 363 quartic;
-#X obj 198 512 f2s~ 10;
-#X text 420 553 In this tutorial \, the [out~] object is widely used
+#X text 620 159 quartic;
+#X text 665 404 quartic;
+#X obj 200 531 f2s~ 10;
+#X text 422 572 In this tutorial \, the [out~] object is widely used
 for its convenience for gain adjustment and audio output., f 54;
+#X obj 625 39 declare -path else;
 #X connect 4 0 6 0;
 #X connect 4 0 6 1;
 #X connect 5 0 4 0;

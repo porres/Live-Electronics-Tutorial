@@ -1,68 +1,70 @@
-#N canvas 370 139 934 710 12;
-#X obj 526 218 *~;
-#X obj 544 191 line~;
-#X msg 544 168 \$1 10;
-#X obj 501 320 dac~;
-#X obj 168 160 *~;
-#X obj 186 98 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#N canvas 365 68 949 741 12;
+#X declare -path else;
+#X obj 532 243 *~;
+#X obj 550 216 line~;
+#X msg 550 193 \$1 10;
+#X obj 507 345 dac~;
+#X obj 174 185 *~;
+#X obj 192 123 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 0.05;
-#X obj 112 120 osc~ 440;
-#X floatatom 186 131 5 0 0 0 - - -;
-#X obj 544 122 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 118 145 osc~ 440;
+#X floatatom 192 156 5 0 0 0 - - -;
+#X obj 550 147 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 0.05;
-#X text 566 121 On/Off;
-#X text 584 190 Fade In/Out;
-#X obj 469 154 osc~ 440;
-#X obj 191 206 graph~ 1038 9;
-#X obj 143 224 dac~;
-#X obj 553 279 graph~ 1038 9;
-#X floatatom 544 146 5 0 0 0 - - -;
-#X obj 726 127 float2sig~ 10;
-#X obj 49 223 setdsp~ 1;
-#X obj 708 155 *~;
-#X obj 696 190 dac~;
-#X obj 655 113 osc~ 440;
-#X obj 726 100 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X text 572 146 On/Off;
+#X text 590 215 Fade In/Out;
+#X obj 475 179 osc~ 440;
+#X obj 197 231 graph~ 1038 9;
+#X obj 149 249 dac~;
+#X obj 559 304 graph~ 1038 9;
+#X floatatom 550 171 5 0 0 0 - - -;
+#X obj 732 152 float2sig~ 10;
+#X obj 55 248 setdsp~ 1;
+#X obj 714 180 *~;
+#X obj 702 215 dac~;
+#X obj 661 138 osc~ 440;
+#X obj 732 125 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 0.05;
-#X text 747 100 On/Off;
-#X obj 389 561 *~;
-#X obj 330 501 osc~ 440;
-#X obj 346 611 out~;
-#X obj 460 579 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+#X text 753 125 On/Off;
+#X obj 395 586 *~;
+#X obj 336 526 osc~ 440;
+#X obj 352 636 out~;
+#X obj 466 604 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 629 544 *~;
-#X obj 573 486 osc~ 440;
-#X obj 586 594 out~;
-#X obj 714 565 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+#X obj 635 569 *~;
+#X obj 579 511 osc~ 440;
+#X obj 592 619 out~;
+#X obj 720 590 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 647 494 glide2~ 1000;
-#X obj 407 479 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 653 519 glide2~ 1000;
+#X obj 413 504 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 647 458 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 653 483 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X text 23 26 Below \, we use use [*~] to turn audio on (by multiplying
+#X text 29 51 Below \, we use use [*~] to turn audio on (by multiplying
 by "1") and turn it off (or "mute" by multiplying by "0"). Check how
 this generates discontinuities in the signal \, or "clicks".;
-#X text 208 98 On/Off;
-#X text 47 102 oscillator at 440Hz, f 11;
-#X text 73 384 The clicks happen by the fact that the speaker needs
+#X text 214 123 On/Off;
+#X text 53 127 oscillator at 440Hz, f 11;
+#X text 79 409 The clicks happen by the fact that the speaker needs
 to jump abruptly when the sound comes in or out. This needs to be smoothened
 in order to avoid clicks., f 53;
-#X obj 407 511 glide~ 50;
-#X text 117 536 The [glide~] object \, from ELSE \, "smoothens" audio
+#X obj 413 536 glide~ 50;
+#X text 123 561 The [glide~] object \, from ELSE \, "smoothens" audio
 signals and generate linear ramps - [glide2~] is an exponential variant.
 , f 33;
-#X obj 803 254 display~;
-#X obj 803 200 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 809 279 display~;
+#X obj 809 225 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 803 227 f2s~ 500;
-#X text 711 227 abbreviation;
-#X text 454 26 The native [line~] object can be used to generate a
+#X obj 809 252 f2s~ 500;
+#X text 717 252 abbreviation;
+#X text 460 51 The native [line~] object can be used to generate a
 smoothened ramp \, of at 10 ms \, to create a quick fade in/out. Another
 option is to use [float2sig~] (or [f2s~] for short) from ELSE \, which
 converts floats to signal but also generate ramps., f 64;
-#X obj 714 539 s2f~;
-#X obj 460 553 s2f~;
+#X obj 720 564 s2f~;
+#X obj 466 578 s2f~;
+#X obj 719 20 declare -path else;
 #X connect 0 0 3 0;
 #X connect 0 0 3 1;
 #X connect 0 0 14 0;

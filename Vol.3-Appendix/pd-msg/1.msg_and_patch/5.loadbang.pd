@@ -1,0 +1,16 @@
+#N canvas 619 324 275 289 10;
+#X msg 39 236 loadbang;
+#X obj 62 122 loadbang;
+#X msg 62 148 1;
+#X floatatom 62 174 0 0 0;
+#X obj 29 93 random 127;
+#X msg 29 68 bang;
+#X text 26 13 The loadbang message;
+#X text 81 68 <= click here first;
+#X text 118 234 <= then click here;
+#X obj 39 262 s pd-5.loadbang.pd;
+#X connect 0 0 9 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;

@@ -1,14 +1,15 @@
-#N canvas 159 248 941 688 12;
-#X obj 807 183 pi;
-#X obj 807 145 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+#N canvas 287 78 956 723 12;
+#X declare -path else;
+#X obj 814 221 pi;
+#X obj 814 183 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 508 245 cos;
-#X floatatom 508 271 0 0 0 0 - - -;
-#X floatatom 508 157 0 0 0 0 - - -;
-#X obj 511 138 hsl 128 15 0 1 0 0 cos empty empty -2 -8 0 10 -228856
+#X obj 515 283 cos;
+#X floatatom 515 309 0 0 0 0 - - -;
+#X floatatom 515 195 0 0 0 0 - - -;
+#X obj 518 176 hsl 128 15 0 1 0 0 cos empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X floatatom 508 212 0 0 0 0 - - -;
-#X text 460 158 linear;
+#X floatatom 515 250 0 0 0 0 - - -;
+#X text 467 196 linear;
 #N canvas 136 179 262 279 plot 0;
 #X msg 111 133 0;
 #X obj 66 159 osc~ 100;
@@ -27,8 +28,8 @@
 #X connect 3 0 7 0;
 #X connect 4 0 6 0;
 #X connect 5 0 4 1;
-#X restore 767 297 pd plot;
-#X obj 524 315 hsl 128 133 0 1 0 0 empty cos empty -2 -8 0 10 -228856
+#X restore 774 335 pd plot;
+#X obj 531 353 hsl 128 133 0 1 0 0 empty cos empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #N canvas 0 22 452 302 (subpatch) 0;
 #X array cos 441 float 1;
@@ -93,12 +94,12 @@
 0.991773 0.993497 0.995024 0.996347 0.997453 0.99836 0.999068 0.999578
 0.999888;
 #X coords 0 1 440 -1 133 133 1;
-#X restore 521 315 graph;
-#X obj 508 317 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -1 -262144
+#X restore 528 353 graph;
+#X obj 515 355 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -1 -262144
 -1 0 1;
-#X obj 674 244 sin;
-#X floatatom 674 271 0 0 0 0 - - -;
-#X obj 690 316 hsl 128 133 0 1 0 0 empty cos empty -2 -8 0 10 -228856
+#X obj 681 282 sin;
+#X floatatom 681 309 0 0 0 0 - - -;
+#X obj 697 354 hsl 128 133 0 1 0 0 empty cos empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #N canvas 0 22 452 302 (subpatch) 0;
 #X array sin 441 float 1;
@@ -163,46 +164,47 @@
 -0.141984 -0.127867 -0.113724 -0.0995586 -0.0853728 -0.0711684 -0.05695
 -0.0427204 -0.0284822 -0.0142383;
 #X coords 0 1 440 -1 133 133 1;
-#X restore 687 316 graph;
-#X obj 674 318 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -1 -262144
+#X restore 694 354 graph;
+#X obj 681 356 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -1 -262144
 -1 0 1;
-#X obj 807 212 display;
-#X obj 508 186 expr $f1 * 2*pi;
-#X text 17 306 The y' output draws the graph below \, in which the
+#X obj 814 250 display;
+#X obj 515 224 expr $f1 * 2*pi;
+#X text 24 344 The y' output draws the graph below \, in which the
 amplitude is the vertical axis and the horizontal axis is the angle.
 The cosine output draws the same function but starting at 1 \, or at
 a different initial phase. So Sine and Cosine are the same function
 with a phase diference of 90 degrees., f 59;
-#X obj 736 213 value pi;
-#X text 455 212 radians;
-#X text 467 14 The native Pd objects [sin] and [cos] take angles in
+#X obj 743 251 value pi;
+#X text 462 250 radians;
+#X text 474 52 The native Pd objects [sin] and [cos] take angles in
 radians (from 0 to 2pi) \, but the nstive [cos~] object takes angles
 in a linear range from 0 to 1! The ELSE library provides the [pi] object
 \, which outputs the value of pi. we then insert it into a variable
 in [value] so it can be recalled inside [expr]. Below we convert linear
 to radians by multiplying it by 2*pi. Then [cos] and [sin] give us
 the amplitude values., f 61;
-#X text 638 271 sine;
-#X text 461 272 cosine;
-#X obj 600 536 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X text 645 309 sine;
+#X text 468 310 cosine;
+#X obj 607 574 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 557 589 cos~;
-#X floatatom 597 561 5 0 0 0 - - -;
-#X text 548 561 linear;
-#X obj 654 589 sin~;
-#X text 486 469 Pd has a native [cos~] object that calculates the cosine
+#X obj 564 627 cos~;
+#X floatatom 604 599 5 0 0 0 - - -;
+#X text 555 599 linear;
+#X obj 661 627 sin~;
+#X text 493 507 Pd has a native [cos~] object that calculates the cosine
 in audio signals from a linear input. The ELSE library also provides
 a [sin~] object that behaves similarly.;
-#X obj 654 620 display~ 7;
-#X obj 557 620 display~ 7;
-#X text 18 13 A "pure tone" contains a single frequency and is produced
+#X obj 661 658 display~ 7;
+#X obj 564 658 display~ 7;
+#X text 25 51 A "pure tone" contains a single frequency and is produced
 by a sinusoidal oscillator \, which can be implemented with a sine
 or cosine function. The input to these functions is an angle value
 \, or "phase". Below we have an "alpha" angle and a y' "amplitude"
 value from the sine \, whereas x' is the cosine output., f 58;
-#X obj 789 568 setdsp~;
-#X obj 228 525 pic files/sine.gif;
-#X obj 231 198 pic files/angle.gif;
+#X obj 796 606 setdsp~;
+#X obj 235 563 pic files/sine.gif;
+#X obj 238 236 pic files/angle.gif;
+#X obj 745 15 declare -path else;
 #X connect 0 0 17 0;
 #X connect 0 0 20 0;
 #X connect 1 0 0 0;

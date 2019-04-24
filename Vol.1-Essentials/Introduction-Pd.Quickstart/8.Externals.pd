@@ -1,0 +1,67 @@
+#N canvas 395 65 891 636 12;
+#X declare -path else;
+#X text 38 121 There are two types of external libraries \, they either
+come compiled in a single binary pack or each object comes as a separate
+binary. The first case is the classic library format and needs to be
+loaded in Pd's startup (Preferences => Startup). The second case doesn't
+need any of that but you need to add the library's folder to the search
+paths (Preferences => Path)., f 49;
+#X obj 649 246 sine~;
+#X obj 610 560 rev1~;
+#X obj 663 560 rev2~, f 8;
+#X obj 737 560 rev3~, f 8;
+#X obj 722 246 pluck~;
+#X text 425 283 For single binaries \, as is the case with else \,
+you can also use "namespaces" \, this means loading the external by
+setting a relative path \, such as:;
+#X obj 645 330 else/fbdelay~;
+#X text 38 28 You can download and install many externals directly
+from the "Help => Find Externals" menu. Just search for the name of
+an external or external library ("else" \, for example) and get it.
+Externals get usually downloaded to Pd's externals folder and need
+to be loaded properly., f 49;
+#X text 38 348 A different method is to use the [declare] object to
+load both kinds of libraries with the "-lib" and "-path" flags. This
+loads the libraries just for the patch containing the [declare] object.
+Hence \, adding to the Path or Statup installs permanently and you
+can use in any patch., f 49;
+#X text 425 366 This will only work if the folder containing the external
+library is included in a folder that Pd automatically searches for
+files \, as is the case with Pd's externals folder \, the usual folder
+for externals in Pd., f 59;
+#X obj 504 561 sigmund~;
+#X text 425 438 In techical terms \, an external is any object not
+part of Pd's binary. Pd Vanilla itself includes extra objects that
+are technically externals and they're included in a folder called "extra"
+inside Pd's application \, which is searched automatically. One example
+is the [sigmund~] object. Abstractions are also externals and Pd also
+provides some of those in the "extra" folder \, like the reverb objects.
+;
+#X text 38 243 In "Help => Find Externals" there's a preference tabs
+where you can click on an option to prompt you if you want to add a
+downloaded library to your path. You can also have it always add whatever
+you download to yout path. But sometimes you don't want to do that
+\, like when you actually want to load a binary via startup., f 49
+;
+#X text 38 439 The order of the added paths matter. The search is prioritized
+to the first paths. If nothing is found \, then it moves to the next
+paths. In the case you have many installed libraries \, you can have
+different objects with the same name \, so you want to be sure to load
+the right one. Hence \, even if you have added a library's path. There's
+an advantage of using [declare] \, because it'll force a priority to
+the path declared (or to the first path if you declare more than one)
+\, so you can control and make sure to load the right objects., f
+49;
+#X obj 485 246 declare -path else;
+#X text 426 28 If you haven't \, please download "else" \, which is
+needed for this tutorial and widely used from this point forward. It's
+a library that comes with separate binaries \, so it must be added
+to the search paths. Just go to "Help => Find Externals" and search
+for 'else'.;
+#X text 426 107 Make sure to download the right version of ELSE for
+this tutorial. Note you can also manually download and install else
+from all the available versions in its repository. Check the readme
+of this tutorial for more information.;
+#X text 426 179 Here is an example on how to use [declare] to load
+objects from the ELSE library and a couple of objects from it ([sine~]
+and [pluck~]).;

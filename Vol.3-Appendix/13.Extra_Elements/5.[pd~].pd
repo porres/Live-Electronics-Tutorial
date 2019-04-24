@@ -1,0 +1,12 @@
+#N canvas 935 550 514 341 12;
+#X obj 33 4 cnv 15 400 40 empty empty [pd~]: 20 12 0 24 -262144 -66577
+0;
+#X text 32 272 ============================================================
+;
+#X obj 123 217 pd~;
+#X text 28 155 This is particularly useful if you want to enjoy multi-core
+processing. Check more info on the object.;
+#X text 164 215 <- right click to open help file;
+#X text 33 75 The network objects are useful to conect independent
+Pure Data instances. But you can also open another Pure Data Engine
+with other patches loaded into it with the [pd~] object.;

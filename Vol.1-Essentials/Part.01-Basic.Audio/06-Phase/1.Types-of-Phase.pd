@@ -1,7 +1,8 @@
-#N canvas 272 46 1015 754 12;
-#X obj 82 285 cnv 15 298 99 empty empty empty 20 12 0 14 -220534 -66577
+#N canvas 272 46 1024 773 12;
+#X declare -path else;
+#X obj 85 287 cnv 15 298 99 empty empty empty 20 12 0 14 -220534 -66577
 0;
-#X obj 82 186 cnv 15 298 99 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 85 188 cnv 15 298 99 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array phase 441 float 1;
@@ -66,10 +67,10 @@
 -0.141984 -0.127867 -0.113724 -0.0995586 -0.0853728 -0.0711684 -0.05695
 -0.0427204 -0.0284822 -0.0142383;
 #X coords 0 1.016 440 -1.016 300 200 1 0 0;
-#X restore 81 185 graph;
-#X text 65 276 0;
-#X text 66 179 1;
-#X text 57 330 -1;
+#X restore 84 187 graph;
+#X text 68 278 0;
+#X text 69 181 1;
+#X text 60 332 -1;
 #N canvas 393 90 434 281 plot 0;
 #X msg 234 204 label_pos \$2 \$1;
 #X obj 234 178 pack;
@@ -89,37 +90,37 @@
 #X connect 6 0 5 0;
 #X connect 7 0 4 0;
 #X connect 9 0 8 0;
-#X restore 898 246 pd plot;
-#X obj 657 199 hsl 200 20 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X restore 901 262 pd plot;
+#X obj 660 215 hsl 200 20 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -258113 -1 0 1;
-#X obj 654 229 nbx 5 18 -1e+37 1e+37 0 0 \$0-fase empty empty 0 -8
+#X obj 657 245 nbx 5 18 -1e+37 1e+37 0 0 \$0-fase empty empty 0 -8
 0 13 -228856 -1 -1 0 256;
-#X text 220 220 <== Positive Phase;
-#X text 148 343 Negative Phase ==>;
-#X text 535 576 1;
-#X obj 552 581 graph~ 400 20 0 1;
-#X text 537 710 0;
-#X obj 870 599 setdsp~ 1;
-#X obj 33 533 cnv 15 448 198 empty empty empty 20 12 0 14 -228856 -66577
+#X text 223 222 <== Positive Phase;
+#X text 151 345 Negative Phase ==>;
+#X text 538 588 1;
+#X obj 555 593 graph~ 400 20 0 1;
+#X text 540 722 0;
+#X obj 881 626 setdsp~ 1;
+#X obj 36 535 cnv 15 448 198 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array Initial-Phase 441 float 0;
 #X coords 0 1 440 -1 450 200 1 0 0;
-#X restore 32 532 graph;
-#X text 19 525 1;
-#X text 11 721 -1;
-#X obj 166 445 t b f;
-#X obj 178 469 osc~ 100;
-#X obj 169 417 hsl 200 20 0 1 0 1 empty empty empty -2 -8 0 10 -228856
+#X restore 35 534 graph;
+#X text 22 527 1;
+#X text 14 723 -1;
+#X obj 169 447 t b f;
+#X obj 181 471 osc~ 100;
+#X obj 172 419 hsl 200 20 0 1 0 1 empty empty empty -2 -8 0 10 -228856
 -1 -1 8800 1;
-#X obj 552 531 phasor~ 200;
-#X text 43 418 Initial Phase:;
-#X text 250 446 Initial phase is just where in the cycle it started
+#X obj 555 543 phasor~ 200;
+#X text 46 420 Initial Phase:;
+#X text 253 448 Initial phase is just where in the cycle it started
 to oscillate., f 21;
-#X obj 166 494 tabwrite~ Initial-Phase;
-#X text 377 418 1;
-#X text 151 418 0;
-#X text 24 11 The term "Phase" can be used in different contexts \,
+#X obj 169 496 tabwrite~ Initial-Phase;
+#X text 380 420 1;
+#X text 154 420 0;
+#X text 27 13 The term "Phase" can be used in different contexts \,
 being ambiguous and confusing. One way to avoid is to use more specific
 terminology instead of just abbreviating as "phase". On its own \,
 "phase" indicates a stage within a cycle \, such as the four different
@@ -128,24 +129,24 @@ phases of the moon. Sound waveforms are also cyclical and we can have
 this original concept is rarely used in music theory and we'll present
 here other more important applications and concepts regarding phase
 - check on the right and below., f 62;
-#X text 490 30 Instant Phase: just "phase" usually refers to instant
+#X text 493 46 Instant Phase: just "phase" usually refers to instant
 phase in music theory. So it doesn't concern a stage \, but a moment
 in time. It doesn't hurt to explicitly adopt "instant pahse" instead
 of just "phase" \, and indicate a single position withing a given cycle.
 , f 68;
-#X text 490 96 Now \, since an instant phase refers to a single position
+#X text 493 112 Now \, since an instant phase refers to a single position
 withing a given cycle \, this can also be represented as an angle.
 This may promote a synonymic relationship between phase and angle \,
 but it is important to emphasize that both implicate on and relate
 to a position., f 68;
-#X text 629 176 Instant Phase as an "Angle"/"Position";
-#X text 463 485 On the other hand \, as with amplitude \, besides an
+#X text 632 192 Instant Phase as an "Angle"/"Position";
+#X text 466 497 On the other hand \, as with amplitude \, besides an
 "instant" measure \, we also, f 75;
-#X text 707 503 have the "running signal". This "running phase" concept
+#X text 710 515 have the "running signal". This "running phase" concept
 is that the phase values are dynamic and in constant change \, as in
 the output of [phasor~]., f 40;
-#X text 563 561 <= Running phase;
-#X obj 453 266 cnv 15 498 202 empty \$0-time . -20 82 0 66 -228856
+#X text 566 573 <= Running phase;
+#X obj 456 282 cnv 15 498 202 empty \$0-time . -20 82 0 66 -228856
 -258113 0;
 #N canvas 391 118 975 563 (subpatch) 0;
 #X array Instant-Phase 200 float 1;
@@ -177,7 +178,8 @@ the output of [phasor~]., f 40;
 -0.368112 -0.338727 -0.309004 -0.278983 -0.248678 -0.218134 -0.18737
 -0.156425 -0.125323 -0.0940986 -0.0627817 -0.0314018;
 #X coords 0 1.01 199 -1.01 499 203 1 0 0;
-#X restore 452 265 graph;
+#X restore 455 281 graph;
+#X obj 833 17 declare -path else;
 #X connect 7 0 8 0;
 #X connect 19 0 25 0;
 #X connect 19 1 20 1;

@@ -1,34 +1,36 @@
-#N canvas 654 88 484 584 12;
-#X obj 279 114 hsl 128 15 0 1 0 0 empty pos1 empty -2 -8 0 10 -228856
--1 -1 6350 1;
-#X obj 334 191 pi;
-#X obj 334 218 v pi;
-#X obj 57 106 osc~ 400;
-#X obj 152 106 osc~ 600;
-#X obj 207 200 out~;
-#X obj 57 138 expr~ $v1 * cos($v3 * pi/2) \; $v2 * sin($v3 * pi/2)
-;
-#X obj 57 196 meter2~;
-#X obj 276 87 initmess 0.5;
-#X obj 232 411 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
+#N canvas 654 88 496 642 12;
+#X declare -path else;
+#X obj 280 160 hsl 128 15 0 1 0 0 empty pos1 empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X floatatom 229 430 0 0 0 0 - - -;
-#X obj 122 497 else/out~;
-#X obj 122 407 osc~ 440;
-#X text 214 410 L;
-#X text 364 410 R;
-#X obj 148 434 osc~ 880;
-#X obj 122 460 balance~;
-#X text 24 20 When a stereo signal is positioned in the same way as
+#X obj 335 237 pi;
+#X obj 335 264 v pi;
+#X obj 58 152 osc~ 400;
+#X obj 153 152 osc~ 600;
+#X obj 208 246 out~;
+#X obj 58 184 expr~ $v1 * cos($v3 * pi/2) \; $v2 * sin($v3 * pi/2)
+;
+#X obj 58 242 meter2~;
+#X obj 277 133 initmess 0.5;
+#X obj 233 457 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X floatatom 230 476 0 0 0 0 - - -;
+#X obj 123 543 else/out~;
+#X obj 123 453 osc~ 440;
+#X text 215 456 L;
+#X text 365 456 R;
+#X obj 149 480 osc~ 880;
+#X obj 123 506 balance~;
+#X text 25 66 When a stereo signal is positioned in the same way as
 panning \, we call it "balance". The implementation below uses the
 now more than famous sin/cos equal power function., f 62;
-#X text 369 80 middle point, f 6;
-#X text 52 87 left;
-#X text 149 86 right;
-#X text 69 357 The [balance~] object \, from ELSE \, implements this
+#X text 370 126 middle point, f 6;
+#X text 53 133 left;
+#X text 150 132 right;
+#X text 70 403 The [balance~] object \, from ELSE \, implements this
 kind of equal power balance., f 44;
-#X obj 276 144 f2s~ 10;
-#X obj 229 453 f2s~ 10;
+#X obj 277 190 f2s~ 10;
+#X obj 230 499 f2s~ 10;
+#X obj 292 25 declare -path else;
 #X connect 0 0 22 0;
 #X connect 1 0 2 0;
 #X connect 3 0 6 0;

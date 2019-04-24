@@ -1,36 +1,38 @@
-#N canvas 396 23 801 464 12;
-#X obj 237 165 nbx 5 14 0 40 0 0 empty ganho empty 0 -8 0 10 -228856
+#N canvas 396 23 801 475 12;
+#X declare -path else;
+#X obj 240 175 nbx 5 14 0 40 0 0 empty ganho empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X floatatom 237 211 7 0 0 0 - - -, f 7;
-#X obj 237 187 db2lin;
-#X floatatom 594 236 5 0 0 0 - - -, f 5;
-#X obj 597 209 hsl 128 15 1 12 0 1 empty empty drive 45 9 1 12 -228856
+#X floatatom 240 221 7 0 0 0 - - -;
+#X obj 240 197 db2lin;
+#X floatatom 597 246 5 0 0 0 - - -;
+#X obj 600 219 hsl 128 15 1 12 0 1 empty empty drive 45 9 1 12 -228856
 -1 -1 0 1;
-#X obj 594 261 float2sig~ 10;
-#X obj 517 262 drive~;
-#X obj 517 220 osc~ 440;
-#X msg 478 188 mode \$1;
-#X obj 478 166 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 597 271 float2sig~ 10;
+#X obj 520 272 drive~;
+#X obj 520 230 osc~ 440;
+#X msg 481 198 mode \$1;
+#X obj 481 176 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 94 259 expr~ tanh($v1 * $v2);
-#X obj 158 298 graph~ 185 25;
-#X obj 497 298 out~;
-#X obj 51 332 out~;
-#X obj 94 204 osc~ 440;
-#X text 30 17 It'd be ideal to address this in the waveshaping section
+#X obj 97 269 expr~ tanh($v1 * $v2);
+#X obj 161 308 graph~ 185 25;
+#X obj 500 308 out~;
+#X obj 54 342 out~;
+#X obj 97 214 osc~ 440;
+#X text 33 27 It'd be ideal to address this in the waveshaping section
 \, but let's anticipate it briefly for now \, and further discuss it
 later on., f 49;
-#X text 30 72 The "tanh" fucntion performs a "soft clipping" and non
+#X text 33 82 The "tanh" fucntion performs a "soft clipping" and non
 linear distortion. It always distorts the signal a bit \, and can act
 as a compressor \, but also end up quite close to a hard clipping.
 It all depends on the input signal boost., f 49;
-#X text 290 211 Ratio;
-#X text 298 165 Gain (dB);
-#X text 445 65 The [drive~] object \, from ELSE \, perofrms the same
+#X text 293 221 Ratio;
+#X text 301 175 Gain (dB);
+#X text 448 75 The [drive~] object \, from ELSE \, perofrms the same
 kind of soft clipping with the tanh function. It also has yet another
 mode \, based on another exponential function \, check its help file
 for more details., f 44;
-#X obj 237 235 f2s~ 10 1;
+#X obj 240 245 f2s~ 10 1;
+#X obj 588 38 declare -path else;
 #X connect 0 0 2 0;
 #X connect 1 0 20 0;
 #X connect 2 0 1 0;

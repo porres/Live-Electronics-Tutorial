@@ -1,36 +1,38 @@
-#N canvas 446 23 484 573 12;
-#X floatatom 217 139 5 0 0 0 - - -, f 5;
-#X obj 220 118 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
+#N canvas 446 23 509 622 12;
+#X declare -path else;
+#X floatatom 240 200 5 0 0 0 - - -;
+#X obj 243 179 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 74 164 osc~ 300;
-#X obj 140 163 osc~ 500;
-#X obj 102 242 out~;
-#X obj 186 349 cnv 15 87 60 empty empty empty 20 12 0 14 -241339 -66577
+#X obj 97 225 osc~ 300;
+#X obj 163 224 osc~ 500;
+#X obj 125 303 out~;
+#X obj 209 410 cnv 15 87 60 empty empty empty 20 12 0 14 -241339 -66577
 0;
-#X obj 73 348 cnv 15 100 60 empty empty empty 20 12 0 14 -241339 -66577
+#X obj 96 409 cnv 15 100 60 empty empty empty 20 12 0 14 -241339 -66577
 0;
-#X obj 192 357 noise~;
-#X obj 206 383 osc~ 200;
-#X obj 294 375 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 215 418 noise~;
+#X obj 229 444 osc~ 200;
+#X obj 317 436 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 75 354 osc~ 400;
-#X obj 108 384 osc~ 600;
-#X obj 134 482 out~;
-#X obj 133 449 xfade~ 2;
-#X obj 121 207 xfade~;
-#X text 29 17 The [xfade~] object \, from ELSE \, performs a sin/cos
+#X obj 98 415 osc~ 400;
+#X obj 131 445 osc~ 600;
+#X obj 157 543 out~;
+#X obj 156 510 xfade~ 2;
+#X obj 144 268 xfade~;
+#X text 52 78 The [xfade~] object \, from ELSE \, performs a sin/cos
 equal power crossfade between two sound sources of any number of channels
 (mono \, stereo \, quadriphonic \, etc). Its argument defines the number
 of channelso. Sem nenhum argumento \, o padrão é de fontes de um canal
 (1 by default)., f 59;
-#X text 157 117 source 1;
-#X text 352 115 source 2;
-#X text 72 144 source 1;
-#X text 143 144 source 2;
-#X text 69 324 source 1;
-#X text 180 323 source 2;
-#X obj 217 164 f2s~ 10;
-#X obj 291 401 f2s~ 10;
+#X text 180 178 source 1;
+#X text 375 176 source 2;
+#X text 95 205 source 1;
+#X text 166 205 source 2;
+#X text 92 385 source 1;
+#X text 203 384 source 2;
+#X obj 240 225 f2s~ 10;
+#X obj 314 462 f2s~ 10;
+#X obj 321 26 declare -path else;
 #X connect 0 0 22 0;
 #X connect 1 0 0 0;
 #X connect 2 0 14 0;

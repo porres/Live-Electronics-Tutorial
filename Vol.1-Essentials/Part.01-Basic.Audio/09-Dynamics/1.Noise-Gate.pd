@@ -1,6 +1,7 @@
 #N canvas 417 60 936 508 12;
+#X declare -path else;
 #X obj 312 110 nbx 4 17 -100 0 0 0 empty empty empty 0 -8 0 13 -228856
--1 -1 -30 256;
+-1 -1 0 256;
 #X text 374 112 dB;
 #X obj 165 204 *~;
 #X obj 81 233 meter~;
@@ -12,32 +13,33 @@
 #X obj 183 84 mov.rms~ 512 -db;
 #X obj 183 112 expr~ $v1 >= $f2;
 #X obj 183 140 display~;
-#X obj 520 371 vu~;
-#X obj 520 419 nbx 4 17 -100 0 0 0 empty empty empty 0 -8 0 13 -228856
--1 -1 -100 256;
-#X obj 539 395 nbx 4 17 -100 0 0 0 empty empty empty 0 -8 0 13 -228856
--1 -1 -100 256;
-#X obj 520 342 noisegate~ -30 -size 1024;
+#X obj 526 394 vu~;
+#X obj 526 442 nbx 4 17 -100 0 0 0 empty empty empty 0 -8 0 13 -228856
+-1 -1 0 256;
+#X obj 545 418 nbx 4 17 -100 0 0 0 empty empty empty 0 -8 0 13 -228856
+-1 -1 0 256;
+#X obj 526 365 noisegate~ -30 -size 1024;
 #X text 304 133 threshold/floor;
 #X obj 183 176 glide~ 10;
-#X text 435 38 This is a noise gate example \, which lets the signal
+#X text 441 61 This is a noise gate example \, which lets the signal
 through if it is greater than a given threshold. We use [mov.rms~]
 to measure the running RMS and compare its value to a "threshold" or
 "floor" dB value., f 66;
-#X text 435 109 The comparison is done with the native [expr~] object
+#X text 441 132 The comparison is done with the native [expr~] object
 \, where a higher value will return "1" if true or "0" if false. These
 values are then used to open and close the gate with the [glide~] object.
 The [glide~] time here is set to 10 ms and can be thought of as the
 attack/release., f 66;
 #X text 185 453 gated;
 #X text 61 453 original;
-#X text 436 189 Compare the result of the original and the gated signals.
+#X text 442 212 Compare the result of the original and the gated signals.
 , f 65;
-#X text 456 249 the patch to the left is implemented inside the [noisgate~]
+#X text 462 272 the patch to the left is implemented inside the [noisgate~]
 abstraction from ELSE \, check it below \, open its help file.;
 #X obj 79 34 play.file~ 1 ../../../samples/MouthBow.wav 1 1, f 33
 ;
-#X obj 520 314 play.file~ 1 ../../../samples/MouthBow.wav 1 1;
+#X obj 526 337 play.file~ 1 ../../../samples/MouthBow.wav 1 1;
+#X obj 733 22 declare -path else;
 #X connect 0 0 10 1;
 #X connect 2 0 4 0;
 #X connect 3 0 5 0;

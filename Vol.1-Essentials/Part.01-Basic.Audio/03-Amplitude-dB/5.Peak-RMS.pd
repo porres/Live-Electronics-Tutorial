@@ -1,4 +1,6 @@
 #N canvas 261 122 1015 532 12;
+#X declare -path else;
+#X declare -path else;
 #X obj 210 325 *~;
 #X obj 231 277 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
@@ -7,17 +9,17 @@
 #X obj 260 395 nbx 8 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
 -228856 -1 -1 0 256;
 #X obj 260 450 nbx 8 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
--228856 -1 -1 -999 256;
+-228856 -1 -1 0 256;
 #X text 377 455 RMS (dB);
 #X text 374 398 RMS (linear);
 #X obj 210 243 osc~ 500;
 #X text 310 303 (linear);
-#N canvas 248 23 996 521 RMS 1;
+#N canvas 248 23 996 521 RMS 0;
 #X obj 219 299 / 1024;
 #X obj 219 374 sqrt;
-#X floatatom 219 339 8 0 0 0 - - -, f 8;
+#X floatatom 219 339 8 0 0 0 - - -;
 #X msg 219 441 \; rms const \$1;
-#X floatatom 219 255 8 0 0 0 - - -, f 8;
+#X floatatom 219 255 8 0 0 0 - - -;
 #X obj 155 85 t b f;
 #X obj 131 25 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
@@ -60,6 +62,7 @@ analysis of [rms~]., f 70;
 #X text 543 132 Below we have the graph of the resulting sinusoid and
 the root mean square line for this period window.;
 #X text 305 413 RMS (linear);
+#X obj 724 16 declare -path else;
 #X connect 0 0 2 0;
 #X connect 1 0 15 0;
 #X connect 2 0 1 0;
@@ -80,35 +83,35 @@ the root mean square line for this period window.;
 #X connect 21 0 27 0;
 #X connect 27 0 4 0;
 #X connect 31 0 27 0;
-#X restore 807 150 pd RMS;
+#X restore 810 192 pd RMS;
 #X obj 123 394 nbx 8 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
 -228856 -1 -1 0 256;
 #X obj 123 447 nbx 8 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
--228856 -1 -1 -999 256;
+-228856 -1 -1 0 256;
 #X obj 123 369 peak~ 4096;
 #X obj 260 367 rms~ 4096;
 #X obj 260 423 lin2db;
 #X obj 123 421 lin2db;
-#X obj 566 101 noise~;
-#X obj 657 137 env~;
-#X obj 657 165 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 95.1987 256;
+#X obj 569 143 noise~;
+#X obj 660 179 env~;
+#X obj 660 207 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
 #X obj 92 250 setdsp~ 1;
-#X obj 566 140 rms~ -db;
-#X obj 566 167 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 -4.80128 256;
-#X obj 615 312 noise~;
-#X obj 615 426 print~;
-#X obj 582 396 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 569 182 rms~ -db;
+#X obj 569 209 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 618 354 noise~;
+#X obj 618 468 print~;
+#X obj 585 438 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X msg 684 305 linear;
-#X msg 701 329 db;
-#X obj 615 391 else/display~;
+#X msg 687 347 linear;
+#X msg 704 371 db;
+#X obj 618 433 else/display~;
 #X text 51 24 Peak amplitude is the highest absolute amplitude in a
 time window \, and RMS is given as a root mean square \, which is useful
 for signals that vary from negative to positive \, as it is the case
 with audio., f 60;
-#X text 528 22 Both [peak~] and [rms~] are based on Pd's native [env~]
+#X text 531 64 Both [peak~] and [rms~] are based on Pd's native [env~]
 object \, which reports the RMS amplitude \, but in a different dB
 standard scale (from 0 to 100). The [peak~] and [rms~] objects can
 report the ampitude as either linear or dBFS.;
@@ -121,16 +124,17 @@ one. The [rms~] object from ELSE reports us the RMS amplitude \, while
 [peak~] \, also from ELSE \, reports us the peak amplitude.;
 #X text 51 176 See both in action below and note how the RMS is about
 3 dB lower than the peak amplitude for sinusoids., f 60;
-#X text 756 129 More about RMS:;
-#X obj 615 357 else/mov.rms~ 4096;
-#X text 749 358 window size of 4096;
-#X text 730 329 dBFS output;
-#X text 732 304 linear output;
-#X text 522 214 The [mov.rms~] \, from ElSEl \, gives us another kind
+#X text 759 171 More about RMS:;
+#X obj 618 399 else/mov.rms~ 4096;
+#X text 752 400 window size of 4096;
+#X text 733 371 dBFS output;
+#X text 735 346 linear output;
+#X text 525 256 The [mov.rms~] \, from ElSEl \, gives us another kind
 of RMS that is "moving". This means it returns a different RMS value
 for each sample \, according to an analysis done in the previous samples.
 Check more info about every object here in their help files., f 62
 ;
+#X obj 767 22 declare -path else;
 #X connect 0 0 12 0;
 #X connect 0 0 13 0;
 #X connect 1 0 2 0;

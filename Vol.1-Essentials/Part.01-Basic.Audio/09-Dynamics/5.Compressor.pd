@@ -1,4 +1,5 @@
 #N canvas 630 23 686 598 12;
+#X declare -path else;
 #X obj 129 304 r \$0-release;
 #X obj 48 416 *~;
 #X obj 133 329 r \$0-attack;
@@ -60,6 +61,7 @@ threshold but gets attenuates to 3.3333 dB above the threshold., f
 #X text 241 373 Try messing with the parameters below. For a limiter
 setup you can have a fast attack and high ratio (10 or so)., f 59
 ;
+#X obj 503 24 declare -path else;
 #X connect 0 0 14 1;
 #X connect 1 0 16 0;
 #X connect 2 0 14 2;

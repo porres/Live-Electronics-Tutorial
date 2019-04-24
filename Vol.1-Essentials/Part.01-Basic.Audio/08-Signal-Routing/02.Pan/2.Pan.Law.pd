@@ -1,8 +1,9 @@
 #N canvas 495 60 848 541 12;
-#X obj 623 174 osc~ 440;
-#X obj 688 223 env~;
-#X floatatom 688 252 5 0 0 0 - - -, f 5;
-#X obj 580 223 out~;
+#X declare -path else;
+#X obj 626 191 osc~ 440;
+#X obj 691 240 env~;
+#X floatatom 691 269 5 0 0 0 - - -;
+#X obj 583 240 out~;
 #X obj 161 455 fader~ hann;
 #X obj 81 478 fader~ lin;
 #X obj 247 455 fader~ hannsin;
@@ -163,12 +164,12 @@ In such case \, you need to attenuate the signal by 6 dB.;
 reality of everyday accoustic rooms. Equal power functions \, such
 as sine and cosine \, is another type of dB law \, the "3 dB" one.
 ;
-#X text 442 405 There's a clearer distinction between the 3 dB rule
+#X text 445 422 There's a clearer distinction between the 3 dB rule
 and 6 dB rule \, in which is that you have much more atternuation in
 the middle point with the 6 dB law. Now \, this can sound less equal
 in your setup \, but could also be part of a conscious decision in
 a partiular musical gesture. Again \, it's up to you..., f 53;
-#X text 442 312 It's funny that we have so many rules of thumb \, which
+#X text 445 329 It's funny that we have so many rules of thumb \, which
 means we do not have one single rule of thumb. In the end \, it's more
 up to you. In the world of live electronic music production and performance
 \, what is important is a control that "feels better" on your finger
@@ -177,7 +178,7 @@ tips and ears., f 53;
 seen how a linear crossfade attenuates 6 dB in the middle point. This
 means that a linear function is a type of 6 dB Pan Law! Also \, let's
 remind it is a type of constant voltage function., f 59;
-#X text 480 46 One thing to be clear is that whatever pan law you have
+#X text 483 63 One thing to be clear is that whatever pan law you have
 \, you never have the input signal being duplicated when in the middle
 point \, as there's always an attenuation. If you want to just send
 the same signal equally to two speakers \, just implement a duplicated
@@ -190,6 +191,7 @@ from ELSE. Check its help file for more info., f 52;
 the 6 and 3 dB laws. We're literally talking about a point in between
 of 4.5 dB. Check the subpatches below to see more examples of functions
 that can be used for each law.;
+#X obj 651 29 declare -path else;
 #X connect 0 0 1 0;
 #X connect 0 0 3 1;
 #X connect 0 0 3 0;

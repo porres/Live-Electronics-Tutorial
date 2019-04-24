@@ -1,5 +1,6 @@
-#N struct 1010-cell float x float y float cellsize float color;
+#N struct 1007-cell float x float y float cellsize float color;
 #N canvas 458 50 848 571 12;
+#X declare -path else;
 #X obj 39 33 vradio 15 1 0 5 empty empty empty 0 -8 0 10 -228856 -1
 -1 4;
 #X floatatom 39 139 5 0 0 0 - - -;
@@ -71,6 +72,7 @@ and outputs \, and you can map any input to one or more outputs. This
 is more conveniently done with the [mtx.ctl] (from "matrix control")
 \, also provided in ELSE., f 55;
 #X obj 622 387 mtx~ 4 2 100, f 17;
+#X obj 637 55 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 14 0;
 #X connect 6 0 14 0;

@@ -1,43 +1,45 @@
-#N canvas 488 49 558 587 12;
-#X obj 215 113 sqrt;
-#X msg 215 90 2;
-#X msg 177 111 2;
-#X obj 215 206 nbx 5 18 -1e+37 1e+37 0 0 empty empty Cents 68 10 0
+#N canvas 488 49 557 628 12;
+#X declare -path else;
+#X obj 224 148 sqrt;
+#X msg 224 125 2;
+#X msg 186 146 2;
+#X obj 224 241 nbx 5 18 -1e+37 1e+37 0 0 empty empty Cents 68 10 0
 12 -228856 -1 -1 0 256;
-#X text 86 367 Cents;
-#X obj 127 340 ratio2cents;
-#X obj 127 395 cents2ratio;
-#X obj 127 363 display;
-#X obj 127 418 display;
-#X obj 127 312 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 68 10 0
+#X text 95 402 Cents;
+#X obj 136 375 ratio2cents;
+#X obj 136 430 cents2ratio;
+#X obj 136 398 display;
+#X obj 136 453 display;
+#X obj 136 347 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 68 10 0
 12 -228856 -1 -1 0 256;
-#X obj 310 364 display;
-#X obj 310 419 display;
-#X obj 310 313 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 68 10 0
+#X obj 319 399 display;
+#X obj 319 454 display;
+#X obj 319 348 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 68 10 0
 12 -228856 -1 -1 0 256;
-#X text 270 313 Cents;
-#X text 270 423 Cents;
-#X obj 310 341 cents2ratio;
-#X obj 310 396 ratio2cents;
-#X text 42 14 1 Cent is a subdivision of the semitone in 100 equal
+#X text 279 348 Cents;
+#X text 279 458 Cents;
+#X obj 319 376 cents2ratio;
+#X obj 319 431 ratio2cents;
+#X text 51 49 1 Cent is a subdivision of the semitone in 100 equal
 parts. an octave has then 1200 cents! The formula to get the cents
 from an interval ratio is the same as the previous one to get the number
 of semitones \, but you multiply it by 1200 instead of 12!, f 65;
-#X text 245 89 tritone;
-#X text 131 112 octave;
-#X text 67 251 The ELSE library has objhects that convert to and back
+#X text 254 124 tritone;
+#X text 140 147 octave;
+#X text 76 286 The ELSE library has objhects that convert to and back
 from cents \, they are: [ratio2cents] and [cents2ratio]., f 55;
-#X text 84 311 Ratio;
-#X text 82 422 Ratio;
-#X text 270 366 Ratio;
-#X text 60 481 Musical intervals in cents are clearly related to the
+#X text 93 346 Ratio;
+#X text 91 457 Ratio;
+#X text 279 401 Ratio;
+#X text 69 516 Musical intervals in cents are clearly related to the
 equal temperament system \, where we can then compare musical intervals
 to our 12 tone system. To get the value in cents from the 12 equal
 temperament intervals \, just multiply the number of semitones to 100
 - for example \, a major sixth has 9 semintones \, and 900 cents.,
 f 63;
-#X obj 215 141 log 2;
-#X obj 215 170 * 1200;
+#X obj 224 176 log 2;
+#X obj 224 205 * 1200;
+#X obj 364 13 declare -path else;
 #X connect 0 0 25 0;
 #X connect 1 0 0 0;
 #X connect 2 0 25 0;

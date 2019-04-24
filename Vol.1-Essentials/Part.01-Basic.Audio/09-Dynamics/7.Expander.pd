@@ -1,17 +1,18 @@
 #N canvas 630 23 645 573 12;
+#X declare -path else;
 #X obj 131 304 r \$0-release;
 #X obj 50 436 *~;
 #X obj 135 329 r \$0-attack;
 #X obj 68 223 -~;
 #X obj 86 120 r \$0-thresh;
 #X obj 327 395 nbx 5 14 1 100 0 0 \$0-ratio empty empty 0 -8 0 10 -228856
--1 -1 2 256;
+-1 -1 1 256;
 #X obj 327 376 nbx 5 14 -100 0 0 0 \$0-thresh empty empty 0 -8 0 10
--228856 -1 -1 -18 256;
+-228856 -1 -1 0 256;
 #X obj 327 433 nbx 5 14 0 100 0 0 \$0-release empty empty 0 -8 0 10
--228856 -1 -1 5 256;
+-228856 -1 -1 0 256;
 #X obj 327 414 nbx 5 14 0 100 0 0 \$0-attack empty empty 0 -8 0 10
--228856 -1 -1 5 256;
+-228856 -1 -1 0 256;
 #X text 388 375 Threshold (dB), f 20;
 #X text 388 413 Attack (ms), f 20;
 #X text 388 432 Release (ms), f 20;
@@ -44,6 +45,7 @@ and a limiter are related., f 45;
 #X text 254 301 Try messing with the parameters below. For a noise
 gate setup you can have a fast attack and release with high ratio (10
 or so)., f 45;
+#X obj 444 27 declare -path else;
 #X connect 0 0 14 1;
 #X connect 1 0 17 0;
 #X connect 1 0 17 1;

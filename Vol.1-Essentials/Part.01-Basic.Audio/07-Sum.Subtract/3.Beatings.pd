@@ -1,4 +1,5 @@
 #N canvas 490 92 760 566 12;
+#X declare -path else;
 #X text 486 382 1;
 #X text 480 516 -1;
 #X text 486 449 0;
@@ -22,15 +23,15 @@
 0 0;
 #X coords 0 1 440 -1 200 140 1;
 #X restore 501 388 graph;
-#X obj 102 252 hsl 128 15 0 0.5 0 0 empty empty empty -2 -6 0 10 -228856
+#X obj 101 307 hsl 128 15 0 0.5 0 0 empty empty empty -2 -6 0 10 -228856
 -1 -1 0 1;
-#X obj 81 310 *~;
-#X obj 238 372 +~;
-#X obj 277 252 hsl 128 15 0 0.5 0 0 empty empty empty -2 -6 0 10 -228856
+#X obj 80 365 *~;
+#X obj 237 427 +~;
+#X obj 276 307 hsl 128 15 0 0.5 0 0 empty empty empty -2 -6 0 10 -228856
 -1 -1 0 1;
-#X obj 256 311 *~;
-#X floatatom 81 193 5 0 0 0 - osc1 -, f 5;
-#X floatatom 256 193 5 0 0 0 - osc2 -, f 5;
+#X obj 255 366 *~;
+#X floatatom 80 248 5 0 0 0 - osc1 -;
+#X floatatom 255 248 5 0 0 0 - osc2 -;
 #X text 481 202 1;
 #X text 475 336 -1;
 #X text 481 269 0;
@@ -79,8 +80,8 @@
 #X restore 495 31 graph;
 #X text 583 178 +;
 #X text 586 362 =;
-#X obj 238 426 out~;
-#X obj 388 329 setdsp~ 1;
+#X obj 237 481 out~;
+#X obj 387 384 setdsp~ 1;
 #N canvas 49 23 406 259 plot 0;
 #X obj 39 43 inlet~;
 #X obj 154 45 inlet~;
@@ -100,19 +101,20 @@
 #X connect 8 0 5 0;
 #X connect 8 0 6 0;
 #X connect 8 0 7 0;
-#X restore 152 415 pd plot;
-#X text 29 42 When we add oscillators with close frequencies it generates
+#X restore 151 470 pd plot;
+#X text 28 97 When we add oscillators with close frequencies it generates
 beatings.;
-#X text 29 76 This is because they keep getting in and out of phase.
+#X text 28 131 This is because they keep getting in and out of phase.
 That is \, at one point they sum and add up their amplitudes and in
 another they get cancelled out. the cycle in which this occurs has
 the same frequency as the frequency difference of the oscillators.
 In this example \, by default \, we have 400 hz and 401 hz \, so the
 beatings occur at 1 hz., f 59;
-#X obj 81 221 osc~ 400;
-#X obj 256 222 osc~ 401;
-#X obj 99 280 f2s~ 10;
-#X obj 274 279 f2s~ 10;
+#X obj 80 276 osc~ 400;
+#X obj 255 277 osc~ 401;
+#X obj 98 335 f2s~ 10;
+#X obj 273 334 f2s~ 10;
+#X obj 70 45 declare -path else;
 #X connect 5 0 31 0;
 #X connect 6 0 7 0;
 #X connect 6 0 26 0;

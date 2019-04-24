@@ -1,4 +1,5 @@
 #N canvas 278 23 885 739 12;
+#X declare -path else;
 #X obj 109 643 ftom;
 #X obj 139 609 nbx 5 14 -1e+37 1e+37 0 0 empty empty Hz 18 -6 0 10
 -228856 -1 -1 0 256;
@@ -14,28 +15,28 @@
 #X msg 270 119 69;
 #X obj 180 487 + 69;
 #X obj 180 457 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0.311942 256;
+-228856 -1 -1 0 256;
 #X obj 180 515 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 69.3119 256;
+-228856 -1 -1 0 256;
 #X obj 180 376 / 440;
 #X obj 180 351 nbx 5 14 20 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
--1 -1 448 256;
+-1 -1 20 256;
 #X obj 191 683 nbx 5 14 -1e+37 1e+37 0 0 empty empty MIDI 18 -6 0 10
 -228856 -1 -1 0 256;
-#X obj 595 109 nbx 5 14 -1e+37 1e+37 0 0 empty empty MIDI 60 7 0 10
+#X obj 595 128 nbx 5 14 -1e+37 1e+37 0 0 empty empty MIDI 60 7 0 10
 -228856 -1 -1 0 256;
-#X obj 499 138 mtof;
-#X obj 499 173 nbx 5 14 -1e+37 1e+37 0 0 empty empty Hz 60 7 0 10 -228856
+#X obj 499 157 mtof;
+#X obj 499 192 nbx 5 14 -1e+37 1e+37 0 0 empty empty Hz 60 7 0 10 -228856
 -1 -1 0 256;
-#X text 564 139 =;
-#X obj 595 172 nbx 5 14 -1e+37 1e+37 0 0 empty empty Hz 60 7 0 10 -228856
+#X text 564 158 =;
+#X obj 595 191 nbx 5 14 -1e+37 1e+37 0 0 empty empty Hz 60 7 0 10 -228856
 -1 -1 0 256;
-#X obj 605 500 mtof;
-#X obj 605 530 osc~;
+#X obj 605 519 mtof;
+#X obj 605 549 osc~;
 #X obj 210 274 cnv 13 197 13 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 588 569 out~;
-#X obj 605 476 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 18 -6 0
+#X obj 588 588 out~;
+#X obj 605 495 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 18 -6 0
 10 -228856 -1 -1 0 256;
 #X text 278 94 Middle C;
 #X text 298 120 Middle A;
@@ -44,26 +45,26 @@
 #X text 227 376 Interval ratio to middle A;
 #X text 42 555 This is the opposite conversion from [mtof] \, and we
 also have a native object for that - [ftom].;
-#X text 485 62 If we invert the formula \, we get the [mtof] expression:
+#X text 485 81 If we invert the formula \, we get the [mtof] expression:
 , f 28;
 #X obj 191 642 expr 12 * log($f1/440)/log(2) + 69;
-#X obj 595 140 expr pow(2 \, ($f1 - 69)/12) * 440;
-#X obj 645 449 nbx 5 14 -1e+37 1e+37 0 0 empty midi empty 0 -8 0 10
+#X obj 595 159 expr pow(2 \, ($f1 - 69)/12) * 440;
+#X obj 645 468 nbx 5 14 -1e+37 1e+37 0 0 empty midi empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 605 422 / 100;
-#X obj 605 403 nbx 7 14 -1200 1200 0 0 empty cents empty 0 -8 0 10
+#X obj 605 441 / 100;
+#X obj 605 422 nbx 7 14 -1200 1200 0 0 empty cents empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 561 403 Cents;
-#X obj 608 381 hsl 128 15 0 1200 0 0 empty empty empty -2 -8 0 10 -228856
+#X text 561 422 Cents;
+#X obj 608 400 hsl 128 15 0 1200 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 605 448 + 60;
-#X text 702 448 MIDI pitch;
-#X text 671 475 MIDI & MIDI-Cents;
+#X obj 605 467 + 60;
+#X text 702 467 MIDI pitch;
+#X text 671 494 MIDI & MIDI-Cents;
 #X text 210 270 semitones = 12 * Log2(ratio);
 #X text 35 221 Now let's try to convert frequency to MIDI pitch \,
 we can start with the conversion from interval ratio to semitones given
 before \, where:, f 53;
-#X text 453 303 Below we have a MIDI pitch value added to an interval
+#X text 453 322 Below we have a MIDI pitch value added to an interval
 in cents. To adapt the cents value to MIDI cents \, we just need to
 divide it by 100!, f 57;
 #X text 35 17 The MIDI protocol has data with 7 bits. This gives us
@@ -73,7 +74,7 @@ MIDI pitch \, the number 60 represents middle C. The native object
 56;
 #X text 35 305 Now we need a reference point \, like middle A (440Hz).
 So any frequency input becomes an interval ratio to 440Hz., f 53;
-#X text 453 221 MIDI data is only about integer values from 0 to 127
+#X text 453 240 MIDI data is only about integer values from 0 to 127
 \, but in Pd we have more resolution with floats. Therefore \, we can
 have a finer resolution after the decimal point. You can also consider
 this extra resolution as "MIDI-Cents" \, where 0.01 is equal to one
@@ -82,6 +83,7 @@ cent!, f 57;
 #X text 217 487 sum to middle A in MIDI;
 #X obj 180 403 log 2;
 #X obj 180 429 * 12;
+#X obj 700 31 declare -path else;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 1 0 32 0;
