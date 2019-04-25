@@ -1,4 +1,4 @@
-#N canvas 661 29 514 591 12;
+#N canvas 460 23 514 591 12;
 #X declare -path else;
 #X obj 239 460 hsl 128 15 3 10 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
@@ -23,19 +23,19 @@ controlling the cutoff filter instead of a LFO. This is much like the
 audio \, and know as "Auto Wah" (used a lot in funk music \, by the
 way) \, since the wha wha control is automatically set by the input
 amplitude., f 61;
-#X obj 121 255 play.file~ ../../../../samples/pointy.aif 1 1;
 #X obj 344 22 declare -path else;
 #X obj 161 335 display~ 6;
+#X obj 121 255 play.file~ pointy-pick.aif 1 1;
 #X connect 0 0 6 0;
 #X connect 4 0 3 0;
 #X connect 4 0 3 1;
-#X connect 5 0 16 0;
+#X connect 5 0 15 0;
 #X connect 6 0 4 2;
 #X connect 7 0 11 1;
 #X connect 8 0 11 2;
 #X connect 9 0 11 3;
 #X connect 10 0 11 4;
 #X connect 11 0 4 1;
-#X connect 14 0 4 0;
-#X connect 14 0 5 0;
-#X connect 16 0 11 0;
+#X connect 15 0 11 0;
+#X connect 16 0 4 0;
+#X connect 16 0 5 0;

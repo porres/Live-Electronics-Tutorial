@@ -1,16 +1,15 @@
-#N canvas 589 69 554 546 12;
+#N canvas 603 30 554 546 12;
 #X declare -path else;
 #N canvas 585 381 444 188 upsample-88.2Khz 0;
 #X obj 175 90 block~ 64 1 2;
 #X obj 67 120 outlet~;
 #X text 272 89 <= 2x upsample;
-#X obj 67 40 play.file~ ../../../samples/sax.wav 1 1;
+#X obj 67 40 play.file~ sax.wav 1 1;
 #X connect 3 0 1 0;
 #X restore 304 285 pd upsample-88.2Khz;
 #X obj 261 326 out~;
 #X obj 394 237 sr~ 44100;
 #X obj 85 271 readsf~;
-#X obj 85 238 initmess open ../../../samples/sax.wav \, 1;
 #X obj 85 313 out~;
 #X text 60 147 Here we have Pd set to run at 44.1 Khz via the [sr~]
 object \, but we're playing a file with a sample rate of 88.2 Khz.
@@ -27,9 +26,10 @@ the same sample rate as the sound file's. Or else it'll play at a different
 speed. By the way \, most of the sound files used on this tutorial
 are at 44.1 Khz \, the usual one.;
 #X obj 361 16 declare -path else;
+#X obj 85 238 initmess open sax.wav \, 1;
 #X connect 0 0 1 0;
 #X connect 0 0 1 1;
-#X connect 3 0 5 0;
-#X connect 3 0 5 1;
-#X connect 3 1 4 0;
-#X connect 4 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 3 1 9 0;
+#X connect 9 0 3 0;

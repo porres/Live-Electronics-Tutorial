@@ -55,7 +55,6 @@ example., f 50;
 a sound file as was done here for this example., f 50;
 #X obj 171 370 unpack;
 #X floatatom 210 402 5 0 0 0 - - -;
-#X obj 171 340 sample~ \$0-buffer ../../../samples/sax.wav;
 #X obj 185 432 swap;
 #X text 51 432 size =>;
 #X text 37 210 In this example we use [phasor~] to read from [tabread4~].
@@ -66,6 +65,7 @@ than Pd's) by the number of samples - both information are given by
 [sample~] (one could use [soundfiler] instead \, in which [sample~]
 is based on)., f 61;
 #X obj 729 23 declare -path else;
+#X obj 171 340 sample~ \$0-buffer sax.wav;
 #X connect 0 0 16 0;
 #X connect 1 0 11 0;
 #X connect 1 0 11 1;
@@ -81,10 +81,10 @@ is based on)., f 61;
 #X connect 18 0 20 1;
 #X connect 20 0 0 0;
 #X connect 21 0 4 0;
-#X connect 33 0 36 0;
+#X connect 33 0 35 0;
 #X connect 33 0 3 0;
 #X connect 33 1 34 0;
-#X connect 34 0 36 1;
-#X connect 35 0 33 0;
-#X connect 36 0 21 0;
-#X connect 36 1 21 1;
+#X connect 34 0 35 1;
+#X connect 35 0 21 0;
+#X connect 35 1 21 1;
+#X connect 39 0 33 0;
