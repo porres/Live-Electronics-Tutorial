@@ -1,9 +1,0 @@
-#N canvas 209 341 383 241 10;
-#N canvas 209 154 262 142 my-subpatch 0;
-#X text 37 40 This is the sub patch;
-#X restore 215 98 pd my-subpatch;
-#X msg 33 62 \; pd-my-subpatch vis 1;
-#X msg 37 127 \; pd-my-subpatch vis 0;
-#X text 43 42 pop-up;
-#X text 40 109 close;
-#X text 13 17 pop-up and close a subpatch :;
