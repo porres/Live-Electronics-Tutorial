@@ -1,68 +1,70 @@
-#N canvas 480 112 856 554 12;
-#X obj 573 387 +~;
-#X obj 573 413 +~;
-#X obj 663 411 *~;
-#X obj 591 358 *~;
-#X obj 489 344 *~;
-#X obj 489 232 r~ \$0-in;
-#X obj 500 180 s~ \$0-in;
-#X obj 587 450 delwrite~ \$0-fb 1000;
-#X obj 663 370 vd~ \$0-fb;
-#X obj 591 315 vd~ \$0-ff;
-#X obj 500 264 delwrite~ \$0-ff 1000;
-#X obj 60 347 r~ \$0-in;
-#X obj 663 273 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#N canvas 365 46 856 554 12;
+#X declare -path else;
+#X obj 549 374 +~;
+#X obj 549 400 +~;
+#X obj 639 398 *~;
+#X obj 567 345 *~;
+#X obj 465 331 *~;
+#X obj 465 219 r~ \$0-in;
+#X obj 546 194 s~ \$0-in;
+#X obj 563 437 delwrite~ \$0-fb 1000;
+#X obj 639 357 vd~ \$0-fb;
+#X obj 567 302 vd~ \$0-ff;
+#X obj 476 251 delwrite~ \$0-ff 1000;
+#X obj 54 347 r~ \$0-in;
+#X obj 639 260 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 614.173 256;
-#X obj 674 338 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 650 325 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0.464567 256;
-#X obj 743 379 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 719 366 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0.631417 256;
-#X obj 507 325 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 483 312 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0.291339 256;
-#X obj 131 161 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 125 161 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 614.173 256;
-#X obj 292 357 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 286 357 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0.631417 256;
-#X obj 207 325 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 201 325 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0.464567 256;
-#X text 660 226 del-time;
-#X text 671 293 feedforward;
-#X text 739 329 feedback;
-#X obj 134 139 hsl 128 15 0 1000 0 1 empty empty empty -2 -8 0 10 -228856
+#X text 636 213 del-time;
+#X text 647 280 feedforward;
+#X text 715 316 feedback;
+#X obj 128 139 hsl 128 15 0 1000 0 1 empty empty empty -2 -8 0 10 -228856
 -1 -1 7800 1;
-#X text 170 138 del-time;
-#X obj 169 244 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X text 164 138 del-time;
+#X obj 163 244 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0.291339 256;
-#X obj 172 222 hsl 128 15 -1 1 0 1 empty empty empty -2 -8 0 10 -228856
+#X obj 166 222 hsl 128 15 -1 1 0 1 empty empty empty -2 -8 0 10 -228856
 -1 -1 8200 1;
-#X obj 210 304 hsl 128 15 -1 1 0 1 empty empty empty -2 -8 0 10 -228856
+#X obj 204 304 hsl 128 15 -1 1 0 1 empty empty empty -2 -8 0 10 -228856
 -1 -1 9300 1;
-#X text 241 303 feedforward;
-#X obj 296 339 hsl 128 15 -0.99 0.99 0 1 empty empty empty -2 -8 0
+#X text 235 303 feedforward;
+#X obj 290 339 hsl 128 15 -0.99 0.99 0 1 empty empty empty -2 -8 0
 10 -228856 -1 -1 10400 1;
-#X text 332 338 feedback;
-#X obj 94 467 out~;
-#X obj 530 484 out~;
-#X text 24 18 The [comb.rev~] object from ELSE is a comb reverberator.
+#X text 326 338 feedback;
+#X obj 88 458 out~;
+#X obj 506 471 out~;
+#X text 44 21 The [comb.rev~] object from ELSE is a comb reverberator.
 It'll be presented in more details later in this tutorial as a reverberator.
 What we need to know now is that it consists in two delay lines - a
-feedforward and feedback., f 57;
-#X obj 674 314 r \$0-ff;
-#X obj 743 353 r \$0-fb;
-#X obj 663 246 r \$0-ms;
-#X obj 507 302 r \$0-gain;
-#X obj 151 185 s \$0-ms;
-#X obj 182 268 s \$0-gain;
-#X obj 216 350 s \$0-ff;
-#X obj 292 391 s \$0-fb;
-#X obj 94 433 comb.rev~ 1000 1 1 0.9;
-#X text 452 18 Let's see how to implement it with native Pd objects
+feedforward and feedback., f 50;
+#X obj 650 301 r \$0-ff;
+#X obj 719 340 r \$0-fb;
+#X obj 639 233 r \$0-ms;
+#X obj 483 289 r \$0-gain;
+#X obj 145 185 s \$0-ms;
+#X obj 176 268 s \$0-gain;
+#X obj 210 350 s \$0-ff;
+#X obj 286 391 s \$0-fb;
+#X obj 88 414 comb.rev~ 1000 1 1 0.9;
+#X text 424 52 Let's see how to implement it with native Pd objects
 to see how it works. Compare the two patches below and see how they
 are the same. The arguments for [comb.rev~] are: initial and maximum
 delay time in ms \, then we have a gain \, feedforward and feedback
 coefficients., f 52;
-#X obj 500 133 play.file~ ../../../../samples/guitar.wav 1 1, f 34
+#X obj 546 147 play.file~ ../../../../samples/guitar.wav 1 1, f 34
 ;
+#X obj 660 15 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 7 0;
 #X connect 1 0 31 1;

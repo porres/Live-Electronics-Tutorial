@@ -1,4 +1,5 @@
-#N canvas 440 111 819 662 12;
+#N canvas 460 56 819 662 12;
+#X declare -path else;
 #X obj 246 430 hsl 128 15 10 500 0 0 empty depth empty -2 -8 0 10 -228856
 -1 -1 389 1;
 #X obj 243 458 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -8,26 +9,26 @@
 0 10 -228856 -1 -1 0 1;
 #X text 360 462 Feedback;
 #X obj 97 210 s~ \$0-in;
-#X obj 589 421 *~;
-#X obj 610 282 hsl 128 15 10 500 0 0 empty depth empty -2 -8 0 10 -228856
+#X obj 549 441 *~;
+#X obj 570 302 hsl 128 15 10 500 0 0 empty depth empty -2 -8 0 10 -228856
 -1 -1 389 1;
-#X obj 607 310 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 567 330 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 25 256;
-#X obj 657 386 hsl 128 15 -0.999 0.999 0 0 empty empty empty -2 -8
+#X obj 617 406 hsl 128 15 -0.999 0.999 0 0 empty empty empty -2 -8
 0 10 -228856 -1 -1 0 1;
-#X text 691 385 Feedback;
-#X obj 654 407 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X text 651 405 Feedback;
+#X obj 614 427 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 647 281 Depth;
-#X obj 524 379 r~ \$0-in;
+#X text 607 301 Depth;
+#X obj 484 399 r~ \$0-in;
 #X floatatom 321 482 0 0 0 0 - - -;
 #X obj 96 579 out~;
-#X obj 505 503 out~;
-#X obj 589 240 rescale~;
-#X obj 589 210 rampnoise~ 1;
+#X obj 465 523 out~;
+#X obj 549 260 rescale~;
+#X obj 549 230 rampnoise~ 1;
 #X obj 161 258 initmess 0 0.33 1 0.34 1 0.33 0 \; LFO 2.25 \; depth
 25;
-#X obj 524 464 fbdelay~ 2000 -gain;
+#X obj 484 484 fbdelay~ 2000 -gain;
 #X obj 96 537 fbdelay~ 2000 -gain;
 #X obj 161 500 *~;
 #X obj 161 431 function~;
@@ -45,15 +46,16 @@ for random pitch shiffting., f 62;
 #X text 30 99 Note that depending the parameters you may reach a flanger
 like effect \, and it should be clear why since the implementation
 is very similar and dependant on a feedback delay.;
-#X obj 654 432 f2s~ 10;
-#X obj 607 335 f2s~ 100;
+#X obj 614 452 f2s~ 10;
+#X obj 567 355 f2s~ 100;
 #X obj 243 484 f2s~ 100;
-#X floatatom 589 165 5 0 0 0 - - -;
-#X obj 589 50 vsl 24 100 0 5 0 0 empty LFO empty 0 -9 0 10 -228856
+#X floatatom 549 185 5 0 0 0 - - -;
+#X obj 549 70 vsl 24 100 0 5 0 0 empty LFO empty 0 -9 0 10 -228856
 -1 -1 4455 1;
-#X text 550 164 rate;
-#X obj 164 313 function;
+#X text 510 184 rate;
+#X obj 164 313 function 0 0.33 1 0.34 1 0.33 0;
 #X obj 97 181 play.file~ ../../../../samples/violin.wav 1 1;
+#X obj 639 52 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 34 0;
 #X connect 3 0 14 0;

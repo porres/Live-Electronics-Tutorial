@@ -1,30 +1,31 @@
-#N canvas 301 125 903 551 12;
-#X obj 414 374 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+#N canvas 326 125 903 551 12;
+#X declare -path else;
+#X obj 407 407 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X floatatom 758 156 6 0 100 0 - hz -, f 6;
-#X obj 648 292 +~;
-#X obj 666 267 samphold~;
-#X obj 666 174 samphold~;
-#X obj 648 226 *~;
-#X obj 648 319 tabread4~ \$0-buffer, f 9;
-#X obj 740 372 *~;
-#X floatatom 274 257 6 0 100 0 - hz -, f 6;
+#X floatatom 756 195 6 0 100 0 - hz -;
+#X obj 646 331 +~;
+#X obj 664 306 samphold~;
+#X obj 664 213 samphold~;
+#X obj 646 265 *~;
+#X obj 646 358 tabread4~ \$0-buffer, f 9;
+#X obj 738 411 *~;
+#X floatatom 274 257 6 0 100 0 - hz -;
 #X obj 178 361 +~;
 #X obj 157 328 *~;
 #X obj 178 390 tabread4~ \$0-buffer, f 9;
 #X text 324 257 Hz;
 #X obj 256 439 *~;
-#X text 764 137 Hz;
-#X obj 758 179 phasor~;
+#X text 762 176 Hz;
+#X obj 756 218 phasor~;
 #X obj 274 281 phasor~;
-#X floatatom 196 229 6 0 0 0 - - -, f 6;
-#X floatatom 118 207 6 0 0 0 - grain -, f 6;
-#X floatatom 666 121 6 0 0 0 - grain -, f 6;
-#X floatatom 588 165 6 0 0 0 - grain -, f 6;
+#X floatatom 196 229 6 0 0 0 - - -;
+#X floatatom 118 207 6 0 0 0 - grain -;
+#X floatatom 664 160 6 0 0 0 - grain -;
+#X floatatom 586 204 6 0 0 0 - grain -;
 #X obj 274 390 envelope~;
 #X obj 213 474 out~;
-#X obj 740 406 out~;
-#X obj 758 329 envelope~;
+#X obj 738 445 out~;
+#X obj 756 368 envelope~;
 #X obj 118 233 ms2samps;
 #X obj 196 261 ms2samps;
 #X text 249 229 position (ms);
@@ -49,20 +50,21 @@ In this example we use a sine function \, which is the default of the
 #X connect 4 0 1 0;
 #X connect 5 0 2 0;
 #X connect 6 0 1 0;
-#X restore 414 423 pd buffer;
-#X obj 588 190 ms2samps;
-#X obj 666 145 ms2samps;
-#X text 490 40 In order to avoid clicks when adjusting grain size and
+#X restore 407 456 pd buffer;
+#X obj 586 229 ms2samps;
+#X obj 664 184 ms2samps;
+#X text 488 79 In order to avoid clicks when adjusting grain size and
 position \, we can use [samphold~] \, which will only let a new value
 through at period transitions., f 54;
-#X text 439 373 <=;
-#X text 460 374 load another file into the buffer, f 17;
-#X text 520 164 position;
-#X text 629 121 size;
+#X text 432 406 <=;
+#X text 453 407 load another file into the buffer, f 17;
+#X text 518 203 position;
+#X text 627 160 size;
 #X text 40 130 Besides the frequency \, we have a grain size parameter
 in ms and its position im the buffer \, also in ms (both values are
 converted to samples and read as indexes). The grain size and frequency
 affect the output pitch.;
+#X obj 708 31 declare -path else;
 #X connect 0 0 30 0;
 #X connect 1 0 15 0;
 #X connect 2 0 6 0;

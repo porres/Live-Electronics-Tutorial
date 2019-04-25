@@ -1,4 +1,5 @@
 #N canvas 349 23 907 531 12;
+#X declare -path else;
 #X obj 144 215 hsl 200 15 0 7 0 0 empty slider empty -2 -8 0 10 -228856
 -1 -1 1421 0;
 #X obj 173 291 expr interpolation[i] \; interpolation[i + 1] \; $f1
@@ -6,7 +7,7 @@
 #X obj 141 244 t b f;
 #X obj 268 405 v frac;
 #X obj 324 384 v i;
-#X floatatom 141 468 8 0 0 0 - - value, f 8;
+#X floatatom 141 468 8 0 0 0 - - value;
 #X obj 141 440 expr a * (1 - frac) + (b * frac);
 #X obj 173 388 v a;
 #X obj 223 388 v b;
@@ -14,7 +15,7 @@
 #X text 223 408 i+1;
 #X floatatom 173 364 0 0 0 0 - - -;
 #X floatatom 223 364 0 0 0 0 - - -;
-#X floatatom 268 372 6 0 0 0 - - -, f 6;
+#X floatatom 268 372 6 0 0 0 - - -;
 #X floatatom 324 358 0 0 0 0 - - -;
 #X obj 551 254 cnv 15 198 198 empty \$0-lin . 1 40 0 44 -257983 -258113
 0;
@@ -22,7 +23,7 @@
 #X array interpolation 8 float 0;
 #X coords 0 1 7 -1 200 200 1 0 0;
 #X restore 550 253 graph;
-#N canvas 33 202 517 391 plot 0;
+#N canvas 64 202 517 391 plot 0;
 #X msg 123 308 label_pos \$2 \$1;
 #X obj 123 282 pack;
 #X obj 89 194 r value;
@@ -81,13 +82,14 @@ fractional mid values between samples., f 58;
 #X text 317 407 fractional part;
 #X text 353 384 integer index;
 #X text 205 468 Linear interpolation between "a" & "b";
-#X text 468 48 At least two points are needed for interpolation such
+#X text 477 80 At least two points are needed for interpolation such
 as in a linear interpolation. Arrays in Pd that are drawn as polygons
 do visually display a linear interpolation to connect the array's points.
 , f 53;
-#X text 468 125 Let's see this example with an 8 point array. Below
+#X text 477 157 Let's see this example with an 8 point array. Below
 we calculate the interpolation (indicated by the red dot)., f 53;
 #X obj 338 291 initmess \; slider 0.5;
+#X obj 680 22 declare -path else;
 #X connect 0 0 2 0;
 #X connect 1 0 11 0;
 #X connect 1 1 12 0;

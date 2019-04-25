@@ -1,20 +1,21 @@
-#N canvas 788 70 551 449 12;
-#X text 335 265 cents;
-#X obj 317 287 nbx 5 16 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
+#N canvas 512 69 586 517 12;
+#X declare -path else;
+#X text 341 302 cents;
+#X obj 323 324 nbx 5 16 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
 0 13 -228856 -1 -1 -400 256;
-#X obj 224 286 nbx 4 16 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
+#X obj 230 323 nbx 4 16 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
 0 13 -228856 -1 -1 50 256;
-#X obj 410 286 nbx 4 16 64 8192 0 0 empty \$0-block empty 0 -8 0 13
+#X obj 416 323 nbx 4 16 64 8192 0 0 empty \$0-block empty 0 -8 0 13
 -228856 -1 -1 2048 256;
-#X msg 424 170 512;
-#X msg 447 236 1024;
-#X msg 438 193 2048;
-#X msg 410 146 8192;
-#X msg 442 215 4096;
-#X obj 224 366 out~;
-#X obj 55 212 delwrite~ \$0-buffer 6000;
-#X text 433 267 size;
-#X text 231 266 speed;
+#X msg 430 207 512;
+#X msg 453 273 1024;
+#X msg 444 230 2048;
+#X msg 416 183 8192;
+#X msg 448 252 4096;
+#X obj 230 403 out~;
+#X obj 61 249 delwrite~ \$0-buffer 6000;
+#X text 439 304 size;
+#X text 237 303 speed;
 #N canvas 475 45 840 752 pitch-shift/time-stretch 0;
 #X obj 51 257 bang~;
 #X obj 123 246 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -147,14 +148,15 @@ to half the new grain size instead of subtracting because this means
 #X connect 53 0 51 0;
 #X connect 56 0 52 0;
 #X connect 57 0 46 0;
-#X restore 224 320 pd pitch-shift/time-stretch;
-#X text 81 31 This example now adapts an earlier pitch shit / time
+#X restore 230 357 pd pitch-shift/time-stretch;
+#X text 87 68 This example now adapts an earlier pitch shit / time
 stretch patch in which the grain size depends on the block size. As
 the earlier one \, this is the basis of a Phase Vocoder example presented
 later. Open the subpatch for details., f 52;
-#X obj 55 254 initmess \; \$0-speed 50 \; \$0-cents -400 \; \$0-block
+#X obj 61 291 initmess \; \$0-speed 50 \; \$0-cents -400 \; \$0-block
 2048;
-#X obj 55 161 play.file~ ../../../../../samples/bubul.wav 1 1;
+#X obj 61 198 play.file~ ../../../../../samples/bubul.wav 1 1;
+#X obj 360 21 declare -path else;
 #X connect 1 0 13 1;
 #X connect 2 0 13 0;
 #X connect 3 0 13 2;

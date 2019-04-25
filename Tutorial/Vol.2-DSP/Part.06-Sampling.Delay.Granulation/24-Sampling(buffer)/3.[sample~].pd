@@ -1,35 +1,37 @@
-#N canvas 611 110 556 658 12;
-#X obj 198 513 tabplay~ \$0-sample;
-#X obj 198 414 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+#N canvas 578 68 580 606 12;
+#X declare -path else;
+#X obj 265 490 tabplay~ \$0-sample;
+#X obj 265 391 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 217 466 nbx 7 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
+#X obj 284 443 nbx 7 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X obj 307 409 metro 1000;
-#X obj 307 437 random;
-#X obj 307 387 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 374 386 metro 1000;
+#X obj 374 414 random;
+#X obj 374 364 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X text 163 413 play;
-#X floatatom 307 460 0 0 0 0 - - -;
-#X msg 307 482 \$1 44100;
-#X msg 159 465 stop;
-#X obj 155 549 out~;
-#X obj 363 436 r \$0-size;
-#X msg 128 247 show;
-#X msg 80 247 hide;
-#X floatatom 128 315 0 0 0 0 - - -;
-#X text 78 29 The [sample~] object from the ELSE library is a convenient
+#X text 230 390 play;
+#X floatatom 374 437 0 0 0 0 - - -;
+#X msg 374 459 \$1 44100;
+#X msg 226 442 stop;
+#X obj 222 526 out~;
+#X obj 430 413 r \$0-size;
+#X msg 118 279 show;
+#X msg 70 279 hide;
+#X floatatom 118 347 0 0 0 0 - - -;
+#X text 68 61 The [sample~] object from the ELSE library is a convenient
 abstraction based on [soundfiler] that can load a sample into an internal
 table. It can also be used to create an audio buffer that you can record
 into as we'll show later in this section of the tutorial.;
-#X obj 128 343 s \$0-size;
-#X text 78 117 One advantage of [sample~] is that it can be used to
+#X obj 118 375 s \$0-size;
+#X text 68 149 One advantage of [sample~] is that it can be used to
 load multi channel files. Check its help file for more details. Below
 \, it's loading a single channel file (the same last example). Its
 outlet also outputs the table size in samples (the output is actually
 a list with size \, sample rate and number of channels) so we have
 basically the same thing as the last example.;
-#X text 168 247 <= shows and hides internal buffer;
-#X obj 128 285 sample~ \$0-sample ../../../samples/bubul.wav;
+#X text 158 279 <= shows and hides internal buffer;
+#X obj 118 317 sample~ \$0-sample ../../../samples/bubul.wav;
+#X obj 382 15 declare -path else;
 #X connect 0 0 10 0;
 #X connect 0 0 10 1;
 #X connect 1 0 0 0;

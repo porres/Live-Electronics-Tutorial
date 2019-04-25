@@ -1,4 +1,5 @@
 #N canvas 304 23 939 611 12;
+#X declare -path else;
 #X obj 249 230 *~;
 #X obj 249 312 delwrite~ \$0-tap-delay 3000;
 #X obj 76 408 *~ 0.7;
@@ -9,8 +10,8 @@
 #X obj 272 545 throw~ \$0-tapR;
 #X obj 496 540 throw~ \$0-tapL;
 #X obj 702 539 throw~ \$0-tapR;
-#X obj 521 172 catch~ \$0-tapL;
-#X obj 564 201 catch~ \$0-tapR;
+#X obj 555 197 catch~ \$0-tapL;
+#X obj 598 226 catch~ \$0-tapR;
 #X obj 280 408 *~ 0.9;
 #X obj 479 408 *~ 0.8;
 #X obj 698 409 *~ 1;
@@ -35,12 +36,13 @@
 #X obj 479 436 throw~ \$0-tapR;
 #X obj 698 437 throw~ \$0-tapL;
 #X obj 170 187 bl.saw~ saw;
-#X obj 521 230 out~;
+#X obj 555 255 out~;
 #X obj 267 182 envgen~ 20 1 10 1 20 0, f 12;
-#X text 403 69 A "Multi-Tap" delay is just a delay line being "tapped"
+#X text 437 94 A "Multi-Tap" delay is just a delay line being "tapped"
 at different points. We can use this to implement simple repetitions
 or more complex rythms. In this example we also explore a stereo effect.
 , f 52;
+#X obj 682 30 declare -path else;
 #X connect 0 0 1 0;
 #X connect 0 0 18 0;
 #X connect 0 0 19 0;

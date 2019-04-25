@@ -1,23 +1,24 @@
-#N canvas 426 23 628 739 12;
-#X obj 333 185 nbx 5 14 0.1 20 0 0 empty \$0-LFO empty 0 -8 0 10 -228856
+#N canvas 504 23 638 639 12;
+#X declare -path else;
+#X obj 347 198 nbx 5 14 0.1 20 0 0 empty \$0-LFO empty 0 -8 0 10 -228856
 -1 -1 0.1 256;
-#X text 333 167 Rate;
-#X obj 414 185 nbx 5 14 0 200 0 0 empty \$0-depth empty 0 -8 0 10 -228856
+#X text 347 180 Rate;
+#X obj 428 198 nbx 5 14 0 200 0 0 empty \$0-depth empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X text 421 166 Depth;
-#X obj 252 274 ffdelay~ 200;
-#X obj 333 241 rescale~ 0, f 12;
-#X obj 333 213 osc~ 0.5;
-#X obj 414 213 f2s~ 10 10;
-#X obj 233 329 xfade~;
-#X obj 233 365 out~;
-#X obj 361 308 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X text 435 179 Depth;
+#X obj 266 287 ffdelay~ 200;
+#X obj 347 254 rescale~ 0, f 12;
+#X obj 347 226 osc~ 0.5;
+#X obj 428 226 f2s~ 10 10;
+#X obj 247 342 xfade~;
+#X obj 247 378 out~;
+#X obj 375 321 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X text 496 306 vibrato;
-#X text 291 306 original;
-#X text 392 306 dry/wet;
-#X obj 358 332 f2s~ 10 -1;
-#X text 77 29 Varying the delay time can be used for vibrato \, chorus
+#X text 510 319 vibrato;
+#X text 305 319 original;
+#X text 406 319 dry/wet;
+#X obj 372 345 f2s~ 10 -1;
+#X text 88 53 Varying the delay time can be used for vibrato \, chorus
 and flanger effects. In this example an LFO controls the delay time
 \, which ascellerates and deascelerates the reading speed \, promoting
 a vibrato effect. The LFO's frequency is the vibrato "rate" \, and
@@ -25,23 +26,24 @@ its amplitude the "depth". A crossfade allows you to mix between the
 original (or dry) and processed (or wet) output. When in the middle
 and summing both of them \, you get a bit of a chorus effect., f 62
 ;
-#X obj 323 582 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 417 479 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 385 582 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 496 479 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 329 562 rate;
-#X text 392 562 depth;
-#X obj 61 294 s~ \$0-in;
-#X obj 279 534 r~ \$0-in;
-#X obj 279 608 vibrato~ 3 30;
-#X obj 259 648 out~;
-#X obj 61 205 play.file~ ../../../../samples/guitar.wav 1 1, f 34
+#X text 423 459 rate;
+#X text 503 459 depth;
+#X obj 75 307 s~ \$0-in;
+#X obj 338 466 r~ \$0-in;
+#X obj 338 505 vibrato~ 3 30, f 23;
+#X obj 338 545 out~;
+#X obj 75 218 play.file~ ../../../../samples/guitar.wav 1 1, f 34
 ;
-#X text 443 578 cents;
-#X text 83 451 The [vibrato~] object \, an abstraction from ELSE \,
+#X text 554 475 cents;
+#X text 59 483 The [vibrato~] object \, an abstraction from ELSE \,
 is actually based on a granular pitch shifter \, that we'll see later.
 Here it performs a vibrato where the depth is the pitch deviation in
-cents.;
+cents., f 35;
+#X obj 419 10 declare -path else;
 #X connect 0 0 6 0;
 #X connect 2 0 7 0;
 #X connect 4 0 8 1;

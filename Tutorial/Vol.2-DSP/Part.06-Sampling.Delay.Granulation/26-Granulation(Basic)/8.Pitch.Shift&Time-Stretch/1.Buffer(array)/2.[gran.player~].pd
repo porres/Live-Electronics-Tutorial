@@ -1,53 +1,54 @@
-#N canvas 278 23 848 655 12;
-#X obj 649 85 table \$0-buffer;
-#X obj 481 90 soundfiler;
-#X obj 481 146 samplerate~;
-#X obj 558 175 /;
-#X msg 212 434 \; speed 8 \; cents -4200 \; grain 400;
-#X msg 91 437 \; speed -36 \; cents 200 \; grain 1000;
-#X msg 91 509 \; speed 8 \; cents -3400 \; grain 400;
-#X msg 91 365 \; speed 50 \; cents -4200 \; grain 100;
-#X msg 212 507 \; speed 4 \; cents -2400 \; grain 14;
-#X text 108 338 presets:;
-#X obj 213 340 loadbang;
-#X msg 213 365 \; speed 100 \; grain 25 \; cents 0;
-#X obj 481 120 t b f, f 14;
-#X text 619 201 sample frequency;
-#X obj 596 161 s \$0-size;
-#X obj 558 200 s \$0-Hz;
-#X text 24 29 In this example we can choose any grain size and have
+#N canvas 278 23 857 637 12;
+#X declare -path else;
+#X obj 667 116 table \$0-buffer;
+#X obj 499 121 soundfiler;
+#X obj 499 177 samplerate~;
+#X obj 576 206 /;
+#X msg 215 434 \; speed 8 \; cents -4200 \; grain 400;
+#X msg 94 437 \; speed -36 \; cents 200 \; grain 1000;
+#X msg 94 509 \; speed 8 \; cents -3400 \; grain 400;
+#X msg 94 365 \; speed 50 \; cents -4200 \; grain 100;
+#X msg 215 507 \; speed 4 \; cents -2400 \; grain 14;
+#X text 111 338 presets:;
+#X obj 216 340 loadbang;
+#X msg 216 365 \; speed 100 \; grain 25 \; cents 0;
+#X obj 499 151 t b f, f 14;
+#X text 637 232 sample frequency;
+#X obj 614 192 s \$0-size;
+#X obj 576 231 s \$0-Hz;
+#X text 27 29 In this example we can choose any grain size and have
 a quite different approach. The buffer is read by [pimp~] and [phasor~]
 objects \, one affects the pitch and the other the speed., f 57;
-#X text 24 92 These two are combined and need to be compensated for
+#X text 27 92 These two are combined and need to be compensated for
 the desired result. We do that by subtracting the speed ratio from
 the transposition ratio.;
-#X text 24 142 The speed frequency is calculated by the speed ratio
+#X text 27 142 The speed frequency is calculated by the speed ratio
 and the sample frequency. The transposition frequency needs to correspond
 to the grain size \, so we multiply the resulting ratio by the grain
 frequency \, obtained by the grain size., f 57;
-#X obj 292 275 gran.player~;
-#X text 24 225 Open [pd grain-1] for more details. Below we have some
+#X obj 295 275 gran.player~;
+#X text 27 225 Open [pd grain-1] for more details. Below we have some
 presets. The [gran.player~] object \, from ELSE \, is based on this
 patch \, check its help file:;
-#X obj 729 275 nbx 5 18 -1e+37 1e+37 0 0 empty speed empty 0 -8 0 13
+#X obj 731 291 nbx 5 18 -1e+37 1e+37 0 0 empty speed empty 0 -8 0 13
 -228856 -1 -1 100 256;
-#X obj 644 521 +~;
-#X obj 636 275 nbx 4 18 -1e+37 1e+37 0 0 empty cents empty 0 -8 0 13
+#X obj 646 508 +~;
+#X obj 638 291 nbx 4 18 -1e+37 1e+37 0 0 empty cents empty 0 -8 0 13
 -228856 -1 -1 0 256;
-#X text 592 276 Cents;
-#X obj 489 272 nbx 4 18 3 1e+37 0 0 empty grain empty 0 -8 0 13 -191407
+#X text 594 292 Cents;
+#X obj 491 288 nbx 4 18 3 1e+37 0 0 empty grain empty 0 -8 0 13 -191407
 -1 -1 25 256;
-#X obj 659 346 -~;
-#X obj 641 372 *~;
-#X obj 644 561 out~;
-#X obj 729 400 display~ 5;
-#X obj 641 398 display~ 5;
-#X text 777 401 Hz;
-#X obj 636 303 cents2ratio;
-#X obj 516 305 expr 1000 / $f1;
-#X obj 489 363 ms2samps;
-#X text 488 249 size (ms);
-#X text 594 254 Transposition;
+#X obj 661 362 -~;
+#X obj 643 388 *~;
+#X obj 646 544 out~;
+#X obj 731 416 display~ 5;
+#X obj 643 414 display~ 5;
+#X text 779 417 Hz;
+#X obj 638 319 cents2ratio;
+#X obj 518 321 expr 1000 / $f1;
+#X obj 491 379 ms2samps;
+#X text 490 265 size (ms);
+#X text 596 270 Transposition;
 #N canvas 904 88 536 467 grain-2 0;
 #X obj 211 223 +~;
 #X obj 141 194 *~;
@@ -82,7 +83,7 @@ patch \, check its help file:;
 #X connect 14 0 15 0;
 #X connect 14 1 5 1;
 #X connect 15 0 2 1;
-#X restore 662 478 pd grain-2;
+#X restore 664 474 pd grain-2;
 #N canvas 178 37 576 564 grain-1 0;
 #X obj 249 329 +~;
 #X obj 194 300 *~;
@@ -127,19 +128,20 @@ are combined and the sample is accessed.;
 #X connect 14 0 5 0;
 #X connect 17 0 8 0;
 #X connect 18 0 12 0;
-#X restore 571 477 pd grain-1;
-#X obj 489 389 s~ \$0-samps;
-#X floatatom 516 330 5 0 0 0 - - -;
-#X text 382 330 Grain Frequency =>;
-#X obj 729 362 *~;
-#X obj 747 337 r \$0-Hz;
-#X text 730 252 Speed (%);
-#X text 592 397 transp;
-#X text 690 399 Hz;
-#X text 768 363 speed;
-#X obj 729 307 / 100;
-#X obj 481 30 initmess read -resize ../../../../../samples/voice.wav
+#X restore 573 473 pd grain-1;
+#X obj 491 405 s~ \$0-samps;
+#X floatatom 518 346 5 0 0 0 - - -;
+#X text 384 346 Grain Frequency =>;
+#X obj 731 378 *~;
+#X obj 749 353 r \$0-Hz;
+#X text 732 268 Speed (%);
+#X text 594 413 transp;
+#X text 692 415 Hz;
+#X text 770 379 speed;
+#X obj 731 323 / 100;
+#X obj 499 61 initmess read -resize ../../../../../samples/voice.wav
 \$0-buffer, f 39;
+#X obj 672 19 declare -path else;
 #X connect 1 0 12 0;
 #X connect 2 0 3 0;
 #X connect 3 0 15 0;

@@ -1,30 +1,32 @@
-#N canvas 637 112 511 499 12;
+#N canvas 589 69 554 546 12;
+#X declare -path else;
 #N canvas 585 381 444 188 upsample-88.2Khz 0;
 #X obj 175 90 block~ 64 1 2;
 #X obj 67 120 outlet~;
 #X text 272 89 <= 2x upsample;
 #X obj 67 40 play.file~ ../../../samples/sax.wav 1 1;
 #X connect 3 0 1 0;
-#X restore 286 236 pd upsample-88.2Khz;
-#X obj 243 277 out~;
-#X obj 376 188 sr~ 44100;
-#X obj 67 222 readsf~;
-#X obj 67 189 initmess open ../../../samples/sax.wav \, 1;
-#X obj 67 264 out~;
-#X text 42 98 Here we have Pd set to run at 44.1 Khz via the [sr~]
+#X restore 304 285 pd upsample-88.2Khz;
+#X obj 261 326 out~;
+#X obj 394 237 sr~ 44100;
+#X obj 85 271 readsf~;
+#X obj 85 238 initmess open ../../../samples/sax.wav \, 1;
+#X obj 85 313 out~;
+#X text 60 147 Here we have Pd set to run at 44.1 Khz via the [sr~]
 object \, but we're playing a file with a sample rate of 88.2 Khz.
 Hence it has twice as much samples and the playing speed drops in half
 and an octave lower.;
-#X text 39 358 A workaround to read a sound file with a different sample
+#X text 57 407 A workaround to read a sound file with a different sample
 rate is possible with resampling. In the subpatch above we have a 2x
 upsampling \, which makes it possible to play at the right speed (it'd
 also be possible to play a 96 Khz file when runnong Pd at 48 khz with
 2x upsampling \, or even a 192 Khz file with 4x oversampling).;
-#X text 41 15 For sound files to be played correctly with [tabplay~]
+#X text 59 64 For sound files to be played correctly with [tabplay~]
 and [readsf~] (or [play.file~] by extension) \, Pd needs to run at
 the same sample rate as the sound file's. Or else it'll play at a different
 speed. By the way \, most of the sound files used on this tutorial
 are at 44.1 Khz \, the usual one.;
+#X obj 361 16 declare -path else;
 #X connect 0 0 1 0;
 #X connect 0 0 1 1;
 #X connect 3 0 5 0;

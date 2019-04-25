@@ -1,10 +1,11 @@
 #N canvas 434 39 772 581 12;
+#X declare -path else;
 #X obj 96 279 *~;
 #X obj 139 244 hsl 128 15 -0.999 0.999 0 0 empty \$0-fb empty -2 -6
 0 8 -228856 -1 -1 12071 1;
 #X obj 78 312 +~;
 #X floatatom 136 266 0 0 0 0 - - -;
-#X floatatom 96 152 5 0 0 0 - - -, f 5;
+#X floatatom 96 152 5 0 0 0 - - -;
 #X obj 99 127 hsl 128 15 1.45 500 1 0 empty \$0-tempo empty -2 -6 0
 8 -228856 -1 -1 11590 1;
 #X obj 35 380 out~;
@@ -15,7 +16,7 @@
 #X text 142 151 ms;
 #X obj 96 178 f2s~ 300;
 #X obj 136 290 f2s~ 50;
-#X text 304 89 Negative feedback indexes are also possible. The polarity
+#X text 297 113 Negative feedback indexes are also possible. The polarity
 of each interation will be flipped \, that's all. This does promote
 a significant change in the sound for very short delay lengths., f
 63;
@@ -23,28 +24,28 @@ a significant change in the sound for very short delay lengths., f
 #X obj 96 207 delread4~ \$0-fb;
 #X text 110 125 delay time;
 #X obj 179 517 dac~;
-#X obj 356 383 noise~;
-#X obj 401 423 *~;
-#X obj 517 438 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 363 392 noise~;
+#X obj 408 432 *~;
+#X obj 524 447 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 459 416 nbx 3 14 0 300 0 0 empty empty empty 0 -8 0 10 -228856
--1 -1 96 256;
-#X text 502 414 Delay time (ms);
-#X obj 401 461 fbdelay~ 100 2000;
-#X obj 401 495 out~;
+#X obj 466 425 nbx 3 14 0 300 0 0 empty empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X text 509 423 Delay time (ms);
+#X obj 408 470 fbdelay~ 100 2000;
+#X obj 408 504 out~;
 #X text 46 479 1 sample block =>;
 #X text 149 243 feedback index;
 #X text 73 31 Audio input;
-#X text 304 26 Now the delay is fed back and summed into the buffer
+#X text 297 50 Now the delay is fed back and summed into the buffer
 input with an attenuation (a feedback index \, or it acumulates/"explodes"
 the gain). A 0.9 index makes each iteration/repetition with 90% of
 the amplitude as the last one - check the patch to the left., f 63
 ;
-#X text 304 138 The feedback implies a minimum delay \, otherwise you'd
+#X text 297 162 The feedback implies a minimum delay \, otherwise you'd
 have an infinite loop. This delay is of at least one block of audio
 with the native Pd objects \, which is 64 samples by default (and needed
 by [adc~] and [dac~] objects)., f 63;
-#X text 304 201 We can change the block size in a subpatch with [block~]
+#X text 297 225 We can change the block size in a subpatch with [block~]
 and go as low as a single sample. But since the [delread4~] object
 also has a minimum delay of 1 sample \, this adds up to a minimum delay
 of 2 samples (but [delread~] can provide a single sample delay feedback
@@ -56,7 +57,7 @@ in this situation). Check the [] subpatch below., f 63;
 0 8 -228856 -1 -1 12071 1;
 #X obj 91 302 +~;
 #X floatatom 144 256 0 0 0 0 - - -;
-#X floatatom 126 142 5 0 0 0 - - -, f 5;
+#X floatatom 126 142 5 0 0 0 - - -;
 #X obj 129 117 hsl 128 15 1.45 500 1 0 empty \$0-tempo empty -2 -6
 0 8 -228856 -1 -1 11590 1;
 #X text 181 231 feedback;
@@ -90,12 +91,13 @@ in this situation). Check the [] subpatch below., f 63;
 #X connect 20 0 21 0;
 #X restore 179 479 pd 1sample-feedback;
 #X text 56 499 (click/open);
-#X text 574 437 <== Feedback index (Decay time in ms), f 18;
-#X obj 419 386 pulse~ 1 0.05;
-#X text 304 283 The [fbdelay~] object from ELSE is a feedback delay
+#X text 581 446 <== Feedback index (Decay time in ms), f 18;
+#X obj 426 395 pulse~ 1 0.05;
+#X text 297 307 The [fbdelay~] object from ELSE is a feedback delay
 line. By default the feedback index is not a multiplication factor
 \, but a decay time \, which is the time in ms that the input decays
 60 dB. check the help file for more details., f 63;
+#X obj 602 13 declare -path else;
 #X connect 0 0 2 1;
 #X connect 1 0 3 0;
 #X connect 2 0 6 0;

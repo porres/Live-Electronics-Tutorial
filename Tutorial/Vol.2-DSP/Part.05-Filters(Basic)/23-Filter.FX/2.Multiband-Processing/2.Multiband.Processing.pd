@@ -1,10 +1,11 @@
 #N canvas 233 77 1025 522 12;
+#X declare -path else;
 #X obj 177 192 nbx 5 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
--1 -1 486.247 256;
+-1 -1 0 256;
 #X obj 197 244 *~;
 #X obj 179 276 +~;
 #X obj 180 168 hsl 128 15 200 2000 1 0 empty empty empty -2 -8 0 10
--228856 -1 -1 4900 1;
+-228856 -1 -1 0 1;
 #X obj 110 158 readsf~;
 #X obj 711 187 nbx 5 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
 -1 -1 0 256;
@@ -43,6 +44,7 @@ have a low \, a medium and a high band., f 64;
 #X text 627 344 Low;
 #X text 727 344 Medium;
 #X text 845 343 High;
+#X obj 779 27 declare -path else;
 #X connect 0 0 12 1;
 #X connect 1 0 2 1;
 #X connect 2 0 13 0;

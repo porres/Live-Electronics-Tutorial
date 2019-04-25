@@ -1,19 +1,21 @@
-#N canvas 592 76 503 407 12;
-#X obj 85 305 out~;
-#X obj 139 216 nbx 5 14 -2400 2400 0 0 empty \$0-cents empty 0 -8 0
-10 -228856 -1 -1 0.3 256;
-#X obj 85 177 play.file~ ../../../../../samples/bubul.wav 1 1;
-#X obj 194 241 nbx 5 14 -2400 2400 0 0 empty \$0-cents empty 0 -8 0
-10 -228856 -1 -1 100 256;
-#X text 251 238 deviation (cents);
-#X text 200 215 rate;
-#X text 51 23 The [vibrato~] object from the ELSE library is presented
+#N canvas 592 76 507 434 12;
+#X declare -path else;
+#X obj 85 352 out~;
+#X obj 139 263 nbx 5 14 -2400 2400 0 0 empty \$0-cents empty 0 -8 0
+10 -228856 -1 -1 0 256;
+#X obj 85 224 play.file~ ../../../../../samples/bubul.wav 1 1;
+#X obj 194 288 nbx 5 14 -2400 2400 0 0 empty \$0-cents empty 0 -8 0
+10 -228856 -1 -1 0 256;
+#X text 251 285 deviation (cents);
+#X text 200 262 rate;
+#X text 51 70 The [vibrato~] object from the ELSE library is presented
 earlier in this tutorial series \, but it is based on the same granular
 principle of the [pitch.shift~] object \, where the pitch deviation
 is controlled by an internal LFO., f 56;
-#X text 50 102 This is an abstraction \, so you can open it to see
+#X text 50 149 This is an abstraction \, so you can open it to see
 hwo it works. Check its help file.;
-#X obj 85 262 vibrato~ 0.3 100;
+#X obj 85 309 vibrato~ 0.3 100;
+#X obj 290 23 declare -path else;
 #X connect 1 0 8 1;
 #X connect 2 0 8 0;
 #X connect 3 0 8 2;

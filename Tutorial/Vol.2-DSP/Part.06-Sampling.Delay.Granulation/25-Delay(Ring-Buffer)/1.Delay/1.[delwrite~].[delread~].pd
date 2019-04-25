@@ -1,31 +1,33 @@
-#N canvas 410 164 594 636 12;
-#X obj 209 467 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#N canvas 515 48 594 636 12;
+#X declare -path else;
+#X obj 214 487 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 370 464 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 375 484 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 134 403 delwrite~ \$0-del 3000;
-#X obj 209 497 delread~ \$0-del 500;
-#X obj 370 494 delread~ \$0-del 1500;
-#X obj 70 438 out~;
-#X obj 166 533 out~;
-#X obj 370 530 out~;
-#X text 99 104 The native [delwrite~] object creates a "ring buffer"
+#X obj 139 423 delwrite~ \$0-del 3000;
+#X obj 214 517 delread~ \$0-del 500;
+#X obj 375 514 delread~ \$0-del 1500;
+#X obj 75 458 out~;
+#X obj 171 553 out~;
+#X obj 375 550 out~;
+#X text 104 124 The native [delwrite~] object creates a "ring buffer"
 \, which is a buffer to continuously record to. You can think of a
 magnetic tape in a loop \, so when you record the whole length of the
 tape you start recording again from the beggining. This was how the
 first delays were designed \, by the way. One head was used to write
 and another to read at different length points (the further back \,
 the bigger the delay)., f 55;
-#X text 99 225 The native [delread~] object \, when named with the
+#X text 104 245 The native [delread~] object \, when named with the
 same delay line \, can access the buffer at different length points
 (set in ms with the second argument or inlet). Multiple [delread~]
 objects can read from the same line defined in [delwrite~]., f 55
 ;
-#X obj 113 358 play.file~ ../../../../samples/bubul.wav 1 1;
-#X text 99 35 The "delay" is the basis of many processes and FX as
+#X obj 118 378 play.file~ ../../../../samples/bubul.wav 1 1;
+#X text 104 55 The "delay" is the basis of many processes and FX as
 we'll see throughout this tutorial \, such as flanger \, chorus \,
 echo and reverberation effects \, pitch shifters and also how they
 are the basis of filters., f 55;
+#X obj 380 15 declare -path else;
 #X connect 0 0 3 0;
 #X connect 1 0 4 0;
 #X connect 3 0 6 0;

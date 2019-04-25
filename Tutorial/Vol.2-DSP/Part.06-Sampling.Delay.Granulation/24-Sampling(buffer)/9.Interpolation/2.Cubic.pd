@@ -1,9 +1,10 @@
-#N canvas 421 69 861 525 12;
-#X floatatom 547 174 0 0 0 0 - - -;
-#X floatatom 547 64 0 0 0 0 - - -;
-#X obj 550 36 hsl 200 15 0 7 0 0 empty slider empty -2 -8 0 10 -228856
+#N canvas 421 69 867 518 12;
+#X declare -path else;
+#X floatatom 557 194 0 0 0 0 - - -;
+#X floatatom 557 86 0 0 0 0 - - -;
+#X obj 560 63 hsl 200 15 0 7 0 0 empty slider empty -2 -8 0 10 -228856
 -1 -1 0 0;
-#X obj 547 150 tabread4 lagrange;
+#X obj 557 170 tabread4 lagrange;
 #N canvas 316 50 432 348 tabread_larange 0;
 #X obj 71 114 t b f;
 #X obj 250 214 v frac;
@@ -32,8 +33,8 @@
 #X connect 9 0 8 0;
 #X connect 10 0 0 0;
 #X connect 12 0 11 0;
-#X restore 577 96 pd tabread_larange;
-#X floatatom 577 121 0 0 0 0 - - value4;
+#X restore 575 116 pd tabread_larange;
+#X floatatom 575 141 0 0 0 0 - - value4;
 #X obj 547 246 cnv 15 198 198 empty empty empty 20 12 0 14 -216373
 -66577 0;
 #X obj 571 246 cnv 15 124 198 empty \$0-dot . -11 97 0 40 -249661 -258113
@@ -62,7 +63,7 @@
 #X restore 546 245 graph;
 #X text 512 447 copy:;
 #X text 744 446 copies:;
-#N canvas 204 198 387 369 plot 0;
+#N canvas 632 229 387 369 plot 0;
 #X msg 76 273 label_pos \$2 \$1;
 #X obj 76 247 pack;
 #X obj 42 159 r value;
@@ -104,49 +105,33 @@
 #X connect 18 0 11 1;
 #X connect 19 0 18 0;
 #X restore 693 226 pd plot;
-#X text 62 106 In this example we have 8 points (n = 8) \, where indexes
+#X text 51 118 In this example we have 8 points (n = 8) \, where indexes
 are from 0 to 7 \, but the actual indexes are 1 to 5! The first (0)
 and last two (6-7) are used for interpolation and are also called "guard
 points".;
 #X text 580 453 ______________________;
-#N canvas 126 23 957 349 shit 0;
-#X text 30 134 Já o ideal para tocar um arquivo em Loop é que se pense
-em 3 pontos extras \, um no início da tabela e dois ao final - como
-já mencionado no exemplo de osclidador de tabela. Inclusive \, a diferença
-também não é muito significativa \, e essa é uma preocupação que é
-mais pertinente apenas para fins de osciladores mesmo.;
-#X text 31 49 Deixamos de ler a primeira e a última amostra de um arquivo
-de som com [tabread4~]. Mas trata-se de um intervalo de tempo tão irrisório
-que \, na prática \, não faz diferença. Em todo caso \, basta inserir
-uma amostra zerada no começo e no final do arquivo para evitar isso.
-;
-#X text 520 93 Ã€ direita \, temos a tabela que estÃ¡ sendo lida de
-forma interpolada com opÃ§Ã£o de visualizaÃ§Ã£o em pontos que acabam
-sendo visualisados como traÃ§os dado o tamanho pequeno da tabela \,
-mas considere o inÃ­cio do traÃ§o como o ponto de fato). O ponto vermelho
-representa a interpolaÃ§Ã£o.;
-#X restore 700 160 pd shit;
-#X text 62 30 The native objects [tabread4] \, [tabread4~] and [tabosc4~]
+#X text 51 42 The native objects [tabread4] \, [tabread4~] and [tabosc4~]
 plus the [table~] object from ELSE use a 4-point polynomial method
 ("lagrange" to be more specific). When calculating a fractional index
 value \, it considers 2 points after and 2 points earlier.;
-#X text 62 170 The index 0 needs to be a copy of the last actual index
+#X text 51 182 The index 0 needs to be a copy of the last actual index
 (5 or "n-3") \, whereas the last two (n-2 & n-1 \, "6" and "7" in this
 case) need to be copies of the first two (respectively \, index "1"
 and "2").;
-#X text 62 233 The idea is to be able to "loop" between the indexes
+#X text 51 245 The idea is to be able to "loop" between the indexes
 1 and n-2 ("6"). Thus \, when you reach index 6 it is the same as index
 1 \, and in between index 5 and 6 the method looks ahead 2 points that
 are copies of the first two. On the other hand \, when in between index
 1 and 2 \, it looks 2 points back.;
-#X text 63 318 The array to the right is set to display in "points"
+#X text 52 330 The array to the right is set to display in "points"
 \, but since it is quite a small table \, we see lines rather than
 points. The actual "points" would be in the beginning of the lines.
 Anyway \, move the slider and see the interpolation result in the red
 dot.;
-#X text 62 399 The [pd lagrange] suboatch calculates the interpolation.
+#X text 51 411 The [pd lagrange] subpatch calculates the interpolation.
 You can compare the result with the output of [tabread4] to see that
 they match.;
+#X obj 680 20 declare -path else;
 #X connect 1 0 3 0;
 #X connect 1 0 4 0;
 #X connect 2 0 1 0;

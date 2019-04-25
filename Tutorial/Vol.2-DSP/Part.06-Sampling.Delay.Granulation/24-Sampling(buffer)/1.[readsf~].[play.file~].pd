@@ -1,4 +1,5 @@
-#N canvas 404 121 913 418 12;
+#N canvas 325 111 913 418 12;
+#X declare -path else;
 #X obj 161 293 readsf~;
 #X msg 116 259 stop;
 #X obj 236 295 spigot;
@@ -23,23 +24,24 @@ below., f 58;
 #X text 35 27 The simplest way to play a sound file in Pd Vanilla is
 with the [readsf~] object. It plays directly from your hard drive and
 offer not that many features. Check help file for more details.;
-#X obj 657 333 out~;
-#X obj 569 214 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 659 336 out~;
+#X obj 571 235 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 621 158 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 623 179 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X text 532 214 play;
-#X msg 621 180 loop \$1;
-#X msg 625 208 open;
-#X text 666 209 Choose file;
-#X msg 626 234 stop;
-#X text 488 118 Check its help file for more details and features.
+#X text 534 235 play;
+#X msg 623 201 loop \$1;
+#X msg 627 229 open;
+#X text 668 230 Choose file;
+#X msg 628 255 stop;
+#X text 490 139 Check its help file for more details and features.
 ;
-#X obj 569 281 play.file~ ../../../samples/violin.wav;
-#X text 486 30 The [play.file~] obhect from ELSE is an abstraction
+#X obj 571 302 play.file~ ../../../samples/violin.wav;
+#X text 488 51 The [play.file~] obhect from ELSE is an abstraction
 that relies on the [readsf~] object. A big convenience is that it has
 multi channel support and can query the number of channels from a sound
 file given as an argument., f 54;
+#X obj 695 14 declare -path else;
 #X connect 0 0 8 0;
 #X connect 0 0 8 1;
 #X connect 0 1 2 0;

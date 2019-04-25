@@ -1,4 +1,5 @@
-#N canvas 506 234 924 555 12;
+#N canvas 296 95 924 555 12;
+#X declare -path else;
 #X floatatom 430 206 5 0 0 0 - - -;
 #X obj 433 181 hsl 128 15 1 100 1 0 empty freq-amp empty -2 -8 0 10
 -228856 -1 -1 3823 1;
@@ -7,14 +8,14 @@
 #X obj 335 123 hsl 128 15 0.01 10 1 0 empty lfo-freq empty -2 -8 0
 10 -228856 -1 -1 7192 1;
 #X obj 384 151 hsl 128 15 1 100 1 0 empty freq-offset empty -2 -8 0
-10 -228856 -1 -1 1912 1;
+10 -228856 -1 -1 0 1;
 #X obj 72 128 noise~;
 #X obj 252 177 nbx 5 14 -1e+37 1e+37 0 0 empty grao-amp empty 0 -8
-0 10 -228856 -1 -1 500 256;
+0 10 -228856 -1 -1 100 256;
 #X obj 225 152 nbx 5 14 -1e+37 1e+37 0 0 empty grao-offset empty 0
 -8 0 10 -228856 -1 -1 100 256;
 #X obj 125 184 nbx 5 14 -1e+37 1e+37 0 0 empty pos-amp empty 0 -8 0
-10 -228856 -1 -1 0 256;
+10 -228856 -1 -1 4800 256;
 #X obj 98 160 nbx 5 14 -1e+37 1e+37 0 0 empty pos-offset empty 0 -8
 0 10 -228856 -1 -1 0 256;
 #X obj 332 182 osc~;
@@ -23,21 +24,21 @@
 #X obj 330 331 hsl 128 15 0.01 10 1 0 empty lfo-freq empty -2 -8 0
 10 -228856 -1 -1 7192 1;
 #X obj 379 359 hsl 128 15 1 100 1 0 empty freq-offset empty -2 -8 0
-10 -228856 -1 -1 1912 1;
+10 -228856 -1 -1 0 1;
 #X obj 248 384 nbx 5 14 -1e+37 1e+37 0 0 empty grao-amp empty 0 -8
-0 10 -228856 -1 -1 500 256;
+0 10 -228856 -1 -1 100 256;
 #X obj 221 360 nbx 5 14 -1e+37 1e+37 0 0 empty grao-offset empty 0
 -8 0 10 -228856 -1 -1 100 256;
 #X obj 122 384 nbx 5 14 -1e+37 1e+37 0 0 empty pos-amp empty 0 -8 0
-10 -228856 -1 -1 0 256;
+10 -228856 -1 -1 4800 256;
 #X obj 95 361 nbx 5 14 -1e+37 1e+37 0 0 empty pos-offset empty 0 -8
 0 10 -228856 -1 -1 0 256;
 #X obj 72 281 s~ \$0-pos_L;
-#X obj 600 73 initmess \; lfo-freq 0.5 \; freq-amp 4 \; freq-offset
+#X obj 604 93 initmess \; lfo-freq 0.5 \; freq-amp 4 \; freq-offset
 2 \; grao-amp 500 \; grao-offset 100 \; pos-amp 10000 \; pos-offset
 0;
-#X obj 754 83 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856 -1
--1;
+#X obj 758 103 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
 #N canvas 681 47 481 244 buffer 0;
 #X obj 301 176 table \$0-buffer;
 #X obj 197 177 soundfiler;
@@ -52,7 +53,7 @@
 #X connect 4 0 1 0;
 #X connect 5 0 2 0;
 #X connect 6 0 1 0;
-#X restore 754 109 pd buffer;
+#X restore 758 129 pd buffer;
 #X text 87 25 Yet again we expand the last example. We have now a stereo
 output \, LFOs control the frequency of the grains and we have envelopes
 controlling the amplitude output.;
@@ -218,6 +219,7 @@ controlling the amplitude output.;
 #X restore 610 282 pd left;
 #X obj 759 293 decay2~ 50 250;
 #X obj 759 262 tempo 180 200;
+#X obj 715 29 declare -path else;
 #X connect 0 0 30 2;
 #X connect 1 0 0 0;
 #X connect 2 0 30 1;

@@ -1,4 +1,5 @@
-#N canvas 504 23 563 689 12;
+#N canvas 516 23 563 689 12;
+#X declare -path else;
 #X obj 104 290 +~;
 #X obj 146 289 +~;
 #X obj 164 259 *~;
@@ -28,7 +29,7 @@
 #X obj 355 220 f2s~ 50;
 #X text 360 139 Time;
 #X obj 310 310 f2s~ 50;
-#X text 162 42 A Ping-pong delay is an effect that alternates the delay
+#X text 177 55 A Ping-pong delay is an effect that alternates the delay
 echoes by alternating the left and right outputs. This pretty much
 sounds like watching a ping pong match indeed., f 46;
 #X obj 278 467 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -45,6 +46,7 @@ sounds like watching a ping pong match indeed., f 46;
 #X text 110 547 This is the base of the [ping.pong~] object \, an abstraction
 from ELSE., f 24;
 #X obj 48 85 rand.i 36 60;
+#X obj 373 16 declare -path else;
 #X connect 0 0 13 0;
 #X connect 0 0 19 0;
 #X connect 1 0 18 0;

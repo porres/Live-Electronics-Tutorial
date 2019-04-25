@@ -1,48 +1,50 @@
-#N canvas 230 144 992 376 12;
-#X obj 36 239 loadbang;
-#X obj 149 242 s~ \$0-in;
-#X text 34 212 Presets;
-#X obj 149 211 play.file~ ../../../../samples/guitar.wav 1 1;
-#X floatatom 545 51 0 0 0 0 - - -;
-#X obj 548 26 hsl 128 15 0.01 3 0 0 empty rate empty -2 -8 0 10 -228856
+#N canvas 267 73 1055 373 12;
+#X declare -path else;
+#X obj 43 240 loadbang;
+#X obj 156 243 s~ \$0-in;
+#X text 41 213 Presets;
+#X obj 156 212 play.file~ ../../../../samples/guitar.wav 1 1;
+#X floatatom 528 85 0 0 0 0 - - -;
+#X obj 531 60 hsl 128 15 0.01 3 0 0 empty rate empty -2 -8 0 10 -228856
 -1 -1 2931 1;
-#X obj 758 58 hsl 128 15 -1 0 0 0 empty feedback empty -2 -8 0 10 -228856
+#X obj 741 92 hsl 128 15 -1 0 0 0 empty feedback empty -2 -8 0 10 -228856
 -1 -1 3810 1;
-#X text 794 57 Feedback;
-#X floatatom 755 86 0 0 0 0 - - -;
-#X floatatom 687 50 0 0 0 0 - - -;
-#X obj 690 26 hsl 128 15 1 30 1 0 empty depth empty -2 -8 0 10 -228856
+#X text 777 91 Feedback;
+#X floatatom 738 120 0 0 0 0 - - -;
+#X floatatom 670 84 0 0 0 0 - - -;
+#X obj 673 60 hsl 128 15 1 30 1 0 empty depth empty -2 -8 0 10 -228856
 -1 -1 8598 1;
-#X text 730 24 Depth;
-#X text 586 25 Rate;
-#X obj 687 76 f2s~ 10;
-#X obj 755 121 f2s~ 10;
-#X obj 620 121 rescale~ 0;
-#X obj 549 121 r~ \$0-in;
-#X obj 842 197 r~ \$0-in;
-#X obj 842 275 out~;
-#X obj 576 200 out~;
-#X obj 576 158 comb.rev~ 30 1 1 -0.7, f 26;
-#X msg 36 276 \; rate 0.7 \; depth 10 \; feedback -0.7;
-#X msg 393 276 \; rate 3 \; depth 1 \; feedback -0.6;
-#X text 37 117 We also use the feedback delay line with negative coefficients.
+#X text 713 58 Depth;
+#X text 569 59 Rate;
+#X obj 670 110 f2s~ 10;
+#X obj 738 155 f2s~ 10;
+#X obj 603 155 rescale~ 0;
+#X obj 532 155 r~ \$0-in;
+#X obj 861 202 r~ \$0-in;
+#X obj 861 280 out~;
+#X obj 559 234 out~;
+#X obj 559 192 comb.rev~ 30 1 1 -0.7, f 26;
+#X msg 43 277 \; rate 0.7 \; depth 10 \; feedback -0.7;
+#X msg 400 277 \; rate 3 \; depth 1 \; feedback -0.6;
+#X text 44 118 We also use the feedback delay line with negative coefficients.
 Let's not that it can cancel the feedforwars line \, so when this is
 at a -1 \, we only have the dry signal \, and this acts like a dry/wet
 parameter., f 63;
-#X msg 155 276 \; rate 0.1 \; depth 50 \; feedback -0.25;
-#X msg 277 276 \; rate 0.15 \; depth 10 \; feedback -0.8;
-#X obj 842 233 chorus~ 0.7 5 0.1;
-#X text 574 276 The [chorus~] object from the ELSE library is based
-on this patch. Check its help file., f 35;
-#X obj 545 81 osc~;
-#X text 37 24 In the vibrato example \, we've seen how mixing a dry
+#X msg 162 277 \; rate 0.1 \; depth 50 \; feedback -0.25;
+#X msg 284 277 \; rate 0.15 \; depth 10 \; feedback -0.8;
+#X obj 861 238 chorus~ 0.7 5 0.1;
+#X obj 528 115 osc~;
+#X text 44 25 In the vibrato example \, we've seen how mixing a dry
 signal with a processed vibrato gives us a chorus like effect. Indeed
 \, a chorus adds an input to one or more copies with slight pitch deviations
 (vibratos). Here we do that with a comb filter that mixes the input
 to a pitch deviated feedforward line controlled by [osc~]., f 63;
+#X text 836 132 The [chorus~] object from the ELSE is based on this
+patch. Check its help file., f 22;
+#X obj 865 27 declare -path else;
 #X connect 0 0 21 0;
 #X connect 3 0 1 0;
-#X connect 4 0 28 0;
+#X connect 4 0 27 0;
 #X connect 5 0 4 0;
 #X connect 6 0 8 0;
 #X connect 8 0 14 0;
@@ -57,4 +59,4 @@ to a pitch deviated feedforward line controlled by [osc~]., f 63;
 #X connect 20 0 19 1;
 #X connect 26 0 18 0;
 #X connect 26 0 18 1;
-#X connect 28 0 15 0;
+#X connect 27 0 15 0;

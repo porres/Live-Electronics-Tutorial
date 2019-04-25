@@ -1,39 +1,41 @@
 #N canvas 661 29 514 591 12;
-#X obj 239 416 hsl 128 15 3 10 0 0 empty empty empty -2 -8 0 10 -228856
+#X declare -path else;
+#X obj 239 460 hsl 128 15 3 10 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X text 288 439 Q;
-#X text 213 294 dB;
-#X obj 121 469 out~;
-#X obj 161 291 display~ 6;
-#X obj 121 427 lowpass~ 0 5;
-#X obj 161 256 mov.rms~ 256 -db;
-#X obj 236 438 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X text 288 483 Q;
+#X text 213 338 dB;
+#X obj 121 513 out~;
+#X obj 121 471 lowpass~ 0 5;
+#X obj 161 300 mov.rms~ 256 -db;
+#X obj 236 482 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X floatatom 212 346 5 0 0 0 - - -;
-#X floatatom 264 346 5 0 0 0 - - -;
-#X floatatom 316 346 5 0 0 0 - - -;
-#X floatatom 368 346 5 0 0 0 - - -;
-#X obj 161 375 rescale~ -40 -5 100 4000 -clip;
-#X text 34 117 the [mov.rms~] object is used then as an envelope follower.
+#X floatatom 212 390 5 0 0 0 - - -;
+#X floatatom 264 390 5 0 0 0 - - -;
+#X floatatom 316 390 5 0 0 0 - - -;
+#X floatatom 368 390 5 0 0 0 - - -;
+#X obj 161 419 rescale~ -40 -5 100 4000 -clip;
+#X text 34 161 the [mov.rms~] object is used then as an envelope follower.
 We get the average and rescale to a frequency range with [rescale~].
 , f 61;
-#X text 34 24 We can adapt the wha wha patch to have an amplitude analysis
+#X text 34 68 We can adapt the wha wha patch to have an amplitude analysis
 controlling the cutoff filter instead of a LFO. This is much like the
 "Envelope Filter" example from Subtractive Synthesis as applied to
 audio \, and know as "Auto Wah" (used a lot in funk music \, by the
 way) \, since the wha wha control is automatically set by the input
 amplitude., f 61;
-#X obj 121 211 play.file~ ../../../../samples/pointy.aif 1 1;
-#X connect 0 0 7 0;
-#X connect 4 0 12 0;
-#X connect 5 0 3 0;
-#X connect 5 0 3 1;
-#X connect 6 0 4 0;
-#X connect 7 0 5 2;
-#X connect 8 0 12 1;
-#X connect 9 0 12 2;
-#X connect 10 0 12 3;
-#X connect 11 0 12 4;
-#X connect 12 0 5 1;
-#X connect 15 0 5 0;
-#X connect 15 0 6 0;
+#X obj 121 255 play.file~ ../../../../samples/pointy.aif 1 1;
+#X obj 344 22 declare -path else;
+#X obj 161 335 display~ 6;
+#X connect 0 0 6 0;
+#X connect 4 0 3 0;
+#X connect 4 0 3 1;
+#X connect 5 0 16 0;
+#X connect 6 0 4 2;
+#X connect 7 0 11 1;
+#X connect 8 0 11 2;
+#X connect 9 0 11 3;
+#X connect 10 0 11 4;
+#X connect 11 0 4 1;
+#X connect 14 0 4 0;
+#X connect 14 0 5 0;
+#X connect 16 0 11 0;

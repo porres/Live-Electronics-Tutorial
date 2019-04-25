@@ -1,25 +1,26 @@
-#N canvas 496 164 915 523 12;
+#N canvas 263 104 915 523 12;
+#X declare -path else;
 #X obj 144 343 vline~;
 #X obj 82 320 float;
-#X text 613 284 cents;
-#X obj 603 304 nbx 5 16 -1e+37 1e+37 0 0 empty cents empty 0 -8 0 13
--228856 -1 -1 -400 256;
-#X obj 514 304 nbx 4 16 -1e+37 1e+37 0 0 empty tempo empty 0 -8 0 13
+#X text 618 317 cents;
+#X obj 608 337 nbx 5 16 -1e+37 1e+37 0 0 empty cents empty 0 -8 0 13
+-228856 -1 -1 0 256;
+#X obj 519 337 nbx 4 16 -1e+37 1e+37 0 0 empty tempo empty 0 -8 0 13
 -228856 -1 -1 5 256;
-#X obj 693 304 nbx 4 16 64 8192 0 0 empty grao empty 0 -8 0 13 -228856
+#X obj 698 337 nbx 4 16 64 8192 0 0 empty grao empty 0 -8 0 13 -228856
 -1 -1 4096 256;
 #X obj 144 270 + 64;
-#X text 476 284 velocidade (%);
-#X msg 803 337 2048;
-#X msg 810 359 4096;
-#X msg 815 380 8192;
-#X msg 794 315 1024;
+#X text 481 317 velocidade (%);
+#X msg 808 370 2048;
+#X msg 815 392 4096;
+#X msg 820 413 8192;
+#X msg 799 348 1024;
 #X obj 144 295 wrap2;
 #X obj 163 444 out~;
 #X text 184 295 <= loop;
 #X obj 163 373 wrap2~;
 #X text 215 372 <= loop;
-#X obj 514 376 out~;
+#X obj 519 409 out~;
 #X text 24 25 So far any change in speed alters the pitch and vice
 versa \, but now we'll implement independent pitch shiftting and time
 stretching with granular methods. This example is actually the basis
@@ -54,7 +55,7 @@ processes. Other examples and methods will be presented next.;
 #X obj 144 320 pack;
 #X obj 215 321 blocksize~ -ms;
 #X text 144 249 + grain size (= block size);
-#X text 470 34 Now for pitch shiffting. The transposition is given
+#X text 475 67 Now for pitch shiffting. The transposition is given
 by a new grain size other than the block size. If it's bigger \, we
 read it faster \, and slower otherwise. In order to avoid a faster
 read speed \, we need to compensate by changing the read points of
@@ -66,15 +67,15 @@ Below we have a simple patch that shows us how to read a sample with
 a loop with the sample size \, this gives us the destination index
 to access with [tabread4~] \, the time of the grain is given by [blocksize~].
 ;
-#X text 705 282 size;
-#X obj 794 408 s \$0-size;
-#X text 791 278 powers of 2, f 6;
-#X text 470 111 For instance \, an octave higher reads twice as fast.
+#X text 710 315 size;
+#X obj 799 441 s \$0-size;
+#X text 796 311 powers of 2, f 6;
+#X text 475 144 For instance \, an octave higher reads twice as fast.
 But if the next grain starts where it would for a normal speed \, this
 is compensated and that would be half the step. So if you have independent
 controls of size and step \, you have independent Pitch Shift and Time
 Stretch., f 59;
-#X text 470 193 The [block~] object only resizes the block to powers
+#X text 475 226 The [block~] object only resizes the block to powers
 of two \, so these are the only possible grain sizes. Open the subpatch
 below to see how it works., f 59;
 #N canvas 102 117 921 744 Pitch-Shit/Time-Stretch 0;
@@ -86,7 +87,7 @@ below to see how it works., f 59;
 #X obj 243 522 phasor~;
 #X obj 173 632 *~;
 #X obj 237 100 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--236782 -1 -1 -400 256;
+-236782 -1 -1 0 256;
 #X obj 225 607 *~;
 #X obj 173 665 +~;
 #X obj 134 130 / 100;
@@ -100,7 +101,7 @@ below to see how it works., f 59;
 #X floatatom 237 308 0 0 0 0 - - -;
 #X floatatom 301 323 0 0 0 0 - - -;
 #X obj 362 422 / 2;
-#X floatatom 362 454 8 0 0 0 - - -, f 8;
+#X floatatom 362 454 8 0 0 0 - - -;
 #X floatatom 237 420 0 0 0 0 - - -;
 #X obj 107 467 +~;
 #X obj 80 294 f;
@@ -128,7 +129,7 @@ below to see how it works., f 59;
 #X obj 134 206 hot;
 #X obj 134 235 *;
 #X obj 116 282 +;
-#X floatatom 237 166 8 0 0 0 - - -, f 8;
+#X floatatom 237 166 8 0 0 0 - - -;
 #X text 192 166 ratio;
 #X obj 148 282 r \$0-size;
 #X obj 80 355 t f f;
@@ -154,7 +155,7 @@ The envelope also needs to be overlapped and a delay object is what
 actually performs the overlap. A [phasor~] drives the envelopes and
 its frequency depends on the block size (given by [blocksize~]).,
 f 54;
-#X floatatom 117 332 5 0 0 0 - - -, f 5;
+#X floatatom 117 332 5 0 0 0 - - -;
 #X connect 1 0 14 0;
 #X connect 2 0 7 0;
 #X connect 3 0 13 0;
@@ -212,9 +213,10 @@ f 54;
 #X connect 57 0 46 1;
 #X connect 58 0 21 0;
 #X connect 58 0 30 0;
-#X restore 514 330 pd Pitch-Shit/Time-Stretch;
+#X restore 519 363 pd Pitch-Shit/Time-Stretch;
 #X obj 202 271 r \$0-size;
 #X text 273 269 sample size;
+#X obj 714 25 declare -path else;
 #X connect 0 0 15 0;
 #X connect 1 0 6 0;
 #X connect 3 0 34 1;

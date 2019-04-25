@@ -1,34 +1,35 @@
-#N canvas 780 135 535 607 12;
+#N canvas 513 23 595 645 12;
+#X declare -path else;
 #N canvas 148 27 361 174 delwrite 0;
 #X obj 69 44 inlet~;
 #X obj 70 121 outlet~;
 #X obj 69 78 delwrite~ \$0-buffer 5000;
 #X connect 0 0 2 0;
-#X restore 159 436 pd delwrite;
-#X obj 86 286 s~ \$0-pos;
-#X obj 214 296 s~ \$0-grain;
-#X obj 344 171 nbx 5 14 -1e+37 1e+37 0 0 empty lfnoise-freq empty 0
+#X restore 170 470 pd delwrite;
+#X obj 97 320 s~ \$0-pos;
+#X obj 225 330 s~ \$0-grain;
+#X obj 355 205 nbx 5 14 -1e+37 1e+37 0 0 empty lfnoise-freq empty 0
 -8 0 10 -228856 -1 -1 2 256;
-#X obj 214 188 noise~;
-#X obj 86 184 noise~;
-#X obj 370 231 nbx 5 14 -1e+37 1e+37 0 0 empty freq-offset empty 0
+#X obj 225 222 noise~;
+#X obj 97 218 noise~;
+#X obj 381 265 nbx 5 14 -1e+37 1e+37 0 0 empty freq-offset empty 0
 -8 0 10 -228856 -1 -1 0 256;
-#X obj 267 241 nbx 5 14 -1e+37 1e+37 0 0 empty grao-amp empty 0 -8
+#X obj 278 275 nbx 5 14 -1e+37 1e+37 0 0 empty grao-amp empty 0 -8
 0 10 -228856 -1 -1 100 256;
-#X obj 240 216 nbx 5 14 -1e+37 1e+37 0 0 empty grao-offset empty 0
+#X obj 251 250 nbx 5 14 -1e+37 1e+37 0 0 empty grao-offset empty 0
 -8 0 10 -228856 -1 -1 100 256;
-#X obj 139 238 nbx 5 14 -1e+37 1e+37 0 0 empty pos-amp empty 0 -8 0
+#X obj 150 272 nbx 5 14 -1e+37 1e+37 0 0 empty pos-amp empty 0 -8 0
 10 -228856 -1 -1 4800 256;
-#X obj 112 214 nbx 5 14 -1e+37 1e+37 0 0 empty pos-offset empty 0 -8
+#X obj 123 248 nbx 5 14 -1e+37 1e+37 0 0 empty pos-offset empty 0 -8
 0 10 -228856 -1 -1 0 256;
-#X obj 397 257 nbx 5 14 -1e+37 1e+37 0 0 empty freq-amp empty 0 -8
+#X obj 408 291 nbx 5 14 -1e+37 1e+37 0 0 empty freq-amp empty 0 -8
 0 10 -228856 -1 -1 4 256;
-#X obj 136 512 out~;
-#X obj 344 197 stepnoise~;
-#X obj 321 438 initmess \; lfnoise-freq 2 \; freq-amp 4 \; freq-offset
+#X obj 147 546 out~;
+#X obj 355 231 stepnoise~;
+#X obj 332 472 initmess \; lfnoise-freq 2 \; freq-amp 4 \; freq-offset
 0 \; grao-amp 100 \; grao-offset 100 \; pos-amp 4800 \; pos-offset
 0;
-#X obj 344 308 s~ \$0-hz;
+#X obj 355 342 s~ \$0-hz;
 #N canvas 382 99 345 218 delread4~ 0;
 #X obj 216 129 +~;
 #X obj 216 157 outlet~;
@@ -96,21 +97,22 @@
 #X connect 4 0 6 0;
 #X connect 5 0 0 0;
 #X connect 6 0 0 1;
-#X restore 159 471 pd delread4~;
-#X text 171 403 <= live input;
-#X obj 110 370 adc~;
-#X obj 344 279 rescale~;
-#X obj 86 258 rescale~;
-#X obj 214 269 rescale~;
-#X text 57 16 Now we adapt what we've seen for ring buffers (delay
+#X restore 170 505 pd delread4~;
+#X text 182 437 <= live input;
+#X obj 121 404 adc~;
+#X obj 355 313 rescale~;
+#X obj 97 292 rescale~;
+#X obj 225 303 rescale~;
+#X text 68 50 Now we adapt what we've seen for ring buffers (delay
 lines). This is useful for live input \, since the past examples needed
 pre recorded samples to be loaded into buffers., f 61;
-#X text 57 68 The adaptation is simple \, we just replace [tabread4~]
+#X text 68 102 The adaptation is simple \, we just replace [tabread4~]
 by [delread4~]. There are major differences though \, as the buffer
 read head is always running. in this example we have a 5 seconds delay
 line \, open [pd delread4~] for details. You may use [adc~] for an
 actual live input., f 61;
-#X obj 159 371 play.file~ ../../../samples/bubul.wav 1 1;
+#X obj 170 405 play.file~ ../../../samples/bubul.wav 1 1;
+#X obj 362 12 declare -path else;
 #X connect 0 0 16 0;
 #X connect 3 0 13 0;
 #X connect 4 0 21 0;

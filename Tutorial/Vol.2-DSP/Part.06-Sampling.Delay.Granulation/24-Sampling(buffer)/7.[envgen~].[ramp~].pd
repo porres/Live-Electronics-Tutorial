@@ -1,4 +1,5 @@
 #N canvas 268 31 924 726 12;
+#X declare -path else;
 #X obj 544 17 r \$0-size;
 #X obj 505 83 random;
 #X obj 440 83 random;
@@ -69,6 +70,7 @@ ratio compensation here.;
 #X obj 643 236 function 0 0.1 1 0.8 1 0.1 0;
 #X text 53 258 Let's just use [soundfiler] again for a change:, f
 30;
+#X obj 736 43 declare -path else;
 #X connect 0 0 1 1;
 #X connect 0 0 2 1;
 #X connect 0 0 31 0;
