@@ -1,7 +1,7 @@
-#N canvas 484 23 873 862 12;
-#X obj 110 114 cnv 15 210 224 empty empty empty 20 12 0 14 -1 -66577
+#N canvas 434 23 945 623 12;
+#X obj 115 121 cnv 15 210 224 empty empty empty 20 12 0 14 -1 -66577
 0;
-#X obj 116 131 cnv 15 198 198 empty empty empty 20 12 0 14 -237047
+#X obj 121 138 cnv 15 198 198 empty empty empty 20 12 0 14 -237047
 -66577 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-reson 2048 float 1;
@@ -277,102 +277,102 @@
 0.00516298 0.00510976 0.00505704 0.0050048 0.00495307 0.00490181 0.00485103
 ;
 #X coords 0 1 2047 0 200 200 1;
-#X restore 115 130 graph;
-#X text 269 181 -3 dB;
-#X text 206 144 f0;
-#X text 210 133 |;
-#X text 247 197 f2;
-#X text 164 198 f1;
-#X text 156 182 __________________;
-#X text 183 191 *;
-#X text 238 191 *;
-#X obj 524 309 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+#X restore 120 137 graph;
+#X text 274 188 -3 dB;
+#X text 211 151 f0;
+#X text 215 140 |;
+#X text 252 204 f2;
+#X text 169 205 f1;
+#X text 161 189 __________________;
+#X text 188 198 *;
+#X text 243 198 *;
+#X obj 720 117 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 536 324 cnv 5 5 5 empty empty = 10 10 0 14 -233017 -66577 0
+#X obj 732 132 cnv 5 5 5 empty empty = 10 10 0 14 -233017 -66577 0
 ;
-#X obj 564 316 cnv 5 5 5 empty empty f0 10 10 0 14 -233017 -66577 0
+#X obj 760 124 cnv 5 5 5 empty empty f0 10 10 0 14 -233017 -66577 0
 ;
-#X obj 548 320 cnv 5 5 5 empty empty _______ 10 10 0 14 -233017 -66577
+#X obj 744 128 cnv 5 5 5 empty empty _______ 10 10 0 14 -233017 -66577
 0;
-#X obj 554 340 cnv 5 5 5 empty empty f2-f1 10 10 0 14 -233017 -66577
+#X obj 750 148 cnv 5 5 5 empty empty f2-f1 10 10 0 14 -233017 -66577
 0;
-#X obj 524 325 cnv 15 15 15 empty empty Q 10 10 0 14 -233017 -66577
+#X obj 720 133 cnv 15 15 15 empty empty Q 10 10 0 14 -233017 -66577
 0;
-#X text 92 176 ^;
-#X text 92 185 |;
-#X text 92 200 A;
-#X text 92 212 M;
-#X text 92 224 P;
-#X text 276 343 >;
-#X text 16 29 A ressonant filter is any type of filter that favours
+#X text 97 183 ^;
+#X text 97 192 |;
+#X text 97 207 A;
+#X text 97 219 M;
+#X text 97 231 P;
+#X text 281 350 >;
+#X text 40 25 A ressonant filter is any type of filter that favours
 a frequency band over other frequencia. A bandpass is a type of resonant
 filter that only lets through a frequency band as in the graph below.
 , f 53;
-#X text 413 26 In the picture above \, f0 is the central or resonant
-frequency. Frequencies above and below are atenuated simmetrically
-considering a logarithmic scale (such as MIDI pitch). The "f1" and
-"f2" points are where the attenuation reaches -3 dB., f 52;
-#X text 413 105 The width of the frequency band is the difference in
-Hz between f2 and f1 \, but you can also define this width as the musical
-interval formed by f2/f1., f 52;
-#X text 413 156 The bandwidth is what usually defines the resonance
+#X text 62 545 The bandwidth is what usually defines the resonance
 of a filter - the smaller the width \, the more resonance we have.
-, f 52;
-#X text 395 221 Q Factor:;
-#X text 415 243 "Q" or "Q Factor" is another measure for resonance.
+, f 47;
+#X text 453 24 Q Factor:;
+#X text 449 52 "Q" or "Q Factor" is another measure for resonance.
 The higher the "Q" \, the more resonance we have. We calculate the
-"Q" by dividing f0 by the bandwidth (f2-f1)., f 52;
-#X text 148 343 FREQUENCY (log);
-#X text 269 343 =;
-#X obj 442 642 nbx 5 18 -1e+37 1e+37 0 0 empty empty Octave 68 10 0
+"Q" by dividing f0 by the bandwidth (f2-f1)., f 56;
+#X text 153 350 FREQUENCY (log);
+#X text 274 350 =;
+#X obj 667 284 nbx 5 18 -1e+37 1e+37 0 0 empty empty Octave 68 10 0
 12 -228856 -1 -1 0 256;
-#X floatatom 453 691 8 0 0 0 - - -;
-#X text 517 693 Cents;
-#X obj 453 669 * 1200;
-#X text 287 650 f0;
-#X obj 312 651 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X floatatom 678 335 8 0 0 0 - - -;
+#X text 738 335 Cents;
+#X obj 678 311 * 1200;
+#X text 512 292 f0;
+#X obj 537 293 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 205 542 f1;
-#X floatatom 442 756 0 0 0 0 - - -;
-#X obj 442 728 expr 1 / (2 * sinh($f1 * ln(2)/2));
-#X text 426 756 Q;
-#X obj 442 784 expr asinh(1/(2*$f1)) * 2/ln(2);
-#X floatatom 442 810 0 0 0 0 - - -;
-#X text 382 811 BW (oct);
-#X text 421 642 bw;
-#X obj 464 592 v f2;
-#X text 414 548 f2;
-#X obj 433 570 t b f;
-#X obj 312 603 expr sqrt(f1*f2) \; log(f2/f1) / log(2);
-#X obj 228 570 t b f;
-#X obj 260 612 v f1;
-#X obj 271 689 expr $f1 / (f2-f1);
-#X floatatom 271 727 0 0 0 0 - - -;
-#X text 270 751 Q = f0 / (f2-f1);
-#X text 371 649 Hz;
-#X text 236 526 Hz;
-#X text 445 529 Hz;
-#X floatatom 433 549 5 0 0 0 - - -;
-#X floatatom 228 545 5 0 0 0 - - -;
-#X text 207 409 Q & Bandwidth:;
-#X text 217 434 The value of Q is defined by the bandwidth (defined
+#X text 430 184 f1;
+#X floatatom 667 395 0 0 0 0 - - -;
+#X obj 667 367 expr 1 / (2 * sinh($f1 * ln(2)/2));
+#X text 651 395 Q;
+#X obj 667 423 expr asinh(1/(2*$f1)) * 2/ln(2);
+#X floatatom 667 449 0 0 0 0 - - -;
+#X text 607 450 BW (oct);
+#X text 646 284 bw;
+#X obj 689 234 v f2;
+#X text 546 190 f2;
+#X obj 537 245 expr sqrt(f1*f2) \; log(f2/f1) / log(2);
+#X obj 453 212 t b f;
+#X obj 485 254 v f1;
+#X obj 496 331 expr $f1 / (f2-f1);
+#X floatatom 496 369 0 0 0 0 - - -;
+#X text 495 393 Q = f0 / (f2-f1);
+#X text 596 291 Hz;
+#X text 461 168 Hz;
+#X text 569 169 Hz;
+#X floatatom 565 191 5 0 0 0 - - -;
+#X floatatom 453 187 5 0 0 0 - - -;
+#X text 459 469 Q & Bandwidth:;
+#X text 465 498 The value of Q is defined by the bandwidth (defined
 as f2 - f1) in which there's a 3dB drop in amplitude around the resonant
 frequency (f0). Here's how to calculate f0 and bandwidth from f2 and
 f1 \, and also how to convert from bandwidth to Q and vice versa.,
-f 52;
-#X connect 31 0 34 0;
-#X connect 31 0 39 0;
-#X connect 34 0 32 0;
-#X connect 36 0 51 0;
-#X connect 38 0 41 0;
-#X connect 39 0 38 0;
-#X connect 41 0 42 0;
-#X connect 47 0 48 0;
-#X connect 47 1 45 0;
-#X connect 48 0 36 0;
-#X connect 48 1 31 0;
-#X connect 49 0 48 0;
-#X connect 49 1 50 0;
-#X connect 51 0 52 0;
-#X connect 57 0 47 0;
-#X connect 58 0 49 0;
+f 53;
+#X text 62 394 Above \, f0 is the central/resonant frequency and the
+frequencies above and below are atenuated simmetrically considering
+a logarithmic scale (such as MIDI pitch). The "f1" and "f2" points
+are where the attenuation reaches -3 dB., f 47;
+#X text 62 473 The frequency band width is the difference in Hz between
+f2 and f1 \, but you can also define this width as the musical interval
+formed by f2/f1., f 47;
+#X obj 565 212 trigger bang float;
+#X connect 29 0 32 0;
+#X connect 29 0 37 0;
+#X connect 32 0 30 0;
+#X connect 34 0 48 0;
+#X connect 36 0 39 0;
+#X connect 37 0 36 0;
+#X connect 39 0 40 0;
+#X connect 45 0 34 0;
+#X connect 45 1 29 0;
+#X connect 46 0 45 0;
+#X connect 46 1 47 0;
+#X connect 48 0 49 0;
+#X connect 54 0 60 0;
+#X connect 55 0 46 0;
+#X connect 60 0 45 0;
+#X connect 60 1 43 0;

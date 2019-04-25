@@ -9,9 +9,9 @@
 -1 -1 5 256;
 #X obj 309 160 vsl 22 80 0 127 0 0 dsfsdgs sddfjhgj empty 0 -9 0 10
 -228856 -1 -1 1770 1;
-#X obj 109 411 else/out~;
+#X obj 109 411 out~;
 #X obj 92 326 osc~;
-#X obj 326 412 else/out~;
+#X obj 326 412 out~;
 #X obj 92 177 lfo 0.25 0 250;
 #X obj 92 298 rescale 200 500;
 #X obj 309 328 bl.tri~;

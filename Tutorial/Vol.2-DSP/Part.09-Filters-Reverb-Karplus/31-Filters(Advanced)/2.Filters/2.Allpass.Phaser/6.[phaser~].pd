@@ -1,20 +1,20 @@
 #N canvas 476 23 656 591 12;
-#X obj 84 338 else/out~;
-#X obj 117 222 else/rescale~ 100 1000;
-#X obj 116 114 else/play.file~ ../../../../../samples/guitar.wav 1
+#X obj 84 338 out~;
+#X obj 117 222 rescale~ 100 1000;
+#X obj 116 114 play.file~ ../../../../../samples/guitar.wav 1
 1;
 #X obj 116 154 s~ \$0-in;
 #X obj 41 221 r~ \$0-in;
-#X obj 431 204 else/rescale~ 100 1000;
+#X obj 431 204 rescale~ 100 1000;
 #X obj 338 193 r~ \$0-in;
-#X obj 338 323 else/out~;
+#X obj 338 323 out~;
 #X obj 338 277 +~;
 #X obj 171 251 hsl 80 17 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X msg 168 277 wet \$1;
 #X obj 117 193 osc~ 0.2;
 #X obj 431 175 osc~ 0.2;
-#X obj 356 243 else/allpass.filt~ 12, f 22;
+#X obj 356 243 allpass.filt~ 12, f 22;
 #X text 138 250 dry;
 #X text 259 250 wet;
 #X text 141 29 You can also use [allpass.filt~] to implement a phaser

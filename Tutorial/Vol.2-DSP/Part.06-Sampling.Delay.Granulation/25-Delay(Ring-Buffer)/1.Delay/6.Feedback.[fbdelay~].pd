@@ -91,7 +91,7 @@ in this situation). Check the [] subpatch below., f 63;
 #X restore 179 479 pd 1sample-feedback;
 #X text 56 499 (click/open);
 #X text 574 437 <== Feedback index (Decay time in ms), f 18;
-#X obj 419 386 else/pulse~ 1 0.05;
+#X obj 419 386 pulse~ 1 0.05;
 #X text 304 283 The [fbdelay~] object from ELSE is a feedback delay
 line. By default the feedback index is not a multiplication factor
 \, but a decay time \, which is the time in ms that the input decays

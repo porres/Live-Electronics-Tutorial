@@ -23,8 +23,8 @@
 #X msg 284 392 interp \$1;
 #X obj 284 365 tgl 16 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 232 470 else/out~;
-#X obj 212 535 else/graph~ 1500 10;
+#X obj 232 470 out~;
+#X obj 212 535 graph~ 1500 10;
 #X obj 211 387 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 735 483 setdsp~ 1;
@@ -32,7 +32,7 @@
 10 -228856 -1 -1 0 1;
 #X obj 616 136 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 573 224 else/out~;
+#X obj 573 224 out~;
 #X obj 616 193 drive~;
 #X obj 616 164 gbman~;
 #X text 354 170 hz;

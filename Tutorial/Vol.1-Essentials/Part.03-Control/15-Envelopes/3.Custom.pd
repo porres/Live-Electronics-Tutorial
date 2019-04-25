@@ -12,7 +12,7 @@
 -1 -1;
 #X text 705 165 1;
 #X obj 334 314 *~;
-#X obj 291 391 else/out~;
+#X obj 291 391 out~;
 #X text 704 261 0;
 #X obj 334 245 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 200 256;

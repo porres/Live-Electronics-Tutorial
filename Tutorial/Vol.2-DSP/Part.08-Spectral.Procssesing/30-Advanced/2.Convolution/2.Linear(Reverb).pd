@@ -1017,7 +1017,7 @@
 #X obj 84 95 tabreceive~ \$0-zero_padding;
 #X obj 66 45 inlet~;
 #X text 75 558 [outlet~] sums the overlaps!, f 15;
-#X obj 76 355 else/cmul~;
+#X obj 76 355 cmul~;
 #X obj 120 284 tabreceive~ \$0-IR-re;
 #X obj 143 315 tabreceive~ \$0-IR-im;
 #X obj 88 480 /~ 32768;

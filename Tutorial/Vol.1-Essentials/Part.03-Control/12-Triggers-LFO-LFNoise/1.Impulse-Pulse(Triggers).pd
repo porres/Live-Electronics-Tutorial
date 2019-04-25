@@ -10,13 +10,13 @@
 #X obj 95 384 out~;
 #X obj 166 511 nbx 5 14 -50 50 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X obj 166 566 else/display~ 7;
+#X obj 166 566 display~ 7;
 #X obj 166 537 randpulse~ 1;
 #X obj 575 136 status~;
 #X obj 728 149 toggleff~;
 #X obj 288 511 nbx 5 14 -50 50 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X obj 288 566 else/display~ 7;
+#X obj 288 566 display~ 7;
 #X obj 288 537 randpulse2~ 1;
 #X obj 575 98 pulse~ 1;
 #X obj 489 165 trig2bang~;

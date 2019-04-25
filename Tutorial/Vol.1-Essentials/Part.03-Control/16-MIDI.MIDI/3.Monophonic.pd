@@ -15,8 +15,8 @@
 #X obj 254 382 *~;
 #X obj 212 320 mtof;
 #X obj 272 319 / 127;
-#X obj 272 288 else/display;
-#X obj 212 289 else/display;
+#X obj 272 288 display;
+#X obj 212 289 display;
 #X obj 272 349 adsr~ 200 50 0.75 500;
 #X obj 212 350 bl.saw~;
 #X obj 212 263 mono, f 9;

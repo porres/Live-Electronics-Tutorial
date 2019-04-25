@@ -1,4 +1,5 @@
 #N canvas 207 30 982 625 12;
+#X declare -path else;
 #X obj 658 76 nbx 5 14 1 1e+37 0 0 \$0-q q-set empty 0 -8 0 10 -228856
 -1 -1 10 256;
 #X obj 615 48 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq freq-set empty 0 -8
@@ -7,7 +8,7 @@
 #X obj 618 19 hsl 200 15 100 22050 1 0 empty freq-slider-set empty
 -2 -8 0 10 -228856 -1 -1 12544 1;
 #N canvas 246 25 1108 572 (subpatch) 0;
-#N canvas 169 136 1038 528 plot 0;
+#N canvas 169 136 742 523 plot 0;
 #N canvas 159 22 181 220 loop 0;
 #X obj 28 100 until;
 #X obj 68 138 + 1;
@@ -26,7 +27,7 @@
 #X connect 6 0 7 0;
 #X connect 6 1 2 0;
 #X connect 7 0 0 0;
-#X restore 172 92 pd loop;
+#X restore 184 96 pd loop;
 #N canvas 259 145 659 527 init 0;
 #X obj 110 66 loadbang;
 #X obj 180 353 s \$0-dbrange;
@@ -155,7 +156,7 @@
 #X connect 9 0 8 0;
 #X connect 10 0 9 0;
 #X connect 11 0 12 0;
-#X restore 447 152 pd init \; tables;
+#X restore 459 156 pd init \; tables;
 #N canvas 121 22 226 277 db-scale 0;
 #X obj 42 31 inlet;
 #X obj 42 61 rmstodb;
@@ -174,14 +175,14 @@
 #X connect 4 0 5 1;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X restore 291 397 pd db-scale;
-#X obj 395 417 r \$0-index;
-#X obj 291 369 expr $f1 * gain;
-#X obj 291 345 /;
-#X obj 260 33 r \$0-q;
-#X obj 173 34 r \$0-freq;
-#X obj 291 419 tabwrite \$0-re;
-#X obj 291 444 tabwrite \$0-im;
+#X restore 303 401 pd db-scale;
+#X obj 407 421 r \$0-index;
+#X obj 303 373 expr $f1 * gain;
+#X obj 303 349 /;
+#X obj 287 37 r \$0-q;
+#X obj 185 38 r \$0-freq;
+#X obj 303 423 tabwrite \$0-re;
+#X obj 303 448 tabwrite \$0-im;
 #N canvas 121 22 226 277 db-scale 0;
 #X obj 42 31 inlet;
 #X obj 42 61 rmstodb;
@@ -200,9 +201,9 @@
 #X connect 4 0 5 1;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X restore 179 397 pd db-scale;
-#X obj 179 369 expr $f1 * gain;
-#X obj 179 345 /;
+#X restore 191 401 pd db-scale;
+#X obj 191 373 expr $f1 * gain;
+#X obj 191 349 /;
 #N canvas 184 24 750 512 freq/GUI 0;
 #X obj 48 60 r \$0-freq;
 #X obj 87 309 s \$0-freq-slider-set;
@@ -270,7 +271,7 @@
 #X connect 27 0 2 0;
 #X connect 27 0 11 0;
 #X connect 28 0 17 0;
-#X restore 438 201 pd freq/GUI;
+#X restore 450 205 pd freq/GUI;
 #N canvas 107 28 562 487 coefficients 0;
 #X obj 81 425 outlet;
 #X obj 339 23 inlet;
@@ -309,31 +310,20 @@ cf * qinv \, 0) \; max($f1 * 2 * pi_\$0 / sr_\$0 \, 0) \; 1/Q \; max($f2
 #X connect 14 0 0 0;
 #X connect 14 1 6 0;
 #X connect 14 2 5 0;
-#X restore 173 65 pd coefficients;
-#X obj 211 145 s \$0-index;
-#X obj 172 119 t f b f;
-#X obj 191 198 v a_2;
-#X obj 333 264 expr 1 - 2*ar*cosW_\$0[$f1] + a_2*cos2W_\$0[$f1] \;
+#X restore 185 69 pd coefficients;
+#X obj 223 149 s \$0-index;
+#X obj 184 123 t f b f;
+#X obj 203 202 v a_2;
+#X obj 385 268 expr 1 - 2*ar*cosW_\$0[$f1] + a_2*cos2W_\$0[$f1] \;
 2*ar*sinW_\$0[$f1] - a_2*sin2W_\$0[$f1];
-#X obj 172 264 expr 1 - ar*cosW_\$0[$f1] \; ar*sinW_\$0[$f1];
-#X obj 31 264 expr ai*cosW_\$0[$f1] \; -ai*sinW_\$0[$f1];
-#X obj 191 175 expr pow(ar \, 2) + pow(ai \, 2);
-#X obj 172 225 trigger float float;
-#X obj 643 177 cnv 15 345 210 empty empty empty 20 12 0 14 -216246
--66577 0;
-#X text 672 232 H_r(z) =;
-#X text 783 220 1 - ar*z^-1;
-#X text 750 245 1 - 2*ar*z^-1 + |a|^2*z^-2;
-#X text 754 349 where |a|^2 = ar^2 + ai^2;
-#X text 801 283 ai*z^-1;
-#X text 750 309 1 - 2*ar*z^-1 + |a|^2*z^-2;
-#X text 734 292 ________________________________;
-#X text 731 229 ________________________________;
-#X text 665 296 H_i(z) =;
-#X obj 172 305 car2pol;
-#X obj 109 305 car2pol;
-#X obj 333 305 car2pol;
-#X text 670 190 Transfer Function:;
+#X obj 184 268 expr 1 - ar*cosW_\$0[$f1] \; ar*sinW_\$0[$f1];
+#X obj 23 268 expr ai*cosW_\$0[$f1] \; -ai*sinW_\$0[$f1];
+#X obj 203 179 expr pow(ar \, 2) + pow(ai \, 2);
+#X obj 184 229 trigger float float;
+#X obj 184 309 car2pol;
+#X obj 101 309 car2pol;
+#X obj 385 309 car2pol;
+#X obj 452 49 declare -path else;
 #X connect 0 0 16 0;
 #X connect 2 0 8 0;
 #X connect 3 0 8 1;
@@ -349,21 +339,21 @@ cf * qinv \, 0) \; max($f1 * 2 * pi_\$0 / sr_\$0 \, 0) \; 1/Q \; max($f2
 #X connect 16 0 22 0;
 #X connect 16 1 21 0;
 #X connect 16 2 15 0;
-#X connect 18 0 35 0;
-#X connect 18 1 35 1;
-#X connect 19 0 33 0;
-#X connect 19 1 33 1;
-#X connect 20 0 34 0;
-#X connect 20 1 34 1;
+#X connect 18 0 25 0;
+#X connect 18 1 25 1;
+#X connect 19 0 23 0;
+#X connect 19 1 23 1;
+#X connect 20 0 24 0;
+#X connect 20 1 24 1;
 #X connect 21 0 17 0;
 #X connect 22 0 19 0;
 #X connect 22 0 20 0;
 #X connect 22 1 18 0;
-#X connect 33 0 5 0;
-#X connect 34 0 12 0;
-#X connect 35 0 5 1;
-#X connect 35 0 12 1;
-#X restore 311 58 pd plot;
+#X connect 23 0 5 0;
+#X connect 24 0 12 0;
+#X connect 25 0 5 1;
+#X connect 25 0 12 1;
+#X restore 198 48 pd plot;
 #X obj 103 101 cnv 15 930 384 empty empty empty 18 9 1 15 -262144 -1
 0;
 #X obj 527 461 cnv 15 15 15 empty empty Kilohertz 18 9 1 16 -262144
@@ -571,7 +561,7 @@ empty -2 -8 0 10 -228856 -228856 -1 57232 0;
 #X obj 593 117 vcf~ 10;
 #X obj 662 118 hsl 128 15 0 1 0 0 empty ganho empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#N canvas 4 23 655 392 output 0;
+#N canvas 64 23 655 392 output 0;
 #X obj 206 206 *~;
 #X obj 225 175 line~;
 #X msg 225 149 \$1 10;

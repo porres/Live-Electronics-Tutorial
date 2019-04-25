@@ -1,4 +1,5 @@
 #N canvas 212 50 943 459 12;
+#X declare -path else;
 #N canvas 128 29 1029 378 (subpatch) 0;
 #X obj 101 101 cnv 15 878 218 empty empty empty 18 9 1 15 -262144 -1
 0;
@@ -377,6 +378,7 @@ high frequencies., f 51;
 #X text 91 126 See the frequency response below. We use [mov.avg~]
 from ELSE as the filter., f 51;
 #X text 36 186 Frequency Response:;
+#X obj 743 23 declare -path else;
 #X connect 1 0 2 0;
 #X connect 1 0 4 0;
 #X connect 1 0 4 1;

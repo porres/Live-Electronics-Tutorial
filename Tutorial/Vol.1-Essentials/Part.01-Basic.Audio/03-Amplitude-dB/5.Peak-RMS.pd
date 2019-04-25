@@ -106,7 +106,7 @@ the root mean square line for this period window.;
 -1 -1;
 #X msg 687 347 linear;
 #X msg 704 371 db;
-#X obj 618 433 else/display~;
+#X obj 618 433 display~;
 #X text 51 24 Peak amplitude is the highest absolute amplitude in a
 time window \, and RMS is given as a root mean square \, which is useful
 for signals that vary from negative to positive \, as it is the case
@@ -125,7 +125,7 @@ one. The [rms~] object from ELSE reports us the RMS amplitude \, while
 #X text 51 176 See both in action below and note how the RMS is about
 3 dB lower than the peak amplitude for sinusoids., f 60;
 #X text 759 171 More about RMS:;
-#X obj 618 399 else/mov.rms~ 4096;
+#X obj 618 399 mov.rms~ 4096;
 #X text 752 400 window size of 4096;
 #X text 733 371 dBFS output;
 #X text 735 346 linear output;

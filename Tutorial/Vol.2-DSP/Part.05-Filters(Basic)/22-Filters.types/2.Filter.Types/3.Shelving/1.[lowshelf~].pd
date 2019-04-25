@@ -1,21 +1,22 @@
-#N canvas 475 39 899 636 12;
-#X obj 514 146 out~;
-#X obj 558 15 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
+#N canvas 369 38 899 636 12;
+#X declare -path else;
+#X obj 467 146 out~;
+#X obj 511 15 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
 0 10 -228856 -1 -1 6477 0;
-#X obj 599 65 hsl 128 17 0.1 1 1 0 empty \$0-Q-set empty 5 9 0 10 -228856
+#X obj 552 65 hsl 128 17 0.1 1 1 0 empty \$0-Q-set empty 5 9 0 10 -228856
 -1 -1 12700 0;
-#X obj 596 87 nbx 8 14 -1e+37 1e+37 0 0 \$0-Q empty empty 0 -8 0 10
+#X obj 549 87 nbx 8 14 -1e+37 1e+37 0 0 \$0-Q empty empty 0 -8 0 10
 -228856 -1 -1 5 256;
-#X obj 555 43 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq empty empty 0 -8 0
+#X obj 508 43 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq empty empty 0 -8 0
 10 -228856 -1 -1 500 256;
-#X obj 494 53 noise~;
-#X obj 693 98 hsl 128 17 -24 24 0 0 empty \$0-gain-set empty 5 9 0
+#X obj 447 53 noise~;
+#X obj 646 98 hsl 128 17 -24 24 0 0 empty \$0-gain-set empty 5 9 0
 10 -228856 -1 -1 9525 0;
-#X obj 690 120 nbx 8 14 -1e+37 1e+37 0 0 \$0-gain empty empty 0 -8
+#X obj 643 120 nbx 8 14 -1e+37 1e+37 0 0 \$0-gain empty empty 0 -8
 0 10 -228856 -1 -1 12 256;
-#X text 731 97 Gain;
-#X text 627 64 S/Slope;
-#X obj 514 112 lowshelf~ 500 1 12;
+#X text 671 97 Gain;
+#X text 580 64 S/Slope;
+#X obj 467 112 lowshelf~ 500 1 12;
 #N canvas 9 255 1099 569 (subpatch) 0;
 #N canvas 649 293 231 309 freq-response 0;
 #N canvas 324 327 712 441 init 0;
@@ -384,13 +385,14 @@
 #X text 115 129 0.02;
 #X coords 0 -1 1 1 850 402 1 100 100;
 #X restore 21 218 pd;
-#X text 76 138 Check the help file for more details.;
-#X text 76 61 The [lowshelf~] object from ELSE is a shelving filter.
+#X text 46 158 Check the help file for more details.;
+#X text 46 61 The [lowshelf~] object from ELSE is a shelving filter.
 Depending on a gain parameter \, this type of filter boosts or attenuates
 frequencies lower than the roll off frequency. There's also a Slope
 parameter \, which controls the steepness of the shelving curve.,
-f 54;
-#X text 594 15 Frequency;
+f 49;
+#X text 547 15 Frequency;
+#X obj 754 14 declare -path else;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 10 2;

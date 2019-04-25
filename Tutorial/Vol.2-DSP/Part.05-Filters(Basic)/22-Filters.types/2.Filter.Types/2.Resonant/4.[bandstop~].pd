@@ -1,4 +1,5 @@
 #N canvas 475 39 899 636 12;
+#X declare -path else;
 #N canvas 9 255 1099 569 (subpatch) 0;
 #N canvas 649 293 231 309 freq-response 0;
 #N canvas 324 327 712 441 init 0;
@@ -360,32 +361,33 @@
 #X text 215 129 0.05;
 #X text 115 129 0.02;
 #X coords 0 -1 1 1 850 402 1 100 100;
-#X restore 21 198 pd;
-#X obj 585 112 out~;
-#X obj 618 21 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
+#X restore 21 218 pd;
+#X obj 563 45 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
 0 10 -228856 -1 -1 6477 0;
-#X obj 680 51 hsl 128 17 0.1 10 1 0 empty \$0-Q-set empty 5 9 0 10
+#X obj 625 75 hsl 128 17 0.1 10 1 0 empty \$0-Q-set empty 5 9 0 10
 -228856 -1 -1 10788 0;
-#X obj 677 73 nbx 8 14 -1e+37 1e+37 0 0 \$0-Q empty empty 0 -8 0 10
+#X obj 622 97 nbx 8 14 -1e+37 1e+37 0 0 \$0-Q empty empty 0 -8 0 10
 -228856 -1 -1 5 256;
-#X obj 615 54 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq empty empty 0 -8 0
+#X obj 560 78 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq empty empty 0 -8 0
 10 -228856 -1 -1 500 256;
-#X obj 549 34 noise~;
-#X text 626 21 Resonant Frequency;
-#X text 706 52 Q/Resonance;
-#X obj 585 78 bandstop~;
-#X text 74 29 A bandstop (also called band reject) filter is the opposite
+#X obj 494 58 noise~;
+#X text 571 45 Resonant Frequency;
+#X text 651 75 Q/Resonance;
+#X obj 530 102 bandstop~;
+#X text 68 30 A bandstop (also called band reject) filter is the opposite
 of a bandpass. With a very narrow bandwidth \, this is also called
-a "notch" filter., f 60;
-#X text 74 83 It might seem a countersense to consider this a resonant
+a "notch" filter., f 53;
+#X text 68 84 It might seem a countersense to consider this a resonant
 filter \, but it usually is \, as you can set a bandwidth or Q parameter
 just like a bandpass. But in more accurate terms \, it should be considered
 an anti resonance filter. Anyway \, here we check the [bandstop~] object
-from ELSE \, see its help file for more details.;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 4 0 9 2;
-#X connect 5 0 9 1;
-#X connect 6 0 9 0;
-#X connect 9 0 1 0;
-#X connect 9 0 1 1;
+from ELSE \, see its help file for more details., f 53;
+#X obj 749 14 declare -path else;
+#X obj 530 136 out~;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 8 2;
+#X connect 4 0 8 1;
+#X connect 5 0 8 0;
+#X connect 8 0 12 0;
+#X connect 8 0 12 1;

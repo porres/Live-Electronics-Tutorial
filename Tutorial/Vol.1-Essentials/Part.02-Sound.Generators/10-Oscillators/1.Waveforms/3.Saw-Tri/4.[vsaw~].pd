@@ -24,7 +24,7 @@
 -1 -1 0 1;
 #X obj 167 252 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 219 361 else/graph~ 447 5;
+#X obj 219 361 graph~ 447 5;
 #X obj 145 310 vsaw~ 98.5;
 #X obj 102 401 out~;
 #X text 32 135 Its second inlet/argument changes the "width" and controls

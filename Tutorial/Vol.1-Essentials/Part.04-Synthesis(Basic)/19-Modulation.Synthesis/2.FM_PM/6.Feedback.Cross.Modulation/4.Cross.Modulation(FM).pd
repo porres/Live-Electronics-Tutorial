@@ -12,8 +12,8 @@
 -191407 -1 -1 100 256;
 #X obj 301 176 nbx 5 14 -1e+37 1e+37 0 0 empty freq2 empty 0 -8 0 10
 -191407 -1 -1 250 256;
-#X obj 120 301 else/out~;
-#X obj 312 296 else/out~;
+#X obj 120 301 out~;
+#X obj 312 296 out~;
 #X text 398 149 index 2;
 #X text 176 149 index 1;
 #X text 88 157 Freq 1;

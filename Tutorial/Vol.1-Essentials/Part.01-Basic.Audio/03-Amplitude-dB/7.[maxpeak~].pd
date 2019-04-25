@@ -17,7 +17,7 @@ bangs when the peak amplitude exceeds 0 dB. The right inlet resets
 the maximum amplitude value., f 55;
 #X obj 181 184 adc~ 1;
 #X obj 181 217 *~ 2;
-#X obj 181 278 else/display~ 4;
+#X obj 181 278 display~ 4;
 #X obj 294 26 declare -path else;
 #X connect 0 0 11 0;
 #X connect 0 1 6 0;

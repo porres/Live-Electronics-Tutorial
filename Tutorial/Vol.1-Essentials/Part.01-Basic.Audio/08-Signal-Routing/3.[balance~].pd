@@ -14,7 +14,7 @@
 #X obj 233 457 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X floatatom 230 476 0 0 0 0 - - -;
-#X obj 123 543 else/out~;
+#X obj 123 543 out~;
 #X obj 123 453 osc~ 440;
 #X text 215 456 L;
 #X text 365 456 R;

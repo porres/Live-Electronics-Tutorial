@@ -14,7 +14,7 @@
 #X array \$0-table 67 float 0;
 #X coords 0 1 66 -1 300 200 1 0 0;
 #X restore 54 77 graph;
-#X obj 167 21 else/initmess \; \$0-table sinesum 64 1 1 1 \, normalize
+#X obj 167 21 initmess \; \$0-table sinesum 64 1 1 1 \, normalize
 , f 26;
 #X restore 450 270 pd table;
 #X obj 688 327 tabread4~ \$0-table;

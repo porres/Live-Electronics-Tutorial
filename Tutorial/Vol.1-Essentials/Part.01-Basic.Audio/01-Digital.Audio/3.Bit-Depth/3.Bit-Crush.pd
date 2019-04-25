@@ -1,6 +1,6 @@
 #N canvas 355 43 961 534 12;
 #X declare -path else;
-#X obj 52 336 else/graph~ 230 48;
+#X obj 52 336 graph~ 230 48;
 #X obj 150 192 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 147 214 nbx 9 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -30,9 +30,9 @@
 #X floatatom 699 209 0 1 10000 0 - - -;
 #X obj 702 188 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 565 285 else/out~;
+#X obj 565 285 out~;
 #X obj 564 170 osc~ 100;
-#X obj 676 249 else/graph~ 143 50;
+#X obj 676 249 graph~ 143 50;
 #X obj 564 148 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 608 211 crusher~;

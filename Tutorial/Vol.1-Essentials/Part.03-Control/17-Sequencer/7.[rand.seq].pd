@@ -4,7 +4,7 @@
 #X obj 268 434 mtof;
 #X obj 405 378 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 268 404 else/display;
+#X obj 268 404 display;
 #X obj 74 411 loadbang;
 #X text 114 561 play random notes with different weigths., f 22;
 #X obj 268 483 osc~;
@@ -21,7 +21,7 @@
 #X obj 106 140 until;
 #X obj 106 114 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 236 235 else/display;
+#X obj 236 235 display;
 #X text 126 110 generate series;
 #X text 36 29 The [rand.seq] object generates a ranodm sequence of
 integer numbers. You can use it to generate a dodecaphonic series \,

@@ -1,6 +1,6 @@
 #N canvas 492 77 567 524 12;
 #X declare -path else;
-#X obj 235 408 else/out~;
+#X obj 235 408 out~;
 #X obj 219 248 osc~ 440;
 #X text 73 95 The [spread~] object \, from the ELSE library can be
 used to "spread" any number of input channels across any number of

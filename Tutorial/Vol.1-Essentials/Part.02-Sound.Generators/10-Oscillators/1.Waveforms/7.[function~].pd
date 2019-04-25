@@ -21,8 +21,8 @@
 #X restore 86 229 pd sequencer;
 #X obj 86 206 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 169 456 else/out~;
-#X obj 279 421 else/graph~ 800 10 -1.1 1.1;
+#X obj 169 456 out~;
+#X obj 279 421 graph~ 800 10 -1.1 1.1;
 #X obj 86 281 phasor~ 100;
 #X obj 212 346 function~;
 #X obj 212 176 initmess 0 0.25 1 0.15 1 0.35 0 0.05 -1 0.1 -1 0.1 0

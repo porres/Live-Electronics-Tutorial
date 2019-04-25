@@ -29,7 +29,7 @@ outlet also outputs the table size in samples (the output is actually
 a list with size \, sample rate and number of channels) so we have
 basically the same thing as the last example.;
 #X text 168 247 <= shows and hides internal buffer;
-#X obj 128 285 else/sample~ \$0-sample ../../../samples/bubul.wav;
+#X obj 128 285 sample~ \$0-sample ../../../samples/bubul.wav;
 #X connect 0 0 10 0;
 #X connect 0 0 10 1;
 #X connect 1 0 0 0;

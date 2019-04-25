@@ -1,4 +1,5 @@
 #N canvas 475 39 899 636 12;
+#X declare -path else;
 #N canvas 9 255 1099 569 (subpatch) 0;
 #N canvas 649 293 231 309 freq-response 0;
 #N canvas 324 327 712 441 init 0;
@@ -361,26 +362,27 @@
 #X text 115 129 0.02;
 #X coords 0 -1 1 1 850 402 1 100 100;
 #X restore 21 198 pd;
-#X obj 488 121 out~;
-#X obj 521 30 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
+#X obj 506 31 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
 0 10 -228856 -1 -1 6477 0;
-#X obj 583 60 hsl 128 17 0.1 10 1 0 empty \$0-Q-set empty 5 9 0 10
+#X obj 568 61 hsl 128 17 0.1 10 1 0 empty \$0-Q-set empty 5 9 0 10
 -228856 -1 -1 10788 0;
-#X obj 580 82 nbx 8 14 -1e+37 1e+37 0 0 \$0-Q empty empty 0 -8 0 10
+#X obj 565 83 nbx 8 14 -1e+37 1e+37 0 0 \$0-Q empty empty 0 -8 0 10
 -228856 -1 -1 5 256;
-#X obj 518 63 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq empty empty 0 -8 0
+#X obj 503 64 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq empty empty 0 -8 0
 10 -228856 -1 -1 500 256;
-#X obj 452 43 noise~;
-#X text 529 30 Resonant Frequency;
-#X text 609 61 Q/Resonance;
-#X obj 488 87 highpass~;
-#X text 82 78 This is the [highpass~] object from ELSE \, it is a highpass
+#X obj 437 44 noise~;
+#X text 514 31 Resonant Frequency;
+#X text 594 62 Q/Resonance;
+#X obj 473 88 highpass~;
+#X text 67 79 This is the [highpass~] object from ELSE \, it is a highpass
 resonant filter and much like [lowpass~] \, but it's a highpass instead.
 Check its help file for more details., f 50;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 4 0 9 2;
-#X connect 5 0 9 1;
-#X connect 6 0 9 0;
-#X connect 9 0 1 0;
-#X connect 9 0 1 1;
+#X obj 737 19 declare -path else;
+#X obj 473 122 out~;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 8 2;
+#X connect 4 0 8 1;
+#X connect 5 0 8 0;
+#X connect 8 0 11 0;
+#X connect 8 0 11 1;

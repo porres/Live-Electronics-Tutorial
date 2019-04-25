@@ -42,8 +42,6 @@
 #X restore 702 254 pd analyze;
 #X obj 630 207 resonant~ 1000 3000;
 #X obj 702 286 display 7;
-#X obj 619 490 else/resonbank~ 4 -freq 200 300 700 800 -decay 900 800
-700 900 -amp 0.4 0.3 0.2 0.2, f 28;
 #X text 489 31 Let's put it to the test. The subpatch below analyzes
 the output of the filter and sends a value when it falls under 60 dB
 of the attack. The analysis isn't perfect \, but it gets pretty close
@@ -62,7 +60,7 @@ is a bank of resonators. Below \, it filters a brown noise with 4 resonators.
 #X text 279 374 bandwidth in hertz;
 #X obj 199 404 /;
 #X obj 136 319 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 1000 256;
+-228856 -1 -1 0 256;
 #X obj 199 430 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X text 258 428 Q;
@@ -105,31 +103,33 @@ also have an attack parameter rather than just a decay time., f 55
 ;
 #X obj 654 653 resonant2~;
 #X obj 655 682 resonbank2~ 4;
+#X obj 619 490 resonbank~ 4 -freq 200 300 700 800 -decay 900 800 700
+900 -amp 0.4 0.3 0.2 0.2, f 28;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 0;
 #X connect 4 0 2 0;
 #X connect 4 0 2 1;
-#X connect 6 0 10 0;
-#X connect 6 0 10 1;
-#X connect 9 0 6 0;
+#X connect 8 0 43 0;
+#X connect 10 0 11 0;
 #X connect 11 0 12 0;
-#X connect 12 0 13 0;
-#X connect 13 0 15 1;
-#X connect 15 0 17 0;
-#X connect 16 0 24 0;
-#X connect 17 0 22 1;
-#X connect 19 0 33 0;
-#X connect 22 0 23 0;
-#X connect 23 0 26 0;
-#X connect 24 0 22 0;
-#X connect 24 1 15 0;
+#X connect 12 0 14 1;
+#X connect 14 0 16 0;
+#X connect 15 0 23 0;
+#X connect 16 0 21 1;
+#X connect 18 0 32 0;
+#X connect 21 0 22 0;
+#X connect 22 0 25 0;
+#X connect 23 0 21 0;
+#X connect 23 1 14 0;
+#X connect 25 0 26 0;
 #X connect 26 0 27 0;
-#X connect 27 0 28 0;
-#X connect 29 0 19 0;
-#X connect 30 0 29 0;
-#X connect 32 0 31 0;
-#X connect 33 0 16 0;
-#X connect 33 1 11 0;
-#X connect 34 0 16 0;
+#X connect 28 0 18 0;
+#X connect 29 0 28 0;
+#X connect 31 0 30 0;
+#X connect 32 0 15 0;
+#X connect 32 1 10 0;
+#X connect 33 0 15 0;
+#X connect 43 0 9 0;
+#X connect 43 0 9 1;

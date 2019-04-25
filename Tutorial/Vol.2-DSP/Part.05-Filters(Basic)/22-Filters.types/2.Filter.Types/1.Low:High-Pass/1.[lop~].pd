@@ -1,4 +1,5 @@
-#N canvas 403 33 927 522 12;
+#N canvas 278 29 928 575 12;
+#X declare -path else;
 #N canvas 272 55 344 273 cutoff 0;
 #X obj 109 225 outlet;
 #X obj 101 101 cnv 15 150 65 empty empty Roll-off(Hz) 13 16 0 16 -1
@@ -9,7 +10,7 @@
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
 #X coords 0 -1 1 1 152 67 2 100 100;
-#X restore 619 95 pd cutoff;
+#X restore 641 131 pd cutoff;
 #N canvas 128 29 1029 378 (subpatch) 0;
 #X obj 101 101 cnv 15 878 231 empty empty empty 18 9 1 15 -262144 -1
 0;
@@ -520,30 +521,31 @@ empty -2 -8 0 10 -228856 -228856 -1 1815 0;
 #X text 919 185 -6;
 #X text 917 220 -12;
 #X coords 0 -1 1 1 880 233 2 100 100;
-#X restore 23 274 pd;
-#X obj 595 172 lop~;
-#X obj 547 119 noise~;
-#X obj 552 214 out~;
+#X restore 33 315 pd;
+#X obj 616 208 lop~;
+#X obj 568 155 noise~;
 #X text 36 13 The vanilla [lop~] (from "lowpass") is a simple low pass
 filter. It receives a cutoff frequency \, which is the point after
 wich the frequencies are filtered out - only letting through the lower
 frequencies., f 53;
-#X text 426 14 Let's check the frequency response of [lop~] below.
+#X text 426 44 Let's check the frequency response of [lop~] below.
 You can click and drag in the upper gray area \, it acts as a slider.
 This example considers a sample rate of 44.1 Khz. Listen to the patch
 below \, where we filter a white noise source., f 66;
-#X text 36 76 We can also call it the "roll off" frequency \, denoting
+#X text 36 86 We can also call it the "roll off" frequency \, denoting
 it represents a frequency point in a transition band between a passband
 and a stopband \, which is true because we can see how the filter is
 already acting at this frequency point., f 53;
-#X text 36 217 Lowpass filters are also used to smoothen data signals
+#X text 36 247 Lowpass filters are also used to smoothen data signals
 from things like sensors or also as envelope followers., f 53;
-#X text 36 153 Actually \, the filter starts acting right at 0 Hz and
+#X text 36 173 Actually \, the filter starts acting right at 0 Hz and
 we have about 3 dB loss at the roll off frequency. After this point
 \, there's a loss of 6 dB per octave. But the behaviour changes over
 5 khz., f 53;
 #X text 40 488 Frequency Response:;
+#X obj 737 9 declare -path else;
+#X obj 573 241 out~;
 #X connect 0 0 2 1;
-#X connect 2 0 4 0;
-#X connect 2 0 4 1;
+#X connect 2 0 11 0;
+#X connect 2 0 11 1;
 #X connect 3 0 2 0;

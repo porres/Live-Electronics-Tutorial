@@ -1,19 +1,21 @@
-#N canvas 576 149 453 386 12;
-#X obj 93 193 noise~;
-#X obj 89 149 bicoeff eq 500 10 24;
-#X obj 242 148 bicoeff eq 900 10 24;
-#X obj 89 119 nbx 5 14 -1e+37 1e+37 0 0 empty hz1 empty 0 -8 0 10 -228856
--1 -1 500 256;
-#X obj 242 123 nbx 5 14 -1e+37 1e+37 0 0 empty hz2 empty 0 -8 0 10
--228856 -1 -1 900 256;
-#X obj 93 250 biquads~;
-#X obj 93 295 out~;
-#X obj 300 243 initmess \; hz1 500 \; hz2 900;
-#X text 39 28 The [biquads~] object from ELSE is a series of biquad
+#N canvas 565 31 500 492 12;
+#X declare -path else;
+#X obj 103 243 noise~;
+#X obj 99 199 bicoeff eq 500 10 24;
+#X obj 252 198 bicoeff eq 900 10 24;
+#X obj 99 169 nbx 5 14 -1e+37 1e+37 0 0 empty hz1 empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 252 173 nbx 5 14 -1e+37 1e+37 0 0 empty hz2 empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 103 300 biquads~;
+#X obj 103 345 out~;
+#X obj 310 293 initmess \; hz1 500 \; hz2 900;
+#X text 49 78 The [biquads~] object from ELSE is a series of biquad
 filters in cascade. Each biquad section is defined as a list of 5 coefficients
 (in the same way as Pd Vanilla's [biquad~]). Check its help file for
 more details., f 55;
-#X obj 175 194 merge 2 -1;
+#X obj 185 244 merge 2 -1;
+#X obj 325 20 declare -path else;
 #X connect 0 0 5 0;
 #X connect 1 0 9 0;
 #X connect 2 0 9 1;
