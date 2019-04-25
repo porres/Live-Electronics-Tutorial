@@ -1,6 +1,7 @@
 #N canvas 244 190 1058 510 12;
-#X msg 803 179 const \$1;
-#X obj 806 158 hsl 100 12 0 1 0 0 empty const empty -2 -6 0 10 -228856
+#X declare -path else;
+#X msg 806 209 const \$1;
+#X obj 809 188 hsl 100 12 0 1 0 0 empty const empty -2 -6 0 10 -228856
 -1 -1 9900 1;
 #X text 26 278 0;
 #X text 27 196 1;
@@ -255,12 +256,12 @@
 #X coords 0 60 1024 0 512 120 1 0 0;
 #X restore 44 336 graph;
 #X text 523 458 Nyquist;
-#X obj 808 91 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
+#X obj 811 121 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 2048 256;
-#X obj 808 43 hradio 15 1 0 8 empty \$0-set-window empty 0 -8 0 10
+#X obj 811 73 hradio 15 1 0 8 empty \$0-set-window empty 0 -8 0 10
 -228856 -1 -1 5;
-#X obj 808 66 expr pow(2 \, $f1 + 6);
-#X obj 639 70 noise~;
+#X obj 811 96 expr pow(2 \, $f1 + 6);
+#X obj 642 100 noise~;
 #N canvas 250 34 603 251 Window 0;
 #X obj 347 168 s \$0-set-block;
 #X msg 347 141 set \$1 \$2;
@@ -278,10 +279,10 @@
 #X connect 5 0 3 0;
 #X connect 7 0 1 0;
 #X coords 0 0 1 1 120 60 0;
-#X restore 808 116 pd Window;
-#X obj 889 113 nbx 2 14 1 1e+37 0 1 \$0-overlap \$0-overlap-set empty
+#X restore 811 146 pd Window;
+#X obj 892 143 nbx 2 14 1 1e+37 0 1 \$0-overlap \$0-overlap-set empty
 0 -8 0 10 -228856 -1 -1 4 256;
-#X text 920 112 overlaps;
+#X text 923 142 overlaps;
 #X text 37 154 0 Hz;
 #X text 42 460 0 Hz;
 #X text 42 293 0 Hz;
@@ -347,10 +348,10 @@ parameter \, which are the number of frequency bins it lets through.
 #X connect 15 0 8 0;
 #X connect 16 0 6 0;
 #X connect 17 0 3 0;
-#X restore 780 421 pd Pass-Filters;
-#X obj 639 159 out~;
-#X text 866 88 window size;
-#X obj 803 204 s \$0-filter;
+#X restore 783 451 pd Pass-Filters;
+#X obj 642 189 out~;
+#X text 869 118 window size;
+#X obj 806 234 s \$0-filter;
 #N canvas 516 177 539 523 Spectral-filter 0;
 #X obj 123 22 inlet~;
 #X obj 123 117 rfft~;
@@ -426,16 +427,17 @@ cosine/sine amplitude components., f 25;
 #X connect 17 0 7 0;
 #X connect 18 0 4 1;
 #X connect 18 0 3 1;
-#X restore 639 112 pd Spectral-filter;
-#X text 613 359 The suboatch velow has some logic routines to implement
+#X restore 642 142 pd Spectral-filter;
+#X text 616 389 The suboatch velow has some logic routines to implement
 differen pass filters.;
-#X text 881 179 constant value;
-#X text 610 258 In this example we filter a white noise \, which has
+#X text 884 209 constant value;
+#X text 613 288 In this example we filter a white noise \, which has
 energy distributed throughout the whole spectral range. The first array
 above to the left is the FFT analysis \, then we have the filter array
 \, which represents the frequency response and you can click and draw
 on it. The last graph is the filtered output. Open [pd Spectral-Filter]
 for details.;
+#X obj 805 24 declare -path else;
 #X connect 0 0 26 0;
 #X connect 1 0 0 0;
 #X connect 13 0 17 0;

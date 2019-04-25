@@ -1,21 +1,23 @@
-#N canvas 530 166 588 457 12;
-#X obj 115 247 spectrograph~;
-#X msg 383 161 size \$1;
-#X obj 410 185 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#N canvas 543 156 610 501 12;
+#X declare -path else;
+#X obj 138 297 spectrograph~;
+#X msg 406 211 size \$1;
+#X obj 433 235 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X msg 410 206 db \$1;
-#X msg 455 206 log \$1;
-#X obj 455 185 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X msg 433 256 db \$1;
+#X msg 478 256 log \$1;
+#X obj 478 235 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X msg 383 138 1024;
-#X msg 344 138 256;
-#X obj 218 146 setdsp~;
-#X text 81 27 The ELSE library offers [spectrograph~] \, which is an
-abstraction that plost spectral amplitude information based on what
+#X msg 406 188 1024;
+#X msg 367 188 256;
+#X obj 241 196 setdsp~;
+#X text 104 77 The ELSE library offers [spectrograph~] \, which is
+an abstraction that plost spectral amplitude information based on what
 we've seen so far. You can set its size and how to display the amplitude
 (linear or dB) and frequency (linear or log)., f 53;
-#X obj 115 201 bl.saw~;
-#X obj 115 173 sig~ 100;
+#X obj 138 251 bl.saw~;
+#X obj 138 223 sig~ 100;
+#X obj 362 27 declare -path else;
 #X connect 1 0 0 1;
 #X connect 2 0 3 0;
 #X connect 3 0 0 1;

@@ -1,72 +1,69 @@
-#N canvas 423 196 937 458 12;
-#X obj 629 134 nbx 4 14 0 44.1 0 0 empty Khz Khz 0 -6 0 10 -228856
+#N canvas 275 84 937 458 12;
+#X declare -path else;
+#X obj 641 145 nbx 4 14 0 44.1 0 0 empty Khz Khz 0 -6 0 10 -228856
 -1 -1 5 256;
-#X floatatom 512 176 0 0 0 0 - - -;
-#X text 492 175 Hz;
-#X obj 689 133 nbx 4 14 0 1 0 0 empty empty phase 0 -6 0 10 -228856
+#X floatatom 524 187 0 0 0 0 - - -;
+#X text 504 186 Hz;
+#X obj 701 144 nbx 4 14 0 1 0 0 empty empty phase 0 -6 0 10 -228856
 -1 -1 0 256;
-#X msg 699 158 0;
-#X msg 730 158 0.25;
-#X msg 769 158 0.5;
-#X msg 803 158 0.75;
-#X obj 629 208 osc~ 5000;
-#X obj 629 239 fft~;
+#X msg 711 169 0;
+#X msg 742 169 0.25;
+#X msg 781 169 0.5;
+#X msg 813 168 0.75;
+#X obj 641 219 osc~ 5000;
+#X obj 641 250 fft~;
 #X text 20 17 The [fft~] object performs a "Fast Fourier Transform".
 It's called a "transform" because it transforms from the time domain
 to the frequency domain. The operation is done in a whole block of
 audio - defined by [block~].;
-#X text 669 259 Imaginary;
-#X text 591 255 Real;
-#N canvas 151 65 942 581 plot 0;
-#X text 102 355 Amplitude;
-#X obj 556 189 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
+#X text 681 270 Imaginary;
+#X text 603 266 Real;
+#N canvas 151 65 812 573 plot 0;
+#X text 106 355 Amplitude;
+#X obj 389 382 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
 1;
-#X obj 556 210 metro 205;
-#X obj 573 150 loadbang;
-#X obj 650 194 del 500;
-#X obj 49 289 tabwrite~ \$0-Re;
-#X obj 371 289 tabwrite~ \$0-Im;
-#X obj 171 482 tabwrite~ \$0-Amplitude;
-#X obj 650 228 \$0;
-#X obj 171 333 car2pol~;
-#X text 236 358 Phase;
-#X obj 556 236 s \$0-bang;
-#X obj 388 233 r \$0-bang;
-#X obj 239 408 r \$0-bang;
-#X obj 224 453 tabwrite~ \$0-Phase;
-#X obj 172 45 inlet~;
-#X obj 371 54 inlet~;
-#X text 379 87 Imaginary;
-#X text 185 84 Real;
-#X obj 171 144 expr~ if($v1 < 0.01 \, 0 \, $v1) \; if($v2 < 0.01 \,
+#X obj 389 403 metro 205;
+#X obj 389 356 loadbang;
+#X obj 53 289 tabwrite~ \$0-Re;
+#X obj 375 289 tabwrite~ \$0-Im;
+#X obj 175 482 tabwrite~ \$0-Amplitude;
+#X obj 175 333 car2pol~;
+#X text 240 358 Phase;
+#X obj 389 429 s \$0-bang;
+#X obj 392 233 r \$0-bang;
+#X obj 243 408 r \$0-bang;
+#X obj 228 453 tabwrite~ \$0-Phase;
+#X obj 176 45 inlet~;
+#X obj 375 54 inlet~;
+#X text 383 87 Imaginary;
+#X text 189 84 Real;
+#X obj 175 144 expr~ if($v1 < 0.01 \, 0 \, $v1) \; if($v2 < 0.01 \,
 0 \, $v2);
-#X msg 650 268 \; pd dsp 1 \; Khz 5 \; \$1-Re xticks 0 32 1 \; \$1-Im
-xticks 0 32 1 \; \$1-Phase xticks 0 32 1 \; \$1-Amplitude xticks 0
+#X obj 594 194 setdsp~ 1;
+#X obj 553 300 initmess \; Khz 5 \; \$0-Re xticks 0 32 1 \; \$0-Im
+xticks 0 32 1 \; \$0-Phase xticks 0 32 1 \; \$0-Amplitude xticks 0
 32 1;
 #X connect 1 0 2 0;
-#X connect 2 0 11 0;
+#X connect 2 0 9 0;
 #X connect 3 0 1 0;
-#X connect 3 0 4 0;
-#X connect 4 0 8 0;
-#X connect 8 0 20 0;
-#X connect 9 0 7 0;
-#X connect 9 1 14 0;
-#X connect 12 0 6 0;
-#X connect 12 0 5 0;
-#X connect 13 0 7 0;
-#X connect 13 0 14 0;
-#X connect 15 0 19 0;
-#X connect 16 0 19 1;
-#X connect 19 0 5 0;
-#X connect 19 0 9 0;
-#X connect 19 1 6 0;
-#X connect 19 1 9 1;
-#X restore 614 285 pd plot;
-#X obj 512 134 nbx 3 14 0 127 0 0 empty empty empty 0 -8 0 12 -228856
+#X connect 7 0 6 0;
+#X connect 7 1 12 0;
+#X connect 10 0 5 0;
+#X connect 10 0 4 0;
+#X connect 11 0 6 0;
+#X connect 11 0 12 0;
+#X connect 13 0 17 0;
+#X connect 14 0 17 1;
+#X connect 17 0 4 0;
+#X connect 17 0 7 0;
+#X connect 17 1 5 0;
+#X connect 17 1 7 1;
+#X restore 626 296 pd plot;
+#X obj 524 145 nbx 3 14 0 127 0 0 empty empty empty 0 -8 0 12 -228856
 -1 -1 0 256;
-#X text 494 114 "Harmonic";
-#X obj 629 165 * 1000;
-#X obj 512 152 expr $i1 * band;
+#X text 506 125 "Harmonic";
+#X obj 641 176 * 1000;
+#X obj 524 163 expr $i1 * band;
 #X text 19 227 A FFT decomposes a periodic function into pure tones
 defined by Cosine (real) and Sine (imaginary) amplitudes. Hence \,
 we have two outputs in the frequency domain - where the left outlet
@@ -119,7 +116,7 @@ is the real part \, and the right outlet is the imaginary part.;
 #X text 320 463 0;
 #X text 162 41 Cosine;
 #X text 445 43 Sine;
-#X restore 781 248 pd graphs;
+#X restore 793 259 pd graphs;
 #N canvas 389 161 734 515 Frequency-Bands/Harmonic-Series 0;
 #X obj 146 196 nbx 7 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
 -228856 -1 -1 344.531 256;
@@ -154,11 +151,11 @@ you both the block size and also the corresponding frequency., f 49
 #X connect 11 0 0 0;
 #X connect 14 0 1 0;
 #X restore 187 403 pd Frequency-Bands/Harmonic-Series;
-#X text 475 29 Below we have a sine wave being analyzed. Note that
+#X text 495 48 Below we have a sine wave being analyzed. Note that
 we have a stable analysis graph only if the frequency matches a harmonic
 of the FFT. Open [pd graphs] for the analysis results., f 53;
-#X text 772 222 Click/open:;
-#X text 478 327 Note there's a mirroring of frequencies after Nyquist.
+#X text 784 233 Click/open:;
+#X text 490 338 Note there's a mirroring of frequencies after Nyquist.
 This will be discussed further. The output of [fft~] is in the cartesian
 form \, but musicians are used to the polar form representation \,
 whith Amplitude and Initial Phase - thus we convert to polar as well.The
@@ -175,6 +172,7 @@ a frequency point (a.k.a frequency bands or bins). The frequency band
 is calculated by dividing the sample rate by the block size \, and
 the frequency points are then a harmonic series formed by multiples
 of this frequency value! Open the subpatch below:;
+#X obj 733 15 declare -path else;
 #X connect 0 0 16 0;
 #X connect 1 0 8 0;
 #X connect 3 0 8 1;

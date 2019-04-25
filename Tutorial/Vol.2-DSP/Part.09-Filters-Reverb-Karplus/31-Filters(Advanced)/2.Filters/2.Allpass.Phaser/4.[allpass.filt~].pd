@@ -1,27 +1,29 @@
-#N canvas 512 40 508 517 12;
-#X obj 113 288 noise~;
-#X obj 182 306 nbx 5 14 10 10000 1 0 empty empty empty 0 -8 0 10 -228856
+#N canvas 512 40 517 602 12;
+#X declare -path else;
+#X obj 113 327 noise~;
+#X obj 182 345 nbx 5 14 10 10000 1 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 10 256;
-#X obj 233 338 nbx 5 14 1 100 1 0 empty empty empty 0 -8 0 10 -228856
+#X obj 233 377 nbx 5 14 1 100 1 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 1 256;
-#X text 291 333 resonance (default 1), f 11;
-#X text 240 297 resonant/center frequency (default 10), f 23;
-#X obj 113 437 out~;
-#X obj 113 396 +~;
-#X obj 131 360 allpass.filt~ 8;
-#X text 58 21 The [allpass.filt~] object from the ELSE library is an
+#X text 291 372 resonance (default 1), f 11;
+#X text 240 336 resonant/center frequency (default 10), f 23;
+#X obj 113 476 out~;
+#X obj 113 435 +~;
+#X obj 131 399 allpass.filt~ 8;
+#X text 58 60 The [allpass.filt~] object from the ELSE library is an
 abstraction that stacks many [allpass.2nd~] objects in cascade. This
 means it can reach higher orders \, but you need to set the order as
 a multiple of 2!, f 55;
-#X text 58 86 As we've seen \, at each 2nd order stage \, the filter
+#X text 58 125 As we've seen \, at each 2nd order stage \, the filter
 distorts one full phsse cycle. The maximum order of this object is
 64 \, and you can only set the order when creating the object., f
 55;
-#X text 58 153 If we sum the input to the filtered signal \, we can
+#X text 58 192 If we sum the input to the filtered signal \, we can
 hear the phase cancellation at each frequency point there's a phase
 oposition. In this example we have an 8th order filter \, this means
 it has 4 phase cancellation frequency points. So it's like having 4
 bandstop filters., f 55;
+#X obj 295 17 declare -path else;
 #X connect 0 0 6 0;
 #X connect 0 0 7 0;
 #X connect 1 0 7 1;

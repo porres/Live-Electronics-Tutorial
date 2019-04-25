@@ -1,5 +1,6 @@
-#N canvas 723 23 508 375 12;
-#X obj 234 122 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#N canvas 478 63 516 427 12;
+#X declare -path else;
+#X obj 237 158 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
@@ -25,9 +26,9 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 234 169 pd test;
-#X obj 234 280 out~;
-#X obj 116 133 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#X restore 237 205 pd test;
+#X obj 237 316 out~;
+#X obj 119 169 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
@@ -53,17 +54,18 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 116 176 pd test;
-#X obj 74 224 out~;
-#X msg 324 196 size \$1;
-#X obj 327 148 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 5900 1;
-#X floatatom 324 170 5 0 0 0 - - -;
-#X obj 234 248 stereo.rev~;
-#X text 76 31 The [stereo.rev~] object from ELSE is a variation of
+#X restore 119 212 pd test;
+#X obj 77 260 out~;
+#X msg 327 232 size \$1;
+#X obj 330 184 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X floatatom 327 206 5 0 0 0 - - -;
+#X obj 237 284 stereo.rev~;
+#X text 79 67 The [stereo.rev~] object from ELSE is a variation of
 [mono.rev~] and contains two independent channels \, each with its
 own matrix., f 52;
-#X obj 271 215 *~ -1;
+#X obj 274 251 *~ -1;
+#X obj 309 22 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 1 0 11 0;

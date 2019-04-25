@@ -1,4 +1,5 @@
 #N canvas 460 81 951 601 12;
+#X declare -path else;
 #N canvas 74 96 603 581 Z-Plane-biquad 0;
 #X obj 101 101 cnv 15 450 450 empty empty empty 20 12 1 14 -191407
 -66577 0;
@@ -574,31 +575,31 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X coords 0 -1 1 1 452 452 2 100 100;
 #X restore 451 7 pd Z-Plane-biquad;
 #X obj 429 9 vsl 22 157 0 1.1 0 0 \$0-gain-send \$0-gain empty 0 -9
-0 10 -66577 -258113 -1 18 1;
+0 10 -66577 -258113 -1 0 1;
 #X obj 436 57 cnv 5 5 5 empty empty G 0 0 0 14 -66577 -262144 0;
 #X obj 436 73 cnv 5 5 5 empty empty A 0 0 0 14 -66577 -262144 0;
 #X obj 436 89 cnv 5 5 5 empty empty I 0 0 0 14 -66577 -262144 0;
-#X obj 313 320 biquad~;
-#X obj 313 259 noise~;
-#X obj 313 352 out~;
+#X obj 313 350 biquad~;
+#X obj 313 289 noise~;
+#X obj 313 382 out~;
 #X obj 436 109 cnv 5 5 5 empty empty N 0 0 0 14 -66577 -262144 0;
-#X obj 89 259 hsl 128 15 20 22050 1 0 empty empty empty -2 -8 0 10
+#X obj 89 289 hsl 128 15 20 22050 1 0 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
-#X floatatom 86 291 0 0 0 0 - - -;
-#X obj 86 360 s \$0-coeffs;
-#X obj 237 306 nbx 5 14 -24 24 0 0 empty empty empty 0 -8 0 10 -228856
+#X floatatom 86 321 0 0 0 0 - - -;
+#X obj 86 390 s \$0-coeffs;
+#X obj 237 336 nbx 5 14 -24 24 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X text 115 257 frequency;
-#X text 159 281 Q/Slope;
+#X text 115 287 frequency;
+#X text 159 311 Q/Slope;
 #N canvas 417 569 949 357 biplot 0;
 #X obj 21 44 biplot;
 #X text 118 18 [biplot] from ELSE;
 #X obj 21 16 r \$0-coeffs;
 #X connect 2 0 0 0;
-#X restore 92 423 pd biplot;
-#X obj 86 329 bicoeff lowpass 500 10;
-#X obj 328 291 r \$0-coeffs;
-#X text 240 285 gain;
+#X restore 92 443 pd biplot;
+#X obj 86 359 bicoeff lowpass 500 10;
+#X obj 328 321 r \$0-coeffs;
+#X text 240 315 gain;
 #N canvas 197 48 263 349 menu 0;
 #X msg 22 39 lowpass;
 #X msg 34 63 highpass;
@@ -622,12 +623,12 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X connect 7 0 9 0;
 #X connect 8 0 9 0;
 #X connect 11 0 0 0;
-#X restore 25 293 pd menu;
-#X obj 161 306 nbx 5 14 0 100 0 0 empty empty empty 0 -8 0 10 -228856
+#X restore 25 323 pd menu;
+#X obj 161 336 nbx 5 14 0 100 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X text 20 99 Select filter type in [pd menu] \, see the filters response
+#X text 20 129 Select filter type in [pd menu] \, see the filters response
 in [pd biplot] and poles/zeros and gain to the right., f 54;
-#X text 20 151 Lowshelf and highshelf take a slope value (between 0
+#X text 20 181 Lowshelf and highshelf take a slope value (between 0
 and 1) instead of "Q". They also need a gain parameter (in dB). The
 "Eq" filter also needs a gain parameter \, but for others this is optional
 and only affects overall gain., f 54;
@@ -645,11 +646,12 @@ separate objects in the ELSE library \, and the main difference is
 that they take signal input to control the parameters. Another difference
 is that only [eq~] \, [lowshelf~] and [highshelf~] have a gain input.
 , f 89;
-#X text 165 422 <= click;
-#X text 20 20 The filters from Robert Bristow-Johnson's "Cookbook formulae
+#X text 165 442 <= click;
+#X text 20 50 The filters from Robert Bristow-Johnson's "Cookbook formulae
 for audio EQ biquad filter coefficients" are reviewed again in this
 example \, which also presents the [biplot] object from ELSE that plots
 the filter response from biquad coefficients., f 54;
+#X obj 243 19 declare -path else;
 #X connect 5 0 7 0;
 #X connect 5 0 7 1;
 #X connect 6 0 5 0;

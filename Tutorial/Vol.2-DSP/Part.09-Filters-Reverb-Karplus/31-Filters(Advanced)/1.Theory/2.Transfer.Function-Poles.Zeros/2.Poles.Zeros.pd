@@ -1,26 +1,27 @@
 #N canvas 224 23 972 578 12;
+#X declare -path else;
 #X obj 60 443 cnv 15 275 50 empty empty empty 5 12 0 14 -232693 -66577
 0;
 #X text 67 458 H(z) = ------------------------------;
 #X text 120 447 a0 + a1 * z^-1 + a2 * z^-2;
-#X obj 588 280 rpole~;
-#X obj 588 235 noise~;
-#X obj 658 236 sig~ 0.1;
-#X obj 541 455 cnv 15 320 55 empty empty empty 5 12 0 14 -233017 -66577
+#X obj 594 295 rpole~;
+#X obj 594 250 noise~;
+#X obj 664 251 sig~ 0.1;
+#X obj 547 470 cnv 15 320 55 empty empty empty 5 12 0 14 -233017 -66577
 0;
-#X text 675 467 _____________;
-#X text 708 460 1;
-#X text 554 475 H(z) =;
-#X text 613 461 Y(z);
-#X text 614 486 X(z);
-#X text 605 468 _______;
-#X text 660 473 =;
-#X text 679 484 1 - a * z^-1;
+#X text 681 482 _____________;
+#X text 714 475 1;
+#X text 560 490 H(z) =;
+#X text 619 476 Y(z);
+#X text 620 501 X(z);
+#X text 611 483 _______;
+#X text 666 488 =;
+#X text 685 499 1 - a * z^-1;
 #X text 126 468 1 - b1 * z^-1 - b2 * z^-2;
 #X obj 242 216 pic ../files/SOS.gif;
 #X text 49 180 Zero 1 ==>;
 #X text 52 247 Zero 2 ==>;
-#X obj 545 319 out~;
+#X obj 551 334 out~;
 #X text 348 177 <== Pole 1;
 #X text 348 248 <== Pole 2;
 #N canvas 259 23 692 706 get-H(z) 0;
@@ -69,18 +70,19 @@ as a 2-Pole / 2-Zero filter \, you're also defining its order., f
 a0 isn't a zero). In a transfer function \, the Zeroes are the numerators
 \, and poles the denominator. Open [pd get-H(z)] to see how to derive
 the transfer function from the difference equation.;
-#X text 727 236 pole coefficient;
-#X text 512 135 The [rpole~] object is a one pole filter object provided
+#X text 733 251 pole coefficient;
+#X text 518 150 The [rpole~] object is a one pole filter object provided
 as a native object in Pd. It takes a pole coeficient in the right inlet.
 This is nothing but the IIR filter example we've been dealing with.
 ;
-#X obj 701 281 fexpr~ $x[0] + $x2 * $y[-1];
-#X obj 701 321 out~;
-#X text 540 432 Transfer Function:;
-#X text 781 482 <== Pole;
-#X text 508 45 A pole represents a resonance \, and a zero is an anti
+#X obj 707 296 fexpr~ $x[0] + $x2 * $y[-1];
+#X obj 707 336 out~;
+#X text 546 447 Transfer Function:;
+#X text 787 497 <== Pole;
+#X text 514 60 A pole represents a resonance \, and a zero is an anti
 resonance \, this is where they get their names from. We'll see later
 how they act \, when the Z-Plane is presented.;
+#X obj 718 23 declare -path else;
 #X connect 3 0 19 0;
 #X connect 3 0 19 1;
 #X connect 4 0 3 0;

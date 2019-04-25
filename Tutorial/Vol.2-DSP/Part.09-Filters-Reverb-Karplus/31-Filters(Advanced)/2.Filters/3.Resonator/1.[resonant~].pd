@@ -1,8 +1,8 @@
 #N canvas 430 23 959 766 12;
-#X obj 630 130 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+#X declare -path else;
+#X obj 630 151 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 630 167 impseq~;
-#X obj 587 275 out~;
+#X obj 630 188 impseq~;
 #N canvas 864 173 371 586 analyze 0;
 #X floatatom 100 104 0 0 0 0 - - -;
 #X obj 137 260 - 60;
@@ -39,15 +39,15 @@
 #X connect 12 0 14 0;
 #X connect 14 0 0 0;
 #X connect 15 0 9 0;
-#X restore 702 254 pd analyze;
-#X obj 630 207 resonant~ 1000 3000;
-#X obj 702 286 display 7;
-#X text 489 31 Let's put it to the test. The subpatch below analyzes
+#X restore 702 275 pd analyze;
+#X obj 630 228 resonant~ 1000 3000;
+#X obj 702 307 display 7;
+#X text 489 53 Let's put it to the test. The subpatch below analyzes
 the output of the filter and sends a value when it falls under 60 dB
 of the attack. The analysis isn't perfect \, but it gets pretty close
 indeed to the default settings. Try it \, and check its help file.
 ;
-#X text 493 363 So this type of filter acts as a resonator \, which
+#X text 493 383 So this type of filter acts as a resonator \, which
 is a kind of reverberator. See also the [resonbank~] object \, which
 is a bank of resonators. Below \, it filters a brown noise with 4 resonators.
 ;
@@ -105,31 +105,33 @@ also have an attack parameter rather than just a decay time., f 55
 #X obj 655 682 resonbank2~ 4;
 #X obj 619 490 resonbank~ 4 -freq 200 300 700 800 -decay 900 800 700
 900 -amp 0.4 0.3 0.2 0.2, f 28;
+#X obj 732 18 declare -path else;
+#X obj 587 296 out~;
 #X connect 0 0 1 0;
-#X connect 1 0 4 0;
-#X connect 3 0 5 0;
-#X connect 4 0 3 0;
-#X connect 4 0 2 0;
-#X connect 4 0 2 1;
-#X connect 8 0 43 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 3 0 44 0;
+#X connect 3 0 44 1;
+#X connect 7 0 42 0;
+#X connect 9 0 10 0;
 #X connect 10 0 11 0;
-#X connect 11 0 12 0;
-#X connect 12 0 14 1;
-#X connect 14 0 16 0;
-#X connect 15 0 23 0;
-#X connect 16 0 21 1;
-#X connect 18 0 32 0;
-#X connect 21 0 22 0;
-#X connect 22 0 25 0;
-#X connect 23 0 21 0;
-#X connect 23 1 14 0;
+#X connect 11 0 13 1;
+#X connect 13 0 15 0;
+#X connect 14 0 22 0;
+#X connect 15 0 20 1;
+#X connect 17 0 31 0;
+#X connect 20 0 21 0;
+#X connect 21 0 24 0;
+#X connect 22 0 20 0;
+#X connect 22 1 13 0;
+#X connect 24 0 25 0;
 #X connect 25 0 26 0;
-#X connect 26 0 27 0;
-#X connect 28 0 18 0;
-#X connect 29 0 28 0;
-#X connect 31 0 30 0;
-#X connect 32 0 15 0;
-#X connect 32 1 10 0;
-#X connect 33 0 15 0;
-#X connect 43 0 9 0;
-#X connect 43 0 9 1;
+#X connect 27 0 17 0;
+#X connect 28 0 27 0;
+#X connect 30 0 29 0;
+#X connect 31 0 14 0;
+#X connect 31 1 9 0;
+#X connect 32 0 14 0;
+#X connect 42 0 8 0;
+#X connect 42 0 8 1;

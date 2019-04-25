@@ -1,4 +1,5 @@
 #N canvas 380 123 971 566 12;
+#X declare -path else;
 #X obj 295 139 tabwrite~ \$0-noise;
 #X obj 126 431 tabread4~ \$0-noise;
 #X obj 126 358 phasor~ 1;
@@ -12,55 +13,56 @@
 #X array \$0-noise 44100 float 0;
 #X coords 0 1 44099 -1 400 100 1 0 0;
 #X restore 28 169 graph;
-#X obj 607 276 v sr;
-#X msg 491 320 0 \$1;
-#X obj 491 347 tabplay~ \$0-noise, f 8;
-#X obj 477 280 expr sr / $f1 \; 1000 / $f1;
-#X text 516 252 Freq;
-#X floatatom 572 324 5 0 0 0 - - -;
-#X text 551 323 ms;
-#X obj 722 335 noise~;
-#X obj 742 377 *~;
-#X text 784 231 Freq;
-#X obj 817 258 expr 1000 / $f1;
-#X text 797 283 ms;
-#X msg 817 230 110;
+#X obj 616 295 v sr;
+#X msg 500 339 0 \$1;
+#X obj 500 366 tabplay~ \$0-noise, f 8;
+#X obj 486 299 expr sr / $f1 \; 1000 / $f1;
+#X text 525 271 Freq;
+#X floatatom 581 343 5 0 0 0 - - -;
+#X text 560 342 ms;
+#X obj 731 354 noise~;
+#X obj 751 396 *~;
+#X text 793 250 Freq;
+#X obj 826 277 expr 1000 / $f1;
+#X text 806 302 ms;
+#X msg 826 249 110;
 #X obj 203 313 nbx 5 16 -1e+37 1e+37 0 0 empty freq empty 0 -8 0 11
--228856 -1 -1 60 256;
+-228856 -1 -1 0 256;
 #X obj 126 473 out~;
-#X obj 535 436 out~;
-#X obj 742 441 out~;
+#X obj 544 455 out~;
+#X obj 751 460 out~;
 #X obj 263 111 lb;
 #X text 132 311 Frequency;
 #X text 240 390 Period in samples;
-#X obj 607 253 sr~;
+#X obj 616 272 sr~;
 #X obj 288 433 initmess \; freq 60;
 #X text 20 14 The Karplus Strong technique repeats a noise periodically
 \, which forces a pitch into the signal even in this case. To test
 it \, let's populate an array with noise and read from it with [phasor~]
 at a certain frequency (which also defines a period to read from the
 buffer).;
-#X obj 477 200 tempo 60 100 -on;
-#X floatatom 477 252 5 0 0 0 - - -;
-#X text 473 40 Now [tabplay~] plays a grain whose period in samples
+#X obj 486 219 tempo 60 100 -on;
+#X floatatom 486 271 5 0 0 0 - - -;
+#X text 482 59 Now [tabplay~] plays a grain whose period in samples
 depends on a frequency and sends it to a feedback delay line with the
 same period as the delay time. This grain gets then looped and a feedback
 parameter sets the decay time.;
-#X obj 817 201 tempo 60 100 -on;
-#X obj 817 284 display 6;
-#X obj 777 324 t b f;
-#X obj 777 349 timed.gate~;
-#X obj 742 406 fbdelay~ 10 0.98 -gain;
-#X obj 535 391 fbdelay~ 25 0.98 -gain, f 11;
-#X text 628 332 feedback;
-#X msg 609 355 0.995;
-#X msg 656 355 0.98;
-#X msg 578 355 0.8;
-#X text 474 110 But instead of working with a fixed buffer \, we can
+#X obj 826 220 tempo 60 100 -on;
+#X obj 826 303 display 6;
+#X obj 786 343 t b f;
+#X obj 786 368 timed.gate~;
+#X obj 751 425 fbdelay~ 10 0.98 -gain;
+#X obj 544 410 fbdelay~ 25 0.98 -gain, f 11;
+#X text 637 351 feedback;
+#X msg 618 374 0.995;
+#X msg 665 374 0.98;
+#X msg 587 374 0.8;
+#X text 483 129 But instead of working with a fixed buffer \, we can
 work with a live noise input. There are subtle differences because
 the same grain doesn't get repeated anymore \, which makes it more
 dynamic. See both below.;
-#X obj 477 225 rand.i 50 500;
+#X obj 486 244 rand.i 50 500;
+#X obj 756 19 declare -path else;
 #X connect 1 0 23 0;
 #X connect 1 0 23 1;
 #X connect 2 0 4 0;

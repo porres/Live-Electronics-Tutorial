@@ -1,13 +1,14 @@
-#N canvas 255 27 711 746 12;
-#X obj 440 426 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+#N canvas 255 27 621 549 12;
+#X declare -path else;
+#X obj 410 368 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
 -228856 -1 -1 0 256;
-#X obj 401 498 out~;
-#X obj 443 400 hsl 128 15 0 0.9 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 371 440 out~;
+#X obj 413 342 hsl 128 15 0 0.9 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X text 473 399 Feedback;
-#X obj 112 391 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 112 478 out~;
+#X text 443 341 Feedback;
+#X obj 82 333 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X obj 82 420 out~;
 #N canvas 830 223 313 262 test 0;
 #X obj 60 114 osc~;
 #X obj 93 216 outlet~;
@@ -21,8 +22,8 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X connect 5 0 0 0;
-#X restore 112 434 pd test;
-#X obj 325 345 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#X restore 82 376 pd test;
+#X obj 295 287 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 830 223 313 262 test 0;
 #X obj 60 114 osc~;
@@ -37,8 +38,8 @@
 #X connect 3 0 4 0;
 #X connect 4 0 2 1;
 #X connect 5 0 0 0;
-#X restore 325 388 pd test;
-#X text 459 462 <= click & open;
+#X restore 295 330 pd test;
+#X text 429 404 <= click & open;
 #N canvas 327 59 864 691 FDN 0;
 #X obj 210 227 +~;
 #X obj 271 227 +~;
@@ -114,8 +115,8 @@ of 2)., f 52;
 #X connect 30 0 13 0;
 #X connect 30 0 15 0;
 #X connect 31 0 1 1;
-#X restore 401 463 pd FDN;
-#X text 211 412 early reflections ==>, f 16;
+#X restore 371 405 pd FDN;
+#X text 181 354 early reflections ==>, f 16;
 #N canvas 698 23 458 587 6stage-echo 0;
 #X obj 251 92 inlet~;
 #X obj 113 535 outlet~;
@@ -167,17 +168,18 @@ summed to the inverted polarity signal., f 53;
 #X connect 17 0 12 1;
 #X connect 17 0 11 1;
 #X connect 18 0 2 0;
-#X restore 325 424 pd 6stage-echo;
-#X text 120 234 This example is the same as the G08.reverb example
-from Miller's book. It uses the echoes example we've seen earlier with
-only feedforward lines as a way to model early reflections that will
-feed the network and increase the reflection complexity. Open and check
+#X restore 295 366 pd 6stage-echo;
+#X text 90 176 This example is the same as the G08.reverb example from
+Miller's book. It uses the echoes example we've seen earlier with only
+feedforward lines as a way to model early reflections that will feed
+the network and increase the reflection complexity. Open and check
 it out.;
-#X text 120 132 Ideally \, we'd need thousands of delay lines to properly
+#X text 90 74 Ideally \, we'd need thousands of delay lines to properly
 model every possible reflection in a reverberant space \, but there
 are efficient techniques that involve less delay lines with good results.
 One example is to use "FDN" - a Feedback delay network \, where we
 can have usually from 4 to 16 delay lines in a feedback matrix.;
+#X obj 376 29 declare -path else;
 #X connect 0 0 10 2;
 #X connect 2 0 0 0;
 #X connect 4 0 6 0;

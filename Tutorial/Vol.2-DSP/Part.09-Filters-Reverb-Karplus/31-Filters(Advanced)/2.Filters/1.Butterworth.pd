@@ -1,8 +1,9 @@
 #N canvas 372 119 967 624 12;
-#X obj 599 131 noise~;
-#X obj 701 148 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X declare -path else;
+#X obj 599 139 noise~;
+#X obj 701 156 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 2000 256;
-#X obj 704 128 hsl 128 15 20 20000 0 0 empty hz empty -2 -8 0 10 -228856
+#X obj 704 136 hsl 128 15 20 20000 0 0 empty hz empty -2 -8 0 10 -228856
 -1 -1 1259 1;
 #N canvas 469 56 464 253 butterworth8 0;
 #X obj 83 25 inlet;
@@ -281,11 +282,11 @@
 #X connect 14 0 15 0;
 #X connect 15 0 17 0;
 #X connect 16 0 14 0;
-#X restore 599 177 pd butterworth8;
-#X obj 792 194 loadbang;
-#X msg 792 223 \; hz 2000;
-#X text 680 147 Hz;
-#X text 737 127 cutoff;
+#X restore 599 185 pd butterworth8;
+#X obj 792 202 loadbang;
+#X msg 792 231 \; hz 2000;
+#X text 680 155 Hz;
+#X text 737 135 cutoff;
 #X obj 250 450 pic files/butterw.gif;
 #X text 37 19 There are different filter topologies and their differences
 are more relevant for high order filters. "Bessel" has a phase response
@@ -298,12 +299,11 @@ that depend on the number of poles like this:;
 #X text 139 156 3 poles = (0 & 2/3) * pi/2 \; 4 poles = (1/4 & 3/4)
 * pi/2 \; 5 poles = (0 \, 2/5 \, 4/5) * pi/2 \; 6 poles = (1/6 \, 3/6
 & 5/6) * pi/2;
-#X obj 599 218 out~;
 #X text 43 230 Here's a picture from miller puckette's book (Figure
 8.17) that plots the poles of a 4 pole butterworth filter (for a lowpass
 \, the zeros are at -1). The "r" parameter depends on the cutoff frequency
 ;
-#X text 495 37 For an 8th order lowpass \, we have the angles (1/8
+#X text 500 51 For an 8th order lowpass \, we have the angles (1/8
 \, 3/8 \, 5/8 & 7/8) * pi/2 - let's implement this with [biquad~] objects.
 We could use [cpole~] instead (see H13.butterworth).;
 #X obj 525 405 noise~;
@@ -326,19 +326,21 @@ We could use [cpole~] instead (see H13.butterworth).;
 are: [lop.bw~] (lowpass) and [hip.bw~] (highpass). They are an abstraction
 that depend on the [biquads~] object \, also from ELSE. Open help files
 for more details.;
+#X obj 769 11 declare -path else;
+#X obj 599 226 out~;
 #X connect 0 0 3 0;
 #X connect 1 0 3 1;
 #X connect 2 0 1 0;
-#X connect 3 0 11 0;
-#X connect 3 0 11 1;
+#X connect 3 0 27 0;
+#X connect 3 0 27 1;
 #X connect 4 0 5 0;
-#X connect 14 0 19 0;
-#X connect 15 0 19 1;
-#X connect 17 0 15 0;
-#X connect 19 0 16 0;
-#X connect 19 0 16 1;
-#X connect 20 0 25 0;
-#X connect 21 0 25 1;
-#X connect 23 0 21 0;
-#X connect 25 0 22 0;
-#X connect 25 0 22 1;
+#X connect 13 0 18 0;
+#X connect 14 0 18 1;
+#X connect 16 0 14 0;
+#X connect 18 0 15 0;
+#X connect 18 0 15 1;
+#X connect 19 0 24 0;
+#X connect 20 0 24 1;
+#X connect 22 0 20 0;
+#X connect 24 0 21 0;
+#X connect 24 0 21 1;

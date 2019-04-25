@@ -1,4 +1,5 @@
-#N canvas 312 37 490 598 12;
+#N canvas 593 42 489 639 12;
+#X declare -path else;
 #N canvas 366 149 409 244 init 0;
 #X obj 51 131 soundfiler;
 #X obj 201 134 table \$0-sample;
@@ -9,38 +10,38 @@
 #X connect 0 0 2 0;
 #X connect 0 0 3 0;
 #X connect 4 0 0 0;
-#X restore 279 497 pd init;
-#X text 33 20 This example expands an example previously presented
+#X restore 279 540 pd init;
+#X text 33 63 This example expands an example previously presented
 in granulation for Time Stretch/Compress & Pitch Shift. We now include
 a spectral processing known as "Phase Vocoder". This term does not
 specify a single process but is an umbrella term for many spectral
 processes that take into account the phase information of an FFT.,
 f 59;
-#X text 33 114 You may be thinking we've done that already \, so could
+#X text 33 157 You may be thinking we've done that already \, so could
 those examples be referred to as "Phase vocoder"? Yes! But anyway \,
 \, ore specifically \, we have here a "Phase accumulation" process.
 ;
-#X text 33 180 This example is on a fixed buffer. For keeping the patch
+#X text 33 223 This example is on a fixed buffer. For keeping the patch
 simple \, we have a fixed window of 2048 and 4 overlaps. As before
 \, a transposition parameter defines a grain size and a speed parameter
 controls a step size. The original grain size is the FFT window size
 (204) and the step is the hop size (512)., f 59;
-#X obj 233 434 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
-0 10 -228856 -1 -1 11 256;
-#X obj 326 432 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-transpo empty 0
--8 0 10 -228856 -1 -1 -733 256;
-#X obj 140 433 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 233 477 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
+0 10 -228856 -1 -1 100 256;
+#X obj 326 475 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-transpo empty 0
+-8 0 10 -228856 -1 -1 0 256;
+#X obj 140 476 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X text 135 414 Play;
-#X text 336 413 Cents;
-#X obj 140 513 out~;
-#X text 33 274 But when we have different grain and step sizes \, we
+#X text 135 457 Play;
+#X text 336 456 Cents;
+#X obj 140 556 out~;
+#X text 33 317 But when we have different grain and step sizes \, we
 also have phase discontinuities as the grains do not match anymore
 \, but the phase accumulation process resmoves them. But it needs two
 windows for each grain \, called "back" and "front" \, where the front
 window gets resynthesized in the output with a different phase information.
 Open the subpatch below for more info., f 59;
-#X text 226 413 Speed (%);
+#X text 226 456 Speed (%);
 #N canvas 249 78 1041 757 Pitch.Shift-Time.Stretch 0;
 #X obj 178 227 +;
 #X obj 267 127 * 2048;
@@ -52,12 +53,12 @@ Open the subpatch below for more info., f 59;
 #X obj 267 224 / 4;
 #X obj 27 226 t f f;
 #X obj 27 189 spigot;
-#X obj 66 132 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 66 132 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X text 67 30 Play;
 #X obj 267 265 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 335.267 256;
-#X floatatom 267 167 5 0 0 0 - - -, f 5;
+-228856 -1 -1 512 256;
+#X floatatom 267 167 5 0 0 0 - - -;
 #X obj 132 152 r \$0-size;
 #X text 142 184 loop;
 #X obj 100 183 wrap2;
@@ -478,7 +479,8 @@ in ms (46.43 in a sample rate of 44100 hz)., f 63;
 #X connect 50 0 57 0;
 #X connect 55 0 50 1;
 #X connect 59 0 34 0;
-#X restore 140 468 pd Pitch.Shift-Time.Stretch;
+#X restore 140 511 pd Pitch.Shift-Time.Stretch;
+#X obj 295 24 declare -path else;
 #X connect 4 0 12 1;
 #X connect 5 0 12 2;
 #X connect 6 0 12 0;

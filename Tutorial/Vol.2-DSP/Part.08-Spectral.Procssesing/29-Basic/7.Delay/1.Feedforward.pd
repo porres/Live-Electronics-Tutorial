@@ -1,5 +1,6 @@
-#N canvas 648 23 747 399 12;
-#X obj 421 264 out~;
+#N canvas 421 74 747 399 12;
+#X declare -path else;
+#X obj 445 292 out~;
 #N canvas 507 133 431 572 Spectral-Delay 0;
 #X obj 262 422 block~ 512 4;
 #X obj 78 32 inlet~;
@@ -35,7 +36,7 @@ by the block size in ms \, because we need multiples of the block size.
 #X connect 13 0 8 1;
 #X connect 14 0 12 0;
 #X coords 0 0 1 1 230 100 0;
-#X restore 421 224 pd Spectral-Delay;
+#X restore 445 252 pd Spectral-Delay;
 #X text 22 26 We've seen that a delay can sort of scramble the FFT
 bins \, but you can have delay times that are multiple of the block
 size to prvent this. Not only that \, but you can have different delay
@@ -66,14 +67,15 @@ Delay-Depth 40 11 0 19 -66577 -228856 -262144 0 0;
 #X connect 8 0 7 0;
 #X coords 0 436 1 435 213 184 0;
 #X restore 91 334 pd delay-time-table;
-#X obj 94 187 function;
-#X text 394 23 For such \, we need a table for the delay times for
+#X obj 94 187 function 0 0.5 1 0.5 0;
+#X text 408 65 For such \, we need a table for the delay times for
 each sample. We generate one with the [function] object \, where the
 horizontal axis represent the frequency points and the vertical axis
 the delay time. The delay depth controls the overall amplitude (that
 is the time parameter) of the envelope., f 43;
-#X obj 421 172 play.file~ ../../../../samples/guitar.wav 1 1, f 35
+#X obj 445 200 play.file~ ../../../../samples/guitar.wav 1 1, f 35
 ;
+#X obj 541 22 declare -path else;
 #X connect 1 0 0 0;
 #X connect 1 0 0 1;
 #X connect 4 0 6 0;

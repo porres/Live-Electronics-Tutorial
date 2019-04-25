@@ -1,4 +1,5 @@
 #N canvas 253 23 991 605 12;
+#X declare -path else;
 #X obj 121 335 fexpr~ ($x1[0] + $x1[-1] + $x1[-2] + $x1[-3] + $x1[-4]
 + $x1[-5] + $x1[-6] + $x1[-7]) * 0.125, f 46;
 #X obj 75 119 cnv 15 365 40 empty empty empty 5 12 0 14 -233017 -66577
@@ -7,39 +8,39 @@
 + x[n-6] + x[n-7]) * 0.125, f 43;
 #X text 59 300 x[n] ==>;
 #X text 58 391 y[n] ==>;
-#X obj 609 443 fexpr~ $x1[0] + $x2[0] * $y1[-1];
-#X obj 682 249 cnv 15 195 25 empty empty empty 5 12 0 14 -233017 -66577
+#X obj 601 465 fexpr~ $x1[0] + $x2[0] * $y1[-1];
+#X obj 684 274 cnv 15 195 25 empty empty empty 5 12 0 14 -233017 -66577
 0;
-#X text 683 252 y[n] = x[n] + a[n] * y[n-1];
-#X obj 609 409 noise~;
-#X obj 601 95 cnv 15 210 110 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X text 719 117 |;
-#X text 719 129 |;
-#X text 719 139 |;
-#X text 690 155 |;
-#X text 739 155 |;
-#X text 739 175 |;
-#X text 689 175 |;
-#X text 692 145 _______;
-#X text 692 175 _______;
-#X text 719 142 v;
-#X text 661 163 -(*)-;
-#X text 659 143 |;
-#X text 659 157 |;
-#X text 659 119 |;
-#X text 659 131 |;
-#X text 659 116 ^;
-#X text 758 105 >;
-#X text 690 165 | z^-1 |;
-#X text 672 172 a;
-#X text 607 105 x(n) ---(+)----------- y(n);
-#X obj 830 417 sig~ 0.99;
-#X text 801 415 a =;
+#X text 685 277 y[n] = x[n] + a[n] * y[n-1];
+#X obj 601 431 noise~;
+#X obj 603 120 cnv 15 210 110 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X text 721 142 |;
+#X text 721 154 |;
+#X text 721 164 |;
+#X text 692 180 |;
+#X text 741 180 |;
+#X text 741 200 |;
+#X text 691 200 |;
+#X text 694 170 _______;
+#X text 694 200 _______;
+#X text 721 167 v;
+#X text 663 188 -(*)-;
+#X text 661 168 |;
+#X text 661 182 |;
+#X text 661 144 |;
+#X text 661 156 |;
+#X text 661 141 ^;
+#X text 760 130 >;
+#X text 692 190 | z^-1 |;
+#X text 674 197 a;
+#X text 609 130 x(n) ---(+)----------- y(n);
+#X obj 822 439 sig~ 0.99;
+#X text 793 437 a =;
 #X obj 121 245 sig~ 300;
 #X obj 121 270 bl.saw~;
 #X obj 121 428 out~;
-#X obj 609 489 out~;
+#X obj 601 511 out~;
 #X text 45 41 As [expr~] \, the native [fexpr~] object belongs to the
 [expr] family of objects and may be used to implement filter equations
 (a.k.a. difference equations). Let's implement an average filter of
@@ -51,14 +52,15 @@ See how similar to this [fexpr~] is when implementing the same formula.
 #X text 62 506 The $x1 variable represents the input on the left inlet
 \, and the indexes represent a sample delay. for instance \, $x1[-3]
 represents a delay of three samples.;
-#X text 524 51 Now let's see a diagram with feedback:;
-#X text 528 220 The equation then looks like this:;
-#X text 528 296 So we have a one sample feedback \, multiplied by a
+#X text 526 76 Now let's see a diagram with feedback:;
+#X text 530 245 The equation then looks like this:;
+#X text 530 321 So we have a one sample feedback \, multiplied by a
 feedback index "a". Esse diagrama equivale à estrutura de delay em
 feedback que já foi apresentada anteriormente. The $y1[-1] syntax in
 expr represents a one sample feedback \, here's how the equation looks
 inside [fexpr~] then.;
-#X text 752 492 check [fexpr~]'s help file for more info, f 21;
+#X text 744 514 check [fexpr~]'s help file for more info, f 21;
+#X obj 748 29 declare -path else;
 #X connect 0 0 34 0;
 #X connect 0 0 34 1;
 #X connect 5 0 35 0;

@@ -1,59 +1,61 @@
 #N canvas 244 44 950 603 12;
-#X obj 133 364 *~;
-#X obj 395 463 *~;
-#X obj 413 432 *~;
-#X obj 395 493 delwrite~ \$0-Kp 1000;
-#X floatatom 413 362 5 0 0 0 - - -;
-#X obj 416 341 hsl 128 15 0 1 0 0 empty \$0-fb empty -2 -8 0 10 -228856
--1 -1 12446 1;
-#X text 448 340 feedback;
-#X floatatom 617 355 0 0 0 0 - - -;
-#X obj 620 328 hsl 128 15 0 1 0 0 empty \$0-blend empty -2 -8 0 10
--228856 -1 -1 12700 1;
-#X text 662 327 blend;
-#X obj 487 388 noise~;
-#X obj 487 436 expr~ if($v1 < $v2 \, 1 \, -1), f 19;
-#X text 61 366 envelope;
-#X obj 220 504 out~;
-#X obj 263 402 mov.avg~ 2;
-#X obj 487 412 rescale~;
-#X obj 413 387 f2s~ 10;
-#X obj 151 332 timed.gate~;
-#X obj 263 333 display~ 5;
-#X text 309 333 ms;
-#X obj 263 363 delread4~ \$0-Kp;
-#X obj 133 270 clipnoise~;
-#X obj 263 302 expr~ 1000 / $v1;
-#X obj 263 253 tempo~ 60 100 -on;
-#X obj 617 381 f2s~ 10;
-#X obj 674 438 initmess \; \$0-fb 0.98 \; \$0-blend 1;
-#X text 39 30 Let's now closely recreate the original Karplus-Strong
+#X declare -path else;
+#X obj 140 386 *~;
+#X obj 402 485 *~;
+#X obj 420 454 *~;
+#X obj 402 515 delwrite~ \$0-Kp 1000;
+#X floatatom 420 384 5 0 0 0 - - -;
+#X obj 423 363 hsl 128 15 0 1 0 0 empty \$0-fb empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X text 455 362 feedback;
+#X floatatom 624 377 0 0 0 0 - - -;
+#X obj 627 350 hsl 128 15 0 1 0 0 empty \$0-blend empty -2 -8 0 10
+-228856 -1 -1 0 1;
+#X text 669 349 blend;
+#X obj 494 410 noise~;
+#X obj 494 458 expr~ if($v1 < $v2 \, 1 \, -1), f 19;
+#X text 68 388 envelope;
+#X obj 227 526 out~;
+#X obj 270 424 mov.avg~ 2;
+#X obj 494 434 rescale~;
+#X obj 420 409 f2s~ 10;
+#X obj 158 354 timed.gate~;
+#X obj 270 355 display~ 5;
+#X text 316 355 ms;
+#X obj 270 385 delread4~ \$0-Kp;
+#X obj 140 292 clipnoise~;
+#X obj 270 324 expr~ 1000 / $v1;
+#X obj 270 275 tempo~ 60 100 -on;
+#X obj 624 403 f2s~ 10;
+#X obj 681 460 initmess \; \$0-fb 0.98 \; \$0-blend 1;
+#X text 46 52 Let's now closely recreate the original Karplus-Strong
 algorythm. Its noise input consisted only in 1 or -1 values stored
 in a table \, we're using a live input from [clipnoise~] instead.,
 f 55;
-#X text 40 96 For the feedback \, the ideal would be to do it in a
+#X text 47 118 For the feedback \, the ideal would be to do it in a
 subpatch with a block size of 1 \, for very high frequencies. We'll
 do this later., f 55;
-#X text 47 147 An important detail is that we have now is a mean filter
+#X text 54 169 An important detail is that we have now is a mean filter
 of two samples inside the feedback loop \, this is a lowpass (high
 cut) filter. The original algorythm also describes a "blend" parameter
 which alters the feedback value., f 54;
-#X text 466 244 As a kind od Waveguide model \, the Karplus-Strong
+#X text 473 266 As a kind od Waveguide model \, the Karplus-Strong
 is considered a "Wavetable Modification" algorithm \, for at each iteration
 \, the sound clip gets filtered and modified., f 58;
-#X text 461 113 A negative feedback promotes inversion of the polarity
+#X text 468 135 A negative feedback promotes inversion of the polarity
 for each iteration \, which makes it sound an octave lower \, besides
 changing the harmonic content.;
-#X text 461 34 The original feedback happens for a blend of 1 \, 0
+#X text 468 56 The original feedback happens for a blend of 1 \, 0
 gives us a negative feedback. Values torwards 0.5 insert random changes
 between 0 and 1 \, 0.5 being white noise (and noise is what it sounds
 like) - this noisiness was aimed to emulate more percussive sounds.
 , f 58;
-#X text 465 172 The Karplus Strong algorythm is from the late 70s and
+#X text 472 194 The Karplus Strong algorythm is from the late 70s and
 is the simplest case of Physical Modelings. More precisely \, an example
 of Waveguide Synthesis. Despite being simple \, it can achieve good
 results modeling plucked instruments., f 58;
-#X obj 263 277 rand.i~ 50 500;
+#X obj 270 299 rand.i~ 50 500;
+#X obj 706 21 declare -path else;
 #X connect 0 0 14 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 1;

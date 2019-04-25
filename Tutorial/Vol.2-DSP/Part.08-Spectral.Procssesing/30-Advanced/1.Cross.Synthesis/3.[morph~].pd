@@ -1,34 +1,36 @@
-#N canvas 653 70 581 625 12;
-#X obj 218 308 out~;
-#X obj 356 308 out~;
-#X obj 173 543 out~;
-#X obj 218 268 r~ \$0-A;
-#X obj 356 271 r~ \$0-B;
-#X obj 107 422 r~ \$0-A;
-#X obj 186 423 r~ \$0-B;
-#X obj 107 177 s~ \$0-A;
-#X obj 107 235 s~ \$0-B;
-#X obj 288 426 hsl 128 15 -1 1 0 0 empty \$0-xfade empty -2 -8 0 10
+#N canvas 513 23 582 634 12;
+#X declare -path else;
+#X obj 228 335 out~;
+#X obj 366 335 out~;
+#X obj 176 549 out~;
+#X obj 228 295 r~ \$0-A;
+#X obj 366 298 r~ \$0-B;
+#X obj 110 428 r~ \$0-A;
+#X obj 189 429 r~ \$0-B;
+#X obj 113 210 s~ \$0-A;
+#X obj 113 268 s~ \$0-B;
+#X obj 291 432 hsl 128 15 -1 1 0 0 empty \$0-xfade empty -2 -8 0 10
 -228856 -1 -1 0 1;
-#X obj 285 453 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 288 459 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 267 424 A;
-#X obj 173 495 morph~;
-#X obj 300 488 hsl 128 15 -1 1 0 0 empty \$0-xfade empty -2 -8 0 10
+#X text 270 430 A;
+#X obj 176 501 morph~;
+#X obj 303 494 hsl 128 15 -1 1 0 0 empty \$0-xfade empty -2 -8 0 10
 -228856 -1 -1 0 1;
-#X obj 297 515 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 300 521 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 279 486 A;
-#X text 421 424 B (amplitude);
-#X text 433 486 B (phase);
-#X text 62 26 The [morph~] object \, an abstraction from ELSE \, is
+#X text 282 492 A;
+#X text 424 430 B (amplitude);
+#X text 436 492 B (phase);
+#X text 68 59 The [morph~] object \, an abstraction from ELSE \, is
 yet another variant. It does a crossdade of bothe the spectral amplitudes
 and phases. This means you can perform cross synthesis in both ways
 and a full morph between the two sound sources. By default \, it performs
 a cross synthesis with amplitudes from "B" and initial phases from
 "A"., f 61;
-#X obj 107 150 play.file~ ../../../../samples/kantele.wav 1 1;
-#X obj 107 209 play.file~ ../../../../samples/numbers.wav 1 1;
+#X obj 113 183 play.file~ ../../../../samples/kantele.wav 1 1;
+#X obj 113 242 play.file~ ../../../../samples/numbers.wav 1 1;
+#X obj 392 22 declare -path else;
 #X connect 3 0 0 0;
 #X connect 3 0 0 1;
 #X connect 4 0 1 0;

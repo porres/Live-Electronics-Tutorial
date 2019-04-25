@@ -1,9 +1,10 @@
 #N canvas 319 152 858 571 12;
-#X obj 512 131 rzero_rev~;
-#X text 592 130 =;
-#X text 593 106 =;
-#X obj 524 105 rpole~;
-#X obj 569 79 v a;
+#X declare -path else;
+#X obj 517 136 rzero_rev~;
+#X text 597 135 =;
+#X text 598 111 =;
+#X obj 529 110 rpole~;
+#X obj 574 84 v a;
 #X obj 178 175 rpole~;
 #X obj 178 150 rzero_rev~;
 #X obj 275 126 hsl 128 15 0 0.9999 0 0 \$0-a empty empty -2 -8 0 10
@@ -208,9 +209,9 @@
 #X text 402 497 0.5;
 #X text 300 497 0.2;
 #X text 220 497 0.1;
-#X obj 510 165 fexpr~ -a * $x + $x[-1] + a * $y[-1];
-#X obj 614 106 fexpr~ $x + a * $y[-1];
-#X obj 611 131 fexpr~ -a * $x + $x[-1];
+#X obj 515 170 fexpr~ -a * $x + $x[-1] + a * $y[-1];
+#X obj 619 111 fexpr~ $x + a * $y[-1];
+#X obj 616 136 fexpr~ -a * $x + $x[-1];
 #X floatatom 357 234 0 0 0 0 - - -;
 #X floatatom 438 234 0 0 0 0 - - -;
 #N canvas 268 208 449 335 Polo-Zero 0;
@@ -243,7 +244,7 @@
 #X text 29 276 Phase Response;
 #X obj 272 178 f2s~ 10;
 #X text 320 153 coefficient;
-#X text 538 30 These filter equations and how to merge them in [fexpr~]:
+#X text 552 45 These filter equations and how to merge them in [fexpr~]:
 , f 32;
 #X text 358 258 Pole;
 #X text 452 210 Pole/Zero location;
@@ -332,6 +333,7 @@ with [rzero_rev~] & [rpole~]. The Pole & Zero effect on the amplitude
 gets cancelled out \, so only the phase is affected!, f 66;
 #X text 221 534 We don't plot the amplitudes because they are unchanged.
 , f 58;
+#X obj 651 9 declare -path else;
 #X connect 4 0 3 1;
 #X connect 4 0 0 1;
 #X connect 5 0 33 0;

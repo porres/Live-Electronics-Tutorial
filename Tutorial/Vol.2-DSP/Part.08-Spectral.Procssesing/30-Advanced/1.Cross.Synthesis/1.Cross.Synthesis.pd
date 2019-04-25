@@ -1,7 +1,8 @@
 #N canvas 637 55 730 479 12;
-#X obj 464 166 hradio 15 1 0 10 empty \$0-window empty 0 -8 0 10 -228856
+#X declare -path else;
+#X obj 464 176 hradio 15 1 0 10 empty \$0-window empty 0 -8 0 10 -228856
 -1 -1 4;
-#X obj 464 214 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
+#X obj 464 224 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 2048 256;
 #N canvas 150 61 493 184 Window 0;
 #X obj 134 116 s \$0-set-block;
@@ -11,11 +12,11 @@
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X coords 0 0 1 1 120 60 0;
-#X restore 464 236 pd Window;
-#X obj 464 189 expr pow(2 \, $f1 + 7);
+#X restore 464 246 pd Window;
+#X obj 464 199 expr pow(2 \, $f1 + 7);
 #X obj 103 81 s~ \$0-Phase;
-#X obj 429 108 s~ \$0-Amp;
-#X text 501 109 (or "filter");
+#X obj 429 118 s~ \$0-Amp;
+#X text 501 119 (or "filter");
 #N canvas 156 23 694 514 xsynth 0;
 #X obj 110 301 rifft~;
 #X obj 110 438 outlet~;
@@ -88,10 +89,10 @@ information of the first source (A)., f 37;
 #X connect 28 0 27 1;
 #X connect 29 0 23 1;
 #X connect 29 0 24 1;
-#X restore 498 341 pd xsynth;
-#X obj 448 305 r~ \$0-Phase;
-#X obj 558 305 r~ \$0-Amp;
-#X obj 498 380 out~;
+#X restore 498 351 pd xsynth;
+#X obj 448 315 r~ \$0-Phase;
+#X obj 558 315 r~ \$0-Amp;
+#X obj 498 390 out~;
 #X text 28 119 We've seen how to implement a Cross synthesis Vocoder
 \, now we do it with FFT by combining the phase output of a sound source
 to the amplitude of another. In the same way as a Vocoder \, the amplitude
@@ -104,11 +105,12 @@ envelope can be considered as an equalizer/filter., f 47;
 quality of the input. We then have a tonal source for the phase information
 and a noisy speech for the amplitude (or filter control). Listen to
 both below and the crossed synthesized to the right, f 47;
-#X text 522 211 window size;
+#X text 522 221 window size;
 #X obj 103 39 play.file~ 1 ../../../../samples/kantele.wav 1 1, f
 35;
-#X obj 429 66 play.file~ ../../../../samples/numbers.wav 1 1, f 35
+#X obj 429 76 play.file~ ../../../../samples/numbers.wav 1 1, f 35
 ;
+#X obj 529 20 declare -path else;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;

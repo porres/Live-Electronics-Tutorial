@@ -1,19 +1,22 @@
-#N canvas 722 90 484 458 12;
-#X obj 111 370 out~;
-#X text 58 21 The [giga.rev~] object from ELSE is an abstraction that
+#N canvas 475 88 517 502 12;
+#X declare -path else;
+#X text 73 58 The [giga.rev~] object from ELSE is an abstraction that
 implements the widely known 'gigaverb' open source algorithm., f 50
 ;
-#X text 58 70 It uses the same design with early reflections made by
-feedforwars delay lines and late reflections from a FDN., f 50;
-#X obj 111 249 play.file~ 1 ../../../../samples/didge.aif 1 1, f 33
+#X text 73 107 It uses the same design with early reflections made
+by feedforwars delay lines and late reflections from a FDN., f 50
 ;
-#X text 58 119 This is unit is actually more a building block that
+#X obj 126 286 play.file~ 1 ../../../../samples/didge.aif 1 1, f 33
+;
+#X text 73 156 This is unit is actually more a building block that
 you can use to build a good reverb. So it is not that user friendly.
 , f 50;
-#X text 58 169 It has lots of parameters fo tweaking and is rather
+#X text 73 206 It has lots of parameters fo tweaking and is rather
 comples. Check its help files for more details., f 50;
-#X obj 111 311 giga.rev~ -size 40 -decay 4 -damp 0.9 -bw 0.75 -dry
+#X obj 126 348 giga.rev~ -size 40 -decay 4 -damp 0.9 -bw 0.75 -dry
 1 -early 0.795 -late 0.04, f 39;
-#X connect 3 0 6 0;
-#X connect 6 0 0 0;
-#X connect 6 1 0 1;
+#X obj 321 21 declare -path else;
+#X obj 125 407 out~;
+#X connect 2 0 5 0;
+#X connect 5 0 7 0;
+#X connect 5 1 7 1;

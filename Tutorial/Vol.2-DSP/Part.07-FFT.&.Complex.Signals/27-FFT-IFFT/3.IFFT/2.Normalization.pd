@@ -1,5 +1,6 @@
 #N canvas 490 70 565 438 12;
-#X floatatom 357 46 5 0 0 0 - - -;
+#X declare -path else;
+#X floatatom 346 85 5 0 0 0 - - -;
 #X obj 88 179 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 2048 256;
 #X obj 202 179 nbx 2 14 1 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
@@ -374,11 +375,11 @@
 #X connect 16 1 21 0;
 #X connect 20 0 12 0;
 #X restore 392 369 pd Gaussian;
-#X obj 357 188 out~;
-#X obj 357 97 bl.saw~;
-#X obj 357 73 sig~ 400;
+#X obj 346 204 out~;
+#X obj 346 136 bl.saw~;
+#X obj 346 110 sig~ 400;
 #X text 57 260 OTHER WINDOW TYPES:;
-#X text 450 144 <= click;
+#X text 439 170 <= click;
 #X obj 88 205 s \$0-size;
 #X obj 202 205 s \$0-overlap;
 #X text 213 160 overlaps;
@@ -439,12 +440,13 @@ average., f 42;
 #X connect 21 0 22 0;
 #X connect 22 0 8 0;
 #X connect 24 0 22 0;
-#X restore 357 142 pd normalize;
+#X restore 346 168 pd normalize;
 #X text 58 285 Here are other FFT windows cmmonly used \, though the
 hann window is the one we'll use for all the spectral processing examples.
 ;
 #X obj 202 142 initmess 4;
 #X obj 88 140 initmess 2048;
+#X obj 390 30 declare -path else;
 #X connect 0 0 13 0;
 #X connect 1 0 16 0;
 #X connect 2 0 17 0;

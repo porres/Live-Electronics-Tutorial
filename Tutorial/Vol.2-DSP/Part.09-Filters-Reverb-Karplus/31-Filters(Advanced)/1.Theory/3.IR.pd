@@ -1,4 +1,5 @@
-#N canvas 304 134 1171 677 12;
+#N canvas 269 134 1171 677 12;
+#X declare -path else;
 #X obj 629 485 cnv 15 498 148 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -113,7 +114,7 @@
 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383
 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383
 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383
-3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383;
+3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 ;
 #A 1000 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383
 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383
 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383 3.15383
@@ -583,9 +584,6 @@ by [impse~] and its response to a 4th order filter., f 68;
 #X obj 318 455 out~;
 #X obj 790 210 out~;
 #X obj 599 200 out~;
-#X text 636 41 Below we can prove that convoluting to an IR works by
-comparing the [convolve~] object to the filter that generated the IR.
-, f 63;
 #X obj 599 129 impseq~;
 #X obj 114 413 sample~ \$0-IR files/IR.wav;
 #X obj 599 101 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -599,6 +597,10 @@ and phases. Let's remember that you can use an IR as a rverb via convolution
 as we did before. Well \, you can use it as a filter too! So this example
 shows how the concept of filters and reverberators are intertwined.
 , f 70;
+#X obj 767 7 declare -path else;
+#X text 629 51 Below we can prove that convoluting to an IR works by
+comparing the [conv~] object to the filter that generated the IR.,
+f 63;
 #X connect 4 0 12 0;
 #X connect 5 0 20 0;
 #X connect 5 0 20 1;
@@ -614,7 +616,7 @@ shows how the concept of filters and reverberators are intertwined.
 #X connect 12 0 14 1;
 #X connect 13 0 9 0;
 #X connect 17 0 13 0;
-#X connect 24 0 28 0;
-#X connect 26 0 24 0;
-#X connect 28 0 22 0;
-#X connect 28 0 22 1;
+#X connect 23 0 27 0;
+#X connect 25 0 23 0;
+#X connect 27 0 22 0;
+#X connect 27 0 22 1;

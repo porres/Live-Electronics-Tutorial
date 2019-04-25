@@ -1,4 +1,5 @@
 #N canvas 331 23 988 790 12;
+#X declare -path else;
 #N canvas 122 91 603 581 Z-Plane-biquad 0;
 #X obj 101 101 cnv 15 450 450 empty empty empty 20 12 1 14 -191407
 -66577 0;
@@ -116,8 +117,8 @@
 0;
 #X obj 100 325 cnv 1 450 2 empty empty empty 20 12 0 14 -258113 -66577
 0;
-#X obj 177 177 cnv 15 15 15 empty \$0-pole1 X 202 72 0 14 -191407 -66577
-0;
+#X obj 177 177 cnv 15 15 15 empty \$0-pole1 X 295 150 0 14 -191407
+-66577 0;
 #X obj 177 177 cnv 15 15 15 empty \$0-zero1 empty 145 150 0 14 -191407
 -66577 0;
 #X obj 177 177 cnv 15 15 15 empty \$0-pole2 empty 294 150 0 14 -191407
@@ -191,7 +192,7 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X obj 385 430 t f b f;
 #X obj 286 533 s \$0-z2-sl-set;
 #X msg 305 502 set \$1;
-#X floatatom 492 324 5 0 0 0 - - -, f 5;
+#X floatatom 492 324 5 0 0 0 - - -;
 #X obj 795 459 s \$0-p1-sl-set;
 #X msg 828 429 label amp;
 #X msg 815 403 label amp_1;
@@ -339,8 +340,8 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X connect 45 0 47 0;
 #X coords 0 -1 1 1 452 452 2 100 100;
 #X restore 486 293 pd Z-Plane-biquad;
-#X obj 645 145 *~;
-#X obj 608 112 noise~;
+#X obj 645 155 *~;
+#X obj 608 122 noise~;
 #X obj 159 458 nbx 5 14 1 100 1 1 \$0-Q empty empty 0 -8 0 10 -228856
 -1 -1 2.64165 256;
 #X floatatom 383 426 0 0 0 0 - ganho -;
@@ -355,24 +356,24 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X text 315 489 im;
 #X text 91 74 y1[n] = x1[n] + ar * y1[n-1] - ai * y2[n-1] \; y2[n]
 = x2[n] + ai * y1[n-1] + ar * y2[n-1];
-#X floatatom 663 112 5 0 0 0 - ganho -, f 5;
-#X obj 666 183 cpole~, f 9;
-#X floatatom 726 156 5 0 0 0 - im -, f 5;
-#X floatatom 706 133 5 0 0 0 - re -, f 5;
-#X obj 518 51 fexpr~ g * $x1 + ar * $y1[-1] - ai * $y2[-1] \; ai *
+#X floatatom 663 122 5 0 0 0 - ganho -;
+#X obj 666 193 cpole~, f 9;
+#X floatatom 726 166 5 0 0 0 - im -;
+#X floatatom 706 143 5 0 0 0 - re -;
+#X obj 518 61 fexpr~ g * $x1 + ar * $y1[-1] - ai * $y2[-1] \; ai *
 $y1[-1] + ar * $y2[-1];
-#X obj 518 23 noise~;
+#X obj 518 33 noise~;
 #X obj 57 455 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq-send \$0-freq empty
-0 -8 0 10 -228856 -1 -1 6570.08 256;
+0 -8 0 10 -228856 -1 -1 0 256;
 #X text 32 452 Hz;
 #X obj 135 519 noise~;
 #X obj 254 519 nbx 5 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 -228856
 -1 -1 2.64165 256;
 #X obj 190 520 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty
-0 -8 0 10 -228856 -1 -1 6570.08 256;
+0 -8 0 10 -228856 -1 -1 0 256;
 #X obj 157 549 vcf~ 500 1;
-#X text 745 132 re;
-#X text 767 156 im;
+#X text 745 142 re;
+#X text 767 166 im;
 #X obj 84 216 cnv 15 315 120 empty empty empty 20 12 0 14 -216246 -66577
 0;
 #X text 204 226 1 - ar*z^-1;
@@ -432,13 +433,13 @@ cf * qinv \, 0) \; max($f1 * 2 * pi / sr \, 0) \; 1/Q \; max($f2 \,
 #X connect 20 0 17 0;
 #X restore 57 482 pd coefficients;
 #X text 383 475 gain;
-#X obj 726 215 out~;
-#X obj 623 215 out~;
-#X text 705 108 gain;
+#X obj 726 222 out~;
+#X obj 623 222 out~;
+#X text 705 118 gain;
 #X obj 114 581 out~;
 #X obj 224 581 out~;
-#X obj 475 98 out~;
-#X obj 830 102 out~;
+#X obj 475 108 out~;
+#X obj 830 112 out~;
 #X text 47 122 Where x1[n] & y1[n] are the real input and output \,
 and x2[n] & y2[n] the imaginary input and output \, whereas "ar" is
 the real part of the coefficient and "ai" the imaginary part. And here's
@@ -451,8 +452,9 @@ f 56;
 Check the Z Plane plot to the right. Again \, the angle represents
 the frequency and the radius the resonance.;
 #X obj 60 432 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0 10
--228856 -1 -1 8300 1;
+-228856 -1 -1 0 1;
 #X text 144 456 Q;
+#X obj 779 16 declare -path else;
 #X connect 1 0 16 0;
 #X connect 2 0 1 0;
 #X connect 3 0 40 1;

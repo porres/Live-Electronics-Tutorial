@@ -1,23 +1,24 @@
 #N canvas 333 93 771 534 12;
+#X declare -path else;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-log_freq 1024 float 0;
 #X coords 0 0 1023 -100 600 150 1 0 0;
-#X restore 76 323 graph;
-#X obj 77 324 cnv 15 598 148 empty empty empty 20 12 0 14 -228856 -66577
+#X restore 86 341 graph;
+#X obj 87 342 cnv 15 598 148 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X text 654 474 Nyquist;
-#X text 71 473 0;
-#X obj 593 101 nbx 7 18 -1e+37 1e+37 0 0 empty freq empty 0 -8 0 14
+#X text 664 492 Nyquist;
+#X text 81 491 0;
+#X obj 603 119 nbx 7 18 -1e+37 1e+37 0 0 empty freq empty 0 -8 0 14
 -228856 -1 -1 64.58 256;
-#X obj 394 86 + 1;
-#X obj 394 21 vradio 20 1 0 2 empty source empty 0 -8 0 10 -228856
+#X obj 404 104 + 1;
+#X obj 404 39 vradio 20 1 0 2 empty source empty 0 -8 0 10 -228856
 -1 -1 0;
-#X obj 444 105 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
--228856 -1 -1 5421.27 256;
-#X obj 444 138 osc~ 680;
-#X obj 447 80 hsl 128 15 20 20000 1 0 empty empty empty -2 -8 0 10
--228856 -1 -1 10300 1;
-#X text 51 389 dB;
+#X obj 454 123 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
+-228856 -1 -1 0 256;
+#X obj 454 156 osc~ 680;
+#X obj 457 98 hsl 128 15 20 20000 1 0 empty empty empty -2 -8 0 10
+-228856 -1 -1 0 1;
+#X text 61 407 dB;
 #N canvas 457 23 543 506 FFT 0;
 #X obj 73 154 rfft~;
 #X obj 73 56 inlet~;
@@ -50,7 +51,7 @@
 #X floatatom 612 348 0 0 0 0 - - -;
 #X obj 218 149 expr pow(1023 \, $f1/1022) \; $f1 + 1;
 #X obj 615 281 hsl 128 15 0 12 0 0 empty empty empty -2 -8 0 10 -200122
--1 -1 11200 1;
+-1 -1 0 1;
 #X obj 218 121 loop 1023;
 #X text 451 93 The array named "\$0-log_index" loads values of a logarythmic
 scale used as indexes to read the FFT data \, which is stored in a
@@ -96,23 +97,24 @@ to logarythmic frequency \, open it and check it out., f 36;
 #X connect 10 0 8 0;
 #X connect 11 0 7 0;
 #X connect 12 0 0 0;
-#X restore 465 208 pd FFT;
-#X obj 401 245 out~;
-#X obj 444 171 xselect~ 2 100 1;
-#X obj 593 128 bl.saw~;
-#X text 420 22 Sine;
-#X text 419 44 Sawtooth;
-#X text 513 208 <= Open;
-#X obj 593 74 initmess 64.58;
-#X text 61 317 0;
-#X text 37 465 -100;
-#X text 54 70 Besides a logarythmic amplitude display \, we can also
+#X restore 475 226 pd FFT;
+#X obj 411 263 out~;
+#X obj 454 189 xselect~ 2 100 1;
+#X obj 603 146 bl.saw~;
+#X text 430 40 Sine;
+#X text 429 62 Sawtooth;
+#X text 523 226 <= Open;
+#X obj 603 92 initmess 64.58;
+#X text 71 335 0;
+#X text 47 483 -100;
+#X text 64 88 Besides a logarythmic amplitude display \, we can also
 convert and have a logarythmic frequency representation \, since frequency
 is usually represented that way., f 42;
-#X text 54 135 Note however that FFT is linear and the conversion doesn't
+#X text 64 153 Note however that FFT is linear and the conversion doesn't
 change that. For being linear \, FFT has less resolution for lower
 frequencies than higher ones., f 42;
-#X text 52 208 Open the [pd FFT] subpatch for details.;
+#X text 62 226 Open the [pd FFT] subpatch for details.;
+#X obj 588 34 declare -path else;
 #X connect 4 0 14 0;
 #X connect 5 0 13 0;
 #X connect 6 0 5 0;

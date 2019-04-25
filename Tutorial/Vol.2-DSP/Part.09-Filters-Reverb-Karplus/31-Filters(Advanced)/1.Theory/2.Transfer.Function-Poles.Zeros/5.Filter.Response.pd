@@ -1,70 +1,71 @@
-#N canvas 244 29 1020 684 12;
-#X text 169 444 Re = 1 - a*cos(w);
-#X text 169 460 Im = 0 - a*sin(w);
-#X text 258 529 1;
-#X text 232 552 1 - a*cos(w);
-#X text 224 536 _______________;
-#X text 258 581 1;
-#X text 224 588 _______________;
-#X text 241 604 -a*sin(w);
-#X text 149 541 Re[H(z)] =;
-#X text 149 593 Im[H(z)] =;
-#X floatatom 623 272 0 0 0 0 - - -;
-#X obj 626 245 hsl 128 15 0 3.14 0 0 empty empty empty -2 -8 0 10 -228856
+#N canvas 244 29 1002 683 12;
+#X declare -path else;
+#X text 175 444 Re = 1 - a*cos(w);
+#X text 175 460 Im = 0 - a*sin(w);
+#X text 264 529 1;
+#X text 238 552 1 - a*cos(w);
+#X text 230 536 _______________;
+#X text 264 581 1;
+#X text 230 588 _______________;
+#X text 247 604 -a*sin(w);
+#X text 155 541 Re[H(z)] =;
+#X text 155 593 Im[H(z)] =;
+#X floatatom 638 312 0 0 0 0 - - -;
+#X obj 641 285 hsl 128 15 0 3.14 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 710 322 v a;
-#X floatatom 694 294 0 0 0 0 - - -;
-#X obj 697 271 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 725 362 v a;
+#X floatatom 709 334 0 0 0 0 - - -;
+#X obj 712 311 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X floatatom 676 463 6 0 0 0 - - -, f 6;
-#X floatatom 764 460 6 0 0 0 - - -, f 6;
-#X obj 676 420 expr 1 / $f1 \; 0 - $f2;
-#X obj 183 307 cnv 15 160 45 empty empty empty 20 12 0 14 -216246 -66577
+#X floatatom 691 503 6 0 0 0 - - -;
+#X floatatom 779 500 6 0 0 0 - - -;
+#X obj 691 460 expr 1 / $f1 \; 0 - $f2;
+#X obj 189 307 cnv 15 160 45 empty empty empty 20 12 0 14 -216246 -66577
 0;
-#X text 236 316 _____________;
-#X text 271 310 1;
-#X text 189 322 H(z) =;
-#X text 242 330 1 - a*z^-1;
-#X obj 676 389 car2pol;
-#X obj 693 127 pic ../files/amp.gif;
-#X text 31 36 A filter's response is an amplitude and phase value as
+#X text 242 316 _____________;
+#X text 277 310 1;
+#X text 195 322 H(z) =;
+#X text 248 330 1 - a*z^-1;
+#X obj 691 429 car2pol;
+#X obj 708 167 pic ../files/amp.gif;
+#X text 37 36 A filter's response is an amplitude and phase value as
 a function of frequency \, which represents how the filter affects
 the gain and phase of an incomin frequency. We can calculate it with
 the transfer function., f 60;
-#X text 30 100 The transfer function is in the frequency domain and
+#X text 36 100 The transfer function is in the frequency domain and
 is a function of a complex frequency "z" (with real/imaginary parts).
 The amplitude and phase (or filter response) is then obtained with
 the real and imaginary part \, in the same way from the output of a
 FFT.;
-#X text 30 184 The complex frequency "z" depends on an angular velocity
+#X text 36 184 The complex frequency "z" depends on an angular velocity
 "w" (omega \, actually) \, which is the frequency in radians per sample.
 In this way \, z^-1 relates to "w" \, z^-2 to 2*w and so on. The real
 part of "z" is the cosine of "w" and the imaginary part is the sine
 of "w". With both parts \, we can convert it to amplitude and frequency
 with [car2pol].;
-#X text 32 277 Let's see how to do this with a 1-pole filter. HEre's
+#X text 38 277 Let's see how to do this with a 1-pole filter. HEre's
 the transfer function:;
-#X text 37 373 Where "a" is the pole coefficient \, z^-1 is a complex
+#X text 43 373 Where "a" is the pole coefficient \, z^-1 is a complex
 frequency. Now let's adapt it to include "w". Starting with the denominator
 \, we have "1" \, which is a real number (so it's imaginary part is
 0). So we have:;
-#X text 35 500 And can separate into two transfer functions \, a real
+#X text 41 500 And can separate into two transfer functions \, a real
 and imaginary., f 52;
-#X text 494 21 Now we're ready to get the amplitude \, for instance.
+#X text 509 61 Now we're ready to get the amplitude \, for instance.
 Check the formular below \, where |H(z)| is the amplitude of the transfer
 function \, "a" is the pole coefficient and "w" the frequency in radians
 per sample.;
-#X obj 676 321 hot;
-#X text 655 243 frequency;
-#X obj 676 348 expr 1 - a*cos($f1) \; -a*sin($f1);
-#X text 809 462 Phase;
-#X text 641 462 Amp;
-#X text 720 270 coefficient;
-#X text 493 177 On phase calculation \, we need to subtract its value
+#X obj 691 361 hot;
+#X text 670 283 frequency;
+#X obj 691 388 expr 1 - a*cos($f1) \; -a*sin($f1);
+#X text 824 502 Phase;
+#X text 656 502 Amp;
+#X text 735 310 coefficient;
+#X text 508 217 On phase calculation \, we need to subtract its value
 because we have a division in the transfer function \, and complex
 math defines that it requires subtracting the phases. See patch below:
 ;
-#X text 518 543 Now check the subpatch below for how to get the frequency
+#X text 533 583 Now check the subpatch below for how to get the frequency
 response of [lop~].;
 #N canvas 152 39 958 660 [lop~]-respone 0;
 #N canvas 172 85 1026 565 (subpatch) 0;
@@ -130,8 +131,8 @@ empty -2 -8 0 10 -228856 -228856 -1 0 0;
 -0.0221042 -0.022903 -0.02373 -0.0245845 -0.0254812 -0.0263946 -0.0273517
 -0.0283416 -0.0293644 -0.0304211 -0.0315205 -0.0326564 -0.0338377 -0.0350581
 -0.0363266 -0.0376378 -0.0389919 -0.0403993 -0.0418527 -0.043362 -0.0449282
--0.0465474 -0.0482272 -0.0499557 -0.0517633 -0.0536166 -0.0555525 -0.0575463
--0.059627 -0.0617692 -0.0639907 -0.0662926 -0.068677 -0.071141 -0.0736943
+-0.0465474 -0.0482272 -0.0499558 -0.0517633 -0.0536166 -0.0555525 -0.0575463
+-0.059627 -0.0617692 -0.0639907 -0.0662926 -0.0686771 -0.071141 -0.0736943
 -0.0763445 -0.0790833 -0.0819254 -0.0848636 -0.0879042 -0.0910595 -0.0943174
 -0.0977042 -0.101203 -0.104823 -0.108569 -0.112452 -0.116476 -0.120639
 -0.124951 -0.129404 -0.134031 -0.138807 -0.143754 -0.148867 -0.154168
@@ -145,16 +146,16 @@ empty -2 -8 0 10 -228856 -228856 -1 0 0;
 -0.842775 -0.870437 -0.898922 -0.928236 -0.95841 -0.989456 -1.02139
 -1.05424 -1.08802 -1.12274 -1.15844 -1.19512 -1.2328 -1.27151 -1.31126
 -1.35206 -1.39394 -1.43693 -1.48102 -1.52624 -1.57261 -1.62014 -1.66885
--1.71875 -1.76986 -1.8222 -1.87578 -1.93061 -1.9867 -2.04406 -2.10272
+-1.71875 -1.76987 -1.8222 -1.87578 -1.93061 -1.9867 -2.04406 -2.10272
 -2.16268 -2.22394 -2.28653 -2.35044 -2.41569 -2.48229 -2.55023 -2.61953
 -2.69019 -2.76222 -2.83562 -2.91038 -2.98652 -3.06403 -3.14291 -3.22317
 -3.30479 -3.38778 -3.47213 -3.55784 -3.64491 -3.73332 -3.82307 -3.91415
--4.00655 -4.10026 -4.19528 -4.2916 -4.38919 -4.48805 -4.58817 -4.68953
+-4.00655 -4.10027 -4.19528 -4.2916 -4.38919 -4.48805 -4.58817 -4.68953
 -4.79211 -4.89592 -5.00091 -5.1071 -5.21445 -5.32295 -5.43259 -5.54334
 -5.65519 -5.76812 -5.88212 -5.99716 -6.11323 -6.23031 -6.34837 -6.46741
 -6.5874 -6.70832 -6.83015 -6.95288 -7.07648 -7.20094 -7.32623 -7.45234
 -7.57925 -7.70694 -7.83539 -7.96458 -8.09449 -8.22512 -8.35643 -8.4884
--8.62103 -8.7543 -8.88818 -9.02267 -9.15773 -9.29337 -9.42955 -9.56627
+-8.62103 -8.7543 -8.88819 -9.02267 -9.15773 -9.29337 -9.42955 -9.56627
 -9.7035 -9.84125 -9.97947 -10.1182 -10.2573 -10.3969 -10.537 -10.6774
 -10.8183 -10.9595 -11.1011 -11.2431 -11.3854 -11.5281 -11.6711 -11.8143
 -11.9579 -12.1018 -12.246 -12.3904 -12.5351 -12.68 -12.8252 -12.9706
@@ -447,7 +448,8 @@ empty -2 -8 0 10 -228856 -228856 -1 0 0;
 #X connect 9 1 10 0;
 #X connect 23 0 5 0;
 #X connect 25 0 3 0;
-#X restore 705 588 pd [lop~]-respone;
+#X restore 720 628 pd [lop~]-respone;
+#X obj 756 16 declare -path else;
 #X connect 10 0 32 0;
 #X connect 11 0 10 0;
 #X connect 13 0 32 1;

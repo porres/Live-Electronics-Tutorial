@@ -1,5 +1,6 @@
-#N canvas 723 23 507 465 12;
-#X obj 242 121 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#N canvas 484 46 553 535 12;
+#X declare -path else;
+#X obj 249 152 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
@@ -25,8 +26,8 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 242 164 pd test;
-#X obj 133 160 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#X restore 249 195 pd test;
+#X obj 140 191 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
@@ -52,18 +53,19 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 133 203 pd test;
-#X obj 91 251 out~;
-#X obj 242 196 echo.rev~ 10 0.5;
-#X obj 267 232 initmess set 16 3 99;
-#X obj 242 269 fdn.rev~ -time 4 -damping 50, f 16;
-#X obj 242 360 out~;
-#X obj 242 317 *~ 0.1;
-#X obj 351 317 *~ 0.1;
-#X text 38 27 The [fdn.rev~] external from the ELSE library is a low
+#X restore 140 234 pd test;
+#X obj 98 282 out~;
+#X obj 249 227 echo.rev~ 10 0.5;
+#X obj 274 263 initmess set 16 3 99;
+#X obj 249 300 fdn.rev~ -time 4 -damping 50, f 16;
+#X obj 249 391 out~;
+#X obj 249 348 *~ 0.1;
+#X obj 358 348 *~ 0.1;
+#X text 45 58 The [fdn.rev~] external from the ELSE library is a low
 level object for building and experimenting with reverbs. It is a compiled
 object that you can change the number of delay lines in a matrix and
 set the delay line lengths. Check its help file.;
+#X obj 359 22 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 2 0 3 0;

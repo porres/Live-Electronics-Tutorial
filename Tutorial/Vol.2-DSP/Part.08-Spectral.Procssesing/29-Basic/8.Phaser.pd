@@ -1,4 +1,5 @@
 #N canvas 404 125 842 507 12;
+#X declare -path else;
 #X obj 68 255 s~ \$0-sample;
 #X obj 108 325 r~ \$0-sample;
 #N canvas 134 154 414 468 phase-shift 0;
@@ -28,23 +29,23 @@
 #X connect 10 0 6 1;
 #X connect 11 0 5 0;
 #X restore 122 368 pd phase-shift;
-#X obj 564 198 nbx 5 14 0.1 10 1 0 empty rate empty 0 -8 0 10 -228856
+#X obj 566 213 nbx 5 14 0.1 10 1 0 empty rate empty 0 -8 0 10 -228856
 -1 -1 0.5 256;
-#X obj 640 171 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 642 186 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 1 256;
-#X obj 643 148 hsl 128 15 0 5 0 0 empty depth empty -2 -8 0 10 -228856
+#X obj 645 163 hsl 128 15 0 5 0 0 empty depth empty -2 -8 0 10 -228856
 -1 -1 2540 1;
-#X text 569 175 Rate;
-#X text 684 146 Depth;
-#X obj 461 274 r~ \$0-sample;
-#X obj 564 232 osc~;
+#X text 571 190 Rate;
+#X text 686 161 Depth;
+#X obj 463 289 r~ \$0-sample;
+#X obj 566 247 osc~;
 #X obj 122 410 out~;
-#X obj 461 364 out~;
-#X obj 608 362 initmess \; rate 0.5 \; depth 1;
-#X obj 640 195 *;
-#X obj 640 226 f2s~ 50;
-#X obj 564 279 *~;
-#X obj 675 195 pi;
+#X obj 463 379 out~;
+#X obj 617 376 initmess \; rate 0.5 \; depth 1;
+#X obj 642 210 *;
+#X obj 642 241 f2s~ 50;
+#X obj 566 294 *~;
+#X obj 677 210 pi;
 #N canvas 880 194 408 483 phaser 0;
 #X obj 77 37 inlet~;
 #X obj 77 132 rfft~;
@@ -71,7 +72,7 @@
 #X connect 9 1 4 1;
 #X connect 10 0 1 0;
 #X connect 11 0 5 0;
-#X restore 504 314 pd phaser;
+#X restore 506 329 pd phaser;
 #X text 42 29 A Phaser adds a signal to a copy of it with phase variations.
 The classic way to implement this process is with filters \, and we'll
 see how to implement it with allpass filters. But let's see first a
@@ -87,11 +88,12 @@ FFT interpretation of this process., f 53;
 the initial phase information to random ramp values. Changing the phase
 to a fixed value does not alter the tonal quality. But a continuous
 shift is like phase modulation and changes the pitch., f 53;
-#X text 458 45 For the spectral phaser we have a sine wave oscillator
+#X text 460 77 For the spectral phaser we have a sine wave oscillator
 for the modulation. Summing to the original input promotes phase canceling
 of some of the frequency points \, which is the key to the phaser effect.
 , f 47;
 #X obj 68 219 play.file~ ../../../samples/guitar.wav 1 1;
+#X obj 615 30 declare -path else;
 #X connect 1 0 2 0;
 #X connect 2 0 10 1;
 #X connect 2 0 10 0;

@@ -1,7 +1,8 @@
 #N canvas 238 23 1042 569 12;
+#X declare -path else;
 #X obj 337 119 hilbert~;
 #N canvas 167 73 1108 572 (subpatch) 0;
-#N canvas 606 377 646 467 plot 0;
+#N canvas 606 377 578 406 plot 0;
 #N canvas 259 145 659 527 init 0;
 #X obj 110 66 loadbang;
 #X obj 180 353 s \$0-dbrange;
@@ -129,8 +130,8 @@
 #X connect 9 0 8 0;
 #X connect 10 0 9 0;
 #X connect 11 0 12 0;
-#X restore 220 131 pd init \; tables;
-#X obj 135 209 trigger float float;
+#X restore 230 135 pd init \; tables;
+#X obj 145 213 trigger float float;
 #N canvas 114 66 1193 683 H(z) 0;
 #X obj 88 65 inlet;
 #X obj 504 77 inlet;
@@ -181,10 +182,10 @@
 #X connect 16 1 4 1;
 #X connect 17 1 4 0;
 #X connect 18 0 6 0;
-#X restore 135 236 pd H(z);
-#X obj 75 151 trigger bang list;
-#X obj 117 272 tabwrite \$0-amp;
-#X obj 153 302 tabwrite \$0-fase;
+#X restore 145 240 pd H(z);
+#X obj 85 155 trigger bang list;
+#X obj 127 276 tabwrite \$0-amp;
+#X obj 163 306 tabwrite \$0-fase;
 #N canvas 238 167 941 561 H(z) 0;
 #X obj 88 65 inlet;
 #X obj 494 77 inlet;
@@ -235,13 +236,14 @@
 #X connect 16 1 4 1;
 #X connect 17 1 4 0;
 #X connect 18 0 6 0;
-#X restore 74 235 pd H(z);
-#X obj 192 178 list split 10;
-#X obj 75 45 loadbang;
-#X msg 75 72 -0.02569 0.260502 -0.260502 0.02569 1 1.8685 -0.870686
+#X restore 84 239 pd H(z);
+#X obj 202 182 list split 10;
+#X obj 85 49 loadbang;
+#X msg 85 76 -0.02569 0.260502 -0.260502 0.02569 1 1.8685 -0.870686
 0.870686 -1.8685 1 1.94632 -0.94657 0.94657 -1.94632 1 0.83774 -0.06338
 0.06338 -0.83774 1;
-#X obj 74 176 loop 400;
+#X obj 84 180 loop 400;
+#X obj 310 35 declare -path else;
 #X connect 1 0 2 0;
 #X connect 1 1 4 1;
 #X connect 1 1 5 1;

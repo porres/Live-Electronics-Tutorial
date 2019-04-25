@@ -1,17 +1,18 @@
-#N canvas 271 116 908 710 12;
-#X floatatom 255 269 7 0 0 0 - - -, f 7;
-#X obj 32 231 *~;
-#X floatatom 50 195 7 0 0 0 - #0-ganho -, f 7;
-#X obj 32 156 noise~;
-#X obj 70 223 v a0;
-#X obj 175 302 noise~;
-#X obj 90 345 v b1;
-#X obj 89 283 v a1;
-#X obj 32 344 rpole~;
-#X floatatom 71 316 7 0 0 0 - #0-polo -, f 7;
-#X text 125 261 zero;
-#X obj 32 283 rzero~;
-#X floatatom 71 258 7 0 0 0 - #0-zero -, f 7;
+#N canvas 354 117 908 710 12;
+#X declare -path else;
+#X floatatom 255 273 7 0 0 0 - - -;
+#X obj 32 235 *~;
+#X floatatom 50 199 7 0 0 0 - #0-ganho -;
+#X obj 32 160 noise~;
+#X obj 70 227 v a0;
+#X obj 175 306 noise~;
+#X obj 90 349 v b1;
+#X obj 89 287 v a1;
+#X obj 32 348 rpole~;
+#X floatatom 71 320 7 0 0 0 - #0-polo -;
+#X text 125 265 zero;
+#X obj 32 287 rzero~;
+#X floatatom 71 262 7 0 0 0 - #0-zero -;
 #N canvas 74 26 1057 399 (subpatch) 0;
 #X obj 101 101 cnv 15 878 231 empty empty empty 18 9 1 15 -262144 -1
 0;
@@ -372,7 +373,7 @@ empty -2 -8 0 10 -228856 -228856 -1 0 0;
 #X text 112 103 Frequency Response;
 #X coords 0 -1 1 1 880 233 2 100 100;
 #X restore 9 459 pd;
-#X obj 175 334 fexpr~ a0*$x - a1*$x[-1] + b1*$y[-1], f 24;
+#X obj 175 338 fexpr~ a0*$x - a1*$x[-1] + b1*$y[-1], f 24;
 #N canvas 122 91 603 581 Z-Plane-biquad 0;
 #X obj 101 101 cnv 15 450 450 empty empty empty 20 12 1 14 -191407
 -66577 0;
@@ -658,7 +659,7 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X obj 385 430 t f b f;
 #X obj 286 533 s \$0-z2-sl-set;
 #X msg 305 502 set \$1;
-#X floatatom 492 324 5 0 0 0 - - -, f 5;
+#X floatatom 492 324 5 0 0 0 - - -;
 #X obj 795 459 s \$0-p1-sl-set;
 #X msg 828 429 label amp;
 #X msg 815 403 label amp_1;
@@ -841,10 +842,10 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X restore 437 7 pd Z-Plane-biquad;
 #X obj 32 384 out~;
 #X obj 175 383 out~;
-#X text 126 314 pole;
-#X text 105 191 gain;
-#X text 313 269 Hz;
-#X obj 364 254 vradio 18 1 0 2 empty empty empty 0 -8 0 10 -228856
+#X text 126 318 pole;
+#X text 105 195 gain;
+#X text 313 273 Hz;
+#X obj 364 258 vradio 18 1 0 2 empty empty empty 0 -8 0 10 -228856
 -1 -1 1;
 #N canvas 471 26 391 376 coefficientss 0;
 #N canvas 48 311 320 297 lop 0;
@@ -999,12 +1000,12 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X connect 7 2 8 0;
 #X connect 11 0 13 0;
 #X connect 11 1 12 0;
-#X restore 255 299 pd coefficientss;
-#X text 388 254 lop;
-#X text 391 275 hip;
-#X obj 258 231 hsl 128 15 10 10000 1 0 empty empty empty -2 -8 0 10
--228856 -1 -1 11000 1;
-#X text 18 22 The Z plane is a complex plane (real axis = horizontal
+#X restore 255 303 pd coefficientss;
+#X text 388 258 lop;
+#X text 391 279 hip;
+#X obj 258 235 hsl 128 15 10 10000 1 0 empty empty empty -2 -8 0 10
+-228856 -1 -1 0 1;
+#X text 18 39 The Z plane is a complex plane (real axis = horizontal
 \, imaginary axis = vertical) used to plot Poles (with an "X") and
 Zeros (with "O"). Here we use it to plot the [lop~] and [hip~] filters.
 It only uses the real axis \, because we're dealing with real Poles
@@ -1030,9 +1031,10 @@ gain parameter \, turning it into a low pass filter.;
 we have a decay curve from Nyquist until it reaches 0Hz. With the pole
 coefficient we can add gain to lower frequencies and compensate for
 this loss \, so it acts like a frequency cutoff., f 58;
-#X restore 327 161 pd text;
-#X text 154 135 More on how to interpret the graph in this subpatch:
+#X restore 327 192 pd text;
+#X text 154 166 More on how to interpret the graph in this subpatch:
 , f 28;
+#X obj 286 10 declare -path else;
 #X connect 0 0 22 0;
 #X connect 1 0 11 0;
 #X connect 2 0 1 1;

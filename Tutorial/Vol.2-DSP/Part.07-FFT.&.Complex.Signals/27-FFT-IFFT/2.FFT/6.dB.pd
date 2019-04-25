@@ -1,24 +1,25 @@
 #N canvas 237 42 1093 476 12;
+#X declare -path else;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-linear 1024 float 0;
 #X coords 0 1 1023 0 600 150 1;
-#X restore 414 60 graph;
-#X obj 415 61 cnv 15 598 148 empty empty empty 20 12 0 14 -191407 -66577
+#X restore 432 85 graph;
+#X obj 433 86 cnv 15 598 148 empty empty empty 20 12 0 14 -191407 -66577
 0;
-#X text 992 211 Nyquist;
-#X text 409 210 0;
+#X text 1010 236 Nyquist;
+#X text 427 235 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-db 1024 float 0;
 #X coords 0 0 1023 -100 600 150 1 0 0;
-#X restore 415 259 graph;
-#X obj 416 260 cnv 15 598 148 empty empty empty 20 12 0 14 -228856
+#X restore 433 284 graph;
+#X obj 434 285 cnv 15 598 148 empty empty empty 20 12 0 14 -228856
 -66577 0;
-#X text 993 410 Nyquist;
-#X text 410 409 0;
-#X text 402 54 1;
-#X text 399 198 0;
-#X text 401 401 0;
-#X text 388 253 100;
+#X text 1011 435 Nyquist;
+#X text 428 434 0;
+#X text 420 79 1;
+#X text 417 223 0;
+#X text 419 426 0;
+#X text 406 278 100;
 #X obj 248 224 nbx 7 18 -1e+37 1e+37 0 0 empty freq empty 0 -8 0 14
 -228856 -1 -1 581.396 256;
 #X obj 94 236 + 1;
@@ -74,6 +75,7 @@ we can convert them to a dB scale \, as it's better for visualizing
 the data (compare to the right). Check the analysis result of a sine
 wave and sawtooth wave. Note how it's easier to see the upper harmonics
 of a sawtooth wave when displaying in dB., f 48;
+#X obj 893 33 declare -path else;
 #X connect 12 0 18 0;
 #X connect 13 0 19 0;
 #X connect 14 0 13 0;

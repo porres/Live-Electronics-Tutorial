@@ -1,12 +1,13 @@
 #N canvas 285 25 956 618 12;
-#X obj 605 48 loadbang;
+#X declare -path else;
+#X obj 637 85 loadbang;
 #X obj 272 127 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 1 256;
 #X text 285 544 signal;
 #X obj 303 401 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 1 256;
 #X text 309 193 signal;
-#X obj 548 172 noise~;
+#X obj 580 209 noise~;
 #N canvas 411 67 503 581 Spectral-Gate(median) 0;
 #X obj 227 366 *~;
 #X obj 89 22 inlet~;
@@ -108,9 +109,9 @@
 #X connect 18 0 16 0;
 #X connect 19 0 18 1;
 #X restore 163 160 pd Spectral-Gate;
-#X msg 605 146 open ../../../samples/\$1.wav;
-#X msg 605 79 symbol kantele;
-#X msg 619 108 symbol bubul;
+#X msg 637 183 open ../../../samples/\$1.wav;
+#X msg 637 116 symbol kantele;
+#X msg 651 145 symbol bubul;
 #X text 79 189 noise floor;
 #X text 75 19 Here we divide the spectral components above and below
 an amplitude threshold. We'll consider the components above as the
@@ -175,7 +176,7 @@ A level parameter is multiplied by this average., f 45;
 #X text 793 399 level;
 #X obj 528 470 out~;
 #X obj 736 466 out~;
-#X obj 605 207 s~ \$0-in;
+#X obj 637 244 s~ \$0-in;
 #X obj 571 395 r~ \$0-in;
 #X obj 131 379 r~ \$0-in;
 #X obj 163 127 r~ \$0-in;
@@ -187,7 +188,8 @@ to work better for extracting tonal peaks.;
 #X obj 272 101 initmess 1;
 #X text 759 523 signal;
 #X text 557 526 noise floor;
-#X obj 605 173 play.file~ -loop;
+#X obj 637 210 play.file~ -loop;
+#X obj 766 28 declare -path else;
 #X connect 0 0 13 0;
 #X connect 1 0 11 1;
 #X connect 3 0 18 1;

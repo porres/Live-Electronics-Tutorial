@@ -1,8 +1,8 @@
 #N canvas 476 23 656 591 12;
+#X declare -path else;
 #X obj 84 338 out~;
 #X obj 117 222 rescale~ 100 1000;
-#X obj 116 114 play.file~ ../../../../../samples/guitar.wav 1
-1;
+#X obj 116 114 play.file~ ../../../../../samples/guitar.wav 1 1;
 #X obj 116 154 s~ \$0-in;
 #X obj 41 221 r~ \$0-in;
 #X obj 431 204 rescale~ 100 1000;
@@ -17,7 +17,7 @@
 #X obj 356 243 allpass.filt~ 12, f 22;
 #X text 138 250 dry;
 #X text 259 250 wet;
-#X text 141 29 You can also use [allpass.filt~] to implement a phaser
+#X text 52 26 You can also use [allpass.filt~] to implement a phaser
 effect. The ELSE library includes a [phaser~] object that is an abstraction
 based on the [allpass.filt~] object. It's just a bit more convenient.
 , f 55;
@@ -50,6 +50,7 @@ based on the [allpass.filt~] object. It's just a bit more convenient.
 #X obj 327 495 out~;
 #X text 151 441 Here's a stereo setting with [phaser~] click ==>,
 f 25;
+#X obj 476 41 declare -path else;
 #X connect 1 0 17 1;
 #X connect 2 0 3 0;
 #X connect 4 0 17 0;

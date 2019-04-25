@@ -1,7 +1,8 @@
-#N canvas 653 70 587 611 12;
-#X obj 68 247 hradio 15 1 0 10 empty \$0-size empty 0 -8 0 10 -228856
+#N canvas 508 63 586 646 12;
+#X declare -path else;
+#X obj 82 285 hradio 15 1 0 10 empty \$0-size empty 0 -8 0 10 -228856
 -1 -1 4;
-#X obj 68 295 nbx 5 14 64 1e+37 0 0 \$0-w_size \$0-w_size-set empty
+#X obj 82 333 nbx 5 14 64 1e+37 0 0 \$0-w_size \$0-w_size-set empty
 0 -8 0 10 -228856 -1 -1 2048 256;
 #N canvas 535 343 363 276 Window 0;
 #X obj 123 198 s \$0-set-block;
@@ -16,11 +17,11 @@
 #X connect 3 0 1 0;
 #X connect 4 0 0 0;
 #X coords 0 0 1 1 120 60 0;
-#X restore 68 317 pd Window;
-#X obj 68 270 expr pow(2 \, $f1 + 7);
-#X obj 254 288 out~;
-#X obj 392 288 out~;
-#X obj 153 526 out~;
+#X restore 82 355 pd Window;
+#X obj 82 308 expr pow(2 \, $f1 + 7);
+#X obj 268 326 out~;
+#X obj 406 326 out~;
+#X obj 167 564 out~;
 #N canvas 413 239 432 499 Morph 0;
 #X obj 108 42 inlet~;
 #X obj 176 41 inlet~;
@@ -62,26 +63,27 @@
 #X connect 16 0 6 0;
 #X connect 17 0 13 0;
 #X connect 18 0 17 2;
-#X restore 153 478 pd Morph;
-#X obj 254 248 r~ \$0-A;
-#X obj 392 251 r~ \$0-B;
-#X obj 100 405 r~ \$0-A;
-#X obj 179 406 r~ \$0-B;
-#X obj 111 133 s~ \$0-A;
-#X obj 111 191 s~ \$0-B;
-#X obj 281 409 hsl 128 15 -1 1 0 0 empty \$0-xfade empty -2 -8 0 10
+#X restore 167 516 pd Morph;
+#X obj 268 286 r~ \$0-A;
+#X obj 406 289 r~ \$0-B;
+#X obj 114 443 r~ \$0-A;
+#X obj 193 444 r~ \$0-B;
+#X obj 125 171 s~ \$0-A;
+#X obj 125 229 s~ \$0-B;
+#X obj 295 447 hsl 128 15 -1 1 0 0 empty \$0-xfade empty -2 -8 0 10
 -228856 -1 -1 6350 1;
-#X obj 278 436 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 292 474 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 260 405 A;
-#X text 414 407 B (cross synthesis);
-#X text 131 294 window size;
-#X text 86 478 click =>;
-#X text 60 26 In this variation we "morph" from one amplitude to another
+#X text 274 443 A;
+#X text 428 445 B (cross synthesis);
+#X text 145 332 window size;
+#X text 100 516 click =>;
+#X text 74 64 In this variation we "morph" from one amplitude to another
 \, but it's just a simple crossfade. This goes from a original sound
 to a cross synthesis. Open the subpatch to the right.;
-#X obj 111 106 play.file~ ../../../../samples/kantele.wav 1 1;
-#X obj 111 165 play.file~ ../../../../samples/numbers.wav 1 1;
+#X obj 125 144 play.file~ ../../../../samples/kantele.wav 1 1;
+#X obj 125 203 play.file~ ../../../../samples/numbers.wav 1 1;
+#X obj 385 23 declare -path else;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;

@@ -1,20 +1,21 @@
 #N canvas 346 23 910 528 12;
+#X declare -path else;
 #X text 116 305 Re1;
 #X text 168 305 Im1;
 #X text 224 306 Re2;
 #X text 265 306 Im2;
-#X obj 487 338 cnv 15 298 138 empty empty empty 20 12 0 14 -228856
+#X obj 521 335 cnv 15 298 138 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #N canvas 0 22 478 328 (subpatch) 0;
 #X array \$0-Spectrum 128 float 0;
 #X coords 0 3248 127 0 300 140 1 0 0;
-#X restore 486 337 graph;
-#X text 578 477 500Hz;
-#X text 525 476 250Hz;
-#X text 485 476 50Hz;
-#X text 633 476 750Hz;
-#X text 692 476 1KHz;
-#X text 737 477 1.25KHz;
+#X restore 520 334 graph;
+#X text 612 474 500Hz;
+#X text 559 473 250Hz;
+#X text 519 473 50Hz;
+#X text 667 473 750Hz;
+#X text 726 473 1KHz;
+#X text 771 474 1.25KHz;
 #X obj 245 208 nbx 5 16 -2000 2000 0 0 empty empty empty 0 -8 0 13
 -228856 -1 -1 0 256;
 #X obj 245 278 cos~;
@@ -30,12 +31,12 @@ complex signals \, we just have one sideband. \, hence \, this process
 is also called "Single Sideband Modulation". In practice \, we have
 components shifted upwards or downwards depending on the modulation
 frequency. So this is also known as a Frequency Shifter., f 56;
-#X text 472 24 Do not confuse with a Pitch Shifter \, because that
+#X text 471 59 Do not confuse with a Pitch Shifter \, because that
 requires a proportional shift of all components. When they are all
 shifted by the same frequency amount \, we turn a harmonic sound into
 an inharmonic one. More precisely \, if we sift it upwards \, the harmonic
 ratios are compressed \, and expanded otherwise., f 56;
-#X text 471 141 We can look at this form the perspective of complex
+#X text 472 157 We can look at this form the perspective of complex
 math. By multplying two complex signals \, we multiply the amplitudes
 and sum the phases. Well \, we've how summing the phase is the same
 as summing the frequencies \, so the modulation frequency gets added.
@@ -108,9 +109,10 @@ implemhow to calculate this with both the polar and cartesian fomr.
 #X connect 6 0 7 0;
 #X restore 174 383 pd plot;
 #X obj 144 169 initmess 100;
-#X text 471 225 Note we need [hilbert~] to transform a real signal
+#X text 472 241 Note we need [hilbert~] to transform a real signal
 into a complex one. Check the subpatch [pd Complex-Modulation] how
 to implement this., f 56;
+#X obj 683 20 declare -path else;
 #X connect 12 0 14 0;
 #X connect 13 0 25 2;
 #X connect 14 0 13 0;

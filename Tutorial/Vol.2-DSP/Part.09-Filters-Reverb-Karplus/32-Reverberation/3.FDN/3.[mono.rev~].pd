@@ -1,5 +1,6 @@
 #N canvas 723 23 527 483 12;
-#X obj 241 220 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#X declare -path else;
+#X obj 244 244 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
@@ -25,9 +26,9 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 241 267 pd test;
-#X obj 241 338 out~;
-#X obj 123 231 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
+#X restore 244 291 pd test;
+#X obj 244 362 out~;
+#X obj 126 255 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
@@ -53,22 +54,23 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 123 274 pd test;
-#X obj 81 322 out~;
-#X obj 241 306 mono.rev~;
-#X text 59 33 The ELSE library has an object similar to [rev3~]. Pd
+#X restore 126 298 pd test;
+#X obj 84 346 out~;
+#X obj 244 330 mono.rev~;
+#X text 62 57 The ELSE library has an object similar to [rev3~]. Pd
 Vanilla comes with a few native reverb abstractions. The main difference
 is that we can set a 'size' paramter and change the length of the delay
 lines of the FDN.;
-#X msg 301 277 size \$1;
-#X obj 304 229 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 9400 1;
-#X floatatom 301 251 5 0 0 0 - - -;
-#X text 59 101 A typical room size value is around 0.5 \, values closer
+#X msg 304 301 size \$1;
+#X obj 307 253 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X floatatom 304 275 5 0 0 0 - - -;
+#X text 62 125 A typical room size value is around 0.5 \, values closer
 to 0 and 1 may create unusual results. Smaller values promote comb
 filtering and large values lots of echoes. Changing size values also
 may generates artifacts from the varying delay lines \, such as pitch
 shifting., f 56;
+#X obj 320 19 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 3 0 4 0;

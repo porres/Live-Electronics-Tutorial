@@ -1,42 +1,44 @@
-#N canvas 722 90 521 583 12;
-#X obj 155 454 free.rev~;
-#X text 45 30 The [free.rev~] object from ELSE is an abstraction that
+#N canvas 495 87 562 598 12;
+#X declare -path else;
+#X obj 168 481 free.rev~;
+#X text 58 57 The [free.rev~] object from ELSE is an abstraction that
 implements the widely known 'freeverb' open source algorithm., f 59
 ;
-#X text 45 79 It uses a Schroeder/Moorer model design \, with 8 comb
+#X text 58 106 It uses a Schroeder/Moorer model design \, with 8 comb
 filters in parallel going into 4 stages of allpass filters., f 59
 ;
-#X text 45 115 This example is a bit more sophisticated. Like the FDN
+#X text 58 142 This example is a bit more sophisticated. Like the FDN
 reverberastors \, it has a 'decay' parameter (which affects the feedback
 coefficient of the comb filters) and a high frequency damping parameter
 (that controls the cutoff of an internal lowpass filter).;
-#X obj 71 296 play.file~ ../../../../samples/didge.aif 1 1, f 33;
-#X obj 156 494 out~;
-#X text 45 192 Additionally \, it has a 'width' parameter that controls
+#X obj 84 323 play.file~ ../../../../samples/didge.aif 1 1, f 33;
+#X text 58 219 Additionally \, it has a 'width' parameter that controls
 how much both inputs are mixed or not. This controls the stereo spread.
 Open the abstraction to check it out. Check its help file., f 59;
-#X obj 218 352 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
+#X obj 231 379 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
 -1 -1 12700 0;
-#X floatatom 215 378 5 0 0 0 - - -;
-#X floatatom 298 402 5 0 0 0 - - -;
-#X msg 298 428 damp \$1;
-#X obj 301 379 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
+#X floatatom 228 405 5 0 0 0 - - -;
+#X floatatom 311 429 5 0 0 0 - - -;
+#X msg 311 455 damp \$1;
+#X obj 314 406 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
 -1 -1 1100 0;
-#X msg 215 404 decay \$1;
-#X obj 376 415 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
+#X msg 228 431 decay \$1;
+#X obj 389 442 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
 -1 -1 12700 0;
-#X floatatom 373 438 5 0 0 0 - - -;
-#X msg 373 462 wet \$1;
-#X connect 0 0 5 0;
-#X connect 0 1 5 1;
+#X floatatom 386 465 5 0 0 0 - - -;
+#X msg 386 489 wet \$1;
+#X obj 331 16 declare -path else;
+#X obj 169 521 out~;
+#X connect 0 0 16 0;
+#X connect 0 1 16 1;
 #X connect 4 0 0 0;
 #X connect 4 1 0 1;
-#X connect 7 0 8 0;
-#X connect 8 0 12 0;
-#X connect 9 0 10 0;
-#X connect 10 0 0 2;
-#X connect 11 0 9 0;
-#X connect 12 0 0 2;
+#X connect 6 0 7 0;
+#X connect 7 0 11 0;
+#X connect 8 0 9 0;
+#X connect 9 0 0 2;
+#X connect 10 0 8 0;
+#X connect 11 0 0 2;
+#X connect 12 0 13 0;
 #X connect 13 0 14 0;
-#X connect 14 0 15 0;
-#X connect 15 0 0 2;
+#X connect 14 0 0 2;

@@ -1,4 +1,5 @@
 #N canvas 84 23 973 728 12;
+#X declare -path else;
 #N canvas 122 91 603 581 Z-Plane-biquad 0;
 #X obj 101 101 cnv 15 450 450 empty empty empty 20 12 1 14 -191407
 -66577 0;
@@ -313,7 +314,7 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X obj 385 430 t f b f;
 #X obj 286 533 s \$0-z2-sl-set;
 #X msg 305 502 set \$1;
-#X floatatom 492 324 5 0 0 0 - - -, f 5;
+#X floatatom 492 324 5 0 0 0 - - -;
 #X obj 795 459 s \$0-p1-sl-set;
 #X msg 828 429 label amp;
 #X msg 815 403 label amp_1;
@@ -601,8 +602,8 @@ and Q input \, the coefficients are loaded inside [fexpr~] for comparison:
 #X obj 637 386 sqrt;
 #X obj 591 386 sqrt;
 #X obj 607 260 < 0;
-#X floatatom 637 408 5 0 0 0 - - -, f 5;
-#X floatatom 591 407 5 0 0 0 - - -, f 5;
+#X floatatom 637 408 5 0 0 0 - - -;
+#X floatatom 591 407 5 0 0 0 - - -;
 #X floatatom 578 557 0 0 0 0 - - -;
 #X floatatom 525 534 0 0 0 0 - - -;
 #X obj 702 580 outlet;
@@ -681,15 +682,16 @@ is 0 - we then have both parts as:;
 #X text 267 127 Q;
 #X text 26 404 And see how we canalso implement this filter with two
 [cpole~] objects (complex pole filters) below.;
-#X text 490 40 Even though the coefficients' values are real \, we're
+#X text 490 51 Even though the coefficients' values are real \, we're
 dealing with complex poles. More precisely a conjugate pair \, where
 the imaginary values are inverted (and get cancelled out). The subpatch
 [pd Poles] gets the complex pole values from the coefficient input.
 ;
-#X text 490 124 The "Q" is the resonance and controls the amplitude
+#X text 490 135 The "Q" is the resonance and controls the amplitude
 of the poles. The gain parameter compensates this boost in order that
 the maximum amplitude value is 0 dB. The angle represents the resonant
 frequency.;
+#X obj 767 13 declare -path else;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
 #X connect 2 0 29 0;

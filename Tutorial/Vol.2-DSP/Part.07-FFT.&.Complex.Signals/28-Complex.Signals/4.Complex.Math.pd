@@ -1,4 +1,5 @@
 #N canvas 353 26 840 368 12;
+#X declare -path else;
 #X text 169 259 [(b * c) + (a * d)]i;
 #X text 34 29 Complex math has special properties from the imaginary
 unit \, which gives us -1 when squared. Let's see what happens when
@@ -80,11 +81,12 @@ phases., f 52;
 #X obj 119 391 expr (Re1 * Re2) - (Im1 * Im2) \; (Im1 * Re2) + (Re1
 * Im2);
 #X text 456 159 Polar Form:;
-#X obj 637 37 initmess \; Im2 33 \; Re2 45 \; Im1 44 \; Re1 30;
+#X obj 685 82 initmess \; Im2 33 \; Re2 45 \; Im1 44 \; Re1 30;
 #X text 463 188 In the polar form we get the same result by multiplying
 the amplitudes and summing the initial phases., f 41;
 #X text 191 481 The Cartesian form is more accurate and CPU efficient.
 , f 27;
+#X obj 674 33 declare -path else;
 #X connect 4 0 5 0;
 #X connect 5 0 17 0;
 #X connect 6 0 5 1;

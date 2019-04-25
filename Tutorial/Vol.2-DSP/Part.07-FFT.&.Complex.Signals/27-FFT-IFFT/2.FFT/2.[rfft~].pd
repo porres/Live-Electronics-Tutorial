@@ -1,8 +1,9 @@
-#N canvas 387 260 502 339 12;
-#X obj 106 198 osc~ 5000;
-#X text 150 249 Imaginary;
-#X text 68 245 Real;
-#N canvas 0 204 850 541 plot 0;
+#N canvas 596 60 508 391 12;
+#X declare -path else;
+#X obj 120 251 osc~ 5000;
+#X text 164 302 Imaginary;
+#X text 82 298 Real;
+#N canvas 64 204 850 541 plot 0;
 #X text 116 357 Amplitude;
 #X obj 562 221 tgl 15 0 empty empty empty 0 -6 0 10 -262144 -1 -1 1
 1;
@@ -40,8 +41,8 @@ pd dsp 1;
 #X connect 16 1 4 0;
 #X connect 16 1 6 1;
 #X connect 17 0 1 0;
-#X restore 106 275 pd plot;
-#N canvas 896 101 662 630 graphs 1;
+#X restore 120 328 pd plot;
+#N canvas 778 101 662 630 graphs 0;
 #X obj 10 6 cnv 15 630 610 empty empty empty 20 12 0 14 -33289 -66577
 0;
 #X obj 25 15 cnv 15 600 280 empty empty Cartesian 20 12 0 14 -262130
@@ -85,18 +86,19 @@ pd dsp 1;
 #X text 320 463 0;
 #X text 162 41 Cosine;
 #X text 445 43 Sine;
-#X restore 299 260 pd graphs;
-#X text 290 234 Click/open:;
-#X obj 288 199 block~ 128;
-#X text 38 25 The [rfft~] is better suited for most cases \, as [fft~]
+#X restore 313 313 pd graphs;
+#X text 304 287 Click/open:;
+#X obj 302 252 block~ 128;
+#X text 52 78 The [rfft~] is better suited for most cases \, as [fft~]
 is actually for complex signals \, whereas [rfft~] is for real signals.
 Thus \, [fft~] has two inlets (for the real and imaginary part) but
 [rfft~] has only one. We'll see more about complex FFT and signals
 later.;
-#X obj 106 229 rfft~;
-#X text 39 105 One big difference is that [rfft~] outputs frequency
+#X obj 120 282 rfft~;
+#X text 53 158 One big difference is that [rfft~] outputs frequency
 points only up to the nyquist frequency. This has the advantage of
 being more CPU efficient. Check the graphs below., f 57;
+#X obj 307 33 declare -path else;
 #X connect 0 0 8 0;
 #X connect 8 0 3 0;
 #X connect 8 1 3 1;

@@ -1,17 +1,18 @@
-#N canvas 679 42 507 685 12;
-#X obj 207 511 r~ \$0-sample;
-#X obj 78 230 s~ \$0-sample;
-#X obj 207 581 out~;
-#X text 47 18 This example shifts the frequency bins of a FFT analysis.
+#N canvas 419 90 838 461 12;
+#X declare -path else;
+#X obj 598 236 r~ \$0-sample;
+#X obj 91 235 s~ \$0-sample;
+#X obj 598 306 out~;
+#X text 60 23 This example shifts the frequency bins of a FFT analysis.
 The result is that the frequency points are shifted \, but this does
 not implement a pitch shifter \, just shifts the harmonics of the FFT
 up or down. The effect actually sounds quite inharmonic as the original
 harmonic content is lost.;
-#X text 139 545 click =>;
-#X obj 78 195 play.file~ ../../../samples/bubul.wav 1 1, f 44;
-#X obj 275 288 nbx 5 14 -64 64 0 0 empty empty empty 0 -8 0 10 -228856
--1 -1 -15 256;
-#X obj 165 286 r~ \$0-sample;
+#X text 530 270 click =>;
+#X obj 91 200 play.file~ ../../../samples/bubul.wav 1 1, f 44;
+#X obj 288 293 nbx 5 14 -64 64 0 0 empty empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X obj 178 291 r~ \$0-sample;
 #N canvas 537 23 481 488 shift 0;
 #X obj 108 37 inlet~;
 #X obj 108 132 rfft~;
@@ -43,14 +44,14 @@ harmonic content is lost.;
 #X connect 10 0 12 0;
 #X connect 13 0 11 0;
 #X connect 13 0 12 0;
-#X restore 222 321 pd shift;
-#X obj 222 359 out~;
-#X text 154 323 click =>;
-#X text 41 116 The ELSE library offers the [bin.shift~] object that
+#X restore 235 326 pd shift;
+#X obj 235 364 out~;
+#X text 167 328 click =>;
+#X text 54 121 The ELSE library offers the [bin.shift~] object that
 can be used to shift spectral bins. check the abstraction below and
 its help file.;
-#X text 49 449 Alternatively \, you can also use the native [lrshift~]
-object \, which behaves similarly.;
+#X text 534 154 Alternatively \, you can also use the native [lrshift~]
+object \, which behaves similarly., f 32;
 #N canvas 537 23 678 457 lrshift 0;
 #X obj 77 37 inlet~;
 #X obj 77 132 rfft~;
@@ -79,7 +80,8 @@ zeroed out values \, whereas in [bin.shift~] you can also wrap them.
 #X connect 7 0 4 1;
 #X connect 8 0 1 0;
 #X connect 9 0 5 0;
-#X restore 207 543 pd lrshift;
+#X restore 598 268 pd lrshift;
+#X obj 567 59 declare -path else;
 #X connect 0 0 13 0;
 #X connect 5 0 1 0;
 #X connect 6 0 8 1;

@@ -1,34 +1,35 @@
-#N canvas 237 40 625 573 12;
-#X floatatom 205 261 5 0 0 0 - - -, f 5;
-#X text 207 240 re;
-#X floatatom 203 395 5 0 0 0 - - -, f 5;
-#X floatatom 101 393 5 0 0 0 - - -, f 5;
-#X text 83 393 re;
-#X text 177 393 im;
-#X obj 254 404 v amp;
-#X obj 101 352 expr $f1 / amp \; $f2 / amp;
-#X obj 305 384 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--204786 -1 -1 1.05165 256;
-#X obj 254 384 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 16.1245 256;
-#X obj 101 467 nbx 2 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--261234 -1 -1 1 256;
-#X obj 147 467 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--204786 -1 -1 1.05165 256;
-#X text 101 482 Amp;
-#X floatatom 265 261 5 0 0 0 - - -, f 5;
-#X text 267 239 im;
-#X obj 254 358 car2pol;
-#X obj 101 425 car2pol;
-#X obj 388 380 tri~ 440;
-#X obj 388 456 out~;
-#X obj 205 286 hot;
-#X text 153 481 Phase;
-#X text 312 401 Phase;
-#X text 70 36 This is the opposite of the last example \, where we
+#N canvas 525 104 625 573 12;
+#X declare -path else;
+#X floatatom 205 291 5 0 0 0 - - -;
+#X text 207 270 re;
+#X floatatom 203 425 5 0 0 0 - - -;
+#X floatatom 101 423 5 0 0 0 - - -;
+#X text 83 423 re;
+#X text 177 423 im;
+#X obj 254 434 v amp;
+#X obj 101 382 expr $f1 / amp \; $f2 / amp;
+#X obj 305 414 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-204786 -1 -1 0 256;
+#X obj 254 414 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 101 497 nbx 2 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-261234 -1 -1 0 256;
+#X obj 147 497 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-204786 -1 -1 0 256;
+#X text 101 512 Amp;
+#X floatatom 265 291 5 0 0 0 - - -;
+#X text 267 269 im;
+#X obj 254 388 car2pol;
+#X obj 101 455 car2pol;
+#X obj 388 410 tri~ 440;
+#X obj 388 486 out~;
+#X obj 205 316 hot;
+#X text 153 511 Phase;
+#X text 312 431 Phase;
+#X text 70 66 This is the opposite of the last example \, where we
 keep the phase information but remove the amplitude information by
 normalizing it to the same value for all bins., f 65;
-#X text 69 102 The normalization is possible by dividing the real and
+#X text 69 132 The normalization is possible by dividing the real and
 imaginay parts by the amplitude value. See below., f 65;
 #N canvas 472 264 465 413 Normaized-FFT 0;
 #X obj 45 16 inlet~;
@@ -62,16 +63,16 @@ imaginay parts by the amplitude value. See below., f 65;
 #X connect 12 0 14 1;
 #X connect 13 0 12 0;
 #X connect 14 0 1 0;
-#X restore 388 411 pd Normaized-FFT;
-#X text 69 152 By raising all the amplitudes we get a lot of floor
+#X restore 388 441 pd Normaized-FFT;
+#X text 69 182 By raising all the amplitudes we get a lot of floor
 noise \, but can still perceive the tonal quality of the sound because
 the initial phase information is intact., f 66;
-#X text 513 412 <= click;
-#X obj 371 270 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
+#X text 513 442 <= click;
+#X obj 371 300 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 2048 256;
-#X obj 371 222 hradio 15 1 0 8 empty \$0-set-window empty 0 -8 0 10
+#X obj 371 252 hradio 15 1 0 8 empty \$0-set-window empty 0 -8 0 10
 -228856 -1 -1 5;
-#X obj 371 245 expr pow(2 \, $f1 + 6);
+#X obj 371 275 expr pow(2 \, $f1 + 6);
 #N canvas 344 26 427 302 Window 0;
 #X obj 102 160 s \$0-set-block;
 #X msg 102 133 set \$1 \$2;
@@ -86,13 +87,14 @@ the initial phase information is intact., f 66;
 #X connect 4 0 2 0;
 #X connect 5 0 1 0;
 #X coords 0 0 1 1 120 60 0;
-#X restore 371 295 pd Window;
-#X obj 442 292 nbx 2 14 1 1e+37 0 1 \$0-overlap \$0-overlap-set empty
+#X restore 371 325 pd Window;
+#X obj 442 322 nbx 2 14 1 1e+37 0 1 \$0-overlap \$0-overlap-set empty
 0 -8 0 10 -228856 -1 -1 4 256;
-#X text 473 291 overlaps;
-#X text 429 267 window size;
-#X obj 388 349 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
+#X text 473 321 overlaps;
+#X text 429 297 window size;
+#X obj 388 379 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
 -228856 -1 -1 0 256;
+#X obj 399 26 declare -path else;
 #X connect 0 0 19 0;
 #X connect 2 0 16 1;
 #X connect 3 0 16 0;

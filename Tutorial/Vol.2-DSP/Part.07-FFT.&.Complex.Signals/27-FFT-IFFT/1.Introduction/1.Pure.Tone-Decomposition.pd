@@ -1,6 +1,7 @@
-#N struct 1069-point float x0 float y0 float s;
-#N struct 1069-grid float x0 float y0 float s;
-#N canvas 49 75 948 714 12;
+#N struct 1268-point float x0 float y0 float s;
+#N struct 1268-grid float x0 float y0 float s;
+#N canvas 127 71 948 702 12;
+#X declare -path else;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array Sine 1024 float 1;
 #A 0 1.8909e-06 0.00135176 0.00270164 0.00405131 0.00540098 0.00675024
@@ -145,9 +146,9 @@
 -0.0148358 -0.013489 -0.0121411 -0.0107933 -0.00944462 -0.00809597
 -0.00674671 -0.00539744 -0.00404777 -0.0026981 -0.00134823;
 #X coords 0 1 1023 -1 300 100 1 0 0;
-#X restore 98 386 graph;
-#X text 81 378 1;
-#X text 76 471 -1;
+#X restore 93 380 graph;
+#X text 76 372 1;
+#X text 71 465 -1;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array Cosine 1024 float 1;
 #A 0 -0.17 -0.169994 -0.169987 -0.169968 -0.169949 -0.169917 -0.169885
@@ -293,9 +294,9 @@
 -0.16961 -0.16968 -0.169738 -0.169795 -0.16984 -0.169885 -0.169917
 -0.169949 -0.169968 -0.169987 -0.169994;
 #X coords 0 1 1023 -1 300 100 1 0 0;
-#X restore 97 258 graph;
-#X text 80 250 1;
-#X text 78 345 -1;
+#X restore 92 252 graph;
+#X text 75 244 1;
+#X text 73 339 -1;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array Sum(a+b) 1024 float 1;
 #A 0 -0.179998 -0.178641 -0.177285 -0.175915 -0.174545 -0.173162 -0.171779
@@ -440,30 +441,30 @@
 -0.194423 -0.19315 -0.191863 -0.190577 -0.189275 -0.187974 -0.186659
 -0.185343 -0.184014 -0.182685 -0.181341;
 #X coords 0 1 1023 -1 300 100 1 0 0;
-#X restore 98 514 graph;
-#X text 81 506 1;
-#X text 79 601 -1;
-#X obj 99 622 nbx 6 14 -1e+37 1e+37 0 0 niente \$0-fase-inicial Initial-Phase
+#X restore 93 508 graph;
+#X text 76 500 1;
+#X text 74 595 -1;
+#X obj 94 616 nbx 6 14 -1e+37 1e+37 0 0 niente \$0-fase-inicial Initial-Phase
 66 8 0 10 -228856 -1 -1 0 256;
-#X obj 343 619 nbx 5 14 -1e+37 1e+37 0 0 niente \$0-amp empty 0 -13
+#X obj 338 613 nbx 5 14 -1e+37 1e+37 0 0 niente \$0-amp empty 0 -13
 0 10 -162280 -1 -1 0 256;
-#X obj 528 477 nbx 5 14 -1e+37 1e+37 0 0 \$0-Real-set \$0-re-nbx empty
+#X obj 540 498 nbx 5 14 -1e+37 1e+37 0 0 \$0-Real-set \$0-re-nbx empty
 -47 7 0 10 -261527 -1 -1 0 256;
-#X obj 784 481 nbx 5 14 -1e+37 1e+37 0 0 \$0-Imaginary-set \$0-im-nbx
+#X obj 796 502 nbx 5 14 -1e+37 1e+37 0 0 \$0-Imaginary-set \$0-im-nbx
 empty 60 8 0 10 -262130 -1 -1 0 256;
-#X obj 98 259 cnv 15 298 98 empty empty empty 20 12 0 14 -261456 -66577
+#X obj 93 253 cnv 15 298 98 empty empty empty 20 12 0 14 -261456 -66577
 0;
-#X obj 99 387 cnv 15 298 98 empty empty empty 20 12 0 14 -262130 -66577
+#X obj 94 381 cnv 15 298 98 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 99 515 cnv 15 298 98 empty empty empty 20 12 0 14 -188032 -66577
+#X obj 94 509 cnv 15 298 98 empty empty empty 20 12 0 14 -188032 -66577
 0;
-#X text 148 239 "a";
-#X text 128 368 "b";
-#X text 228 363 +;
-#X text 231 490 =;
-#X floatatom 528 572 7 0 0 0 - - #0-amp, f 7;
-#X text 508 600 Amplitude "c";
-#X floatatom 784 571 6 0 0 0 - - #0-fase-inicial, f 6;
+#X text 143 233 "a";
+#X text 123 362 "b";
+#X text 223 357 +;
+#X text 226 484 =;
+#X floatatom 540 593 7 0 0 0 - - #0-amp;
+#X text 520 621 Amplitude "c";
+#X floatatom 796 592 6 0 0 0 - - #0-fase-inicial;
 #N canvas 903 33 388 441 patch 0;
 #X msg 297 128 -0.25;
 #X msg 163 153 0;
@@ -505,28 +506,28 @@ empty 60 8 0 10 -262130 -1 -1 0 256;
 #X connect 19 0 14 0;
 #X connect 19 1 16 0;
 #X connect 19 2 1 0;
-#X restore 678 591 pd patch;
-#X obj 813 539 v pi;
-#X obj 686 120 cnv 15 125 30 empty empty empty 20 12 0 14 -233017 -66577
+#X restore 690 612 pd patch;
+#X obj 825 560 v pi;
+#X obj 698 141 cnv 15 125 30 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 736 135 cnv 5 5 5 empty empty a 0 0 0 20 -233017 -66577 0;
-#X obj 763 134 cnv 5 5 5 empty empty + 0 0 0 20 -233017 -66577 0;
-#X obj 782 136 cnv 5 5 5 empty empty b 0 0 0 20 -233017 -66577 0;
-#X obj 713 137 cnv 5 5 5 empty empty = 0 0 0 20 -233017 -66577 0;
-#X obj 691 136 cnv 5 5 5 empty empty c 0 0 0 20 -233017 -66577 0;
-#X obj 749 130 cnv 5 5 5 empty empty 2 0 0 0 14 -233017 -66577 0;
-#X obj 795 129 cnv 5 5 5 empty empty 2 0 0 0 14 -233017 -66577 0;
-#X text 271 617 Amplitude;
-#X obj 813 515 pi;
-#X obj 528 223 slider2d -size 200 -range -1 1;
-#X obj 528 443 unpack float float;
-#X text 509 619 (hipotenuse);
-#X obj 528 525 expr sqrt(pow($f1 \, 2) + pow($f2 \, 2)) \; atan2($f1
+#X obj 748 156 cnv 5 5 5 empty empty a 0 0 0 20 -233017 -66577 0;
+#X obj 775 155 cnv 5 5 5 empty empty + 0 0 0 20 -233017 -66577 0;
+#X obj 794 157 cnv 5 5 5 empty empty b 0 0 0 20 -233017 -66577 0;
+#X obj 725 158 cnv 5 5 5 empty empty = 0 0 0 20 -233017 -66577 0;
+#X obj 703 157 cnv 5 5 5 empty empty c 0 0 0 20 -233017 -66577 0;
+#X obj 761 151 cnv 5 5 5 empty empty 2 0 0 0 14 -233017 -66577 0;
+#X obj 807 150 cnv 5 5 5 empty empty 2 0 0 0 14 -233017 -66577 0;
+#X text 266 611 Amplitude;
+#X obj 825 536 pi;
+#X obj 540 244 slider2d -size 200 -range -1 1;
+#X obj 540 464 unpack float float;
+#X text 521 640 (hipotenuse);
+#X obj 540 546 expr sqrt(pow($f1 \, 2) + pow($f2 \, 2)) \; atan2($f1
 \, $f2) * 180 / pi;
-#X text 719 500 sine "b";
-#X text 536 498 cosine "a";
-#X text 782 596 Initial Phase, f 7;
-#X text 57 45 A pure tone is defined by: Frequencia \, Amplitude and
+#X text 731 521 sine "b";
+#X text 548 519 cosine "a";
+#X text 794 617 Initial Phase, f 7;
+#X text 52 39 A pure tone is defined by: Frequencia \, Amplitude and
 Initial Phase. A pure tone of frequency "x" can be decomposed in a
 Sine and Cosine function of the same frequency! This means that summing
 a Sine and Cosine of the same frequency results in a pure tone of the
@@ -534,28 +535,29 @@ same frequency but with diffetent Amplitude & Initial Phase \, depending
 on the amplitudes of Cosseno ("a") and Sine ("b").;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 100 100 1 0 0;
-#X restore 528 223 graph;
+#X restore 540 244 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 100 100 1 0 0;
-#X restore 528 323 graph;
+#X restore 540 344 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 100 100 1 0 0;
-#X restore 628 223 graph;
+#X restore 640 244 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 100 100 1 0 0;
-#X restore 628 323 graph;
-#X text 57 151 Move the two dimensional slider to the right to set
+#X restore 640 344 graph;
+#X text 52 145 Move the two dimensional slider to the right to set
 amplitudes for both cosine (horizontal axis) and sine (vertical axis).
 Note that negative values invert the polarity of the function., f
 60;
-#X obj 703 129 cnv 5 5 5 empty empty 2 0 0 0 14 -233017 -66577 0;
-#X text 503 44 The output of [slider2d] is a coordinate pair of (a
+#X obj 715 150 cnv 5 5 5 empty empty 2 0 0 0 14 -233017 -66577 0;
+#X text 514 65 The output of [slider2d] is a coordinate pair of (a
 \, b) \, where "a" is Cosine amplitude and "b" is Sine amplitude. The
 resulting sum of the Cosine and Sine functions generate a pure tone
 with amplitude "c" \, defined by the pythagorean theorem as:, f 56
 ;
-#X text 502 164 The arctangent of (b/a) gives us the angle \, which
+#X text 514 185 The arctangent of (b/a) gives us the angle \, which
 is the Initial Phase of this pure tone in radians. See below;
+#X obj 755 28 declare -path else;
 #X connect 11 0 38 0;
 #X connect 12 0 38 1;
 #X connect 34 0 24 0;

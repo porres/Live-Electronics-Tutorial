@@ -1,4 +1,5 @@
 #N canvas 575 211 502 592 12;
+#X declare -path else;
 #N canvas 586 112 760 704 pvoc 0;
 #X obj 305 320 +~;
 #X obj 305 233 pack float float float;
@@ -191,26 +192,27 @@
 #X connect 36 0 31 0;
 #X connect 37 0 32 0;
 #X connect 41 0 42 0;
-#X restore 190 301 pd pvoc;
-#X text 296 257 cents;
-#X obj 236 257 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
+#X restore 195 324 pd pvoc;
+#X text 301 280 cents;
+#X obj 241 280 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
 0 10 -228856 -1 -1 -100 256;
-#X obj 239 237 hsl 128 15 -2400 2400 0 0 empty empty empty -2 -8 0
+#X obj 244 260 hsl 128 15 -2400 2400 0 0 empty empty empty -2 -8 0
 10 -228856 -1 -1 0 1;
-#X obj 162 251 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
+#X obj 167 274 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
 0 10 -228856 -1 -1 90 256;
-#X text 165 230 speed;
-#X obj 147 348 out~;
-#X text 251 304 <= click;
-#X obj 76 168 delwrite~ \$0-buffer 60000;
-#X text 61 18 Again we adapt a previously presented patch in the granulation
+#X text 170 253 speed;
+#X obj 152 371 out~;
+#X text 256 327 <= click;
+#X obj 81 191 delwrite~ \$0-buffer 60000;
+#X text 60 65 Again we adapt a previously presented patch in the granulation
 series. Now is time to check out the Pitch Shifter and Time Stretch
 on a ring buffer with the phase accumulation. Nothing should be new
 \, just the same kind of adaptation., f 57;
-#X obj 76 138 play.file~ ../../../../../samples/bubul.wav 1 1;
-#X obj 239 516 pvoc.live~ 6000;
-#X text 91 454 The [pvoc.player~] \, from the ELSE library \, is based
+#X obj 81 161 play.file~ ../../../../../samples/bubul.wav 1 1;
+#X obj 247 530 pvoc.live~ 6000;
+#X text 99 468 The [pvoc.player~] \, from the ELSE library \, is based
 on this patch. Check its help file., f 43;
+#X obj 317 18 declare -path else;
 #X connect 0 0 6 0;
 #X connect 0 0 6 1;
 #X connect 2 0 0 1;

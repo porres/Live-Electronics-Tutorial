@@ -1,4 +1,4 @@
-#N canvas 69 73 1318 552 12;
+#N canvas 108 81 1318 552 12;
 #N canvas 187 23 1179 724 Biquad-Frequency-Response 0;
 #X obj 101 101 cnv 15 843 391 empty empty empty 18 9 1 16 -262144 -1
 0;
@@ -96,7 +96,7 @@
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 800 170 1;
 #X restore 105 311 graph;
-#N canvas 1021 22 212 339 plot_freq-response 0;
+#N canvas 1021 23 212 339 plot_freq-response 0;
 #N canvas 457 310 537 367 init 0;
 #X obj 77 21 loadbang;
 #X obj 78 272 s \$0-dbrange;
@@ -240,7 +240,7 @@
 #X restore 122 116 pd init \; tables;
 #X obj 24 178 trigger float float;
 #X obj 24 106 t bang list;
-#N canvas 0 22 181 220 loop 0;
+#N canvas 64 23 181 220 loop 0;
 #X obj 28 100 until;
 #X obj 68 138 + 1;
 #X msg 72 100 0;
@@ -259,7 +259,7 @@
 #X connect 6 1 2 0;
 #X connect 7 0 0 0;
 #X restore 24 140 pd loop;
-#N canvas 121 22 226 277 db-range 0;
+#N canvas 121 23 226 277 db-range 0;
 #X obj 42 31 inlet;
 #X obj 42 61 rmstodb;
 #X obj 42 90 - 100;
@@ -439,13 +439,13 @@
 0;
 #X obj 177 162 cnv 15 15 15 empty \$0-pole1 X 145 150 0 14 -191407
 -66577 0;
-#X obj 177 162 cnv 15 15 15 empty \$0-zero1 O 143 150 0 14 -191407
+#X obj 177 162 cnv 15 15 15 empty \$0-zero1 O 145 150 0 14 -191407
 -66577 0;
 #X obj 177 162 cnv 15 15 15 empty \$0-pole2 X 145 150 0 14 -191407
 -66577 0;
 #X obj 177 162 cnv 15 15 15 empty \$0-zero2 O 145 150 0 14 -191407
 -66577 0;
-#N canvas 576 22 272 185 z-plane 0;
+#N canvas 576 23 272 185 z-plane 0;
 #N canvas 349 405 696 221 GUI_(PLOT-POLES-AND-ZEROS) 0;
 #X obj 403 170 outlet;
 #X obj 352 170 outlet;
@@ -742,7 +742,7 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X obj 385 430 t f b f;
 #X obj 286 533 s \$0-z2-sl-set;
 #X msg 305 502 set \$1;
-#X floatatom 492 324 5 0 0 0 - - -, f 5;
+#X floatatom 492 324 5 0 0 0 - - -;
 #X obj 795 459 s \$0-p1-sl-set;
 #X msg 828 429 label amp;
 #X msg 815 403 label amp_1;
@@ -777,7 +777,7 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X obj 363 261 sel 4;
 #X msg 114 331 1;
 #X msg 183 513 set \$1;
-#X floatatom 372 139 5 0 0 0 - - -, f 5;
+#X floatatom 372 139 5 0 0 0 - - -;
 #X obj 166 547 t b a;
 #X connect 8 0 7 0;
 #X connect 8 1 6 0;
@@ -907,9 +907,8 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X restore 633 119 pd init;
 #X connect 44 0 48 0;
 #X coords 0 -1 1 1 452 540 2 100 -2;
-#X restore 6 2 pd Plano-Z;
-#X text 469 148 RESPOSTA DE FREQUÊNCIA:;
-#X text 889 22 - Resonant Highpass: zeros at 1 \, conjugated poles
+#X restore 5 2 pd Plano-Z;
+#X text 892 25 - Resonant Highpass: zeros at 1 \, conjugated poles
 \; - Resonant Lowpass: zeros at -1 \, conjugated poles \; - Bandpass:
 zeros at -1 & 1 \, conjugated poles \; - Peak: conjugated poles and
 zeros in the same angle;
@@ -926,11 +925,12 @@ lower and higher frequencies., f 46;
 #X text 42 213 The peak has poles and zeros in the same angle but their
 amplitude defines if we have a resonance peak or dip. For instance
 \, a peak happens if Poles have a higher amplitude., f 46;
-#X restore 1142 105 pd text;
-#X text 957 105 more on pole/zero action:;
+#X restore 1144 111 pd text;
+#X text 959 111 more on pole/zero action:;
 #X text 489 21 This interface generates 2 Poles & 2 Zeros (conjugate
 pairs) or not (use sliders and toggles). When paired \, we have angle/amplitude
 controls \, independent ampltidues otherwise. We also have a gain parameter
 \, see how it all affects the response below. We have a radio button
 with presets for some filter types. Here are some guidelines to achive
 them:, f 53;
+#X text 469 148 FREQUENCY RESPONSE:;

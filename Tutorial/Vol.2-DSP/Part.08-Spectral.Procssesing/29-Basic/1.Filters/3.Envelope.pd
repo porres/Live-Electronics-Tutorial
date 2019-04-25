@@ -1,9 +1,10 @@
 #N canvas 476 78 652 490 12;
-#X obj 358 385 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
+#X declare -path else;
+#X obj 379 400 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 2048 256;
-#X obj 358 337 hradio 15 1 0 8 empty \$0-set-window empty 0 -8 0 10
+#X obj 379 352 hradio 15 1 0 8 empty \$0-set-window empty 0 -8 0 10
 -228856 -1 -1 5;
-#X obj 358 360 expr pow(2 \, $f1 + 6);
+#X obj 379 375 expr pow(2 \, $f1 + 6);
 #N canvas 344 26 427 302 Window 0;
 #X obj 102 160 s \$0-set-block;
 #X msg 102 133 set \$1 \$2;
@@ -22,11 +23,11 @@
 #X connect 5 0 3 0;
 #X connect 7 0 1 0;
 #X coords 0 0 1 1 120 60 0;
-#X restore 358 410 pd Window;
-#X obj 429 407 nbx 2 14 1 1e+37 0 1 \$0-overlap \$0-overlap-set empty
+#X restore 379 425 pd Window;
+#X obj 450 422 nbx 2 14 1 1e+37 0 1 \$0-overlap \$0-overlap-set empty
 0 -8 0 10 -228856 -1 -1 4 256;
-#X text 460 406 overlaps;
-#X obj 211 363 out~;
+#X text 481 421 overlaps;
+#X obj 228 387 out~;
 #N canvas 385 106 731 354 filter-table 0;
 #X obj 95 153 phasor~;
 #X obj 231 93 r \$0-w_size;
@@ -54,7 +55,7 @@ Nyquist., f 46;
 #X connect 7 0 6 0;
 #X connect 8 0 0 0;
 #X coords 0 354 1 353 514 130 0;
-#X restore 58 285 pd filter-table;
+#X restore 75 309 pd filter-table;
 #N canvas 641 138 411 401 filter 0;
 #X obj 80 32 inlet~;
 #X obj 80 107 rfft~;
@@ -85,15 +86,16 @@ Nyquist., f 46;
 #X connect 12 0 3 0;
 #X connect 13 0 14 0;
 #X connect 14 0 12 1;
-#X restore 211 327 pd filter;
-#X text 64 128 Click and drag;
-#X text 416 382 window size;
-#X text 93 43 Here we have a very similar example \, but we use an
+#X restore 228 351 pd filter;
+#X text 81 152 Click and drag;
+#X text 437 397 window size;
+#X text 125 78 Here we have a very similar example \, but we use an
 envelope generator to generate the filter table. We can also say we're
 applying a "Spectral Envelope" into a FFT analysis. Open subpatches
 below to see the implementation.;
-#X obj 61 161 function 1 1 1 -height 100 -width 500;
-#X obj 211 287 play.file~ ../../../../samples/didge.aif 1 1;
+#X obj 78 185 function 1 1 1;
+#X obj 228 311 play.file~ ../../../../samples/didge.aif 1 1;
+#X obj 418 29 declare -path else;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;

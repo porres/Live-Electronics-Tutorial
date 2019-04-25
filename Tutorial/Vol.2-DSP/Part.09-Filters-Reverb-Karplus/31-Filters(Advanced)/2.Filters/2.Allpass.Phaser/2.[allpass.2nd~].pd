@@ -1,14 +1,15 @@
 #N canvas 302 168 958 441 12;
-#X obj 726 44 hsl 128 15 0.001 100 1 0 empty empty empty -2 -8 0 10
+#X declare -path else;
+#X obj 726 58 hsl 128 15 0.001 100 1 0 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
-#X obj 565 34 noise~;
-#X obj 723 68 nbx 5 14 0.001 100 0 0 \$0-Q empty empty 0 -8 0 10 -228856
+#X obj 565 48 noise~;
+#X obj 723 82 nbx 5 14 0.001 100 0 0 \$0-Q empty empty 0 -8 0 10 -228856
 -1 -1 0.001 256;
-#X obj 644 45 nbx 5 14 20 20000 0 0 \$0-Hz empty empty 0 -8 0 10 -228856
+#X obj 644 59 nbx 5 14 20 20000 0 0 \$0-Hz empty empty 0 -8 0 10 -228856
 -1 -1 20 256;
-#X text 747 42 resonance (Q);
-#X obj 565 104 +~;
-#X obj 583 73 allpass.2nd~ 750 1;
+#X text 747 56 resonance (Q);
+#X obj 565 118 +~;
+#X obj 583 87 allpass.2nd~ 750 1;
 #N canvas 263 226 1048 355 (subpatch) 0;
 #X obj 491 257 cnv 15 15 15 empty empty Kilohertz 18 9 1 16 -262144
 -1 0;
@@ -266,17 +267,18 @@ the slope of the phase distortion in the same way as the 2nd order
 filter. But here \, we have a control on the central frequency \, which
 is the frequency that passes through the 180 degress point \, which
 is at the phase opposition.;
-#X text 678 105 If we sum the input to the filtered signal \, we can
+#X text 678 119 If we sum the input to the filtered signal \, we can
 hear the phase cancellation. In practice \, this becomes a bandstop
 filter., f 32;
 #X text 258 409 We don't plot the amplitudes because they are unchanged.
 , f 58;
-#X obj 551 140 out~;
+#X obj 769 11 declare -path else;
+#X obj 551 154 out~;
 #X connect 0 0 2 0;
 #X connect 1 0 5 0;
 #X connect 1 0 6 0;
 #X connect 2 0 6 2;
 #X connect 3 0 6 1;
-#X connect 5 0 13 0;
-#X connect 5 0 13 1;
+#X connect 5 0 14 0;
+#X connect 5 0 14 1;
 #X connect 6 0 5 1;

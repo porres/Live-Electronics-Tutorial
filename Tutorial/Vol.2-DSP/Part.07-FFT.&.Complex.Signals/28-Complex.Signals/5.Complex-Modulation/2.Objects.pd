@@ -1,28 +1,30 @@
-#N canvas 389 36 562 472 12;
-#X obj 95 318 complex-mod~;
-#X obj 95 289 hilbert~;
-#X obj 176 288 nbx 5 16 -2000 2000 0 0 empty mod empty 0 -8 0 13 -228856
+#N canvas 389 36 571 485 12;
+#X declare -path else;
+#X obj 105 371 complex-mod~;
+#X obj 105 342 hilbert~;
+#X obj 186 341 nbx 5 16 -2000 2000 0 0 empty mod empty 0 -8 0 13 -228856
 -1 -1 0 256;
-#X obj 95 258 osc~ 440;
-#X obj 95 350 out~;
-#X text 179 265 Modulator;
-#X text 61 41 Pd Vanilla also proveds an extra abstraction for complex
+#X obj 105 311 osc~ 440;
+#X obj 105 403 out~;
+#X text 189 318 Modulator;
+#X text 71 94 Pd Vanilla also proveds an extra abstraction for complex
 modulation. It needs a complex signal input and a modulating frequency.
 ;
-#X obj 377 283 nbx 5 16 -2000 2000 0 0 empty mod empty 0 -8 0 13 -228856
+#X obj 387 336 nbx 5 16 -2000 2000 0 0 empty mod empty 0 -8 0 13 -228856
 -1 -1 0 256;
-#X obj 296 278 osc~ 440;
-#X obj 296 347 out~;
-#X text 380 260 Modulator;
-#X text 61 95 This abstraction also provides a second output \, which
+#X obj 306 331 osc~ 440;
+#X obj 306 400 out~;
+#X text 390 313 Modulator;
+#X text 71 148 This abstraction also provides a second output \, which
 is a separate and opposite sideband. That is a frequency shift to the
 opposite direction. Thinking of a Ring Modulator \, is like you the
 two sidebands appart.;
-#X obj 296 314 freq.shift~;
-#X text 60 163 The ELSE library also provides a similar object \, called
+#X obj 306 367 freq.shift~;
+#X text 70 216 The ELSE library also provides a similar object \, called
 [freq.shift~]. The difference is that it doesn't need a comples signal
 input \, but a real one \, because the conversion to a complex signal
 is done internally.;
+#X obj 345 30 declare -path else;
 #X connect 0 0 4 0;
 #X connect 0 1 4 1;
 #X connect 1 0 0 0;

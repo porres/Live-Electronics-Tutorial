@@ -1,5 +1,6 @@
-#N canvas 352 76 916 515 12;
-#X floatatom 311 263 5 0 0 0 - - -, f 5;
+#N canvas 352 76 934 594 12;
+#X declare -path else;
+#X floatatom 311 263 5 0 0 0 - - -;
 #N canvas 262 23 567 466 FFT-iFFT 0;
 #X obj 85 119 rfft~;
 #X obj 85 15 inlet~;
@@ -58,35 +59,36 @@ series)., f 40;
 #X obj 152 285 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 57 306 setdsp~;
-#X text 433 27 LATENCY: FFT analysis and resynthesis produces a latency
-equal to the hop size (number of samples between overlaps).;
+#X text 63 499 LATENCY: FFT analysis and resynthesis produces a latency
+equal to the hop size (number of samples between overlaps)., f 46
+;
 #X text 45 23 The native objects [ifft~] and [rifft~] perform the inverse
 transform \, from the frequency domain to the amplitude domain. This
 is \, above all \, a mathematical conversion between these domains.
 But since the fourier transform decomposes a signal into sine components
 \, you can interpret the inverse transform as an additive synthesis
 \, but this is not a good comparison as we'll see., f 48;
-#X text 435 71 IMPORTANT: Please realize that the amplitude information
+#X text 437 105 IMPORTANT: Please realize that the amplitude information
 from a FFT analysis doesn't mean the orignal sound has sine components
 that match the harmonic series of that FFT. But this may be the idea
 given with the additive synthesis metaphor and that's what problematic
 about it.;
-#X text 435 154 You just cannot resynthesize any input sound with a
+#X text 437 188 You just cannot resynthesize any input sound with a
 single FFT frame \, this is not how FFT works. If that was it \, it
 would only synthesize sounds with that harmonic series'components.
 ;
-#X text 435 219 How does it do it then? Well \, the initial phase information
+#X text 437 253 How does it do it then? Well \, the initial phase information
 is also important! But we know that changing the initial phase of sine
 components does not change much \, and it'll still keep the same harmonic
 series. Where's the catch then?;
-#X text 436 284 First of all \, FFT resynthesis is much more related
+#X text 438 318 First of all \, FFT resynthesis is much more related
 to granulation than additive synthesis! this is the secret. And when
 a sound input that does not match the harmonic is analyzed \, each
 FFT frame has a different initial phase. Because if we were talking
 about a sine component that was a perfect harmonic \, it would fit
 right in a frequency bin and the initial phase wouldn't change from
 one frame to another.;
-#X text 437 398 So this is how the initial phase information ends up
+#X text 439 432 So this is how the initial phase information ends up
 codifying the actual tonal content of the analysis \, and then a granular
 overlap is able to recreate the original signal. This should become
 clearer when we move on to the practical examples.;
@@ -95,6 +97,7 @@ See how the value is converted to and back. It needs a normalization
 though. Open the subpatch below to the left for more details. Then
 check the sawtooth being transformed to the frequency domain and back
 and open the subprach to the right for more details., f 48;
+#X obj 672 43 declare -path else;
 #X connect 0 0 2 0;
 #X connect 1 0 4 0;
 #X connect 1 0 4 1;
