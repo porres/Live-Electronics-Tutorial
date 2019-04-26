@@ -18,7 +18,7 @@
 #X obj 646 290 out~;
 #X msg 554 223 speed \$1;
 #X obj 554 202 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 -91.3159 256;
 #X obj 554 177 * 100;
 #X text 30 38 In this example we use [table~] from the ELSE library.
 One advantage that makes it simpler is that we don't need to bother
@@ -26,8 +26,6 @@ multiplying the output of [phasor~] \, as the index input is mapped
 from 0 to 1!, f 42;
 #X obj 554 151 s2f~;
 #X obj 69 223 unpack;
-#X obj 69 182 sample~ \$0-buffer ../../../samples/violin.wav, f 27
-;
 #X text 626 79 But even much more convenient is the [player~] object
 from ELSE. This is an abstraction that relyes on [tabread4~] and already
 loads a file internally. Like [sample~] \, it has multi channel support
@@ -35,6 +33,7 @@ and can query the number of channels from a sound file given as an
 argument (a stereo file in this example). Check its help file for more
 details and features., f 47;
 #X obj 770 28 declare -path else;
+#X obj 69 182 sample~ \$0-buffer violin.wav;
 #X connect 0 0 7 0;
 #X connect 2 0 4 1;
 #X connect 4 0 0 0;
@@ -55,4 +54,4 @@ details and features., f 47;
 #X connect 19 0 17 0;
 #X connect 20 0 6 0;
 #X connect 20 1 6 1;
-#X connect 21 0 20 0;
+#X connect 23 0 20 0;
