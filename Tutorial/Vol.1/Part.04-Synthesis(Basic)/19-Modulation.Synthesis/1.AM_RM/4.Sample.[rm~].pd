@@ -35,8 +35,6 @@ audio processing.;
 #X obj 667 499 rm~ 150;
 #X obj 667 445 r~ \$0-sample;
 #X obj 705 105 rescale~;
-#X obj 175 185 play.file~ ../../../../samples/bubul.wav 1 1, f 33
-;
 #X text 38 473 The ELSE library has a simple and straight forward Ring
 Modulation object called [rm~]. It uses [osc~] as the modulator and
 the frequency input is given as the argument or via the right inlet.
@@ -50,6 +48,7 @@ with them \, so it's more common to see an AM as a tremolo effect (that
 we'll see later). The RM example may sound more interestinb without
 the original sine components., f 71;
 #X obj 533 29 declare -path else;
+#X obj 175 185 play.file~ bubul.wav 1 1;
 #X connect 0 0 12 0;
 #X connect 0 0 12 1;
 #X connect 1 0 0 0;
@@ -65,6 +64,6 @@ the original sine components., f 71;
 #X connect 20 0 17 1;
 #X connect 21 0 20 0;
 #X connect 22 0 4 1;
-#X connect 23 0 9 0;
-#X connect 23 0 15 0;
-#X connect 23 0 15 1;
+#X connect 26 0 9 0;
+#X connect 26 0 15 0;
+#X connect 26 0 15 1;

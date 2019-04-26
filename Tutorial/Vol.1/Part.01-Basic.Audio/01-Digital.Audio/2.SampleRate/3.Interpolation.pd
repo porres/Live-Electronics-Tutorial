@@ -67,9 +67,8 @@ cwith interpolation with just native Pd Vanilla objects, f 50;
 #X text 32 150 To the right we have a graphical representation of the
 resulting waveforms in both interpolated and sample and hold downsampling.
 , f 51;
-#X obj 103 228 play.file~ ../../../../samples/bubul.wav 1 1, f 33
-;
 #X obj 600 16 declare -path else;
+#X obj 102 228 play.file~ bubul.wav 1 1;
 #X connect 0 0 1 0;
 #X connect 0 0 6 0;
 #X connect 0 0 7 0;
@@ -82,4 +81,4 @@ resulting waveforms in both interpolated and sample and hold downsampling.
 #X connect 13 0 8 0;
 #X connect 14 0 13 0;
 #X connect 15 0 10 0;
-#X connect 21 0 8 0;
+#X connect 22 0 8 0;

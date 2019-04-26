@@ -24,8 +24,8 @@ clip value.;
 #X text 66 63 The native [clip~] object just clips the input signal
 into a given range \, so we can use it to generate clipping distortion.
 ;
-#X obj 86 185 play.file~ 1 ../../../samples/bubul.wav 1 1, f 30;
 #X obj 325 26 declare -path else;
+#X obj 86 185 play.file~ bubul.wav 1 1;
 #X connect 0 0 2 0;
 #X connect 1 0 2 1;
 #X connect 2 0 9 0;
@@ -39,4 +39,4 @@ into a given range \, so we can use it to generate clipping distortion.
 #X connect 9 0 11 0;
 #X connect 9 0 11 1;
 #X connect 14 0 0 1;
-#X connect 17 0 0 0;
+#X connect 18 0 0 0;

@@ -30,7 +30,7 @@
 #X text 564 49 speed (%);
 #X obj 425 98 expr~ 1000 / $v1;
 #X text 450 123 <= frequency;
-#X obj 55 405 delwrite~ \$0-buffer 6000;
+#X obj 116 461 delwrite~ \$0-buffer 6000;
 #X obj 651 336 delread4~ \$0-buffer, f 9;
 #X obj 485 323 delread4~ \$0-buffer, f 9;
 #X text 41 47 For this Time Stretch/Compress example \, a grain size
@@ -47,9 +47,9 @@ speed as in the last example with [expr~ 1 - $v1]. By resetting the
 phase of [phasor~] you can jump back to the start of the buffer.,
 f 47;
 #X obj 485 254 *~ 6000;
-#X obj 55 375 play.file~ ../../../../../samples/bubul.wav 1 1;
-#X obj 282 426 initmess \; speed 100 \; grain 100;
+#X obj 186 329 initmess \; speed 100 \; grain 100;
 #X obj 713 26 declare -path else;
+#X obj 116 431 play.file~ bubul.wav 1 1;
 #X connect 0 0 3 1;
 #X connect 1 0 13 0;
 #X connect 3 0 33 0;
@@ -79,4 +79,4 @@ f 47;
 #X connect 29 0 5 0;
 #X connect 33 0 19 0;
 #X connect 33 0 20 0;
-#X connect 34 0 27 0;
+#X connect 36 0 27 0;

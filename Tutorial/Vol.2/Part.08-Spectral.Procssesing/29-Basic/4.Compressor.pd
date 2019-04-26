@@ -45,22 +45,22 @@
 #X connect 16 0 1 0;
 #X connect 17 0 20 0;
 #X connect 20 0 16 1;
-#X restore 155 272 pd Compressor;
-#X obj 293 232 vsl 15 100 0 100 0 0 empty empty empty 0 -9 0 10 -228856
+#X restore 163 260 pd Compressor;
+#X obj 301 220 vsl 15 100 0 100 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 293 349 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 301 337 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 313 324 Original;
-#X obj 155 326 out~;
-#X text 312 224 Compressed/Normalized;
+#X text 321 312 Original;
+#X obj 163 314 out~;
+#X text 320 212 Compressed/Normalized;
 #X text 62 66 This is basically the same as last example but we have
 a slider control to morph between the original and normalized or "compressed"
 output. The math is simple and relies on the [clip~] object.;
-#X text 87 272 click =>;
-#X obj 155 187 play.file~ ../../../samples/bubul.wav 1 1;
+#X text 95 260 click =>;
 #X obj 338 24 declare -path else;
+#X obj 163 175 play.file~ bubul.wav 1 1;
 #X connect 0 0 4 0;
 #X connect 0 0 4 1;
 #X connect 1 0 2 0;
 #X connect 1 0 0 1;
-#X connect 8 0 0 0;
+#X connect 9 0 0 0;

@@ -90,8 +90,8 @@ additive synthesis.;
 see how the original tonal quality is lost and we just hear the same
 harmonic series as a result. Try different input sources.;
 #X text 85 497 click =>;
-#X obj 156 282 play.file~ ../../../samples/kantele.wav 1 1;
 #X obj 368 23 declare -path else;
+#X obj 156 282 play.file~ 1 kantele.wav 1 1;
 #X connect 0 0 15 0;
 #X connect 3 0 21 2;
 #X connect 4 0 21 1;
@@ -106,4 +106,4 @@ harmonic series as a result. Try different input sources.;
 #X connect 19 0 20 0;
 #X connect 20 0 21 0;
 #X connect 21 0 13 0;
-#X connect 25 0 21 0;
+#X connect 26 0 21 0;

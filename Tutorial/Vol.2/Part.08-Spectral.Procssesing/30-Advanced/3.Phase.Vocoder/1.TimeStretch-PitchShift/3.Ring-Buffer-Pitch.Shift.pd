@@ -1,9 +1,9 @@
-#N canvas 575 28 507 464 12;
+#N canvas 575 28 545 443 12;
 #X declare -path else;
-#X text 108 245 cents;
-#X obj 154 245 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
+#X text 279 189 cents;
+#X obj 325 189 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
 0 10 -228856 -1 -1 100 256;
-#X obj 157 225 hsl 128 15 -2400 2400 0 0 empty empty empty -2 -8 0
+#X obj 328 169 hsl 128 15 -2400 2400 0 0 empty empty empty -2 -8 0
 10 -228856 -1 -1 0 1;
 #N canvas 212 144 1098 606 Pitch-Shift_PVoc 0;
 #X obj 383 555 outlet~;
@@ -177,18 +177,18 @@ locations marked with * for that reason.;
 #X connect 41 4 14 0;
 #X connect 43 0 35 0;
 #X connect 44 0 36 0;
-#X restore 154 269 pd Pitch-Shift_PVoc;
-#X obj 154 319 out~;
-#X text 46 61 Now we adapt the pitch shifter from the granular examples
+#X restore 325 213 pd Pitch-Shift_PVoc;
+#X obj 325 263 out~;
+#X text 52 66 Now we adapt the pitch shifter from the granular examples
 to include the phase accumulation process \, which is implemented in
 the cartesian form with phase lock on. Open the subpatch.;
-#X obj 91 168 delwrite~ \$0-buffer 500;
-#X text 105 405 Compare this pitch shifter with the earlier version
+#X obj 81 234 delwrite~ \$0-buffer 500;
+#X text 105 368 Compare this pitch shifter with the earlier version
 that only relies in granulation., f 43;
-#X obj 91 134 play.file~ ../../../../../samples/bubul.wav 1 1;
-#X obj 337 21 declare -path else;
+#X obj 343 26 declare -path else;
+#X obj 81 200 play.file~ bubul.wav 1 1;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
 #X connect 3 0 4 1;
-#X connect 8 0 6 0;
+#X connect 9 0 6 0;

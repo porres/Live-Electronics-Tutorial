@@ -1040,7 +1040,6 @@
 #X connect 13 0 11 3;
 #X connect 14 0 2 0;
 #X restore 652 584 pd linear.convolution;
-#X obj 548 158 play.file~ 1 ../../../../samples/didge.aif 1 1;
 #N canvas 552 358 561 330 IR-FFT 0;
 #X obj 59 102 rfft~;
 #X msg 226 132 \; pd dsp 1;
@@ -1112,12 +1111,13 @@ sorts of files and use the convolution as a general sound processor
 rather than just an actual reverberator. Play the input sound and the
 IR below:;
 #X obj 762 13 declare -path else;
+#X obj 548 158 play.file~ 1 didge.aif 1 1;
 #X connect 1 0 14 0;
 #X connect 2 0 3 0;
 #X connect 3 0 7 0;
 #X connect 3 0 7 1;
 #X connect 14 0 10 0;
 #X connect 14 0 10 1;
-#X connect 15 0 0 0;
-#X connect 15 0 11 1;
-#X connect 15 0 11 0;
+#X connect 30 0 0 0;
+#X connect 30 0 11 1;
+#X connect 30 0 11 0;

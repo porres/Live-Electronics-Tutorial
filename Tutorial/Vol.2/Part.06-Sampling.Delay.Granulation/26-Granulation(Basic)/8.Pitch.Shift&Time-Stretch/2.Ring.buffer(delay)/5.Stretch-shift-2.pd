@@ -155,8 +155,8 @@ the earlier one \, this is the basis of a Phase Vocoder example presented
 later. Open the subpatch for details., f 52;
 #X obj 61 291 initmess \; \$0-speed 50 \; \$0-cents -400 \; \$0-block
 2048;
-#X obj 61 198 play.file~ ../../../../../samples/bubul.wav 1 1;
 #X obj 360 21 declare -path else;
+#X obj 61 198 play.file~ bubul.wav 1 1;
 #X connect 1 0 13 1;
 #X connect 2 0 13 0;
 #X connect 3 0 13 2;
@@ -167,4 +167,4 @@ later. Open the subpatch for details., f 52;
 #X connect 8 0 3 0;
 #X connect 13 0 9 0;
 #X connect 13 0 9 1;
-#X connect 16 0 10 0;
+#X connect 17 0 10 0;

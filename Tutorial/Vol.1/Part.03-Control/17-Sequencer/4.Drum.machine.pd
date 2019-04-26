@@ -1,15 +1,15 @@
 #N canvas 498 100 720 560 12;
 #X declare -path else;
-#X obj 132 33 tgl 30 0 empty metro empty 17 7 0 10 -228856 -1 -1 0
+#X obj 132 33 tgl 30 0 empty metro empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X text 265 41 TEMPO;
 #X obj 183 39 nbx 5 18 100 1000 0 0 empty empty empty 0 -8 0 15 -228856
 -1 -1 100 256;
 #X obj 70 75 moses 1;
-#X obj 481 350 table tgl_\$0 16;
+#X obj 384 323 table tgl_\$0 16;
 #N canvas 470 122 791 576 drum 0;
 #X obj 54 57 hradio 25 1 0 16 NADA h_radio empty 0 -6 0 15 -116513
--183280 -1 13;
+-183280 -1 1;
 #X obj 61 89 tgl 15 1 \$0-tgl0 NIENTE empty 0 -6 0 10 -104946 -1 -1
 1 1;
 #X obj 87 89 tgl 15 1 \$0-tgl1 NIENTE empty 0 -6 0 10 -228856 -1 -1
@@ -239,50 +239,44 @@ them to the arrays., f 36;
 #X coords 0 -1 1 1 410 82 2 50 50;
 #X restore 165 423 pd drum;
 #X text 62 39 Play/Stop;
-#X obj 49 223 sel 1;
-#X obj 132 223 sel 1;
-#X obj 474 369 table tgl2_\$0 16;
-#X obj 90 310 out~;
-#X obj 57 250 r \$0-s1;
-#X obj 142 251 r \$0-s2;
+#X obj 36 225 sel 1;
+#X obj 132 225 sel 1;
+#X obj 377 342 table tgl2_\$0 16;
+#X obj 89 310 out~;
 #X obj 132 133 count 15;
-#X obj 49 184 tabread tgl_\$0, f 7;
-#X text 595 359 arrays;
+#X obj 36 184 tabread tgl_\$0, f 7;
+#X text 498 332 arrays;
 #X obj 132 183 tabread tgl2_\$0, f 7;
 #X obj 132 76 tempo 60 -div 4;
 #X obj 143 160 s h_radio;
 #X msg 70 97 set 0;
-#X text 261 156 The [count] object is used to generate the indexes
+#X text 269 169 The [count] object is used to generate the indexes
 of our sequence \, then we use [tabread] objects to output values from
 the arrays. The stored values are only 0 or 1 \, and if it is "1" \,
 [sel 1] outputs a bang that we use to activate a sample., f 58;
-#X text 261 91 Here we have a sequencer in the style of a "Drum Machine".
+#X text 269 104 Here we have a sequencer in the style of a "Drum Machine".
 We have a series of toggles that are stored into an array. Actually
 we have two tracks each in a horizontal line and stored in a different
 array.;
 #X text 164 400 Open the subpatch below for more details;
-#X text 261 234 In the subpatch graph below \, you can turn on and
+#X text 269 247 In the subpatch graph below \, you can turn on and
 off the toggles to change the rythm. The horizontal radio is just used
 for visualizing the sequence point., f 58;
-#X obj 314 296 initmess \; \$0-s1 set ../../../samples/dholak.aif \;
-\$0-s2 set ../../../samples/bagal.aif, f 39;
-#X obj 133 277 play.file~;
-#X obj 49 277 play.file~;
 #X obj 513 34 declare -path else;
+#X obj 36 257 play.file~ 1 dholak.aif, f 12;
+#X obj 132 258 play.file~ 1 bagal.aif, f 12;
 #X connect 0 0 3 0;
-#X connect 0 0 17 0;
-#X connect 2 0 17 1;
-#X connect 3 0 19 0;
-#X connect 7 0 26 0;
-#X connect 8 0 25 0;
-#X connect 11 0 26 0;
-#X connect 12 0 25 0;
-#X connect 13 0 14 0;
-#X connect 13 0 16 0;
-#X connect 13 0 18 0;
-#X connect 14 0 7 0;
-#X connect 16 0 8 0;
-#X connect 17 0 13 0;
-#X connect 19 0 13 0;
-#X connect 25 0 10 1;
-#X connect 26 0 10 0;
+#X connect 0 0 15 0;
+#X connect 2 0 15 1;
+#X connect 3 0 17 0;
+#X connect 7 0 23 0;
+#X connect 8 0 24 0;
+#X connect 11 0 12 0;
+#X connect 11 0 14 0;
+#X connect 11 0 16 0;
+#X connect 12 0 7 0;
+#X connect 14 0 8 0;
+#X connect 15 0 11 0;
+#X connect 17 0 11 0;
+#X connect 23 0 10 0;
+#X connect 24 0 10 1;

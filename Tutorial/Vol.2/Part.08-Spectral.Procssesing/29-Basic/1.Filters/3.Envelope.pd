@@ -94,8 +94,8 @@ envelope generator to generate the filter table. We can also say we're
 applying a "Spectral Envelope" into a FFT analysis. Open subpatches
 below to see the implementation.;
 #X obj 78 185 function 1 1 1;
-#X obj 228 311 play.file~ ../../../../samples/didge.aif 1 1;
 #X obj 418 29 declare -path else;
+#X obj 228 311 play.file~ 1 didge.aif 1 1;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
@@ -103,4 +103,4 @@ below to see the implementation.;
 #X connect 8 0 6 0;
 #X connect 8 0 6 1;
 #X connect 12 0 7 0;
-#X connect 13 0 8 0;
+#X connect 14 0 8 0;

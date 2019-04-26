@@ -9,7 +9,6 @@ not implement a pitch shifter \, just shifts the harmonics of the FFT
 up or down. The effect actually sounds quite inharmonic as the original
 harmonic content is lost.;
 #X text 530 270 click =>;
-#X obj 91 200 play.file~ ../../../samples/bubul.wav 1 1, f 44;
 #X obj 288 293 nbx 5 14 -64 64 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 0 256;
 #X obj 178 291 r~ \$0-sample;
@@ -82,11 +81,12 @@ zeroed out values \, whereas in [bin.shift~] you can also wrap them.
 #X connect 9 0 5 0;
 #X restore 598 268 pd lrshift;
 #X obj 567 59 declare -path else;
-#X connect 0 0 13 0;
-#X connect 5 0 1 0;
-#X connect 6 0 8 1;
+#X obj 91 200 play.file~ bubul.wav 1 1;
+#X connect 0 0 12 0;
+#X connect 5 0 7 1;
+#X connect 6 0 7 0;
 #X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 8 0 9 1;
-#X connect 13 0 2 0;
-#X connect 13 0 2 1;
+#X connect 7 0 8 1;
+#X connect 12 0 2 0;
+#X connect 12 0 2 1;
+#X connect 14 0 1 0;

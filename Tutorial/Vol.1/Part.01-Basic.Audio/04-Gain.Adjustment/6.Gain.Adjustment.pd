@@ -21,8 +21,8 @@ dB values or decrease its intensity with negative values., f 57;
 #X obj 298 292 f2s~ 10 1;
 #X text 44 162 Compare the VU meter of the original sound with the
 gain adjusted one.;
-#X obj 61 256 play.file~ ../../../samples/bubul.wav 1 1, f 30;
 #X obj 303 26 declare -path else;
+#X obj 61 256 play.file~ /bubul.wav 1 1;
 #X connect 0 0 14 0;
 #X connect 1 0 7 0;
 #X connect 1 0 8 0;
@@ -30,5 +30,5 @@ gain adjusted one.;
 #X connect 2 0 5 0;
 #X connect 5 0 0 0;
 #X connect 14 0 1 1;
-#X connect 16 0 1 0;
-#X connect 16 0 6 0;
+#X connect 17 0 1 0;
+#X connect 17 0 6 0;

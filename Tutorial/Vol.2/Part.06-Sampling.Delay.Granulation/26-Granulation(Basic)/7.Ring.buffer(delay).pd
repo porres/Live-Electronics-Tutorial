@@ -111,8 +111,8 @@ by [delread4~]. There are major differences though \, as the buffer
 read head is always running. in this example we have a 5 seconds delay
 line \, open [pd delread4~] for details. You may use [adc~] for an
 actual live input., f 61;
-#X obj 170 405 play.file~ ../../../samples/bubul.wav 1 1;
 #X obj 362 12 declare -path else;
+#X obj 170 405 play.file~ bubul.wav 1 1;
 #X connect 0 0 16 0;
 #X connect 3 0 13 0;
 #X connect 4 0 21 0;
@@ -129,4 +129,4 @@ actual live input., f 61;
 #X connect 19 0 15 0;
 #X connect 20 0 1 0;
 #X connect 21 0 2 0;
-#X connect 24 0 0 0;
+#X connect 25 0 0 0;

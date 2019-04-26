@@ -1,4 +1,4 @@
-#N canvas 173 66 1034 521 12;
+#N canvas 412 128 1034 521 12;
 #X declare -path else;
 #X obj 301 250 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -20,8 +20,6 @@ accordingly so they get added at the right time.;
 that implements partitioned convolution this way. It needs a partition
 size and an audio file to load as an IR. Below we load a rather bizarre
 IR file: a voice sample \, also used in Pd Vanilla's example.;
-#X obj 60 305 sample~ \$0-IR ../../../../samples/voice.wav, f 29;
-#X obj 662 353 conv~ 1024 ../../../../samples/voice.wav;
 #X floatatom 555 177 5 0 0 0 - - -;
 #X obj 555 205 standard~ 100;
 #X obj 678 204 envgen~ 500 1 150 0;
@@ -30,8 +28,6 @@ a general sound processor. It's been noted that conviolution is widely
 used as a reverberator \, but you can also think of it as a filter.
 We'll get back to convolution when we discuss in depth filters and
 reverbs \, but for now let's have fun with it in a more creative way.
-;
-#X obj 770 265 play.file~ ../../../../samples/bubul.wav 1 1, f 34
 ;
 #X obj 706 234 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
@@ -49,19 +45,22 @@ have a sample input that you can select with [xselect~]., f 68;
 #X text 548 467 Check the help file of [conv~] for more details on
 it.;
 #X obj 834 18 declare -path else;
+#X obj 770 265 play.file~ /bubul.wav 1 1;
+#X obj 662 352 conv~ 1024 voice.wav;
+#X obj 60 304 sample~ \$0-IR voice.wav, f 24;
 #X connect 0 0 1 0;
 #X connect 1 0 2 1;
 #X connect 1 0 2 0;
-#X connect 7 0 19 0;
-#X connect 8 0 14 0;
-#X connect 11 0 4 0;
-#X connect 11 0 4 1;
-#X connect 12 0 13 0;
-#X connect 13 0 7 0;
-#X connect 13 0 22 0;
-#X connect 13 0 22 1;
-#X connect 14 0 7 1;
-#X connect 16 0 19 1;
-#X connect 17 0 18 0;
-#X connect 18 0 19 0;
-#X connect 19 0 11 0;
+#X connect 7 0 16 0;
+#X connect 8 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 11 0 19 0;
+#X connect 11 0 19 1;
+#X connect 12 0 7 1;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 24 0;
+#X connect 23 0 16 1;
+#X connect 24 0 4 0;
+#X connect 24 0 4 1;

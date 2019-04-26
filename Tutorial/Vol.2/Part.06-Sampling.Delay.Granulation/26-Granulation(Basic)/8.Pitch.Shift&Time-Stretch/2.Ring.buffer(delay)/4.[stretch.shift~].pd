@@ -49,8 +49,6 @@
 0;
 #X text 190 221 speed (%);
 #X text 37 399 position;
-#X obj 310 173 play.file~ ../../../../../samples/bubul.wav 1 1, f
-36;
 #X obj 139 162 stretch.shift~;
 #X text 61 23 In this example we put together the last two for a pitch
 shift / time stretch patch! As in the first example \, we multiply
@@ -62,6 +60,7 @@ object \, from ELSE \, is based on this patch \, check its help file.
 , f 70;
 #X text 30 162 Check it out =>;
 #X obj 435 137 declare -path else;
+#X obj 310 173 play.file~ bubul.wav 1 1;
 #X connect 0 0 2 1;
 #X connect 2 0 34 0;
 #X connect 3 0 32 0;
@@ -110,4 +109,4 @@ object \, from ELSE \, is based on this patch \, check its help file.
 #X connect 40 0 11 1;
 #X connect 40 0 16 1;
 #X connect 40 0 3 0;
-#X connect 44 0 26 0;
+#X connect 48 0 26 0;
