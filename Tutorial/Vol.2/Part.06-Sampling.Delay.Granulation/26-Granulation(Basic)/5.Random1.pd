@@ -5,13 +5,13 @@
 -8 0 10 -228856 -1 -1 2 256;
 #X obj 66 233 noise~;
 #X obj 493 273 nbx 5 14 -1e+37 1e+37 0 0 empty freq-offset empty 0
--8 0 10 -228856 -1 -1 0 256;
+-8 0 10 -228856 -1 -1 10 256;
 #X obj 179 256 nbx 5 14 -1e+37 1e+37 0 0 empty pos-amp empty 0 -8 0
-10 -228856 -1 -1 4800 256;
+10 -228856 -1 -1 10000 256;
 #X obj 120 255 nbx 5 14 -1e+37 1e+37 0 0 empty pos-offset empty 0 -8
 0 10 -228856 -1 -1 0 256;
 #X obj 537 304 nbx 5 14 -1e+37 1e+37 0 0 empty freq-amp empty 0 -8
-0 10 -228856 -1 -1 4 256;
+0 10 -228856 -1 -1 8 256;
 #X obj 449 364 s~ \$0-freq;
 #X obj 449 236 stepnoise~;
 #X obj 469 471 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -57,15 +57,15 @@ grao-amp 3 \; grao-offset 30 \; pos-amp 200 \; pos-offset 50;
 #X obj 274 357 s~ \$0-grain;
 #X obj 253 284 rescale~ 0 100;
 #X obj 449 335 rescale~ 10 8;
-#N canvas 681 47 481 244 buffer 0;
+#N canvas 681 47 562 254 buffer 0;
 #X obj 301 176 table \$0-buffer;
 #X obj 197 177 soundfiler;
-#X obj 62 70 openpanel;
-#X obj 62 93 list append \$0-buffer;
-#X msg 62 117 read -resize \$1 \$2;
-#X obj 62 44 inlet;
-#X obj 197 118 initmess read -resize ../../../samples/bubul.wav \$0-buffer
-\; hz 1 \; grain 500, f 38;
+#X obj 52 70 openpanel;
+#X obj 52 93 list append \$0-buffer;
+#X msg 52 117 read -resize \$1 \$2;
+#X obj 52 44 inlet;
+#X obj 197 118 initmess read -resize bubul.wav \$0-buffer \; hz 1 \;
+grain 500, f 46;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;

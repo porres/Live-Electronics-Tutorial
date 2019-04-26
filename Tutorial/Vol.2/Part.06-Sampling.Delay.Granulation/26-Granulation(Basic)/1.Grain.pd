@@ -43,8 +43,8 @@ In this example we use a sine function \, which is the default of the
 #X obj 41 80 list append \$0-buffer;
 #X msg 41 104 read -resize \$1 \$2;
 #X obj 41 26 inlet;
-#X obj 95 138 initmess read -resize ../../../samples/bubul.wav \$0-buffer
-\; hz 1 \; grain 500 \;;
+#X obj 95 138 initmess read -resize bubul.wav \$0-buffer \; hz 1 \;
+grain 500 \;;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;

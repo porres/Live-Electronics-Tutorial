@@ -1,6 +1,6 @@
 #N canvas 278 23 857 637 12;
 #X declare -path else;
-#X obj 667 116 table \$0-buffer;
+#X obj 667 126 table \$0-buffer;
 #X obj 499 121 soundfiler;
 #X obj 499 177 samplerate~;
 #X obj 576 206 /;
@@ -139,9 +139,8 @@ are combined and the sample is accessed.;
 #X text 692 415 Hz;
 #X text 770 379 speed;
 #X obj 731 323 / 100;
-#X obj 499 61 initmess read -resize ../../../../../samples/voice.wav
-\$0-buffer, f 39;
-#X obj 672 19 declare -path else;
+#X obj 669 27 declare -path else;
+#X obj 499 81 initmess read -resize voice.wav \$0-buffer;
 #X connect 1 0 12 0;
 #X connect 2 0 3 0;
 #X connect 3 0 15 0;
@@ -171,4 +170,4 @@ are combined and the sample is accessed.;
 #X connect 43 0 42 1;
 #X connect 48 0 26 1;
 #X connect 48 0 42 0;
-#X connect 49 0 1 0;
+#X connect 50 0 1 0;

@@ -308,8 +308,7 @@ as the amplitudes are equal to one., f 31;
 #X obj 38 205 s \$0-size;
 #X obj 51 91 r \$0-file;
 #X obj 284 60 initmess bang \; \$0-window_size-radio-set 3 \; \$0-speed
-100 \; \$0-transpo 0 \; \$0-file symbol ../../../../../samples/bubul.wav
-\; \$0-play 1;
+100 \; \$0-transpo 0 \; \$0-file symbol bubul.wav \; \$0-play 1;
 #X connect 0 0 6 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;

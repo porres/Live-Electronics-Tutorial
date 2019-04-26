@@ -44,22 +44,22 @@
 #X connect 10 0 0 1;
 #X connect 11 0 0 0;
 #X restore 213 377 pd grain-1;
-#N canvas 681 47 485 287 buffer 0;
+#N canvas 681 47 568 287 buffer 0;
 #X obj 303 200 table \$0-buffer;
 #X obj 197 189 soundfiler;
 #X obj 51 62 openpanel;
 #X obj 51 85 list append \$0-buffer;
 #X msg 51 109 read -resize \$1 \$2;
 #X obj 51 36 inlet;
-#X obj 197 118 initmess read -resize ../../../samples/bubul.wav \$0-buffer
-\; hz 1 \; grain 500, f 38;
 #X obj 197 225 s \$0-size;
-#X connect 1 0 7 0;
+#X obj 197 118 initmess read -resize bubul.wav \$0-buffer \; hz 1 \;
+grain 500, f 43;
+#X connect 1 0 6 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
 #X connect 5 0 2 0;
-#X connect 6 0 1 0;
+#X connect 7 0 1 0;
 #X restore 434 387 pd buffer;
 #N canvas 457 81 342 422 grain-2 0;
 #X obj 208 338 *~;

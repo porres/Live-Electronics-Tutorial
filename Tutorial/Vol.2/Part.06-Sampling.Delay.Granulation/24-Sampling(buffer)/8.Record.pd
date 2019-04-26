@@ -1,4 +1,4 @@
-#N canvas 329 43 907 676 12;
+#N canvas 367 42 907 676 12;
 #X declare -path else;
 #X obj 129 252 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -64,7 +64,7 @@ be used to record into arrays. One advantage is that you can start
 a recording with sample accuracy and it can record up to 64 signal
 channels into arrays simultaneously. This object goes well with [sample~]
 \, see its help file for more details., f 55;
-#X obj 661 60 declare -path else;
+#X obj 673 46 declare -path else;
 #X connect 0 0 9 0;
 #X connect 1 0 9 0;
 #X connect 2 0 16 0;

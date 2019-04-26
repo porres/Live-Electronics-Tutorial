@@ -4,7 +4,7 @@
 #X obj 82 320 float;
 #X text 618 317 cents;
 #X obj 608 337 nbx 5 16 -1e+37 1e+37 0 0 empty cents empty 0 -8 0 13
--228856 -1 -1 0 256;
+-228856 -1 -1 -400 256;
 #X obj 519 337 nbx 4 16 -1e+37 1e+37 0 0 empty tempo empty 0 -8 0 13
 -228856 -1 -1 5 256;
 #X obj 698 337 nbx 4 16 64 8192 0 0 empty grao empty 0 -8 0 13 -228856
@@ -30,25 +30,24 @@ processes. Other examples and methods will be presented next.;
 #X obj 375 388 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 681 47 615 349 buffer 0;
-#X obj 336 174 table \$0-buffer;
+#X obj 347 165 table \$0-buffer;
 #X obj 232 175 soundfiler;
 #X obj 69 85 openpanel;
 #X obj 69 108 list append \$0-buffer;
 #X msg 69 132 read -resize \$1 \$2;
 #X obj 69 49 inlet;
 #X obj 281 206 s \$0-size;
-#X obj 232 99 initmess read -resize ../../../../../samples/bubul.wav
-\$0-buffer, f 42;
 #X msg 232 237 \; tempo 5 \; cents -400 \; grao 4096;
 #X obj 232 205 t b f;
-#X connect 1 0 9 0;
+#X obj 232 120 initmess read -resize bubul.wav \$0-buffer;
+#X connect 1 0 8 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
 #X connect 5 0 2 0;
-#X connect 7 0 1 0;
-#X connect 9 0 8 0;
-#X connect 9 1 6 0;
+#X connect 8 0 7 0;
+#X connect 8 1 6 0;
+#X connect 9 0 1 0;
 #X restore 375 414 pd buffer;
 #X obj 163 402 tabread4~ \$0-buffer;
 #X obj 82 269 bang~;
@@ -87,7 +86,7 @@ below to see how it works., f 59;
 #X obj 243 522 phasor~;
 #X obj 173 632 *~;
 #X obj 237 100 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--236782 -1 -1 0 256;
+-236782 -1 -1 -400 256;
 #X obj 225 607 *~;
 #X obj 173 665 +~;
 #X obj 134 130 / 100;

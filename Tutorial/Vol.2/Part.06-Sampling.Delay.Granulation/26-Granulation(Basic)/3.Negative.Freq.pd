@@ -11,10 +11,10 @@
 #X obj 114 507 display~;
 #X obj 76 125 sig2float~;
 #X obj 76 150 vsl 20 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 4178 1;
+-1 -1 8194 1;
 #X obj 253 125 sig2float~;
 #X obj 253 150 vsl 20 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 5722 1;
+-1 -1 1706 1;
 #X obj 253 99 phasor~ -0.5;
 #X obj 76 99 phasor~ 0.5;
 #X obj 174 449 fexpr~ abs($x1[0] - $x1[-1]) < 0.5;
@@ -75,15 +75,15 @@ cleaner.;
 #X connect 10 0 3 1;
 #X connect 11 0 0 1;
 #X restore 524 410 pd grain-1;
-#N canvas 681 47 481 244 buffer 0;
-#X obj 301 176 table \$0-buffer;
-#X obj 197 177 soundfiler;
-#X obj 62 70 openpanel;
-#X obj 62 93 list append \$0-buffer;
-#X msg 62 117 read -resize \$1 \$2;
-#X obj 62 44 inlet;
-#X obj 197 118 initmess read -resize ../../../samples/bubul.wav \$0-buffer
-\; hz 1 \; grain 500, f 38;
+#N canvas 681 47 556 254 buffer 0;
+#X obj 324 192 table \$0-buffer;
+#X obj 196 190 soundfiler;
+#X obj 41 60 openpanel;
+#X obj 41 83 list append \$0-buffer;
+#X msg 41 107 read -resize \$1 \$2;
+#X obj 41 34 inlet;
+#X obj 196 120 initmess read -resize bubul.wav \$0-buffer \; hz 1 \;
+grain 500, f 43;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
