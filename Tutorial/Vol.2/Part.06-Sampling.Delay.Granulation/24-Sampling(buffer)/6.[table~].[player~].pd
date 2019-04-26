@@ -1,39 +1,39 @@
-#N canvas 290 131 1021 369 12;
+#N canvas 290 131 1010 378 12;
 #X declare -path else;
-#X obj 371 213 phasor~;
-#X obj 371 290 out~;
-#X obj 402 184 r \$0-hz;
-#X obj 69 305 s \$0-hz;
-#X obj 371 184 *~;
-#X obj 69 279 /;
-#X obj 69 254 swap;
-#X obj 371 250 table~ \$0-buffer;
-#X obj 371 148 display~ 8;
-#X text 442 152 Ratio;
-#X obj 371 40 rampnoise~ 0.25;
-#X obj 371 71 *~ 3;
-#X text 30 117 The ratio is now controlled by a random ramp generator.
+#X obj 364 213 phasor~;
+#X obj 364 290 out~;
+#X obj 395 184 r \$0-hz;
+#X obj 67 305 s \$0-hz;
+#X obj 364 184 *~;
+#X obj 67 279 /;
+#X obj 67 254 swap;
+#X obj 364 250 table~ \$0-buffer;
+#X obj 364 148 display~ 8;
+#X text 435 152 Ratio;
+#X obj 364 40 rampnoise~ 0.25;
+#X obj 364 71 *~ 3;
+#X text 28 117 The ratio is now controlled by a random ramp generator.
 , f 42;
-#X obj 646 290 out~;
-#X msg 554 223 speed \$1;
-#X obj 554 202 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 -51.6866 256;
-#X obj 554 177 * 100;
-#X text 30 38 In this example we use [table~] from the ELSE library.
+#X obj 547 287 out~;
+#X msg 547 223 speed \$1;
+#X obj 547 202 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 212.311 256;
+#X obj 547 177 * 100;
+#X text 28 38 In this example we use [table~] from the ELSE library.
 One advantage that makes it simpler is that we don't need to bother
 multiplying the output of [phasor~] \, as the index input is mapped
 from 0 to 1!, f 42;
-#X obj 554 151 s2f~;
-#X obj 69 223 unpack;
-#X text 626 79 But even much more convenient is the [player~] object
+#X obj 547 151 s2f~;
+#X obj 67 223 unpack;
+#X text 631 100 But even much more convenient is the [player~] object
 from ELSE. This is an abstraction that relyes on [tabread4~] and already
 loads a file internally. Like [sample~] \, it has multi channel support
 and can query the number of channels from a sound file given as an
 argument (a stereo file in this example). Check its help file for more
 details and features., f 47;
-#X obj 770 28 declare -path else;
-#X obj 69 182 sample~ \$0-buffer violin.wav;
-#X obj 554 253 player~ violin.wav 1 1;
+#X obj 783 40 declare -path else;
+#X obj 67 182 sample~ \$0-buffer violin.wav;
+#X obj 547 253 player~ violin.wav 1 1;
 #X connect 0 0 7 0;
 #X connect 2 0 4 1;
 #X connect 4 0 0 0;
@@ -46,6 +46,7 @@ details and features., f 47;
 #X connect 10 0 11 0;
 #X connect 11 0 8 0;
 #X connect 11 0 18 0;
+#X connect 14 0 23 0;
 #X connect 15 0 14 0;
 #X connect 16 0 15 0;
 #X connect 18 0 16 0;
@@ -53,4 +54,4 @@ details and features., f 47;
 #X connect 19 1 6 1;
 #X connect 22 0 19 0;
 #X connect 23 0 13 0;
-#X connect 23 1 13 1;
+#X connect 23 0 13 1;
