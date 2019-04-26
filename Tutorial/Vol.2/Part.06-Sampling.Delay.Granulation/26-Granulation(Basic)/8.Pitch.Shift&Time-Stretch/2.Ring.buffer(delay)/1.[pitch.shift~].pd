@@ -61,7 +61,6 @@ ratio/transposition frequency \, we multiply it by the grain size frequency.
 #X obj 504 175 nbx 5 14 -2400 2400 0 0 empty \$0-cents empty 0 -8 0
 10 -228856 -1 -1 -400 256;
 #X text 497 154 transposition;
-#X obj 464 82 play.file~ ../../../../../samples/bubul.wav 1 1;
 #X obj 464 206 pitch.shift~;
 #X text 34 550 Again \, we have two overlapping grains and we're done.
 The grain sizes in this example range from 5 to 200 ms. The grain size
@@ -70,6 +69,7 @@ have it at a fixed reasonable value. Check how this works to the right
 and see the [pitch.shift~] object from ELSE \, which is implemented
 this way., f 53;
 #X obj 660 26 declare -path else;
+#X obj 464 82 play.file~ bubul.wav 1 1;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 1 0 9 1;
@@ -105,8 +105,8 @@ this way., f 53;
 #X connect 40 0 11 0;
 #X connect 41 0 3 0;
 #X connect 41 0 10 0;
-#X connect 44 0 47 1;
-#X connect 46 0 42 0;
-#X connect 46 0 47 0;
-#X connect 47 0 43 0;
-#X connect 47 0 43 1;
+#X connect 44 0 46 1;
+#X connect 46 0 43 0;
+#X connect 46 0 43 1;
+#X connect 49 0 42 0;
+#X connect 49 0 46 0;

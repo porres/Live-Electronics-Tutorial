@@ -36,14 +36,13 @@ and summing both of them \, you get a bit of a chorus effect., f 62
 #X obj 338 466 r~ \$0-in;
 #X obj 338 505 vibrato~ 3 30, f 23;
 #X obj 338 545 out~;
-#X obj 75 218 play.file~ ../../../../samples/guitar.wav 1 1, f 34
-;
 #X text 554 475 cents;
 #X text 59 483 The [vibrato~] object \, an abstraction from ELSE \,
 is actually based on a granular pitch shifter \, that we'll see later.
 Here it performs a vibrato where the depth is the pitch deviation in
 cents., f 35;
 #X obj 419 10 declare -path else;
+#X obj 75 217 play.file~ guitar.wav 1 1;
 #X connect 0 0 6 0;
 #X connect 2 0 7 0;
 #X connect 4 0 8 1;
@@ -59,6 +58,6 @@ cents., f 35;
 #X connect 21 0 22 0;
 #X connect 22 0 23 0;
 #X connect 22 0 23 1;
-#X connect 24 0 4 0;
-#X connect 24 0 8 0;
-#X connect 24 0 20 0;
+#X connect 27 0 4 0;
+#X connect 27 0 8 0;
+#X connect 27 0 20 0;

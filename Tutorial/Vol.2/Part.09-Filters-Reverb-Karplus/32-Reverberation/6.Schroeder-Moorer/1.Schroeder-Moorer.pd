@@ -25,7 +25,6 @@
 algorithms: a series of allpass reverberators (as in below and in [rev1~])
 and parallel comb reverberators going into a series of allpass reverberators
 (as on the right)., f 42;
-#X obj 125 36 play.file~ 1 ../../../../samples/didge.aif 1 1;
 #X text 343 507 The examples here are very simple and the delay line
 lenghts are quite arbitrary. But you can see how it works reasonably
 well with little sophistication., f 41;
@@ -33,6 +32,7 @@ well with little sophistication., f 41;
 allpass and comb reverberators with short delay times to create reverb
 effects., f 42;
 #X obj 527 27 declare -path else;
+#X obj 125 36 play.file~ 1 didge.aif 1 1;
 #X connect 1 0 20 0;
 #X connect 2 0 19 0;
 #X connect 3 0 18 0;
@@ -52,6 +52,6 @@ effects., f 42;
 #X connect 18 0 16 0;
 #X connect 19 0 16 0;
 #X connect 20 0 16 0;
-#X connect 22 0 0 0;
-#X connect 22 0 9 0;
-#X connect 22 0 9 1;
+#X connect 25 0 0 0;
+#X connect 25 0 9 0;
+#X connect 25 0 9 1;

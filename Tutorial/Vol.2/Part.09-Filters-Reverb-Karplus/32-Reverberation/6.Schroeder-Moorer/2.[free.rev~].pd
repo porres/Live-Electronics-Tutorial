@@ -1,6 +1,6 @@
 #N canvas 495 87 562 598 12;
 #X declare -path else;
-#X obj 168 481 free.rev~;
+#X obj 131 478 free.rev~;
 #X text 58 57 The [free.rev~] object from ELSE is an abstraction that
 implements the widely known 'freeverb' open source algorithm., f 59
 ;
@@ -11,34 +11,33 @@ filters in parallel going into 4 stages of allpass filters., f 59
 reverberastors \, it has a 'decay' parameter (which affects the feedback
 coefficient of the comb filters) and a high frequency damping parameter
 (that controls the cutoff of an internal lowpass filter).;
-#X obj 84 323 play.file~ ../../../../samples/didge.aif 1 1, f 33;
 #X text 58 219 Additionally \, it has a 'width' parameter that controls
 how much both inputs are mixed or not. This controls the stereo spread.
 Open the abstraction to check it out. Check its help file., f 59;
-#X obj 231 379 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
+#X obj 194 376 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
 -1 -1 12700 0;
-#X floatatom 228 405 5 0 0 0 - - -;
-#X floatatom 311 429 5 0 0 0 - - -;
-#X msg 311 455 damp \$1;
-#X obj 314 406 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
+#X floatatom 191 402 5 0 0 0 - - -;
+#X floatatom 274 426 5 0 0 0 - - -;
+#X msg 274 452 damp \$1;
+#X obj 277 403 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
 -1 -1 1100 0;
-#X msg 228 431 decay \$1;
-#X obj 389 442 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
+#X msg 191 428 decay \$1;
+#X obj 352 439 hsl 128 15 0 1 0 1 empty empty empty 20 8 0 10 -228856
 -1 -1 12700 0;
-#X floatatom 386 465 5 0 0 0 - - -;
-#X msg 386 489 wet \$1;
+#X floatatom 349 462 5 0 0 0 - - -;
+#X msg 349 486 wet \$1;
 #X obj 331 16 declare -path else;
-#X obj 169 521 out~;
-#X connect 0 0 16 0;
-#X connect 0 1 16 1;
-#X connect 4 0 0 0;
-#X connect 4 1 0 1;
-#X connect 6 0 7 0;
-#X connect 7 0 11 0;
-#X connect 8 0 9 0;
-#X connect 9 0 0 2;
-#X connect 10 0 8 0;
-#X connect 11 0 0 2;
+#X obj 132 518 out~;
+#X obj 128 338 play.file~ 1 didge.aif 1 1;
+#X connect 0 0 15 0;
+#X connect 0 1 15 1;
+#X connect 5 0 6 0;
+#X connect 6 0 10 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 2;
+#X connect 9 0 7 0;
+#X connect 10 0 0 2;
+#X connect 11 0 12 0;
 #X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 14 0 0 2;
+#X connect 13 0 0 2;
+#X connect 16 0 0 0;

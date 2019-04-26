@@ -1,26 +1,9 @@
-#N canvas 393 186 900 438 12;
+#N canvas 401 135 900 438 12;
 #X declare -path else;
 #X obj 132 270 r~ \$0-sample1;
 #X obj 251 269 r~ \$0-sample2;
 #X obj 714 245 r~ \$0-sample2;
 #X obj 556 245 r~ \$0-sample1;
-#N canvas 727 161 506 402 load-samples 0;
-#X obj 88 325 s~ \$0-sample1;
-#X obj 88 36 inlet;
-#X msg 88 258 open ../../../../samples/\$1.wav;
-#X msg 225 148 open ../../../../samples/\$1.wav;
-#X obj 225 215 s~ \$0-sample2;
-#X obj 88 74 unpack symbol symbol;
-#X obj 88 293 play.file~ -loop;
-#X obj 225 183 play.file~ -loop;
-#X connect 1 0 5 0;
-#X connect 2 0 6 0;
-#X connect 3 0 7 0;
-#X connect 5 0 2 0;
-#X connect 5 1 3 0;
-#X connect 6 0 0 0;
-#X connect 7 0 4 0;
-#X restore 82 196 pd load-samples;
 #X obj 286 90 hradio 15 1 0 8 empty \$0-size empty 0 -8 0 10 -228856
 -1 -1 4;
 #X obj 286 138 nbx 5 14 64 1e+37 0 0 \$0-w_size \$0-w_size-set empty
@@ -134,11 +117,6 @@ ELSE library.;
 #X connect 34 1 31 1;
 #X connect 34 1 28 1;
 #X restore 556 288 pd Circular-Convolutoin;
-#X obj 56 37 loadbang;
-#X msg 56 66 list bubul Mouthbow;
-#X msg 82 91 list bubul numbers;
-#X msg 101 117 list kantele MouthBow;
-#X msg 116 145 list kantele numbers;
 #X text 483 157 Here we have an example of a circular convolution \,
 we'll see the linear example next. The result of this example is a
 hybrid that combines both amplitude and phase information. Open the
@@ -150,19 +128,20 @@ a complex multiplication of two FFT analysis. As any other multiplication
 you're convolution A with B or B with A \, it's the same output.,
 f 54;
 #X obj 642 27 declare -path else;
-#X connect 0 0 19 0;
-#X connect 0 0 19 1;
-#X connect 1 0 9 0;
-#X connect 1 0 9 1;
-#X connect 2 0 12 1;
-#X connect 3 0 12 0;
-#X connect 5 0 8 0;
-#X connect 6 0 7 0;
-#X connect 8 0 6 0;
-#X connect 12 0 11 0;
-#X connect 12 0 11 1;
-#X connect 13 0 14 0;
-#X connect 14 0 4 0;
-#X connect 15 0 4 0;
-#X connect 16 0 4 0;
-#X connect 17 0 4 0;
+#X obj 45 111 s~ \$0-sample1;
+#X obj 43 190 s~ \$0-sample2;
+#X obj 43 158 play.file~ numbers.wav 1 1;
+#X obj 45 78 play.file~ 1 kantele.wav 1 1;
+#X connect 0 0 13 0;
+#X connect 0 0 13 1;
+#X connect 1 0 8 0;
+#X connect 1 0 8 1;
+#X connect 2 0 11 1;
+#X connect 3 0 11 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 7 0 5 0;
+#X connect 11 0 10 0;
+#X connect 11 0 10 1;
+#X connect 18 0 17 0;
+#X connect 19 0 16 0;
