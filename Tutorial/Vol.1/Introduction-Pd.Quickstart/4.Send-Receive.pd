@@ -3,9 +3,9 @@
 #X floatatom 251 178 0 0 0 0 - - -;
 #X obj 248 244 receive midinote;
 #X obj 405 207 hsl 128 15 -1 1 0 0 slider empty empty -2 -8 0 10 -262144
--1 -1 4000 1;
+-1 -1 0 1;
 #X obj 405 238 hsl 128 15 -1 1 0 0 empty slider empty -2 -8 0 10 -262144
--1 -1 9207 1;
+-1 -1 0 1;
 #X obj 246 301 receive slider;
 #X floatatom 246 327 5 0 0 0 - - -;
 #X text 397 179 built-in send/receive;
@@ -58,7 +58,7 @@ happens on objects and \; comments!;
 GUI objects with messages., f 34;
 #X msg 169 429 receive slider;
 #X obj 172 458 hsl 128 15 -1 1 0 0 empty slider empty -2 -8 0 10 -262144
--1 -1 9207 1;
+-1 -1 0 1;
 #X connect 1 0 25 0;
 #X connect 2 0 0 0;
 #X connect 4 0 16 0;

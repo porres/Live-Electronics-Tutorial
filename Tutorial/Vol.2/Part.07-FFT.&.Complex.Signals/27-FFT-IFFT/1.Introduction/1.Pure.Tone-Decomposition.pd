@@ -1,5 +1,5 @@
-#N struct 1268-point float x0 float y0 float s;
-#N struct 1268-grid float x0 float y0 float s;
+#N struct 1064-point float x0 float y0 float s;
+#N struct 1064-grid float x0 float y0 float s;
 #N canvas 127 71 948 702 12;
 #X declare -path else;
 #N canvas 0 22 450 300 (subpatch) 0;

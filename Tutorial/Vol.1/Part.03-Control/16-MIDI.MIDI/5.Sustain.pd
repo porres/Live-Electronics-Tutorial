@@ -34,7 +34,7 @@
 #X obj 173 235 s \$0-note;
 #X obj 282 233 s \$0-vel;
 #X obj 623 156 nbx 3 14 -1e+37 1e+37 0 0 empty \$0-note empty 0 -8
-0 10 -228856 -1 -1 0 256;
+0 10 -228856 -1 -1 58 256;
 #X text 590 154 Note;
 #X obj 667 156 nbx 3 14 -1e+37 1e+37 0 0 empty \$0-vel empty 0 -8 0
 10 -228856 -1 -1 0 256;
@@ -130,7 +130,7 @@ off messages when the sustain toggle is off., f 33;
 #X connect 15 0 8 0;
 #X restore 133 161 pd sustain;
 #X obj 100 78 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-note empty 0 -8 0
-10 -228856 -1 -1 0 256;
+10 -228856 -1 -1 58 256;
 #X text 117 94 Note;
 #X obj 161 78 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-vel empty 0 -8 0
 10 -228856 -1 -1 0 256;

@@ -1,4 +1,4 @@
-#N canvas 710 23 649 492 12;
+#N canvas 521 83 649 492 12;
 #X declare -path else;
 #N canvas 390 32 472 400 control 0;
 #X obj 198 138 phasor~;
@@ -73,15 +73,17 @@ Delay-Depth 15 11 0 19 -66577 -204800 -262144 0 0;
 feedback line and use the [comb.rev~] object for both feedforward and
 feedback lines. We also have an envelope for different feedback values
 for each frequency bin., f 47;
-#X obj 114 253 function 0 0.5 1 0.5 0;
-#X obj 331 253 function 0 0.5 1 0.5 0;
 #X obj 457 31 declare -path else;
 #X obj 78 53 play.file~ guitar.wav 1 1;
+#X obj 114 253 function 200 100 empty empty 0 1 220 220 220 50 50 50
+0 0 0 0 0 0.5 1 0.5 0;
+#X obj 331 253 function 200 100 empty empty 0 1 220 220 220 50 50 50
+0 0 0 0 0 0.5 1 0.5 0;
 #X connect 2 0 1 0;
 #X connect 2 0 1 1;
-#X connect 5 0 7 0;
-#X connect 5 0 8 0;
-#X connect 7 0 0 0;
-#X connect 8 0 0 1;
-#X connect 10 0 2 0;
+#X connect 5 0 9 0;
+#X connect 5 0 10 0;
+#X connect 8 0 2 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 1;
 #X coords 0 0 1 1 560 350 0;

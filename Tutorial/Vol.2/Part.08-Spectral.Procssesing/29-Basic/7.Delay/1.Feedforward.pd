@@ -67,7 +67,6 @@ Delay-Depth 40 11 0 19 -66577 -228856 -262144 0 0;
 #X connect 8 0 7 0;
 #X coords 0 436 1 435 213 184 0;
 #X restore 91 334 pd delay-time-table;
-#X obj 94 187 function 0 0.5 1 0.5 0;
 #X text 408 65 For such \, we need a table for the delay times for
 each sample. We generate one with the [function] object \, where the
 horizontal axis represent the frequency points and the vertical axis
@@ -75,9 +74,11 @@ the delay time. The delay depth controls the overall amplitude (that
 is the time parameter) of the envelope., f 43;
 #X obj 541 22 declare -path else;
 #X obj 445 201 play.file~ guitar.wav 1 1;
+#X obj 94 187 function 200 100 empty empty 0 1 220 220 220 50 50 50
+0 0 0 0 0 0.5 1 0.5 0;
 #X connect 1 0 0 0;
 #X connect 1 0 0 1;
-#X connect 4 0 6 0;
-#X connect 6 0 5 0;
-#X connect 9 0 1 0;
+#X connect 4 0 9 0;
+#X connect 8 0 1 0;
+#X connect 9 0 5 0;
 #X coords 0 0 1 1 560 350 0;

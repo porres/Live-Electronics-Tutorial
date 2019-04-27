@@ -18,7 +18,7 @@
 #X obj 430 335 tabread4~ \$0-buffer;
 #X obj 430 306 envgen~;
 #X obj 640 357 envgen~;
-#X msg 640 207 duration \$1 \, bang;
+#X msg 655 209 duration \$1 \, bang;
 #X obj 430 363 *~;
 #X obj 387 398 out~;
 #X obj 177 412 /;
@@ -65,11 +65,13 @@ its main purposes is to be used to drive [tabread4~].;
 the file at original speed \, but you can give it other values to play
 in different speeds as in this example. Note how we're also using a
 ratio compensation here.;
-#X obj 643 236 function 0 0.1 1 0.8 1 0.1 0;
 #X text 53 258 Let's just use [soundfiler] again for a change:, f
 30;
 #X obj 736 43 declare -path else;
 #X obj 98 311 initmess read -resize sax.wav \$0-buffer, f 22;
+#X obj 643 243 function 200 100 empty empty 0 1 220 220 220 50 50 50
+0 0 0 0 0 0.1 1 0.8 1 0.1 0;
+#X obj 640 162 initmess 0 0.1 1 0.8 1 0.1 0;
 #X connect 0 0 1 1;
 #X connect 0 0 2 1;
 #X connect 0 0 30 0;
@@ -91,7 +93,7 @@ ratio compensation here.;
 #X connect 14 0 18 0;
 #X connect 15 0 14 0;
 #X connect 16 0 18 1;
-#X connect 17 0 47 0;
+#X connect 17 0 50 0;
 #X connect 18 0 19 0;
 #X connect 18 0 19 1;
 #X connect 20 0 21 0;
@@ -117,5 +119,6 @@ ratio compensation here.;
 #X connect 44 0 41 0;
 #X connect 45 0 38 0;
 #X connect 45 0 38 1;
-#X connect 47 0 16 0;
-#X connect 50 0 5 0;
+#X connect 49 0 5 0;
+#X connect 50 0 16 0;
+#X connect 51 0 50 0;

@@ -18,7 +18,7 @@
 #X obj 228 325 tabwrite~ output;
 #X obj 270 390 env~;
 #X obj 270 415 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 95.2877 256;
 #X obj 270 365 noise~;
 #X text 28 22 The envelope of a signal is a function that delineates
 its peaks of amplitude. An audio signal has an upper (positive) and

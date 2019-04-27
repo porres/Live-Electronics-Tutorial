@@ -108,7 +108,8 @@ as the phase signal and you can draw any kind of phase function.;
 #X obj 515 35 loadbang;
 #X msg 589 174 0 0.2 1 0.3 0 0.3 0.05 0.15 1;
 #X msg 515 68 0 1 1;
-#X obj 564 212 function;
+#X obj 564 212 function 200 100 empty empty 0 1 220 220 220 50 50 50
+0 0 0 0 0 1 1;
 #X obj 687 35 declare -path else;
 #X connect 4 0 5 0;
 #X connect 5 0 27 0;

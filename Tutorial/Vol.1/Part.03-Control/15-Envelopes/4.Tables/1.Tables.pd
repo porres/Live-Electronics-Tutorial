@@ -14,7 +14,7 @@
 #X restore 318 252 graph;
 #X text 482 129 ms;
 #X obj 507 130 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
--228856 -1 -1 0 256;
+-228856 -1 -1 500 256;
 #X text 303 683 0;
 #X text 305 486 1;
 #X obj 319 494 cnv 15 298 198 empty empty empty 20 12 0 14 -228856

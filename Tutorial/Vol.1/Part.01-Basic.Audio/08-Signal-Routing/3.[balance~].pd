@@ -1,7 +1,7 @@
 #N canvas 654 88 496 642 12;
 #X declare -path else;
 #X obj 280 160 hsl 128 15 0 1 0 0 empty pos1 empty -2 -8 0 10 -228856
--1 -1 0 1;
+-1 -1 6350 1;
 #X obj 335 237 pi;
 #X obj 335 264 v pi;
 #X obj 58 152 osc~ 400;
