@@ -1,11 +1,11 @@
-#N canvas 412 128 1034 521 12;
+#N canvas 344 128 1034 521 12;
 #X declare -path else;
 #X obj 301 250 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 301 276 tabplay~ \$0-IR;
 #X obj 301 314 out~;
 #X text 325 250 Play IR:;
-#X obj 619 395 out~;
+#X obj 618 395 out~;
 #X text 45 26 Partitioned convolution divides the IR into smaller bits
 so we get much shorter latencies suitable for live input. The convolution
 is done in each partition separately.;
@@ -40,13 +40,13 @@ a and B is the same as convoluting B and A). We also have an envelope
 generator to control the incoming sound. As an alternative \, we also
 have a sample input that you can select with [xselect~]., f 68;
 #X text 731 235 <= change input;
-#X obj 537 288 out~;
+#X obj 512 286 out~;
 #X text 726 424 <= watch it \, this can get loud!!!;
 #X text 548 467 Check the help file of [conv~] for more details on
 it.;
 #X obj 834 18 declare -path else;
 #X obj 770 265 play.file~ /bubul.wav 1 1;
-#X obj 662 352 conv~ 1024 voice.wav;
+#X obj 661 352 conv~ 1024 voice.wav;
 #X obj 60 304 sample~ \$0-IR voice.wav, f 24;
 #X connect 0 0 1 0;
 #X connect 1 0 2 1;

@@ -1,14 +1,14 @@
-#N canvas 535 126 606 468 12;
+#N canvas 535 126 608 453 12;
 #X declare -path else;
-#X obj 164 315 *~;
-#X obj 59 195 mtof;
-#X obj 59 232 trigger float bang;
-#X obj 59 163 nbx 3 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
--228856 -1 -1 0 256;
-#X obj 59 57 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 1 1
+#X obj 167 316 *~;
+#X obj 62 196 mtof;
+#X obj 62 233 trigger float bang;
+#X obj 62 164 nbx 3 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
+-228856 -1 -1 36 256;
+#X obj 62 58 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 1 1
 ;
-#X obj 59 31 loadbang;
-#N canvas 288 47 294 394 additive 0;
+#X obj 62 32 loadbang;
+#N canvas 759 290 294 394 additive 0;
 #X obj 104 264 catch~ \$0-osc;
 #X obj 104 301 /~ 16;
 #X obj 104 336 outlet~;
@@ -163,19 +163,19 @@ a pair of oscilatores., f 36;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
-#X restore 59 271 pd additive;
-#X obj 121 355 out~;
-#X obj 59 99 tempo 15 50;
-#X text 172 83 Here's another additive synthesis example. This patch
+#X restore 62 272 pd additive;
+#X obj 124 356 out~;
+#X obj 62 100 tempo 15 50;
+#X text 175 84 Here's another additive synthesis example. This patch
 receives a fundamental frequency \, from which an inharmonic series
 of 8 partials is generated. For each partial \, we have a pair of oscillators
 \, boh of wich are closely tuned but with random vibratos/pitch deviations.
 , f 56;
-#X text 172 167 Open the [pd additive] subpatch for more details.;
-#X text 206 249 ADSR envelope;
-#X obj 182 273 envgen~ 400 1 100 0.7 2000 0.7 500 0;
-#X obj 59 132 rand.i 36 73;
-#X obj 399 43 declare -path else;
+#X text 175 168 Open the [pd additive] subpatch for more details.;
+#X text 209 250 ADSR envelope;
+#X obj 185 274 envgen~ 400 1 100 0.7 2000 0.7 500 0;
+#X obj 62 133 rand.i 36 73;
+#X obj 403 42 declare -path else;
 #X connect 0 0 7 0;
 #X connect 0 0 7 1;
 #X connect 1 0 2 0;

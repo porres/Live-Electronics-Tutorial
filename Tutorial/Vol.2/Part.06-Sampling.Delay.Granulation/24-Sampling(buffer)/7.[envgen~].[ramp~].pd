@@ -71,7 +71,7 @@ ratio compensation here.;
 #X obj 98 311 initmess read -resize sax.wav \$0-buffer, f 22;
 #X obj 643 243 function 200 100 empty empty 0 1 220 220 220 50 50 50
 0 0 0 0 0 0.1 1 0.8 1 0.1 0;
-#X obj 640 162 initmess 0 0.1 1 0.8 1 0.1 0;
+#X obj 640 172 initmess 0 0.1 1 0.8 1 0.1 0;
 #X connect 0 0 1 1;
 #X connect 0 0 2 1;
 #X connect 0 0 30 0;
