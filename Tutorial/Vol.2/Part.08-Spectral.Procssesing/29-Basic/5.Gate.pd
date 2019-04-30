@@ -185,7 +185,7 @@ to work better for extracting tonal peaks.;
 #X text 726 543 signal;
 #X text 524 546 noise floor;
 #X obj 90 46 declare -path else;
-#X obj 137 231 play.file~ 1kantele.wav -loop;
+#X obj 137 231 play.file~ 1 kantele.wav -loop;
 #X connect 0 0 10 1;
 #X connect 2 0 14 1;
 #X connect 5 0 19 0;
