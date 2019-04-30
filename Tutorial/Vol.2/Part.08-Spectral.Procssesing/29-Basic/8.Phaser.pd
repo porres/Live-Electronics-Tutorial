@@ -92,8 +92,8 @@ shift is like phase modulation and changes the pitch., f 53;
 for the modulation. Summing to the original input promotes phase canceling
 of some of the frequency points \, which is the key to the phaser effect.
 , f 47;
-#X obj 68 219 play.file~ ../../../samples/guitar.wav 1 1;
 #X obj 615 30 declare -path else;
+#X obj 68 219 play.file~ guitar.wav 1 1;
 #X connect 1 0 2 0;
 #X connect 2 0 10 1;
 #X connect 2 0 10 0;
@@ -115,4 +115,4 @@ of some of the frequency points \, which is the key to the phaser effect.
 #X connect 21 0 20 1;
 #X connect 22 0 20 0;
 #X connect 23 0 22 0;
-#X connect 26 0 0 0;
+#X connect 27 0 0 0;
