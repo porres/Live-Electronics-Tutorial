@@ -1,71 +1,43 @@
-#N canvas 352 89 960 485 12;
-#X obj 76 158 float \$0;
-#X msg 76 129 bang;
-#X floatatom 76 185 5 0 0 0 - - -;
-#X text 123 186 <= this patch's ID number;
-#X text 118 129 <= get patch ID;
-#X floatatom 507 138 5 0 0 0 - - -;
-#X floatatom 604 209 5 0 0 0 - - -;
-#X obj 93 386 local-abs;
-#X floatatom 93 347 5 0 0 0 - - -;
-#X floatatom 93 428 5 0 0 0 - - -;
-#X obj 193 386 local-abs;
-#X floatatom 193 347 5 0 0 0 - - -;
-#X floatatom 193 428 5 0 0 0 - - -;
-#X obj 303 386 local-abs;
-#X floatatom 303 347 5 0 0 0 - - -;
-#X floatatom 303 428 5 0 0 0 - - -;
-#X text 476 21 Since you can't have more than one array with the same
-name \, using "\$0" as part of an array name is useful when opening
-the same patch/abstraction multiple times. Another application is as
-the variable name in [value] objects., f 62;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array \$0-array 10 float 2;
-#X coords 0 1 10 -1 200 140 1;
-#X restore 697 118 graph;
-#X msg 604 149 bang;
-#X obj 495 109 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 492 244 send \$0-array;
-#X msg 492 214 const \$1;
-#X text 490 296 It's also worth checking the [expr] family of objects
-as they can load arrays and variables set in [value] objects. But there
-are restrictions on how to handles "\$0" in symbols. Check the help
-file of this object below for more details.;
-#X text 19 217 So if you use \$0 as part of the address symbol of [send]
-and [receive] objects in abstractions \, they have local address and
-this prevents data from one instance of the abstraction to go to another.
-Open the abstractions below and see how [send]/[receive] addresses
-contain “\$0” to operate locally. The audio objects [send~]/[receive~]
-and [throw~]/[catcth~] work in the same way.;
-#X obj 507 168 value x_\$0;
-#X obj 604 180 value x_\$0;
-#X floatatom 664 436 5 0 0 0 - - -;
-#X msg 664 376 bang;
-#X obj 664 407 expr x_\$0;
-#X msg 288 124 \$0;
-#X floatatom 288 150 5 0 0 0 - - -;
-#X text 320 124 <= doesn't work;
-#X text 20 20 A "\$0" (dollar sign followed by a zero) is the third
-and last usage of dollar signs. It only works as such in objects (not
-messages) and loads a locality variable \, which is a patch ID number.
-Any patch you open is given a different number ID \, even if it's the
-same patch opened more than once \, which is usually the case for abstractions.
+#N canvas 326 70 958 470 12;
+#X symbolatom 200 205 10 0 0 0 - - -;
+#X text 49 31 The backlash character is used in Pd to escape special
+characters. Such characters are \, for instance \, commas \, semicolons
+and dollar signs \, which are handled differently in Pd. Another such
+character is the backlash character itself., f 59;
+#X text 49 109 Hence \, if you type in a symbol box any of these characters
+\, you'll see it automatically generates a preceding backlash character.
+Pd then undertsands this as a literal character and avoids handling
+it in a special way.;
+#X obj 149 370 symbol \$0-x;
+#X obj 149 343 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X symbolatom 149 411 10 0 0 0 - - -;
+#X obj 286 344 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X symbolatom 286 412 10 0 0 0 - - -;
+#X obj 286 371 symbol \\\$0-x;
+#X text 57 247 We've seen how this can be useful to set a receive name
+in a GUI and save it as a literal '\$0' without expanding to the patch
+ID number. See below how the symbol to the left gets expanded when
+it comes out of the [symbol] object.;
+#X obj 548 419 text fromlist example;
+#X obj 557 214 text define example;
+#X msg 548 329 list Hi \\\, how are you? \\\; Fine \\\, thanks! \\\;
 ;
-#X connect 0 0 2 0;
-#X connect 1 0 0 0;
-#X connect 5 0 24 0;
-#X connect 7 0 9 0;
+#X text 499 29 Here's another example. Below we have a list where commas
+and semicolons are escaped and therefore they are not treated as they
+normally would. The comma does not separate the message and the semicolon
+does not define a send address.;
+#X msg 576 371 list \\\$1 is literal and \$1 is not;
+#X text 503 116 Hence \, the messages below are properly stored in
+the text object \, which is an object that defines and manipulates
+texts in Pd.;
+#X text 704 214 <= click to open text window;
+#X text 556 277 Click on the messages below to see them getting stored
+in the [text] object., f 40;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 6 0 8 0;
 #X connect 8 0 7 0;
-#X connect 10 0 12 0;
-#X connect 11 0 10 0;
-#X connect 13 0 15 0;
-#X connect 14 0 13 0;
-#X connect 18 0 25 0;
-#X connect 19 0 5 0;
-#X connect 19 0 21 0;
-#X connect 21 0 20 0;
-#X connect 25 0 6 0;
-#X connect 27 0 28 0;
-#X connect 28 0 26 0;
-#X connect 29 0 30 0;
+#X connect 12 0 10 0;
+#X connect 14 0 10 0;
