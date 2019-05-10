@@ -2,13 +2,13 @@
 #X declare -path else;
 #X obj 178 355 nbx 5 14 -1e+37 1e+37 0 1 empty hz empty 0 -8 0 10 -228856
 -1 -1 164.814 256;
-#N canvas 278 23 689 610 triangular 0;
+#N canvas 751 108 689 610 triangular 0;
 #X obj 84 323 list prepend;
-#X obj 45 148 trigger float bang;
+#X obj 85 152 trigger float bang;
 #X text 88 220 p;
 #X msg 65 470 normalize 1;
 #X obj 65 441 trigger bang anything;
-#X obj 45 111 inlet;
+#X obj 45 85 inlet;
 #X msg 240 134 1 0 -0.111111 0 0.04 0 -0.0204082 0 0.0123457 0 -0.00826446
 0 0.00591716 0 -0.00444444 0 0.00346021 0 -0.00277008 0 0.00226757
 0 -0.00189036 0 0.0016 0 -0.00137174 0 0.00118906 0 -0.00104058 0;
@@ -19,11 +19,12 @@
 #X obj 65 351 list;
 #X obj 65 377 list prepend sinesum 4096;
 #X obj 65 410 list trim;
-#X obj 45 197 loop;
-#X msg 44 171 1 \$1;
+#X obj 85 201 loop;
+#X msg 84 175 1 \$1;
 #X text 248 45 Triangular: amplitude values are 1/(pˆ2) \, but each
 4n-1 term has the polarity inverted and even partials are zeroed.;
 #X text 338 108 Example with 32 partials.;
+#X obj 43 114 t b f;
 #X connect 0 0 9 0;
 #X connect 0 0 10 1;
 #X connect 1 0 14 0;
@@ -31,18 +32,19 @@
 #X connect 3 0 7 0;
 #X connect 4 0 3 0;
 #X connect 4 1 7 0;
-#X connect 5 0 1 0;
+#X connect 5 0 17 0;
 #X connect 8 0 0 0;
 #X connect 9 0 0 1;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
 #X connect 12 0 4 0;
 #X connect 13 0 8 0;
-#X connect 13 1 10 0;
 #X connect 14 0 13 0;
+#X connect 17 0 10 0;
+#X connect 17 1 1 0;
 #X restore 174 140 pd triangular;
 #X obj 174 116 nbx 5 14 1 1000 0 1 empty empty empty 0 -8 0 10 -228856
--1 -1 11 256;
+-1 -1 7 256;
 #X obj 91 179 cnv 15 198 138 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #N canvas 0 22 474 324 (subpatch) 0;

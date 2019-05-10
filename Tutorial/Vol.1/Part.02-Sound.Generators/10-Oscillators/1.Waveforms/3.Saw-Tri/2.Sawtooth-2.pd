@@ -1,4 +1,4 @@
-#N canvas 307 73 831 529 12;
+#N canvas 574 57 831 529 12;
 #X declare -path else;
 #X obj 58 220 nbx 5 14 1 3000 0 1 empty empty empty 0 -8 0 10 -228856
 -1 -1 26 256;
@@ -53,45 +53,42 @@
 the same. The only difference is in the waveform \, which is achieved
 by inverting the polarity of all the even partials., f 61;
 #N canvas 335 155 948 460 saw2 0;
-#X obj 118 203 list prepend;
-#X text 119 157 p;
-#X obj 68 49 inlet;
-#X obj 68 141 loop;
-#X obj 218 228 list;
-#X obj 93 231 list;
-#X obj 93 261 list prepend sinesum 4096;
-#X msg 93 349 normalize 1;
-#X obj 93 287 list trim;
-#X msg 68 115 1 \$1;
-#X obj 93 310 trigger bang anything;
-#X text 610 166 Example with 32 partials:;
-#X obj 68 90 trigger float bang, f 19;
-#X msg 426 188 1 -0.5 0.333333 -0.25 0.2 -0.166667 0.142857 -0.125
+#X text 100 156 p;
+#X obj 39 47 inlet;
+#X obj 118 141 loop;
+#X obj 117 261 list prepend sinesum 4096;
+#X msg 117 349 normalize 1;
+#X obj 117 287 list trim;
+#X msg 118 115 1 \$1;
+#X obj 117 310 trigger bang anything;
+#X text 612 176 Example with 32 partials:;
+#X msg 428 198 1 -0.5 0.333333 -0.25 0.2 -0.166667 0.142857 -0.125
 0.111111 -0.1 0.090909 -0.0833333 0.076923 -0.0714286 0.0666667 -0.0625
 0.0588235 -0.0555556 0.0526315 -0.05 0.047619 -0.0454545 0.0434782
 -0.0416667 0.04 -0.0384615 0.037037 -0.0357143 0.0344827 -0.0333333
 0.0322581 -0.03125;
-#X obj 118 175 expr if ($f1 % 2 == 0 \, -1/$f1 \, 1/$f1);
-#X text 427 119 Sawtooth s: partials decrease in an order of "1/p"
+#X obj 118 173 expr if ($f1 % 2 == 0 \, -1/$f1 \, 1/$f1);
+#X text 429 129 Sawtooth s: partials decrease in an order of "1/p"
 \, where "p" is the patial number - but every even partial has an inverted
 polarity;
-#X obj 237 389 send saw2;
-#X connect 0 0 4 0;
-#X connect 0 0 5 1;
-#X connect 2 0 12 0;
-#X connect 3 0 14 0;
-#X connect 3 1 5 0;
-#X connect 4 0 0 1;
-#X connect 5 0 6 0;
-#X connect 6 0 8 0;
-#X connect 7 0 16 0;
-#X connect 8 0 10 0;
-#X connect 9 0 3 0;
-#X connect 10 0 7 0;
-#X connect 10 1 16 0;
-#X connect 12 0 9 0;
-#X connect 12 1 0 1;
-#X connect 14 0 0 0;
+#X obj 261 389 send saw2;
+#X obj 39 88 trigger bang float bang;
+#X obj 118 233 list store;
+#X msg 118 200 append \$1;
+#X connect 1 0 13 0;
+#X connect 2 0 10 0;
+#X connect 3 0 5 0;
+#X connect 4 0 12 0;
+#X connect 5 0 7 0;
+#X connect 6 0 2 0;
+#X connect 7 0 4 0;
+#X connect 7 1 12 0;
+#X connect 10 0 15 0;
+#X connect 13 0 14 0;
+#X connect 13 1 6 0;
+#X connect 13 2 14 1;
+#X connect 14 0 3 0;
+#X connect 15 0 14 0;
 #X restore 58 244 pd saw2;
 #X text 23 72 Enter the number of harmonics and see the resulting waveform
 below. Realize that \, in order to generate a perfect sawtooth \, you

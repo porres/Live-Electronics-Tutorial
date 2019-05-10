@@ -19,30 +19,31 @@
 #X obj 580 332 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 623 398 graph~ 950 5 -1.1 1.1;
-#N canvas 292 30 650 509 square 0;
+#N canvas 561 148 650 509 square 0;
 #X obj 51 30 inlet;
 #X floatatom 51 64 5 0 0 0 - - -;
-#X obj 66 246 list prepend;
-#X text 69 185 p;
-#X msg 51 395 normalize 1;
-#X obj 51 366 trigger bang anything;
-#X obj 174 427 send square;
-#X msg 208 127 1 0 0.333333 0 0.2 0 0.142857 0 0.111111 0 0.090909
+#X obj 93 275 list prepend;
+#X text 96 214 p;
+#X msg 78 424 normalize 1;
+#X obj 78 395 trigger bang anything;
+#X obj 201 456 send square;
+#X msg 235 156 1 0 0.333333 0 0.2 0 0.142857 0 0.111111 0 0.090909
 0 0.076923 0 0.0666667 0 0.0588235 0 0.0526315 0 0.047619 0 0.0434782
 0 0.04 0 0.037037 0 0.0344827 0 0.0322581 0;
-#X obj 66 203 expr if($f1 % 2 == 0 \, 0 \, 1 / $f1);
-#X obj 51 92 t float bang;
-#X obj 161 252 list;
-#X obj 51 274 list;
-#X obj 51 321 list prepend sinesum 4096;
-#X obj 50 344 list trim;
-#X obj 34 140 loop;
-#X msg 41 114 1 \$1;
-#X text 210 31 Square: partials decay at a "1/p" rate \, where "p"
+#X obj 93 232 expr if($f1 % 2 == 0 \, 0 \, 1 / $f1);
+#X obj 78 121 t float bang;
+#X obj 188 281 list;
+#X obj 78 303 list;
+#X obj 78 350 list prepend sinesum 4096;
+#X obj 77 373 list trim;
+#X obj 90 181 loop;
+#X msg 88 150 1 \$1;
+#X text 237 60 Square: partials decay at a "1/p" rate \, where "p"
 is the partial number. Even partials are zeroed.;
-#X text 301 96 Example with 32 partials.;
+#X text 328 125 Example with 32 partials.;
+#X obj 49 94 t b f;
 #X connect 0 0 1 0;
-#X connect 1 0 9 0;
+#X connect 1 0 18 0;
 #X connect 2 0 10 0;
 #X connect 2 0 11 1;
 #X connect 4 0 6 0;
@@ -56,8 +57,9 @@ is the partial number. Even partials are zeroed.;
 #X connect 12 0 13 0;
 #X connect 13 0 5 0;
 #X connect 14 0 8 0;
-#X connect 14 1 11 0;
 #X connect 15 0 14 0;
+#X connect 18 0 11 0;
+#X connect 18 1 9 0;
 #X restore 59 246 pd square;
 #X obj 512 427 out~;
 #X obj 556 359 square~ 100;

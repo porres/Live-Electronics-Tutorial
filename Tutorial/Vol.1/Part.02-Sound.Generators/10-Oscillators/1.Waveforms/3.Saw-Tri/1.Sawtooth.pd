@@ -14,45 +14,40 @@
 -228856 -1 -1 97.9989 256;
 #X text 52 336 Hz;
 #X obj 79 362 tabosc4~ saw;
-#N canvas 109 241 785 463 saw 0;
-#X obj 114 203 list prepend;
-#X text 115 157 p;
+#N canvas 491 220 855 465 saw 1;
+#X text 130 140 p;
 #X obj 64 49 inlet;
-#X msg 286 167 1 0.5 0.333333 0.25 0.2 0.166667 0.142857 0.125 0.111111
+#X msg 364 170 1 0.5 0.333333 0.25 0.2 0.166667 0.142857 0.125 0.111111
 0.1 0.090909 0.0833333 0.076923 0.0714286 0.0666667 0.0625 0.0588235
 0.0555556 0.0526315 0.05 0.047619 0.0454545 0.0434782 0.0416667 0.04
 0.0384615 0.037037 0.0357143 0.0344827 0.0333333 0.0322581 0.03125
 ;
-#X obj 64 141 loop;
-#X obj 214 228 list;
-#X obj 89 231 list;
-#X obj 89 261 list prepend sinesum 4096;
-#X msg 89 349 normalize 1;
-#X obj 233 389 send saw;
-#X obj 89 287 list trim;
-#X msg 64 115 1 \$1;
-#X obj 89 310 trigger bang anything;
-#X text 287 107 Sawtooth: partials decrease in an order of "1/p" \,
+#X obj 142 246 list prepend sinesum 4096;
+#X msg 142 334 normalize 1;
+#X obj 286 374 send saw;
+#X obj 142 272 list trim;
+#X obj 142 295 trigger bang anything;
+#X text 365 110 Sawtooth: partials decrease in an order of "1/p" \,
 owhere "p" is the patial number.;
-#X text 470 144 Example with 32 partials:;
-#X obj 64 90 trigger float bang, f 19;
-#X obj 114 175 expr 1/$f1;
-#X connect 0 0 5 0;
-#X connect 0 0 6 1;
-#X connect 2 0 15 0;
-#X connect 4 0 16 0;
-#X connect 4 1 6 0;
-#X connect 5 0 0 1;
+#X text 548 147 Example with 32 partials:;
+#X obj 142 159 expr 1/$f1;
+#X obj 64 90 trigger bang float bang, f 32;
+#X obj 142 215 list store;
+#X obj 142 121 loop -offset 1;
+#X msg 142 186 append \$1;
+#X connect 1 0 11 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
 #X connect 6 0 7 0;
-#X connect 7 0 10 0;
-#X connect 8 0 9 0;
-#X connect 10 0 12 0;
-#X connect 11 0 4 0;
-#X connect 12 0 8 0;
-#X connect 12 1 9 0;
-#X connect 15 0 11 0;
-#X connect 15 1 0 1;
-#X connect 16 0 0 0;
+#X connect 7 0 4 0;
+#X connect 7 1 5 0;
+#X connect 10 0 14 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 0;
+#X connect 11 2 12 1;
+#X connect 12 0 3 0;
+#X connect 13 0 10 0;
+#X connect 14 0 12 0;
 #X restore 59 212 pd saw;
 #X obj 79 396 out~;
 #X text 24 13 You can generate a sawtooth waveform from a sum of harmonic
