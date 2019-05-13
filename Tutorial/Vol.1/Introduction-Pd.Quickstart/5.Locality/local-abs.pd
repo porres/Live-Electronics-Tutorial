@@ -1,4 +1,4 @@
-#N canvas 472 174 551 248 12;
+#N canvas 498 218 551 248 12;
 #X obj 72 45 inlet;
 #X obj 72 170 outlet;
 #X obj 72 84 send \$0-locally;
