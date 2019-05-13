@@ -99,16 +99,16 @@ to the amplitude of another. In the same way as a Vocoder \, the amplitude
 envelope can be considered as an equalizer/filter., f 47;
 #X obj 76 380 out~;
 #X obj 269 380 out~;
-#X obj 76 322 r~ \$0-Phase;
-#X obj 269 323 r~ \$0-Amp;
+#X obj 76 335 r~ \$0-Phase;
+#X obj 269 336 r~ \$0-Amp;
 #X text 28 216 Remember that the phase information codifies the tonal
 quality of the input. We then have a tonal source for the phase information
 and a noisy speech for the amplitude (or filter control). Listen to
 both below and the crossed synthesized to the right, f 47;
 #X text 522 221 window size;
 #X obj 529 20 declare -path else;
-#X obj 103 39 play.file~ 1 kantele.wav 1 1, f 35;
-#X obj 429 76 play.file~ /numbers.wav 1 1, f 35;
+#X obj 103 39 play.file~ 1 kantele.wav 1 1;
+#X obj 429 76 play.file~ /numbers.wav 1 1;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;

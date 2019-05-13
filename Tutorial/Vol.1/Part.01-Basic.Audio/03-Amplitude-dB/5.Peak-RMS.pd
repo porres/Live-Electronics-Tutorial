@@ -9,85 +9,84 @@
 #X obj 260 395 nbx 8 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
 -228856 -1 -1 0 256;
 #X obj 260 450 nbx 8 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
--228856 -1 -1 0 256;
+-228856 -1 -1 -999 256;
 #X text 377 455 RMS (dB);
 #X text 374 398 RMS (linear);
 #X obj 210 243 osc~ 500;
 #X text 310 303 (linear);
-#N canvas 248 23 996 521 RMS 0;
-#X obj 219 299 / 1024;
-#X obj 219 374 sqrt;
-#X floatatom 219 339 8 0 0 0 - - -;
-#X msg 219 441 \; rms const \$1;
-#X floatatom 219 255 8 0 0 0 - - -;
-#X obj 155 85 t b f;
-#X obj 131 25 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 0 1;
-#X floatatom 128 51 0 0 0 0 - - -;
-#X obj 61 291 osc~ 500;
-#X obj 110 360 *~;
-#X obj 453 191 cnv 15 498 238 empty empty empty 20 12 0 14 -233017
+#N canvas 333 131 1042 568 RMS 0;
+#X obj 224 309 / 1024;
+#X obj 224 384 sqrt;
+#X floatatom 224 349 8 0 0 0 - - -;
+#X msg 224 451 \; rms const \$1;
+#X floatatom 224 265 8 0 0 0 - - -;
+#X obj 136 35 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 7400 1;
+#X floatatom 133 61 0 0 0 0 - - -;
+#X obj 66 301 osc~ 500;
+#X obj 115 370 *~;
+#X obj 481 287 cnv 15 498 238 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array sine 1027 float 0;
 #X array rms 1027 float 0;
 #X coords 0 1 1026 -1 500 240 1;
-#X restore 452 190 graph;
-#X text 441 182 1;
-#X text 440 302 0;
-#X text 434 419 -1;
-#X obj 219 415 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
-#X obj 110 416 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
-#X text 19 414 RMS (linear);
-#X obj 110 390 rms~;
-#X obj 155 151 loop 1024;
-#X obj 170 188 t b b;
-#X msg 170 227 0;
-#X msg 204 90 \; sine sinesum 1024 \$1;
-#X text 253 375 square root;
-#X text 286 333 arithmetic mean, f 10;
-#X text 273 292 divide by table size, f 11;
-#X text 283 249 sum of all values squared, f 14;
-#X obj 219 219 v sum;
-#X text 226 151 loop of 1024 iterations;
-#X text 168 124 creates a sine into a table with 1024 points;
-#X text 268 26 Peak Amplitude (linear);
-#X obj 219 185 expr pow(sine[$f1] \, 2) + sum;
-#X text 464 68 The Root Mean Square is obtained by the square root
+#X restore 480 286 graph;
+#X text 469 278 1;
+#X text 468 398 0;
+#X text 462 515 -1;
+#X obj 224 425 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.412015 256;
+#X obj 115 426 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.412007 256;
+#X text 24 424 RMS (linear);
+#X obj 115 400 rms~;
+#X obj 224 161 loop 1024;
+#X msg 160 167 0;
+#X msg 246 95 \; sine sinesum 1024 \$1;
+#X text 258 385 square root;
+#X text 291 343 arithmetic mean, f 10;
+#X text 278 302 divide by table size, f 11;
+#X text 288 259 sum of all values squared, f 14;
+#X obj 224 229 v sum;
+#X text 295 161 loop of 1024 iterations;
+#X text 402 94 creates a sine into a table with 1024 points, f 23
+;
+#X text 273 36 Peak Amplitude (linear);
+#X obj 224 195 expr pow(sine[$f1] \, 2) + sum;
+#X text 498 162 The Root Mean Square is obtained by the square root
 of the arithmetic mean of the squares of a set of values. To the left
 \, we calculate that step by step in a patch and compare it to the
 analysis of [rms~]., f 70;
-#X text 543 132 Below we have the graph of the resulting sinusoid and
+#X text 577 226 Below we have the graph of the resulting sinusoid and
 the root mean square line for this period window.;
-#X text 305 413 RMS (linear);
-#X obj 724 16 declare -path else;
+#X text 310 423 RMS (linear);
+#X obj 822 81 declare -path else;
+#X obj 160 122 t b b b f;
 #X connect 0 0 2 0;
-#X connect 1 0 15 0;
+#X connect 1 0 14 0;
 #X connect 2 0 1 0;
 #X connect 4 0 0 0;
-#X connect 5 0 19 0;
-#X connect 5 1 22 0;
-#X connect 6 0 7 0;
-#X connect 7 0 5 0;
-#X connect 7 0 9 1;
-#X connect 8 0 9 0;
-#X connect 9 0 18 0;
-#X connect 15 0 3 0;
-#X connect 18 0 16 0;
-#X connect 19 0 31 0;
-#X connect 19 1 20 0;
-#X connect 20 0 21 0;
-#X connect 20 1 27 0;
-#X connect 21 0 27 0;
-#X connect 27 0 4 0;
-#X connect 31 0 27 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 1;
+#X connect 6 0 34 0;
+#X connect 7 0 8 0;
+#X connect 8 0 17 0;
+#X connect 14 0 3 0;
+#X connect 17 0 15 0;
+#X connect 18 0 29 0;
+#X connect 19 0 25 0;
+#X connect 25 0 4 0;
+#X connect 29 0 25 0;
+#X connect 34 0 19 0;
+#X connect 34 1 25 0;
+#X connect 34 2 18 0;
+#X connect 34 3 20 0;
 #X restore 810 192 pd RMS;
 #X obj 123 394 nbx 8 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
 -228856 -1 -1 0 256;
 #X obj 123 447 nbx 8 20 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
--228856 -1 -1 0 256;
+-228856 -1 -1 -999 256;
 #X obj 123 369 peak~ 4096;
 #X obj 260 367 rms~ 4096;
 #X obj 260 423 lin2db;
@@ -95,11 +94,11 @@ the root mean square line for this period window.;
 #X obj 569 143 noise~;
 #X obj 660 179 env~;
 #X obj 660 207 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 95.3311 256;
 #X obj 92 250 setdsp~ 1;
 #X obj 569 182 rms~ -db;
 #X obj 569 209 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 -4.66889 256;
 #X obj 618 354 noise~;
 #X obj 618 468 print~;
 #X obj 585 438 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856

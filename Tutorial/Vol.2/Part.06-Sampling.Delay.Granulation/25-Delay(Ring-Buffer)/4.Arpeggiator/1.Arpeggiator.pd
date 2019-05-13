@@ -14,7 +14,6 @@
 #X obj 78 597 ffdelay~ 500;
 #X obj 159 343 vsl 24 100 0 5 0 0 empty LFO empty 0 -9 0 10 -228856
 -1 -1 4455 1;
-#X obj 231 373 loadbang;
 #X obj 372 612 initmess \; LFO 2.25 \; depth 25;
 #X text 51 50 This is another time variable delay effect and much like
 our vibrato example \, but we're using a different function than a
@@ -29,9 +28,10 @@ yet a higher pitch. asceleração.;
 #X text 120 457 rate;
 #X text 52 238 So we have a sort of arpeggio with three different pitches
 that depend on the rate and depth. Have fun.;
-#X obj 234 401 function 0 0.33 1 0.34 1 0.33 0;
-#X obj 78 298 play.file~ 1 ../../../../samples/violin.wav 1 1;
 #X obj 354 13 declare -path else;
+#X obj 78 298 play.file~ 1 violin.wav 1 1;
+#X obj 234 401 function 200 100 empty empty 0 1 220 220 220 50 50 50
+1 0 0 0 0 0.3 1 0.4 1 0.3 0;
 #X connect 0 0 6 0;
 #X connect 1 0 9 1;
 #X connect 2 0 3 0;
@@ -42,6 +42,5 @@ that depend on the rate and depth. Have fun.;
 #X connect 9 0 5 0;
 #X connect 9 0 5 1;
 #X connect 10 0 0 0;
-#X connect 11 0 17 0;
-#X connect 17 0 8 0;
-#X connect 18 0 9 0;
+#X connect 17 0 9 0;
+#X connect 18 0 8 0;

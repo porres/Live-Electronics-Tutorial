@@ -84,37 +84,37 @@
 #X array t11 1024 float 0;
 #X coords 0 1 1023 -1 150 100 1;
 #X restore 788 201 graph;
-#N canvas 145 164 955 317 plot 0;
-#X obj 52 32 r \$0-shape;
-#X obj 499 168 trigger bang float;
-#X obj 103 91 trigger bang bang;
-#X obj 360 43 pi;
-#X obj 360 71 v pi;
-#X obj 440 148 delay 5;
-#X obj 274 46 initmess \; amp-set 0 \; hz 200;
-#X obj 499 194 loop 1024;
-#X obj 52 61 loop 1024;
-#X obj 202 136 f \$0;
-#X msg 202 157 \; shape_\$1 normalize 1;
-#X obj 53 214 expr shape_\$0[$f1] = t0[$f1] * c0 + t1[$f1] * c1 + t2[$f1]
+#N canvas 446 360 708 303 plot 0;
+#X obj 52 33 r \$0-shape;
+#X obj 61 163 trigger bang float;
+#X obj 440 192 pi;
+#X obj 440 220 v pi;
+#X obj 52 111 delay 5;
+#X obj 354 195 initmess \; amp-set 0 \; hz 200;
+#X obj 52 189 loop 1024;
+#X obj 255 37 loop 1024;
+#X obj 207 121 f \$0;
+#X msg 207 142 \; shape_\$1 normalize 1;
+#X obj 255 62 expr shape_\$0[$f1] = t0[$f1] * c0 + t1[$f1] * c1 + t2[$f1]
 * c2 + t3[$f1] * c3 + t4[$f1] * c4 + t5[$f1] * c5 + t6[$f1] * c6 +
 t7[$f1] * c7 + t8[$f1] * c8 + t9[$f1] * c9 + t10[$f1] * c10 + t11[$f1]
 * c11, f 59;
-#X obj 499 219 expr output_\$0[$f1] = shape_\$0[(sin($f1 * 2*pi / 1023)
+#X obj 52 214 expr output_\$0[$f1] = shape_\$0[(sin($f1 * 2*pi / 1023)
 * $f2) * 512 + 512], f 39;
-#X obj 499 145 r \$0-amp;
-#X connect 0 0 8 0;
-#X connect 1 0 7 0;
-#X connect 1 1 12 1;
-#X connect 2 0 5 0;
-#X connect 2 1 9 0;
-#X connect 3 0 4 0;
-#X connect 5 0 7 0;
-#X connect 7 0 12 0;
-#X connect 8 0 11 0;
-#X connect 8 1 2 0;
-#X connect 9 0 10 0;
-#X connect 13 0 1 0;
+#X obj 61 140 r \$0-amp;
+#X obj 52 64 t b b f;
+#X connect 0 0 13 0;
+#X connect 1 0 6 0;
+#X connect 1 1 11 1;
+#X connect 2 0 3 0;
+#X connect 4 0 6 0;
+#X connect 6 0 11 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 12 0 1 0;
+#X connect 13 0 4 0;
+#X connect 13 1 8 0;
+#X connect 13 2 7 0;
 #X restore 299 433 pd plot;
 #N canvas 45 80 1015 521 (subpatch) 0;
 #X obj 240 303 v c0;
