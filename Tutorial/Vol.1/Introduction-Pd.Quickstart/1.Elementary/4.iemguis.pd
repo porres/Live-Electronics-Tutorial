@@ -44,17 +44,17 @@ from object boxes (unlike messages \, number/symbol atom boxes and
 comments). These GUIs have more properties setting like color and size.
 Right click for properties and also check their help files., f 57
 ;
-#X obj 622 172 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 622 172 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 10
 10;
 #X obj 622 202 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
--1 -262144 -1 0 256;
-#X obj 622 140 bng 15 250 50 0 empty empty init 0 -6 0 12 -257070 -1
+-1 -262144 -1 10 256;
+#X obj 622 140 bng 15 250 50 1 empty empty init 0 -6 0 12 -257070 -1
 -160712;
 #X floatatom 549 174 1 0 0 0 - - -;
 #X obj 737 178 hsl 128 15 1.27 127 1 0 empty empty logarythmic 4 -12
 0 14 -228856 -1 -205449 0 1;
 #X obj 734 202 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
--1 -262144 -1 0 256;
+-1 -262144 -1 1.27 256;
 #X msg 734 129 -100;
 #X text 464 22 Sliders and number boxes can behave logarithmically.
 A toggle can have a different value for an "on" state and its state
@@ -64,13 +64,13 @@ passed trhough even though they're outside the range.;
 #X obj 550 396 cnv 15 290 200 empty empty empty 20 12 0 14 -99347 -66577
 0;
 #X obj 574 426 hsl 230 40 0 127 0 0 empty empty empty -2 -6 0 8 -228856
--1 -1 22900 1;
+-1 -1 0 1;
 #X obj 721 485 hradio 30 1 0 3 empty empty empty 0 -6 0 10 -196021
 -1 -1 2;
 #X obj 571 538 nbx 7 30 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 18
--150 -262144 -1 127 256;
+-150 -262144 -1 0 256;
 #X obj 721 538 nbx 4 30 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 18
--160 -262144 -1 2 256;
+-160 -262144 -1 0 256;
 #X text 471 248 A canvas GUI ([cnv]) is only useful for colorful backgrounds
 (see below). But note that the order it is created define the layers
 \, so you need to create or recreate what you want to put in front
