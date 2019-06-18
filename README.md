@@ -5,7 +5,7 @@ This tutorial presents theory and practice of Live Electronics topics without pr
 
 =====================================================
 
-[version 1.0 beta-11 (Unreleased)]
+[version 1.0 beta-11 (Released: June 18th 2019)]
 
 This didactic work is licenced via Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) which allows downloading and sharing with proper credit. It also forbids its usage for comercial purposes. Check the license at: https://creativecommons.org/licenses/by-nc-nd/4.0/
    
