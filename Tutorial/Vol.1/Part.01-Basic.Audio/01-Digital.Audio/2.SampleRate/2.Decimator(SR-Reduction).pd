@@ -19,9 +19,6 @@
 #X obj 482 120 send~ \$0-audio;
 #X obj 499 161 receive~ \$0-audio;
 #X obj 688 147 receive~ \$0-audio;
-#X text 35 54 The "decimator" is a process that consist in reducing
-the sample rate of a signal. Im other words \, it reduces the sample
-rate \, or performs a "downsampling"., f 59;
 #X text 35 104 We can still perform downsampling if we do not actually
 reduce the sample rate \, but we need to do an upsampling to go back
 to the original sample rate., f 59;
@@ -37,6 +34,9 @@ The frequency at wich it receives impulses is the downsampled frequency.
 #X text 483 55 [play.file~] plays audio files;
 #X obj 757 24 declare -path else;
 #X obj 482 81 play.file~ bubul.wav 1 1;
+#X text 35 54 The "decimator" is a process that consist in reducing
+the sample rate of a signal. In other words \, it reduces the sample
+rate \, or performs a "downsampling"., f 59;
 #X connect 0 0 11 0;
 #X connect 0 0 11 1;
 #X connect 2 0 7 0;
@@ -48,4 +48,4 @@ The frequency at wich it receives impulses is the downsampled frequency.
 #X connect 9 0 8 0;
 #X connect 13 0 6 0;
 #X connect 14 0 0 0;
-#X connect 21 0 12 0;
+#X connect 20 0 12 0;
