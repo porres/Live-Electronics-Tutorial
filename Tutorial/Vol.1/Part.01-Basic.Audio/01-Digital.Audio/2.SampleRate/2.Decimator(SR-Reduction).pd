@@ -19,24 +19,23 @@
 #X obj 482 120 send~ \$0-audio;
 #X obj 499 161 receive~ \$0-audio;
 #X obj 688 147 receive~ \$0-audio;
-#X text 35 104 We can still perform downsampling if we do not actually
+#X text 34 58 We can still perform downsampling if we do not actually
 reduce the sample rate \, but we need to do an upsampling to go back
 to the original sample rate., f 59;
-#X text 35 159 In the upsampling process \, there aren't that many
+#X text 34 113 In the upsampling process \, there aren't that many
 options. One is to "hold" \, where we keep the same value for all the
 new sample values. One way to implement this is with [sh~] \, from
 ELSE \, which is a "sample and hold" unit that collects a sample value
 when receiving impulses and holds such values until the next trigger.
 The frequency at wich it receives impulses is the downsampled frequency.
 , f 59;
-#X text 36 267 A simpler alternative is to use [downsample~] from ELSE
+#X text 35 221 A simpler alternative is to use [downsample~] from ELSE
 \, which only needs a downsampling frequency value., f 59;
 #X text 483 55 [play.file~] plays audio files;
 #X obj 757 24 declare -path else;
 #X obj 482 81 play.file~ bubul.wav 1 1;
-#X text 35 54 The "decimator" is a process that consist in reducing
-the sample rate of a signal. In other words \, it reduces the sample
-rate \, or performs a "downsampling"., f 59;
+#X text 34 18 The "decimator" is a process that consist in reducing
+the sample rate of a signal - also known as "downsampling".;
 #X connect 0 0 11 0;
 #X connect 0 0 11 1;
 #X connect 2 0 7 0;

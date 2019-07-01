@@ -12,7 +12,7 @@
 #X obj 693 465 else/display;
 #X obj 617 432 else/display;
 #X obj 631 185 float2bits;
-#X obj 617 359 float2bits;
+#X obj 617 364 float2bits;
 #X text 29 29 The sample rate regards a timing resolution. Now the
 amplitude resolution depends on the bit rate or bit depth., f 75;
 #X text 29 144 1 bit is a binary unit \, which can be either 0 or 1
