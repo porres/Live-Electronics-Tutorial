@@ -43,7 +43,7 @@
 #X obj 558 544 out~;
 #X obj 240 532 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 165 497 *~;
+#X obj 165 511 *~;
 #X obj 114 443 osc~ 440;
 #X obj 122 546 out~;
 #X obj 183 421 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
@@ -79,17 +79,18 @@ details., f 45;
 generatin a line with a repeated destination. The attack is then 50
 ms \, the sustain stage takes 450 ms and the release is 500 ms long.
 , f 56;
-#X obj 183 464 envgen~ 150 1 750 0 -suspoint 1;
-#X text 30 330 You can trigger [envgen~] with a gate \, which is the
-same as pressing/releasing a note on your MIDI controller. You just
-need to define a sustain point and the sustain stage depends on how
-long the gate is on., f 53;
 #X obj 1003 492 s2f~;
 #X obj 240 506 s2f~;
 #X obj 271 198 s2f~;
 #X obj 1002 225 s2f~;
 #X obj 627 161 s2f~;
 #X obj 975 24 declare -path else;
+#X text 30 330 You can trigger [envgen~] with a gate \, which is the
+same as pressing/releasing a note on your MIDI controller. You just
+need to define a sustain point and the sustain stage depends on how
+long the gate is on. The example below is also exponential., f 57
+;
+#X obj 183 464 envgen~ 150 1 750 0 -suspoint 1 -exp 4 4, f 20;
 #X connect 1 0 3 1;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -105,32 +106,32 @@ long the gate is on., f 53;
 #X connect 18 0 19 0;
 #X connect 19 0 21 0;
 #X connect 20 0 5 1;
-#X connect 20 0 62 0;
+#X connect 20 0 60 0;
 #X connect 21 0 16 1;
 #X connect 22 0 25 0;
 #X connect 22 0 25 1;
 #X connect 23 0 22 0;
 #X connect 24 0 26 0;
 #X connect 26 0 22 1;
-#X connect 26 0 61 0;
+#X connect 26 0 59 0;
 #X connect 34 0 36 1;
 #X connect 34 0 36 0;
 #X connect 35 0 34 0;
-#X connect 37 0 56 0;
+#X connect 37 0 63 0;
 #X connect 39 0 42 0;
 #X connect 39 0 42 1;
 #X connect 40 0 39 0;
 #X connect 41 0 47 0;
 #X connect 47 0 39 1;
-#X connect 47 0 58 0;
+#X connect 47 0 56 0;
 #X connect 52 0 19 0;
 #X connect 53 0 1 1;
-#X connect 53 0 60 0;
+#X connect 53 0 58 0;
 #X connect 54 0 53 0;
-#X connect 56 0 34 1;
-#X connect 56 0 59 0;
-#X connect 58 0 43 0;
-#X connect 59 0 33 0;
-#X connect 60 0 0 0;
-#X connect 61 0 27 0;
-#X connect 62 0 6 0;
+#X connect 56 0 43 0;
+#X connect 57 0 33 0;
+#X connect 58 0 0 0;
+#X connect 59 0 27 0;
+#X connect 60 0 6 0;
+#X connect 63 0 34 1;
+#X connect 63 0 57 0;

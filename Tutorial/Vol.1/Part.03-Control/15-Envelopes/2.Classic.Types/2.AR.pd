@@ -1,41 +1,53 @@
-#N canvas 485 143 869 401 12;
+#N canvas 428 140 869 401 12;
 #X declare -path else;
-#X obj 225 252 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+#X obj 165 270 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 150 225 *~;
-#X obj 96 163 osc~ 440;
-#X obj 107 265 out~;
-#X text 314 173 AR;
-#X obj 614 152 impseq~;
-#X obj 553 190 brown~;
-#X obj 677 256 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
+#X obj 90 243 *~;
+#X obj 36 181 osc~ 440;
+#X obj 47 283 out~;
+#X text 254 191 AR;
+#X obj 699 167 impseq~;
+#X obj 638 205 brown~;
+#X obj 762 271 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X text 700 349 0;
-#X text 700 250 1;
-#X obj 596 236 *~;
-#X obj 614 120 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
+#X text 785 364 0;
+#X text 785 265 1;
+#X obj 681 251 *~;
+#X obj 699 137 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 553 279 out~;
-#X obj 614 190 decay2~ 100 2000;
-#X msg 682 152 0.5;
+#X obj 638 294 out~;
+#X obj 699 205 decay2~ 100 2000;
+#X msg 767 167 0.5;
 #X text 21 96 Here we have an attack stage of 50 ms and a release stage
 of 450 ms - the total duration of the envelope is 500 ms., f 59;
-#X text 471 64 The [decay2~] object from ELSE has an attack stage \,
-which is the first argument. But the total duration still depends on
-the decay time., f 51;
-#X obj 168 147 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 108 165 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 168 174 envgen~ 50 1 450 0;
+#X obj 108 192 envgen~ 50 1 450 0;
 #X text 21 18 An "AR" envelope has an "attack" and a "release" stage.
 The attack is the first stage that starts at 0 and goes to the peak
 amplitude. Right after the attack is finished we have the release stage
 going back to 0 - let's see this first implemented with [envgen~].
 ;
-#X text 245 343 0;
-#X text 245 244 1;
-#X obj 677 228 s2f~;
-#X obj 225 218 s2f~;
+#X text 185 361 0;
+#X text 185 262 1;
+#X obj 762 243 s2f~;
+#X obj 165 236 s2f~;
 #X obj 682 23 declare -path else;
+#X text 488 65 The [decay2~] object from ELSE is a variant of [decay~]
+that has an attack stage \, which is the first argument. But the total
+duration still depends on the decay time., f 47;
+#X obj 434 270 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X obj 359 243 *~;
+#X obj 305 181 osc~ 440;
+#X obj 316 283 out~;
+#X obj 377 165 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 454 361 0;
+#X text 454 262 1;
+#X obj 434 236 s2f~;
+#X obj 377 192 envgen~ 50 1 450 0 -exp -0.25 4, f 18;
+#X text 409 164 exponential;
 #X connect 1 0 3 1;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -45,10 +57,17 @@ going back to 0 - let's see this first implemented with [envgen~].
 #X connect 10 0 12 0;
 #X connect 11 0 5 0;
 #X connect 13 0 10 1;
-#X connect 13 0 22 0;
+#X connect 13 0 21 0;
 #X connect 14 0 13 0;
-#X connect 17 0 18 0;
-#X connect 18 0 1 1;
-#X connect 18 0 23 0;
-#X connect 22 0 7 0;
-#X connect 23 0 0 0;
+#X connect 16 0 17 0;
+#X connect 17 0 1 1;
+#X connect 17 0 22 0;
+#X connect 21 0 7 0;
+#X connect 22 0 0 0;
+#X connect 26 0 28 1;
+#X connect 26 0 28 0;
+#X connect 27 0 26 0;
+#X connect 29 0 33 0;
+#X connect 32 0 25 0;
+#X connect 33 0 26 1;
+#X connect 33 0 32 0;

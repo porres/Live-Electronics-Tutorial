@@ -1,74 +1,75 @@
-#N canvas 540 88 797 393 12;
+#N canvas 288 96 885 455 12;
 #X declare -path else;
-#X obj 136 151 impseq~;
-#X obj 82 185 brown~;
-#X obj 196 255 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
+#X obj 167 159 impseq~;
+#X obj 98 192 brown~;
+#X obj 227 283 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X text 219 348 0;
-#X text 219 249 1;
-#X obj 118 235 *~;
-#X obj 136 125 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
+#X text 250 376 0;
+#X text 250 277 1;
+#X obj 149 263 *~;
+#X obj 167 133 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 136 189 decay~ 2000;
-#X obj 75 278 out~;
-#X obj 469 254 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+#X obj 167 197 decay~ 2000;
+#X obj 106 306 out~;
+#X obj 475 309 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 405 227 *~;
-#X obj 352 168 osc~ 440;
-#X obj 362 267 out~;
-#X msg 423 133 1;
-#X msg 458 133 0.5;
-#X msg 196 152 0.5;
-#X text 30 16 Envelopes are widely used to generate sounds when triggered.
+#X obj 411 282 *~;
+#X obj 358 223 osc~ 440;
+#X obj 368 322 out~;
+#X msg 429 188 1;
+#X msg 464 188 0.5;
+#X msg 227 160 0.5;
+#X text 54 19 Envelopes are widely used to generate sounds when triggered.
 The [decay~] object from ELSE is an extremely simple envelope \, with
 just an exponential decay stage. The envelope function starts at a
 maximum amplitude and just decays (until reachinng 0). It can be triggered
-by bangs \, control data numbers and audio impulses., f 56;
-#X obj 673 258 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+by bangs \, control data numbers and audio impulses., f 80;
+#X obj 738 311 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 606 231 *~;
-#X obj 553 172 osc~ 440;
-#X obj 563 271 out~;
-#X msg 624 131 1;
-#X msg 660 132 0.5;
-#X msg 624 168 \$1 500 0;
-#X obj 624 196 envgen~;
-#X obj 423 192 vline~;
-#X msg 423 164 \$1 \, 0 500;
-#X text 465 51 Here we use the [vline~] and [envgen~] objects as envelope
-generators \, but these are linear instead., f 41;
-#X text 490 343 0;
-#X text 490 250 1;
-#X text 693 346 0;
-#X text 693 253 1;
-#X obj 196 227 s2f~;
-#X obj 469 225 s2f~;
-#X obj 673 229 s2f~;
-#X obj 607 17 declare -path else;
+#X obj 671 284 *~;
+#X obj 618 225 osc~ 440;
+#X obj 628 324 out~;
+#X msg 689 184 1;
+#X msg 725 185 0.5;
+#X obj 429 247 vline~;
+#X msg 429 219 \$1 \, 0 500;
+#X text 496 398 0;
+#X text 496 305 1;
+#X text 758 399 0;
+#X text 758 306 1;
+#X obj 227 255 s2f~;
+#X obj 475 280 s2f~;
+#X obj 738 282 s2f~;
+#X obj 695 36 declare -path else;
+#X msg 689 221 \$1 2000 0;
+#X obj 689 249 envgen~ -exp 4;
+#X text 375 112 Here we use the [vline~] and [envgen~] objects as envelope
+generators. Whike [vline~] can only be linear \, [envgen~] has an exponential
+setting \, but a different one., f 58;
 #X connect 0 0 7 0;
 #X connect 1 0 5 0;
 #X connect 5 0 8 1;
 #X connect 5 0 8 0;
 #X connect 6 0 0 0;
 #X connect 7 0 5 1;
-#X connect 7 0 32 0;
+#X connect 7 0 29 0;
 #X connect 10 0 12 1;
 #X connect 10 0 12 0;
 #X connect 11 0 10 0;
-#X connect 13 0 26 0;
-#X connect 14 0 26 0;
+#X connect 13 0 24 0;
+#X connect 14 0 24 0;
 #X connect 15 0 7 0;
 #X connect 18 0 20 1;
 #X connect 18 0 20 0;
 #X connect 19 0 18 0;
-#X connect 21 0 23 0;
-#X connect 22 0 23 0;
-#X connect 23 0 24 0;
-#X connect 24 0 18 1;
-#X connect 24 0 34 0;
-#X connect 25 0 10 1;
-#X connect 25 0 33 0;
-#X connect 26 0 25 0;
-#X connect 32 0 2 0;
-#X connect 33 0 9 0;
-#X connect 34 0 17 0;
+#X connect 21 0 33 0;
+#X connect 22 0 33 0;
+#X connect 23 0 10 1;
+#X connect 23 0 30 0;
+#X connect 24 0 23 0;
+#X connect 29 0 2 0;
+#X connect 30 0 9 0;
+#X connect 31 0 17 0;
+#X connect 33 0 34 0;
+#X connect 34 0 18 1;
+#X connect 34 0 31 0;
