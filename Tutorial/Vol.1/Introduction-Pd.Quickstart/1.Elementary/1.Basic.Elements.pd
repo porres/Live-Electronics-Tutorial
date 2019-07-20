@@ -1,60 +1,60 @@
-#N canvas 410 23 924 572 12;
-#X obj 160 183 print;
-#X msg 160 99 Hello World;
-#X text 169 144 <== conection cord;
-#X text 246 98 <== message box;
-#X text 89 88 inlet ==>;
-#X text 82 110 outlet ==>;
-#X text 91 170 inlet ==>;
-#X msg 59 364 one;
-#X obj 59 436 print;
-#X text 88 363 one-element;
-#X text 121 394 three-elements;
-#X text 333 395 three-messages;
-#X text 303 363 one-message;
-#X msg 75 394 1 2 3;
-#X msg 259 364 a b c;
-#X msg 274 394 a \, b \, c;
-#X obj 259 436 print;
-#X obj 585 60 float;
-#X floatatom 585 117 5 0 0 0 - - -;
-#X symbolatom 585 145 7 0 0 0 - - -;
-#X text 494 117 3) Number;
-#X text 494 146 4) Symbol;
-#X text 494 88 2) Message;
-#X text 494 59 1) Object;
-#X text 495 176 5) Comment;
-#X text 648 60 Object Box;
-#X text 481 24 Basic types of boxes from the Put Menu:;
-#X msg 585 88 bang;
-#X text 648 87 Message Box;
-#X text 647 115 "Number Atom Box";
-#X text 646 148 "Symbol Atom Box";
-#X text 583 176 Not really a "box" \, just a textual display;
-#X text 45 19 We program in Pd by conecting "boxes" from "outlets"
+#N canvas 264 23 927 596 12;
+#X obj 168 187 print;
+#X msg 168 103 Hello World;
+#X text 177 148 <== conection cord;
+#X text 254 102 <== message box;
+#X text 97 92 inlet ==>;
+#X text 90 114 outlet ==>;
+#X text 99 174 inlet ==>;
+#X msg 67 368 one;
+#X obj 67 440 print;
+#X text 96 367 one-element;
+#X text 129 398 three-elements;
+#X text 341 399 three-messages;
+#X text 311 367 one-message;
+#X msg 83 398 1 2 3;
+#X msg 267 368 a b c;
+#X msg 282 398 a \, b \, c;
+#X obj 267 440 print;
+#X obj 593 64 float;
+#X floatatom 593 121 5 0 0 0 - - -;
+#X symbolatom 593 149 7 0 0 0 - - -;
+#X text 502 121 3) Number;
+#X text 502 150 4) Symbol;
+#X text 502 92 2) Message;
+#X text 502 63 1) Object;
+#X text 503 180 5) Comment;
+#X text 656 64 Object Box;
+#X text 489 28 Basic types of boxes from the Put Menu:;
+#X msg 593 92 bang;
+#X text 656 91 Message Box;
+#X text 655 119 "Number Atom Box";
+#X text 654 152 "Symbol Atom Box";
+#X text 591 180 Not really a "box" \, just a textual display;
+#X text 53 23 We program in Pd by conecting "boxes" from "outlets"
 to "inlets". Click on the box that says "Hello_World!" and see the
 result at Pd's terminal window (Window => Pd)., f 55;
-#X text 47 271 A message may contain one or more elements \, which
+#X text 55 275 A message may contain one or more elements \, which
 are called “atoms” and can be either a number or a symbol. A coma
 allows you to have more than one message in a message box., f 49;
-#X floatatom 589 360 5 0 0 0 - - -;
-#X symbolatom 692 358 10 0 0 0 - - -;
-#X obj 589 392 print;
-#X obj 692 394 print;
-#X text 480 440 Atom boxes are interactive \, you can click and drag
+#X floatatom 597 364 5 0 0 0 - - -;
+#X symbolatom 700 362 10 0 0 0 - - -;
+#X obj 597 396 print;
+#X obj 700 398 print;
+#X text 488 444 Atom boxes are interactive \, you can click and drag
 into a number box to generate number values. You can also click on
 it \, type a number and then enter. The same click/enter functionality
 is present in the symbol box. try it above. Both of these also have
 properties windows \, right click and select it., f 57;
-#X text 478 238 To ask for help: Right-Click on any box then go for
+#X text 486 242 To ask for help: Right-Click on any box then go for
 "Help" - this works even for comments \, try it. You should check the
 help file of every object you see in this tutorial that you do not
 know! If you right click on an empty space in your patch and ask for
 help \, Pd gives you a list of all its built-in objects!;
-#X text 202 182 <== object box*;
-#X text 124 217 * The [print] object displays messages in the terminal
+#X text 210 186 <== object box*;
+#X text 132 221 * The [print] object displays messages in the terminal
 window, f 31;
-#X text 35 477 Numbers in Pd are 32 bit floating point numbers. Pd
+#X text 43 481 Numbers in Pd are 32 bit floating point numbers. Pd
 only represents 6 significant digits \, otherwise it uses an exponential
 format such as "1e+6". Anything that is not considered a number atom
 is treated as a symbol atom.;

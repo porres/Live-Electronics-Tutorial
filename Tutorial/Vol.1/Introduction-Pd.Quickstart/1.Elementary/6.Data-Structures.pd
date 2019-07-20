@@ -1,0 +1,8 @@
+#N canvas 290 408 499 207 12;
+#X text 63 33 One last element of Pd is Data Structures \, which are
+graphical objects that store data and can be used in different ways.
+, f 55;
+#X text 63 91 Data structures are not that simple to use and is more
+of an advanced feature. Therefore \, this element is not treated as
+part of this quick start guide \, but this tutorial offers a data structures
+guide in an appendix section, f 55;

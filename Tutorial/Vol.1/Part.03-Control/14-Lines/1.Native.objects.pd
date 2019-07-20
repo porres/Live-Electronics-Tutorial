@@ -1,61 +1,61 @@
-#N canvas 428 23 905 558 12;
+#N canvas 370 27 905 558 12;
 #X declare -path else;
-#X msg 105 190 \$1 1000;
-#X obj 105 220 line 0 1;
-#X floatatom 105 166 2 0 0 0 - - -;
-#X obj 105 144 tgl 16 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X msg 130 194 \$1 1000;
+#X obj 130 224 line 0 1;
+#X floatatom 130 170 2 0 0 0 - - -;
+#X obj 130 148 tgl 16 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 120 483 line;
-#X obj 123 509 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 145 487 line;
+#X obj 148 513 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X msg 120 454 0 \, 1 1000;
-#X obj 120 408 metro 1000;
-#X obj 120 384 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X msg 145 458 0 \, 1 1000;
+#X obj 145 412 metro 1000;
+#X obj 145 388 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 554 448 vline~;
-#X msg 554 416 0 \, 1 1000 500 \, 0 1000 2000 \, 1 500 3000;
-#X msg 578 197 0 \, 1 1000;
-#X obj 578 169 metro 1000;
-#X obj 578 145 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 579 452 vline~;
+#X msg 579 420 0 \, 1 1000 500 \, 0 1000 2000 \, 1 500 3000;
+#X msg 603 201 0 \, 1 1000;
+#X obj 603 173 metro 1000;
+#X obj 603 149 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 578 226 line~;
-#X obj 581 277 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 603 230 line~;
+#X obj 606 281 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 557 507 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 582 511 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 108 251 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 133 255 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 120 430 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 145 434 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X text 11 15 Line generators are also useful to control parameters.
+#X text 36 19 Line generators are also useful to control parameters.
 Let's first check the native object [line] and [line~]., f 55;
-#X text 11 52 They expect a target value and a time period to reach
+#X text 36 56 They expect a target value and a time period to reach
 it. The 1st argument of [line] defines the starting point. By default
 \, it generates a value at an interval rate of 20 ms \, but you can
 change it with the 2nd rgument or third inlet.., f 55;
-#X text 127 145 <= click;
-#X text 160 190 ramp of 1000 ms;
-#X text 171 220 one value at every 1 ms;
-#X text 140 383 <= click;
-#X text 13 290 If we send it a single value \, it considers the time
+#X text 152 149 <= click;
+#X text 185 194 ramp of 1000 ms;
+#X text 196 224 one value at every 1 ms;
+#X text 165 387 <= click;
+#X text 38 294 If we send it a single value \, it considers the time
 period to be 0 and jumps immediately to that value. We could then send
 it two messages where the first is just a float \, then \, in practical
 terms \, it can be considered as the starting point of the ramp. See
 it below., f 55;
-#X text 440 57 The [line~] object is the audio rate counterpart \,
+#X text 465 61 The [line~] object is the audio rate counterpart \,
 and thus it generates values at each new sample. One restrain is that
 it always start generating values at the beggining of a block of audio
 and it also can only finish a ramp at the end of a block of audio -
 so it's not a perfect resolution., f 58;
-#X obj 723 156 setdsp~ 1;
-#X text 448 321 The [vline~] object \, in contrast \, has a higher
+#X obj 748 160 setdsp~ 1;
+#X text 473 325 The [vline~] object \, in contrast \, has a higher
 resolution. It can start and finish a ramp at any point in time. Moreover
 \, it accepts a third scheduling parameter \, which is the time in
 ms before starting the ramp. You can then send it several messages
 and schedule different line segments at once.;
-#X obj 578 252 s2f~;
-#X obj 554 479 s2f~;
-#X obj 711 15 declare -path else;
+#X obj 603 256 s2f~;
+#X obj 579 483 s2f~;
+#X obj 736 19 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 17 0;
 #X connect 2 0 0 0;

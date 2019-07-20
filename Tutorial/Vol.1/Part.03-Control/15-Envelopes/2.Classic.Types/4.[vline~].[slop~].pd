@@ -1,0 +1,54 @@
+#N canvas 454 23 588 591 12;
+#X declare -path else;
+#X obj 125 292 *~;
+#X obj 75 221 osc~ 440;
+#X obj 82 326 out~;
+#X obj 84 28 declare -path else;
+#X obj 143 231 vline~;
+#X obj 204 333 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X obj 204 307 s2f~;
+#X obj 143 263 slew2~ 150 500;
+#X text 67 78 For those looking for a pure vanilla exponential envelope
+\, there's the possibility to use [slop~]. For something like a "AR"
+or "ASR" envelope \, it's pretty simple \, just set it according to
+the attack/release period.;
+#X msg 425 216 \$1 150;
+#X msg 372 214 0 500;
+#X obj 372 150 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 372 182 select 0;
+#X obj 354 310 *~;
+#X obj 304 239 osc~ 440;
+#X obj 311 344 out~;
+#X obj 372 249 vline~;
+#X obj 433 351 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X obj 433 325 s2f~;
+#X obj 372 281 slew2~ 150 500;
+#X text 396 149 <= gate;
+#X msg 143 198 1 150 \, 0 500 150;
+#X text 152 174 attack/release;
+#X text 66 486 Above we have a simple attack/release option to the
+left and the example to the right shows how to set [vline~] with a
+gate input.;
+#X connect 0 0 2 1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 4 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 0 1;
+#X connect 7 0 6 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 12 1 9 0;
+#X connect 13 0 15 1;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 16 0 19 0;
+#X connect 18 0 17 0;
+#X connect 19 0 13 1;
+#X connect 19 0 18 0;
+#X connect 21 0 4 0;

@@ -166,9 +166,6 @@
 #X text 666 420 dB;
 #X text 666 434 linear;
 #X floatatom 647 458 5 0 0 0 - - -;
-#X text 22 37 an alternative to the usage of a dB scale is the quartic
-scale \, which is the same as raising a linear input to the power of
-4 - compare the difference between both curves below.;
 #N canvas 512 150 323 279 plot 0;
 #X obj 190 106 loadbang;
 #X obj 29 159 dbtorms~;
@@ -198,9 +195,12 @@ f 43;
 #X text 620 159 quartic;
 #X text 665 404 quartic;
 #X obj 200 531 f2s~ 10;
-#X text 422 572 In this tutorial \, the [out~] object is widely used
+#X text 422 588 In this tutorial \, the [out~] object is widely used
 for its convenience for gain adjustment and audio output., f 54;
 #X obj 625 39 declare -path else;
+#X text 31 37 Alternatively to the dB scale we can adopt a quartic
+one \, which is the same as raising a linear input to the power of
+4 - compare the difference between both curves below., f 57;
 #X connect 4 0 6 0;
 #X connect 4 0 6 1;
 #X connect 5 0 4 0;
@@ -213,10 +213,10 @@ for its convenience for gain adjustment and audio output., f 54;
 #X connect 16 0 18 0;
 #X connect 17 0 15 0;
 #X connect 18 0 20 0;
-#X connect 20 0 34 0;
+#X connect 20 0 33 0;
 #X connect 21 0 22 0;
 #X connect 21 0 22 1;
 #X connect 23 0 22 2;
 #X connect 24 0 27 0;
 #X connect 27 0 23 0;
-#X connect 34 0 15 1;
+#X connect 33 0 15 1;

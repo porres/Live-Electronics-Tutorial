@@ -1,0 +1,60 @@
+#N canvas 365 31 730 665 12;
+#X declare -path else;
+#X obj 255 498 *~;
+#X obj 273 358 vline~;
+#X obj 125 217 t f f;
+#X obj 125 272 pack;
+#X obj 157 243 * 0.5;
+#X obj 125 91 == 0;
+#X obj 182 390 osc~ 440;
+#X obj 255 555 out~;
+#X msg 273 298 0 250;
+#X msg 125 298 \$1 150 \, \$2 100 150;
+#X obj 125 33 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X msg 412 298 250;
+#X msg 375 298 100;
+#X text 333 297 decay;
+#X text 437 297 release;
+#X obj 125 64 trigger float float, f 28;
+#X obj 125 189 float;
+#X obj 125 119 select 0 1;
+#X obj 375 347 expr 1000./$f1;
+#X text 507 412 attack;
+#X obj 273 460 slop~ 1e+09, f 15;
+#X obj 392 382 loadbang;
+#X obj 392 411 expr 1000./150.;
+#X text 31 258 gate/sustain values =====>, f 13;
+#X obj 440 233 adsr~ 150 100 0.5 250 -slew;
+#X text 409 68 Here's how to implement an ADSR exponential envelope
+with vanilla. We use again the [slop~] object for that. We need to
+calculate the sustain point from the gate input value and also take
+care to set different downward periods for the decay and release part.
+The patch to the left relates to the [adsr~] object with the parameters
+below., f 34;
+#X obj 514 25 declare -path else;
+#X connect 0 0 7 0;
+#X connect 0 0 7 1;
+#X connect 1 0 20 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 9 0;
+#X connect 4 0 3 1;
+#X connect 5 0 17 0;
+#X connect 6 0 0 0;
+#X connect 8 0 1 0;
+#X connect 9 0 1 0;
+#X connect 10 0 15 0;
+#X connect 11 0 18 0;
+#X connect 12 0 18 0;
+#X connect 15 0 5 0;
+#X connect 15 1 16 1;
+#X connect 16 0 2 0;
+#X connect 17 0 16 0;
+#X connect 17 0 12 0;
+#X connect 17 1 8 0;
+#X connect 17 1 11 0;
+#X connect 18 0 20 5;
+#X connect 20 0 0 1;
+#X connect 21 0 22 0;
+#X connect 22 0 20 3;

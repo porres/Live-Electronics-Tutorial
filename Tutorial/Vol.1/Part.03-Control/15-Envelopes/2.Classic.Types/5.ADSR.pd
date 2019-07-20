@@ -9,12 +9,10 @@
 1;
 #X obj 547 190 osc~ 440;
 #X text 591 144 gate;
-#X obj 636 494 *~;
-#X obj 577 450 osc~ 440;
-#X obj 627 409 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 602 521 *~;
+#X obj 543 477 osc~ 440;
+#X obj 593 436 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 654 439 timed.gate~ 150;
-#X obj 654 465 adsr~ 100 100 0.5 250;
 #X obj 623 173 adsr~ 100 100 0.5 250;
 #X obj 217 205 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
@@ -30,15 +28,12 @@
 1;
 #X text 208 368 gate;
 #X text 190 96 ADSR;
-#X obj 593 537 out~;
+#X obj 559 558 out~;
 #X obj 562 269 out~;
 #X text 476 64 The [adsr~] object from ELSE is dedicated to ADSR envelopes.
 It expects a gate input like [asr~] \, the new parameters are a decay
 time and a sustain point \, which is a ratio of the gate input., f
 51;
-#X obj 654 409 imp~ 1;
-#X text 485 363 You can also use [timed.gate~] to trigger it with bangs
-or impulses., f 34;
 #X text 23 47 The ADSR ("Attack / Decay / Sustain / Release") has a
 Decay stage after the attack. Here's how it works on [envgen~].;
 #X obj 163 97 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856 -1
@@ -51,31 +46,40 @@ Decay stage after the attack. Here's how it works on [envgen~].;
 #X obj 180 402 envgen~ 50 1 50 0.5 200 0 -suspoint 2 -exp -0.25 -0.5
 -1 -0.5, f 37;
 #X text 66 336 Exponential and with a "gate" input:, f 22;
-#X connect 0 0 25 0;
-#X connect 0 0 25 1;
-#X connect 4 0 12 0;
+#X obj 620 413 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 620 436 impseq~;
+#X text 480 351 You can also use [timed.gate~] to trigger it with bangs
+or impulses. Like [asr~] \, oit also has a "slew" option for exponential
+envelopes., f 49;
+#X obj 620 466 timed.gate~ 500;
+#X obj 620 492 adsr~ 250 500 0.5 250 -slew;
+#X connect 0 0 23 0;
+#X connect 0 0 23 1;
+#X connect 4 0 10 0;
 #X connect 5 0 0 0;
-#X connect 7 0 24 0;
-#X connect 7 0 24 1;
+#X connect 7 0 22 0;
+#X connect 7 0 22 1;
 #X connect 8 0 7 0;
-#X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 11 0 7 1;
-#X connect 12 0 0 1;
-#X connect 12 0 34 0;
-#X connect 14 0 16 1;
-#X connect 14 0 16 0;
-#X connect 15 0 14 0;
-#X connect 18 0 20 1;
-#X connect 18 0 20 0;
-#X connect 19 0 18 0;
-#X connect 21 0 36 0;
-#X connect 27 0 10 0;
-#X connect 30 0 31 0;
-#X connect 31 0 14 1;
-#X connect 31 0 32 0;
-#X connect 32 0 13 0;
-#X connect 33 0 17 0;
-#X connect 34 0 1 0;
-#X connect 36 0 18 1;
-#X connect 36 0 33 0;
+#X connect 9 0 37 0;
+#X connect 10 0 0 1;
+#X connect 10 0 30 0;
+#X connect 12 0 14 1;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 16 0 18 1;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 19 0 32 0;
+#X connect 26 0 27 0;
+#X connect 27 0 12 1;
+#X connect 27 0 28 0;
+#X connect 28 0 11 0;
+#X connect 29 0 15 0;
+#X connect 30 0 1 0;
+#X connect 32 0 16 1;
+#X connect 32 0 29 0;
+#X connect 34 0 35 0;
+#X connect 35 0 37 0;
+#X connect 37 0 38 0;
+#X connect 38 0 7 1;

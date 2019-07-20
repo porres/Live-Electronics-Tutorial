@@ -3,13 +3,13 @@
 #X obj 78 274 out~;
 #X floatatom 721 109 5 0.1 10 0 - - -;
 #X obj 724 160 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 5766 1;
+-1 -1 6623 1;
 #X obj 721 182 rescale 500 1500;
 #X obj 695 231 bp~ 0 10;
 #X obj 667 160 noise~;
 #X obj 695 268 out~;
 #X obj 721 208 nbx 7 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 954.047 256;
+-228856 -1 -1 1021.47 256;
 #X obj 721 134 lfo 0.1;
 #X text 26 345 An audio rate LFO sometimes is not necessary or even
 possible. This is why the ELSE library provides [lfo] \, a control
@@ -32,7 +32,7 @@ object from ELSE is also useful for remapping control data.;
 #X text 207 211 The [rescale~] object from ELSE is convenient for rescaling
 audio signals into a new control range (here it maps the -1 to 1 input
 range to an output range from 500 to 1500)., f 25;
-#X obj 468 209 setdsp~;
+#X obj 460 197 setdsp~;
 #X obj 558 238 display~;
 #X obj 51 26 declare -path else;
 #X text 496 347 Both [rescale] and [rescale~] can also map with exponential

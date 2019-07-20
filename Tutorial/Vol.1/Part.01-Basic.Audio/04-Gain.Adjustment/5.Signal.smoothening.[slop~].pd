@@ -1,0 +1,67 @@
+#N canvas 307 23 946 636 12;
+#X declare -path else;
+#X obj 739 31 declare -path else;
+#X floatatom 266 236 5 5 500 0 - - -;
+#X floatatom 266 390 0 0 0 0 - - -;
+#X obj 266 295 *;
+#X obj 266 355 expr 1/$f1;
+#X floatatom 266 323 8 0 0 0 - - -;
+#X text 335 315 period in samples, f 9;
+#X obj 284 266 sr~ -khz;
+#X obj 136 431 slop~ 1e+09 0 0 0 0;
+#X text 320 236 period in ms;
+#X text 347 391 slew limit;
+#X obj 266 206 initmess 50;
+#X obj 96 370 display~;
+#X obj 96 319 pulse~ 1;
+#X text 73 248 Pulse frequency is 1 Hz \, with a period of 1000 ms
+(500ms for on "1" and off "0"), f 21;
+#X floatatom 773 350 0 0 0 0 - - -;
+#X obj 643 401 slop~ 1e+09 0 0 0 0;
+#X obj 773 305 expr 1000./$f1;
+#X text 676 271 period in ms;
+#X text 703 349 frequency;
+#X obj 643 313 pulse~ 1;
+#X obj 643 348 display~;
+#X text 36 20 You can also have an incoming signal that controls your
+amplitude \, such as a pulse/gate (as we'll see later in this tutorial).
+This audio signal needs then to be smoothened. A vanilla solution requires
+a lowpass filter such as the [slop~] - but details about it and other
+filters are provided only later in this tutorial., f 67;
+#X text 36 101 For a linear smoothening \, we use the 3rd inlet (for
+the upwards ramp) and 5th inlet (for downwards). We specify an equal
+period for both ramps in ms. We tehn need to convert to the period
+in samples (by multiplying to the sample rate in Khz) and invert this
+value to get a maximum amplitude increment \, or "slew limit"., f
+67;
+#X floatatom 773 271 5 5 500 0 - - -;
+#X obj 773 241 initmess 50;
+#X text 552 80 The [slop~] object can also smoothen the signal logarythmincally
+with the 4th (upwards) and 6th (downwards) inlet. For this we just
+need to convert from the period in samples to a frequency input and
+use different inlets., f 47;
+#X text 397 484 Of course \, you can have different periods for both
+upwards and downwards ramps!, f 28;
+#X obj 136 466 graph~;
+#X obj 643 452 graph~;
+#X text 553 167 Note \, however \, how the upwards and downwards ramps
+are different in shape., f 44;
+#X connect 1 0 3 0;
+#X connect 2 0 8 4;
+#X connect 2 0 8 2;
+#X connect 3 0 5 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;
+#X connect 7 0 3 1;
+#X connect 8 0 28 0;
+#X connect 11 0 1 0;
+#X connect 12 0 8 0;
+#X connect 13 0 12 0;
+#X connect 15 0 16 5;
+#X connect 15 0 16 3;
+#X connect 16 0 29 0;
+#X connect 17 0 15 0;
+#X connect 20 0 21 0;
+#X connect 21 0 16 0;
+#X connect 24 0 17 0;
+#X connect 25 0 24 0;

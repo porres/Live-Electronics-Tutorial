@@ -8,7 +8,7 @@
 -228856 -1 -1 0 1;
 #X floatatom 684 308 5 0 0 0 - - -;
 #X text 723 308 hz;
-#X obj 179 351 out~;
+#X obj 178 355 out~;
 #X obj 659 378 out~;
 #X obj 199 287 display~;
 #X text 242 288 <=;

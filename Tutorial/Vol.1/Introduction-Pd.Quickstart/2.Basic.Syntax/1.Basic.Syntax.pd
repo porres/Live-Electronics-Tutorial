@@ -1,61 +1,61 @@
-#N canvas 338 85 988 680 12;
-#X obj 640 294 float 5.5;
-#X msg 640 262 bang;
-#X floatatom 640 327 5 0 0 0 - - -;
-#X msg 700 261 1;
-#X text 716 296 <= argument;
-#X text 734 262 <= cold inlet;
-#X text 540 262 hot inlet =>;
-#X msg 598 543 0;
-#X text 632 543 reset;
-#X obj 772 579 + 1;
-#X floatatom 772 623 5 0 0 0 - - -;
-#X text 756 541 Danger! Infinite Loop!;
-#X text 501 506 Counter:;
-#X text 808 574 See the Error at Pd's window, f 15;
-#X floatatom 624 604 5 0 0 0 - - -;
-#X obj 624 574 + 1;
-#X obj 566 574 float;
-#X obj 723 579 float;
-#X msg 121 251 4;
-#X msg 110 291 1 oi 3 5;
-#X msg 121 188 bang;
-#X text 77 189 bang;
-#X msg 121 224 symbol oi;
-#X msg 111 317 list um 2;
-#X text 71 224 Symbol;
-#X text 175 291 (implicit);
-#X text 68 304 List;
-#X text 151 250 (implicit);
-#X text 74 252 float;
-#X msg 280 234 turn on;
-#X msg 280 266 open file4.aif;
-#X floatatom 277 611 5 0 0 0 - - -;
-#X symbolatom 106 591 15 0 0 0 - - -;
-#X msg 106 524 symbol nice;
-#X msg 106 555 symbol \$1!!!;
-#X text 64 481 Dollar sign variables:;
-#X msg 277 577 \$2;
-#X msg 277 514 13 12 11;
-#X msg 250 483 list one 2 three;
-#X msg 293 544 Midi Note 69;
-#X text 52 150 Special selectors:;
-#X text 39 364 A dollar sign followed by a number behaves like a variable
+#N canvas 373 108 988 680 12;
+#X obj 643 295 float 5.5;
+#X msg 643 263 bang;
+#X floatatom 643 328 5 0 0 0 - - -;
+#X msg 703 262 1;
+#X text 719 297 <= argument;
+#X text 737 263 <= cold inlet;
+#X text 543 263 hot inlet =>;
+#X msg 599 548 0;
+#X text 633 548 reset;
+#X obj 773 584 + 1;
+#X floatatom 773 628 5 0 0 0 - - -;
+#X text 757 546 Danger! Infinite Loop!;
+#X text 502 511 Counter:;
+#X text 809 579 See the Error at Pd's window, f 15;
+#X floatatom 625 609 5 0 0 0 - - -;
+#X obj 625 579 + 1;
+#X obj 567 579 float;
+#X obj 724 584 float;
+#X msg 121 271 4;
+#X msg 110 311 1 oi 3 5;
+#X msg 121 208 bang;
+#X text 77 209 bang;
+#X msg 121 244 symbol oi;
+#X msg 111 337 list um 2;
+#X text 71 244 Symbol;
+#X text 175 311 (implicit);
+#X text 68 324 List;
+#X text 151 270 (implicit);
+#X text 74 272 float;
+#X msg 280 254 turn on;
+#X msg 280 286 open file4.aif;
+#X floatatom 277 631 5 0 0 0 - - -;
+#X symbolatom 106 611 15 0 0 0 - - -;
+#X msg 106 544 symbol nice;
+#X msg 106 575 symbol \$1!!!;
+#X text 64 501 Dollar sign variables:;
+#X msg 277 597 \$2;
+#X msg 277 534 13 12 11;
+#X msg 250 503 list one 2 three;
+#X msg 293 564 Midi Note 69;
+#X text 52 170 Special selectors:;
+#X text 39 384 A dollar sign followed by a number behaves like a variable
 in messages. The dollar sign number correspond correspond to elements
 of an incoming message (number or symbol) so "\$1" is the 1st element
 \, \$2 the 2nd and so on. Note that the message selector does not count
 as a message element.;
-#X text 258 190 Other selectors:, f 11;
+#X text 258 210 Other selectors:, f 11;
 #X text 492 178 Usually the left inlet is the "hot" one as it forces
 an output \, whereas the others do not and "cold". This is only in
 respect to control data objects - since audio objects generate data
 constantly \, the hot/cold idea is not pertinent!, f 63;
-#X obj 566 507 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 567 512 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X text 593 505 <= bang GUI (same as "bang" message);
-#X obj 723 542 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+#X text 594 510 <= bang GUI (same as "bang" message);
+#X obj 724 547 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X text 502 362 Now let's implement a counter. On the left we have
+#X text 503 367 Now let's implement a counter. On the left we have
 a correct way of doing it. The [float] object outputs the stored value
 on bang messages \, which is added to “1” and stored back in the
 cold inlet. The example to the right is wrong as the added number goes
@@ -72,15 +72,16 @@ inlet to the right stores a new value and overwrites the argument \,
 but note that it is not updated inside the object box and the given
 argument will still be there when the patch is reloaded (see example
 below)., f 63;
-#X msg 280 296 stop;
+#X msg 280 316 stop;
+#X msg 346 254 turn off;
 #X text 40 21 A message selector is the first symbol in a message and
 defines its data type. The special types are: float \, symbol \, list
-and bang \, but the "float" selector doesn't need to be specified and
-neither does "list" if its first element is a float. Other message
-types can be anything. If a message contains only one symbol \, like
-"stop" \, it is considered a selector even though if there's no message
-attached., f 55;
-#X msg 346 234 turn off;
+\, bang and pointer (this one used for data structures only). The "float"
+selector doesn't need to be specified and neither does "list" if its
+first element is a float. Other message selectors can be anything else
+defined by the user. If a message contains only one symbol \, like
+"stop" \, it is considered a selector with no actual message attached.
+, f 57;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 3 0 0 1;
