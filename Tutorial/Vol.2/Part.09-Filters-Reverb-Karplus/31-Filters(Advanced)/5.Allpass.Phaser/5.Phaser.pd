@@ -1,4 +1,4 @@
-#N canvas 456 329 748 430 12;
+#N canvas 419 58 748 430 12;
 #X declare -path else;
 #X obj 66 119 rpole~;
 #X obj 66 94 rzero_rev~;
@@ -15,7 +15,7 @@
 #X obj 148 195 r~ \$0-coef;
 #X obj 150 252 r~ \$0-coef;
 #X text 349 53 LFO;
-#N canvas 345 151 691 411 phaser-stereo 1;
+#N canvas 345 151 691 411 phaser-stereo 0;
 #X obj 61 280 +~;
 #N canvas 172 23 283 355 4stages 0;
 #X obj 62 107 rpole~;
@@ -308,7 +308,7 @@ compresses so many sums., f 30;
 #X obj 47 39 sig~ 80;
 #X obj 47 64 bl.saw~;
 #X obj 392 56 rescale~ 0.62 0.98;
-#X obj 399 335 out~;
+#X obj 408 335 out~;
 #X obj 48 332 out~;
 #X obj 392 33 tri~ 0.1;
 #X text 508 298 <= click;

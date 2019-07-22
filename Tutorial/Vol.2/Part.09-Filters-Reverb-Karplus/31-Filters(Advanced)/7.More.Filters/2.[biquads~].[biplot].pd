@@ -5,15 +5,15 @@
 #X text 118 18 [biplot] from ELSE;
 #X obj 21 16 inlet;
 #X connect 2 0 0 0;
-#X restore 191 324 pd biplot;
-#X text 264 323 <= click;
+#X restore 180 324 pd biplot;
+#X text 253 323 <= click;
 #X obj 98 259 noise~;
 #X obj 86 209 bicoeff eq 500 10 24;
 #X obj 247 209 bicoeff eq 900 10 24;
 #X obj 86 178 nbx 5 14 -1e+37 1e+37 0 0 empty hz1 empty 0 -8 0 10 -228856
--1 -1 0 256;
+-1 -1 500 256;
 #X obj 247 178 nbx 5 14 -1e+37 1e+37 0 0 empty hz2 empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 900 256;
 #X obj 98 308 biquads~;
 #X obj 180 261 merge 2 -1;
 #X obj 305 243 initmess \; hz1 500 \; hz2 900;

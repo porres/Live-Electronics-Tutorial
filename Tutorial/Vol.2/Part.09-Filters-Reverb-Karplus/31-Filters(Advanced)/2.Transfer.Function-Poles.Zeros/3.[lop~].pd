@@ -1,4 +1,4 @@
-#N canvas 102 71 1220 472 12;
+#N canvas 174 210 1220 472 12;
 #X declare -path else;
 #X obj 480 140 lop~;
 #X obj 142 185 hsl 128 15 20 7050 1 1 empty set-Hz empty -2 -8 0 10
@@ -40,7 +40,7 @@ frequency input is about 7 Khz., f 53;
 #X obj 904 309 biquad~;
 #X obj 904 267 noise~;
 #X obj 937 197 trigger float float;
-#X obj 937 222 expr 1 - $f1;
+#X obj 937 223 expr 1 - $f1;
 #X obj 992 257 pack float 0 float 0 0;
 #X obj 937 169 r \$0-radians;
 #X obj 904 353 out~;

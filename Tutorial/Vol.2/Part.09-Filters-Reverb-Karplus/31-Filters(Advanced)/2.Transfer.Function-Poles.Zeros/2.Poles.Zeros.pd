@@ -1,29 +1,29 @@
-#N canvas 224 23 972 578 12;
+#N canvas 314 34 961 536 12;
 #X declare -path else;
-#X obj 60 443 cnv 15 275 50 empty empty empty 5 12 0 14 -232693 -66577
+#X obj 52 436 cnv 15 275 50 empty empty empty 5 12 0 14 -232693 -66577
 0;
-#X text 67 458 H(z) = ------------------------------;
-#X text 120 447 a0 + a1 * z^-1 + a2 * z^-2;
-#X obj 594 295 rpole~;
-#X obj 594 250 noise~;
-#X obj 664 251 sig~ 0.1;
-#X obj 547 470 cnv 15 320 55 empty empty empty 5 12 0 14 -233017 -66577
+#X text 59 451 H(z) = ------------------------------;
+#X text 112 440 a0 + a1 * z^-1 + a2 * z^-2;
+#X obj 594 282 rpole~;
+#X obj 594 219 noise~;
+#X obj 688 220 sig~ 0.1;
+#X obj 576 434 cnv 15 320 55 empty empty empty 5 12 0 14 -233017 -66577
 0;
-#X text 681 482 _____________;
-#X text 714 475 1;
-#X text 560 490 H(z) =;
-#X text 619 476 Y(z);
-#X text 620 501 X(z);
-#X text 611 483 _______;
-#X text 666 488 =;
-#X text 685 499 1 - a * z^-1;
-#X text 126 468 1 - b1 * z^-1 - b2 * z^-2;
-#X obj 242 216 pic ../files/SOS.gif;
-#X text 49 180 Zero 1 ==>;
-#X text 52 247 Zero 2 ==>;
-#X obj 551 334 out~;
-#X text 348 177 <== Pole 1;
-#X text 348 248 <== Pole 2;
+#X text 710 446 _____________;
+#X text 743 439 1;
+#X text 589 454 H(z) =;
+#X text 648 440 Y(z);
+#X text 649 465 X(z);
+#X text 640 447 _______;
+#X text 695 452 =;
+#X text 714 463 1 - a * z^-1;
+#X text 118 461 1 - b1 * z^-1 - b2 * z^-2;
+#X obj 234 209 pic ../files/SOS.gif;
+#X text 41 173 Zero 1 ==>;
+#X text 44 240 Zero 2 ==>;
+#X obj 551 321 out~;
+#X text 340 170 <== Pole 1;
+#X text 340 241 <== Pole 2;
 #N canvas 259 23 692 706 get-H(z) 0;
 #X obj 165 56 cnv 15 330 40 empty empty empty 5 12 0 14 -233017 -66577
 0;
@@ -57,37 +57,38 @@ a2*z^-2);
 #X text 150 25 Difference equation:;
 #X text 162 126 In the transfer function notation;
 #X text 58 225 Isolate X(z):;
-#X restore 254 494 pd get-H(z);
-#X text 43 36 Taking a biquad section as an example \, let's present
+#X restore 246 487 pd get-H(z);
+#X text 35 29 Taking a biquad section as an example \, let's present
 the concept of Poles and Zeros. Poles are feedback coefficients \,
 and Zeros are feedforward coefficients. Note that by defining a filter
 as a 2-Pole / 2-Zero filter \, you're also defining its order., f
 61;
-#X text 76 394 Transfer function of [biquad~]:;
-#X text 339 446 <== Zeros (a1/a2);
-#X text 339 471 <== Poles (b1/b2);
-#X text 47 335 Hence \, a1 & a2 are Zeros and b1 & b2 are Poles (note
+#X text 68 387 Transfer function of [biquad~]:;
+#X text 331 439 <== Zeros (a1/a2);
+#X text 331 464 <== Poles (b1/b2);
+#X text 39 328 Hence \, a1 & a2 are Zeros and b1 & b2 are Poles (note
 a0 isn't a zero). In a transfer function \, the Zeroes are the numerators
 \, and poles the denominator. Open [pd get-H(z)] to see how to derive
 the transfer function from the difference equation.;
-#X text 733 251 pole coefficient;
-#X text 518 150 The [rpole~] object is a one pole filter object provided
+#X text 511 118 The [rpole~] object is a one pole filter object provided
 as a native object in Pd. It takes a pole coeficient in the right inlet.
 This is nothing but the IIR filter example we've been dealing with.
-;
-#X obj 707 296 fexpr~ $x[0] + $x2 * $y[-1];
-#X obj 707 336 out~;
-#X text 546 447 Transfer Function:;
-#X text 787 497 <== Pole;
-#X text 514 60 A pole represents a resonance \, and a zero is an anti
+, f 57;
+#X obj 688 283 fexpr~ $x[0] + $x2 * $y[-1];
+#X obj 688 323 out~;
+#X text 575 411 Transfer Function:;
+#X text 816 461 <== Pole;
+#X text 511 68 A pole represents a resonance \, and a zero is an anti
 resonance \, this is where they get their names from. We'll see later
 how they act \, when the Z-Plane is presented.;
-#X obj 718 23 declare -path else;
+#X obj 733 24 declare -path else;
+#X text 757 220 <= pole coefficient;
+#X text 657 283 =;
 #X connect 3 0 19 0;
 #X connect 3 0 19 1;
 #X connect 4 0 3 0;
-#X connect 4 0 30 0;
+#X connect 4 0 29 0;
 #X connect 5 0 3 1;
-#X connect 5 0 30 1;
-#X connect 30 0 31 0;
-#X connect 30 0 31 1;
+#X connect 5 0 29 1;
+#X connect 29 0 30 0;
+#X connect 29 0 30 1;

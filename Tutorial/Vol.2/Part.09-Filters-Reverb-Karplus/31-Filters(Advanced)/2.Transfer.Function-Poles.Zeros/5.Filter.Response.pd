@@ -26,7 +26,7 @@
 #X text 277 310 1;
 #X text 195 322 H(z) =;
 #X text 248 330 1 - a*z^-1;
-#X obj 691 429 car2pol;
+#X obj 691 432 car2pol;
 #X obj 708 167 pic ../files/amp.gif;
 #X text 37 36 A filter's response is an amplitude and phase value as
 a function of frequency \, which represents how the filter affects
