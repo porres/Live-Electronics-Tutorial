@@ -9,9 +9,9 @@
 1;
 #X obj 547 190 osc~ 440;
 #X text 591 144 gate;
-#X obj 602 521 *~;
-#X obj 543 477 osc~ 440;
-#X obj 593 436 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 612 512 *~;
+#X obj 553 468 osc~ 440;
+#X obj 603 427 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 623 173 adsr~ 100 100 0.5 250;
 #X obj 217 205 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
@@ -28,7 +28,7 @@
 1;
 #X text 208 368 gate;
 #X text 190 96 ADSR;
-#X obj 559 558 out~;
+#X obj 569 549 out~;
 #X obj 562 269 out~;
 #X text 476 64 The [adsr~] object from ELSE is dedicated to ADSR envelopes.
 It expects a gate input like [asr~] \, the new parameters are a decay
@@ -46,14 +46,13 @@ Decay stage after the attack. Here's how it works on [envgen~].;
 #X obj 180 402 envgen~ 50 1 50 0.5 200 0 -suspoint 2 -exp -0.25 -0.5
 -1 -0.5, f 37;
 #X text 66 336 Exponential and with a "gate" input:, f 22;
-#X obj 620 413 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 630 404 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 620 436 impseq~;
-#X text 480 351 You can also use [timed.gate~] to trigger it with bangs
-or impulses. Like [asr~] \, oit also has a "slew" option for exponential
-envelopes., f 49;
-#X obj 620 466 timed.gate~ 500;
-#X obj 620 492 adsr~ 250 500 0.5 250 -slew;
+#X obj 630 427 impseq~;
+#X obj 630 457 timed.gate~ 500;
+#X obj 630 483 adsr~ 250 500 0.5 250 -log;
+#X text 480 355 You can also use [timed.gate~] to trigger it with bangs
+or impulses. Like [asr~] \, it also has a "log" mode., f 49;
 #X connect 0 0 23 0;
 #X connect 0 0 23 1;
 #X connect 4 0 10 0;
@@ -61,7 +60,7 @@ envelopes., f 49;
 #X connect 7 0 22 0;
 #X connect 7 0 22 1;
 #X connect 8 0 7 0;
-#X connect 9 0 37 0;
+#X connect 9 0 36 0;
 #X connect 10 0 0 1;
 #X connect 10 0 30 0;
 #X connect 12 0 14 1;
@@ -80,6 +79,6 @@ envelopes., f 49;
 #X connect 32 0 16 1;
 #X connect 32 0 29 0;
 #X connect 34 0 35 0;
-#X connect 35 0 37 0;
-#X connect 37 0 38 0;
-#X connect 38 0 7 1;
+#X connect 35 0 36 0;
+#X connect 36 0 37 0;
+#X connect 37 0 7 1;

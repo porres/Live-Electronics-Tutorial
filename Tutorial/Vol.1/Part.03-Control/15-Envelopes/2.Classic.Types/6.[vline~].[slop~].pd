@@ -25,7 +25,6 @@
 #X obj 395 381 loadbang;
 #X obj 395 410 expr 1000./150.;
 #X text 34 257 gate/sustain values =====>, f 13;
-#X obj 444 232 adsr~ 150 100 0.5 250 -slew;
 #X text 378 87 Here's how to implement an ADSR exponential envelope
 with vanilla. We use again the [slop~] object for that. We need to
 calculate the sustain point from the gate input value and also take
@@ -33,6 +32,7 @@ care to set different downward periods for the decay and release part.
 The patch to the left relates to the [adsr~] object with the parameters
 below., f 43;
 #X obj 535 35 declare -path else;
+#X obj 444 232 adsr~ 150 100 0.5 250 -log;
 #X connect 0 0 7 0;
 #X connect 0 0 7 1;
 #X connect 1 0 20 0;
