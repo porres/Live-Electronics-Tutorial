@@ -1,13 +1,13 @@
 #N canvas 365 31 750 629 12;
 #X declare -path else;
-#X obj 258 497 *~;
+#X obj 287 497 *~;
 #X obj 276 357 vline~;
 #X obj 128 216 t f f;
 #X obj 128 271 pack;
 #X obj 160 242 * 0.5;
 #X obj 128 90 == 0;
-#X obj 185 389 osc~ 440;
-#X obj 215 539 out~;
+#X obj 148 376 osc~ 440;
+#X obj 287 539 out~;
 #X msg 276 297 0 250;
 #X msg 128 297 \$1 150 \, \$2 100 150;
 #X obj 128 32 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
@@ -20,10 +20,10 @@
 #X obj 128 188 float;
 #X obj 128 118 select 0 1;
 #X obj 378 346 expr 1000./$f1;
-#X text 510 411 attack;
-#X obj 276 459 slop~ 1e+09, f 15;
-#X obj 395 381 loadbang;
-#X obj 395 410 expr 1000./150.;
+#X text 543 411 attack;
+#X obj 305 459 slop~ 1e+09, f 18;
+#X obj 428 381 loadbang;
+#X obj 428 410 expr 1000./150.;
 #X text 34 257 gate/sustain values =====>, f 13;
 #X text 378 87 Here's how to implement an ADSR exponential envelope
 with vanilla. We use again the [slop~] object for that. We need to
@@ -54,7 +54,7 @@ below., f 43;
 #X connect 17 0 12 0;
 #X connect 17 1 8 0;
 #X connect 17 1 11 0;
-#X connect 18 0 20 5;
+#X connect 18 0 20 3;
 #X connect 20 0 0 1;
 #X connect 21 0 22 0;
-#X connect 22 0 20 3;
+#X connect 22 0 20 5;
