@@ -1,4 +1,4 @@
-#N canvas 692 25 479 500 12;
+#N canvas 544 105 662 559 12;
 #X obj 278 101 expr 1000./$f1;
 #X text 232 62 period in ms, f 6;
 #X floatatom 278 70 5 5 500 0 - - -;
@@ -7,18 +7,17 @@
 #X floatatom 278 198 0 0 0 0 - - -;
 #X text 260 132 Hz;
 #X text 203 189 radians per sample, f 10;
-#X obj 71 168 pulse~ 1;
-#X obj 71 296 scope~ 320 165 256 3 128 0 1 0 0 0 0 205 229 232 74 79
-77 96 98 102 0;
 #X obj 78 40 setdsp~;
-#X obj 71 237 fexpr~ $y1 + (($x1-$y1) * $f2);
-#X obj 281 44 hsl 128 15 5 500 1 0 empty empty empty -2 -8 0 10 -228856
--1 -1 12700 1;
+#X obj 281 44 hsl 128 15 25 250 1 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 6500 1;
+#X obj 71 310 graph~ 20000 1 -0.05 1.05 500 200;
+#X obj 71 168 pulse~ 2;
+#X obj 71 237 fexpr~ (($x1-$y1) * $f2) + $y1;
 #X connect 0 0 4 0;
 #X connect 2 0 0 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 0;
-#X connect 5 0 11 1;
-#X connect 8 0 11 0;
-#X connect 11 0 9 0;
-#X connect 12 0 2 0;
+#X connect 5 0 12 1;
+#X connect 9 0 2 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
