@@ -7,9 +7,9 @@ loaded in Pd's startup (Preferences => Startup). The second case doesn't
 need any of that but you need to add the library's folder to the search
 paths (Preferences => Path)., f 49;
 #X obj 660 261 sine~;
-#X obj 610 580 rev1~;
-#X obj 663 580 rev2~, f 8;
-#X obj 737 580 rev3~, f 8;
+#X obj 623 582 rev1~;
+#X obj 676 582 rev2~, f 8;
+#X obj 750 582 rev3~, f 8;
 #X obj 733 261 pluck~;
 #X text 425 303 For single binaries \, as is the case with else \,
 you can also use "namespaces" \, this means loading the external by
@@ -29,14 +29,7 @@ can use in any patch., f 49;
 library is included in a folder that Pd automatically searches for
 files \, as is the case with Pd's externals folder \, the usual folder
 for externals in Pd., f 59;
-#X obj 504 581 sigmund~;
-#X text 425 458 In techical terms \, an external is any object not
-part of Pd's binary. Pd Vanilla itself includes extra objects that
-are technically externals and they're included in a folder called "extra"
-inside Pd's application \, which is searched automatically. One example
-is the [sigmund~] object. Abstractions are also externals and Pd also
-provides some of those in the "extra" folder \, like the reverb objects.
-;
+#X obj 517 583 sigmund~;
 #X text 38 243 In "Help => Find Externals" there's a preference tabs
 where you can click on an option to prompt you if you want to add a
 downloaded library to your path. You can also have it always add whatever
@@ -63,6 +56,13 @@ this tutorial. Note you can also manually download and install else
 from all the available versions in its repository. Check the readme
 of this tutorial for more information.;
 #X text 426 176 Here's how to use [declare] to load objects from the
-ELSE library. If the objects don't show is because youhaven't downloaded
+ELSE library. If the objects don't show is because you haven't downloaded
 it yet. Download and reload the patch so you can instantiate [sine~]
 and [pluck~].;
+#X text 425 458 In techical terms \, an external is any object not
+part of Pd's binary. Pd Vanilla itself includes extra objects that
+are technically externals and they're included in a folder called "extra"
+inside Pd's application \, which is searched automatically. One example
+is the [sigmund~] object. Abstractions are also externals and Pd also
+provides some of those in the "extra" folder \, like the reverb objects
+below.;

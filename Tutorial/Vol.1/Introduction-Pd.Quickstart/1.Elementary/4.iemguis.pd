@@ -20,9 +20,8 @@
 #X text 320 219 [vradio];
 #X obj 325 444 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
 #X text 321 421 [vu];
-#X obj 184 511 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 184 523 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 212 489 [cnv];
 #X text 59 396 [toggle];
 #X text 31 176 iemguis from the PUT Menu and their object names:;
 #X text 50 238 or [vsl];
@@ -54,7 +53,7 @@ Right click for properties and also check their help files., f 57
 #X obj 737 178 hsl 128 15 1.27 127 1 0 empty empty logarythmic 4 -12
 0 14 -228856 -1 -205449 0 1;
 #X obj 734 202 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
--1 -262144 -1 1.27 256;
+-1 -262144 -1 0 256;
 #X msg 734 129 -100;
 #X text 464 22 Sliders and number boxes can behave logarithmically.
 A toggle can have a different value for an "on" state and its state
@@ -71,7 +70,10 @@ passed trhough even though they're outside the range.;
 -150 -262144 -1 0 256;
 #X obj 721 538 nbx 4 30 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 18
 -160 -262144 -1 0 256;
-#X text 471 248 A canvas GUI ([cnv]) is only useful for colorful backgrounds
+#X text 485 173 atom =>;
+#X text 186 481 [my_canvas];
+#X text 207 500 or [cnv];
+#X text 471 248 A canvas GUI ([cnv]) is useful for colorful backgrounds
 (see below). But note that the order it is created define the layers
 \, so you need to create or recreate what you want to put in front
 of it. The [vu] is to be used with an object that reports rms and peak
@@ -79,17 +81,16 @@ amplitude values. All the other objects have a special "init" property
 \, in which it outputs the last saved value when the patch is loaded.
 For the bang GUI ([bng]) it only sends a bang at initialization as
 above., f 61;
-#X text 485 173 atom =>;
-#X connect 0 0 26 0;
-#X connect 2 0 20 0;
-#X connect 4 0 21 0;
-#X connect 5 0 23 0;
-#X connect 6 0 24 0;
-#X connect 8 0 22 0;
-#X connect 9 0 27 0;
-#X connect 29 0 30 0;
-#X connect 31 0 29 0;
-#X connect 33 0 34 0;
-#X connect 35 0 33 0;
+#X connect 0 0 25 0;
+#X connect 2 0 19 0;
+#X connect 4 0 20 0;
+#X connect 5 0 22 0;
+#X connect 6 0 23 0;
+#X connect 8 0 21 0;
+#X connect 9 0 26 0;
+#X connect 28 0 29 0;
+#X connect 30 0 28 0;
+#X connect 32 0 33 0;
+#X connect 34 0 32 0;
+#X connect 37 0 39 0;
 #X connect 38 0 40 0;
-#X connect 39 0 41 0;
