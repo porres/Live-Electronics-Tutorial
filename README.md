@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------
 
-# Live Electronics Tutorial
+# Live Electronic Music Tutorial
 
 ###With examples in Pure Data and the ELSE Library
 
