@@ -1,14 +1,11 @@
 --------------------------------------------------------------------------
 
 # Live Electronics Tutorial
---------------------------------------------------------------------------
+
 ###With examples in Pure Data and the ELSE Library
 
 
---------------------------------------------------------------------------
-
-
-**Author:** Alexandre Torres Porres.
+	Copyright © 2008-2019 Alexandre Torres Porres
 
 
 **Link:** <https://github.com/porres/Live-Electronic-Music-Tutorial>.
