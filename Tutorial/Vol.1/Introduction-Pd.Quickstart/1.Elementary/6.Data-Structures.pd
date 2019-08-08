@@ -1,8 +1,18 @@
-#N canvas 290 408 499 207 12;
-#X text 63 33 One last element of Pd is Data Structures \, which are
-graphical objects that store data and can be used in different ways.
-, f 55;
-#X text 63 91 Data structures are not that simple to use and is more
-of an advanced feature. Therefore \, this element is not treated as
-part of this quick start guide \, but this tutorial offers a data structures
-guide in an appendix section, f 55;
+#N struct template1 float x float y float z;
+#N canvas 598 84 477 498 12;
+#X scalar template1 120 155 -43 \;;
+#X obj 82 245 struct template1 float x float y;
+#X obj 82 321 filledpolygon 350 220 4 0 0 20 -40 40 0;
+#X text 53 24 One last element of Pd is Data Structures \, which are
+graphical objects that store data and can be used in different ways
+\, from display to interaction. Below \, we have a data structure scalar.
+, f 52;
+#X text 64 374 Data structures are not that simple to use and is more
+of a feature for advanced users. Therefore \, this is not treated as
+part of this quick start guide. Nonetheless \, this tutorial offers
+a data structures guide in an appendix section., f 49;
+#X text 171 125 <= A data structure scalar;
+#X text 78 203 [struct]: declares the fields in a data structure.,
+f 27;
+#X text 80 284 drawing instructions for the data structure., f 24
+;
