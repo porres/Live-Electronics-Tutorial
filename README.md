@@ -2,6 +2,7 @@
 =====================================================
 
 **Live Electronics Tutorial with examples in Pure Data and the ELSE Library**
+
 By Alexandre Torres Porres 
 
 This tutorial presents theory and practice of Live Electronics topics without any prerequisite. It's aimed at newbies, dummies, enthusiasts and also experts. 
