@@ -1,20 +1,25 @@
 --------------------------------------------------------------------------
 
 # Live Electronics Tutorial
+--------------------------------------------------------------------------
 ###With examples in Pure Data and the ELSE Library
 
 
-**Live Electronics Tutorial with examples in Pure Data and the ELSE Library**
+--------------------------------------------------------------------------
 
 
-By Alexandre Torres Porres 
+**Author:** Alexandre Torres Porres.
 
+
+**Link:** <https://github.com/porres/Live-Electronic-Music-Tutorial>.
 
 --------------------------------------------------------------------------
 
 #### Version: 1.0 beta-13 (Unreleased)]
 
  - This particular version of the tutorial requires **Pd 0.50-0** or later and depends on **ELSE 1.0 beta 23** (https://github.com/porres/pd-else/releases/tag/v1.0-beta23)!
+
+
 
 --------------------------------------------------------------------------
 
