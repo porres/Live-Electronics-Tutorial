@@ -3,6 +3,10 @@
 # Live Electronics Tutorial
 ###With examples in Pure Data and the ELSE Library
 
+
+**Live Electronics Tutorial with examples in Pure Data and the ELSE Library**
+
+
 By Alexandre Torres Porres 
 
 
