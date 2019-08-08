@@ -15,19 +15,18 @@ for externals in Pd.;
 #X obj 107 167 pdcontrol;
 #X obj 107 112 pdcontrol;
 #X msg 107 87 dir;
-#X msg 107 139 browse \$1/../../../README.pdf;
 #X obj 107 63 inlet;
-#X connect 1 0 3 0;
+#X msg 107 139 browse \$1/../../README.pdf;
+#X connect 1 0 4 0;
 #X connect 2 0 1 0;
-#X connect 3 0 0 0;
-#X connect 4 0 2 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
 #X restore 588 89 pd open-readme;
 #X obj 588 65 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
 #X text 420 15 Make sure to download the right version of ELSE for
 this tutorial. You can find this information on this tutorial's readme:
 , f 57;
-#X text 613 63 <= Open Readme;
 #X obj 546 196 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X text 430 140 Note you can also manually download and install else
@@ -82,5 +81,6 @@ object in all examples \, so you don't need to add else's folder it
 to the user search paths., f 55;
 #X text 425 485 For single binaries \, as is the case with else \,
 you could alternatively use relative paths \, such as:, f 55;
+#X text 613 63 <= Open Tutorial's Readme;
 #X connect 9 0 8 0;
-#X connect 12 0 14 0;
+#X connect 11 0 13 0;
