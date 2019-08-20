@@ -5,13 +5,13 @@
 #X obj 440 83 random;
 #X obj 440 22 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
-#X obj 229 355 table \$0-buffer;
-#X obj 98 355 soundfiler;
-#X msg 177 383 \$1;
-#X obj 109 437 s \$0-hz;
-#X obj 109 411 /;
-#X obj 109 386 swap;
-#X obj 98 467 s \$0-size;
+#X obj 243 364 table \$0-buffer;
+#X obj 113 361 soundfiler;
+#X msg 192 389 \$1;
+#X obj 124 443 s \$0-hz;
+#X obj 124 417 /;
+#X obj 124 392 swap;
+#X obj 113 473 s \$0-size;
 #X obj 505 172 samps2ms;
 #X obj 430 219 pack float float float;
 #X obj 430 247 display;
@@ -21,18 +21,18 @@
 #X msg 655 209 duration \$1 \, bang;
 #X obj 430 363 *~;
 #X obj 387 398 out~;
-#X obj 177 412 /;
-#X floatatom 177 440 5 0 0 0 - - -;
-#X obj 209 412 sr~;
+#X obj 192 418 /;
+#X floatatom 192 446 5 0 0 0 - - -;
+#X obj 224 418 sr~;
 #X obj 440 52 t b b;
-#X obj 601 120 *;
+#X obj 597 129 *;
 #X obj 440 109 expr $f1 \; abs($f1-$f2) / $f3 \; $f2;
-#X obj 601 94 cents2ratio;
-#X obj 601 75 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 597 103 cents2ratio;
+#X obj 597 84 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 634 121 r \$0-ratio;
-#X obj 177 465 s \$0-ratio;
-#X obj 601 49 b;
+#X obj 630 129 r \$0-ratio;
+#X obj 192 471 s \$0-ratio;
+#X obj 597 58 b;
 #X text 40 138 In this patch we draw random start/end points and get
 a duration period in ms from the difference. This period can be changed
 by a ratio input from a cents value. Note we also have a ratio parameter
@@ -50,7 +50,7 @@ beggining and end of the file., f 49;
 #X obj 665 502 f2s~ 100 1;
 #X obj 655 543 ramp~;
 #X obj 655 623 out~;
-#X text 176 521 The [ramp~] object from the ELSE library is a linear
+#X text 143 537 The [ramp~] object from the ELSE library is a linear
 ramp generator that can be used for different purposes \, but one of
 its main purposes is to be used to drive [tabread4~].;
 #X obj 764 506 r \$0-size;
@@ -61,17 +61,17 @@ its main purposes is to be used to drive [tabread4~].;
 #X obj 665 452 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 655 579 tabread4~ \$0-buffer;
-#X text 176 575 You can give [ramp~] an increment value and "1" plays
+#X text 143 591 You can give [ramp~] an increment value and "1" plays
 the file at original speed \, but you can give it other values to play
 in different speeds as in this example. Note how we're also using a
 ratio compensation here.;
-#X text 53 258 Let's just use [soundfiler] again for a change:, f
+#X text 68 264 Let's just use [soundfiler] again for a change:, f
 30;
 #X obj 736 43 declare -path else;
-#X obj 98 311 initmess read -resize sax.wav \$0-buffer, f 22;
+#X obj 113 317 initmess read -resize sax.wav \$0-buffer, f 22;
 #X obj 643 243 function 200 100 empty empty 0 1 220 220 220 50 50 50
 0 0 0 0 0 0.1 1 0.8 1 0.1 0;
-#X obj 640 172 initmess 0 0.1 1 0.8 1 0.1 0;
+#X obj 640 176 initmess 0 0.1 1 0.8 1 0.1 0;
 #X connect 0 0 1 1;
 #X connect 0 0 2 1;
 #X connect 0 0 30 0;
