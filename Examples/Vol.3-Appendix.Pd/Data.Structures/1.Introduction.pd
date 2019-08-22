@@ -1,12 +1,12 @@
 #N struct 1003-DS-1 float number;
-#N canvas 361 44 898 531 12;
+#N canvas 204 23 898 531 12;
 #N canvas 244 356 450 323 graphic 0;
 #X scalar 1003-DS-1 666 \;;
 #X restore 148 471 pd graphic;
 #X text 227 420 - data structure template;
 #X text 227 472 - graphical display;
 #X text 231 447 - some code;
-#N canvas 516 78 998 552 code 0;
+#N canvas 442 78 998 552 code 0;
 #X obj 760 314 pointer;
 #X obj 616 110 loadbang;
 #X obj 616 177 trigger float bang bang;
@@ -88,7 +88,7 @@ be saved as a text file \, and also restored from a file., f 50;
 object and ask for properties \, where a textual representation of
 the data is given for visualization and editing., f 50;
 #X text 504 154 Editing:;
-#N canvas 778 70 450 323 display 0;
+#N canvas 911 306 450 323 display 0;
 #X restore 640 143 pd display;
 #N canvas 275 331 879 423 template-2 0;
 #X text 50 140 - struct template;
