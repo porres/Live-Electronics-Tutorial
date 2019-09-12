@@ -1,4 +1,4 @@
-#N canvas 376 79 957 526 12;
+#N canvas 376 79 968 513 12;
 #X declare -path else;
 #X obj 89 253 *~;
 #X obj 59 214 osc~;
@@ -45,32 +45,32 @@ we have random ramps in the left and random steps in the right. And
 why not add some reverb so just it sounds cooler? See the [plate.rev~]
 object from ELSE., f 63;
 #X obj 769 23 declare -path else;
-#X floatatom 516 188 5 0.1 10 0 - - -;
-#X obj 519 238 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 5841 1;
-#X obj 516 260 rescale 500 1500;
-#X obj 490 309 bp~ 0 10;
-#X obj 462 238 noise~;
-#X obj 490 346 out~;
-#X obj 516 286 nbx 7 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 959.887 256;
-#X obj 516 212 lfnoise 0.5 1;
+#X floatatom 496 188 5 0.1 10 0 - - -;
+#X obj 499 238 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 8106 1;
+#X obj 496 260 rescale 500 1500;
+#X obj 470 309 bp~ 0 10;
+#X obj 442 238 noise~;
+#X obj 470 346 out~;
+#X obj 496 286 nbx 7 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 1138.28 256;
+#X obj 496 212 lfnoise 0.5 1;
 #N canvas 508 120 525 301 random 0;
 #X obj 92 81 metro 500;
 #X obj 92 54 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1 1
 ;
 #X obj 92 219 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 101.36 256;
+-228856 -1 -1 99.48 256;
 #X obj 92 158 pack float 500;
 #X obj 92 27 loadbang;
 #X obj 95 246 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 10136 1;
+-1 -1 9948 1;
 #X obj 92 112 random 128;
 #X obj 92 188 line 0 5;
 #X obj 187 52 nbx 3 14 -1e+37 1e+37 0 0 empty empty ms 0 -8 0 12 -228856
 -1 -1 0 256;
 #X obj 92 136 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 101 256;
+-228856 -1 -1 123 256;
 #X text 242 112 How to implement a "ramp noise" with random and [line].
 , f 31;
 #X connect 0 0 6 0;
@@ -83,15 +83,18 @@ object from ELSE., f 63;
 #X connect 8 0 3 1;
 #X connect 8 0 0 1;
 #X connect 9 0 3 0;
-#X restore 679 173 pd random;
+#X restore 639 185 pd random;
+#X text 701 442 <= these chaotic noise objects can also operate with
+low frequencies, f 33;
 #X text 494 61 The native object [random] is a random number generator.
 You could use it to generate random control values and even random
 ramps (check [pd random] below). The ELSE library also has a [lfnoise]
-control object for botth step and ramp noises. The [rand.i]/[rand.f]
-and [rand.i~]/[rand.f~] are random number generators from the ELSE
-library., f 63;
-#X text 701 442 <= these chaotic noise objects can also operate with
-low frequencies, f 33;
+control object for both step and ramp noises - as well as [stepnoise]
+and [rampnoise]. The [rand.i]/[rand.f] and [rand.i~]/[rand.f~] are
+random number generators from the ELSE library., f 63;
+#X obj 592 334 stepnoise;
+#X obj 591 358 rampnoise;
+#X text 575 307 see also:;
 #X connect 0 0 30 0;
 #X connect 1 0 0 0;
 #X connect 2 0 31 0;
