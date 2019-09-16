@@ -1,10 +1,26 @@
-#N canvas 608 255 697 418 12;
+#N canvas 767 392 578 384 12;
 #X declare -path else;
-#X obj 456 223 setdsp~ 1;
-#X obj 411 150 declare -path else;
-#X obj 133 204 meter;
-#X floatatom 133 243 5 0 0 0 - - -;
-#X obj 133 282 stdout;
-#X text 48 36 This is the pathc used in the pd~ example, f 42;
+#X obj 383 137 declare -path else;
+#X obj 85 179 meter;
+#X floatatom 85 218 5 0 0 0 - - -;
+#X obj 85 257 stdout;
+#X obj 214 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X msg 198 145 set 512 50 290;
+#X obj 198 113 loadbang;
+#X obj 198 265 fdn.rev~ -time 4;
+#X obj 214 181 tempo 60 100 -on;
+#X obj 198 310 dac~;
+#X obj 214 236 impseq~;
+#X obj 432 212 setdsp~ 1;
+#X text 87 34 This is the pathc used in the pd~ example \, which is
+very CPU intensive., f 42;
+#X connect 1 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 4 0;
+#X connect 4 0 10 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 9 0;
+#X connect 7 1 9 1;
+#X connect 8 0 4 0;
+#X connect 10 0 7 0;

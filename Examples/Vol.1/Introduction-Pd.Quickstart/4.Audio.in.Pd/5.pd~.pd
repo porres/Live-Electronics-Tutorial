@@ -1,20 +1,28 @@
-#N canvas 512 50 697 418 12;
+#N canvas 607 50 523 577 12;
 #X declare -path else;
-#X obj 519 70 declare -path else;
-#X obj 88 223 pd~;
-#X text 48 36 The pd~ object starts a new Pd instance \, which takes
-advantage of multi-core CPUs and \, therefore \, can be used to divide
-the cost of CPU intensive patches., f 62;
-#X obj 457 276 meter;
-#X floatatom 457 315 5 0 0 0 - - -;
-#X msg 88 181 pd~ start patch.pd;
-#X floatatom 88 271 5 0 0 0 - - -;
-#X obj 556 150 setdsp~;
-#X obj 273 224 pd~;
-#X floatatom 273 272 5 0 0 0 - - -;
-#X msg 273 182 pd~ start patch.pd;
-#X connect 1 0 6 0;
-#X connect 3 0 4 0;
-#X connect 5 0 1 0;
-#X connect 8 0 9 0;
-#X connect 10 0 8 0;
+#X obj 346 19 declare -path else;
+#X obj 347 164 meter;
+#X floatatom 347 203 5 0 0 0 - - -;
+#X msg 129 394 pd~ start patch.pd;
+#X floatatom 129 494 5 0 0 0 - - -;
+#X obj 385 396 setdsp~;
+#X text 37 59 The pd~ object starts a new Pd instance \, which takes
+advantage of multi-core CPUs and can \, therefore \, be used to divide
+the cost of CPU intensive patches. You can have more than a pd~ object
+but each one can only open one patch at a time., f 62;
+#X text 340 355 DSP needs to be on in this patch., f 17;
+#X text 53 160 The meter object from the ELSE library reports the percentage
+of the CPU usage of this Pd process., f 39;
+#X obj 231 484 out~;
+#X obj 129 435 pd~ -ninsig 1 -noutsig 2;
+#X text 50 266 Below we have a CPU intensive patch. The outlet reports
+the output of meter and you can see that the CPU measure of this other
+Pd process is greater than the measure in this patch.;
+#X text 65 493 CPU % =>;
+#X text 393 204 <= CPU %;
+#X text 58 372 click to open a new instance:, f 19;
+#X connect 1 0 2 0;
+#X connect 3 0 10 0;
+#X connect 10 0 4 0;
+#X connect 10 1 9 0;
+#X connect 10 2 9 1;
