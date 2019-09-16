@@ -1,43 +1,42 @@
-#N struct 1013-DS float x float y array 1013-table 1013-element;
-#N struct 1013-element float y;
-#N canvas 226 193 788 402 12;
-#X obj 673 125 pointer;
-#N canvas 397 382 509 380 template 0;
+#N struct 1003-DS float x float y array 1003-table 1003-element;
+#N struct 1003-element float y;
+#N canvas 221 174 719 421 12;
+#X obj 567 124 pointer;
+#N canvas 364 371 509 380 template 0;
 #X text 83 200 The drawing instruction now add more arguments. Besides
 the name we have the color number \, a line width \, a coordinates
 pair and a spacing value (20) between the floats in the array., f
 47;
 #X obj 169 292 plot \$0-table 900 2 0 0 20;
-#X text 61 46 Data Structure named "\$0-DS" holding coordinates floats
-"x/y" and an array named "\$0-table" using the struct named "\$0-f"
-defined in the other subpatch., f 53;
 #X obj 53 128 struct \$0-DS float x float y array \$0-table \$0-element
 ;
-#X restore 119 162 pd template;
-#X obj 391 157 display;
-#X text 425 314 <= pointer to element;
-#X obj 413 257 nbx 3 16 0 15 0 0 empty \$0-index empty 0 -8 0 12 -228856
+#X text 61 46 Data Structure named "\$0-DS" holding coordinates floats
+"x/y" and an array named "\$0-table" using the struct named "\$0-element"
+defined in the other subpatch., f 53;
+#X restore 119 154 pd template;
+#X obj 307 156 display;
+#X text 497 333 <= pointer to element;
+#X obj 485 276 nbx 3 16 0 15 0 0 empty \$0-index empty 0 -8 0 12 -228856
 -1 -1 5 256;
-#X obj 346 257 nbx 4 16 -100 100 0 0 empty empty empty 0 -8 0 12 -228856
--1 -1 15 256;
-#X text 420 233 index;
-#X text 350 233 value;
-#X obj 564 155 append \$0-DS x y;
-#X obj 391 187 setsize \$0-DS \$0-table;
-#X obj 346 339 set \$0-f y;
-#X obj 413 290 element \$0-DS \$0-table;
-#X obj 38 227 initmess \; pd-\$0-display clear \, vis 1 \; \$0-pointer
+#X obj 376 276 nbx 4 16 -100 100 0 0 empty empty empty 0 -8 0 12 -228856
+-1 -1 20 256;
+#X text 492 252 index;
+#X text 380 252 value;
+#X obj 458 154 append \$0-DS x y;
+#X obj 307 196 setsize \$0-DS \$0-table;
+#X obj 485 309 element \$0-DS \$0-table;
+#X obj 44 278 initmess \; pd-\$0-display clear \, vis 1 \; \$0-pointer
 traverse pd-\$0-display \, bang \; \$0-coords 10 105 \; \$0-size 16
 \; \$0-index 5;
-#X obj 391 130 r \$0-size;
-#X obj 564 114 r \$0-coords;
-#X obj 673 95 r \$0-pointer;
+#X obj 307 129 r \$0-size;
+#X obj 458 113 r \$0-coords;
+#X obj 567 94 r \$0-pointer;
 #N canvas 1026 253 334 221 \$0-display 1;
-#X scalar 1013-DS 10 105 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+#X scalar 1003-DS 10 105 \; 0 \; 0 \; 0 \; 0 \; 0 \; 20 \; 0 \; 0 \;
 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; \;;
 #X coords 0 221 1 220 0 0 0;
-#X restore 230 151 pd \$0-display;
-#N canvas 529 134 484 283 \$0-element 0;
+#X restore 118 182 pd \$0-display;
+#N canvas 489 118 484 283 \$0-element 0;
 #X obj 133 219 filledpolygon 0 0 1 -2 -2 2 -2 2 2 -2 2;
 #X text 65 171 We can also use drawing instructions for each element
 in an array. Here we draw a black dot on it:, f 45;
@@ -46,19 +45,20 @@ in an array. Here we draw a black dot on it:, f 45;
 containing only a float named "y". Since this is also the special variable
 name for the vertical coordinate \, this means you can drag this element
 vertically \, as in Pd's arrays.;
-#X restore 120 139 pd \$0-element;
-#X text 85 26 The [element] object returns a pointer to an element
+#X restore 120 131 pd \$0-element;
+#X text 59 23 The [element] object returns a pointer to an element
 in an array \, so you can use it to get or set its value (with [set]/[get]).
 On this patch we use [set] to set array values. But first \, check
-the [pd element] and [pd template] subpatches for new information.
-, f 77;
+the [pd \$0-element] and [pd template] subpatches for new information.
+, f 83;
+#X obj 376 358 set \$0-element y;
 #X connect 0 0 8 2;
 #X connect 2 0 9 0;
-#X connect 4 0 11 0;
-#X connect 5 0 10 0;
+#X connect 4 0 10 0;
+#X connect 5 0 18 0;
 #X connect 8 0 9 1;
-#X connect 8 0 11 1;
-#X connect 11 0 10 1;
-#X connect 13 0 2 0;
-#X connect 14 0 8 0;
-#X connect 15 0 0 0;
+#X connect 8 0 10 1;
+#X connect 10 0 18 1;
+#X connect 12 0 2 0;
+#X connect 13 0 8 0;
+#X connect 14 0 0 0;
