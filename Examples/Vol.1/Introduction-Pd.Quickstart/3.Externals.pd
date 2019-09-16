@@ -1,16 +1,16 @@
-#N canvas 482 59 859 682 12;
+#N canvas 482 59 851 666 12;
 #X declare -path else;
-#X obj 163 152 rev1~;
-#X obj 216 152 rev2~, f 8;
-#X obj 290 152 rev3~, f 8;
-#X obj 709 322 pluck~;
-#X obj 570 487 else/fbdelay~;
-#X text 429 525 This will only work if the folder containing the external
+#X obj 151 147 rev1~;
+#X obj 204 147 rev2~, f 8;
+#X obj 278 147 rev3~, f 8;
+#X obj 699 322 pluck~;
+#X obj 560 487 else/fbdelay~;
+#X text 419 525 This will only work if the folder containing the external
 library is included in a folder that Pd automatically searches for
 files \, as is the case with Pd's externals folder \, the usual folder
 for externals in Pd., f 58;
-#X obj 56 152 sigmund~;
-#X obj 472 322 declare -path else;
+#X obj 67 147 sigmund~;
+#X obj 462 322 declare -path else;
 #N canvas 718 62 447 276 open-readme 0;
 #X obj 107 167 pdcontrol;
 #X obj 107 112 pdcontrol;
@@ -21,10 +21,10 @@ for externals in Pd., f 58;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
 #X connect 4 0 0 0;
-#X restore 482 134 pd open-readme;
-#X obj 482 97 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+#X restore 472 134 pd open-readme;
+#X obj 472 97 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
-#X obj 667 96 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+#X obj 657 96 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
 #N canvas 718 62 463 208 open-else 0;
 #X obj 108 111 pdcontrol;
@@ -32,19 +32,19 @@ for externals in Pd., f 58;
 #X msg 108 83 browse https://github.com/porres/pd-else;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
-#X restore 667 136 pd open-else;
-#X obj 636 322 sine~;
-#X text 36 21 Techically \, an external is any object not part of Pd's
+#X restore 657 136 pd open-else;
+#X obj 626 322 sine~;
+#X text 26 16 Techically \, an external is any object not part of Pd's
 binary. Pd Vanilla itself includes some in a folder called "extra"
 inside its application \, which is searched automatically. One example
 is the [sigmund~] object. Abstractions are also externals and Pd also
 has some of those in the "extra" library \, like the reverb objects
 below., f 50;
-#X text 38 200 Via the "Help => Find Externals" menu \, you can use
+#X text 28 195 Via the "Help => Find Externals" menu \, you can use
 Pd's externals manager (a.k.a the 'Deken' plgin) to search for an external
 or library name (such as "else") and download it. It's usual to download
 them to Pd's externals folder., f 49;
-#X text 39 280 Compiled external libraries come either as a single
+#X text 29 275 Compiled external libraries come either as a single
 binary pack (the "classic" library format) or as a set of separate
 binaries. Single binary packs need to be loaded via the startup tab
 (Preferences => Startup) and the second type only needs you to add
@@ -52,38 +52,38 @@ the library's folder to the search paths (in Preferences => Path).
 'Deken' has a preference tabs where you can opt to be prompted you
 if you want to add a library to the paths after it's downloaded (sometimes
 you don't want it \, like when it's a single binary pack)., f 49;
-#X text 39 441 The [declare] object is an alternative to load both
+#X text 29 436 The [declare] object is an alternative to load both
 kinds of libraries. But it loads them just for the patch containing
 it \, unlike adding to the Path/Statup (which installs permanently).
 , f 49;
-#X text 39 504 The order of the user added paths matter \, as the search
+#X text 29 499 The order of the user added paths matter \, as the search
 is prioritized to the first ones. You may have many installed libraries
 where different externals can have the same name. Using [declare] forces
 a priority over the user added paths and can help you control that.
 , f 49;
-#X text 39 596 If you haven't \, please download the "ELSE" library
+#X text 29 591 If you haven't \, please download the "ELSE" library
 \, which is needed for this tutorial and widely used from this point
 forward. You can use 'deken' for it., f 49;
-#X text 428 365 ELSE comes with separate binaries \, so you need to
+#X text 418 365 ELSE comes with separate binaries \, so you need to
 load it with the -path flag in [declare]. this tutorial uses the declare
 object in all examples \, so you don't need to add else's folder it
 to the user search paths., f 58;
-#X text 428 438 For single binaries \, as is the case with else \,
+#X text 418 438 For single binaries \, as is the case with else \,
 you could alternatively use relative paths \, such as:, f 58;
-#X text 506 95 <= Tutorial's Readme, f 13;
-#X text 692 94 <= ELSE's repository, f 14;
-#X text 420 15 Make sure to download the right version of ELSE for
+#X text 496 95 <= Tutorial's Readme, f 13;
+#X text 682 94 <= ELSE's repository, f 14;
+#X text 410 15 Make sure to download the right version of ELSE for
 this tutorial. You can find this information on this tutorial's readme.
 Check also ELSE's repository on github. Click on the bang buttons below
 to open them., f 57;
-#X text 429 596 For more information on how Pd handles externals \,
+#X text 419 596 For more information on how Pd handles externals \,
 check section 4 of Pd's manual in the browser. In Window => Help Browser
 go to (Pure Data/1.manual/x4.htm).;
-#X text 427 236 If no objects below are shown \, then you hadn't downloaded
+#X text 417 236 If no objects below are shown \, then you hadn't downloaded
 ELSE when you opened this patch. So download it and reload the patch
 so you can instantiate [sine~] and [pluck~]. Here's how to use [declare]
 to load it.;
-#X text 426 179 Note you can also download and install else direclty
+#X text 416 179 Note you can also download and install else direclty
 from its repository (which contains all previous verions) manually.
 ;
 #X connect 9 0 8 0;
