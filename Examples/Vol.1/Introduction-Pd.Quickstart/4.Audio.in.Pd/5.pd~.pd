@@ -1,0 +1,20 @@
+#N canvas 512 50 697 418 12;
+#X declare -path else;
+#X obj 519 70 declare -path else;
+#X obj 88 223 pd~;
+#X text 48 36 The pd~ object starts a new Pd instance \, which takes
+advantage of multi-core CPUs and \, therefore \, can be used to divide
+the cost of CPU intensive patches., f 62;
+#X obj 457 276 meter;
+#X floatatom 457 315 5 0 0 0 - - -;
+#X msg 88 181 pd~ start patch.pd;
+#X floatatom 88 271 5 0 0 0 - - -;
+#X obj 556 150 setdsp~;
+#X obj 273 224 pd~;
+#X floatatom 273 272 5 0 0 0 - - -;
+#X msg 273 182 pd~ start patch.pd;
+#X connect 1 0 6 0;
+#X connect 3 0 4 0;
+#X connect 5 0 1 0;
+#X connect 8 0 9 0;
+#X connect 10 0 8 0;
