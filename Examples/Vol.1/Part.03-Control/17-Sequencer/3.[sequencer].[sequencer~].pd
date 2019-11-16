@@ -1,7 +1,7 @@
-#N canvas 402 23 896 460 12;
+#N canvas 402 23 901 447 12;
 #X declare -path else;
 #X obj 112 212 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 100 256;
 #X obj 112 158 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 157 288 *~;
@@ -16,12 +16,12 @@ and load any other sequence from an input list. In this example we
 have [tempo] with an irregular beat \, check the help file of [tempo]
 and [sequence] for more information., f 56;
 #X obj 578 286 *~;
-#X obj 530 250 bl.saw~;
+#X obj 522 250 bl.saw~;
 #X obj 596 249 decay2~ 50 2000;
 #X obj 112 131 tempo 120 100 -on;
 #X obj 596 142 tempo~ 120 100 -on;
-#X obj 530 182 sequencer~ 150 100 80 120 60 150 100 70 100;
-#X obj 530 210 display~;
+#X obj 522 182 sequencer~ 150 100 80 120 60 150 100 70 100;
+#X obj 522 210 display~;
 #X text 461 51 ELSE also provides the signal rate versions [tempo~]
 and [sequencer~]. The [sequencer~] objects can also be triggered by
 impulses \, which isthe output of [tempo~]. Check their help files

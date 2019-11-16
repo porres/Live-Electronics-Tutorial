@@ -1,4 +1,4 @@
-#N canvas 334 97 954 616 12;
+#N canvas 334 97 953 738 12;
 #X declare -path else;
 #X obj 573 400 out~;
 #X obj 577 366 zerocross~;
@@ -62,7 +62,7 @@ to negative. Check also these other objects related to [zerocross~]:
 #X obj 783 540 pulse 1;
 #X obj 689 574 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 783 574 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 -0.901779
+#X obj 783 574 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X obj 549 574 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -87,6 +87,18 @@ to trigger it.;
 #X text 26 453 The [randpulse~] generates random gate values and [randpulse2~]
 alternates between entre 0 e 1 at irregular time intervals (control
 versions are also available).;
+#X obj 318 627 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 318 686 display~ 3;
+#X obj 318 653 timed.gate~ 500;
+#X text 62 635 The [timed.gate~] object sends a timed gate spcecified
+by its argument (500 ms in the right example)., f 31;
+#X obj 750 633 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 750 689 else/display;
+#X obj 750 659 timed.gate 500;
+#X text 556 654 There's also the control version [timed.gate], f 24
+;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
 #X connect 3 0 49 0;
@@ -119,3 +131,7 @@ versions are also available).;
 #X connect 50 0 38 0;
 #X connect 54 0 57 0;
 #X connect 55 0 56 0;
+#X connect 59 0 61 0;
+#X connect 61 0 60 0;
+#X connect 63 0 65 0;
+#X connect 65 0 64 0;
