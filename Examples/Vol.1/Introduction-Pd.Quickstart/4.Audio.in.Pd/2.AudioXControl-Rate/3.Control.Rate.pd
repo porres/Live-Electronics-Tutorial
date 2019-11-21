@@ -1,19 +1,19 @@
 #N canvas 199 26 1001 651 12;
 #X declare -path else;
-#X obj 659 338 lop~;
+#X obj 659 348 lop~;
 #X obj 199 320 osc~;
 #X obj 199 260 sig~ 440;
-#X obj 617 292 noise~;
-#X obj 687 282 hsl 128 15 100 1000 1 0 empty cutoff empty -2 -8 0 10
+#X obj 617 302 noise~;
+#X obj 687 292 hsl 128 15 100 1000 1 0 empty cutoff empty -2 -8 0 10
 -228856 -1 -1 0 1;
-#X floatatom 684 308 5 0 0 0 - - -;
-#X text 723 308 hz;
+#X floatatom 684 318 5 0 0 0 - - -;
+#X text 723 318 hz;
 #X obj 178 355 out~;
-#X obj 659 378 out~;
+#X obj 659 388 out~;
 #X obj 199 287 display~;
 #X text 242 288 <=;
 #X text 260 287 audio signal controlling the frequency, f 13;
-#X text 48 124 The idea is that it's not necessary to have a high time
+#X text 48 121 The idea is that it's not necessary to have a high time
 resolution for control data input. So we use control objects to control
 the patch's parameters and save on CPU power. But there are cases where
 control needs to be performed by audio signals at a high rate. This
@@ -26,29 +26,29 @@ just to represent sound waves we listen to. But it's just a necessity
 to have a high timing resolution. In the case of frequency input above
 \, it's quite unnecessary \, but it would be for Frequency Modulation
 \, as we'll see later on., f 62;
-#X text 49 492 Ok \, so \, if normally there's a control rate that's
+#X text 49 506 Ok \, so \, if normally there's a control rate that's
 lower in resolution to the audio rate \, what is it normally? The answer
 is that it depends on the system. Max/MSP has a default resolution
 of 2 ms \, which can be set to as low as 1 ms. SuperCollider's control
 rate depends on the block size and sample rate \, so a rate of 44.1
 khz and a block of 64 samples defines a control rate of about 1.45
 ms., f 62;
-#X text 532 65 Now \, funny enough \, Pd has no fixed control rate.
+#X text 532 75 Now \, funny enough \, Pd has no fixed control rate.
 This means control objects have no timing restrain and can be very
 precise. Moreover \, they can operate in a higher rate than the sample
 rate! However \, it'd be silly and useless to generate control values
 at a rate higher than the sample rate \, and also counterproductive
 to generate them at the audio rate \, because the CPU cost would be
 huge and we have audio objects for that.;
-#X text 532 193 Notwidstandingly \, another issue is that not all audio
+#X text 532 203 Notwidstandingly \, another issue is that not all audio
 objects in Pd have inlets that accept audio signals. The [lop~] object
 below \, which is a lowpass filter \, only accepts control data for
 the cutoff frequency., f 59;
-#X text 541 452 In this case \, it doesn't really matter if control
+#X text 541 462 In this case \, it doesn't really matter if control
 data can be generated at a higher rate \, because only one control
 value for the cutoff frequency will affect the audio block output.
 , f 59;
-#X text 542 515 So even tough Pd does not restrict a minimum control
+#X text 542 525 So even tough Pd does not restrict a minimum control
 rate \, this structure where control messages can only affect a block
 of audio once generates an intrinsical control rate for Pd that also
 depends on the block size and sample rate!;
@@ -57,7 +57,7 @@ Computer music systems commonly have a distinction between a given
 sample rate and a control rate (which is the rate that control messages
 will be processed). In this case \, the audio rate is the maximum resolution
 rate and the control rate is supposed to be much lower.;
-#X obj 807 14 declare -path else;
+#X obj 807 34 declare -path else;
 #X connect 0 0 8 0;
 #X connect 0 0 8 1;
 #X connect 1 0 7 0;
