@@ -1,4 +1,5 @@
-#N struct 1009-point float x0 float y0 float s;
+#N struct 1009-point float x0 float y0 float xs float ys float bg float
+fg float in float gridx float gridy;
 #N canvas 364 58 893 602 12;
 #X declare -path else;
 #X obj 40 305 osc~ 400;
@@ -45,14 +46,14 @@ middle point \, we have a -3 dB attenuation for both channels., f
 #X obj 766 454 env~;
 #X obj 812 454 env~;
 #X obj 812 479 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.2529 256;
+-228856 -1 -1 86.3093 256;
 #X obj 675 345 noise~;
 #X obj 766 479 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.2529 256;
+-228856 -1 -1 93.9648 256;
 #X obj 720 478 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.2529 256;
+-228856 -1 -1 87.4614 256;
 #X obj 675 478 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.2529 256;
+-228856 -1 -1 79.8058 256;
 #X text 719 495 left;
 #X text 719 509 front;
 #X text 765 508 front;
@@ -63,7 +64,7 @@ middle point \, we have a -3 dB attenuation for both channels., f
 #X text 813 508 back;
 #X text 728 401 X;
 #X text 792 402 Y;
-#X obj 743 306 slider2d -size 64 -range -1 1;
+#X obj 743 306 slider2d 64 64 0 127 0 127 0 210 210 210 0 0 0 1 1;
 #X obj 743 378 unpack f f;
 #X obj 259 359 f2s~ 20;
 #X obj 596 241 f2s~ 20;

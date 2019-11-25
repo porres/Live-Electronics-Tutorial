@@ -1,4 +1,5 @@
-#N struct 1134-point float x0 float y0 float xs float ys;
+#N struct 1071-point float x0 float y0 float xs float ys float bg float
+fg float in float gridx float gridy;
 #N canvas 397 151 789 613 12;
 #X declare -path else;
 #X obj 200 182 hsl 128 15 0.05 1 1 1 empty amp empty -2 -8 0 10 -228856
@@ -13,7 +14,7 @@
 #X text 447 355 Seno;
 #X text 428 484 Cosseno;
 #X obj 459 396 pic sc2.gif;
-#X obj 67 354 slider2d 127 127 -1 1 -1 1;
+#X obj 67 354 slider2d 127 127 -1 1 -1 1 0 210 210 210 0 0 0 1 1;
 #X text 19 25 A complex signal has a real and imaginary part. The output
 of a FTT is a complex signal but is the frequency domain. Now we're
 talking about a complex signal in the time domain \, which is totally
