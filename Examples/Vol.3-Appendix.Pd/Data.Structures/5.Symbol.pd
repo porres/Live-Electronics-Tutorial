@@ -11,8 +11,6 @@ symbol., f 31;
 #X obj 290 456 drawnumber y 115 25 900 y=;
 #X text 80 423 For last \, we also draw and display the coordinates
 of the Data Structure., f 26;
-#X text 111 512 You may drag the object around in the edit mode and
-see how the coordinates get updted., f 45;
 #X obj 66 98 struct \$0-DS float x float y symbol sym;
 #X text 64 33 Data Structure named "\$0-DS" holding coordinates floats
 "x/y" and a symbol named "sym"., f 37;
@@ -20,6 +18,8 @@ see how the coordinates get updted., f 45;
 the same as [dranumberl] . There is literal no difference \, it is
 really the same object. Maybe in the future they will become actual
 different objects \, but so far is just an alias., f 57;
+#X text 111 512 You may drag the object around in the edit mode and
+see how the coordinates get updated., f 45;
 #X restore 298 158 pd template;
 #X symbolatom 49 302 10 0 0 0 - - -;
 #X msg 49 236 symbol banana;
@@ -39,8 +39,8 @@ with the same [set] object., f 62;
 display]. Note that you cannot set the symbol variable with [append]
 when adding the object. We need to use the [set] object for that.,
 f 65;
-#N canvas 976 104 358 171 \$0-display 1;
-#X scalar 1007-DS 50 50 symbol \;;
+#N canvas 976 104 358 171 \$0-display 0;
+#X scalar 1007-DS 104 50 symbol \;;
 #X restore 388 158 pd \$0-display;
 #X obj 413 266 s pd-\$0-display;
 #X msg 413 240 clear \, vis 1;
