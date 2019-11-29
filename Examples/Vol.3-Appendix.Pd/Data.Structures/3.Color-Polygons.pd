@@ -1,6 +1,6 @@
-#N struct 1005-DS float color;
-#N struct 1005-fill float color;
-#N canvas 142 298 855 330 12;
+#N struct 1006-DS float color;
+#N struct 1006-fill float color;
+#N canvas 99 222 855 330 12;
 #X obj 163 243 pointer;
 #N canvas 167 397 985 322 template-1 0;
 #X obj 611 198 drawpolygon color 20 0 25 95 25;
@@ -49,11 +49,11 @@ the [filledpolygon] object. See the [pd template-1] subpatch for more
 details. You can also click and drag the number to change colors.,
 f 49;
 #X obj 40 271 append \$0-DS color;
-#N canvas 976 104 358 171 \$0-display-1 1;
-#X scalar 1005-DS 500 \;;
+#N canvas 992 104 358 171 \$0-display-1 1;
+#X scalar 1006-DS 500 \;;
 #X restore 277 122 pd \$0-display-1;
-#N canvas 962 346 383 313 \$0-display-2 1;
-#X scalar 1005-fill 450 \;;
+#N canvas 983 348 383 313 \$0-display-2 1;
+#X scalar 1006-fill 450 \;;
 #X restore 653 110 pd \$0-display-2;
 #X msg 289 190 clear \, vis 1;
 #X msg 163 196 traverse \$1 \, bang, f 12;
