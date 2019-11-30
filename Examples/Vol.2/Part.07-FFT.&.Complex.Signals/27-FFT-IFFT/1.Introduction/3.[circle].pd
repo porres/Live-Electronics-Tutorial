@@ -1,0 +1,22 @@
+#N struct 1017-point float x0 float y0 float xs float ys float fg float
+in float gridx float gridy;
+#N struct 1017-pixel float x float y float color;
+#N canvas 765 166 496 510 12;
+#X declare -path else;
+#X msg 98 148 mode 2;
+#X text 36 32 The [circle] object has been used in the first example.
+It has a default mode for cartesian display \, but you can also set
+it to polar mode (the output is still a cartesian coordinate though).
+Check its help file for more details.;
+#X text 155 148 polar;
+#X text 168 186 cartesian;
+#X obj 98 446 display;
+#X obj 98 227 circle 200 -1 1 -1 1 2 225 225 225 0 0 0 1 1 0 82 117
+empty empty;
+#X obj 297 122 declare -path else;
+#X msg 111 186 mode 1;
+#X obj 98 118 loadbang;
+#X connect 0 0 5 0;
+#X connect 5 0 4 0;
+#X connect 7 0 5 0;
+#X connect 8 0 0 0;
