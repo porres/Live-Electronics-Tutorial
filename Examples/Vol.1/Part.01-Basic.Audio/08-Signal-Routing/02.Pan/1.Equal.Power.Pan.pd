@@ -1,4 +1,4 @@
-#N struct 1045-point float x0 float y0 float xs float ys float fg float
+#N struct 1034-point float x0 float y0 float xs float ys float fg float
 in float gridx float gridy;
 #N canvas 364 58 893 602 12;
 #X declare -path else;
@@ -46,14 +46,14 @@ middle point \, we have a -3 dB attenuation for both channels., f
 #X obj 766 454 env~;
 #X obj 812 454 env~;
 #X obj 812 479 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.2464 256;
+-228856 -1 -1 89.2067 256;
 #X obj 675 345 noise~;
 #X obj 766 479 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 91.8424 256;
+-228856 -1 -1 89.2067 256;
 #X obj 720 478 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 88.3403 256;
+-228856 -1 -1 89.2067 256;
 #X obj 675 478 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 85.7443 256;
+-228856 -1 -1 89.2067 256;
 #X text 719 495 left;
 #X text 719 509 front;
 #X text 765 508 front;
@@ -76,7 +76,8 @@ controlling it with audio signals. Check also the [pan4~] object \,
 which is a 4 speakers panning object and [pan8~] (octaphonic).;
 #X text 515 437 see also:;
 #X obj 525 466 pan8~, f 13;
-#X obj 743 306 slider2d 64 64 -1 1 -1 1 0 210 210 210 0 0 0 1;
+#X obj 743 306 slider2d 64 64 -1 1 -1 1 0 210 210 210 0 0 0 1 0 1 0
+0 empty empty;
 #X connect 0 0 13 0;
 #X connect 1 0 2 0;
 #X connect 2 0 46 0;
