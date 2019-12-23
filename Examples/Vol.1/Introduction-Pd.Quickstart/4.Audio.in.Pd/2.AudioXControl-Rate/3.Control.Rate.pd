@@ -1,4 +1,4 @@
-#N canvas 199 26 1001 651 12;
+#N canvas 580 112 1001 651 12;
 #X declare -path else;
 #X obj 659 348 lop~;
 #X obj 199 320 osc~;
@@ -8,7 +8,7 @@
 -228856 -1 -1 0 1;
 #X floatatom 684 318 5 0 0 0 - - -;
 #X text 723 318 hz;
-#X obj 178 355 out~;
+#X obj 199 355 out~;
 #X obj 659 388 out~;
 #X obj 199 287 display~;
 #X text 242 288 <=;
@@ -59,9 +59,7 @@ will be processed). In this case \, the audio rate is the maximum resolution
 rate and the control rate is supposed to be much lower.;
 #X obj 807 34 declare -path else;
 #X connect 0 0 8 0;
-#X connect 0 0 8 1;
 #X connect 1 0 7 0;
-#X connect 1 0 7 1;
 #X connect 2 0 9 0;
 #X connect 3 0 0 0;
 #X connect 4 0 5 0;

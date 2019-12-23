@@ -13,7 +13,7 @@
 #X obj 173 165 display~;
 #X obj 173 136 rescale~ 500 2500;
 #X obj 150 245 out~;
-#X obj 519 239 out~;
+#X obj 562 239 out~;
 #X obj 562 100 bl.saw~;
 #X obj 562 162 svfilter~;
 #X obj 562 198 xselect~ 4 100 1;
@@ -25,7 +25,7 @@
 #X obj 529 134 + 1;
 #X obj 691 115 rescale~ 0.1 0.9, f 8;
 #X obj 67 408 bl.saw~;
-#X obj 82 483 out~;
+#X obj 108 490 out~;
 #X obj 138 408 rescale~ 500 1500;
 #X obj 350 375 bl.saw~;
 #X obj 402 438 bob~;
@@ -33,7 +33,7 @@
 #X obj 488 381 rescale~ 1 3.5, f 9;
 #X obj 488 356 osc~ 0.33;
 #X obj 414 351 osc~ 0.22;
-#X obj 586 474 out~;
+#X obj 629 465 out~;
 #X obj 587 381 bl.saw~;
 #X obj 655 369 rescale~ 500 1500, f 9;
 #X obj 629 424 lowpass~;
@@ -61,7 +61,6 @@ here we also have LFOs controllng the resonance of the filter., f
 #X obj 562 72 sig~ 50;
 #X obj 639 18 declare -path else;
 #X connect 0 0 12 0;
-#X connect 0 1 12 1;
 #X connect 1 0 9 0;
 #X connect 4 0 11 0;
 #X connect 5 0 23 0;
@@ -76,7 +75,6 @@ here we also have LFOs controllng the resonance of the filter., f
 #X connect 15 2 16 2;
 #X connect 15 3 16 3;
 #X connect 16 0 13 0;
-#X connect 16 0 13 1;
 #X connect 17 0 21 0;
 #X connect 21 0 16 0;
 #X connect 22 0 15 2;
@@ -84,20 +82,17 @@ here we also have LFOs controllng the resonance of the filter., f
 #X connect 25 0 41 1;
 #X connect 26 0 27 0;
 #X connect 27 0 28 0;
-#X connect 27 0 28 1;
 #X connect 29 0 27 2;
 #X connect 30 0 29 0;
 #X connect 31 0 48 0;
 #X connect 33 0 35 0;
 #X connect 34 0 35 1;
 #X connect 35 0 32 0;
-#X connect 35 0 32 1;
 #X connect 36 0 35 2;
 #X connect 37 0 33 0;
 #X connect 38 0 36 0;
 #X connect 39 0 34 0;
 #X connect 41 0 24 0;
-#X connect 41 0 24 1;
 #X connect 42 0 43 0;
 #X connect 43 0 41 2;
 #X connect 47 0 26 0;

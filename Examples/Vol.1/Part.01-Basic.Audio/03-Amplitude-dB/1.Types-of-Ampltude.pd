@@ -1,45 +1,44 @@
-#N canvas 334 90 933 586 12;
+#N canvas 418 98 922 643 12;
 #X declare -path else;
-#X obj 667 242 pic amp.gif;
-#X obj 98 213 graph~ 441 19 -1 1;
-#X obj 98 156 osc~ 111;
-#X text 31 34 The amplitude of a sound represents the sound source's
+#X obj 661 277 pic amp.gif;
+#X obj 92 198 graph~ 441 19 -1 1;
+#X obj 92 141 osc~ 111;
+#X text 25 19 The amplitude of a sound represents the sound source's
 wave propagation \, as in the motion of your speakers., f 54;
-#X text 31 74 There are different types of amplitude concept. The "running
+#X text 25 59 There are different types of amplitude concept. The "running
 amplitude" refers to the dynamic amplitude signal output such as the
 signal of any sound generator in Pd. Like an oscillator's \, for instance.
 , f 54;
-#X text 108 185 <= running amplitude;
-#X text 36 374 On the other hand \, we can think of amplitude as one
+#X text 102 170 <= running amplitude;
+#X text 30 374 On the other hand \, we can think of amplitude as one
 single amplitude value \, which is called the "instant amplitude".
-, f 54;
-#X obj 233 484 snapshot~;
-#X obj 143 440 noise~;
-#X obj 233 448 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+, f 52;
+#X obj 263 546 snapshot~;
+#X obj 151 460 noise~;
+#X obj 263 500 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 233 510 display;
-#X text 253 448 <= get instant amplitude;
-#X text 451 75 But an "instant amplitude" doesn't tell us much about
+#X obj 263 572 display;
+#X text 283 498 <= get instant amplitude, f 16;
+#X text 495 80 But an "instant amplitude" doesn't tell us much about
 what's going on with the signal as a whole \, just that moment in time...
 that's why we have other types of amplitude measures \, and all take
-into account a time window. See the graph below:, f 62;
-#X text 465 364 Above \, we have 3 different types of amplitude measurement
+into account a time window. See the graph below:, f 53;
+#X text 466 410 Above \, we have 3 different types of amplitude measurement
 (represented in the graph as numbers 1 to 3). All of which depend on
 a time window (represented as number 4). Let's see below which are
-these 3 types of amplitude.;
-#X text 510 435 1- "Peak Amplitude": Biggest difference to Zero (positive
-or negative) in the time window, f 50;
-#X text 510 471 2- "Peak to Peak": Difference between positive and
-negative peaks in the time window, f 50;
-#X text 510 507 3- "Root Mean Square" (RMS): A mean of all samples
-in the time window, f 50;
-#X obj 343 241 setdsp~;
-#X obj 100 494 out~;
-#X text 41 438 white noise => generator, f 14;
-#X obj 722 32 declare -path else;
+these 3 types of amplitude., f 57;
+#X text 531 497 1- "Peak Amplitude": Biggest difference to Zero (positive
+or negative) in the time window, f 46;
+#X text 531 533 2- "Peak to Peak": Difference between positive and
+negative peaks in the time window, f 46;
+#X text 531 567 3- "Root Mean Square" (RMS): A mean of all samples
+in the time window, f 46;
+#X obj 337 226 setdsp~;
+#X obj 151 555 out~;
+#X text 49 458 white noise => generator, f 14;
+#X obj 713 31 declare -path else;
 #X connect 2 0 1 0;
 #X connect 7 0 10 0;
 #X connect 8 0 7 0;
-#X connect 8 0 18 1;
 #X connect 8 0 18 0;
 #X connect 9 0 7 0;

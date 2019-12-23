@@ -1,4 +1,4 @@
-#N canvas 261 122 1015 532 12;
+#N canvas 352 155 1015 532 12;
 #X declare -path else;
 #X declare -path else;
 #X obj 210 325 *~;
@@ -21,7 +21,7 @@
 #X msg 224 451 \; rms const \$1;
 #X floatatom 224 265 8 0 0 0 - - -;
 #X obj 136 35 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 7400 1;
+-1 -1 0 1;
 #X floatatom 133 61 0 0 0 0 - - -;
 #X obj 66 301 osc~ 500;
 #X obj 115 370 *~;
@@ -36,9 +36,9 @@
 #X text 468 398 0;
 #X text 462 515 -1;
 #X obj 224 425 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0.412015 256;
+-228856 -1 -1 0 256;
 #X obj 115 426 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0.412007 256;
+-228856 -1 -1 0 256;
 #X text 24 424 RMS (linear);
 #X obj 115 400 rms~;
 #X obj 224 161 loop 1024;
@@ -94,11 +94,11 @@ the root mean square line for this period window.;
 #X obj 569 143 noise~;
 #X obj 660 179 env~;
 #X obj 660 207 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 95.3311 256;
+-228856 -1 -1 95.3171 256;
 #X obj 92 250 setdsp~ 1;
 #X obj 569 182 rms~ -db;
 #X obj 569 209 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 -4.66889 256;
+-228856 -1 -1 -4.68293 256;
 #X obj 618 354 noise~;
 #X obj 618 468 print~;
 #X obj 585 438 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856

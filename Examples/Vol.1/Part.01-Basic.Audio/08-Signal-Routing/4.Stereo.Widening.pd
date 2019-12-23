@@ -1,14 +1,11 @@
 #N canvas 378 23 913 587 12;
 #X declare -path else;
-#X obj 705 252 *~ -1;
+#X obj 749 246 *~ -1;
 #X obj 97 391 s~ \$0-sample;
 #X obj 662 211 r~ \$0-sample;
 #X obj 98 436 r~ \$0-sample;
 #X obj 648 404 r~ \$0-sample;
 #X obj 561 277 out~;
-#X obj 662 276 out~;
-#X obj 98 498 out~;
-#X obj 648 494 out~;
 #X text 27 42 Stereo widening is any technique that increases the perceived
 stereo width or spread of a signal into the stereo field. Panning is
 one scuch technique \, but this example shows you other cheap and dirt
@@ -19,11 +16,11 @@ source reaches both of our ears \, and the delay from when it arrives
 to one ear and the other gives us a cue on where the sound source is
 located. A good stereo microphone recording places the microphones
 in a way to achieve this imaging effect., f 61;
-#X obj 218 403 hsl 128 15 7 21 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 262 403 hsl 128 15 7 21 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 215 425 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 259 425 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 141 470 ffdelay~ 21;
+#X obj 185 470 ffdelay~ 21;
 #X text 27 258 This delay trick is also known as the "Hass effect"
 \, and we can implement it by simply duplicating a mono signal but
 delaying one of the outputs. Try delay values from 7 to 21 ms as in
@@ -40,26 +37,28 @@ tracks. This is just multiplying by -1 and deals with cancelling issues.
 #X text 485 148 Conversely \, we can also get one mono input and create
 a widened stereo effect by inverting the polarity of one of the tracks.
 See the difference below., f 55;
-#X obj 691 441 ffdelay~ 20;
+#X obj 735 438 ffdelay~ 20;
 #X text 496 351 Now \, this is Pd and the crazy world of live electronic
 music \, why not do both? Have some fun!, f 39;
-#X obj 691 468 *~ -1;
-#X obj 215 445 f2s~ 10 7;
+#X obj 735 465 *~ -1;
+#X obj 259 445 f2s~ 10 7;
 #X obj 713 26 declare -path else;
 #X obj 97 365 play.file~ bubul.wav 1 1;
-#X connect 0 0 6 1;
+#X obj 648 494 out2~;
+#X obj 662 276 out2~;
+#X obj 98 498 out2~;
+#X connect 0 0 23 1;
 #X connect 2 0 0 0;
 #X connect 2 0 5 0;
-#X connect 2 0 5 1;
-#X connect 2 0 6 0;
-#X connect 3 0 7 0;
-#X connect 3 0 13 0;
-#X connect 4 0 8 0;
-#X connect 4 0 19 0;
-#X connect 11 0 12 0;
-#X connect 12 0 22 0;
-#X connect 13 0 7 1;
-#X connect 19 0 21 0;
-#X connect 21 0 8 1;
-#X connect 22 0 13 1;
-#X connect 24 0 1 0;
+#X connect 2 0 23 0;
+#X connect 3 0 10 0;
+#X connect 3 0 24 0;
+#X connect 4 0 16 0;
+#X connect 4 0 22 0;
+#X connect 8 0 9 0;
+#X connect 9 0 19 0;
+#X connect 10 0 24 1;
+#X connect 16 0 18 0;
+#X connect 18 0 22 1;
+#X connect 19 0 10 1;
+#X connect 21 0 1 0;

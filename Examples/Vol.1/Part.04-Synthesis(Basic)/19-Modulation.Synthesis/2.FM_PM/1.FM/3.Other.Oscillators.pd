@@ -34,10 +34,10 @@
 #X restore 208 199 pd oscillator;
 #X obj 208 307 *~;
 #X obj 352 229 nbx 4 20 -1e+37 1e+37 0 0 empty \$0-index empty 0 -8
-0 16 -228856 -1 -1 0 256;
+0 16 -228856 -1 -1 90 256;
 #X obj 107 290 +~;
 #X obj 107 234 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-carrier empty 82
-9 0 15 -228856 -1 -1 0 256;
+9 0 15 -228856 -1 -1 200 256;
 #X obj 107 461 out~;
 #N canvas 465 145 445 426 oscillator 0;
 #X obj 106 347 outlet~;
@@ -73,7 +73,7 @@
 #X text 293 168 Mod;
 #X text 110 213 Carrier;
 #X obj 208 166 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-mod empty 82 9 0
-15 -228856 -1 -1 0 256;
+15 -228856 -1 -1 50.5 256;
 #X text 65 62 In this patch we can test different combinations of oscillators.
 Waveforms are ordered by spectral content from a simple sinewave to
 a rich sawtooth (the only which contains odd and even harmonics). The
@@ -89,7 +89,6 @@ the frequency modulated signal is band limited., f 31;
 #X connect 2 0 13 0;
 #X connect 3 0 6 0;
 #X connect 4 0 3 0;
-#X connect 6 0 5 1;
 #X connect 6 0 5 0;
 #X connect 10 0 0 0;
 #X connect 13 0 1 1;

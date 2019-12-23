@@ -1,10 +1,10 @@
-#N canvas 220 134 958 515 12;
+#N canvas 485 134 958 515 12;
 #X declare -path else;
 #X obj 697 364 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 848 362 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 76 275 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 76 275 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 76 330 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
@@ -30,7 +30,7 @@
 #X obj 697 270 pulse~ 1;
 #X obj 757 411 timer;
 #X obj 76 452 nbx 3 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 11
--228856 -1 -1 500 256;
+-228856 -1 -1 0 256;
 #X obj 327 450 nbx 8 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 11
 -228856 -1 -1 499.229 256;
 #X obj 757 442 nbx 8 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 11

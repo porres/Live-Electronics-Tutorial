@@ -13,7 +13,6 @@ but each one can only open one patch at a time., f 62;
 #X text 340 355 DSP needs to be on in this patch., f 17;
 #X text 53 160 The meter object from the ELSE library reports the percentage
 of the CPU usage of this Pd process., f 39;
-#X obj 231 484 out~;
 #X obj 129 435 pd~ -ninsig 1 -noutsig 2;
 #X text 50 266 Below we have a CPU intensive patch. The outlet reports
 the output of meter and you can see that the CPU measure of this other
@@ -21,8 +20,9 @@ Pd process is greater than the measure in this patch.;
 #X text 65 493 CPU % =>;
 #X text 393 204 <= CPU %;
 #X text 58 372 click to open a new instance:, f 19;
+#X obj 210 475 out2~;
 #X connect 1 0 2 0;
-#X connect 3 0 10 0;
-#X connect 10 0 4 0;
-#X connect 10 1 9 0;
-#X connect 10 2 9 1;
+#X connect 3 0 9 0;
+#X connect 9 0 4 0;
+#X connect 9 1 14 0;
+#X connect 9 2 14 1;

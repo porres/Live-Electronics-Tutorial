@@ -120,7 +120,6 @@ beatings occur at 1 hz., f 59;
 #X connect 6 0 26 0;
 #X connect 7 0 26 2;
 #X connect 7 0 24 0;
-#X connect 7 0 24 1;
 #X connect 8 0 32 0;
 #X connect 9 0 7 1;
 #X connect 9 0 26 1;

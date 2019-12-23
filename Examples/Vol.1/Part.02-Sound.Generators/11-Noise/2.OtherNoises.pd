@@ -35,10 +35,6 @@ or stochastic generators. The ones below are chaotic map attractors.
 Check the help file for more details., f 54;
 #X obj 754 20 declare -path else;
 #X connect 0 0 1 0;
-#X connect 0 0 1 1;
 #X connect 3 0 2 0;
-#X connect 3 0 2 1;
 #X connect 5 0 4 0;
-#X connect 5 0 4 1;
 #X connect 6 0 7 0;
-#X connect 6 0 7 1;

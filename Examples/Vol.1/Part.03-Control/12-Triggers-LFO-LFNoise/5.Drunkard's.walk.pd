@@ -1,10 +1,10 @@
 #N canvas 605 215 569 355 12;
 #X declare -path else;
 #X obj 147 246 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 0 1;
+-1 -1 9568 1;
 #X floatatom 144 273 0 0 0 0 - - -;
 #X obj 320 269 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 0 1;
+-1 -1 4274 1;
 #X obj 317 244 s2f~;
 #X obj 144 186 impulse 10;
 #X obj 317 217 drunkard~ 0.2;

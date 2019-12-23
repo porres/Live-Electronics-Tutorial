@@ -1,6 +1,6 @@
 #N canvas 615 76 548 670 12;
 #X declare -path else;
-#X obj 138 340 *~;
+#X obj 135 340 *~;
 #X obj 242 358 * -1;
 #X obj 209 382 clip~ -1 1;
 #X obj 276 322 nbx 5 22 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
@@ -25,7 +25,7 @@ clip value.;
 into a given range \, so we can use it to generate clipping distortion.
 ;
 #X obj 325 26 declare -path else;
-#X obj 86 185 play.file~ bubul.wav 1 1;
+#X obj 134 185 play.file~ bubul.wav 1 1;
 #X connect 0 0 2 0;
 #X connect 1 0 2 1;
 #X connect 2 0 9 0;
@@ -37,6 +37,5 @@ into a given range \, so we can use it to generate clipping distortion.
 #X connect 7 0 14 0;
 #X connect 8 0 7 0;
 #X connect 9 0 11 0;
-#X connect 9 0 11 1;
 #X connect 14 0 0 1;
 #X connect 18 0 0 0;

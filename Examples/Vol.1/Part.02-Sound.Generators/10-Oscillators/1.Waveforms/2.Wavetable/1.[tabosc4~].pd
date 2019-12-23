@@ -44,7 +44,7 @@
 #X obj 157 204 nbx 4 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 104 205 nbx 4 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 1 256;
 #X text 135 148 <== lista normalizada;
 #X obj 123 88 inlet;
 #N canvas 178 61 728 505 normalizar 0;
@@ -144,7 +144,7 @@
 , f 62;
 #X obj 272 478 out~;
 #X obj 508 165 nbx 4 18 -1e+37 1e+37 0 0 empty harm empty 0 -8 0 10
--191672 -1 -1 0 256;
+-191672 -1 -1 1 256;
 #X msg 508 455 normalize;
 #X obj 508 348 list prepend sinesum 512, f 12;
 #X obj 508 390 list trim;
@@ -194,7 +194,6 @@ for now it concerns a 4 point interpolation \, hence the "4" in [tabosc4~].
 #X connect 8 0 32 1;
 #X connect 11 0 53 0;
 #X connect 15 0 33 0;
-#X connect 15 0 33 1;
 #X connect 32 0 14 0;
 #X connect 32 0 36 0;
 #X connect 34 0 32 0;
@@ -206,4 +205,3 @@ for now it concerns a 4 point interpolation \, hence the "4" in [tabosc4~].
 #X connect 39 1 38 0;
 #X connect 42 0 34 0;
 #X connect 53 0 40 0;
-#X connect 53 0 40 1;

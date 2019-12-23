@@ -29,7 +29,7 @@
 #X obj 510 507 osc~ 200;
 #X obj 510 577 expr~ asin($v1);
 #X obj 118 211 expr~ tanh($v1);
-#X obj 147 531 catch~ \$0-out;
+#X obj 211 529 catch~ \$0-out;
 #X obj 125 483 throw~ \$0-out;
 #X obj 118 245 throw~ \$0-out;
 #X obj 510 669 throw~ \$0-out;
@@ -414,7 +414,6 @@ of tunrnind sine waves into triangular waves., f 39;
 #X connect 20 0 23 0;
 #X connect 21 0 26 0;
 #X connect 21 0 27 0;
-#X connect 21 0 27 1;
 #X connect 28 0 0 1;
 #X connect 39 0 4 1;
 #X connect 40 0 9 1;
