@@ -41,15 +41,15 @@ as the output., f 55;
 #X connect 19 0 4 0;
 #X restore 67 383 pd Cross_Phase_Modulation;
 #X obj 127 277 hsl 128 15 0.01 1 1 0 empty index1 empty -2 -8 0 10
--228856 -1 -1 9380 1;
+-228856 -1 -1 12700 1;
 #X obj 124 304 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0.3 256;
+-228856 -1 -1 100 256;
 #X obj 59 303 nbx 5 14 -1e+37 1e+37 0 0 empty freq1 empty 0 -8 0 10
 -228856 -1 -1 150 256;
 #X obj 357 278 hsl 128 15 0.01 1 1 0 empty index2 empty -2 -8 0 10
--191407 -1 -1 8262 1;
+-191407 -1 -1 12700 1;
 #X obj 354 305 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--191407 -1 -1 0.2 256;
+-191407 -1 -1 100 256;
 #X obj 287 304 nbx 5 14 -1e+37 1e+37 0 0 empty freq2 empty 0 -8 0 10
 -191407 -1 -1 250 256;
 #X text 384 277 index 2;
@@ -63,9 +63,9 @@ modulation., f 55;
 #X obj 412 364 initmess \; index1 0.3 \; index2 0.2 \; freq1 150 \;
 freq2 250;
 #X obj 259 384 xmod~ -pm;
-#X obj 259 424 out~;
-#X obj 97 425 out~;
 #X obj 326 31 declare -path else;
+#X obj 97 425 out2~;
+#X obj 259 424 out2~;
 #X connect 1 0 16 0;
 #X connect 1 1 16 1;
 #X connect 2 0 3 0;
@@ -78,5 +78,5 @@ freq2 250;
 #X connect 6 0 14 3;
 #X connect 7 0 1 2;
 #X connect 7 0 14 2;
-#X connect 14 0 15 0;
-#X connect 14 1 15 1;
+#X connect 14 0 17 0;
+#X connect 14 1 17 1;

@@ -4,7 +4,7 @@
 #X obj 310 198 nbx 5 14 -1e+37 1e+37 0 0 empty moduladora empty 0 -8
 0 10 -228856 -1 -1 0 256;
 #X obj 434 205 nbx 8 14 -1e+37 1e+37 0 0 empty index_pm empty 0 -8
-0 10 -261682 -1 -1 1 256;
+0 10 -261682 -1 -1 5 256;
 #X obj 310 233 t b f;
 #X obj 360 238 v mod;
 #X obj 342 263 s \$0-mod;
@@ -18,7 +18,7 @@
 #X obj 56 319 r \$0-carrier;
 #X obj 153 404 *~;
 #X obj 531 206 nbx 8 14 -1e+37 1e+37 0 0 empty index_fm empty 0 -8
-0 10 -261234 -1 -1 6.28319 256;
+0 10 -261234 -1 -1 31.4159 256;
 #X obj 273 344 r \$0-i_fm;
 #X obj 194 343 r \$0-i_pm;
 #X obj 691 346 expr $f1 * (mod * 2*pi);
@@ -36,7 +36,7 @@
 #X msg 273 427 \; index_pm set \$1;
 #X msg 691 400 \; index_fm set \$1;
 #X obj 691 374 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 6.28319 256;
+-228856 -1 -1 31.4159 256;
 #X text 32 50 It's time to show the relationship between FM and PM
 in practice \, not theory. For sine waves \, we need a phase difference
 of 90 degrees \, so as the phase modulation signal is a sine wave and
@@ -93,11 +93,9 @@ the frequency deviation is also higher.;
 #X connect 20 0 36 0;
 #X connect 21 0 13 0;
 #X connect 23 0 22 0;
-#X connect 23 0 22 1;
 #X connect 27 0 28 0;
 #X connect 30 0 29 0;
 #X connect 36 0 13 1;
 #X connect 37 0 0 1;
 #X connect 40 0 24 0;
-#X connect 40 0 24 1;
 #X connect 44 0 0 0;
