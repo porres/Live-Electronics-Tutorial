@@ -16,7 +16,7 @@
 #X coords 0 1 32768 -1 400 80 1 0 0;
 #X restore 38 586 graph;
 #X obj 652 613 out~;
-#X obj 505 233 out~;
+#X obj 548 233 out~;
 #X text 252 603 "zero-padded";
 #X text 585 585 click =>;
 #N canvas 613 163 476 633 linear.convolution 0;
@@ -1115,9 +1115,6 @@ IR below:;
 #X connect 1 0 14 0;
 #X connect 2 0 3 0;
 #X connect 3 0 7 0;
-#X connect 3 0 7 1;
 #X connect 14 0 10 0;
-#X connect 14 0 10 1;
 #X connect 30 0 0 0;
-#X connect 30 0 11 1;
 #X connect 30 0 11 0;

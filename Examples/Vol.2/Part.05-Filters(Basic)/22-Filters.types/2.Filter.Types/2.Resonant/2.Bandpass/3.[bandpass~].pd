@@ -384,7 +384,6 @@ parameter from a bandwidth value., f 31;
 frequency response over the wide spectrum., f 32;
 #X obj 341 26 declare -path else;
 #X connect 2 0 1 0;
-#X connect 2 0 1 1;
 #X connect 3 0 6 0;
 #X connect 4 0 5 0;
 #X connect 5 0 2 2;

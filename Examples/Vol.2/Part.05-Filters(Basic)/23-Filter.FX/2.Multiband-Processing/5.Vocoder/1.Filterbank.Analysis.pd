@@ -93,7 +93,7 @@ empty 0 -8 0 10 -228856 -1 -1 329.628 256;
 #X connect 15 0 9 3;
 #X coords 0 -1 1 1 105 75 2 100 100;
 #X restore 131 279 pd gate;
-#X obj 88 412 out~;
+#X obj 132 412 out~;
 #X obj 476 246 setdsp~ 1;
 #X text 72 46 This example is just a basis for the Vocoder example
 next. Here we have a bank with 24 bandpass filters and analyse the
@@ -133,7 +133,6 @@ to inside [clone]., f 50;
 #X restore 304 343 pd set-central-frequencies;
 #X obj 407 8 declare -path else;
 #X connect 1 0 2 0;
-#X connect 2 0 3 1;
 #X connect 2 0 3 0;
 #X connect 2 0 9 0;
 #X connect 10 0 9 1;

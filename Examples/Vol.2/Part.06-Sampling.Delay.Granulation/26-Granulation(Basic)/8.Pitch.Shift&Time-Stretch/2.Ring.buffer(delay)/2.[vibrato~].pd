@@ -19,5 +19,4 @@ hwo it works. Check its help file.;
 #X connect 1 0 7 1;
 #X connect 2 0 7 2;
 #X connect 7 0 0 0;
-#X connect 7 0 0 1;
 #X connect 9 0 7 0;

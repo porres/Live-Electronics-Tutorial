@@ -1,14 +1,13 @@
-#N struct 1298-point float x0 float y0 float xs float ys float fg float
-in float gridx float gridy;
-#N struct 1298-pixel float x float y float color;
+#N struct 1396-point float x0 float y0 float size float fg float in
+float grid;
 #N canvas 765 166 508 634 12;
 #X declare -path else;
 #X msg 125 179 mode 2;
 #X text 182 179 polar;
 #X text 195 217 cartesian;
 #X obj 125 477 display;
-#X obj 125 258 circle 200 -1 1 -1 1 2 225 225 225 0 0 0 1 1 0 31.8987
-26.7728 empty empty;
+#X obj 125 258 circle 200 -1 1 -1 1 2 225 225 225 0 0 0 1 1 0 1 1 0
+100 100 empty empty 1;
 #X obj 324 141 declare -path else;
 #X msg 138 217 mode 1;
 #X obj 125 149 loadbang;
@@ -19,9 +18,9 @@ it to polar mode - the output is still a cartesian coordinate though
 it). Check its help file for more details.;
 #X obj 125 512 car2pol;
 #X obj 171 539 nbx 5 15 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 11
--228856 -1 -1 -2.31994 256;
+-228856 -1 -1 0 256;
 #X obj 171 569 nbx 5 15 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 11
--228856 -1 -1 1 256;
+-228856 -1 -1 0 256;
 #X connect 0 0 4 0;
 #X connect 3 0 9 0;
 #X connect 4 0 3 0;

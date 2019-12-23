@@ -5,8 +5,8 @@
 #X text 118 18 [biplot] from ELSE;
 #X obj 21 16 inlet;
 #X connect 2 0 0 0;
-#X restore 180 324 pd biplot;
-#X text 253 323 <= click;
+#X restore 180 314 pd biplot;
+#X text 253 313 <= click;
 #X obj 98 259 noise~;
 #X obj 86 209 bicoeff eq 500 10 24;
 #X obj 247 209 bicoeff eq 900 10 24;
@@ -16,19 +16,18 @@
 -228856 -1 -1 900 256;
 #X obj 98 308 biquads~;
 #X obj 180 261 merge 2 -1;
-#X obj 305 243 initmess \; hz1 500 \; hz2 900;
+#X obj 305 246 initmess \; hz1 500 \; hz2 900;
 #X text 68 64 The [biquads~] object from ELSE has been introduced before.
 It serves as a series of biquad filters in cascade and the [biplot]
 object can also plot the resulting frequency and phase response. Check
 their help files for more details., f 51;
 #X obj 265 23 declare -path else;
-#X obj 55 350 out~;
+#X obj 98 350 out~;
 #X connect 2 0 7 0;
 #X connect 3 0 8 0;
 #X connect 4 0 8 1;
 #X connect 5 0 3 0;
 #X connect 6 0 4 0;
 #X connect 7 0 12 0;
-#X connect 7 0 12 1;
 #X connect 8 0 7 0;
 #X connect 8 0 0 0;

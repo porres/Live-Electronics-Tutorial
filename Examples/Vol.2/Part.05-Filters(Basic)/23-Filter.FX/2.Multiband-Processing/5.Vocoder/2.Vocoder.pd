@@ -313,7 +313,6 @@ is why it's useful to have a normalizer.;
 #X connect 17 0 14 0;
 #X connect 18 0 14 0;
 #X connect 24 0 23 0;
-#X connect 24 0 23 1;
 #X connect 25 0 14 0;
 #X connect 28 0 24 0;
 #X connect 33 0 28 1;

@@ -2,7 +2,6 @@
 #X declare -path else;
 #X obj 210 291 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 218 417 out~;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
 #X obj 36 257 outlet~;
@@ -42,7 +41,8 @@ frequency dammping as [rev2~] and [rev3~].;
 it uses LFOs to modulate some of the allpass filters as a way to produce
 more dinamic results.;
 #X obj 303 17 declare -path else;
-#X connect 0 0 2 0;
-#X connect 2 0 4 0;
-#X connect 4 0 1 0;
-#X connect 4 1 1 1;
+#X obj 218 415 out2~;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 3 0 8 0;
+#X connect 3 1 8 1;

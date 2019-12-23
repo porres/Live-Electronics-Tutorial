@@ -1,16 +1,16 @@
 #N canvas 519 194 693 397 12;
 #X declare -path else;
 #X obj 376 234 hsl 200 15 1 40 0 0 \$0-width \$0-width-set Sustain
--2 -8 1 12 -191407 -1 -1 0 1;
+-2 -8 1 12 -191407 -1 -1 3572 1;
 #X obj 376 269 hsl 200 15 0.9 0.999 0 0 \$0-feedback \$0-feedback-set
-Feedback -2 -8 1 12 -228856 -1 -1 0 1;
+Feedback -2 -8 1 12 -228856 -1 -1 19096 1;
 #X obj 376 304 hsl 200 15 100 8000 0 0 \$0-cutoff \$0-cutoff-set Cutoff
--2 -8 1 12 -220731 -1 -1 0 1;
+-2 -8 1 12 -220731 -1 -1 14106 1;
 #X obj 89 49 tgl 30 0 empty \$0-metro empty 17 7 0 10 -228856 -1 -1
-0 1;
+1 1;
 #X floatatom 142 73 5 0 0 0 - - -;
 #X obj 145 48 hsl 128 15 500 3000 0 0 empty \$0-tempo Tempo -2 -8 0
-10 -228856 -1 -1 0 1;
+10 -228856 -1 -1 12700 1;
 #X obj 205 178 s \$0-chord;
 #X obj 89 129 trigger bang bang;
 #N canvas 884 218 449 442 voice-1 0;
@@ -497,5 +497,4 @@ parameter from the last example., f 40;
 #X connect 9 0 7 0;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
-#X connect 17 0 18 1;
 #X connect 21 0 6 0;

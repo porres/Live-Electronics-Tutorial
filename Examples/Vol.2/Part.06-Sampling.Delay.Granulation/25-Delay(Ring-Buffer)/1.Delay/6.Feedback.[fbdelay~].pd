@@ -8,7 +8,7 @@
 #X floatatom 96 152 5 0 0 0 - - -;
 #X obj 99 127 hsl 128 15 1.45 500 1 0 empty \$0-tempo empty -2 -6 0
 8 -228856 -1 -1 11590 1;
-#X obj 35 380 out~;
+#X obj 78 380 out~;
 #X obj 78 53 noise~;
 #X obj 78 85 *~;
 #X obj 117 86 pulse~ 1 0.05;
@@ -101,7 +101,6 @@ line. By default the feedback index is not a multiplication factor
 #X connect 0 0 2 1;
 #X connect 1 0 3 0;
 #X connect 2 0 6 0;
-#X connect 2 0 6 1;
 #X connect 2 0 15 0;
 #X connect 3 0 13 0;
 #X connect 4 0 12 0;
@@ -116,7 +115,6 @@ line. By default the feedback index is not a multiplication factor
 #X connect 20 0 24 0;
 #X connect 21 0 24 2;
 #X connect 22 0 24 1;
-#X connect 24 0 25 1;
 #X connect 24 0 25 0;
 #X connect 32 0 18 0;
 #X connect 32 0 18 1;

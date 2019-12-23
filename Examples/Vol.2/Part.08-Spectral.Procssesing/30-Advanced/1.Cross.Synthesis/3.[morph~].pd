@@ -32,15 +32,12 @@ a cross synthesis with amplitudes from "B" and initial phases from
 #X obj 113 242 play.file~ numbers.wav 1 1;
 #X obj 113 183 play.file~ 1 kantele.wav 1 1;
 #X connect 3 0 0 0;
-#X connect 3 0 0 1;
 #X connect 4 0 1 0;
-#X connect 4 0 1 1;
 #X connect 5 0 12 0;
 #X connect 6 0 12 1;
 #X connect 9 0 10 0;
 #X connect 10 0 12 2;
 #X connect 12 0 2 0;
-#X connect 12 0 2 1;
 #X connect 13 0 14 0;
 #X connect 14 0 12 3;
 #X connect 20 0 8 0;

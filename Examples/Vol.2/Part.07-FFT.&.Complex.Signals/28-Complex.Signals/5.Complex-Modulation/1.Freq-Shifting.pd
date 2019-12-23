@@ -24,7 +24,7 @@
 -228856 -1 -1 100 256;
 #X obj 72 254 adc~ 1;
 #X obj 144 254 bl.saw~;
-#X obj 106 414 out~;
+#X obj 149 414 out~;
 #X text 41 25 This is the same as a Ring Modulation (RM) \, but with
 complex signals. Remember that RM gives us two sideband \, but with
 complex signals \, we just have one sideband. \, hence \, this process
@@ -120,7 +120,6 @@ to implement this., f 56;
 #X connect 15 0 17 0;
 #X connect 17 0 26 0;
 #X connect 24 0 25 3;
-#X connect 25 0 18 1;
 #X connect 25 0 18 0;
 #X connect 25 0 28 0;
 #X connect 26 0 25 0;

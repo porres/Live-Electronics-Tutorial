@@ -1,4 +1,4 @@
-#N canvas 284 44 930 580 12;
+#N canvas 530 85 930 580 12;
 #X declare -path else;
 #X obj 620 288 tabplay~ \$0-sample;
 #X obj 55 244 soundfiler;
@@ -28,7 +28,7 @@
 #X obj 292 218 list append \$0-sample;
 #X msg 581 240 stop;
 #X msg 292 243 read -resize \$1 \$2;
-#X obj 577 324 out~;
+#X obj 620 324 out~;
 #X text 102 270 # of samples;
 #X text 312 172 choose sound file;
 #X obj 55 292 s \$0-size;
@@ -58,7 +58,6 @@ details., f 61;
 #X obj 714 21 declare -path else;
 #X obj 55 188 initmess read -resize bubul.wav \$0-sample, f 21;
 #X connect 0 0 20 0;
-#X connect 0 0 20 1;
 #X connect 1 0 2 0;
 #X connect 2 0 23 0;
 #X connect 3 0 4 0;

@@ -13,7 +13,7 @@
 #X floatatom 374 437 0 0 0 0 - - -;
 #X msg 374 459 \$1 44100;
 #X msg 226 442 stop;
-#X obj 222 526 out~;
+#X obj 265 526 out~;
 #X obj 430 413 r \$0-size;
 #X msg 118 279 show;
 #X msg 70 279 hide;
@@ -33,7 +33,6 @@ basically the same thing as the last example.;
 #X obj 382 15 declare -path else;
 #X obj 118 317 sample~ \$0-sample bubul.wav;
 #X connect 0 0 10 0;
-#X connect 0 0 10 1;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;

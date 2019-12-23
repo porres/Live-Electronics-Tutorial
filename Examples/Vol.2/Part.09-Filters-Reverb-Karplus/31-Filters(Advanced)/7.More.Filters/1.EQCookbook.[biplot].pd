@@ -929,11 +929,11 @@ b0 \; - a0 = (1 - alphaQ) / b0 \; - a1 = -2*cos(w) / b0 \; - a2 = 1
 #X obj 380 390 sr~;
 #X text 330 391 init:;
 #X obj 212 164 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
--228856 -1 -1 526.42 256;
+-228856 -1 -1 0 256;
 #X obj 447 164 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
--228856 -1 -1 -0.77 256;
+-228856 -1 -1 0 256;
 #X obj 326 164 nbx 5 18 0 100 0 0 empty empty empty 0 -8 0 14 -228856
--1 -1 0.4 256;
+-1 -1 0 256;
 #X text 44 26 With the parâmetros of: frequency \, Q (for resonant
 filters) or S (for shelving filters) and gain (for peak/shelving) we
 can calculate biquad coefficients., f 60;
@@ -1059,14 +1059,12 @@ b0 \; - b2 = (alphaQ - 1) / b0 \; - a0 = 1 / b0 \; - a1 = -2*cos(w)
 #X connect 41 1 42 0;
 #X connect 55 0 58 0;
 #X connect 58 0 56 0;
-#X connect 58 0 56 1;
 #X connect 59 0 13 0;
 #X connect 60 0 38 0;
 #X restore 91 555 pd vanilla;
 #X text 40 476 Below we have a patch implementation of the biquad coefficient
 calculations., f 23;
 #X connect 5 0 7 0;
-#X connect 5 0 7 1;
 #X connect 6 0 5 0;
 #X connect 9 0 10 0;
 #X connect 10 0 16 0;

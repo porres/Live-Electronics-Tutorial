@@ -56,10 +56,10 @@
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
 #X restore 129 250 pd test;
-#X obj 114 306 out~;
+#X obj 129 306 out~;
 #X obj 315 211 initmess 90;
 #X obj 315 246 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 90 256;
 #X text 102 69 Allpass filters can be used in series to implement a
 reverb model. The [rev1~] abstraction that comes with Pd Vanilla uses
 10 stages of allpass filters. It's a very simple reverb with only a
@@ -67,11 +67,9 @@ decay parameter \, which indicates how much dB the output has after
 1 second in percentage of dB. Check its help file., f 54;
 #X obj 341 23 declare -path else;
 #X connect 0 0 3 0;
-#X connect 0 0 3 1;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
-#X connect 5 0 6 1;
 #X connect 7 0 8 0;
 #X connect 8 0 0 1;

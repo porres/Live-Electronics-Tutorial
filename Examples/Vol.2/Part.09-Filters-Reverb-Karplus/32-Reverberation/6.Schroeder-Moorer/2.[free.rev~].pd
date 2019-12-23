@@ -1,6 +1,6 @@
-#N canvas 495 87 562 598 12;
+#N canvas 495 87 562 689 12;
 #X declare -path else;
-#X obj 131 478 free.rev~;
+#X obj 191 538 free.rev~;
 #X text 58 57 The [free.rev~] object from ELSE is an abstraction that
 implements the widely known 'freeverb' open source algorithm., f 59
 ;
@@ -27,17 +27,17 @@ Open the abstraction to check it out. Check its help file., f 59;
 #X floatatom 349 462 5 0 0 0 - - -;
 #X msg 349 486 wet \$1;
 #X obj 331 16 declare -path else;
-#X obj 132 518 out~;
 #X obj 128 338 play.file~ 1 didge.aif 1 1;
-#X connect 0 0 15 0;
-#X connect 0 1 15 1;
+#X obj 175 577 out2~;
+#X connect 0 0 16 0;
+#X connect 0 1 16 1;
 #X connect 5 0 6 0;
 #X connect 6 0 10 0;
 #X connect 7 0 8 0;
-#X connect 8 0 0 2;
+#X connect 8 0 0 0;
 #X connect 9 0 7 0;
-#X connect 10 0 0 2;
+#X connect 10 0 0 0;
 #X connect 11 0 12 0;
 #X connect 12 0 13 0;
-#X connect 13 0 0 2;
-#X connect 16 0 0 0;
+#X connect 13 0 0 0;
+#X connect 15 0 0 0;

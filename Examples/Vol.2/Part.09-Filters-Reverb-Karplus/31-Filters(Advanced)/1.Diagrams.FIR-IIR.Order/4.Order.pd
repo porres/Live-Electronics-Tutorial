@@ -70,5 +70,4 @@ Here's a "First Order System" filter:, f 57;
 #X connect 18 4 16 0;
 #X connect 19 0 22 0;
 #X connect 22 0 31 0;
-#X connect 22 0 31 1;
 #X connect 39 0 18 0;
