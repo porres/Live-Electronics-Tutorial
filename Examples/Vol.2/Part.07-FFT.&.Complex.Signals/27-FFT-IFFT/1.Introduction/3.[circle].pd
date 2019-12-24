@@ -1,4 +1,4 @@
-#N struct 1396-point float x0 float y0 float size float fg float in
+#N struct 1018-point float x0 float y0 float size float fg float in
 float grid;
 #N canvas 765 166 508 634 12;
 #X declare -path else;
