@@ -1,6 +1,6 @@
 #N canvas 418 98 922 643 12;
 #X declare -path else;
-#X obj 661 277 pic amp.gif;
+#X obj 553 182 pic amp.gif;
 #X obj 92 198 graph~ 441 19 -1 1;
 #X obj 92 141 osc~ 111;
 #X text 25 19 The amplitude of a sound represents the sound source's

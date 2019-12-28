@@ -11,7 +11,7 @@
 #X obj 685 385 fold;
 #X obj 685 411 nbx 6 15 -1e+37 1e+37 0 0 empty osc empty 0 -8 0 11
 -228856 -1 -1 4.1 256;
-#X obj 232 341 pic foldover.gif;
+#X obj 77 251 pic foldover.gif;
 #X text 24 20 Nyquist's theorem says the highest frequency we can represent
 (also called "nyquist frequncy") is half the sample rate. Higher frequencies
 generate "Aliasing" or "Foldover". The [nyquist~] object \, from ELSE

@@ -202,8 +202,8 @@ or cosine function. The input to these functions is an angle value
 \, or "phase". Below we have an "alpha" angle and a y' "amplitude"
 value from the sine \, whereas x' is the cosine output., f 58;
 #X obj 796 606 setdsp~;
-#X obj 235 563 pic files/sine.gif;
-#X obj 238 236 pic files/angle.gif;
+#X obj 85 455 pic files/sine.gif;
+#X obj 151 155 pic files/angle.gif;
 #X obj 745 15 declare -path else;
 #X connect 0 0 17 0;
 #X connect 0 0 20 0;

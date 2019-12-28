@@ -324,7 +324,7 @@ as the amplitudes are equal to one., f 31;
 1 1;
 #X text 308 333 Play;
 #X text 446 332 Cents;
-#X obj 314 466 out~;
+#X obj 315 466 out~;
 #X text 363 332 Speed (%);
 #N canvas 288 207 524 569 Cartesian(pd 0;
 #X obj 185 519 outlet~;

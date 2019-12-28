@@ -413,7 +413,7 @@ The initial phase after the phase accumulation is then 360º or 0º.
 Now when we justapose both frames as below we can see there are no
 discontinuities., f 61;
 #X restore 795 269 pd Phase-Accum;
-#X obj 727 513 pic ./gif/accum.gif;
+#X obj 500 311 pic ./gif/accum.gif;
 #X obj 318 513 tabreceive~ \$0-accum;
 #X obj 320 540 table \$0-accum 1024;
 #X obj 314 567 tabsend~ \$0-accum;

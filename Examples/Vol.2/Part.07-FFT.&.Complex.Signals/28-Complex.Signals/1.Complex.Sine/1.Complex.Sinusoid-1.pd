@@ -1,19 +1,16 @@
-#N struct 1084-point float x0 float y0 float size float fg float in
+#N struct 1031-point float x0 float y0 float size float fg float in
 float grid;
 #N canvas 397 151 789 613 12;
 #X declare -path else;
 #X obj 200 182 hsl 128 15 0.05 1 1 1 empty amp empty -2 -8 0 10 -228856
--1 -1 12700 1;
+-1 -1 11480 1;
 #X text 232 165 Amplitude;
 #X obj 70 152 hsl 128 15 0.05 2.5 1 0 empty hz empty -2 -8 0 10 -228856
 -1 -1 5225 1;
 #X floatatom 81 176 5 0 0 0 - - -;
 #X text 97 131 Hertz;
 #X floatatom 212 205 5 0 0 0 - - -;
-#X text 349 557 === Projection in Time ===>;
-#X text 447 355 Seno;
-#X text 428 484 Cosseno;
-#X obj 459 396 pic sc2.gif;
+#X obj 235 256 pic sc2.gif;
 #X text 19 25 A complex signal has a real and imaginary part. The output
 of a FTT is a complex signal but is the frequency domain. Now we're
 talking about a complex signal in the time domain \, which is totally
@@ -62,9 +59,12 @@ sinusoid., f 54;
 #X restore 67 205 pd Complex-Sinusoid;
 #X obj 591 17 declare -path else;
 #X obj 67 347 circle 127 -1 1 -1 1 2 225 225 225 230 230 230 1 0 0
-1 1 0 0.51986 -0.854243 empty empty 1;
-#X connect 0 0 13 1;
+1 1 0 0.741049 -0.115451 empty empty 1;
+#X text 320 549 === Projection in Time ===>;
+#X text 397 484 Cosine;
+#X text 417 355 Sine;
+#X connect 0 0 10 1;
 #X connect 0 0 5 0;
 #X connect 2 0 3 0;
-#X connect 2 0 13 0;
-#X connect 13 0 15 0;
+#X connect 2 0 10 0;
+#X connect 10 0 12 0;

@@ -18,7 +18,7 @@
 #X text 695 452 =;
 #X text 714 463 1 - a * z^-1;
 #X text 118 461 1 - b1 * z^-1 - b2 * z^-2;
-#X obj 234 209 pic ../files/SOS.gif;
+#X obj 64 114 pic ../files/SOS.gif;
 #X text 41 173 Zero 1 ==>;
 #X text 44 240 Zero 2 ==>;
 #X obj 581 321 out~;
