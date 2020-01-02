@@ -413,7 +413,6 @@ The initial phase after the phase accumulation is then 360º or 0º.
 Now when we justapose both frames as below we can see there are no
 discontinuities., f 61;
 #X restore 795 269 pd Phase-Accum;
-#X obj 500 311 pic ./gif/accum.gif;
 #X obj 318 513 tabreceive~ \$0-accum;
 #X obj 320 540 table \$0-accum 1024;
 #X obj 314 567 tabsend~ \$0-accum;
@@ -429,7 +428,8 @@ process works:, f 63;
 object to read the samples. The step counter is the starting point
 of the sample \, the time duration of the grain is the window size
 in ms (46.43 in a sample rate of 44100 hz)., f 63;
-#X connect 0 0 59 2;
+#X obj 500 311 pic 0 ./gif/accum.gif empty empty;
+#X connect 0 0 58 2;
 #X connect 1 0 0 1;
 #X connect 1 0 13 0;
 #X connect 2 0 17 0;
@@ -438,7 +438,7 @@ in ms (46.43 in a sample rate of 44100 hz)., f 63;
 #X connect 5 0 9 0;
 #X connect 6 0 5 0;
 #X connect 7 0 12 0;
-#X connect 8 0 59 0;
+#X connect 8 0 58 0;
 #X connect 8 1 0 0;
 #X connect 9 0 8 0;
 #X connect 9 0 21 0;
@@ -476,9 +476,9 @@ in ms (46.43 in a sample rate of 44100 hz)., f 63;
 #X connect 47 0 37 0;
 #X connect 47 1 37 1;
 #X connect 50 0 47 1;
-#X connect 50 0 57 0;
-#X connect 55 0 50 1;
-#X connect 59 0 34 0;
+#X connect 50 0 56 0;
+#X connect 54 0 50 1;
+#X connect 58 0 34 0;
 #X restore 140 511 pd Pitch.Shift-Time.Stretch;
 #X obj 295 24 declare -path else;
 #X connect 4 0 12 1;

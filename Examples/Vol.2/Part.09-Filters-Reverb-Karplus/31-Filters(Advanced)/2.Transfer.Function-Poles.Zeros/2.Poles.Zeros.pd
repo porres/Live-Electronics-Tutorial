@@ -1,4 +1,4 @@
-#N canvas 314 34 961 536 12;
+#N canvas 314 34 940 526 12;
 #X declare -path else;
 #X obj 52 436 cnv 15 275 50 empty empty empty 5 12 0 14 -232693 -66577
 0;
@@ -18,12 +18,7 @@
 #X text 695 452 =;
 #X text 714 463 1 - a * z^-1;
 #X text 118 461 1 - b1 * z^-1 - b2 * z^-2;
-#X obj 64 114 pic ../files/SOS.gif;
-#X text 41 173 Zero 1 ==>;
-#X text 44 240 Zero 2 ==>;
 #X obj 581 321 out~;
-#X text 340 170 <== Pole 1;
-#X text 340 241 <== Pole 2;
 #N canvas 259 23 692 706 get-H(z) 0;
 #X obj 165 56 cnv 15 330 40 empty empty empty 5 12 0 14 -233017 -66577
 0;
@@ -84,9 +79,14 @@ how they act \, when the Z-Plane is presented.;
 #X obj 733 24 declare -path else;
 #X text 757 220 <= pole coefficient;
 #X text 657 283 =;
-#X connect 3 0 19 0;
+#X obj 64 113 pic 0 ../files/SOS.gif empty empty;
+#X text 48 172 Zero 1 ==>;
+#X text 48 241 Zero 2 ==>;
+#X text 340 171 <== Pole 1;
+#X text 340 241 <== Pole 2;
+#X connect 3 0 16 0;
 #X connect 4 0 3 0;
-#X connect 4 0 29 0;
+#X connect 4 0 24 0;
 #X connect 5 0 3 1;
-#X connect 5 0 29 1;
-#X connect 29 0 30 0;
+#X connect 5 0 24 1;
+#X connect 24 0 25 0;

@@ -1,6 +1,5 @@
 #N canvas 418 98 922 643 12;
 #X declare -path else;
-#X obj 553 182 pic amp.gif;
 #X obj 92 198 graph~ 441 19 -1 1;
 #X obj 92 141 osc~ 111;
 #X text 25 19 The amplitude of a sound represents the sound source's
@@ -37,8 +36,9 @@ in the time window, f 46;
 #X obj 151 555 out~;
 #X text 49 458 white noise => generator, f 14;
 #X obj 713 31 declare -path else;
-#X connect 2 0 1 0;
-#X connect 7 0 10 0;
-#X connect 8 0 7 0;
-#X connect 8 0 18 0;
-#X connect 9 0 7 0;
+#X obj 553 182 pic 0 amp.gif empty empty;
+#X connect 1 0 0 0;
+#X connect 6 0 9 0;
+#X connect 7 0 6 0;
+#X connect 7 0 17 0;
+#X connect 8 0 6 0;

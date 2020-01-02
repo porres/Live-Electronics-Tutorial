@@ -11,7 +11,6 @@
 #X obj 685 385 fold;
 #X obj 685 411 nbx 6 15 -1e+37 1e+37 0 0 empty osc empty 0 -8 0 11
 -228856 -1 -1 4.1 256;
-#X obj 77 251 pic foldover.gif;
 #X text 24 20 Nyquist's theorem says the highest frequency we can represent
 (also called "nyquist frequncy") is half the sample rate. Higher frequencies
 generate "Aliasing" or "Foldover". The [nyquist~] object \, from ELSE
@@ -41,13 +40,14 @@ it folds back again and starts raising up.;
 #X obj 587 302 trigger float bang;
 #X obj 710 356 nyquist~ -khz;
 #X obj 774 24 declare -path else;
+#X obj 77 251 pic 0 foldover.gif empty empty;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X connect 3 0 0 0;
 #X connect 3 0 7 0;
 #X connect 6 0 5 0;
 #X connect 7 0 8 0;
-#X connect 19 0 21 0;
-#X connect 21 0 3 0;
-#X connect 21 1 22 0;
-#X connect 22 0 7 2;
+#X connect 18 0 20 0;
+#X connect 20 0 3 0;
+#X connect 20 1 21 0;
+#X connect 21 0 7 2;

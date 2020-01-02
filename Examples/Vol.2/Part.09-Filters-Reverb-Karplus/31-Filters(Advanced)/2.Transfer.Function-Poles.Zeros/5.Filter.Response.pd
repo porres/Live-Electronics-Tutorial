@@ -27,7 +27,6 @@
 #X text 195 322 H(z) =;
 #X text 248 330 1 - a*z^-1;
 #X obj 691 432 car2pol;
-#X obj 566 142 pic ../files/amp.gif;
 #X text 37 36 A filter's response is an amplitude and phase value as
 a function of frequency \, which represents how the filter affects
 the gain and phase of an incomin frequency. We can calculate it with
@@ -449,15 +448,16 @@ empty -2 -8 0 10 -228856 -228856 -1 0 0;
 #X connect 25 0 3 0;
 #X restore 720 628 pd [lop~]-respone;
 #X obj 756 16 declare -path else;
-#X connect 10 0 32 0;
+#X obj 566 142 pic 0 ../files/amp.gif empty empty;
+#X connect 10 0 31 0;
 #X connect 11 0 10 0;
-#X connect 13 0 32 1;
+#X connect 13 0 31 1;
 #X connect 14 0 13 0;
 #X connect 17 0 15 0;
 #X connect 17 1 16 0;
 #X connect 23 0 17 0;
 #X connect 23 1 17 1;
-#X connect 32 0 34 0;
-#X connect 32 1 12 0;
-#X connect 34 0 23 0;
-#X connect 34 1 23 1;
+#X connect 31 0 33 0;
+#X connect 31 1 12 0;
+#X connect 33 0 23 0;
+#X connect 33 1 23 1;
