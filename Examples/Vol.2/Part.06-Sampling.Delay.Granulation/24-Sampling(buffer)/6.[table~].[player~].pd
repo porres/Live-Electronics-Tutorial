@@ -1,6 +1,6 @@
 #N canvas 290 131 1010 378 12;
 #X declare -path else;
-#X obj 364 213 phasor~;
+#X obj 364 216 phasor~;
 #X obj 364 290 out~;
 #X obj 395 184 r \$0-hz;
 #X obj 67 305 s \$0-hz;
@@ -17,7 +17,7 @@
 #X obj 547 287 out~;
 #X msg 547 223 speed \$1;
 #X obj 547 202 nbx 6 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 -54.2416 256;
 #X obj 547 177 * 100;
 #X text 28 38 In this example we use [table~] from the ELSE library.
 One advantage that makes it simpler is that we don't need to bother

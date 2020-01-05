@@ -4,7 +4,7 @@
 #X obj 55 244 soundfiler;
 #X floatatom 55 268 0 0 0 0 - - -;
 #X obj 292 271 soundfiler;
-#X floatatom 292 295 0 0 0 0 - - -;
+#X floatatom 292 297 0 0 0 0 - - -;
 #X obj 292 195 openpanel;
 #X obj 292 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -26,13 +26,13 @@
 #X floatatom 729 235 0 0 0 0 - - -;
 #X msg 729 257 \$1 44100;
 #X obj 292 218 list append \$0-sample;
-#X msg 581 240 stop;
+#X msg 572 240 stop;
 #X msg 292 243 read -resize \$1 \$2;
 #X obj 620 324 out~;
 #X text 102 270 # of samples;
 #X text 312 172 choose sound file;
 #X obj 55 292 s \$0-size;
-#X obj 292 317 s \$0-size;
+#X obj 292 323 s \$0-size;
 #X obj 785 211 r \$0-size;
 #X text 168 371 Array (or "buffer") with loaded sound file:;
 #X text 519 61 The simplest way of playing from an array in Pd Vanilla
