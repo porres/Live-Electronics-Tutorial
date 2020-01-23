@@ -1,43 +1,48 @@
-#N canvas 326 70 958 470 12;
-#X symbolatom 200 205 10 0 0 0 - - -;
-#X text 49 31 The backlash character is used in Pd to escape special
-characters. Such characters are \, for instance \, commas \, semicolons
-and dollar signs \, which are handled differently in Pd. Another such
-character is the backlash character itself., f 59;
-#X text 49 109 Hence \, if you type in a symbol box any of these characters
-\, you'll see it automatically generates a preceding backlash character.
-Pd then undertsands this as a literal character and avoids handling
-it in a special way.;
-#X obj 149 370 symbol \$0-x;
-#X obj 149 343 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#N canvas 326 70 996 545 12;
+#X symbolatom 155 212 30 0 0 0 - - -;
+#X obj 168 439 symbol \$0-x;
+#X obj 168 412 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X symbolatom 149 411 10 0 0 0 - - -;
-#X obj 286 344 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X symbolatom 168 480 10 0 0 0 - - -;
+#X obj 305 413 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X symbolatom 286 412 10 0 0 0 - - -;
-#X obj 286 371 symbol \\\$0-x;
-#X text 57 247 We've seen how this can be useful to set a receive name
-in a GUI and save it as a literal '\$0' without expanding to the patch
-ID number. See below how the symbol to the left gets expanded when
-it comes out of the [symbol] object.;
-#X obj 548 419 text fromlist example;
-#X obj 557 214 text define example;
-#X msg 548 329 list Hi \\\, how are you? \\\; Fine \\\, thanks! \\\;
+#X symbolatom 305 481 10 0 0 0 - - -;
+#X obj 305 440 symbol \\\$0-x;
+#X obj 579 299 text fromlist example;
+#X obj 592 448 text define example;
+#X msg 579 209 list Hi \\\, how are you? \\\; Fine \\\, thanks! \\\;
 ;
-#X text 499 29 Here's another example. Below we have a list where commas
+#X text 531 46 Here's another example. Below we have a list where commas
 and semicolons are escaped and therefore they are not treated as they
 normally would. The comma does not separate the message and the semicolon
 does not define a send address.;
-#X msg 576 371 list \\\$1 is literal and \$1 is not;
-#X text 503 116 Hence \, the messages below are properly stored in
+#X msg 607 251 list \\\$1 is literal and \$1 is not;
+#X text 538 350 Hence \, the messages below are properly stored in
 the text object \, which is an object that defines and manipulates
 texts in Pd.;
-#X text 704 214 <= click to open text window;
-#X text 556 277 Click on the messages below to see them getting stored
+#X text 739 448 <= click to open text window;
+#X text 587 157 Click on the messages below to see them getting stored
 in the [text] object., f 40;
-#X connect 3 0 5 0;
-#X connect 4 0 3 0;
-#X connect 6 0 8 0;
-#X connect 8 0 7 0;
-#X connect 12 0 10 0;
-#X connect 14 0 10 0;
+#X text 54 39 The backlash character is used in Pd to escape special
+characters. Such characters are \, for instance \, commas \, semicolons
+and dollar signs \, which are handled differently in Pd. Another such
+character is the backlash character itself. Hence \, you can use backlashes
+in message boxes., f 59;
+#X msg 155 148 symbol one\ symbol;
+#X msg 165 179 symbol one\\\,\\\ symbol;
+#X text 45 255 If you type the messages "one symbol" and "one \, symbol"
+in a symbol box \, you'll see it automatically generates a preceding
+backlash character. This will also happen for the other special characters
+(such as semicolons and dollar signs). We've seen how this can be useful
+to set a receive name in a GUI and save it as a literal '\$0' without
+expanding to the patch ID number. See below how the symbol to the left
+gets expanded when it comes out of the [symbol] object \, whereas the
+one to the right does not., f 63;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
+#X connect 9 0 7 0;
+#X connect 11 0 7 0;
+#X connect 16 0 0 0;
+#X connect 17 0 0 0;
