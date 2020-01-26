@@ -58,7 +58,7 @@ the concept of Poles and Zeros. Poles are feedback coefficients \,
 and Zeros are feedforward coefficients. Note that by defining a filter
 as a 2-Pole / 2-Zero filter \, you're also defining its order., f
 61;
-#X text 68 387 Transfer function of [biquad~]:;
+#X text 111 411 Transfer function of [biquad~]:;
 #X text 331 439 <== Zeros (a1/a2);
 #X text 331 464 <== Poles (b1/b2);
 #X text 39 328 Hence \, a1 & a2 are Zeros and b1 & b2 are Poles (note
