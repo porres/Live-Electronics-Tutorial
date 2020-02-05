@@ -11,7 +11,7 @@
 #X obj 335 255 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X text 397 254 filter cutoff (hz);
-#X obj 156 330 out~;
+#X obj 113 330 out~;
 #X obj 215 232 impseq~;
 #X obj 156 282 pluck~ 0 4000 10000, f 26;
 #X text 67 50 The ELSE library has the [pluck~] object \, which implements
@@ -30,4 +30,5 @@ filter. See its help file for more details., f 64;
 #X connect 5 0 9 3;
 #X connect 8 0 9 1;
 #X connect 9 0 7 0;
+#X connect 9 0 7 1;
 #X connect 11 0 0 0;

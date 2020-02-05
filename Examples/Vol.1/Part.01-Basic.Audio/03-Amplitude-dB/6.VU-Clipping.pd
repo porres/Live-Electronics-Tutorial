@@ -33,26 +33,27 @@ See below to the left how it can still represent values over 0 dB \,
 but note also how they become red \, as a sign of "DANGER"! Or "warning
 \, this is being clipped"., f 66;
 #X obj 848 309 noise~;
+#X obj 780 495 out~;
 #X obj 613 313 osc~ 440;
 #X obj 783 310 osc~ 440;
-#X obj 613 499 out~;
+#X obj 592 496 out~;
 #X obj 822 21 declare -path else;
 #X text 516 215 Below \, to the right \, we have other objects from
 ELSE \, [meter~] and [meter2~] \, which are convenient abstractions
 based on [vu~] and [vu] that automatically performs analysis on the
 input signals. Else also offers [meter4~] and [meter8~] \, which can
 be used for quadraphonic and octaphonic setups., f 66;
-#X obj 766 496 out2~;
 #X connect 0 0 3 0;
 #X connect 1 0 6 0;
 #X connect 1 0 7 0;
 #X connect 2 0 1 0;
 #X connect 3 0 1 1;
-#X connect 4 0 19 0;
-#X connect 5 0 22 0;
-#X connect 5 1 22 1;
+#X connect 4 0 20 0;
+#X connect 4 0 20 1;
+#X connect 5 0 17 0;
+#X connect 5 1 17 1;
 #X connect 7 0 8 0;
 #X connect 7 1 8 1;
 #X connect 16 0 5 1;
-#X connect 17 0 4 0;
-#X connect 18 0 5 0;
+#X connect 18 0 4 0;
+#X connect 19 0 5 0;

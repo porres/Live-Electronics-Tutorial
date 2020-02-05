@@ -34,3 +34,4 @@ of the band rejection., f 69;
 #X connect 5 0 7 0;
 #X connect 5 0 4 0;
 #X connect 7 0 6 0;
+#X connect 7 0 6 1;

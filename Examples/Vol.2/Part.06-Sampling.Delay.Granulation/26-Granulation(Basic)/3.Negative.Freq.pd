@@ -11,10 +11,10 @@
 #X obj 114 507 display~;
 #X obj 76 125 sig2float~;
 #X obj 76 150 vsl 20 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 4384 1;
+-1 -1 8194 1;
 #X obj 253 125 sig2float~;
 #X obj 253 150 vsl 20 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 5516 1;
+-1 -1 1706 1;
 #X obj 253 99 phasor~ -0.5;
 #X obj 76 99 phasor~ 0.5;
 #X obj 174 449 fexpr~ abs($x1[0] - $x1[-1]) < 0.5;
@@ -134,6 +134,7 @@ grain 500, f 43;
 #X connect 15 0 30 0;
 #X connect 16 0 29 0;
 #X connect 19 0 21 0;
+#X connect 19 0 21 1;
 #X connect 20 0 32 0;
 #X connect 20 0 34 0;
 #X connect 22 0 33 0;

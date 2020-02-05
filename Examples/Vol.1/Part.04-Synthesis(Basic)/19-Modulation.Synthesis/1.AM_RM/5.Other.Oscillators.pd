@@ -149,7 +149,9 @@ is with frequency and phase modulation \, as we'll see next., f 45
 #X connect 0 0 4 1;
 #X connect 2 0 0 0;
 #X connect 4 0 3 0;
+#X connect 4 0 3 1;
 #X connect 15 0 14 0;
+#X connect 15 0 14 1;
 #X connect 15 0 13 0;
 #X connect 16 0 15 0;
 #X connect 17 0 16 0;

@@ -230,6 +230,7 @@ to one! Check above.;
 #X connect 25 0 14 0;
 #X connect 26 0 1 1;
 #X connect 27 0 28 0;
+#X connect 27 0 28 1;
 #X connect 37 0 38 0;
 #X connect 41 0 0 1;
 #X connect 41 0 26 0;

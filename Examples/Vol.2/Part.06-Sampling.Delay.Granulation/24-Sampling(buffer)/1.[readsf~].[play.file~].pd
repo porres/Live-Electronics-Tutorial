@@ -10,7 +10,7 @@
 #X obj 161 196 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X msg 161 268 open \$1 \, 1;
-#X obj 161 323 out~;
+#X obj 118 323 out~;
 #X obj 137 219 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X text 181 194 Choose file;
@@ -43,6 +43,7 @@ file given as an argument., f 54;
 #X obj 161 244 symbol;
 #X obj 571 302 play.file~ violin.wav;
 #X connect 0 0 8 0;
+#X connect 0 0 8 1;
 #X connect 0 1 2 0;
 #X connect 1 0 0 0;
 #X connect 2 0 25 0;
@@ -58,3 +59,4 @@ file given as an argument., f 54;
 #X connect 21 0 26 0;
 #X connect 25 0 7 0;
 #X connect 26 0 14 0;
+#X connect 26 0 14 1;

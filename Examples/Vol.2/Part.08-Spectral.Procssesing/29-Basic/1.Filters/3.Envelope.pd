@@ -103,6 +103,7 @@ below to see the implementation.;
 #X connect 2 0 0 0;
 #X connect 4 0 3 1;
 #X connect 8 0 6 0;
+#X connect 8 0 6 1;
 #X connect 12 0 8 0;
 #X connect 13 0 7 0;
 #X connect 15 0 13 0;

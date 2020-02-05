@@ -1,15 +1,17 @@
 #N canvas 588 65 552 540 12;
 #X declare -path else;
 #X obj 92 203 vsl 22 80 0 127 0 0 dsfsdgs sddfjhgj empty 0 -9 0 10
--228856 -1 -1 2416 1;
+-228856 -1 -1 6726 1;
 #X obj 309 301 mtof;
 #X obj 309 279 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 39.5286 256;
+-228856 -1 -1 32.688 256;
 #X obj 187 150 nbx 5 14 5 500 1 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 5 256;
 #X obj 309 160 vsl 22 80 0 127 0 0 dsfsdgs sddfjhgj empty 0 -9 0 10
--228856 -1 -1 6273 1;
+-228856 -1 -1 1770 1;
+#X obj 109 411 out~;
 #X obj 92 326 osc~;
+#X obj 326 412 out~;
 #X obj 92 177 lfo 0.25 0 250;
 #X obj 92 298 rescale 200 500;
 #X obj 309 328 bl.tri~;
@@ -21,20 +23,18 @@ help file. Open it for more details., f 66;
 #X obj 92 355 plate.rev~ 50 0.6 0.5 0.8 0.6, f 18;
 #X obj 309 359 plate.rev~ 50 0.6 0.5 0.8 0.6, f 18;
 #X obj 357 31 declare -path else;
-#X obj 326 414 out2~;
-#X obj 109 411 out2~;
-#X connect 0 0 7 0;
-#X connect 1 0 8 0;
+#X connect 0 0 9 0;
+#X connect 1 0 10 0;
 #X connect 2 0 1 0;
-#X connect 3 0 6 2;
-#X connect 4 0 9 0;
-#X connect 5 0 12 0;
-#X connect 6 0 0 0;
-#X connect 7 0 5 0;
-#X connect 8 0 13 0;
-#X connect 9 0 2 0;
-#X connect 11 0 4 0;
-#X connect 12 0 16 0;
-#X connect 12 1 16 1;
-#X connect 13 0 15 0;
-#X connect 13 1 15 1;
+#X connect 3 0 8 2;
+#X connect 4 0 11 0;
+#X connect 6 0 14 0;
+#X connect 8 0 0 0;
+#X connect 9 0 6 0;
+#X connect 10 0 15 0;
+#X connect 11 0 2 0;
+#X connect 13 0 4 0;
+#X connect 14 0 5 0;
+#X connect 14 1 5 1;
+#X connect 15 0 7 0;
+#X connect 15 1 7 1;

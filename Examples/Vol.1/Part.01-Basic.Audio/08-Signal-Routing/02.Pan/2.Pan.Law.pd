@@ -1,9 +1,9 @@
 #N canvas 495 60 848 541 12;
 #X declare -path else;
 #X obj 626 191 osc~ 440;
-#X obj 577 234 env~;
-#X floatatom 577 263 5 0 0 0 - - -;
-#X obj 626 231 out~;
+#X obj 691 240 env~;
+#X floatatom 691 269 5 0 0 0 - - -;
+#X obj 583 240 out~;
 #X obj 161 455 fader~ hann;
 #X obj 81 478 fader~ lin;
 #X obj 247 455 fader~ hannsin;
@@ -178,6 +178,11 @@ tips and ears., f 53;
 seen how a linear crossfade attenuates 6 dB in the middle point. This
 means that a linear function is a type of 6 dB Pan Law! Also \, let's
 remind it is a type of constant voltage function., f 59;
+#X text 483 63 One thing to be clear is that whatever pan law you have
+\, you never have the input signal being duplicated when in the middle
+point \, as there's always an attenuation. If you want to just send
+the same signal equally to two speakers \, just implement a duplicated
+mono like this:, f 45;
 #X obj 81 454 fader~ sin;
 #X obj 161 478 fader~ sqrt;
 #X text 27 410 All of these functions are present in the [fader~] object
@@ -187,11 +192,7 @@ the 6 and 3 dB laws. We're literally talking about a point in between
 of 4.5 dB. Check the subpatches below to see more examples of functions
 that can be used for each law.;
 #X obj 651 29 declare -path else;
-#X text 483 63 One thing to be clear is that whatever pan law you have
-\, you never have the input signal being duplicated when in the middle
-point \, as there's always an attenuation. If you want to just send
-the same signal equally to two speakers \, just duplicate the mono
-like it happens for [out~]:, f 45;
 #X connect 0 0 1 0;
+#X connect 0 0 3 1;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;

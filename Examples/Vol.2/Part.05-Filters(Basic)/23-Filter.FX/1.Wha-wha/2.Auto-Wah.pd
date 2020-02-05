@@ -28,6 +28,7 @@ amplitude., f 61;
 #X obj 121 255 play.file~ pointy-pick.aif 1 1;
 #X connect 0 0 6 0;
 #X connect 4 0 3 0;
+#X connect 4 0 3 1;
 #X connect 5 0 15 0;
 #X connect 6 0 4 2;
 #X connect 7 0 11 1;

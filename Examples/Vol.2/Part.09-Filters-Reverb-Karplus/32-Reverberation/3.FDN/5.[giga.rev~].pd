@@ -14,8 +14,8 @@ comples. Check its help files for more details., f 50;
 #X obj 126 348 giga.rev~ -size 40 -decay 4 -damp 0.9 -bw 0.75 -dry
 1 -early 0.795 -late 0.04, f 39;
 #X obj 321 21 declare -path else;
+#X obj 126 407 out~;
 #X obj 126 296 play.file~ 1 didge.aif 1 1, f 27;
-#X obj 207 411 out2~;
-#X connect 4 0 7 0;
-#X connect 4 1 7 1;
-#X connect 6 0 4 0;
+#X connect 4 0 6 0;
+#X connect 4 1 6 1;
+#X connect 7 0 4 0;

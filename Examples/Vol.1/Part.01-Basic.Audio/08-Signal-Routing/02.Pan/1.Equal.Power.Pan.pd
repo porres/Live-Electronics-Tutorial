@@ -15,7 +15,9 @@ in float gridx float gridy;
 #X obj 532 200 noise~;
 #X obj 369 370 pi;
 #X obj 532 234 pan2~;
+#X obj 190 441 out~;
 #X obj 40 438 meter2~;
+#X obj 521 274 out~;
 #X obj 40 348 expr~ $v1 * cos($v2 * pi/2) \; $v1 * sin($v2 * pi/2)
 ;
 #X obj 326 474 setdsp~ 1;
@@ -44,14 +46,14 @@ middle point \, we have a -3 dB attenuation for both channels., f
 #X obj 766 454 env~;
 #X obj 812 454 env~;
 #X obj 812 479 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.1674 256;
+-228856 -1 -1 89.2067 256;
 #X obj 675 345 noise~;
 #X obj 766 479 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.1674 256;
+-228856 -1 -1 89.2067 256;
 #X obj 720 478 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.1674 256;
+-228856 -1 -1 89.2067 256;
 #X obj 675 478 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 89.1674 256;
+-228856 -1 -1 89.2067 256;
 #X text 719 495 left;
 #X text 719 509 front;
 #X text 765 508 front;
@@ -74,38 +76,36 @@ controlling it with audio signals. Check also the [pan4~] object \,
 which is a 4 speakers panning object and [pan8~] (octaphonic).;
 #X text 515 437 see also:;
 #X obj 525 466 pan8~, f 13;
-#X obj 743 306 slider2d 64 64 -1 1 -1 1 0 210 210 210 0 0 0 1 0 1 32
-32 empty empty;
-#X obj 146 450 out2~;
-#X obj 510 299 out2~;
-#X connect 0 0 11 0;
+#X obj 743 306 slider2d 64 64 -1 1 -1 1 0 210 210 210 0 0 0 1 0 1 0
+0 empty empty;
+#X connect 0 0 13 0;
 #X connect 1 0 2 0;
-#X connect 2 0 44 0;
-#X connect 4 0 45 0;
+#X connect 2 0 46 0;
+#X connect 4 0 47 0;
 #X connect 5 0 4 0;
 #X connect 7 0 9 0;
 #X connect 8 0 6 0;
-#X connect 9 0 53 0;
-#X connect 9 1 53 1;
-#X connect 11 0 10 0;
-#X connect 11 0 52 0;
-#X connect 11 1 10 1;
-#X connect 11 1 52 1;
-#X connect 19 0 5 0;
-#X connect 21 0 1 0;
-#X connect 22 0 46 1;
-#X connect 23 0 46 2;
-#X connect 24 0 32 0;
-#X connect 25 0 31 0;
-#X connect 26 0 30 0;
-#X connect 27 0 28 0;
-#X connect 29 0 46 0;
-#X connect 43 0 22 0;
-#X connect 43 1 23 0;
-#X connect 44 0 11 1;
-#X connect 45 0 9 1;
-#X connect 46 0 24 0;
-#X connect 46 1 25 0;
-#X connect 46 2 26 0;
-#X connect 46 3 27 0;
-#X connect 51 0 43 0;
+#X connect 9 0 12 0;
+#X connect 9 1 12 1;
+#X connect 13 0 10 0;
+#X connect 13 0 11 0;
+#X connect 13 1 10 1;
+#X connect 13 1 11 1;
+#X connect 21 0 5 0;
+#X connect 23 0 1 0;
+#X connect 24 0 48 1;
+#X connect 25 0 48 2;
+#X connect 26 0 34 0;
+#X connect 27 0 33 0;
+#X connect 28 0 32 0;
+#X connect 29 0 30 0;
+#X connect 31 0 48 0;
+#X connect 45 0 24 0;
+#X connect 45 1 25 0;
+#X connect 46 0 13 1;
+#X connect 47 0 9 1;
+#X connect 48 0 26 0;
+#X connect 48 1 27 0;
+#X connect 48 2 28 0;
+#X connect 48 3 29 0;
+#X connect 53 0 45 0;

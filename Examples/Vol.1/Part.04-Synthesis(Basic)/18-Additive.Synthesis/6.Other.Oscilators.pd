@@ -1,4 +1,4 @@
-#N canvas 420 75 901 710 12;
+#N canvas 420 75 889 647 12;
 #X declare -path else;
 #X obj 20 295 *~;
 #X obj 69 170 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
@@ -27,10 +27,10 @@
 #X obj 20 255 saw~ 50;
 #X obj 145 310 saw~ 50;
 #X obj 281 357 saw~ 50;
-#X obj 158 476 graph~ 1000 8;
-#X obj 145 633 out~;
-#X obj 622 364 graph~ 1000 8;
-#X obj 595 528 out~;
+#X obj 211 470 graph~ 1000 8;
+#X obj 102 515 out~;
+#X obj 663 391 graph~ 1000 8;
+#X obj 554 436 out~;
 #X obj 597 331 *~ 0.5;
 #X obj 507 164 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
@@ -67,6 +67,7 @@ left \, we have band limited oscillators., f 49;
 #X connect 0 0 2 0;
 #X connect 1 0 44 0;
 #X connect 2 0 21 0;
+#X connect 2 0 22 1;
 #X connect 2 0 22 0;
 #X connect 3 0 27 0;
 #X connect 4 0 6 0;
@@ -85,6 +86,7 @@ left \, we have band limited oscillators., f 49;
 #X connect 19 0 7 0;
 #X connect 20 0 12 0;
 #X connect 25 0 23 0;
+#X connect 25 0 24 1;
 #X connect 25 0 24 0;
 #X connect 26 0 17 0;
 #X connect 27 0 28 0;

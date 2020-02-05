@@ -36,6 +36,7 @@ the last pressed note. Check the help file for more information.;
 #X connect 6 0 7 0;
 #X connect 7 0 15 0;
 #X connect 8 0 18 0;
+#X connect 8 0 18 1;
 #X connect 9 0 14 0;
 #X connect 10 0 13 0;
 #X connect 11 0 10 0;

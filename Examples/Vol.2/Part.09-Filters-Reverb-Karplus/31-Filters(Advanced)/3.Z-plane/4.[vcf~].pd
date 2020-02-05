@@ -340,8 +340,8 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X connect 45 0 47 0;
 #X coords 0 -1 1 1 452 452 2 100 100;
 #X restore 486 293 pd Z-Plane-biquad;
-#X obj 660 155 *~;
-#X obj 623 122 noise~;
+#X obj 645 155 *~;
+#X obj 608 122 noise~;
 #X obj 159 458 nbx 5 14 1 100 1 1 \$0-Q empty empty 0 -8 0 10 -228856
 -1 -1 2.64165 256;
 #X floatatom 383 426 0 0 0 0 - ganho -;
@@ -356,10 +356,10 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X text 315 489 im;
 #X text 91 74 y1[n] = x1[n] + ar * y1[n-1] - ai * y2[n-1] \; y2[n]
 = x2[n] + ai * y1[n-1] + ar * y2[n-1];
-#X floatatom 678 122 5 0 0 0 - ganho -;
-#X obj 681 193 cpole~, f 9;
-#X floatatom 741 166 5 0 0 0 - im -;
-#X floatatom 721 143 5 0 0 0 - re -;
+#X floatatom 663 122 5 0 0 0 - ganho -;
+#X obj 666 193 cpole~, f 9;
+#X floatatom 726 166 5 0 0 0 - im -;
+#X floatatom 706 143 5 0 0 0 - re -;
 #X obj 518 61 fexpr~ g * $x1 + ar * $y1[-1] - ai * $y2[-1] \; ai *
 $y1[-1] + ar * $y2[-1];
 #X obj 518 33 noise~;
@@ -372,8 +372,8 @@ $y1[-1] + ar * $y2[-1];
 #X obj 190 520 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty
 0 -8 0 10 -228856 -1 -1 0 256;
 #X obj 157 549 vcf~ 500 1;
-#X text 760 142 re;
-#X text 782 166 im;
+#X text 745 142 re;
+#X text 767 166 im;
 #X obj 84 216 cnv 15 315 120 empty empty empty 20 12 0 14 -216246 -66577
 0;
 #X text 211 226 1 - ar*z^-1;
@@ -433,13 +433,13 @@ cf * qinv \, 0) \; max($f1 * 2 * pi / sr \, 0) \; 1/Q \; max($f2 \,
 #X connect 20 0 17 0;
 #X restore 57 482 pd coefficients;
 #X text 383 475 gain;
-#X obj 741 222 out~;
-#X obj 638 222 out~;
-#X text 720 118 gain;
+#X obj 726 222 out~;
+#X obj 623 222 out~;
+#X text 705 118 gain;
 #X obj 114 581 out~;
 #X obj 224 581 out~;
-#X obj 518 160 out~;
-#X obj 830 152 out~;
+#X obj 475 108 out~;
+#X obj 830 112 out~;
 #X text 47 122 Where x1[n] & y1[n] are the real input and output \,
 and x2[n] & y2[n] the imaginary input and output \, whereas "ar" is
 the real part of the coefficient and "ai" the imaginary part. And here's
@@ -462,11 +462,15 @@ the frequency and the radius the resonance.;
 #X connect 5 0 8 0;
 #X connect 6 0 9 0;
 #X connect 15 0 1 1;
+#X connect 16 0 43 1;
 #X connect 16 0 43 0;
 #X connect 16 1 42 0;
+#X connect 16 1 42 1;
 #X connect 17 0 16 3;
 #X connect 18 0 16 2;
 #X connect 19 0 47 0;
+#X connect 19 0 47 1;
+#X connect 19 1 48 1;
 #X connect 19 1 48 0;
 #X connect 20 0 19 0;
 #X connect 21 0 40 0;
@@ -474,5 +478,7 @@ the frequency and the radius the resonance.;
 #X connect 24 0 26 2;
 #X connect 25 0 26 1;
 #X connect 26 0 45 0;
+#X connect 26 0 45 1;
 #X connect 26 1 46 0;
+#X connect 26 1 46 1;
 #X connect 52 0 21 0;

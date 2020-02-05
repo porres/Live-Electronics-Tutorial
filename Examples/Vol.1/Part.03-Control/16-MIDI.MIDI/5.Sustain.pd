@@ -34,7 +34,7 @@
 #X obj 173 235 s \$0-note;
 #X obj 282 233 s \$0-vel;
 #X obj 623 156 nbx 3 14 -1e+37 1e+37 0 0 empty \$0-note empty 0 -8
-0 10 -228856 -1 -1 64 256;
+0 10 -228856 -1 -1 58 256;
 #X text 590 154 Note;
 #X obj 667 156 nbx 3 14 -1e+37 1e+37 0 0 empty \$0-vel empty 0 -8 0
 10 -228856 -1 -1 0 256;
@@ -44,7 +44,7 @@
 #X floatatom 282 211 5 0 0 0 - - -;
 #X obj 641 184 suspedal;
 #X obj 641 213 voices 2 1;
-#X obj 656 316 out~;
+#X obj 613 325 out~;
 #N canvas 588 58 350 354 voice2 0;
 #X obj 170 230 *~;
 #X obj 51 120 mtof;
@@ -130,7 +130,7 @@ off messages when the sustain toggle is off., f 33;
 #X connect 15 0 8 0;
 #X restore 133 161 pd sustain;
 #X obj 100 78 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-note empty 0 -8 0
-10 -228856 -1 -1 64 256;
+10 -228856 -1 -1 58 256;
 #X text 117 94 Note;
 #X obj 161 78 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-vel empty 0 -8 0
 10 -228856 -1 -1 0 256;
@@ -206,6 +206,7 @@ off messages when the sustain toggle is off., f 33;
 #X connect 5 1 3 0;
 #X connect 7 0 0 2;
 #X connect 9 0 8 0;
+#X connect 10 0 8 1;
 #X connect 11 0 9 0;
 #X connect 11 1 10 0;
 #X restore 335 330 pd sustain;
@@ -231,6 +232,7 @@ the shown vanilla implementation of a sustain pedal. For more details
 #X connect 16 0 10 0;
 #X connect 16 1 11 0;
 #X connect 17 0 14 0;
+#X connect 17 0 14 1;
 #X connect 18 0 20 0;
 #X connect 19 0 18 0;
 #X connect 20 0 26 0;

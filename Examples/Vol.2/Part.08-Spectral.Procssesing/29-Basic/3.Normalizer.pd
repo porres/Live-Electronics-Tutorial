@@ -112,6 +112,7 @@ the initial phase information is intact., f 66;
 #X connect 19 1 15 1;
 #X connect 19 1 7 1;
 #X connect 24 0 18 0;
+#X connect 24 0 18 1;
 #X connect 27 0 30 0;
 #X connect 28 0 29 0;
 #X connect 29 0 27 0;

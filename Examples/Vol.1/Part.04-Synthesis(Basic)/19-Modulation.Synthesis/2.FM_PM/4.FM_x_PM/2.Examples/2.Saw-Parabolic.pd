@@ -4,7 +4,7 @@
 #X obj 170 137 nbx 5 14 -1e+37 1e+37 0 0 empty mod empty 0 -8 0 10
 -228856 -1 -1 1 256;
 #X obj 314 163 nbx 8 14 -1e+37 1e+37 0 0 empty index_pm empty 0 -8
-0 10 -261682 -1 -1 5 256;
+0 10 -261682 -1 -1 10 256;
 #X obj 170 172 t b f;
 #X obj 224 190 v mod;
 #X obj 202 223 s \$0-mod;
@@ -16,7 +16,7 @@
 #X obj 72 350 r \$0-carrier;
 #X obj 314 191 s \$0-i_pm;
 #X obj 423 163 nbx 8 14 -1e+37 1e+37 0 0 empty index_fm empty 0 -8
-0 10 -261234 -1 -1 31.4159 256;
+0 10 -261234 -1 -1 40 256;
 #X obj 423 191 s \$0-i_fm;
 #X obj 270 328 r \$0-i_fm;
 #X floatatom 270 387 0 0 0 0 - - -;
@@ -29,7 +29,7 @@
 1;
 #X obj 72 447 sine~;
 #X obj 72 485 out~;
-#X obj 528 483 out~;
+#X obj 485 483 out~;
 #X obj 188 393 f2s~ 50;
 #X obj 607 414 f2s~ 50;
 #X obj 528 446 sine~;
@@ -98,9 +98,11 @@ of four.;
 #X connect 20 0 38 0;
 #X connect 21 0 38 1;
 #X connect 22 0 23 0;
+#X connect 22 0 23 1;
 #X connect 25 0 33 1;
 #X connect 26 0 0 1;
 #X connect 27 0 24 0;
+#X connect 27 0 24 1;
 #X connect 33 0 22 2;
 #X connect 35 0 33 0;
 #X connect 36 0 0 0;

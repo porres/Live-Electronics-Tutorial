@@ -1,6 +1,6 @@
-#N canvas 270 51 941 657 12;
+#N canvas 270 51 923 593 12;
 #X declare -path else;
-#X floatatom 55 267 5 0 0 0 - - -;
+#X floatatom 45 249 5 0 0 0 - - -;
 #N canvas 786 159 450 300 sequencer 0;
 #X obj 188 195 mtof;
 #X obj 84 136 metro 200;
@@ -18,47 +18,48 @@
 #X connect 5 0 1 0;
 #X connect 6 0 3 0;
 #X connect 6 1 0 0;
-#X restore 55 240 pd sequencer;
-#X obj 55 217 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X restore 45 222 pd sequencer;
+#X obj 45 199 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 201 394 out~;
-#X obj 182 462 graph~ 800 10 -1.1 1.1;
-#X obj 55 292 phasor~ 100;
-#X obj 181 357 function~;
-#X obj 181 187 initmess 0 0.25 1 0.15 1 0.35 0 0.05 -1 0.1 -1 0.1 0
+#X obj 128 449 out~;
+#X obj 238 414 graph~ 800 10 -1.1 1.1;
+#X obj 45 274 phasor~ 100;
+#X obj 171 339 function~;
+#X obj 171 169 initmess 0 0.25 1 0.15 1 0.35 0 0.05 -1 0.1 -1 0.1 0
 , f 31;
-#X text 399 270 <= [function];
-#X text 56 86 The [function~] object from ELSE can be used to generate
+#X text 389 252 <= [function];
+#X text 46 68 The [function~] object from ELSE can be used to generate
 crazy and different waveforms. Check its help file. Here we also use
 the [function] object from ELSE that allows you to draw waveforms on
 the fly.;
-#X obj 316 46 declare -path else;
-#X obj 184 232 function 200 100 empty empty -1 1 220 220 220 50 50
+#X obj 306 28 declare -path else;
+#X obj 174 214 function 200 100 empty empty -1 1 220 220 220 50 50
 50 0 0 0 0 0 0.25 1 0.15 1 0.35 0 0.05 -1 0.1 -1 0.1 0;
-#X obj 572 201 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 553 194 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 572 482 graph~ 441 8 -1.05 1.05 200 140;
-#X text 839 370 parabolic waveform, f 9;
-#X obj 668 196 expr -$f1 \; -$f1 \; $f1 \; $f1;
-#X obj 668 266 pack f f f f;
-#X obj 671 147 hsl 128 15 2 10 1 0 empty empty empty -2 -8 0 10 -228856
+#X obj 626 413 graph~ 441 8 -1.05 1.05 200 140;
+#X text 820 363 parabolic waveform, f 9;
+#X obj 649 189 expr -$f1 \; -$f1 \; $f1 \; $f1;
+#X obj 649 259 pack f f f f;
+#X obj 652 140 hsl 128 15 2 10 1 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X floatatom 668 171 5 0 0 0 - - -;
-#X obj 572 223 phasor~ 100;
-#X obj 668 293 setmess exp;
-#X obj 572 372 function~ 0 0.5 1 0.5 0 0.5 -1 0.5 0 -exp -2 -2 2 2
+#X floatatom 649 164 5 0 0 0 - - -;
+#X obj 553 216 phasor~ 100;
+#X obj 649 286 setmess exp;
+#X obj 553 365 function~ 0 0.5 1 0.5 0 0.5 -1 0.5 0 -exp -2 -2 2 2
 , f 36;
-#X obj 587 417 out~;
-#X text 554 33 The [function~] object also allows to draw exponential
+#X obj 509 451 out~;
+#X text 535 26 The [function~] object also allows to draw exponential
 curves. Check its help file for more details. Below \, we draw parabolic
 waveforms. A parameter of "2" is exactly the same waveform as the [else/parabolic~]
 object., f 42;
-#X obj 601 332 display;
+#X obj 582 325 display;
 #X connect 0 0 5 0;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 5 0 6 0;
 #X connect 6 0 3 0;
+#X connect 6 0 3 1;
 #X connect 6 0 4 0;
 #X connect 7 0 11 0;
 #X connect 11 0 6 0;
@@ -74,4 +75,5 @@ object., f 42;
 #X connect 20 0 24 0;
 #X connect 21 0 13 0;
 #X connect 21 0 22 0;
+#X connect 21 0 22 1;
 #X connect 24 0 21 0;

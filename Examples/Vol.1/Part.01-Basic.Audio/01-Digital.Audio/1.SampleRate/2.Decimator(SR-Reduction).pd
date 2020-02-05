@@ -37,9 +37,11 @@ The frequency at wich it receives impulses is the downsampled frequency.
 #X text 34 18 The "decimator" is a process that consist in reducing
 the sample rate of a signal - also known as "downsampling".;
 #X connect 0 0 11 0;
+#X connect 0 0 11 1;
 #X connect 2 0 7 0;
 #X connect 3 0 2 0;
 #X connect 6 0 5 0;
+#X connect 6 0 5 1;
 #X connect 7 0 6 1;
 #X connect 8 0 0 1;
 #X connect 9 0 8 0;

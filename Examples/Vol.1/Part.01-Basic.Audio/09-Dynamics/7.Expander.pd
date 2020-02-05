@@ -48,6 +48,7 @@ or so)., f 45;
 #X obj 68 352 glide2~;
 #X connect 0 0 31 1;
 #X connect 1 0 15 0;
+#X connect 1 0 15 1;
 #X connect 2 0 31 2;
 #X connect 3 0 22 0;
 #X connect 4 0 14 0;

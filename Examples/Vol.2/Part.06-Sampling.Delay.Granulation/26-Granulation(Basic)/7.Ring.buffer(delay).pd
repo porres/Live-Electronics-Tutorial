@@ -24,7 +24,7 @@
 0 10 -228856 -1 -1 0 256;
 #X obj 408 291 nbx 5 14 -1e+37 1e+37 0 0 empty freq-amp empty 0 -8
 0 10 -228856 -1 -1 4 256;
-#X obj 170 546 out~;
+#X obj 147 546 out~;
 #X obj 355 231 stepnoise~;
 #X obj 332 472 initmess \; lfnoise-freq 2 \; freq-amp 4 \; freq-offset
 0 \; grao-amp 100 \; grao-offset 100 \; pos-amp 4800 \; pos-offset
@@ -125,6 +125,7 @@ actual live input., f 61;
 #X connect 11 0 19 2;
 #X connect 13 0 19 0;
 #X connect 16 0 12 0;
+#X connect 16 0 12 1;
 #X connect 19 0 15 0;
 #X connect 20 0 1 0;
 #X connect 21 0 2 0;

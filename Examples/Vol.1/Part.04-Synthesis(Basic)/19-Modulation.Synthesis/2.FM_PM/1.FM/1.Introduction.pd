@@ -49,4 +49,5 @@ like effects.;
 #X connect 5 0 19 0;
 #X connect 6 0 0 0;
 #X connect 7 0 8 0;
+#X connect 7 0 8 1;
 #X connect 19 0 3 1;

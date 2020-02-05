@@ -5,7 +5,7 @@
 #X obj 305 279 tabplay~ \$0-IR;
 #X obj 305 317 out~;
 #X text 329 253 Play IR:;
-#X obj 665 393 out~;
+#X obj 622 393 out~;
 #X text 49 29 Partitioned convolution divides the IR into smaller bits
 so we get much shorter latencies suitable for live input. The convolution
 is done in each partition separately.;
@@ -20,8 +20,8 @@ accordingly so they get added at the right time.;
 that implements partitioned convolution this way. It needs a partition
 size and an audio file to load as an IR. Below we load a rather bizarre
 IR file: a voice sample \, also used in Pd Vanilla's example.;
-#X floatatom 556 176 5 0 0 0 - - -;
-#X obj 556 204 standard~ 100;
+#X floatatom 559 176 5 0 0 0 - - -;
+#X obj 559 204 standard~ 100;
 #X obj 682 203 envgen~ 500 1 150 0;
 #X text 59 399 This is to reinforce the idea of using convolution as
 a general sound processor. It's been noted that conviolution is widely
@@ -40,8 +40,8 @@ a and B is the same as convoluting B and A). We also have an envelope
 generator to control the incoming sound. As an alternative \, we also
 have a sample input that you can select with [xselect~]., f 68;
 #X text 735 234 <= change input;
-#X obj 556 285 out~;
-#X text 773 422 <= watch it \, this can get loud!!!;
+#X obj 516 285 out~;
+#X text 730 422 <= watch it \, this can get loud!!!;
 #X text 552 465 Check the help file of [conv~] for more details on
 it.;
 #X obj 838 21 declare -path else;
@@ -57,15 +57,18 @@ convolution \, one example is [convolve~] by william brent \, see ==>
 #X obj 659 532 openfile http://williambrent.conflations.com/pagez/research.html
 -h Brent's externals;
 #X connect 0 0 1 0;
+#X connect 1 0 2 1;
 #X connect 1 0 2 0;
 #X connect 7 0 16 0;
 #X connect 8 0 12 0;
 #X connect 10 0 11 0;
 #X connect 11 0 7 0;
 #X connect 11 0 19 0;
+#X connect 11 0 19 1;
 #X connect 12 0 7 1;
 #X connect 14 0 15 0;
 #X connect 15 0 16 0;
 #X connect 16 0 24 0;
 #X connect 23 0 16 1;
 #X connect 24 0 4 0;
+#X connect 24 0 4 1;

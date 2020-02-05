@@ -1,6 +1,6 @@
 #N canvas 436 102 608 497 12;
 #X declare -path else;
-#X obj 62 170 noise~;
+#X obj 104 170 noise~;
 #X obj 61 246 out~;
 #X obj 322 255 v a0;
 #X obj 384 255 v a1;
@@ -23,7 +23,7 @@ $y[-1] + b2 * $y[-2], f 36;
 #X obj 197 407 out~;
 #X text 320 274 gain;
 #X obj 198 171 initmess 1.99 -0.995 0.00246 0 -0.00246;
-#X obj 62 206 biquad~;
+#X obj 104 206 biquad~;
 #X text 87 83 A second order system is nothing but a [biquad~] filter!
 It expects a list of 5 coefficients that correspond to the coefficients:
 b1 \, b2 \, a0 \, a1 & a2. Compare it below., f 56;
@@ -41,6 +41,8 @@ b1 \, b2 \, a0 \, a1 & a2. Compare it below., f 56;
 #X connect 12 4 10 0;
 #X connect 13 0 14 0;
 #X connect 14 0 19 0;
+#X connect 14 0 19 1;
 #X connect 21 0 12 0;
 #X connect 21 0 22 0;
 #X connect 22 0 1 0;
+#X connect 22 0 1 1;

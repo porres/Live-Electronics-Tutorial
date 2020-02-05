@@ -396,3 +396,4 @@ and present other such kinds of filters like the comb filter. For now
 #X connect 4 0 9 1;
 #X connect 5 0 9 0;
 #X connect 9 0 12 0;
+#X connect 9 0 12 1;

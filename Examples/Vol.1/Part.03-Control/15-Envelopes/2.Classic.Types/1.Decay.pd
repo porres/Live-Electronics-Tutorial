@@ -2,36 +2,36 @@
 #X declare -path else;
 #X obj 159 159 impseq~;
 #X obj 90 192 brown~;
-#X obj 77 296 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
+#X obj 219 283 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X text 100 389 0;
-#X text 100 290 1;
+#X text 242 376 0;
+#X text 242 277 1;
 #X obj 141 263 *~;
 #X obj 159 133 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 159 197 decay~ 2000;
-#X obj 140 308 out~;
-#X obj 363 319 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+#X obj 98 306 out~;
+#X obj 477 319 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
 #X obj 413 292 *~;
-#X obj 413 333 out~;
+#X obj 370 332 out~;
 #X msg 431 198 1;
 #X msg 466 198 0.5;
 #X msg 219 160 0.5;
-#X obj 623 321 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+#X obj 740 321 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
 #X obj 673 294 *~;
-#X obj 673 334 out~;
+#X obj 630 334 out~;
 #X msg 691 194 1;
 #X msg 727 195 0.5;
 #X obj 431 257 vline~;
-#X text 384 408 0;
-#X text 384 315 1;
-#X text 643 409 0;
-#X text 643 316 1;
-#X obj 77 268 s2f~;
-#X obj 363 290 s2f~;
-#X obj 623 292 s2f~;
+#X text 498 408 0;
+#X text 498 315 1;
+#X text 760 409 0;
+#X text 760 316 1;
+#X obj 219 255 s2f~;
+#X obj 477 290 s2f~;
+#X obj 740 292 s2f~;
 #X obj 670 41 declare -path else;
 #X msg 691 231 \$1 2000 0;
 #X obj 691 259 envgen~ -exp 4;
@@ -50,14 +50,17 @@ a noisy or percussive sound!, f 80;
 #X msg 431 229 \$1 \, 0 300;
 #X connect 0 0 7 0;
 #X connect 1 0 5 0;
+#X connect 5 0 8 1;
 #X connect 5 0 8 0;
 #X connect 6 0 0 0;
 #X connect 7 0 5 1;
 #X connect 7 0 25 0;
+#X connect 10 0 11 1;
 #X connect 10 0 11 0;
 #X connect 12 0 35 0;
 #X connect 13 0 35 0;
 #X connect 14 0 7 0;
+#X connect 16 0 17 1;
 #X connect 16 0 17 0;
 #X connect 18 0 29 0;
 #X connect 19 0 29 0;

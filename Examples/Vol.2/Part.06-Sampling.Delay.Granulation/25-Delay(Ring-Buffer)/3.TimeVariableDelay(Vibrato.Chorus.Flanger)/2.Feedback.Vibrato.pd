@@ -2,7 +2,7 @@
 #X declare -path else;
 #X obj 106 239 loadbang;
 #X obj 549 353 hsl 128 15 -0.999 0.999 0 0 empty feedback empty -2
--6 0 8 -228856 -1 -1 1901 1;
+-6 0 8 -228856 -1 -1 11753 1;
 #X text 580 352 feedback;
 #X floatatom 546 375 0 0 0 0 - - -;
 #X obj 308 466 out~;
@@ -12,10 +12,10 @@
 #X floatatom 461 346 5 0 1000 0 - - -;
 #X floatatom 395 294 5 1 100 0 - - -;
 #X obj 317 244 hsl 128 15 0.01 3 1 0 empty rate empty -2 -8 0 10 -228856
--1 -1 9460 1;
+-1 -1 6670 1;
 #X text 279 267 rate;
 #X obj 464 323 hsl 128 15 60 200 1 0 empty depth empty -2 -8 0 10 -228856
--1 -1 0 1;
+-1 -1 5388 1;
 #X obj 398 270 hsl 128 15 0 50 0 0 empty delay empty -2 -8 0 10 -228856
 -1 -1 5080 1;
 #X obj 369 381 rescale~;
@@ -45,6 +45,7 @@ check the presets below.;
 #X connect 1 0 3 0;
 #X connect 3 0 15 0;
 #X connect 5 0 4 0;
+#X connect 5 0 4 1;
 #X connect 6 0 14 0;
 #X connect 7 0 6 0;
 #X connect 8 0 17 0;

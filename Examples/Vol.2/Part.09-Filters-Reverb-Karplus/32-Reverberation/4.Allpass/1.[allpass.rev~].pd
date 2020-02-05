@@ -5,9 +5,9 @@
 #X obj 124 406 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 693 256 hsl 128 15 -0.999 0.999 0 0 empty g ganho -2 -8 0 10
--228856 -1 -1 629 1;
+-228856 -1 -1 0 1;
 #X obj 617 217 hsl 128 15 1 100 1 0 empty ms empty -2 -8 0 10 -191407
--1 -1 5366 0;
+-1 -1 0 0;
 #X obj 622 271 s \$0-del;
 #X obj 147 504 *~;
 #X obj 109 474 noise~;
@@ -50,7 +50,7 @@
 #X text 227 146 -(*g)-;
 #X text 86 96 x[n] -----(*-g)--(+)--(+)----------- y[n];
 #X obj 540 364 out~;
-#X obj 146 560 out~;
+#X obj 104 560 out~;
 #X obj 539 316 allpass.rev~ 100 0.8 1;
 #X obj 526 255 r~ \$0-in;
 #X obj 161 532 s~ \$0-in;
@@ -133,13 +133,16 @@ rather than a filter.;
 #X connect 3 0 1 0;
 #X connect 4 0 0 0;
 #X connect 6 0 46 0;
+#X connect 6 0 46 1;
 #X connect 6 0 49 0;
 #X connect 7 0 6 0;
 #X connect 47 0 45 0;
+#X connect 47 0 45 1;
 #X connect 48 0 47 0;
 #X connect 50 0 58 0;
 #X connect 51 0 59 1;
 #X connect 52 0 59 0;
 #X connect 58 0 71 0;
+#X connect 58 0 71 1;
 #X connect 59 0 6 1;
 #X connect 65 0 59 0;

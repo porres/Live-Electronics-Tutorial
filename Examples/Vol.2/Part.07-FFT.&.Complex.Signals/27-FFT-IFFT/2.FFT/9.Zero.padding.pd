@@ -85,6 +85,7 @@ and a zero padding table to zero out values above 16384 For the example
 #X msg 512 110 \$1;
 #X connect 0 0 1 0;
 #X connect 2 0 5 0;
+#X connect 2 0 12 1;
 #X connect 2 0 12 0;
 #X connect 3 0 2 0;
 #X connect 15 0 16 0;

@@ -6,16 +6,16 @@
 #X obj 402 515 delwrite~ \$0-Kp 1000;
 #X floatatom 420 384 5 0 0 0 - - -;
 #X obj 423 363 hsl 128 15 0 1 0 0 empty \$0-fb empty -2 -8 0 10 -228856
--1 -1 12446 1;
+-1 -1 0 1;
 #X text 455 362 feedback;
 #X floatatom 624 377 0 0 0 0 - - -;
 #X obj 627 350 hsl 128 15 0 1 0 0 empty \$0-blend empty -2 -8 0 10
--228856 -1 -1 12700 1;
+-228856 -1 -1 0 1;
 #X text 669 349 blend;
 #X obj 494 410 noise~;
 #X obj 494 458 expr~ if($v1 < $v2 \, 1 \, -1), f 19;
 #X text 68 388 envelope;
-#X obj 270 506 out~;
+#X obj 227 526 out~;
 #X obj 270 424 mov.avg~ 2;
 #X obj 494 434 rescale~;
 #X obj 420 409 f2s~ 10;
@@ -67,6 +67,7 @@ results modeling plucked instruments., f 58;
 #X connect 11 0 2 1;
 #X connect 14 0 1 0;
 #X connect 14 0 13 0;
+#X connect 14 0 13 1;
 #X connect 15 0 11 0;
 #X connect 16 0 2 0;
 #X connect 17 0 0 1;

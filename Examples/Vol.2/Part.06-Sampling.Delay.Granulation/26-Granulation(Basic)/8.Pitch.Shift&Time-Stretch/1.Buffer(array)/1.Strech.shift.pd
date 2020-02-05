@@ -4,7 +4,7 @@
 #X obj 82 320 float;
 #X text 618 317 cents;
 #X obj 608 337 nbx 5 16 -1e+37 1e+37 0 0 empty cents empty 0 -8 0 13
--228856 -1 -1 0 256;
+-228856 -1 -1 -400 256;
 #X obj 519 337 nbx 4 16 -1e+37 1e+37 0 0 empty tempo empty 0 -8 0 13
 -228856 -1 -1 5 256;
 #X obj 698 337 nbx 4 16 64 8192 0 0 empty grao empty 0 -8 0 13 -228856
@@ -86,7 +86,7 @@ below to see how it works., f 59;
 #X obj 243 522 phasor~;
 #X obj 173 632 *~;
 #X obj 237 100 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--236782 -1 -1 0 256;
+-236782 -1 -1 -400 256;
 #X obj 225 607 *~;
 #X obj 173 665 +~;
 #X obj 134 130 / 100;
@@ -231,9 +231,11 @@ f 54;
 #X connect 15 0 22 0;
 #X connect 20 0 21 0;
 #X connect 22 0 13 0;
+#X connect 22 0 13 1;
 #X connect 23 0 1 0;
 #X connect 24 0 0 0;
 #X connect 25 0 24 1;
 #X connect 34 0 17 0;
+#X connect 34 0 17 1;
 #X connect 35 0 12 2;
 #X connect 35 0 15 2;

@@ -428,7 +428,7 @@ process works:, f 63;
 object to read the samples. The step counter is the starting point
 of the sample \, the time duration of the grain is the window size
 in ms (46.43 in a sample rate of 44100 hz)., f 63;
-#X obj 500 311 pic 0 ./gif/accum.gif empty empty;
+#X obj 512 307 pic 0 ./gif/accum.gif empty empty;
 #X connect 0 0 58 2;
 #X connect 1 0 0 1;
 #X connect 1 0 13 0;
@@ -485,3 +485,4 @@ in ms (46.43 in a sample rate of 44100 hz)., f 63;
 #X connect 5 0 12 2;
 #X connect 6 0 12 0;
 #X connect 12 0 9 0;
+#X connect 12 0 9 1;

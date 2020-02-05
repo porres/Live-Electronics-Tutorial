@@ -1,6 +1,6 @@
 #N canvas 411 64 913 564 12;
 #X declare -path else;
-#X obj 144 222 out~;
+#X obj 125 223 out~;
 #X obj 210 396 noise~;
 #X obj 335 407 setdsp~ 1;
 #X obj 234 507 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -8,7 +8,7 @@
 #X obj 180 507 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 128 507 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0.582371 256;
+-228856 -1 -1 0 256;
 #X obj 234 480 rms~;
 #X obj 180 480 rms~;
 #X obj 128 480 rms~;
@@ -45,11 +45,11 @@ channels. Check its help file., f 46;
 #X floatatom 559 219 6 0 0 0 - - -;
 #X obj 784 244 osc~ 880;
 #X obj 552 404 spread~ 3 2;
+#X obj 561 454 out~;
 #X obj 619 288 xselect2~ 3, f 24;
 #X obj 654 245 osc~ 440;
 #X obj 729 244 noise~;
 #X obj 664 47 declare -path else;
-#X obj 547 452 out2~;
 #X connect 1 0 22 1;
 #X connect 6 0 3 0;
 #X connect 7 0 4 0;
@@ -59,6 +59,7 @@ channels. Check its help file., f 46;
 #X connect 12 0 18 3;
 #X connect 13 0 18 4;
 #X connect 18 0 0 0;
+#X connect 18 0 0 1;
 #X connect 19 0 21 0;
 #X connect 20 0 18 0;
 #X connect 21 0 20 0;
@@ -72,12 +73,12 @@ channels. Check its help file., f 46;
 #X connect 29 1 34 1;
 #X connect 29 2 34 2;
 #X connect 30 0 32 0;
-#X connect 31 0 35 0;
+#X connect 31 0 36 0;
 #X connect 31 0 29 0;
 #X connect 32 0 31 0;
-#X connect 33 0 35 3;
-#X connect 34 0 39 0;
-#X connect 34 1 39 1;
-#X connect 35 0 29 1;
-#X connect 36 0 35 1;
-#X connect 37 0 35 2;
+#X connect 33 0 36 3;
+#X connect 34 0 35 0;
+#X connect 34 1 35 1;
+#X connect 36 0 29 1;
+#X connect 37 0 36 1;
+#X connect 38 0 36 2;

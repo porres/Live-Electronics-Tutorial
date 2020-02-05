@@ -1,4 +1,4 @@
-#N canvas 481 63 1093 476 12;
+#N canvas 237 42 1093 476 12;
 #X declare -path else;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-linear 1024 float 0;
@@ -64,7 +64,7 @@ db with [lin2db~]. Values under -100 are ignored in our graph., f
 #X restore 164 346 pd FFT;
 #X obj 248 266 bl.saw~;
 #X obj 139 301 xselect~ 2 100 1;
-#X obj 138 386 out~;
+#X obj 96 386 out~;
 #X text 216 345 <= open;
 #X obj 248 176 initmess 581.396, f 8;
 #X text 58 181 sine;
@@ -84,5 +84,6 @@ of a sawtooth wave when displaying in dB., f 48;
 #X connect 18 0 19 1;
 #X connect 19 0 17 0;
 #X connect 19 0 20 0;
+#X connect 19 0 20 1;
 #X connect 22 0 12 0;
 #X connect 25 0 15 0;

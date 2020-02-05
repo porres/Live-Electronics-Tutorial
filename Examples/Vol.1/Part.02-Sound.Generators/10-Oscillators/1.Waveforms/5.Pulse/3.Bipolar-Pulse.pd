@@ -21,4 +21,5 @@ places it right in the middle., f 58;
 #X connect 1 0 2 0;
 #X connect 2 0 5 1;
 #X connect 5 0 4 0;
+#X connect 5 0 4 1;
 #X connect 5 0 8 0;

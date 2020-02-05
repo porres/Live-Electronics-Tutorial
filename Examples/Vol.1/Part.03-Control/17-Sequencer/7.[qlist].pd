@@ -39,6 +39,7 @@ is done. We use this bang to loop the sequence.;
 #X obj 375 21 declare -path else;
 #X connect 0 0 23 0;
 #X connect 1 0 18 0;
+#X connect 1 0 18 1;
 #X connect 2 0 14 0;
 #X connect 2 1 13 0;
 #X connect 3 0 15 0;

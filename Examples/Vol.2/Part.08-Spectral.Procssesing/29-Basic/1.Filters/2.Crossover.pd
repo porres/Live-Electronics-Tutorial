@@ -184,6 +184,7 @@ same way as the first example \, we can implement a crossover filter.
 #X connect 4 0 21 0;
 #X connect 9 0 13 0;
 #X connect 13 0 12 0;
+#X connect 13 1 12 1;
 #X connect 14 0 17 0;
 #X connect 15 0 16 0;
 #X connect 16 0 14 0;

@@ -10,7 +10,7 @@
 #X obj 183 304 outlet~;
 #X obj 107 200 + 1;
 #X obj 107 121 vradio 20 1 0 3 empty empty empty 0 -8 0 10 -228856
--1 -1 0;
+-1 -1 1;
 #X text 132 164 [adc~];
 #X obj 107 48 loadbang;
 #X msg 107 75 0;
@@ -76,8 +76,8 @@
 #X text 68 279 |;
 #X text 68 386 |;
 #X text 68 376 |;
-#X obj 367 270 out~;
-#X obj 475 242 graph~ 268 5;
+#X obj 433 262 out~;
+#X obj 541 234 graph~ 268 5;
 #X text 33 549 Você pode desenhar na tabela de Função de Transferência
 e ver o resultado. Para ressetar \, basta clicar na mensagem "1" ligada
 ao slider horizontal acima.;
@@ -124,5 +124,7 @@ waveshaping and automatically rescales audio input signals (between
 #X connect 20 0 34 0;
 #X connect 22 0 33 0;
 #X connect 33 0 17 0;
+#X connect 33 0 17 1;
 #X connect 33 0 18 0;
 #X connect 34 0 21 0;
+#X connect 34 0 21 1;

@@ -5,13 +5,13 @@
 -8 0 10 -228856 -1 -1 2 256;
 #X obj 66 233 noise~;
 #X obj 493 273 nbx 5 14 -1e+37 1e+37 0 0 empty freq-offset empty 0
--8 0 10 -228856 -1 -1 0 256;
+-8 0 10 -228856 -1 -1 10 256;
 #X obj 179 256 nbx 5 14 -1e+37 1e+37 0 0 empty pos-amp empty 0 -8 0
-10 -228856 -1 -1 4800 256;
+10 -228856 -1 -1 10000 256;
 #X obj 120 255 nbx 5 14 -1e+37 1e+37 0 0 empty pos-offset empty 0 -8
 0 10 -228856 -1 -1 0 256;
 #X obj 537 304 nbx 5 14 -1e+37 1e+37 0 0 empty freq-amp empty 0 -8
-0 10 -228856 -1 -1 4 256;
+0 10 -228856 -1 -1 8 256;
 #X obj 449 364 s~ \$0-freq;
 #X obj 449 236 stepnoise~;
 #X obj 469 471 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -153,6 +153,7 @@ controlled by [stepnoise~] \, but you can also try [rampnoise~] instead.
 #X connect 19 0 17 0;
 #X connect 20 0 7 0;
 #X connect 23 0 24 0;
+#X connect 23 0 24 1;
 #X connect 25 0 23 0;
 #X connect 26 0 23 1;
 #X connect 27 0 25 0;

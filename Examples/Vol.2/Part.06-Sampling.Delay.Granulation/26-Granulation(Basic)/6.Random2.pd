@@ -8,14 +8,14 @@
 #X obj 335 123 hsl 128 15 0.01 10 1 0 empty lfo-freq empty -2 -8 0
 10 -228856 -1 -1 7192 1;
 #X obj 384 151 hsl 128 15 1 100 1 0 empty freq-offset empty -2 -8 0
-10 -228856 -1 -1 0 1;
+10 -228856 -1 -1 1912 1;
 #X obj 72 128 noise~;
 #X obj 252 177 nbx 5 14 -1e+37 1e+37 0 0 empty grao-amp empty 0 -8
-0 10 -228856 -1 -1 100 256;
+0 10 -228856 -1 -1 500 256;
 #X obj 225 152 nbx 5 14 -1e+37 1e+37 0 0 empty grao-offset empty 0
 -8 0 10 -228856 -1 -1 100 256;
 #X obj 125 184 nbx 5 14 -1e+37 1e+37 0 0 empty pos-amp empty 0 -8 0
-10 -228856 -1 -1 4800 256;
+10 -228856 -1 -1 10000 256;
 #X obj 98 160 nbx 5 14 -1e+37 1e+37 0 0 empty pos-offset empty 0 -8
 0 10 -228856 -1 -1 0 256;
 #X obj 332 182 osc~;
@@ -24,13 +24,13 @@
 #X obj 330 331 hsl 128 15 0.01 10 1 0 empty lfo-freq empty -2 -8 0
 10 -228856 -1 -1 7192 1;
 #X obj 379 359 hsl 128 15 1 100 1 0 empty freq-offset empty -2 -8 0
-10 -228856 -1 -1 0 1;
+10 -228856 -1 -1 1912 1;
 #X obj 248 384 nbx 5 14 -1e+37 1e+37 0 0 empty grao-amp empty 0 -8
-0 10 -228856 -1 -1 100 256;
+0 10 -228856 -1 -1 500 256;
 #X obj 221 360 nbx 5 14 -1e+37 1e+37 0 0 empty grao-offset empty 0
 -8 0 10 -228856 -1 -1 100 256;
 #X obj 122 384 nbx 5 14 -1e+37 1e+37 0 0 empty pos-amp empty 0 -8 0
-10 -228856 -1 -1 4800 256;
+10 -228856 -1 -1 10000 256;
 #X obj 95 361 nbx 5 14 -1e+37 1e+37 0 0 empty pos-offset empty 0 -8
 0 10 -228856 -1 -1 0 256;
 #X obj 72 281 s~ \$0-pos_L;
@@ -80,10 +80,11 @@ controlling the amplitude output.;
 #X obj 350 487 s~ \$0-freq_R;
 #X obj 355 265 s~ \$0-freq_L;
 #X obj 610 347 *~;
-#X obj 779 215 tgl 30 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 759 215 tgl 30 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
-#X obj 779 189 loadbang;
-#X obj 698 347 *~;
+#X obj 759 189 loadbang;
+#X obj 630 393 out~;
+#X obj 673 347 *~;
 #N canvas 57 23 452 348 right 0;
 #X obj 168 150 +~;
 #N canvas 457 81 342 422 grain-1 0;
@@ -149,7 +150,7 @@ controlling the amplitude output.;
 #X connect 2 0 0 1;
 #X connect 4 0 1 0;
 #X connect 4 0 2 0;
-#X restore 699 281 pd right;
+#X restore 673 281 pd right;
 #N canvas 57 23 452 348 left 0;
 #X obj 168 150 +~;
 #N canvas 457 81 342 422 grain-1 0;
@@ -216,10 +217,9 @@ controlling the amplitude output.;
 #X connect 4 0 1 0;
 #X connect 4 0 2 0;
 #X restore 610 282 pd left;
-#X obj 779 293 decay2~ 50 250;
-#X obj 779 262 tempo 180 200;
+#X obj 759 293 decay2~ 50 250;
+#X obj 759 262 tempo 180 200;
 #X obj 715 29 declare -path else;
-#X obj 610 393 out2~;
 #X connect 0 0 30 2;
 #X connect 1 0 0 0;
 #X connect 2 0 30 1;
@@ -257,12 +257,12 @@ controlling the amplitude output.;
 #X connect 41 0 42 0;
 #X connect 42 0 43 0;
 #X connect 43 0 44 0;
-#X connect 46 0 55 0;
-#X connect 47 0 53 0;
+#X connect 46 0 49 0;
+#X connect 47 0 54 0;
 #X connect 48 0 47 0;
-#X connect 49 0 55 1;
-#X connect 50 0 49 0;
-#X connect 51 0 46 0;
-#X connect 52 0 49 1;
-#X connect 52 0 46 1;
-#X connect 53 0 52 0;
+#X connect 50 0 49 1;
+#X connect 51 0 50 0;
+#X connect 52 0 46 0;
+#X connect 53 0 50 1;
+#X connect 53 0 46 1;
+#X connect 54 0 53 0;

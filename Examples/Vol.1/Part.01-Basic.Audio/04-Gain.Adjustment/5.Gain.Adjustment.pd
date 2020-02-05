@@ -1,4 +1,4 @@
-#N canvas 658 102 516 593 12;
+#N canvas 773 32 516 593 12;
 #X declare -path else;
 #X floatatom 298 261 8 0 0 0 - - -;
 #X obj 280 321 *~;
@@ -26,6 +26,7 @@ gain adjusted one.;
 #X connect 0 0 14 0;
 #X connect 1 0 7 0;
 #X connect 1 0 8 0;
+#X connect 1 0 8 1;
 #X connect 2 0 5 0;
 #X connect 5 0 0 0;
 #X connect 14 0 1 1;

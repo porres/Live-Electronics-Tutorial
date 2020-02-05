@@ -34,6 +34,7 @@ below., f 43;
 #X obj 535 35 declare -path else;
 #X obj 444 232 adsr~ 150 100 0.5 250 -log;
 #X connect 0 0 7 0;
+#X connect 0 0 7 1;
 #X connect 1 0 20 0;
 #X connect 2 0 3 0;
 #X connect 2 1 4 0;

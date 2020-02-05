@@ -137,6 +137,7 @@ each voice is implemented in a different subpatch., f 52;
 #X text 199 118 <= generate random chords if you don't have a controller
 , f 29;
 #X obj 571 370 voices 4 1 -list;
+#X obj 584 485 out~;
 #X text 686 407 <= click;
 #X text 51 441 The seconrd argument is "voice stealing" flag \, which
 replaces the last pressed note if you press more notes than it can
@@ -162,8 +163,8 @@ Check its help file \, and also check the help file of [voices], f
 #X obj 571 407 clone 4 voice 4;
 #X obj 571 439 plate.rev~ 50 0.6 0.25 0.8 0.8, f 16;
 #X obj 721 26 declare -path else;
-#X obj 578 485 out2~;
 #X connect 1 0 3 0;
+#X connect 1 0 3 1;
 #X connect 2 0 0 0;
 #X connect 2 1 5 0;
 #X connect 2 2 6 0;
@@ -176,7 +177,7 @@ Check its help file \, and also check the help file of [voices], f
 #X connect 10 1 11 1;
 #X connect 11 0 8 0;
 #X connect 13 0 8 0;
-#X connect 16 0 23 0;
-#X connect 23 0 24 0;
-#X connect 24 0 26 0;
-#X connect 24 1 26 1;
+#X connect 16 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 17 0;
+#X connect 25 1 17 1;

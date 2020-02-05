@@ -43,7 +43,7 @@
 10 -228856 -1 -1 10400 1;
 #X text 326 338 feedback;
 #X obj 88 458 out~;
-#X obj 549 471 out~;
+#X obj 506 471 out~;
 #X text 44 21 The [comb.rev~] object from ELSE is a comb reverberator.
 It'll be presented in more details later in this tutorial as a reverberator.
 What we need to know now is that it consists in two delay lines - a
@@ -66,6 +66,7 @@ coefficients., f 52;
 #X obj 546 147 play.file~ guitar.wav 1 1, f 26;
 #X connect 0 0 1 0;
 #X connect 1 0 7 0;
+#X connect 1 0 31 1;
 #X connect 1 0 31 0;
 #X connect 2 0 1 1;
 #X connect 3 0 0 1;
@@ -96,5 +97,6 @@ coefficients., f 52;
 #X connect 34 0 14 0;
 #X connect 35 0 12 0;
 #X connect 36 0 15 0;
+#X connect 41 0 30 1;
 #X connect 41 0 30 0;
 #X connect 44 0 6 0;

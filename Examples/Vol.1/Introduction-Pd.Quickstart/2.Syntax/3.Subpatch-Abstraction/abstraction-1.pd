@@ -1,20 +1,15 @@
-#N canvas 483 364 623 301 12;
-#X obj 60 28 inlet;
-#X obj 60 237 outlet;
-#X obj 176 237 outlet;
-#X obj 176 194 float \$2;
-#X obj 60 194 symbol \$1;
-#X obj 60 156 trigger bang bang;
-#X text 251 187 \$1 = 1st argument \; \$2 = 2nd argument.;
-#X text 148 64 This is an example of an abstraction \, a very simple
-one that only loads arguments from the parent patch and outputs it.
-;
-#X text 148 102 Arguments are loaded inside objects with dollarsigns
-(not to be confused with the usage of dollar signs inside messages!)
-;
-#X connect 0 0 5 0;
+#N canvas 483 364 506 265 12;
+#X obj 66 71 inlet;
+#X obj 66 185 outlet;
+#X obj 182 185 outlet;
+#X obj 182 142 float \$2;
+#X obj 66 142 symbol \$1;
+#X text 239 102 This is an Abstraction!;
+#X obj 66 104 trigger bang bang;
+#X text 273 134 \$1 = 1st argument \; \$2 = 2nd argument.;
+#X connect 0 0 6 0;
 #X connect 3 0 2 0;
 #X connect 4 0 1 0;
-#X connect 5 0 4 0;
-#X connect 5 1 3 0;
+#X connect 6 0 4 0;
+#X connect 6 1 3 0;
 #X coords 0 0 1 1 100 100 0;

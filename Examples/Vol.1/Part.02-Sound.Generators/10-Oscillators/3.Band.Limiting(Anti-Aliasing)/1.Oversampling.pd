@@ -23,11 +23,11 @@
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 10 0 6 0;
-#X restore 336 106 pd plot;
+#X restore 356 106 pd plot;
 #X obj 173 25 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-Hz empty 0 -8 0 15
 -228856 -1 -1 2000 256;
 #X obj 173 128 out~;
-#X obj 316 135 out~;
+#X obj 310 131 out~;
 #X obj 173 68 saw~;
 #X text 503 510 Nyquist;
 #X text 29 512 0 Hz;
@@ -69,7 +69,7 @@
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 11 0 6 0;
-#X restore 185 100 pd plot;
+#X restore 217 97 pd plot;
 #X obj 300 200 graph~;
 #X obj 65 200 graph~;
 #N canvas 756 56 532 501 bl.saw~ 0;
@@ -122,9 +122,11 @@ sounds bad!, f 74;
 #X obj 456 82 setdsp~ 1;
 #X connect 1 0 16 0;
 #X connect 1 0 4 0;
+#X connect 4 0 2 1;
 #X connect 4 0 2 0;
 #X connect 4 0 13 0;
 #X connect 4 0 15 0;
 #X connect 16 0 0 0;
 #X connect 16 0 3 0;
+#X connect 16 0 3 1;
 #X connect 16 0 14 0;

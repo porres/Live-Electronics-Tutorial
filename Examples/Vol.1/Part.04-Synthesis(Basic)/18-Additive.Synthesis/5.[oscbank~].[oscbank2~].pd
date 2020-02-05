@@ -29,9 +29,13 @@ control for each partial's frequency. Check help file for more info.
 #X obj 760 24 declare -path else;
 #X connect 0 0 3 0;
 #X connect 1 0 4 0;
+#X connect 3 0 12 1;
 #X connect 4 0 12 0;
+#X connect 5 0 12 1;
 #X connect 8 0 9 0;
 #X connect 9 0 11 0;
 #X connect 10 0 11 0;
 #X connect 11 0 14 0;
+#X connect 11 0 14 1;
 #X connect 12 0 2 0;
+#X connect 12 0 2 1;

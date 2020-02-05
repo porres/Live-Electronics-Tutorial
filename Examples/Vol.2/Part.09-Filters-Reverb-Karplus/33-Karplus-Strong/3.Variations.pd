@@ -1,7 +1,7 @@
 #N canvas 255 71 947 570 12;
 #X declare -path else;
 #X obj 251 321 hsl 128 15 0 0.9999 0 0 empty fb empty -2 -6 0 8 -228856
--1 -1 12638 1;
+-1 -1 0 1;
 #X floatatom 248 345 6 0 0 0 - - -;
 #X text 286 321 feedback;
 #X obj 47 332 mtof;
@@ -10,7 +10,7 @@
 #X obj 47 308 makenote 127 10;
 #X floatatom 149 283 5 10 100 0 - - -;
 #X obj 306 352 hsl 128 15 100 10000 0 0 empty cutoff empty -2 -6 0
-8 -228856 -1 -1 7184 1;
+8 -228856 -1 -1 0 1;
 #X floatatom 303 376 0 0 0 0 - - -;
 #X text 341 351 cutoff;
 #X obj 152 260 hsl 150 15 0.1 100 1 0 empty empty empty -2 -8 0 10
@@ -21,11 +21,11 @@
 #X obj 521 315 vline~;
 #X obj 503 342 *~;
 #X obj 691 379 hsl 128 15 100 10000 0 0 empty cutoff empty -2 -6 0
-8 -228856 -1 -1 7184 1;
+8 -228856 -1 -1 0 1;
 #X floatatom 688 403 0 0 0 0 - - -;
 #X text 730 378 cutoff;
 #X obj 741 272 hsl 128 15 -3000 3000 0 0 empty t60 empty -2 -6 0 8
--228856 -1 -1 10583 1;
+-228856 -1 -1 0 1;
 #X floatatom 738 292 0 0 0 0 - - -;
 #X obj 597 262 mtof;
 #X msg 521 286 1 \, 0 0 \$1;
@@ -93,7 +93,7 @@ shorter than the period. An attack/release parameter adds a fade in/out
 to the exxcitation signal., f 58;
 #X obj 597 194 tempo 150 100 -on;
 #X obj 648 455 lowpass~ 0 5;
-#X obj 648 490 out~;
+#X obj 605 500 out~;
 #X text 502 133 In this example we also change the excitation signal
 to a pink noise generator., f 52;
 #X obj 564 388 comb.filt~;
@@ -135,8 +135,10 @@ and also to show it's not that crazily different., f 53;
 #X connect 26 0 16 0;
 #X connect 28 0 45 0;
 #X connect 29 0 27 0;
+#X connect 29 0 27 1;
 #X connect 34 0 44 0;
 #X connect 35 0 36 0;
+#X connect 35 0 36 1;
 #X connect 38 0 35 0;
 #X connect 41 0 35 1;
 #X connect 42 0 38 2;

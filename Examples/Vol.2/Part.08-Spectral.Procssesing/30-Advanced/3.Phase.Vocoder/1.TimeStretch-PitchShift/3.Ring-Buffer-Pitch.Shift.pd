@@ -190,4 +190,5 @@ that only relies in granulation., f 43;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
+#X connect 3 0 4 1;
 #X connect 9 0 6 0;

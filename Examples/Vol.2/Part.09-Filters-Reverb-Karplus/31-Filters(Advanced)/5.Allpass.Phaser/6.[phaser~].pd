@@ -1,26 +1,26 @@
-#N canvas 476 23 656 614 12;
+#N canvas 476 23 656 591 12;
 #X declare -path else;
-#X obj 146 355 out~;
-#X obj 220 278 rescale~ 100 1000;
-#X obj 121 166 s~ \$0-in;
-#X obj 145 278 r~ \$0-in;
-#X obj 488 221 rescale~ 100 1000;
-#X obj 395 210 r~ \$0-in;
-#X obj 395 340 out~;
-#X obj 395 294 +~;
-#X obj 88 241 hsl 80 17 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 84 338 out~;
+#X obj 117 222 rescale~ 100 1000;
+#X obj 116 154 s~ \$0-in;
+#X obj 41 221 r~ \$0-in;
+#X obj 431 204 rescale~ 100 1000;
+#X obj 338 193 r~ \$0-in;
+#X obj 338 323 out~;
+#X obj 338 277 +~;
+#X obj 171 251 hsl 80 17 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X msg 85 267 wet \$1;
-#X obj 220 250 osc~ 0.2;
-#X obj 488 192 osc~ 0.2;
-#X obj 413 260 allpass.filt~ 12, f 22;
-#X text 55 240 dry;
-#X text 176 240 wet;
-#X text 57 38 You can also use [allpass.filt~] to implement a phaser
+#X msg 168 277 wet \$1;
+#X obj 117 193 osc~ 0.2;
+#X obj 431 175 osc~ 0.2;
+#X obj 356 243 allpass.filt~ 12, f 22;
+#X text 138 250 dry;
+#X text 259 250 wet;
+#X text 52 26 You can also use [allpass.filt~] to implement a phaser
 effect. The ELSE library includes a [phaser~] object that is an abstraction
 based on the [allpass.filt~] object. It's just a bit more convenient.
 , f 55;
-#X obj 146 319 phaser~ 12, f 11;
+#X obj 84 302 phaser~ 12;
 #N canvas 527 76 427 378 phaser-stereo 0;
 #X obj 111 280 outlet~;
 #X obj 208 279 outlet~;
@@ -42,23 +42,26 @@ based on the [allpass.filt~] object. It's just a bit more convenient.
 #X connect 8 0 9 0;
 #X connect 9 0 7 1;
 #X connect 9 0 6 1;
-#X restore 343 478 pd phaser-stereo;
-#X obj 343 517 out~;
-#X text 167 463 Here's a stereo setting with [phaser~] click ==>,
+#X restore 327 456 pd phaser-stereo;
+#X obj 327 495 out~;
+#X text 151 441 Here's a stereo setting with [phaser~] click ==>,
 f 25;
-#X obj 480 57 declare -path else;
-#X obj 121 126 play.file~ guitar.wav 1 1;
+#X obj 476 41 declare -path else;
+#X obj 116 114 play.file~ guitar.wav 1 1;
 #X connect 1 0 16 1;
 #X connect 3 0 16 0;
 #X connect 4 0 12 1;
 #X connect 5 0 7 0;
 #X connect 5 0 12 0;
 #X connect 7 0 6 0;
+#X connect 7 0 6 1;
 #X connect 8 0 9 0;
-#X connect 9 0 16 0;
+#X connect 9 0 16 2;
 #X connect 10 0 1 0;
 #X connect 11 0 4 0;
 #X connect 12 0 7 1;
 #X connect 16 0 0 0;
+#X connect 16 0 0 1;
 #X connect 17 0 18 0;
+#X connect 17 1 18 1;
 #X connect 21 0 2 0;

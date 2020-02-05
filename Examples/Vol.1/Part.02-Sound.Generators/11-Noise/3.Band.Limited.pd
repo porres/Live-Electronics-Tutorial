@@ -1,9 +1,9 @@
 #N canvas 264 26 950 740 12;
 #X declare -path else;
 #X obj 668 453 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 2256 1;
+-1 -1 0 1;
 #X obj 549 455 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 11109 1;
+-1 -1 0 1;
 #X text 535 446 1;
 #X text 528 573 -1;
 #X text 653 444 1;
@@ -14,7 +14,7 @@
 #X obj 205 192 downsample~;
 #X obj 279 170 nbx 7 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X obj 205 229 out~;
+#X obj 183 237 out~;
 #X obj 282 146 hsl 128 15 100 44100 1 0 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
 #X msg 123 148 interp \$1;
@@ -32,7 +32,7 @@
 10 -228856 -1 -1 0 1;
 #X obj 616 136 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 616 230 out~;
+#X obj 573 224 out~;
 #X obj 616 193 drive~;
 #X obj 616 164 gbman~;
 #X text 354 170 hz;
@@ -62,6 +62,7 @@ random steps (no interpolation) and [rampnoise~] generates random ramps
 #X connect 7 0 35 0;
 #X connect 8 0 9 0;
 #X connect 9 0 11 0;
+#X connect 9 0 11 1;
 #X connect 10 0 9 1;
 #X connect 12 0 10 0;
 #X connect 13 0 9 0;
@@ -72,8 +73,10 @@ random steps (no interpolation) and [rampnoise~] generates random ramps
 #X connect 21 0 22 0;
 #X connect 22 0 25 0;
 #X connect 24 0 23 0;
+#X connect 24 0 23 1;
 #X connect 25 0 24 0;
 #X connect 30 0 17 0;
+#X connect 30 0 17 1;
 #X connect 30 0 18 0;
 #X connect 35 0 1 0;
 #X connect 36 0 0 0;

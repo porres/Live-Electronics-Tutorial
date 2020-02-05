@@ -4,7 +4,7 @@
 #X obj 62 196 mtof;
 #X obj 62 233 trigger float bang;
 #X obj 62 164 nbx 3 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
--228856 -1 -1 37 256;
+-228856 -1 -1 36 256;
 #X obj 62 58 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 1 1
 ;
 #X obj 62 32 loadbang;
@@ -164,7 +164,7 @@ a pair of oscilatores., f 36;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
 #X restore 62 272 pd additive;
-#X obj 167 352 out~;
+#X obj 124 356 out~;
 #X obj 62 100 tempo 15 50;
 #X text 175 84 Here's another additive synthesis example. This patch
 receives a fundamental frequency \, from which an inharmonic series
@@ -177,6 +177,7 @@ of 8 partials is generated. For each partial \, we have a pair of oscillators
 #X obj 62 133 rand.i 36 73;
 #X obj 403 42 declare -path else;
 #X connect 0 0 7 0;
+#X connect 0 0 7 1;
 #X connect 1 0 2 0;
 #X connect 2 0 6 0;
 #X connect 2 1 12 0;

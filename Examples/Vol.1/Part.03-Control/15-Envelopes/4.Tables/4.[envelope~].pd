@@ -18,6 +18,7 @@ from 0 to 1!, f 52;
 #X obj 292 40 declare -path else;
 #X obj 205 235 float 500;
 #X connect 0 0 4 0;
+#X connect 0 0 4 1;
 #X connect 1 0 0 0;
 #X connect 2 0 11 1;
 #X connect 3 0 11 0;

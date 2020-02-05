@@ -1,4 +1,4 @@
-#N canvas 666 23 536 572 12;
+#N canvas 694 105 536 572 12;
 #X declare -path else;
 #X obj 126 189 fexpr~ ($x1[0] + $x1[-1] + $x1[-2] + $x1[-3] + $x1[-4]
 + $x1[-5] + $x1[-6] + $x1[-7]) * 0.125, f 46;
@@ -30,3 +30,4 @@ quickly!;
 #X connect 3 0 1 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
+#X connect 7 0 8 1;

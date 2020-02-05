@@ -60,6 +60,7 @@ output. The math is simple and relies on the [clip~] object.;
 #X obj 338 24 declare -path else;
 #X obj 163 175 play.file~ bubul.wav 1 1;
 #X connect 0 0 4 0;
+#X connect 0 0 4 1;
 #X connect 1 0 2 0;
 #X connect 1 0 0 1;
 #X connect 9 0 0 0;

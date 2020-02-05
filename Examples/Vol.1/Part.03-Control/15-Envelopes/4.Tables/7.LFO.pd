@@ -5,11 +5,11 @@
 #X floatatom 624 144 5 0 0 0 - - -;
 #X text 649 115 pulse width;
 #X obj 185 206 vsaw~ 2 0.5;
-#X obj 228 281 graph~ 20000 2 0 1;
+#X obj 185 281 graph~ 20000 2 0 1;
 #X obj 185 241 rescale~;
 #X obj 96 283 *~;
 #X obj 96 216 osc~ 440;
-#X obj 96 329 out~;
+#X obj 53 329 out~;
 #X obj 212 120 hsl 128 15 0.1 0.9 0 0 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
 #X floatatom 209 147 5 0 0 0 - - -;
@@ -20,8 +20,8 @@
 #X obj 684 207 hsl 128 15 50 500 1 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 607 215 pulse~ 2;
-#X obj 533 365 out~;
-#X obj 650 328 graph~ 20000 0 0 1;
+#X obj 490 365 out~;
+#X obj 607 328 graph~ 20000 0 0 1;
 #X obj 607 252 glide2~ 150;
 #X obj 681 229 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
@@ -38,11 +38,13 @@ ramps.;
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;
 #X connect 5 0 6 1;
+#X connect 6 0 8 1;
 #X connect 6 0 8 0;
 #X connect 7 0 6 0;
 #X connect 9 0 10 0;
 #X connect 10 0 12 0;
 #X connect 12 0 3 1;
+#X connect 13 0 17 1;
 #X connect 13 0 17 0;
 #X connect 14 0 13 0;
 #X connect 15 0 20 0;
