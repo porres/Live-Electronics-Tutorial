@@ -273,12 +273,11 @@ filter., f 32;
 #X text 258 409 We don't plot the amplitudes because they are unchanged.
 , f 58;
 #X obj 769 11 declare -path else;
-#X obj 551 154 out~;
+#X obj 565 154 out~;
 #X connect 0 0 2 0;
 #X connect 1 0 5 0;
 #X connect 1 0 6 0;
 #X connect 2 0 6 2;
 #X connect 3 0 6 1;
 #X connect 5 0 14 0;
-#X connect 5 0 14 1;
 #X connect 6 0 5 1;

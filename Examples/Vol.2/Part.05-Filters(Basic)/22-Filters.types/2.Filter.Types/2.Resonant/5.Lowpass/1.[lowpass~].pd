@@ -391,4 +391,3 @@ for more details., f 55;
 #X connect 4 0 8 1;
 #X connect 5 0 8 0;
 #X connect 8 0 12 0;
-#X connect 8 0 12 1;

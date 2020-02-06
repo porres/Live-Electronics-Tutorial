@@ -2,7 +2,7 @@
 #X declare -path else;
 #X obj 186 357 mtof;
 #X obj 186 325 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
--228856 -1 -1 0 256;
+-228856 -1 -1 46 256;
 #X obj 186 216 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
 #X obj 186 190 loadbang;
@@ -336,7 +336,6 @@ with different random control parameters \, check it out., f 55;
 #X connect 9 0 3 0;
 #X connect 9 1 4 0;
 #X restore 186 388 pd additive;
-#X obj 186 429 out~;
 #X obj 186 258 tempo 15 50;
 #X text 31 62 Taking the idea of the last example one step further
 \, we now have independent envelopes for each pair of oscillators \,
@@ -345,11 +344,12 @@ happens also at a random delayed time after the attack.;
 #X text 34 139 Open [pd additive] for more details.;
 #X obj 186 292 rand.i 36 61;
 #X obj 317 29 declare -path else;
+#X obj 184 430 out2~;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
-#X connect 2 0 6 0;
+#X connect 2 0 5 0;
 #X connect 3 0 2 0;
-#X connect 4 0 5 0;
-#X connect 4 1 5 1;
-#X connect 6 0 9 0;
-#X connect 9 0 1 0;
+#X connect 4 0 10 0;
+#X connect 4 1 10 1;
+#X connect 5 0 8 0;
+#X connect 8 0 1 0;

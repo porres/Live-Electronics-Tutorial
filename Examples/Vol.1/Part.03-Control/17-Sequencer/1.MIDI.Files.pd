@@ -63,7 +63,6 @@
 #X connect 11 0 10 0;
 #X connect 12 0 8 0;
 #X restore 146 300 pd voice2;
-#X obj 123 366 out~;
 #X obj 123 333 rotate~;
 #X obj 189 333 osc~ 0.5;
 #X obj 157 157 bng 15 250 50 0 empty \$0-bang empty 17 7 0 10 -228856
@@ -82,20 +81,21 @@ outlet when the file sequence is over \, and we can use this for looping
 it. Here we have a two voice polyphonic synth to play this MIDI file.
 Each voice is a variable sawtooth waveform., f 52;
 #X obj 308 23 declare -path else;
-#X connect 0 0 12 0;
+#X obj 107 372 out2~;
+#X connect 0 0 11 0;
 #X connect 1 0 0 1;
-#X connect 3 0 9 0;
+#X connect 3 0 8 0;
 #X connect 4 0 3 0;
 #X connect 4 1 7 0;
 #X connect 5 0 4 0;
 #X connect 5 1 4 1;
-#X connect 6 0 14 0;
-#X connect 7 0 9 1;
-#X connect 9 0 8 0;
-#X connect 9 1 8 1;
-#X connect 10 0 9 2;
-#X connect 11 0 6 0;
-#X connect 13 0 1 0;
-#X connect 13 0 11 0;
-#X connect 14 0 5 0;
-#X connect 14 1 0 0;
+#X connect 6 0 13 0;
+#X connect 7 0 8 1;
+#X connect 8 0 17 0;
+#X connect 8 1 17 1;
+#X connect 9 0 8 2;
+#X connect 10 0 6 0;
+#X connect 12 0 1 0;
+#X connect 12 0 10 0;
+#X connect 13 0 5 0;
+#X connect 13 1 0 0;

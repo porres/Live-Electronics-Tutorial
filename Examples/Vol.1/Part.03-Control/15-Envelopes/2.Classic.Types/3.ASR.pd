@@ -2,11 +2,11 @@
 #X declare -path else;
 #X obj 266 231 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 191 210 *~;
+#X obj 148 210 *~;
 #X obj 141 154 osc~ 440;
 #X obj 148 259 out~;
 #X text 320 137 ASR;
-#X obj 539 193 *~;
+#X obj 496 193 *~;
 #X obj 612 196 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
 -1 -1 0 1;
 #X text 635 286 0;
@@ -23,7 +23,7 @@
 #X text 525 103 gate;
 #X obj 576 540 *~;
 #X obj 518 503 osc~ 440;
-#X obj 875 250 *~;
+#X obj 832 260 *~;
 #X obj 827 215 osc~ 440;
 #X obj 893 174 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
@@ -34,16 +34,16 @@
 #X text 973 276 1;
 #X text 853 176 gate;
 #X obj 496 237 out~;
-#X obj 560 579 out~;
-#X obj 235 539 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+#X obj 576 579 out~;
+#X obj 215 559 vsl 16 80 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
-#X obj 160 518 *~;
+#X obj 110 518 *~;
 #X obj 109 450 osc~ 440;
-#X obj 117 553 out~;
+#X obj 110 553 out~;
 #X obj 178 428 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X text 204 426 gate;
-#X obj 873 497 *~;
+#X obj 830 502 *~;
 #X obj 819 461 osc~ 440;
 #X obj 891 421 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
@@ -67,7 +67,7 @@ generatin a line with a repeated destination. The attack is then 50
 ms \, the sustain stage takes 450 ms and the release is 500 ms long.
 , f 56;
 #X obj 948 499 s2f~;
-#X obj 235 513 s2f~;
+#X obj 215 533 s2f~;
 #X obj 266 205 s2f~;
 #X obj 950 252 s2f~;
 #X obj 612 168 s2f~;
@@ -97,28 +97,22 @@ a bang by scheduling a release with the [timed.gate~] object from ELSE.
 filtering as in the [lag~] object., f 43;
 #X text 793 74 The [glide2~] and [lag2~] objects can also behave as
 a kind of ASR envelope generator triggered by a gate., f 38;
-#X connect 1 0 3 1;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 5 0 26 0;
-#X connect 5 0 26 1;
 #X connect 9 0 55 0;
 #X connect 10 0 5 0;
 #X connect 11 0 55 1;
 #X connect 12 0 55 2;
 #X connect 16 0 27 0;
-#X connect 16 0 27 1;
 #X connect 17 0 16 0;
 #X connect 18 0 21 0;
-#X connect 18 0 21 1;
 #X connect 19 0 18 0;
 #X connect 20 0 58 0;
-#X connect 29 0 31 1;
 #X connect 29 0 31 0;
 #X connect 30 0 29 0;
 #X connect 32 0 54 0;
 #X connect 34 0 37 0;
-#X connect 34 0 37 1;
 #X connect 35 0 34 0;
 #X connect 36 0 66 0;
 #X connect 44 0 1 1;

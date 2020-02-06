@@ -55,7 +55,7 @@ back with [expr] and objects from the ELSE library.;
 parts., f 21;
 #X obj 831 647 mag~;
 #X obj 756 26 declare -path else;
-#X obj 57 149 pic 0 euler.gif empty empty;
+#X obj 58 149 pic 0 euler.gif empty empty;
 #X connect 0 0 8 0;
 #X connect 2 0 15 0;
 #X connect 3 0 15 1;

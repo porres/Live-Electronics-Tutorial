@@ -201,7 +201,7 @@
 #X obj 167 274 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
 0 10 -228856 -1 -1 90 256;
 #X text 170 253 speed;
-#X obj 152 371 out~;
+#X obj 195 371 out~;
 #X text 256 327 <= click;
 #X obj 213 191 delwrite~ \$0-buffer 60000;
 #X text 60 65 Again we adapt a previously presented patch in the granulation
@@ -214,7 +214,6 @@ on a ring buffer with the phase accumulation. Nothing should be new
 #X text 99 468 The [pvoc.live~] \, from the ELSE library \, is based
 on this patch. Check its help file., f 43;
 #X connect 0 0 6 0;
-#X connect 0 0 6 1;
 #X connect 2 0 0 1;
 #X connect 3 0 2 0;
 #X connect 4 0 0 0;

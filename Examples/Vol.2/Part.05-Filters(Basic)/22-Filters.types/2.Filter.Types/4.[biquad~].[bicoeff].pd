@@ -584,5 +584,4 @@ All these filter types have already been presented here., f 57;
 #X obj 721 167 out~;
 #X connect 0 0 2 0;
 #X connect 2 0 19 0;
-#X connect 2 0 19 1;
 #X connect 3 0 2 0;

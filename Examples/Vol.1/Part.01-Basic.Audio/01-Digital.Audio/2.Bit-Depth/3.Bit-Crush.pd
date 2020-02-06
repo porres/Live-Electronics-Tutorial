@@ -11,7 +11,7 @@
 #X obj 369 290 / 2;
 #X obj 369 316 display;
 #X obj 369 209 nbx 3 16 1 16 0 0 empty empty empty 0 -8 0 11 -228856
--1 -1 16 256;
+-1 -1 1 256;
 #X msg 369 174 8;
 #X msg 338 174 16;
 #X obj 65 327 out~;
@@ -20,13 +20,13 @@
 #X text 417 210 bits;
 #X floatatom 640 190 0 1 10000 0 - - -;
 #X obj 643 169 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 0 1;
+-1 -1 4100 1;
 #X floatatom 705 222 0 1 10000 0 - - -;
 #X obj 708 201 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 571 298 out~;
+#X obj 634 258 out~;
 #X obj 560 183 osc~ 100;
-#X obj 682 262 graph~ 143 50;
+#X obj 613 324 graph~ 143 50;
 #X obj 560 161 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 614 224 crusher~;
@@ -53,7 +53,7 @@ types of rounding (check its help file) and can be used for this. It
 receives a step value and rounds to multiples of it. In this example
 \, we find a step value according to a bit depth resolution., f 64
 ;
-#X text 622 448 The parameters vary from 0 to 1 \, where 0 is the original
+#X text 602 481 The parameters vary from 0 to 1 \, where 0 is the original
 sound and the higher the parameter is \, the more crushing/decimation
 we have., f 42;
 #X text 336 418 And here's how to perform one type of signal rounding
@@ -61,7 +61,6 @@ with [expr~]:, f 27;
 #X connect 1 0 5 1;
 #X connect 5 0 0 0;
 #X connect 5 0 12 0;
-#X connect 5 0 12 1;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
 #X connect 8 0 31 0;
@@ -77,7 +76,6 @@ with [expr~]:, f 27;
 #X connect 21 0 24 0;
 #X connect 23 0 21 0;
 #X connect 24 0 20 0;
-#X connect 24 0 20 1;
 #X connect 24 0 22 0;
 #X connect 25 0 6 0;
 #X connect 32 0 33 0;

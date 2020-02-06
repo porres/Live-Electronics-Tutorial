@@ -28,8 +28,8 @@
 #X obj 92 285 phasor~;
 #X obj 92 233 sig~ 50;
 #X obj 92 333 cos~;
-#X obj 720 391 out~;
-#X obj 475 378 out~;
+#X obj 748 391 out~;
+#X obj 497 378 out~;
 #X text 24 27 The [phasor~] object receives a frequency input and generates
 a phase signal. Therefore \, these signals are related \, where The
 frequency is the angular velocity and the phase is the angular position.
@@ -60,7 +60,7 @@ phase signals and you have the same result \, as shown in this example.
 #X text 568 168 index;
 #X text 672 265 carrier signal =>, f 9;
 #X text 781 277 <= modulating signal;
-#X obj 861 335 initmess \; carrier 400 \; mod 1 \; index 10;
+#X obj 877 349 initmess \; carrier 400 \; mod 1 \; index 10;
 #X text 459 60 To better visualize the relationship \, we have an oscillator
 formed by a [phasor~] and a [cos~] for the FM signal. For the PM signal
 \, the difference is that the modulating signal also goes through a
@@ -71,7 +71,6 @@ formed by a [phasor~] and a [cos~] for the FM signal. For the PM signal
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 2 0 22 0;
-#X connect 2 0 22 1;
 #X connect 3 0 0 1;
 #X connect 4 0 11 0;
 #X connect 5 0 12 0;
@@ -80,7 +79,6 @@ formed by a [phasor~] and a [cos~] for the FM signal. For the PM signal
 #X connect 8 0 6 0;
 #X connect 9 0 44 0;
 #X connect 10 0 23 0;
-#X connect 10 0 23 1;
 #X connect 11 0 10 0;
 #X connect 12 0 4 0;
 #X connect 13 0 18 0;

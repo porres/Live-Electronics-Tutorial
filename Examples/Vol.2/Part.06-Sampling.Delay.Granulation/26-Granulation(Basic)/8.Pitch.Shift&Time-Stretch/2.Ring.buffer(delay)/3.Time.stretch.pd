@@ -19,7 +19,7 @@
 #X obj 568 70 nbx 5 14 -1e+37 1e+37 0 0 empty speed empty 0 -8 0 10
 -228856 -1 -1 100 256;
 #X msg 425 66 6000;
-#X obj 646 467 out~;
+#X obj 689 467 out~;
 #X obj 725 348 envelope~;
 #X obj 725 218 pimp~ 0 0.5;
 #X obj 651 309 sh~;
@@ -57,7 +57,6 @@ f 47;
 #X connect 4 0 21 0;
 #X connect 5 0 6 0;
 #X connect 6 0 16 0;
-#X connect 6 0 16 1;
 #X connect 7 0 3 0;
 #X connect 9 0 10 0;
 #X connect 10 0 7 1;

@@ -58,7 +58,6 @@ gain. But try messing with the parameters below:, f 51;
 #X obj 120 413 db2lin~;
 #X obj 120 383 glide2~;
 #X connect 9 0 8 0;
-#X connect 9 0 8 1;
 #X connect 10 0 37 1;
 #X connect 11 0 37 2;
 #X connect 12 0 16 0;

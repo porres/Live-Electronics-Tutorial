@@ -166,5 +166,4 @@ later. Open the subpatch for details., f 52;
 #X connect 7 0 3 0;
 #X connect 8 0 3 0;
 #X connect 13 0 9 0;
-#X connect 13 0 9 1;
 #X connect 17 0 10 0;

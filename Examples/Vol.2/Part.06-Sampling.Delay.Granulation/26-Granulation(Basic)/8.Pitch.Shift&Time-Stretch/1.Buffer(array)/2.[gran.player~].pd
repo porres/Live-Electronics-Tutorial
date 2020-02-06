@@ -150,7 +150,6 @@ are combined and the sample is accessed.;
 #X connect 12 1 14 0;
 #X connect 21 0 48 0;
 #X connect 22 0 28 0;
-#X connect 22 0 28 1;
 #X connect 23 0 32 0;
 #X connect 25 0 33 0;
 #X connect 25 0 34 0;

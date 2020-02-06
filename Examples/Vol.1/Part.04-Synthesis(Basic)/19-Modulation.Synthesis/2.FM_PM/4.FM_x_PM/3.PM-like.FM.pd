@@ -45,7 +45,6 @@ easy to implement and does not complicate the patch very much.;
 #X connect 8 0 1 0;
 #X connect 9 0 12 0;
 #X connect 12 0 13 0;
-#X connect 12 0 13 1;
 #X connect 14 0 3 0;
 #X connect 15 0 2 1;
 #X connect 16 0 7 0;

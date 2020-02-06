@@ -44,6 +44,5 @@ for the minumum and maximum frequency in the filter sweep., f 57;
 #X connect 8 1 13 0;
 #X connect 9 0 15 0;
 #X connect 13 0 14 0;
-#X connect 13 0 14 1;
 #X connect 15 0 8 1;
 #X connect 21 0 8 0;

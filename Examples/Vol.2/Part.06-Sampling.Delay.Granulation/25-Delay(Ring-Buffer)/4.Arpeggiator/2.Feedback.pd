@@ -23,7 +23,7 @@
 #X obj 484 399 r~ \$0-in;
 #X floatatom 321 482 0 0 0 0 - - -;
 #X obj 96 579 out~;
-#X obj 465 523 out~;
+#X obj 484 523 out~;
 #X obj 549 260 rescale~;
 #X obj 549 230 rampnoise~ 1;
 #X obj 161 247 initmess 0 0.33 1 0.34 1 0.33 0 \; LFO 2.25 \; depth
@@ -71,9 +71,7 @@ is very similar and dependant on a feedback delay.;
 #X connect 18 0 17 0;
 #X connect 19 0 40 0;
 #X connect 20 0 16 0;
-#X connect 20 0 16 1;
 #X connect 21 0 15 0;
-#X connect 21 0 15 1;
 #X connect 22 0 21 1;
 #X connect 23 0 22 0;
 #X connect 24 0 21 0;

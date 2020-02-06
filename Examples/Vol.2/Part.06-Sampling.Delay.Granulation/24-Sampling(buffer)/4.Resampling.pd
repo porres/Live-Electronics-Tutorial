@@ -7,7 +7,7 @@
 #X obj 67 40 play.file~ sax.wav 1 1;
 #X connect 3 0 1 0;
 #X restore 304 285 pd upsample-88.2Khz;
-#X obj 261 326 out~;
+#X obj 304 326 out~;
 #X obj 394 237 sr~ 44100;
 #X obj 85 271 readsf~;
 #X obj 85 313 out~;
@@ -28,8 +28,6 @@ are at 44.1 Khz \, the usual one.;
 #X obj 361 16 declare -path else;
 #X obj 85 238 initmess open sax.wav \, 1;
 #X connect 0 0 1 0;
-#X connect 0 0 1 1;
 #X connect 3 0 4 0;
-#X connect 3 0 4 1;
 #X connect 3 1 9 0;
 #X connect 9 0 3 0;

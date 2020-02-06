@@ -1,22 +1,22 @@
 #N canvas 601 27 554 581 12;
 #X declare -path else;
-#X obj 189 476 out~;
+#X obj 211 468 out~;
 #X obj 211 425 sine~;
 #X obj 211 387 +~;
 #X obj 161 235 f2s~ 10;
 #X obj 229 318 sine~;
 #X obj 229 351 *~;
 #X obj 295 338 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-index empty 0 -8
-0 10 -228856 -1 -1 0 256;
+0 10 -228856 -1 -1 100 256;
 #X text 352 336 Index;
 #X obj 229 266 *~;
 #X obj 247 235 f2s~ 10 1;
 #X obj 295 363 f2s~ 10;
 #X obj 247 212 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 0.5 256;
 #X obj 161 212 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-carrier empty 0
--8 0 10 -228856 -1 -1 0 256;
-#X obj 320 429 initmess \; \$0-carrier 300 \; \$0-ratio 0.5 \; \$0-index
+-8 0 10 -228856 -1 -1 300 256;
+#X obj 353 426 initmess \; \$0-carrier 300 \; \$0-ratio 0.5 \; \$0-index
 100;
 #X obj 250 189 hsl 128 15 0.5 2 0 0 empty \$0-ratio empty -2 -8 0 10
 -228856 -1 -1 0 1;
@@ -33,7 +33,6 @@ Note that harmonic ratios (such as 0.5) produce harmonic sounds as
 a result.;
 #X obj 353 20 declare -path else;
 #X connect 1 0 0 0;
-#X connect 1 0 0 1;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
 #X connect 3 0 8 0;

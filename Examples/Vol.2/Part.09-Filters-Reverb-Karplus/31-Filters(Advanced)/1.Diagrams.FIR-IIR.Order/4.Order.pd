@@ -53,8 +53,8 @@ of delayed samples defines the order \, where a first order filter
 can only have one sample delay for a feedforward and a feedback line.
 Here's a "First Order System" filter:, f 57;
 #X obj 712 18 declare -path else;
-#X obj 45 147 pic 0 ../files/FOS.gif empty empty;
-#X obj 514 117 pic 0 ../files/SOS.gif empty empty;
+#X obj 46 154 pic 0 ../files/FOS.gif empty empty;
+#X obj 515 117 pic 0 ../files/SOS.gif empty empty;
 #X connect 5 0 4 0;
 #X connect 6 0 3 0;
 #X connect 7 0 2 0;
@@ -70,5 +70,4 @@ Here's a "First Order System" filter:, f 57;
 #X connect 18 4 16 0;
 #X connect 19 0 22 0;
 #X connect 22 0 29 0;
-#X connect 22 0 29 1;
 #X connect 37 0 18 0;

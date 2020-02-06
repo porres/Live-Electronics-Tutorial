@@ -1,4 +1,4 @@
-#N canvas 503 263 946 438 12;
+#N canvas 501 140 946 438 12;
 #X declare -path else;
 #X obj 537 263 +~;
 #X obj 537 287 *~ 0.5;
@@ -24,7 +24,7 @@
 #X obj 537 205 bl.saw~;
 #X obj 537 178 sig~ 300;
 #X obj 537 323 out~;
-#X obj 751 308 out~;
+#X obj 763 308 out~;
 #X obj 763 266 mov.avg~ 8;
 #X obj 762 218 sig~ 300;
 #X obj 762 244 bl.saw~;
@@ -49,12 +49,10 @@ an average on 8 samples. See its help file for more details.;
 #X obj 716 51 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 22 0;
-#X connect 1 0 22 1;
 #X connect 19 0 0 1;
 #X connect 20 0 0 0;
 #X connect 20 0 19 0;
 #X connect 21 0 20 0;
 #X connect 24 0 23 0;
-#X connect 24 0 23 1;
 #X connect 25 0 26 0;
 #X connect 26 0 24 0;

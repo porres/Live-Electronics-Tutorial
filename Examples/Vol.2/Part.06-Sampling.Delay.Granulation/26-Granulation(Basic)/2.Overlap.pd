@@ -107,7 +107,6 @@ with both grains to the right., f 50;
 #X connect 10 0 38 0;
 #X connect 11 0 24 0;
 #X connect 13 0 23 0;
-#X connect 13 0 23 1;
 #X connect 14 0 15 0;
 #X connect 15 0 13 1;
 #X connect 16 0 14 0;

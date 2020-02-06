@@ -83,7 +83,7 @@ increases at a constant rate \, generating a linear ramp. The lower
 graph shows us the resulting sine output \, with amplitude in the vertical
 axis.;
 #X obj 816 567 sine~;
-#X text 562 554 The [sine~] object from the ELSE library is a sinusoidal
+#X text 569 554 The [sine~] object from the ELSE library is a sinusoidal
 oscillator:, f 37;
 #X obj 770 15 declare -path else;
 #X text 118 128 P;

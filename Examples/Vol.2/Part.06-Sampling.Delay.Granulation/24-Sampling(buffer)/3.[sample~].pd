@@ -5,16 +5,16 @@
 -1 -1;
 #X obj 284 443 nbx 7 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X obj 374 386 metro 1000;
-#X obj 374 414 random;
-#X obj 374 364 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 374 382 metro 1000;
+#X obj 374 410 random;
+#X obj 374 360 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X text 230 390 play;
-#X floatatom 374 437 0 0 0 0 - - -;
+#X floatatom 374 435 0 0 0 0 - - -;
 #X msg 374 459 \$1 44100;
 #X msg 226 442 stop;
-#X obj 222 526 out~;
-#X obj 430 413 r \$0-size;
+#X obj 265 526 out~;
+#X obj 430 409 r \$0-size;
 #X msg 118 279 show;
 #X msg 70 279 hide;
 #X floatatom 118 347 0 0 0 0 - - -;
@@ -33,7 +33,6 @@ basically the same thing as the last example.;
 #X obj 382 15 declare -path else;
 #X obj 118 317 sample~ \$0-sample bubul.wav;
 #X connect 0 0 10 0;
-#X connect 0 0 10 1;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;

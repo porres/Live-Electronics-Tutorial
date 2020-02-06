@@ -22,7 +22,7 @@ as an effects processor rather than a "synthesis technique"., f 60
 #X text 38 335 Let's test both the classic AM example and the RM one.
 In both cases \, the side band frequencies are created for each sine
 wave component in the carrier signal., f 71;
-#X obj 192 232 out~;
+#X obj 190 221 out~;
 #X text 38 83 Actually \, much of what we see as a synthesis technique
 topic is actually in respect to a processing technique. In the same
 way \, many effect processes are widely used in syhtesis (such as filtering).
@@ -50,20 +50,16 @@ the original sine components., f 71;
 #X obj 533 29 declare -path else;
 #X obj 175 185 play.file~ bubul.wav 1 1;
 #X connect 0 0 12 0;
-#X connect 0 0 12 1;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 1;
 #X connect 4 0 11 0;
-#X connect 4 0 11 1;
 #X connect 5 0 6 0;
 #X connect 6 0 22 0;
 #X connect 10 0 4 0;
 #X connect 18 0 20 1;
 #X connect 20 0 17 0;
-#X connect 20 0 17 1;
 #X connect 21 0 20 0;
 #X connect 22 0 4 1;
 #X connect 26 0 9 0;
 #X connect 26 0 15 0;
-#X connect 26 0 15 1;

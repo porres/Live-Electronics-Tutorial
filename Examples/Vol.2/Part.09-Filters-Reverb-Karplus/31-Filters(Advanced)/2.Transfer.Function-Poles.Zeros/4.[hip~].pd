@@ -2,11 +2,11 @@
 #X declare -path else;
 #X obj 503 338 rpole~;
 #X obj 503 365 rzero~ 1;
-#X obj 583 185 hip~;
-#X obj 608 141 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 540 185 hip~;
+#X obj 565 141 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 503 115 noise~;
-#X obj 611 114 hsl 128 15 20 20000 1 0 empty empty empty -2 -8 0 10
+#X obj 568 114 hsl 128 15 20 20000 1 0 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
 #X text 146 99 y[n] = x[n] - a[n] * x[n-1];
 #X obj 227 505 clip 0 1;
@@ -64,8 +64,6 @@ implementations., f 34;
 #X obj 703 16 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 28 0;
-#X connect 1 0 28 1;
-#X connect 2 0 33 1;
 #X connect 2 0 33 0;
 #X connect 3 0 2 1;
 #X connect 3 0 35 0;
@@ -83,4 +81,3 @@ implementations., f 34;
 #X connect 35 0 36 0;
 #X connect 36 0 34 0;
 #X connect 37 0 27 0;
-#X connect 37 0 27 1;

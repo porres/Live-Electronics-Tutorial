@@ -1,4 +1,4 @@
-#N struct 1004-point float x0 float y0 float size float fg float in
+#N struct 1021-point float x0 float y0 float size float fg float in
 float grid;
 #N canvas 311 23 812 712 12;
 #X declare -path else;
@@ -59,7 +59,7 @@ sinusoid., f 54;
 #X restore 67 205 pd Complex-Sinusoid;
 #X obj 591 17 declare -path else;
 #X obj 67 347 circle 127 -1 1 -1 1 2 225 225 225 230 230 230 1 0 0
-1 1 0 0.720655 0.207718 empty empty 1;
+1 1 0 0.641144 0.389126 empty empty 1;
 #X obj 235 256 pic 0 gif/complex-sine.gif empty empty;
 #X text 320 549 === Projection in Time ===>;
 #X text 397 484 Cosine;
@@ -75,7 +75,7 @@ sine in two dimensions. Note how they are out of phase by 90 degress.
 #X obj 683 444 dir gif;
 #X msg 683 473 open gif/\$1;
 #X obj 683 389 count 2 30;
-#X obj 101 101 pic 0 gif/sc-frame09.gif empty \$0-pic;
+#X obj 101 101 pic 0 gif/sc-frame04.gif empty \$0-pic;
 #X obj 683 361 tempo 200 -ms -on;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;

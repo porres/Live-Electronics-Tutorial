@@ -1,4 +1,4 @@
-#N struct 1021-slot float x float y float slotsize float color float
+#N struct 1217-slot float x float y float slotsize float color float
 width float bordercolor;
 #N canvas 466 110 634 469 12;
 #X declare -path else;
@@ -9,7 +9,6 @@ width float bordercolor;
 -1 -1 100 256;
 #X obj 42 83 moses 1;
 #X text 34 47 Play/Stop;
-#X obj 109 389 out~;
 #X obj 104 141 count 15;
 #X obj 104 84 tempo 60 -div 4;
 #X msg 42 105 set 0;
@@ -35,18 +34,19 @@ slot. The output is the track number and slot value. So you need to
 route the value of each track. We then use select to trigger the sample.
 Check its help file for more info., f 46;
 #X text 497 150 <= preset;
+#X obj 61 389 out2~;
 #X connect 0 0 3 0;
-#X connect 0 0 7 0;
-#X connect 2 0 7 1;
-#X connect 3 0 8 0;
-#X connect 6 0 12 0;
-#X connect 7 0 6 0;
-#X connect 8 0 6 0;
-#X connect 10 0 5 0;
-#X connect 11 0 5 1;
-#X connect 12 0 13 0;
-#X connect 13 0 15 0;
-#X connect 13 1 16 0;
-#X connect 14 0 12 0;
+#X connect 0 0 6 0;
+#X connect 2 0 6 1;
+#X connect 3 0 7 0;
+#X connect 5 0 11 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 9 0 24 0;
+#X connect 10 0 24 1;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
+#X connect 12 1 15 0;
+#X connect 13 0 11 0;
+#X connect 14 0 9 0;
 #X connect 15 0 10 0;
-#X connect 16 0 11 0;

@@ -24,6 +24,5 @@ as said before., f 58;
 #X connect 2 0 8 0;
 #X connect 3 0 1 0;
 #X connect 6 0 4 0;
-#X connect 6 0 4 1;
 #X connect 6 0 5 0;
 #X connect 8 0 1 1;

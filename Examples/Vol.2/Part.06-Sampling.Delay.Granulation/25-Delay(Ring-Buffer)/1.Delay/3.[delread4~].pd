@@ -4,8 +4,8 @@
 -1 -1 0 1;
 #X floatatom 370 333 0 0 0 0 - - -;
 #X text 80 640 BUG:;
-#X obj 55 433 out~;
-#X obj 327 465 out~;
+#X obj 98 433 out~;
+#X obj 370 465 out~;
 #X msg 370 366 500 \$1;
 #X obj 370 396 envgen~;
 #X text 77 148 A signal input allows a smooth and continuous change
@@ -41,7 +41,5 @@ you actually need.;
 #X connect 5 0 6 0;
 #X connect 6 0 9 0;
 #X connect 9 0 4 0;
-#X connect 9 0 4 1;
 #X connect 16 0 3 0;
-#X connect 16 0 3 1;
 #X connect 16 0 10 0;

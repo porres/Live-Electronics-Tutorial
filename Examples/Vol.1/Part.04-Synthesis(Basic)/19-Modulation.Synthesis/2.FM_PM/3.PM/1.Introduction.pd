@@ -41,7 +41,7 @@
 -1 -1 10 256;
 #X obj 900 141 nbx 4 14 -1e+37 1e+37 0 1 empty portadora empty 0 -8
 0 10 -228856 -1 -1 400 256;
-#X obj 876 271 out~;
+#X obj 919 271 out~;
 #X obj 965 171 osc~;
 #X obj 965 193 *~;
 #X obj 965 141 nbx 4 14 -1e+37 1e+37 0 1 empty moduladora empty 0 -8
@@ -55,7 +55,7 @@
 #X text 27 200 carrier signal =>;
 #X text 198 207 <= modulating signal;
 #X text 182 257 <= FM signal;
-#X text 89 286 oscillator =>;
+#X text 77 286 oscillator =>;
 #X text 320 260 oscillator =>;
 #X text 463 144 Carrier;
 #X text 653 144 Mod;
@@ -109,13 +109,11 @@ You can also visualize that the [osc~] object has been split into a
 #X connect 5 0 71 0;
 #X connect 6 0 0 0;
 #X connect 7 0 27 0;
-#X connect 7 0 27 1;
 #X connect 8 0 9 0;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
 #X connect 12 0 28 0;
-#X connect 12 0 28 1;
 #X connect 29 0 30 0;
 #X connect 30 0 11 1;
 #X connect 31 0 29 0;
@@ -126,9 +124,7 @@ You can also visualize that the [osc~] object has been split into a
 #X connect 37 0 35 0;
 #X connect 38 0 73 0;
 #X connect 39 0 34 0;
-#X connect 39 0 34 1;
 #X connect 59 0 58 0;
-#X connect 59 0 58 1;
 #X connect 60 0 59 0;
 #X connect 61 0 59 1;
 #X connect 62 0 63 0;

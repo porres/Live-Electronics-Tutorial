@@ -1,11 +1,11 @@
-#N canvas 314 34 961 536 12;
+#N canvas 314 34 940 526 12;
 #X declare -path else;
 #X obj 52 436 cnv 15 275 50 empty empty empty 5 12 0 14 -232693 -66577
 0;
 #X text 59 451 H(z) = ------------------------------;
 #X text 112 440 a0 + a1 * z^-1 + a2 * z^-2;
-#X obj 594 282 rpole~;
-#X obj 594 219 noise~;
+#X obj 581 282 rpole~;
+#X obj 581 219 noise~;
 #X obj 688 220 sig~ 0.1;
 #X obj 576 434 cnv 15 320 55 empty empty empty 5 12 0 14 -233017 -66577
 0;
@@ -18,7 +18,7 @@
 #X text 695 452 =;
 #X text 714 463 1 - a * z^-1;
 #X text 118 461 1 - b1 * z^-1 - b2 * z^-2;
-#X obj 551 321 out~;
+#X obj 581 321 out~;
 #N canvas 259 23 692 706 get-H(z) 0;
 #X obj 165 56 cnv 15 330 40 empty empty empty 5 12 0 14 -233017 -66577
 0;
@@ -58,7 +58,7 @@ the concept of Poles and Zeros. Poles are feedback coefficients \,
 and Zeros are feedforward coefficients. Note that by defining a filter
 as a 2-Pole / 2-Zero filter \, you're also defining its order., f
 61;
-#X text 68 387 Transfer function of [biquad~]:;
+#X text 111 411 Transfer function of [biquad~]:;
 #X text 331 439 <== Zeros (a1/a2);
 #X text 331 464 <== Poles (b1/b2);
 #X text 39 328 Hence \, a1 & a2 are Zeros and b1 & b2 are Poles (note
@@ -79,16 +79,14 @@ how they act \, when the Z-Plane is presented.;
 #X obj 733 24 declare -path else;
 #X text 757 220 <= pole coefficient;
 #X text 657 283 =;
-#X obj 60 114 pic 0 ../files/SOS.gif empty empty;
-#X text 41 173 Zero 1 ==>;
-#X text 44 240 Zero 2 ==>;
-#X text 340 170 <== Pole 1;
+#X obj 64 113 pic 0 ../files/SOS.gif empty empty;
+#X text 48 172 Zero 1 ==>;
+#X text 48 241 Zero 2 ==>;
+#X text 340 171 <== Pole 1;
 #X text 340 241 <== Pole 2;
 #X connect 3 0 16 0;
-#X connect 3 0 16 1;
 #X connect 4 0 3 0;
 #X connect 4 0 24 0;
 #X connect 5 0 3 1;
 #X connect 5 0 24 1;
 #X connect 24 0 25 0;
-#X connect 24 0 25 1;

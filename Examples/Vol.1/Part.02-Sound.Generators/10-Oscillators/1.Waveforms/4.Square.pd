@@ -1,4 +1,4 @@
-#N canvas 305 23 918 571 12;
+#N canvas 305 23 907 676 12;
 #X declare -path else;
 #X obj 59 216 nbx 5 14 1 100 0 1 empty empty empty 0 -8 0 10 -228856
 -1 -1 11 256;
@@ -13,12 +13,12 @@
 #X restore 160 182 graph;
 #X text 143 180 1;
 #X text 138 301 -1;
-#X obj 141 481 out~;
+#X obj 163 482 out~;
 #X obj 583 307 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 580 332 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 623 398 graph~ 950 5 -1.1 1.1;
+#X obj 557 462 graph~ 950 5 -1.1 1.1;
 #N canvas 561 148 650 509 square 0;
 #X obj 51 30 inlet;
 #X floatatom 51 64 5 0 0 0 - - -;
@@ -61,7 +61,7 @@ is the partial number. Even partials are zeroed.;
 #X connect 18 0 11 0;
 #X connect 18 1 9 0;
 #X restore 59 246 pd square;
-#X obj 512 427 out~;
+#X obj 576 395 out~;
 #X obj 556 359 square~ 100;
 #X text 436 63 The [square~] object \, from ELSE \, is a perfect sqaure
 wave oscillator which alternates between 1 and -1 values. Its second
@@ -111,13 +111,11 @@ more details., f 54;
 #X obj 672 24 declare -path else;
 #X connect 0 0 11 0;
 #X connect 1 0 7 0;
-#X connect 1 0 7 1;
 #X connect 2 0 1 0;
 #X connect 8 0 9 0;
 #X connect 9 0 13 1;
 #X connect 13 0 10 0;
 #X connect 13 0 12 0;
-#X connect 13 0 12 1;
 #X connect 18 0 2 0;
 #X connect 19 0 18 0;
 #X connect 20 0 13 0;
