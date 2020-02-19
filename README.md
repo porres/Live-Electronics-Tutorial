@@ -8,7 +8,7 @@
 	Copyright © 2008-2020 Alexandre Torres Porres
 
 
-**Link:** <https://github.com/porres/Live-Electronic-Music-Tutorial>.
+**Link:** <https://github.com/porres/Live-Electronics-Tutorial>.
 
 --------------------------------------------------------------------------
 
@@ -34,4 +34,10 @@ Pure Data is adopted  in the examples for its accessibility and for being a powe
    This project started in 2008 as a textbook for a computer music course. In 2009, the author presented a paper about it in the 3rd International Pure Data Convention. Currently, the work is divided into two volumes and solely presented as example patches that the author uses in his courses/workshops. The plan now is to write a book accompanied by these examples. Originally developed in brazilian portuguese and relying on Pd Extended 0.42-5 for years, this has just been rewritten from scratch in english and ported to rely only in objects from the ELSE external library and the newer Pd Vanilla versions.
 
    This is still in the early drafts from the first translation round, so many typos and mistakes may exist. There are plans to include more topics and examples in this tutorial, which can furtherly be split into 3 volumes. The developments now depend mostly on the software development of the ELSE library to include more examples. Since the ELSE library is still in an early beta stage of development, some objects may change in functionality, new objects are being developed and others might even be deleted until a final version is out. If so, future updates of this didactc material will reflect these changes.  
+   
+   --------------------------------------------------------------------------
+
+   ### Downloading and Installing this tutorial:
+
+   Look for the latest releases in https://github.com/porres/Live-Electronics-Tutorial/releases - but this tutorial is also available via Pd's external manager (In Pd, just go for Help => Find Externals and search for 'live electronics tutorial'). To install the tutorial, just add the folder's path to Pd via "Preferences => Path", so you can navigate through it in Pd's browser (Help => Browser).
 
