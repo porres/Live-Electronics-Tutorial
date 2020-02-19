@@ -43,6 +43,7 @@ it folds back again and starts raising up.;
 #X obj 77 251 pic 0 foldover.gif empty empty;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
+#X connect 1 0 4 1;
 #X connect 3 0 0 0;
 #X connect 3 0 7 0;
 #X connect 6 0 5 0;
