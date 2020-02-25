@@ -1,27 +1,18 @@
 #N canvas 510 23 513 684 12;
 #X declare -path else;
-#X obj 164 243 +~;
-#X obj 207 245 +~ 1;
-#X obj 164 201 sig~ 0;
+#X obj 189 256 +~;
+#X obj 232 258 +~ 1;
+#X obj 189 214 sig~ 0;
 #X obj 104 564 +~;
 #X obj 160 567 +~ 1;
 #X obj 104 533 sig~ 0;
-#X obj 164 278 display~;
+#X obj 189 291 display~;
 #X obj 104 636 display~;
-#X obj 292 220 setdsp~ 1;
+#X obj 337 223 setdsp~ 1;
 #X text 44 56 All processes in a chain of audio objects are performed
 "at once" for each block. So if an output signal is inserted back as
 an input earlier in the chain \, we create an infinite loop \, and
 the computation of that audio chain is turned off., f 56;
-#X text 44 139 this happens below \, see how the terminal prints an
-error that says: "DSP loop detected (some tilde objects not scheduled)".
-;
-#X text 64 243 infinite loop;
-#X text 44 350 To avoid an infinite loop \, we need to perform a feedback
-with a delay of one block of audio. This can be done with native objects
-such as: [send~] / [receive~] \, [tabsend~] / [tabreceive~] \, [throw~]
-/ [catch~] e also the delay objects [delwrite~] / [delread~] and/or
-[delread4~].;
 #X obj 117 603 send~ \$0-signal;
 #X obj 160 540 receive~ \$0-signal;
 #X text 62 443 This example uses [send~] and [receive~] \, where the
@@ -29,12 +20,21 @@ signal connected to [send~] arrives at [receive~] with a delay of one
 block \, preventing an infinite loop from happening., f 49;
 #X text 293 538 <= loop/feedback with one block delay, f 20;
 #X obj 298 25 declare -path else;
+#X text 44 350 To avoid an infinite loop \, we need to perform a feedback
+with a delay of one block of audio. This can be done with native objects
+such as: [send~] / [receive~] \, [tabsend~] / [tabreceive~] \, [throw~]
+/ [catch~] and also the delay objects [delwrite~] / [delread~] and/or
+[delread4~].;
+#X text 44 139 This happens below \, see how the terminal prints an
+error that says: "DSP loop detected (some tilde objects not scheduled)".
+;
+#X text 86 256 Infinite loop:;
 #X connect 0 0 1 0;
 #X connect 0 0 6 0;
 #X connect 1 0 0 1;
 #X connect 2 0 0 0;
 #X connect 3 0 7 0;
-#X connect 3 0 13 0;
+#X connect 3 0 10 0;
 #X connect 4 0 3 1;
 #X connect 5 0 3 0;
-#X connect 14 0 4 0;
+#X connect 11 0 4 0;

@@ -50,12 +50,12 @@ that's what forces the order of execution anyway.;
 #X text 85 528 If a feedback mechanism is implemented with such subpatches
 and dummy [inlet~]/[outlet~] \, Pd also interpretes this as an infinite
 loop and turns the audio chain off., f 59;
-#X text 84 580 The same mechanism can be applied to other similar objects
-like: [tabsend~]/[tabreceive~] & [throw~]/[catch~] pais. We'll also
-see later in this tutorial how to use this mechanism when it comes
-to managing delay lines wht [delwrite~] and [delread~] or [delread4~]
-pairs., f 59;
 #X obj 364 21 declare -path else;
+#X text 84 580 The same mechanism can be applied to other similar objects
+like: [tabsend~]/[tabreceive~] & [throw~]/[catch~] pairs. We'll also
+see later in this tutorial how to use this mechanism when it comes
+to managing delay lines with [delwrite~] and [delread~]/[delread4~]
+pairs., f 59;
 #X connect 0 0 3 0;
 #X connect 0 1 1 0;
 #X connect 1 0 2 0;
