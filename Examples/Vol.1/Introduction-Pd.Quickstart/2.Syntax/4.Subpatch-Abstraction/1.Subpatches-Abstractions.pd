@@ -1,9 +1,9 @@
-#N canvas 384 67 953 571 12;
-#X floatatom 84 255 5 0 0 0 - - -;
-#X floatatom 84 321 5 0 0 0 - - -;
-#X floatatom 137 254 5 0 0 0 - - -;
-#X floatatom 137 320 5 0 0 0 - - -;
-#X obj 296 324 dac~;
+#N canvas 487 194 953 571 12;
+#X floatatom 93 262 5 0 0 0 - - -;
+#X floatatom 93 328 5 0 0 0 - - -;
+#X floatatom 146 261 5 0 0 0 - - -;
+#X floatatom 146 327 5 0 0 0 - - -;
+#X obj 305 331 dac~;
 #N canvas 281 177 369 315 sum 0;
 #X obj 83 95 inlet;
 #X obj 83 183 outlet;
@@ -23,21 +23,10 @@
 #X connect 2 0 1 0;
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;
-#X restore 92 286 pd sum;
-#X text 48 222 Subpatches:;
-#N canvas 682 233 270 222 On/Off 0;
-#X obj 61 31 inlet~;
-#X obj 91 96 *~;
-#X obj 120 32 inlet;
-#X obj 91 135 outlet~;
-#X connect 0 0 1 0;
-#X connect 1 0 3 0;
-#X connect 2 0 1 1;
-#X restore 296 287 pd On/Off;
-#X obj 282 254 osc~ 440;
-#X msg 356 256 0.1;
-#X msg 377 287 0;
-#X text 147 288 <= click to open =>;
+#X restore 101 293 pd sum;
+#X text 57 229 Subpatches:;
+#X obj 347 250 osc~ 440;
+#X text 156 295 <= click to open =>;
 #X symbolatom 552 311 10 0 0 0 - - -;
 #X floatatom 640 310 5 0 0 0 - - -;
 #X msg 552 229 bang;
@@ -46,7 +35,7 @@
 #X obj 552 263 abstraction-1 example 1, f 13;
 #X obj 691 204 abstraction-2;
 #X text 527 182 Abstractions:;
-#X text 42 478 Abstractions behave like objects. They load arguments
+#X text 42 482 Abstractions behave like objects. They load arguments
 \, which are loaded in the abstraction by the usage of dollar signs
 within objects - not to be confused with the usage of dollar signs
 inside messages!, f 59;
@@ -66,18 +55,7 @@ shown (including arrays \, atom boxes and comments)., f 59;
 can load multiple instances of an abstraction in a Pd patch.;
 #X text 493 350 ============================================================
 ;
-#X text 43 23 A subpatch is a subwindow of a pacth \, and saved within
-the same patch file \, mostly used to better organize your code into
-sections as a single box. To create a subpatch \, just use the [pd]
-object and a subwindow is automatically created. You can also give
-it a name argument just to name the subwindow (but it doesn't really
-affect it).;
-#X text 43 117 Data goes in and out of a subpatch via inlets/outlets
-\, created by corresponding [inlet] / [outlet] objects. To deal with
-audio signal \, use the signal variants: [inlet~] and [outlet~]. Check
-the help file of [inlet~] to see how it can also deal with control
-messages and take default values., f 58;
-#X text 42 369 An abstraction is a separate Pd patch (a separate file
+#X text 42 373 An abstraction is a separate Pd patch (a separate file
 document) that is opened inside another patch. It is also a kind of
 external \, even though not being a compiled object. For a patch to
 be loaded as an abstraction \, it must be in a folder that Pd automatically
@@ -87,17 +65,52 @@ or in the same folder as the patch that loads it.;
 save a list of parameters (or its 'state') from the abstraction when
 you save the owning patch. Note the the 'state' is not saved as a list
 of arguments \, but as a hidden list in the patch.;
+#X text 43 13 A subpatch (a subwindow of a patch) is part of the same
+patch file and used to better organize your code into sections. To
+create it \, use the [pd] object and a subwindow is automatically created.
+You can also give it a name argument just to name the subwindow (but
+it doesn't really affect it).;
+#X text 43 107 Data goes in and out of a subpatch via inlets/outlets
+\, created by corresponding [inlet] / [outlet] objects. To deal with
+audio signal \, use the signal variants: [inlet~] and [outlet~]. Note
+that [inlet~] can also receive control data with the 'fwd' argument.
+Check the help file of [inlet~] for more details and how it can also
+take default signal values., f 58;
+#X msg 265 249 volume \$1;
+#X obj 268 222 hsl 128 15 0 0.1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#N canvas 274 307 729 287 gain 0;
+#X obj 79 136 *~;
+#X obj 79 195 outlet~;
+#X obj 79 40 inlet~ fwd;
+#X obj 146 77 route volume;
+#X obj 146 134 line~;
+#X msg 146 105 \$1 10;
+#X text 276 79 the 'fwd' argument creates a second outlet that receives
+control messages \, such as the "volume" messages from the parent patch.
+Here we use the [route] object to get the float values from the "volume"
+messages.;
+#X connect 0 0 1 0;
+#X connect 2 0 0 0;
+#X connect 2 1 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 1;
+#X connect 5 0 4 0;
+#X restore 305 294 pd gain;
+#X msg 378 311 \; pd dsp 1;
+#X obj 378 285 loadbang;
 #X connect 0 0 5 0;
 #X connect 2 0 5 1;
 #X connect 5 0 1 0;
 #X connect 5 1 3 0;
-#X connect 7 0 4 0;
-#X connect 7 0 4 1;
-#X connect 8 0 7 0;
-#X connect 9 0 7 1;
-#X connect 10 0 7 1;
-#X connect 14 0 17 0;
-#X connect 15 0 18 0;
-#X connect 17 0 12 0;
-#X connect 17 1 13 0;
-#X connect 18 0 16 0;
+#X connect 7 0 32 0;
+#X connect 11 0 14 0;
+#X connect 12 0 15 0;
+#X connect 14 0 9 0;
+#X connect 14 1 10 0;
+#X connect 15 0 13 0;
+#X connect 30 0 32 0;
+#X connect 31 0 30 0;
+#X connect 32 0 4 0;
+#X connect 32 0 4 1;
+#X connect 34 0 33 0;

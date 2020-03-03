@@ -1,0 +1,90 @@
+#N canvas 432 28 1014 614 12;
+#X floatatom 258 274 0 0 0 0 - - -;
+#X floatatom 261 181 0 0 0 0 - - -;
+#X obj 258 247 receive midinote;
+#X obj 517 53 hsl 128 15 0 1 0 0 slider empty empty -2 -8 0 10 -262144
+-1 -1 2700 1;
+#X obj 517 84 hsl 128 15 0 1 0 0 empty slider empty -2 -8 0 10 -262144
+-1 -1 2700 1;
+#X obj 256 304 receive slider;
+#X floatatom 256 330 5 0 0 0 - - -;
+#X text 507 31 built-in send/receive;
+#X obj 359 528 send pd;
+#X msg 359 465 dsp 1;
+#X msg 375 496 dsp 0;
+#X msg 509 496 \; pd dsp \$1;
+#X obj 509 469 tgl 18 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 533 468 On/Off;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array array4 100 float 2;
+#X coords 0 1 100 -1 200 140 1 0 0;
+#X restore 690 212 graph;
+#X msg 514 114 const \$1;
+#X text 403 465 DSP On;
+#X text 419 495 DSP Off;
+#X obj 474 294 send~;
+#X obj 520 294 receive~;
+#X obj 476 326 throw~;
+#X obj 529 325 catch~;
+#X text 425 205 There are also audio object versions \, but besides
+[send~]/[receive~] and we also have [throw~]/[catch~]. Check their
+help files., f 28;
+#X text 35 21 A [send] and [receive] with the same address argument
+allow cordless connections. They communicate anywhere in a patch \,
+including subpatches but also to other patches (including abstractions).
+, f 61;
+#X obj 261 208 send midinote;
+#X msg 792 98 \; array4 const 0.5;
+#X text 35 84 A semicolon in messages behaves as a [send] object \,
+which is useful to send things to several places at one click. Atom
+boxes and GUI objects in Pd Vanilla also have built in send and receive
+functionalities. You can set them by going into the properties window
+under “Messages”., f 61;
+#X text 55 277 Semicolons will always \; break lines \, this also \;
+happens on objects and \; comments!;
+#X text 583 113 <==========;
+#X text 667 84 send a constant value to all elements =======>, f 18
+;
+#X text 41 390 Additionaly \, you can set receive and send names in
+GUI objects with messages., f 34;
+#X msg 138 449 receive slider;
+#X text 328 387 You can also use [send] to send messages to Pd. For
+instance \, the “dsp 1” and “dsp 0” messages \, respectively
+\, turn the DSP engine on and off., f 40;
+#X text 707 15 Arrays can also receive commands from a [send] object
+that has the array's name as the address., f 33;
+#X obj 138 541 nbx 5 14 -1e+37 1e+37 0 0 empty midinote empty 0 -8
+0 10 -262144 -1 -1 77 256;
+#X msg 155 487 receive midinote;
+#X obj 726 464 r slider;
+#X obj 514 143 s array4;
+#X text 581 145 <= 's' is abbreviation for 'send';
+#X text 795 462 <= 'r' is abbreviation;
+#X text 821 480 for 'receive';
+#X msg 726 493 \$1 10;
+#X obj 726 522 line~;
+#X obj 645 476 osc~ 440;
+#X obj 645 510 *~;
+#X obj 645 554 dac~;
+#X text 666 386 Turn the DSP on \, so we get values from the slider
+and use it to convert to signal with [line~] and control the volume
+of an oscillator:, f 42;
+#X msg 37 195 \; slider 0.05 \; midinote 56;
+#X msg 143 195 \; slider 0.1 \; midinote 77;
+#X connect 1 0 24 0;
+#X connect 2 0 0 0;
+#X connect 4 0 15 0;
+#X connect 5 0 6 0;
+#X connect 9 0 8 0;
+#X connect 10 0 8 0;
+#X connect 12 0 11 0;
+#X connect 15 0 37 0;
+#X connect 31 0 34 0;
+#X connect 35 0 34 0;
+#X connect 36 0 41 0;
+#X connect 41 0 42 0;
+#X connect 42 0 44 1;
+#X connect 43 0 44 0;
+#X connect 44 0 45 0;
+#X connect 44 0 45 1;
