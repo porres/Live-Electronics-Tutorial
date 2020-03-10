@@ -1,11 +1,11 @@
 #N canvas 397 23 1022 616 12;
-#X floatatom 276 422 5 0 0 0 - - -;
-#X floatatom 276 483 5 0 0 0 - - -;
-#X floatatom 223 482 5 0 0 0 - - -;
-#X msg 223 421 12;
+#X floatatom 272 420 5 0 0 0 - - -;
+#X floatatom 272 481 5 0 0 0 - - -;
+#X floatatom 212 481 5 0 0 0 - - -;
+#X msg 212 420 12;
 #X text 70 23 In Pd we have two types of objects:;
-#X text 85 44 - Audio objects, f 21;
-#X text 84 58 - Control objects;
+#X text 105 44 - Audio objects, f 17;
+#X text 105 62 - Control objects;
 #X text 67 95 Audio objects deal \, in some way \, with audio signals.
 In the vast majority of cases \, it will have at least one signal input
 or output. Audio objects end with a tilde sign (~) \, which resembles
@@ -14,10 +14,10 @@ a cute and little sinusoidal wave., f 53;
 of dealing with audio signals at all and do not end with "~". Hence
 \, they can only accept and generate control messages \, such as coming
 from message or number boxes \, for example.;
-#X text 111 422 message box =>;
-#X text 316 421 <= number box;
-#X text 86 454 control objects =>;
-#X text 530 20 A great difference between audio signals and control
+#X text 105 419 message box =>;
+#X text 315 419 <= number box;
+#X text 76 451 control objects =>;
+#X text 528 29 A great difference between audio signals and control
 messages is that control data is processed any time in Pd as requested.
 But audio signals need to have the "DSP" engine on \, and they consume
 CPU power even if they aren't connected to anything!, f 62;
@@ -30,37 +30,40 @@ CPU power even if they aren't connected to anything!, f 62;
 #X text 200 213 <= audio multiplication;
 #X obj 157 238 osc~;
 #X text 200 239 <= oscillator;
-#X text 530 90 By default \, the DSP (from "digital signal processing")
+#X text 528 102 By default \, the DSP (from "digital signal processing")
 is off when we open Pd. Therefore \, no audio object is operational
 \, but control objects are. The DSP can be turned on and off in the
 terminal window \, via the Menu (Media => DSP On / Dsp Off) and its
 shortcuts. It's also possible to send a message to Pd as we'll see
 later., f 62;
-#X obj 612 285 osc~ 440;
-#X obj 223 454 * 5;
-#X obj 276 453 + 5;
-#X text 57 520 Objects usually take arguments \, which are default
-values. Above we have the argument of '5' for both objects \, so the
-incoming value gets multipliued by '5' in the [*] object and summed
-by '5' in the [+] object.;
-#X text 687 286 <= argument \, frequency of 440 Hz;
-#X obj 614 456 *~;
-#X obj 615 518 dac~;
-#X obj 660 415 line~;
-#X msg 660 341 1 1000;
-#X msg 676 379 0 1000;
-#X text 718 341 generate a line to 1 in 1000 ms;
-#X text 733 378 generate a line to 0 in 1000 ms;
-#X text 533 195 With the DSP On \, let's take a look at this simple
+#X obj 589 282 osc~ 440;
+#X obj 212 452 * 5;
+#X obj 272 452 + 5;
+#X text 661 281 <= argument \, frequency of 440 Hz;
+#X obj 591 483 *~;
+#X obj 592 540 dac~;
+#X obj 637 442 line~;
+#X msg 637 368 1 1000;
+#X msg 653 406 0 1000;
+#X text 695 368 generate a line to 1 in 1000 ms;
+#X text 710 405 generate a line to 0 in 1000 ms;
+#X text 531 203 With the DSP On \, let's take a look at this simple
 patch that controls the volume of an oscillator for a fade in/out.
 ;
+#X text 631 483 multiply by line values and adjust gain;
+#X text 57 520 Objects usually take arguments \, which are default
+values. Above we have the argument of '5' for both objects \, so the
+incoming value gets multiplied by '5' in the [*] object and summed
+by '5' in the [+] object.;
+#X text 634 541 audio output;
+#X text 615 326 click on the messages below:, f 15;
 #X connect 0 0 25 0;
 #X connect 3 0 24 0;
-#X connect 23 0 28 0;
+#X connect 23 0 27 0;
 #X connect 24 0 2 0;
 #X connect 25 0 1 0;
-#X connect 28 0 29 0;
-#X connect 28 0 29 1;
-#X connect 30 0 28 1;
-#X connect 31 0 30 0;
-#X connect 32 0 30 0;
+#X connect 27 0 28 0;
+#X connect 27 0 28 1;
+#X connect 29 0 27 1;
+#X connect 30 0 29 0;
+#X connect 31 0 29 0;

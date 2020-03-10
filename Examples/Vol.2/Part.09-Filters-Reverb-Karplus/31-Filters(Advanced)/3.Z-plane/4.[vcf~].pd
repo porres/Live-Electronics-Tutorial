@@ -339,122 +339,122 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X connect 44 0 47 1;
 #X connect 45 0 47 0;
 #X coords 0 -1 1 1 452 452 2 100 100;
-#X restore 486 293 pd Z-Plane-biquad;
-#X obj 660 155 *~;
-#X obj 623 122 noise~;
-#X obj 159 458 nbx 5 14 1 100 1 1 \$0-Q empty empty 0 -8 0 10 -228856
+#X restore 487 306 pd Z-Plane-biquad;
+#X obj 674 162 *~;
+#X obj 637 129 noise~;
+#X obj 160 471 nbx 5 14 1 100 1 1 \$0-Q empty empty 0 -8 0 10 -228856
 -1 -1 2.64165 256;
-#X floatatom 383 426 0 0 0 0 - ganho -;
-#X floatatom 312 426 0 0 0 0 - im -;
-#X floatatom 242 426 0 0 0 0 - re -;
-#X obj 383 457 v g;
-#X obj 312 454 v ai;
-#X obj 242 454 v ar;
-#X text 240 475 coef;
-#X text 311 477 coef;
-#X text 247 486 re;
-#X text 315 489 im;
-#X text 91 74 y1[n] = x1[n] + ar * y1[n-1] - ai * y2[n-1] \; y2[n]
+#X floatatom 384 439 0 0 0 0 - #0-gain -;
+#X floatatom 313 439 0 0 0 0 - #0-im -;
+#X floatatom 243 439 0 0 0 0 - #0-re -;
+#X obj 384 470 v g;
+#X obj 313 467 v ai;
+#X obj 243 467 v ar;
+#X text 241 488 coef;
+#X text 312 490 coef;
+#X text 248 499 re;
+#X text 316 502 im;
+#X text 92 87 y1[n] = x1[n] + ar * y1[n-1] - ai * y2[n-1] \; y2[n]
 = x2[n] + ai * y1[n-1] + ar * y2[n-1];
-#X floatatom 678 122 5 0 0 0 - ganho -;
-#X obj 681 193 cpole~, f 9;
-#X floatatom 741 166 5 0 0 0 - im -;
-#X floatatom 721 143 5 0 0 0 - re -;
-#X obj 518 61 fexpr~ g * $x1 + ar * $y1[-1] - ai * $y2[-1] \; ai *
+#X floatatom 692 129 5 0 0 0 - #0-gain -;
+#X obj 674 208 cpole~, f 9;
+#X floatatom 734 181 5 0 0 0 - #0-im -;
+#X floatatom 714 158 5 0 0 0 - #0-re -;
+#X obj 519 74 fexpr~ g * $x1 + ar * $y1[-1] - ai * $y2[-1] \; ai *
 $y1[-1] + ar * $y2[-1];
-#X obj 518 33 noise~;
-#X obj 57 455 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq-send \$0-freq empty
+#X obj 519 46 noise~;
+#X obj 58 468 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq-send \$0-freq empty
 0 -8 0 10 -228856 -1 -1 0 256;
-#X text 32 452 Hz;
-#X obj 135 519 noise~;
-#X obj 254 519 nbx 5 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 -228856
+#X text 33 465 Hz;
+#X obj 136 532 noise~;
+#X obj 255 532 nbx 5 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 -228856
 -1 -1 2.64165 256;
-#X obj 190 520 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty
+#X obj 191 533 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty
 0 -8 0 10 -228856 -1 -1 0 256;
-#X obj 157 549 vcf~ 500 1;
-#X text 760 142 re;
-#X text 782 166 im;
-#X obj 84 216 cnv 15 315 120 empty empty empty 20 12 0 14 -216246 -66577
+#X obj 158 562 vcf~ 500 1;
+#X text 753 157 re;
+#X text 775 181 im;
+#X obj 85 229 cnv 15 315 120 empty empty empty 20 12 0 14 -216246 -66577
 0;
-#X text 211 226 1 - ar*z^-1;
-#X text 178 243 1 - 2*ar*z^-1 + |a|^2*z^-2;
-#X text 225 266 ai*z^-1;
-#X text 174 282 1 - 2*ar*z^-1 + |a|^2*z^-2;
-#X text 158 267 ________________________________;
-#X text 159 228 ________________________________;
-#X text 90 234 Re_H(z) =;
-#X text 89 274 Im_H(z) =;
-#X text 48 39 The [vcf~] object is a complex pole filter that can be
+#X text 212 239 1 - ar*z^-1;
+#X text 179 256 1 - 2*ar*z^-1 + |a|^2*z^-2;
+#X text 226 279 ai*z^-1;
+#X text 175 295 1 - 2*ar*z^-1 + |a|^2*z^-2;
+#X text 159 280 ________________________________;
+#X text 160 241 ________________________________;
+#X text 91 247 Re_H(z) =;
+#X text 90 287 Im_H(z) =;
+#X text 49 52 The [vcf~] object is a complex pole filter that can be
 implemented with [cpole~] \, whose difference equation is:, f 54;
-#X text 155 309 where |a|^2 = ar^2 + ai^2;
-#N canvas 107 28 632 365 coefficients 0;
-#X obj 339 23 inlet;
-#X obj 64 28 inlet;
-#X obj 64 123 f;
-#X obj 339 70 trigger bang float;
-#X obj 255 324 v ampcorrect;
-#X obj 292 298 v oneminusr;
-#X obj 330 274 v r;
-#X obj 368 272 v cf;
-#X obj 406 296 v qinv;
-#X obj 444 268 v Q;
-#X obj 64 195 expr r * cos(cf) \; r * sin(cf) \; ampcorrect * oneminusr
+#X text 156 322 where |a|^2 = ar^2 + ai^2;
+#N canvas 107 28 642 423 coefficients 0;
+#X obj 364 23 inlet;
+#X obj 24 28 inlet;
+#X obj 24 123 f;
+#X obj 364 70 trigger bang float;
+#X obj 265 344 v ampcorrect;
+#X obj 309 312 v oneminusr;
+#X obj 353 284 v r;
+#X obj 397 282 v cf;
+#X obj 441 306 v qinv;
+#X obj 486 278 v Q;
+#X obj 24 195 expr r * cos(cf) \; r * sin(cf) \; ampcorrect * oneminusr
 ;
-#X obj 64 156 trigger bang float;
-#X obj 128 252 s im;
-#X obj 193 252 s ganho;
-#X obj 64 252 s re;
-#X obj 255 180 expr 2 - 2 / (Q + 2) \; 1 - r \; if (qinv > 0 \, 1 -
+#X obj 24 156 trigger bang float;
+#X obj 265 180 expr 2 - 2 / (Q + 2) \; 1 - r \; if (qinv > 0 \, 1 -
 cf * qinv \, 0) \; max($f1 * 2 * pi / sr \, 0) \; 1/Q \; max($f2 \,
 1);
-#X obj 523 127 loadbang;
-#X obj 523 174 v sr;
-#X obj 532 234 v pi;
-#X obj 532 211 pi;
-#X obj 523 152 samplerate~;
+#X obj 533 127 loadbang;
+#X obj 533 174 v sr;
+#X obj 542 234 v pi;
+#X obj 542 211 pi;
+#X obj 533 152 samplerate~;
+#X obj 175 252 s \$0-gain;
+#X obj 99 252 s \$0-im;
+#X obj 24 252 s \$0-re;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 11 0;
 #X connect 3 0 2 0;
-#X connect 3 1 15 1;
-#X connect 10 0 14 0;
-#X connect 10 1 12 0;
-#X connect 10 2 13 0;
+#X connect 3 1 12 1;
+#X connect 10 0 20 0;
+#X connect 10 1 19 0;
+#X connect 10 2 18 0;
 #X connect 11 0 10 0;
-#X connect 11 1 15 0;
-#X connect 15 0 4 0;
-#X connect 15 1 5 0;
-#X connect 15 2 6 0;
-#X connect 15 3 7 0;
-#X connect 15 4 8 0;
-#X connect 15 5 9 0;
-#X connect 16 0 20 0;
-#X connect 19 0 18 0;
-#X connect 20 0 17 0;
-#X restore 57 482 pd coefficients;
-#X text 383 475 gain;
-#X obj 741 222 out~;
-#X obj 638 222 out~;
-#X text 720 118 gain;
-#X obj 114 581 out~;
-#X obj 224 581 out~;
-#X obj 518 160 out~;
-#X obj 830 152 out~;
-#X text 47 122 Where x1[n] & y1[n] are the real input and output \,
+#X connect 11 1 12 0;
+#X connect 12 0 4 0;
+#X connect 12 1 5 0;
+#X connect 12 2 6 0;
+#X connect 12 3 7 0;
+#X connect 12 4 8 0;
+#X connect 12 5 9 0;
+#X connect 13 0 17 0;
+#X connect 16 0 15 0;
+#X connect 17 0 14 0;
+#X restore 58 495 pd coefficients;
+#X text 384 488 gain;
+#X obj 734 237 out~;
+#X obj 631 237 out~;
+#X text 734 128 gain;
+#X obj 115 594 out~;
+#X obj 225 594 out~;
+#X obj 519 173 out~;
+#X obj 831 165 out~;
+#X text 48 135 Where x1[n] & y1[n] are the real input and output \,
 and x2[n] & y2[n] the imaginary input and output \, whereas "ar" is
 the real part of the coefficient and "ai" the imaginary part. And here's
 the transfer function of both parts below., f 54;
-#X text 5 352 The coefficients are caclulates in the suboatch below
+#X text 6 365 The coefficients are caclulates in the suboatch below
 from frequency and Q values. This is used in [fexpr~] but the difference
 equation is simplified because we don't have an imaginaty input.,
 f 56;
-#X text 34 677 Compare the [vcf~] patch above to [fexpr~] and [cpole~].
+#X text 35 690 Compare the [vcf~] patch above to [fexpr~] and [cpole~].
 Check the Z Plane plot to the right. Again \, the angle represents
 the frequency and the radius the resonance.;
-#X obj 60 432 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0 10
+#X obj 61 445 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
-#X text 144 456 Q;
-#X obj 779 16 declare -path else;
+#X text 145 469 Q;
+#X obj 804 27 declare -path else;
 #X connect 1 0 16 0;
 #X connect 2 0 1 0;
 #X connect 3 0 40 1;
