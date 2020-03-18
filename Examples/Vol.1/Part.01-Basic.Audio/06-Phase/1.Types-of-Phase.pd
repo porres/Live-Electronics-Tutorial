@@ -71,17 +71,17 @@
 #X text 68 278 0;
 #X text 69 181 1;
 #X text 60 332 -1;
-#N canvas 393 90 434 281 plot 0;
-#X msg 234 204 label_pos \$2 \$1;
-#X obj 234 178 pack;
-#X obj 38 141 expr ((($f1 - 1) / 2) * -202) - 19;
-#X obj 234 232 s \$0-time;
-#X obj 132 97 expr sin($f1 * 2*pi) \; $f1 * 501 - 20;
-#X obj 277 157 v pi;
-#X obj 277 128 pi;
-#X obj 132 66 r \$0-fase;
-#X msg 352 85 \; pd dsp 1;
-#X obj 352 55 loadbang;
+#N canvas 488 93 555 345 plot 0;
+#X msg 295 222 label_pos \$2 \$1;
+#X obj 295 196 pack;
+#X obj 63 162 expr ((($f1 - 1) / 2) * -202) - 19;
+#X obj 295 250 s \$0-time;
+#X obj 176 111 expr sin($f1 * 2*pi) \; $f1 * 501 - 20;
+#X obj 361 154 v pi;
+#X obj 361 125 pi;
+#X obj 176 80 r \$0-fase;
+#X msg 425 135 \; pd dsp 1;
+#X obj 425 105 loadbang;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
@@ -91,12 +91,12 @@
 #X connect 7 0 4 0;
 #X connect 9 0 8 0;
 #X restore 901 262 pd plot;
-#X obj 660 215 hsl 200 20 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 692 213 hsl 200 20 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -258113 -1 0 1;
-#X obj 657 245 nbx 5 18 -1e+37 1e+37 0 0 \$0-fase empty empty 0 -8
+#X obj 689 243 nbx 5 18 -1e+37 1e+37 0 0 \$0-fase empty empty 0 -8
 0 13 -228856 -1 -1 0 256;
-#X text 223 222 <== Positive Phase;
-#X text 151 345 Negative Phase ==>;
+#X text 214 222 <== Positive Phase;
+#X text 129 345 Negative Phase ==>;
 #X text 538 588 1;
 #X obj 555 593 graph~ 400 20 0 1;
 #X text 540 722 0;
@@ -112,7 +112,7 @@
 #X obj 169 447 t b f;
 #X obj 181 471 osc~ 100;
 #X obj 172 419 hsl 200 20 0 1 0 1 empty empty empty -2 -8 0 10 -228856
--1 -1 8800 1;
+-1 -1 0 1;
 #X obj 555 543 phasor~ 200;
 #X text 46 420 Initial Phase:;
 #X text 253 448 Initial phase is just where in the cycle it started
@@ -120,29 +120,15 @@ to oscillate., f 21;
 #X obj 169 496 tabwrite~ Initial-Phase;
 #X text 380 420 1;
 #X text 154 420 0;
-#X text 27 13 The term "Phase" can be used in different contexts \,
-being ambiguous and confusing. One way to avoid is to use more specific
-terminology instead of just abbreviating as "phase". On its own \,
-"phase" indicates a stage within a cycle \, such as the four different
-phases of the moon. Sound waveforms are also cyclical and we can have
-\, for instance \, the positive and negative phase (check below). But
-this original concept is rarely used in music theory and we'll present
-here other more important applications and concepts regarding phase
-- check on the right and below., f 62;
-#X text 493 46 Instant Phase: just "phase" usually refers to instant
+#X text 493 51 Instant Phase: just "phase" usually refers to instant
 phase in music theory. So it doesn't concern a stage \, but a moment
 in time. It doesn't hurt to explicitly adopt "instant pahse" instead
 of just "phase" \, and indicate a single position withing a given cycle.
 , f 68;
-#X text 493 112 Now \, since an instant phase refers to a single position
-withing a given cycle \, this can also be represented as an angle.
-This may promote a synonymic relationship between phase and angle \,
-but it is important to emphasize that both implicate on and relate
-to a position., f 68;
-#X text 632 192 Instant Phase as an "Angle"/"Position";
+#X text 546 209 Instant Phase as an "Angle"/"Position", f 19;
 #X text 466 497 On the other hand \, as with amplitude \, besides an
 "instant" measure \, we also, f 75;
-#X text 710 515 have the "running signal". This "running phase" concept
+#X text 711 515 have the "running signal". This "running phase" concept
 is that the phase values are dynamic and in constant change \, as in
 the output of [phasor~]., f 40;
 #X text 566 573 <= Running phase;
@@ -180,6 +166,20 @@ the output of [phasor~]., f 40;
 #X coords 0 1.01 199 -1.01 499 203 1 0 0;
 #X restore 455 281 graph;
 #X obj 833 17 declare -path else;
+#X text 27 20 The term "Phase" can be used in different contexts \,
+being ambiguous and confusing. One way to avoid is to use more specific
+terminology instead of just abbreviating as "phase". On its own \,
+"phase" indicates a stage within a cycle \, such as the four different
+phases of the moon. Sound waveforms are also cyclical and we can have
+\, for instance \, the positive and negative phase (check below). But
+this original concept is rarely used in music theory and we'll present
+here other more important applications and concepts regarding phase.
+, f 62;
+#X text 493 117 Now \, since an instant phase refers to a single position
+withing a given cycle \, this can also be represented as an angle.
+This may promote a synonymic relationship between phase and angle \,
+but it is important to emphasize that both implicate on and relate
+to a position in the cycle., f 68;
 #X connect 7 0 8 0;
 #X connect 19 0 25 0;
 #X connect 19 1 20 1;

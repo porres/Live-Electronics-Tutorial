@@ -5,7 +5,7 @@
 #X obj 335 237 pi;
 #X obj 335 264 v pi;
 #X obj 58 152 osc~ 400;
-#X obj 153 152 osc~ 600;
+#X obj 154 152 osc~ 600;
 #X obj 58 184 expr~ $v1 * cos($v3 * pi/2) \; $v2 * sin($v3 * pi/2)
 ;
 #X obj 58 242 meter2~;
@@ -23,7 +23,7 @@ panning \, we call it "balance". The implementation below uses the
 now more than famous sin/cos equal power function., f 62;
 #X text 370 126 middle point, f 6;
 #X text 53 133 left;
-#X text 150 132 right;
+#X text 151 132 right;
 #X text 70 403 The [balance~] object \, from ELSE \, implements this
 kind of equal power balance., f 44;
 #X obj 277 190 f2s~ 10;

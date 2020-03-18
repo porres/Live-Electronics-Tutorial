@@ -14,8 +14,6 @@
 #X text 45 60 This example shows how to adjust the gain of an incoming
 audio \, in this case from a sample. The adjustment is made with a
 dB input and using [db2lin] to convert it to a ratio., f 57;
-#X text 44 123 This way we can add gain (or boost it) with positiver
-dB values or decrease its intensity with negative values., f 57;
 #X text 359 261 Ratio;
 #X text 312 321 gain adjustment;
 #X obj 298 292 f2s~ 10 1;
@@ -23,11 +21,13 @@ dB values or decrease its intensity with negative values., f 57;
 gain adjusted one.;
 #X obj 303 26 declare -path else;
 #X obj 61 256 play.file~ bubul.wav 1 1;
-#X connect 0 0 14 0;
+#X text 44 123 This way we can add gain (or boost it) with positive
+dB values or decrease its intensity with negative values., f 57;
+#X connect 0 0 13 0;
 #X connect 1 0 7 0;
 #X connect 1 0 8 0;
 #X connect 2 0 5 0;
 #X connect 5 0 0 0;
-#X connect 14 0 1 1;
-#X connect 17 0 1 0;
-#X connect 17 0 6 0;
+#X connect 13 0 1 1;
+#X connect 16 0 1 0;
+#X connect 16 0 6 0;

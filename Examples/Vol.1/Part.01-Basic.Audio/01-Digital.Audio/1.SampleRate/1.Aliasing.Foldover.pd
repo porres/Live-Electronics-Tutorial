@@ -22,17 +22,11 @@ digital sound has an extremely low rate of 20Hz. Well \, a middle A
 signal (in red) is higher than the sample rate (which are represented
 by the blue dots). The resulting blue signal is what we end up representing
 and it has a lower frequency than the original.;
-#X text 467 58 If the frequency starts passing over the Nyquist \,
-it folds back and starts descending. For example \, in a Nyquist frequency
-of 22.05 Khz \, 23.1 Khz becomes 21.1 Khz. Mathematically speaking:
-, f 63;
 #X text 519 124 Frequency = Nyquist - (Frequency - Nyquist);
-#X text 467 169 This calculus is performed in the [fold] object from
+#X text 467 160 This calculus is performed in the [fold] object from
 ELSE. By default \, we're sending a frequency of 40 Khz to [osc~] \,
 but the resulting oscillation has a frequency of 4.1 Khz. Change the
 number values to try it out., f 63;
-#X text 468 226 when the aliased frequency hits and passes 0 Hz \,
-it folds back again and starts raising up.;
 #X text 758 410 <= Alias;
 #X text 407 382 <= [pic] object \, from ELSE, f 16;
 #X obj 587 277 initmess 40;
@@ -40,15 +34,21 @@ it folds back again and starts raising up.;
 #X obj 587 302 trigger float bang;
 #X obj 710 356 nyquist~ -khz;
 #X obj 774 24 declare -path else;
-#X obj 77 251 pic 0 foldover.gif empty empty;
+#X obj 77 251 pic 0 foldover.gif empty empty 0;
+#X text 467 59 If the frequency starts passing over the Nyquist \,
+it folds back and starts descending. For example \, in a Nyquist frequency
+of 22.05 Khz \, 23.1 Khz becomes 21 Khz. Mathematically speaking:,
+f 63;
+#X text 677 276 <= initial message of 40;
+#X text 467 226 when the aliased frequency hits and passes 0 Hz \,
+it folds back again and starts raising up again., f 63;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
-#X connect 1 0 4 1;
 #X connect 3 0 0 0;
 #X connect 3 0 7 0;
 #X connect 6 0 5 0;
 #X connect 7 0 8 0;
-#X connect 18 0 20 0;
-#X connect 20 0 3 0;
-#X connect 20 1 21 0;
-#X connect 21 0 7 2;
+#X connect 16 0 18 0;
+#X connect 18 0 3 0;
+#X connect 18 1 19 0;
+#X connect 19 0 7 2;

@@ -6,14 +6,14 @@
 #X obj 464 199 glide~ 1000;
 #X obj 263 228 setdsp~ 1;
 #X obj 391 280 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 7913 1;
+-1 -1 541 1;
 #X obj 464 135 pulse~ 0.5;
 #X obj 464 163 display~;
 #X obj 661 246 *~;
 #X obj 605 160 osc~ 440;
 #X obj 661 296 out~;
 #X obj 599 281 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 7913 1;
+-1 -1 541 1;
 #X obj 679 132 pulse~ 0.5;
 #X obj 679 160 display~;
 #X obj 391 246 s2f~;
@@ -23,34 +23,34 @@
 #X obj 408 448 osc~ 440;
 #X obj 467 584 out~;
 #X obj 414 562 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 8881 1;
+-1 -1 3058 1;
 #X obj 485 420 pulse~ 0.5;
 #X obj 485 448 display~;
 #X obj 652 531 *~;
 #X obj 596 445 osc~ 440;
 #X obj 652 581 out~;
 #X obj 600 552 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 8881 1;
+-1 -1 3052 1;
 #X obj 670 417 pulse~ 0.5;
 #X obj 670 445 display~;
 #X obj 414 536 s2f~;
 #X obj 96 171 slop~ 1e+09 0 0 0 0;
-#X obj 71 109 display~;
-#X obj 97 256 out~;
+#X obj 58 109 display~;
+#X obj 96 256 out~;
 #X obj 45 250 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 7909 1;
+-1 -1 541 1;
 #X obj 45 224 s2f~;
 #X obj 94 484 slop~ 1e+09 0 0 0 0;
 #X obj 74 431 display~;
 #X obj 45 558 vsl 15 90 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 8899 1;
+-1 -1 4755 1;
 #X obj 45 532 s2f~;
 #X obj 94 566 out~;
 #X obj 172 435 expr 1000./$f1 \; 1000./$f1;
-#X obj 71 58 pulse~ 0.5;
-#X obj 161 108 expr 1./($f1*$f3) \; 1./($f2*$f3);
-#X obj 284 80 sr~ -khz;
-#X obj 161 46 initmess 500 1000;
+#X obj 58 58 pulse~ 0.5;
+#X obj 148 108 expr 1./($f1*$f3) \; 1./($f2*$f3);
+#X obj 271 80 sr~ -khz;
+#X obj 148 46 initmess 500 1000;
 #X obj 172 384 initmess 500 1000;
 #X obj 74 396 pulse~ 0.5;
 #X obj 485 484 lag~ 1000;

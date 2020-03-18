@@ -1,4 +1,4 @@
-#N canvas 287 78 956 723 12;
+#N canvas 363 23 956 723 12;
 #X declare -path else;
 #X obj 814 221 pi;
 #X obj 814 183 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -96,7 +96,7 @@
 #X coords 0 1 440 -1 133 133 1;
 #X restore 528 353 graph;
 #X obj 515 355 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -1 -262144
--1 0 1;
+-1 12700 1;
 #X obj 681 282 sin;
 #X floatatom 681 309 0 0 0 0 - - -;
 #X obj 697 354 hsl 128 133 0 1 0 0 empty cos empty -2 -8 0 10 -228856
@@ -166,47 +166,48 @@
 #X coords 0 1 440 -1 133 133 1;
 #X restore 694 354 graph;
 #X obj 681 356 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -1 -262144
--1 0 1;
+-1 6350 1;
 #X obj 814 250 display;
 #X obj 515 224 expr $f1 * 2*pi;
-#X text 24 344 The y' output draws the graph below \, in which the
-amplitude is the vertical axis and the horizontal axis is the angle.
-The cosine output draws the same function but starting at 1 \, or at
-a different initial phase. So Sine and Cosine are the same function
-with a phase diference of 90 degrees., f 59;
 #X obj 743 251 value pi;
 #X text 462 250 radians;
-#X text 474 52 The native Pd objects [sin] and [cos] take angles in
-radians (from 0 to 2pi) \, but the nstive [cos~] object takes angles
-in a linear range from 0 to 1! The ELSE library provides the [pi] object
-\, which outputs the value of pi. we then insert it into a variable
-in [value] so it can be recalled inside [expr]. Below we convert linear
-to radians by multiplying it by 2*pi. Then [cos] and [sin] give us
-the amplitude values., f 61;
 #X text 645 309 sine;
 #X text 468 310 cosine;
-#X obj 607 574 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 607 576 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 564 627 cos~;
 #X floatatom 604 599 5 0 0 0 - - -;
 #X text 555 599 linear;
 #X obj 661 627 sin~;
-#X text 493 507 Pd has a native [cos~] object that calculates the cosine
-in audio signals from a linear input. The ELSE library also provides
-a [sin~] object that behaves similarly.;
 #X obj 661 658 display~ 7;
 #X obj 564 658 display~ 7;
+#X obj 796 606 setdsp~;
+#X obj 745 15 declare -path else;
+#X obj 151 155 pic 0 files/angle.gif empty empty 0;
+#X obj 85 455 pic 0 files/sine.gif empty empty 0;
 #X text 25 51 A "pure tone" contains a single frequency and is produced
 by a sinusoidal oscillator \, which can be implemented with a sine
 or cosine function. The input to these functions is an angle value
 \, or "phase". Below we have an "alpha" angle and a y' "amplitude"
-value from the sine \, whereas x' is the cosine output., f 58;
-#X obj 796 606 setdsp~;
-#X obj 745 15 declare -path else;
-#X obj 151 155 pic 0 files/angle.gif empty empty;
-#X obj 85 455 pic 0 files/sine.gif empty empty;
+value from the sine \, whereas x' is the cosine value., f 58;
+#X text 24 344 The y' output draws the graph below for a varying angle
+\, in which the amplitude is the vertical axis and the horizontal axis
+is the angle. The cosine output draws the same function but starting
+at 1 \, or at a different initial phase. So Sine and Cosine are the
+same function with a phase diference of 90 degrees.;
+#X text 474 51 The native Pd objects [sin] and [cos] take angles in
+radians (from 0 to 2pi). The ELSE library provides the [pi] object
+\, which outputs the value of pi. We then insert it into a variable
+in [value] so it can be recalled inside [expr]. Below we convert linear
+to radians by multiplying it by 2*pi. Then [cos] and [sin] give us
+the amplitude values., f 61;
+#X text 487 506 Pd has a native [cos~] object that calculates the cosine
+in audio signals from a linear input range (from 0 to 1). The ELSE
+library also provides a [sin~] object that behaves similarly.;
+#X text 589 575 0;
+#X text 740 575 1;
 #X connect 0 0 17 0;
-#X connect 0 0 20 0;
+#X connect 0 0 19 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
 #X connect 3 0 11 0;
@@ -217,8 +218,8 @@ value from the sine \, whereas x' is the cosine output., f 58;
 #X connect 12 0 13 0;
 #X connect 13 0 16 0;
 #X connect 18 0 6 0;
+#X connect 23 0 25 0;
+#X connect 24 0 29 0;
+#X connect 25 0 24 0;
 #X connect 25 0 27 0;
-#X connect 26 0 32 0;
-#X connect 27 0 26 0;
-#X connect 27 0 29 0;
-#X connect 29 0 31 0;
+#X connect 27 0 28 0;

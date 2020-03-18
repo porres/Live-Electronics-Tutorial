@@ -1,13 +1,13 @@
-#N canvas 454 34 924 613 12;
+#N canvas 294 34 924 613 12;
 #X declare -path else;
-#X obj 233 431 *~;
-#X obj 107 439 *~;
-#X obj 254 327 hsl 128 15 0 1 0 0 pan-set empty empty -2 -8 0 10 -228856
+#X obj 236 431 *~;
+#X obj 104 439 *~;
+#X obj 257 327 hsl 128 15 0 1 0 0 pan-set empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 811 161 vsl 15 196 0 1 0 0 empty r empty 0 -9 0 10 -228856 -70738
 -1 0 1;
 #X obj 494 161 vsl 15 196 0 1 0 0 empty l empty 0 -9 0 10 -228856 -70738
--1 0 1;
+-1 19500 1;
 #X floatatom 811 372 0 0 0 0 - - -;
 #X floatatom 494 372 0 0 0 0 - - -;
 #X obj 512 160 hsl 296 200 0 1 0 0 pan pan-set empty -2 -8 0 10 -228856
@@ -131,7 +131,7 @@
 #X restore 510 159 graph;
 #X obj 247 109 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 251 290 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 254 290 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 244 183 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
@@ -139,13 +139,13 @@
 #X obj 134 183 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 811 440 nbx 8 14 -200 0 0 0 empty empty empty 18 -6 0 10 -228856
--1 -1 0 256;
+-1 -1 -200 256;
 #X obj 494 440 nbx 8 14 -200 0 0 0 empty empty empty 18 -6 0 10 -228856
 -1 -1 0 256;
 #X text 468 438 dB;
 #X text 789 439 dB;
-#X obj 107 366 osc~ 200;
-#X obj 185 366 osc~ 300;
+#X obj 104 366 osc~ 200;
+#X obj 188 366 osc~ 300;
 #X text 517 199 fade out;
 #X text 757 199 fade in;
 #X text 656 261 |;
@@ -164,10 +164,10 @@ just need to subtract a fader's value from 1 and it gets inverted.
 with a gain adjustment. To the right we have a graph that represents
 the crossfading and returns the dB amplitudes of each source., f 61
 ;
-#X text 387 325 source 2;
-#X text 191 326 source 1;
-#X text 50 440 source 1;
-#X text 259 430 source 2;
+#X text 388 325 source 2;
+#X text 192 326 source 1;
+#X text 38 440 source 1;
+#X text 262 430 source 2;
 #N canvas 242 23 502 396 plot 0;
 #X obj 83 39 loadbang;
 #X obj 84 118 phasor~ 100;
@@ -200,16 +200,16 @@ the crossfading and returns the dB amplitudes of each source., f 61
 #X text 687 463 <= always equal to one, f 12;
 #X obj 644 431 +;
 #X obj 644 463 nbx 3 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 1 256;
 #X text 473 70 In the central position of a linear crossfade \, both
 sources are multiplied by 0.5 \, which means a decrease of -6 dB.;
 #X text 461 519 We call a linear function a type of constant amplitude
 or constant voltage because the sum of the amplitudes is always equal
 to one! Check above.;
-#X obj 251 380 f2s~ 10;
+#X obj 254 380 f2s~ 10;
 #X text 527 370 <= linear amp;
 #X text 710 372 linear amp =>;
-#X text 61 293 Alternate between sources:;
+#X text 64 293 Alternate between sources:;
 #X obj 718 29 declare -path else;
 #X connect 0 0 27 1;
 #X connect 1 0 27 0;

@@ -1,4 +1,4 @@
-#N struct 1121-cell float x float y float cellsize float color;
+#N struct 1108-cell float x float y float cellsize float color;
 #N canvas 458 50 848 571 12;
 #X declare -path else;
 #X obj 39 33 vradio 15 1 0 5 empty empty empty 0 -8 0 10 -228856 -1
@@ -71,7 +71,7 @@ is more conveniently done with the [mtx.ctl] (from "matrix control")
 #X obj 637 55 declare -path else;
 #X obj 604 434 out2~;
 #X text 141 40 The [xselect~] object \, from ELSE \, receives different
-audio signals \, but only selects one of them. Shen changing from one
+audio signals \, but only selects one of them. When changing from one
 source to another \, a crossfade is performed.;
 #X connect 0 0 1 0;
 #X connect 1 0 14 0;

@@ -25,7 +25,7 @@ later on., f 49;
 linear distortion. It always distorts the signal a bit \, and can act
 as a compressor \, but also end up quite close to a hard clipping.
 It all depends on the input signal boost., f 49;
-#X text 292 231 Ratio;
+#X text 294 230 Ratio;
 #X text 300 185 Gain (dB);
 #X text 435 168 The [drive~] object \, from ELSE \, perofrms the same
 kind of soft clipping with the tanh function. It also has yet another

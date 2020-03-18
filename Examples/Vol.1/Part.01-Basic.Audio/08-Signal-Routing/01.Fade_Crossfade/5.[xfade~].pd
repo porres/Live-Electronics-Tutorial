@@ -18,11 +18,6 @@
 #X obj 131 445 osc~ 600;
 #X obj 156 510 xfade~ 2, f 11;
 #X obj 144 268 xfade~;
-#X text 52 78 The [xfade~] object \, from ELSE \, performs a sin/cos
-equal power crossfade between two sound sources of any number of channels
-(mono \, stereo \, quadriphonic \, etc). Its argument defines the number
-of channelso. Sem nenhum argumento \, o padrão é de fontes de um canal
-(1 by default)., f 59;
 #X text 180 178 source 1;
 #X text 375 176 source 2;
 #X text 95 205 source 1;
@@ -33,17 +28,23 @@ of channelso. Sem nenhum argumento \, o padrão é de fontes de um canal
 #X obj 314 462 f2s~ 10;
 #X obj 321 26 declare -path else;
 #X obj 150 546 out2~;
-#X connect 0 0 21 0;
+#X text 52 78 The [xfade~] object \, from ELSE \, performs a sin/cos
+equal power crossfade between two sound sources of any number of channels
+(mono \, stereo \, quadriphonic \, etc). Its argument defines the number
+of channels. Without an argument \, the default is just one channel.
+;
+#X text 245 509 two channel sources;
+#X connect 0 0 20 0;
 #X connect 1 0 0 0;
 #X connect 2 0 13 0;
 #X connect 3 0 13 1;
 #X connect 7 0 12 2;
 #X connect 8 0 12 3;
-#X connect 9 0 22 0;
+#X connect 9 0 21 0;
 #X connect 10 0 12 0;
 #X connect 11 0 12 1;
-#X connect 12 0 24 0;
-#X connect 12 1 24 1;
+#X connect 12 0 23 0;
+#X connect 12 1 23 1;
 #X connect 13 0 4 0;
-#X connect 21 0 13 2;
-#X connect 22 0 12 4;
+#X connect 20 0 13 2;
+#X connect 21 0 12 4;

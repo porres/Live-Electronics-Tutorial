@@ -6,10 +6,6 @@
 #X obj 98 436 r~ \$0-sample;
 #X obj 648 404 r~ \$0-sample;
 #X obj 561 277 out~;
-#X text 27 42 Stereo widening is any technique that increases the perceived
-stereo width or spread of a signal into the stereo field. Panning is
-one scuch technique \, but this example shows you other cheap and dirt
-tricks to create stereo images from mono sources., f 61;
 #X text 27 120 But first let's understand how we listen. We have two
 ears pointed to opposite direction. Our brain can perceive when a sound
 source reaches both of our ears \, and the delay from when it arrives
@@ -21,13 +17,7 @@ in a way to achieve this imaging effect., f 61;
 #X obj 259 425 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 185 470 ffdelay~ 21;
-#X text 27 258 This delay trick is also known as the "Hass effect"
-\, and we can implement it by simply duplicating a mono signal but
-delaying one of the outputs. Try delay values from 7 to 21 ms as in
-the example below \, which is a good range for the haas effect (but
-you could go wilder than that if you want \, right? Why not?)., f
-61;
-#X text 27 231 Hass effect:;
+#X text 27 234 Hass effect:;
 #X text 486 40 Polarity inversion:;
 #X text 486 71 While we're on the subject \, if you have a stereo track
 that you sum together into a mono source \, you can have cancelling
@@ -47,18 +37,27 @@ music \, why not do both? Have some fun!, f 39;
 #X obj 648 494 out2~;
 #X obj 662 276 out2~;
 #X obj 98 498 out2~;
-#X connect 0 0 23 1;
+#X text 27 42 Stereo widening is any technique that increases the perceived
+stereo width or spread of a signal into the stereo field. Panning is
+one such technique \, but this example shows you other cheap and dirty
+tricks to create stereo images from mono sources., f 61;
+#X text 27 258 This is a delay trick \, also known as the "Hass effect"
+\, implemented by simply duplicating a mono signal but delaying one
+of the outputs. Try delay values from 7 to 21 ms as in the example
+below \, which is a good range for the haas effect (but you go wilder
+if you want)., f 61;
+#X connect 0 0 21 1;
 #X connect 2 0 0 0;
 #X connect 2 0 5 0;
-#X connect 2 0 23 0;
-#X connect 3 0 10 0;
-#X connect 3 0 24 0;
-#X connect 4 0 16 0;
-#X connect 4 0 22 0;
-#X connect 8 0 9 0;
-#X connect 9 0 19 0;
-#X connect 10 0 24 1;
-#X connect 16 0 18 0;
-#X connect 18 0 22 1;
-#X connect 19 0 10 1;
-#X connect 21 0 1 0;
+#X connect 2 0 21 0;
+#X connect 3 0 9 0;
+#X connect 3 0 22 0;
+#X connect 4 0 14 0;
+#X connect 4 0 20 0;
+#X connect 7 0 8 0;
+#X connect 8 0 17 0;
+#X connect 9 0 22 1;
+#X connect 14 0 16 0;
+#X connect 16 0 20 1;
+#X connect 17 0 9 1;
+#X connect 19 0 1 0;

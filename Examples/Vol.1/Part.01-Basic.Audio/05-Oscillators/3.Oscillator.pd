@@ -56,11 +56,11 @@ phase doesn't affect our perception of a pure tone., f 58;
 #X text 65 468 A [phasor~] connected to [cos~] is the same structure
 as the [osc~] object., f 39;
 #X obj 214 423 tabwrite~ wave;
-#X text 450 176 Try this patch with different initial phases. Note
-that the phasor object also acceptsnegative frequencies \, which makes
-the phase run in the opposite direction.;
 #X msg 104 240 -300;
-#X obj 716 41 declare -path else;
+#X obj 731 31 declare -path else;
+#X text 450 176 Try this patch with different initial phases. Note
+that the phasor object also accepts negative frequencies \, which makes
+the phase run in the opposite direction.;
 #X connect 0 0 36 0;
 #X connect 2 0 4 0;
 #X connect 2 0 36 0;
@@ -79,4 +79,4 @@ the phase run in the opposite direction.;
 #X connect 33 0 12 0;
 #X connect 34 0 0 0;
 #X connect 34 0 4 0;
-#X connect 38 0 12 0;
+#X connect 37 0 12 0;

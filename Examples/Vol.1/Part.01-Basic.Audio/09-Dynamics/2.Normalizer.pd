@@ -26,7 +26,7 @@
 RMS analysis. The adjustment is with a simple division between the
 target amplitude and the running RMS. The result is a ratio that we
 use to multiply the input so we can reach the target., f 61;
-#X text 474 242 This patch is implemented in the [norm~] abstraction
+#X text 451 243 This patch is implemented in the [norm~] abstraction
 from the ELSE library. Check it below \, open its help file.;
 #X text 566 390 This process can be used in conjunction to a noise
 gate (in an earlier stage) to avoid that a noise floor is raised to

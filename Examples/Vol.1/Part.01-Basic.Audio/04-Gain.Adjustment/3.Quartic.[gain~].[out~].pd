@@ -1,6 +1,6 @@
-#N canvas 387 92 836 656 12;
+#N canvas 442 77 836 656 12;
 #X declare -path else;
-#X obj 114 127 cnv 15 198 198 empty empty empty 20 12 0 14 -228856
+#X obj 115 127 cnv 15 198 198 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #X text 291 283 dB;
 #X text 216 253 pow-4;
@@ -199,11 +199,12 @@ f 43;
 for its convenience for gain adjustment and audio output., f 54;
 #X obj 625 39 declare -path else;
 #X text 31 37 Alternatively to the dB scale we can adopt a quartic
-one \, which is the same as raising a linear input to the power of
-4 - compare the difference between both curves below., f 57;
+one (which is the same as raising a linear input to the power of 4)
+\, compare the difference between both curves below., f 57;
 #X connect 4 0 6 0;
 #X connect 4 0 6 1;
 #X connect 5 0 4 0;
+#X connect 8 0 4 0;
 #X connect 9 0 12 0;
 #X connect 12 0 8 0;
 #X connect 14 0 16 0;

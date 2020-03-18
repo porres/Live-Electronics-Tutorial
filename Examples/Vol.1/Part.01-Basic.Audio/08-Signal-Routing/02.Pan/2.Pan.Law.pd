@@ -164,12 +164,7 @@ In such case \, you need to attenuate the signal by 6 dB.;
 reality of everyday accoustic rooms. Equal power functions \, such
 as sine and cosine \, is another type of dB law \, the "3 dB" one.
 ;
-#X text 445 422 There's a clearer distinction between the 3 dB rule
-and 6 dB rule \, in which is that you have much more atternuation in
-the middle point with the 6 dB law. Now \, this can sound less equal
-in your setup \, but could also be part of a conscious decision in
-a partiular musical gesture. Again \, it's up to you..., f 53;
-#X text 445 329 It's funny that we have so many rules of thumb \, which
+#X text 445 324 It's funny that we have so many rules of thumb \, which
 means we do not have one single rule of thumb. In the end \, it's more
 up to you. In the world of live electronic music production and performance
 \, what is important is a control that "feels better" on your finger
@@ -192,6 +187,11 @@ that can be used for each law.;
 point \, as there's always an attenuation. If you want to just send
 the same signal equally to two speakers \, just duplicate the mono
 like it happens for [out~]:, f 45;
+#X text 445 422 There's a clearer distinction between the 3 dB rule
+and 6 dB rule \, in which is that you have much more attenuation in
+the middle point with the 6 dB law. Now \, this can sound less equal
+in your setup \, but could also be part of a conscious decision in
+a partiular musical gesture. Again \, it's up to you..., f 53;
 #X connect 0 0 1 0;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;

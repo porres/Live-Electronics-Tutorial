@@ -26,23 +26,23 @@ from an interval ratio is the same as the previous one to get the number
 of semitones \, but you multiply it by 1200 instead of 12!, f 65;
 #X text 254 124 tritone;
 #X text 140 147 octave;
-#X text 76 286 The ELSE library has objhects that convert to and back
-from cents \, they are: [ratio2cents] and [cents2ratio]., f 55;
 #X text 93 346 Ratio;
 #X text 91 457 Ratio;
 #X text 279 401 Ratio;
-#X text 69 516 Musical intervals in cents are clearly related to the
-equal temperament system \, where we can then compare musical intervals
-to our 12 tone system. To get the value in cents from the 12 equal
-temperament intervals \, just multiply the number of semitones to 100
-- for example \, a major sixth has 9 semintones \, and 900 cents.,
-f 63;
 #X obj 224 176 log 2;
 #X obj 224 205 * 1200;
 #X obj 364 13 declare -path else;
-#X connect 0 0 25 0;
+#X text 76 286 The ELSE library has objects that convert to and back
+from cents \, they are: [ratio2cents] and [cents2ratio]., f 55;
+#X text 68 516 Musical intervals in cents are clearly related to the
+equal temperament system \, where we can then compare musical intervals
+to our 12 tone system. To get the value in cents from the 12 equal
+temperament intervals \, just multiply the number of semitones to 100
+- for example \, a major sixth has 9 semintones \, therefore: 900 cents.
+, f 63;
+#X connect 0 0 23 0;
 #X connect 1 0 0 0;
-#X connect 2 0 25 0;
+#X connect 2 0 23 0;
 #X connect 5 0 7 0;
 #X connect 6 0 8 0;
 #X connect 7 0 6 0;
@@ -51,5 +51,5 @@ f 63;
 #X connect 12 0 15 0;
 #X connect 15 0 10 0;
 #X connect 16 0 11 0;
-#X connect 25 0 26 0;
-#X connect 26 0 3 0;
+#X connect 23 0 24 0;
+#X connect 24 0 3 0;

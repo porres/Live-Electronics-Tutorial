@@ -94,11 +94,11 @@ the root mean square line for this period window.;
 #X obj 569 143 noise~;
 #X obj 660 179 env~;
 #X obj 660 207 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 95.3171 256;
+-228856 -1 -1 95.3351 256;
 #X obj 92 250 setdsp~ 1;
 #X obj 569 182 rms~ -db;
 #X obj 569 209 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 -4.68293 256;
+-228856 -1 -1 -4.66491 256;
 #X obj 618 354 noise~;
 #X obj 618 468 print~;
 #X obj 585 438 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -128,12 +128,12 @@ one. The [rms~] object from ELSE reports us the RMS amplitude \, while
 #X text 752 400 window size of 4096;
 #X text 733 371 dBFS output;
 #X text 735 346 linear output;
-#X text 525 256 The [mov.rms~] \, from ElSEl \, gives us another kind
+#X obj 767 22 declare -path else;
+#X text 525 256 The [mov.rms~] \, from ElSE \, gives us another kind
 of RMS that is "moving". This means it returns a different RMS value
 for each sample \, according to an analysis done in the previous samples.
 Check more info about every object here in their help files., f 62
 ;
-#X obj 767 22 declare -path else;
 #X connect 0 0 12 0;
 #X connect 0 0 13 0;
 #X connect 1 0 2 0;
