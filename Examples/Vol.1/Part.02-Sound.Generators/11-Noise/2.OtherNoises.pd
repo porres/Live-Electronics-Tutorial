@@ -28,12 +28,13 @@ frequency range. It falls about 3 dB per octave. Compare both below.
 type of noise is also known as "brownian noise" \, as it is produced
 by brownian motion. The term red noise is also used for a color analogy.
 , f 62;
-#X text 491 56 The [gray~] object from ELSE is not to be confused with
-"grey" \, and it comes from "gray code" \, which bits randomly.;
 #X text 505 216 The ELSE library has also many other noise and chaotic
 or stochastic generators. The ones below are chaotic map attractors.
 Check the help file for more details., f 54;
 #X obj 754 20 declare -path else;
+#X text 491 55 The [gray~] object from ELSE is not to be confused with
+"grey" \, and it comes from "gray code" \, which changes bits randomly.
+;
 #X connect 0 0 1 0;
 #X connect 3 0 2 0;
 #X connect 5 0 4 0;

@@ -1,9 +1,9 @@
-#N canvas 264 26 950 740 12;
+#N canvas 475 52 950 740 12;
 #X declare -path else;
 #X obj 668 453 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 2256 1;
+-1 -1 10922 1;
 #X obj 549 455 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 11109 1;
+-1 -1 10526 1;
 #X text 535 446 1;
 #X text 528 573 -1;
 #X text 653 444 1;
@@ -38,13 +38,7 @@
 #X text 354 170 hz;
 #X text 190 385 hz;
 #X text 593 132 Hz;
-#X text 484 617 Além de um possível uso sonoro. Geradores caóticos
-de banda limitada ou de baixa frequência podem ser usados também
-como um controle aleatório de diversos parâmetros.;
 #X obj 211 426 lfnoise~ 300;
-#X text 74 61 We can limit the frequêncy band of a noise source with
-downsampling. The external [downsample~] object can decrease the sample
-rate with or without interpolation., f 55;
 #X text 81 302 The ELSE library also provides [lfnoise~] (from "low
 frequency noise"). It is basically [noise~] going into [downsample~]
 but it also has a second inlet to reset the phase., f 50;
@@ -58,22 +52,28 @@ random steps (no interpolation) and [rampnoise~] generates random ramps
 #X obj 549 424 s2f~;
 #X obj 668 422 s2f~;
 #X obj 730 20 declare -path else;
-#X connect 6 0 36 0;
-#X connect 7 0 35 0;
+#X text 74 61 We can limit the frequency band of a noise source with
+downsampling. The external [downsample~] object can decrease the sample
+rate with or without interpolation., f 55;
+#X text 502 618 Besides a sound source \, these band limited chaotic
+generators can also be used as random controllers for several parameters
+as we'll see.;
+#X connect 6 0 34 0;
+#X connect 7 0 33 0;
 #X connect 8 0 9 0;
 #X connect 9 0 11 0;
 #X connect 10 0 9 1;
 #X connect 12 0 10 0;
 #X connect 13 0 9 0;
 #X connect 14 0 13 0;
-#X connect 15 0 30 0;
+#X connect 15 0 29 0;
 #X connect 16 0 15 0;
-#X connect 19 0 30 0;
+#X connect 19 0 29 0;
 #X connect 21 0 22 0;
 #X connect 22 0 25 0;
 #X connect 24 0 23 0;
 #X connect 25 0 24 0;
-#X connect 30 0 17 0;
-#X connect 30 0 18 0;
-#X connect 35 0 1 0;
-#X connect 36 0 0 0;
+#X connect 29 0 17 0;
+#X connect 29 0 18 0;
+#X connect 33 0 1 0;
+#X connect 34 0 0 0;

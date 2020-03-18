@@ -1,49 +1,49 @@
-#N canvas 438 58 916 561 12;
+#N canvas 438 58 917 537 12;
 #X declare -path else;
-#X obj 185 105 noise~;
-#X obj 185 136 out~;
-#X obj 152 417 out~;
-#X obj 529 361 out~;
-#X obj 529 178 clipnoise~;
-#X obj 171 359 rms~ -db;
-#X obj 171 387 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 -4.93974 256;
-#X text 30 214 White noise is a good source for audio testing \, filtering
+#X obj 187 111 noise~;
+#X obj 187 142 out~;
+#X obj 154 423 out~;
+#X obj 531 367 out~;
+#X obj 531 184 clipnoise~;
+#X obj 173 365 rms~ -db;
+#X obj 173 393 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 -5.03464 256;
+#X text 32 220 White noise is a good source for audio testing \, filtering
 and as a random number generator. This is because a random sequence
 of sample amplitudes is how we usually implement white noise. See the
 subpatch below.;
-#N canvas 304 152 513 244 White_Noise 0;
-#X obj 117 176 outlet~;
-#X obj 191 138 block~ 1;
-#X obj 117 95 expr~ random(-1000 \, 1001)/1000.;
-#X text 27 18 Here we have a random number generator in [expr~]. Since
+#N canvas 304 152 470 255 White_Noise 0;
+#X obj 115 182 outlet~;
+#X obj 189 144 block~ 1;
+#X obj 115 101 expr~ random(-1000 \, 1001)/1000.;
+#X text 25 24 Here we have a random number generator in [expr~]. Since
 the current block size is just 1 \, a new random value is output for
 each sample. Initial values are from -1000 to 1000 and then divided
 by 1000 to fall within the -1 to 1 range.;
 #X connect 2 0 0 0;
-#X restore 152 314 pd White_Noise;
-#X text 475 69 The [clipnoise~] object from ELSE is a white noise variant
+#X restore 154 320 pd White_Noise;
+#X text 477 75 The [clipnoise~] object from ELSE is a white noise variant
 that only outputs either -1 or 1 amplitude values. Check that this
 doesn't affect the sound quality of the white noise \, it only reflects
 on a higher RMS of 0 dBFS!;
-#X text 22 15 The native [noise~] object is a White Noise generator.
+#X text 24 21 The native [noise~] object is a White Noise generator.
 White noise has energy equally distributed over the whole spectral
 range (from 0 Hz to Nyquist). Calling it white is an analogy to white
 light \, which is a combination of lights of different wavelengths
 in the visible spectrum.;
-#X obj 716 16 declare -path else;
-#X obj 529 214 meter~;
-#X obj 678 191 expr~ if($v1 > 0 \, 1 \, -1);
-#X obj 678 164 noise~;
-#X text 730 156 An implementation of [clipnoise~], f 17;
-#X obj 678 370 out~;
-#X obj 678 223 meter~;
-#X obj 263 354 meter~;
-#X obj 107 144 rms~ -db;
-#X obj 107 172 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 -4.69903 256;
-#X text 539 455 While white noise has a RMS at about -5db \, "clip
-noise" has an rms of 0 dB, f 41;
+#X obj 718 22 declare -path else;
+#X obj 531 220 meter~;
+#X obj 680 197 expr~ if($v1 > 0 \, 1 \, -1);
+#X obj 680 170 noise~;
+#X text 732 162 An implementation of [clipnoise~], f 17;
+#X obj 680 376 out~;
+#X obj 680 229 meter~;
+#X obj 265 360 meter~;
+#X obj 109 150 rms~ -db;
+#X obj 109 178 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 -4.69675 256;
+#X text 540 461 While white noise has a RMS at about -5db \, "clip
+noise" has an RMS of 0 dB!, f 41;
 #X connect 0 0 1 0;
 #X connect 0 0 19 0;
 #X connect 4 0 12 0;
