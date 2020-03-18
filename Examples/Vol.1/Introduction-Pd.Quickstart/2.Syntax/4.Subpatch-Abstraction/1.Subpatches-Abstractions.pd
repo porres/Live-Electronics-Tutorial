@@ -1,4 +1,4 @@
-#N canvas 487 194 953 571 12;
+#N canvas 399 121 953 571 12;
 #X floatatom 93 262 5 0 0 0 - - -;
 #X floatatom 93 328 5 0 0 0 - - -;
 #X floatatom 146 261 5 0 0 0 - - -;
@@ -39,11 +39,6 @@
 \, which are loaded in the abstraction by the usage of dollar signs
 within objects - not to be confused with the usage of dollar signs
 inside messages!, f 59;
-#X text 496 24 A patch that has a subpatch or an abstraction is called
-the parent (so subpatches/abstractions are "children"). The “Graph
-on Parent” is an option in a patch window’s properties to allow
-it to display contents on the parent patch \, be it a subpatch or an
-abstraction!;
 #X text 496 101 The “Graph on Parent” option hides object boxes
 \, message boxes and cord connections \, but other GUI elements are
 shown (including arrays \, atom boxes and comments)., f 59;
@@ -99,18 +94,23 @@ messages.;
 #X restore 305 294 pd gain;
 #X msg 378 311 \; pd dsp 1;
 #X obj 378 285 loadbang;
+#X text 496 24 A patch that has a subpatch or an abstraction is called
+the parent (so subpatches/abstractions are "children"). The “Graph
+on Parent” is an option in a patch window’s properties to allow
+it to display graphical contents on the parent patch \, be it a subpatch
+or an abstraction!;
 #X connect 0 0 5 0;
 #X connect 2 0 5 1;
 #X connect 5 0 1 0;
 #X connect 5 1 3 0;
-#X connect 7 0 32 0;
+#X connect 7 0 31 0;
 #X connect 11 0 14 0;
 #X connect 12 0 15 0;
 #X connect 14 0 9 0;
 #X connect 14 1 10 0;
 #X connect 15 0 13 0;
-#X connect 30 0 32 0;
-#X connect 31 0 30 0;
-#X connect 32 0 4 0;
-#X connect 32 0 4 1;
-#X connect 34 0 33 0;
+#X connect 29 0 31 0;
+#X connect 30 0 29 0;
+#X connect 31 0 4 0;
+#X connect 31 0 4 1;
+#X connect 33 0 32 0;

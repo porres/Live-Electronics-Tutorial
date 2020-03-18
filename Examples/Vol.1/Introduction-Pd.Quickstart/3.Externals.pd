@@ -34,40 +34,11 @@ for externals in Pd., f 58;
 #X connect 2 0 0 0;
 #X restore 657 136 pd open-else;
 #X obj 626 322 sine~;
-#X text 26 16 Techically \, an external is any object not part of Pd's
-binary. Pd Vanilla itself includes some in a folder called "extra"
-inside its application \, which is searched automatically. One example
-is the [sigmund~] object. Abstractions are also externals and Pd also
-has some of those in the "extra" library \, like the reverb objects
-below., f 50;
-#X text 28 195 Via the "Help => Find Externals" menu \, you can use
-Pd's externals manager (a.k.a the 'Deken' plgin) to search for an external
-or library name (such as "else") and download it. It's usual to download
-them to Pd's externals folder., f 49;
-#X text 29 275 Compiled external libraries come either as a single
-binary pack (the "classic" library format) or as a set of separate
-binaries. Single binary packs need to be loaded via the startup tab
-(Preferences => Startup) and the second type only needs you to add
-the library's folder to the search paths (in Preferences => Path).
-'Deken' has a preference tabs where you can opt to be prompted you
-if you want to add a library to the paths after it's downloaded (sometimes
-you don't want it \, like when it's a single binary pack)., f 49;
-#X text 29 436 The [declare] object is an alternative to load both
-kinds of libraries. But it loads them just for the patch containing
-it \, unlike adding to the Path/Statup (which installs permanently).
-, f 49;
 #X text 29 499 The order of the user added paths matter \, as the search
 is prioritized to the first ones. You may have many installed libraries
 where different externals can have the same name. Using [declare] forces
 a priority over the user added paths and can help you control that.
 , f 49;
-#X text 29 591 If you haven't \, please download the "ELSE" library
-\, which is needed for this tutorial and widely used from this point
-forward. You can use 'deken' for it., f 49;
-#X text 418 365 ELSE comes with separate binaries \, so you need to
-load it with the -path flag in [declare]. this tutorial uses the declare
-object in all examples \, so you don't need to add else's folder it
-to the user search paths., f 58;
 #X text 418 438 For single binaries \, as is the case with else \,
 you could alternatively use relative paths \, such as:, f 58;
 #X text 496 95 <= Tutorial's Readme, f 13;
@@ -86,5 +57,34 @@ to load it.;
 #X text 416 179 Note you can also download and install else direclty
 from its repository (which contains all previous verions) manually.
 ;
+#X text 26 16 Techically \, an external is any object not part of Pd's
+binary. Pd Vanilla itself includes some in a folder called "extra"
+(a.k.a the "extra library") inside its application \, searched automatically.
+One example is the [sigmund~] object. Abstractions are also externals
+and Pd also has some of those in the "extra" library \, like the reverb
+objects below., f 51;
+#X text 28 195 Via the "Help => Find Externals" menu \, you can use
+Pd's externals manager (a.k.a the 'Deken' plugin) to search for an
+external or library name (such as "else") and download it. It's usual
+to download them to Pd's externals folder., f 49;
+#X text 29 275 Compiled external libraries come either as a single
+binary pack (the "classic" library format) or as a set of separate
+binaries. Single binary packs need to be loaded via the startup tab
+(Preferences => Startup) and the second type only needs you to add
+the library's folder to the search paths (in Preferences => Path).
+'Deken' has a preference tabs where you can opt to be prompted if you
+want to add a library to the paths after it's downloaded (sometimes
+you don't want it \, like when it's a single binary pack)., f 49;
+#X text 29 436 The [declare] object is an alternative to load both
+kinds of libraries. But it loads them just for the patch containing
+it \, unlike adding to the Path/Statup (which installs permanently).
+, f 49;
+#X text 29 591 If you haven't already \, please download the "ELSE"
+library that us needed for this tutorial and widely used from this
+point onward. You can use 'deken' for it., f 49;
+#X text 418 365 ELSE comes with separate binaries \, so you need to
+load it with the -path flag in [declare]. this tutorial uses the declare
+object in all examples \, so you don't need to add else's folder to
+the user added search paths., f 58;
 #X connect 9 0 8 0;
 #X connect 10 0 11 0;

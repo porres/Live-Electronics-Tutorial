@@ -1,5 +1,5 @@
 #N canvas 384 95 996 514 12;
-#X symbolatom 73 202 20 0 0 0 - - -;
+#X symbolatom 73 210 20 0 0 0 - - -;
 #X obj 169 422 symbol \$0-x;
 #X obj 169 395 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -17,21 +17,18 @@ and semicolons are escaped and therefore they are not treated as they
 normally would. The comma does not separate the message and the semicolon
 does not define a send address., f 54;
 #X msg 625 242 list \\\$1 is literal and \$1 is not;
-#X text 575 341 Hence \, the messages below are properly stored in
-the text object \, which is an object that defines and manipulates
-texts in Pd., f 53;
 #X text 770 432 <= click to open text window, f 16;
 #X text 605 148 Click on the messages below to see them getting stored
 in the [text] object., f 40;
-#X msg 73 138 symbol one\ symbol;
-#X msg 83 169 symbol one\\\,\\\ symbol;
-#X msg 275 138 list one\ item two 3;
-#X symbolatom 275 202 10 0 0 0 - - -;
-#X symbolatom 364 202 10 0 0 0 - - -;
-#X floatatom 454 202 5 0 0 0 - - -;
-#X obj 275 169 unpack symbol symbol float;
-#X text 277 117 three items list;
-#X text 43 252 If you type the messages "one symbol" and "one \, symbol"
+#X msg 73 146 symbol one\ symbol;
+#X msg 83 177 symbol one\\\,\\\ symbol;
+#X msg 275 146 list one\ item two 3;
+#X symbolatom 275 210 10 0 0 0 - - -;
+#X symbolatom 364 210 10 0 0 0 - - -;
+#X floatatom 454 210 5 0 0 0 - - -;
+#X obj 275 177 unpack symbol symbol float;
+#X text 277 125 three items list;
+#X text 43 260 If you type the messages "one symbol" and "one \, symbol"
 in a symbol box \, you'll see it automatically generates a preceding
 backlash character. This will also happen for the other special characters
 (such as semicolons and dollar signs). We've seen how this can be useful
@@ -40,20 +37,24 @@ expanding to the patch ID number. See below how the symbol to the left
 gets expanded when it comes out of the [symbol] object \, whereas the
 one to the right does not., f 68;
 #X text 52 23 The backlash character is used in Pd to escape special
-characters. Such characters are \, for instance \, commas \, semicolons
-and dollar signs \, which are handled differently in Pd. Another such
-character is the backlash character itself. Hence \, you can use backlashes
-in message boxes for these cases \, where you can \, for instance \,
-create symbols with spaces., f 66;
+characters that are handled differently in Pd. Such characters are:
+commas \, semicolons \, space and dollar signs (as we've seen in the
+last example). Another such character is the backlash character itself.
+Hence \, you can use backlashes in message boxes for these cases. For
+instance \, below we create symbols with commas and spaces., f 66
+;
+#X text 575 341 This way \, the messages above get properly stored
+in the text object \, which is an object that defines and manipulates
+texts in Pd., f 53;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 4 0 6 0;
 #X connect 6 0 5 0;
 #X connect 9 0 7 0;
 #X connect 11 0 7 0;
+#X connect 14 0 0 0;
 #X connect 15 0 0 0;
-#X connect 16 0 0 0;
-#X connect 17 0 21 0;
-#X connect 21 0 18 0;
-#X connect 21 1 19 0;
-#X connect 21 2 20 0;
+#X connect 16 0 20 0;
+#X connect 20 0 17 0;
+#X connect 20 1 18 0;
+#X connect 20 2 19 0;

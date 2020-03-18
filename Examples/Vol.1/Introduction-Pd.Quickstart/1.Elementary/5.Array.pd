@@ -1,4 +1,4 @@
-#N canvas 263 86 941 459 12;
+#N canvas 421 108 941 459 12;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array array1 100 float 1;
 #A 0 -0.842848 -0.842848 -0.842848 -0.842848 -0.685707 -0.671421 -0.671421
@@ -69,11 +69,11 @@ f 57;
 #A 0 -0.78 1.26 -1.5 0.979999;
 #X coords 0 1 3 -1 100 100 1 0 0;
 #X restore 774 320 graph;
+#X text 346 219 <==;
+#X text 371 219 click on the array elements and drag, f 9;
 #X text 33 346 You can change both the graph and array properties.
 Array's properties include name (all arrays must be named differently!)
 \, size \, if data is saved with the patch (save contents box) and
-how to display the data (polyogn/points/bezier curve - see to difference
-to the right with a 4 point table). change the way the graph looks.
-But understand that the data keeps the same., f 64;
-#X text 346 219 <==;
-#X text 371 219 click on the array elements and drag, f 9;
+how to display the data (polyogn/points/bezier curve - see the difference
+to the right with a 4 point table). Note that the data keeps the same
+no matter how you display it., f 64;

@@ -1,4 +1,4 @@
-#N canvas 369 284 1089 607 12;
+#N canvas 315 138 1089 607 12;
 #X obj 289 121 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -56,12 +56,12 @@ label. Both ticks and labels don't get stored when the patch., f 79
 the list is "X range from" / "Y range from" / "X range to" and "Y range
 to". The horizonatl ("X") boundaries are automatically set if you resize
 an array that's contained in a graph with a single array., f 79;
-#X text 51 25 Arrays take many other messages besides the ones already
-presented ("const" \, "read" and "write"). Values of an array are set
-by sending it a list of floats \, where the first one specifies the
-index and the others set the values from that index on., f 51;
 #X text 469 564 See also examples 15.array.pd and 16.more.arrays.pd
 from 2.control.examples, f 76;
+#X text 35 27 Arrays take many messages (like "const" \, "read" and
+"write") \, and values of an array are set by sending it a list of
+floats \, where the first one specifies the index and the others set
+the values from that index on., f 55;
 #X connect 0 0 2 0;
 #X connect 2 0 24 0;
 #X connect 8 0 23 0;

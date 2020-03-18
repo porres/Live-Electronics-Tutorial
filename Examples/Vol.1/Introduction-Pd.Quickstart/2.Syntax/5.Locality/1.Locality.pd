@@ -1,20 +1,20 @@
 #N canvas 352 89 960 485 12;
-#X obj 76 158 float \$0;
-#X msg 76 129 bang;
-#X floatatom 76 185 5 0 0 0 - - -;
-#X text 123 186 <= this patch's ID number;
-#X text 118 129 <= get patch ID;
+#X obj 76 171 float \$0;
+#X msg 76 142 bang;
+#X floatatom 76 198 5 0 0 0 - - -;
+#X text 123 199 <= this patch's ID number;
+#X text 118 142 <= get patch ID;
 #X floatatom 507 138 5 0 0 0 - - -;
 #X floatatom 604 209 5 0 0 0 - - -;
-#X obj 93 386 local-abs;
-#X floatatom 93 347 5 0 0 0 - - -;
-#X floatatom 93 428 5 0 0 0 - - -;
-#X obj 193 386 local-abs;
-#X floatatom 193 347 5 0 0 0 - - -;
-#X floatatom 193 428 5 0 0 0 - - -;
-#X obj 303 386 local-abs;
-#X floatatom 303 347 5 0 0 0 - - -;
-#X floatatom 303 428 5 0 0 0 - - -;
+#X obj 93 399 local-abs;
+#X floatatom 93 360 5 0 0 0 - - -;
+#X floatatom 93 441 5 0 0 0 - - -;
+#X obj 193 399 local-abs;
+#X floatatom 193 360 5 0 0 0 - - -;
+#X floatatom 193 441 5 0 0 0 - - -;
+#X obj 303 399 local-abs;
+#X floatatom 303 360 5 0 0 0 - - -;
+#X floatatom 303 441 5 0 0 0 - - -;
 #X text 476 21 Since you can't have more than one array with the same
 name \, using "\$0" as part of an array name is useful when opening
 the same patch/abstraction multiple times. Another application is as
@@ -32,40 +32,40 @@ the variable name in [value] objects., f 62;
 as they can load arrays and variables set in [value] objects. But there
 are restrictions on how to handles "\$0" in symbols. Check the help
 file of this object below for more details.;
-#X text 19 217 So if you use \$0 as part of the address symbol of [send]
-and [receive] objects in abstractions \, they have local address and
-this prevents data from one instance of the abstraction to go to another.
-Open the abstractions below and see how [send]/[receive] addresses
-contain “\$0” to operate locally. The audio objects [send~]/[receive~]
-and [throw~]/[catcth~] work in the same way.;
 #X obj 507 168 value x_\$0;
 #X obj 604 180 value x_\$0;
 #X floatatom 664 436 5 0 0 0 - - -;
 #X msg 664 376 bang;
 #X obj 664 407 expr x_\$0;
-#X msg 288 124 \$0;
-#X floatatom 288 150 5 0 0 0 - - -;
-#X text 320 124 <= doesn't work;
+#X msg 288 137 \$0;
+#X floatatom 288 163 5 0 0 0 - - -;
+#X text 320 137 <= doesn't work;
 #X text 20 20 A "\$0" (dollar sign followed by a zero) is the third
 and last usage of dollar signs. It only works as such in objects (not
 messages) and loads a locality variable \, which is a patch ID number.
 Any patch you open is given a different number ID \, even if it's the
-same patch opened more than once \, which is usually the case for abstractions.
-;
+same patch opened more than once \, which is the case when you load
+the same abstraction twice or more.;
+#X text 19 230 So if you use \$0 as part of the address symbol of [send]
+and [receive] objects in abstractions \, they have local address and
+this prevents data from one instance of an abstraction to go to another.
+Open the abstractions below and see how [send]/[receive] addresses
+contain “\$0” to operate locally. The audio objects [send~]/[receive~]
+and [throw~]/[catcth~] work in the same way.;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
-#X connect 5 0 24 0;
+#X connect 5 0 23 0;
 #X connect 7 0 9 0;
 #X connect 8 0 7 0;
 #X connect 10 0 12 0;
 #X connect 11 0 10 0;
 #X connect 13 0 15 0;
 #X connect 14 0 13 0;
-#X connect 18 0 25 0;
+#X connect 18 0 24 0;
 #X connect 19 0 5 0;
 #X connect 19 0 21 0;
 #X connect 21 0 20 0;
-#X connect 25 0 6 0;
-#X connect 27 0 28 0;
-#X connect 28 0 26 0;
-#X connect 29 0 30 0;
+#X connect 24 0 6 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 28 0 29 0;

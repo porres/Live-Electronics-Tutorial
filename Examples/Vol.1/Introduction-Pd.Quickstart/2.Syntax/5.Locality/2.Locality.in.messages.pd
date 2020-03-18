@@ -13,21 +13,21 @@ number. So one can use something like this instead., f 43;
 #X text 40 274 Note \, however \, that now "\$0" gets expanded \, and
 you don't have access to a literal "\$0"., f 47;
 #X obj 470 190 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 536 437 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-y empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 16 256;
+#X obj 536 437 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-x empty 0 -8 0 10
+-262144 -1 -1 16 256;
 #X msg 536 348 receive \$1;
 #X obj 536 290 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 536 317 symbol \\\$0-y;
 #X obj 617 190 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 2 256;
 #X obj 617 216 send \$0-y;
 #X obj 470 216 send \$0-x;
 #X obj 151 426 symbol \$0-x;
 #X obj 151 400 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 151 495 nbx 5 14 -1e+37 1e+37 0 0 empty 1022-x empty 0 -8 0
+#X obj 151 495 nbx 5 14 -1e+37 1e+37 0 0 empty 1019-x empty 0 -8 0
 10 -262144 -1 -1 0 256;
 #X msg 151 461 receive \$1;
 #X text 170 397 <= click;
@@ -38,7 +38,7 @@ and saved., f 47;
 #X text 210 492 <= check properties;
 #X text 595 434 <= check properties;
 #X text 402 75 In order to have a literal "\$0" we can use a backlash
-to escape it. And since this prevent it from being expanded \, it acyually
+to escape it. And since this prevent it from being expanded \, it actually
 even works inside message moxes. Hence \, the options below enable
 a literal "\$0" and the receive symbol gets saved unexpanded in the
 patch., f 55;
