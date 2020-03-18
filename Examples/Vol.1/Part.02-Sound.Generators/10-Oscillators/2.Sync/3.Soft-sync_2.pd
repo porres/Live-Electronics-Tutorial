@@ -33,18 +33,18 @@
 #X obj 163 355 square~;
 #X obj 155 446 out~;
 #X obj 145 506 graph~ 500 20;
-#X text 29 67 In this example \, we have s Soft Sync patch where the
-direction of the oscillator reverses instead of being resetted. This
-is to avoid a harsh click that happens when there's a big amplitude
-jump when resetting the oscillator. Hence \, this type of sync does
-not generate discontinuities in the signal and sounds much softer.
-;
 #X text 29 170 We implement this with a square wave with half of the
 master's frequency. This way \, at every period transition \, we have
 a sign reversal from 1 to -1 \, which we use to mulitpy to the slave's
 frequency., f 59;
 #X text 218 355 <== square with half the frequency, f 18;
 #X obj 292 26 declare -path else;
+#X text 29 67 In this example \, we have s Soft Sync patch where the
+direction of the oscillator reverses instead of being resetted. This
+is to avoid a harsh clicks that happen when there's a big amplitude
+jump when resetting the oscillator. Hence \, this type of sync does
+not generate discontinuities in the signal and sounds much softer.
+;
 #X connect 1 0 11 0;
 #X connect 1 0 12 0;
 #X connect 3 0 1 0;

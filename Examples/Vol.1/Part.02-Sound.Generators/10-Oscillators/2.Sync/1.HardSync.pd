@@ -13,19 +13,13 @@
 (called master). The result is that the slave oscillator generates
 a new waveform with the same period/frequency than the master's.,
 f 62;
-#X text 29 98 If the slave's frequency is lower than the master's \,
-then it is forced to restart the cycle before it finishes it. Whereas
-if the slave's frequency is higher \, then repeats at least a portion
-of the period before resseting \, but if its frequency is high enough
-\, it can generate multiple periods before resetting \, and this adds
-lots of shaprness to the sound., f 62;
 #X text 29 242 The right inlet of the native objects [osc~] \, [phasor~]
 and [tabosc4~] do reset the oscillator \, but this is a control inlet
 \, so it's time resolution is not enough for a proper hard sync implementation.
 An audio rate inlet is needed for that!, f 62;
 #X msg 198 374 0;
 #X obj 102 425 vsl 16 70 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 0 1;
+-1 -1 6662 1;
 #X obj 102 357 osc~ 0.25;
 #X obj 198 352 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -61,44 +55,50 @@ see band limited versions of them in the next section., f 41;
 #X restore 797 209 pd other \; oscillators;
 #N canvas 655 361 544 422 vanilla 0;
 #X obj 244 153 *~;
-#X obj 244 236 graph~ 500 13 1 -1;
 #X obj 317 78 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-slave empty 0 -8
-0 10 -262144 -1 -1 170 256;
+0 10 -262144 -1 -1 204 256;
 #X obj 244 185 wrap~;
 #X obj 244 121 phasor~;
 #X obj 244 66 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-master empty 0 -8
-0 10 -262144 -1 -1 100 256;
+0 10 -262144 -1 -1 109 256;
 #X obj 317 146 /~;
 #X obj 112 299 out~;
 #X text 244 45 master;
 #X text 317 54 slave;
-#X obj 155 258 cos~;
+#X obj 112 263 cos~;
 #X text 48 84 multiply the phase by a ratio of master/slave frequencies
 \, then wrap to have a synced phase., f 23;
 #X obj 393 113 initmess \; \$0-master 100 \; \$0-slave 170;
-#X connect 0 0 3 0;
-#X connect 2 0 6 0;
-#X connect 3 0 1 0;
-#X connect 3 0 10 0;
-#X connect 4 0 0 0;
-#X connect 5 0 6 1;
-#X connect 5 0 4 0;
-#X connect 6 0 0 1;
-#X connect 10 0 7 0;
+#X obj 244 241 graph~ 441 10 -1 1 200 140;
+#X connect 0 0 2 0;
+#X connect 1 0 5 0;
+#X connect 2 0 9 0;
+#X connect 2 0 12 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 1;
+#X connect 4 0 3 0;
+#X connect 5 0 0 1;
+#X connect 9 0 6 0;
 #X restore 441 449 pd vanilla trick;
 #X text 420 402 Here's a vanilla trick to force hard sync, f 22;
 #X obj 102 389 s2f~;
 #X obj 728 25 declare -path else;
-#X connect 0 0 12 0;
+#X text 29 98 If the slave's frequency is lower than the master's \,
+then it is forced to restart the cycle before it finishes it. Whereas
+if the slave's frequency is higher \, then it repeats at least a portion
+of the period before resseting - but if its frequency is high enough
+\, it can generate multiple periods before resetting \, and this adds
+lots of shaprness to the sound., f 62;
+#X connect 0 0 11 0;
 #X connect 2 0 5 0;
-#X connect 2 0 15 0;
-#X connect 4 0 18 0;
+#X connect 2 0 14 0;
+#X connect 4 0 17 0;
 #X connect 5 0 4 0;
-#X connect 9 0 11 1;
-#X connect 11 0 24 0;
-#X connect 12 0 9 0;
-#X connect 14 0 2 0;
-#X connect 15 0 18 1;
-#X connect 18 0 1 0;
-#X connect 18 0 3 0;
-#X connect 24 0 10 0;
+#X connect 8 0 10 1;
+#X connect 10 0 23 0;
+#X connect 11 0 8 0;
+#X connect 13 0 2 0;
+#X connect 14 0 17 1;
+#X connect 17 0 1 0;
+#X connect 17 0 3 0;
+#X connect 23 0 9 0;

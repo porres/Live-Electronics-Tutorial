@@ -1,4 +1,4 @@
-#N canvas 250 107 1020 566 12;
+#N canvas 323 107 1020 566 12;
 #X declare -path else;
 #X obj 542 312 s harm;
 #X msg 542 287 0;
@@ -164,9 +164,6 @@ for the patch \, this is just technical details in the background.
 #X text 35 103 Play around with the number boxes to the right. Each
 box represents the amplitude of a partial from our partials list \,
 and draws a waveform composed of these 8 partials., f 60;
-#X text 35 159 Note that after sending the list of partials \, we do
-normalize the array. A suboatch also normalizes the partials for us
-to visualize the normalized values of each partial.;
 #X text 35 346 Test the resulting sound below with a frequency input
 or from a sequencer driving [tabosc4~]., f 60;
 #X text 154 406 Hz;
@@ -184,6 +181,9 @@ for now it concerns a 4 point interpolation \, hence the "4" in [tabosc4~].
 #X obj 583 484 send \$0-wavetable;
 #X obj 101 439 tabosc4~ \$0-wavetable;
 #X obj 818 28 declare -path else;
+#X text 35 159 Note that after sending the list of partials \, we do
+normalize the array. A subpatch also normalizes the partials for us
+to visualize the normalized values of each partial.;
 #X connect 1 0 0 0;
 #X connect 2 0 32 7;
 #X connect 3 0 32 6;
@@ -192,16 +192,16 @@ for now it concerns a 4 point interpolation \, hence the "4" in [tabosc4~].
 #X connect 6 0 32 3;
 #X connect 7 0 32 2;
 #X connect 8 0 32 1;
-#X connect 11 0 53 0;
+#X connect 11 0 52 0;
 #X connect 15 0 33 0;
 #X connect 32 0 14 0;
 #X connect 32 0 36 0;
 #X connect 34 0 32 0;
-#X connect 35 0 52 0;
+#X connect 35 0 51 0;
 #X connect 36 0 37 0;
 #X connect 37 0 39 0;
-#X connect 38 0 52 0;
+#X connect 38 0 51 0;
 #X connect 39 0 35 0;
 #X connect 39 1 38 0;
 #X connect 42 0 34 0;
-#X connect 53 0 40 0;
+#X connect 52 0 40 0;

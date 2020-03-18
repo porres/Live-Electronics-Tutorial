@@ -1,4 +1,4 @@
-#N canvas 328 139 887 433 12;
+#N canvas 405 269 887 433 12;
 #X declare -path else;
 #X obj 249 339 out~;
 #X obj 249 301 bl.saw~;
@@ -48,14 +48,14 @@ oversmapling + filtering technique. These objects start with "bl."
 (from "band limited"). Below we have [bl.saw~] \, an anti aliased sawtooth
 oscillator that has all features from \, including hard sync \, check
 it out., f 57;
-#X text 467 66 And here are the other variants from ELSE. There's even
-[bl.sine~] as a band limitada of [sine~] \, because you can generate
-aliasing also with hard sync and even other techniques such as phase/frequency
-modulation., f 55;
 #X text 480 286 Hard sync generates aliasing because any significant
 discontinuity in the signal can generate artifacts and components over
 the Nyquist., f 52;
 #X obj 671 22 declare -path else;
+#X text 467 66 And here are the other variants from ELSE. There's even
+[bl.sine~] \, because you can generate aliasing with hard sync and
+even other techniques such as phase or frequency modulation., f 55
+;
 #X connect 1 0 0 0;
 #X connect 2 0 1 1;
 #X connect 12 0 2 0;

@@ -1,18 +1,18 @@
-#N canvas 223 41 1118 555 12;
+#N canvas 316 288 1118 555 12;
 #X declare -path else;
 #N canvas 232 59 415 307 plot 0;
 #X obj 56 28 inlet~;
-#X obj 56 56 rfft~;
-#X obj 145 153 metro 100;
-#X obj 145 130 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 56 66 rfft~;
+#X obj 145 123 metro 100;
+#X obj 145 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 262 113 block~ 4096;
-#X obj 145 102 loadbang;
-#X obj 56 155 /~ 1024;
-#X obj 56 182 rmstodb~;
-#X obj 66 219 clip~ 40 100;
-#X obj 92 248 tabwrite~ \$0-fft-band-limited;
-#X obj 56 125 mag~;
+#X obj 145 72 loadbang;
+#X obj 56 125 /~ 1024;
+#X obj 56 152 rmstodb~;
+#X obj 56 189 clip~ 40 100;
+#X obj 55 231 tabwrite~ \$0-fft-band-limited;
+#X obj 56 95 mag~;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
 #X connect 1 1 10 1;
@@ -48,15 +48,15 @@
 #N canvas 232 59 446 351 plot 0;
 #X obj 102 53 inlet~;
 #X obj 102 88 rfft~;
-#X obj 191 185 metro 100;
-#X obj 191 162 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 163 176 metro 100;
+#X obj 163 153 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 308 145 block~ 4096;
-#X obj 191 134 loadbang;
+#X obj 163 125 loadbang;
 #X obj 102 187 /~ 1024;
 #X obj 102 214 rmstodb~;
 #X obj 102 241 clip~ 40 100;
-#X obj 133 268 tabwrite~ \$0-fft-non-limited;
+#X obj 162 277 tabwrite~ \$0-fft-non-limited;
 #X obj 310 86 initmess \; \$0-Hz 2000;
 #X obj 102 157 mag~;
 #X connect 0 0 1 0;

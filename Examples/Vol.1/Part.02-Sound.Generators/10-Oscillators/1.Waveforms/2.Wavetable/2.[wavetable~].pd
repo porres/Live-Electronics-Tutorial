@@ -18,7 +18,7 @@
 #X text 33 112 It's relatively easy to find around waveforms as .wav
 or .aif files to be used in Pd. to load them into an array \, we use
 the native [soundfiler] object., f 68;
-#N canvas 227 209 369 251 sequencer 0;
+#N canvas 227 209 415 252 sequencer 0;
 #X obj 172 91 mtof;
 #X obj 144 170 *~;
 #X obj 144 199 outlet~;
@@ -37,7 +37,7 @@ the native [soundfiler] object., f 68;
 #X restore 70 360 pd sequencer;
 #X obj 70 397 out~;
 #X floatatom 241 315 5 0 0 0 - - -;
-#X text 278 315 <= number of samples;
+#X text 284 315 <= number of samples;
 #X text 271 171 Load another file;
 #X text 33 63 The ELSE library provides [wavetable~] \, another wavetable
 oscillator for Pd. In this example \, instead of generating a waveform
