@@ -28,8 +28,6 @@
 #X obj 62 231 downsample~ 1;
 #X obj 225 261 brown~;
 #X obj 374 256 brown~;
-#X text 55 391 The native objects [noise~] and random also take a seed
-value via a seed message:;
 #X text 64 54 Random generators usually have a "seed" parameter \,
 used to generate an initial random value. If two different instances
 of the same object have the same seed \, they can be synced together
@@ -38,7 +36,7 @@ to generate the same sequence. As an example \, we set the seed of
 low frequency noise generators. We could also use [gray~] \, from ELSE
 \, and [noise~] to downsample and use as low frequency noise generators.
 ;
-#X text 71 556 And so do the random generators from ELSE.;
+#X text 78 564 And so do the random generators from ELSE.;
 #X obj 83 609 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
 #X obj 83 672 display;
@@ -54,6 +52,8 @@ low frequency noise generators. We could also use [gray~] \, from ELSE
 #X msg 180 602 seed 500;
 #X msg 395 601 seed 500;
 #X obj 343 19 declare -path else;
+#X text 55 391 The native objects [noise~] and [random] also take a
+seed value via a seed message:;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 1 0 2 0;
@@ -76,15 +76,15 @@ low frequency noise generators. We could also use [gray~] \, from ELSE
 #X connect 22 0 13 0;
 #X connect 23 0 19 0;
 #X connect 24 0 20 0;
-#X connect 28 0 30 0;
-#X connect 28 0 31 0;
-#X connect 30 0 29 0;
-#X connect 31 0 32 0;
-#X connect 33 0 36 0;
-#X connect 33 0 37 0;
+#X connect 27 0 29 0;
+#X connect 27 0 30 0;
+#X connect 29 0 28 0;
+#X connect 30 0 31 0;
+#X connect 32 0 35 0;
+#X connect 32 0 36 0;
+#X connect 35 0 33 0;
 #X connect 36 0 34 0;
-#X connect 37 0 35 0;
-#X connect 38 0 30 0;
-#X connect 38 0 31 0;
-#X connect 39 0 36 0;
-#X connect 39 0 37 0;
+#X connect 37 0 29 0;
+#X connect 37 0 30 0;
+#X connect 38 0 35 0;
+#X connect 38 0 36 0;

@@ -45,30 +45,30 @@ object from ELSE., f 63;
 #X obj 769 23 declare -path else;
 #X floatatom 496 188 5 0.1 10 0 - - -;
 #X obj 499 238 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 8564 1;
+-1 -1 8289 1;
 #X obj 496 260 rescale 500 1500;
 #X obj 470 309 bp~ 0 10;
 #X obj 442 238 noise~;
 #X obj 470 346 out~;
 #X obj 496 286 nbx 7 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 1174.35 256;
+-228856 -1 -1 1152.67 256;
 #X obj 496 212 lfnoise 0.5 1;
 #N canvas 508 120 525 301 random 0;
 #X obj 92 81 metro 500;
 #X obj 92 54 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1 1
 ;
 #X obj 92 219 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 81.3 256;
+-228856 -1 -1 54.99 256;
 #X obj 92 158 pack float 500;
 #X obj 92 27 loadbang;
 #X obj 95 246 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 8130 1;
+-1 -1 5499 1;
 #X obj 92 112 random 128;
 #X obj 92 188 line 0 5;
 #X obj 187 52 nbx 3 14 -1e+37 1e+37 0 0 empty empty ms 0 -8 0 12 -228856
 -1 -1 0 256;
 #X obj 92 136 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 81 256;
+-228856 -1 -1 58 256;
 #X text 242 112 How to implement a "ramp noise" with random and [line].
 , f 31;
 #X connect 0 0 6 0;
@@ -84,17 +84,17 @@ object from ELSE., f 63;
 #X restore 639 185 pd random;
 #X text 701 442 <= these chaotic noise objects can also operate with
 low frequencies, f 33;
-#X text 494 61 The native object [random] is a random number generator.
-You could use it to generate random control values and even random
-ramps (check [pd random] below). The ELSE library also has a [lfnoise]
-control object for both step and ramp noises - as well as [stepnoise]
-and [rampnoise]. The [rand.i]/[rand.f] and [rand.i~]/[rand.f~] are
-random number generators from the ELSE library., f 63;
 #X obj 592 334 stepnoise;
 #X obj 591 358 rampnoise;
 #X text 575 307 see also:;
 #X obj 281 321 out2~;
 #X obj 104 343 out2~;
+#X text 494 61 The native object [random] is a random number generator.
+You could use it to generate random control values and even random
+ramps (check [pd random] below). The ELSE library also has a [lfnoise]
+control object for both step and ramp noises - as well as [stepnoise]
+and [rampnoise]. The ELSE library also has [rand.i]/[rand.f] and [rand.i~]/[rand.f~]
+objects for random number generation., f 63;
 #X connect 0 0 28 0;
 #X connect 1 0 0 0;
 #X connect 2 0 29 0;
@@ -109,10 +109,10 @@ random number generators from the ELSE library., f 63;
 #X connect 14 0 33 0;
 #X connect 15 0 30 0;
 #X connect 15 0 31 0;
-#X connect 28 0 51 0;
-#X connect 28 1 51 1;
-#X connect 29 0 50 0;
-#X connect 29 1 50 1;
+#X connect 28 0 50 0;
+#X connect 28 1 50 1;
+#X connect 29 0 49 0;
+#X connect 29 1 49 1;
 #X connect 30 0 13 0;
 #X connect 31 0 12 0;
 #X connect 32 0 10 0;
