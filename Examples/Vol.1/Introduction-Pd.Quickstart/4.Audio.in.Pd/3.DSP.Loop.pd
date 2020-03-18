@@ -1,38 +1,38 @@
-#N canvas 626 23 503 841 12;
+#N canvas 478 123 908 484 12;
 #X declare -path else;
-#X obj 201 256 +~;
-#X obj 244 258 +~ 1;
-#X obj 201 208 sig~ 0;
-#X obj 110 556 +~;
-#X obj 166 559 +~ 1;
-#X obj 110 525 sig~ 0;
-#X obj 201 291 display~;
-#X obj 110 628 display~;
-#X obj 345 205 setdsp~ 1;
-#X text 51 58 All processes in a chain of audio objects are performed
+#X obj 199 262 +~;
+#X obj 242 264 +~ 1;
+#X obj 199 214 sig~ 0;
+#X obj 543 193 +~;
+#X obj 599 196 +~ 1;
+#X obj 543 162 sig~ 0;
+#X obj 199 297 display~;
+#X obj 543 265 display~;
+#X obj 343 211 setdsp~ 1;
+#X text 49 64 All processes in a chain of audio objects are performed
 "at once" for each block. So if an output signal is inserted back as
 an input earlier in the chain \, we create an infinite loop \, and
 the computation of that audio chain is turned off., f 56;
-#X obj 123 595 send~ \$0-signal;
-#X obj 166 532 receive~ \$0-signal;
-#X text 68 435 This example uses [send~] and [receive~] \, where the
+#X obj 556 232 send~ \$0-signal;
+#X obj 599 169 receive~ \$0-signal;
+#X text 522 62 This example uses [send~] and [receive~] \, where the
 signal connected to [send~] arrives at [receive~] with a delay of one
 block \, preventing an infinite loop from happening., f 49;
-#X text 299 530 <= loop/feedback with one block delay, f 20;
-#X obj 305 23 declare -path else;
-#X text 50 342 To avoid an infinite loop \, we need to perform a feedback
+#X text 732 167 <= loop/feedback with one block delay, f 20;
+#X obj 727 22 declare -path else;
+#X text 48 348 To avoid an infinite loop \, we need to perform a feedback
 with a delay of one block of audio. This can be done with native objects
 such as: [send~] / [receive~] \, [tabsend~] / [tabreceive~] \, [throw~]
 / [catch~] and also the delay objects [delwrite~] / [delread~] and/or
 [delread4~].;
-#X text 51 141 This happens below \, see how the terminal prints an
+#X text 49 147 This happens below \, see how the terminal prints an
 error that says: "DSP loop detected (some tilde objects not scheduled)".
 ;
 #N canvas 241 51 360 263 fb 0;
 #X obj 152 71 inlet~;
 #X obj 152 148 outlet~;
 #X connect 0 0 1 0;
-#X restore 177 767 pd fb;
+#X restore 610 404 pd fb;
 #N canvas 840 55 522 258 subpatch 0;
 #X obj 105 62 inlet~;
 #X obj 106 174 outlet~;
@@ -43,10 +43,10 @@ with [send~] and [receive~] \, you still have a feedback loop between
 subpatches in the parent patch \, so this doesn't work., f 30;
 #X connect 0 0 2 0;
 #X connect 3 0 1 0;
-#X restore 128 735 pd subpatch;
-#X text 221 732 <= open subpatch;
-#X text 96 256 infinite loop:;
-#X text 101 681 The subpatch below has send~/receive~ but it also generates
+#X restore 561 372 pd subpatch;
+#X text 654 369 <= open subpatch;
+#X text 94 262 infinite loop:;
+#X text 534 318 The subpatch below has send~/receive~ but it also generates
 an infinite loop, f 38;
 #X connect 0 0 1 0;
 #X connect 0 0 6 0;

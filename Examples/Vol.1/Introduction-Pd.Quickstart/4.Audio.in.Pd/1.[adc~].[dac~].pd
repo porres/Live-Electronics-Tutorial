@@ -14,12 +14,6 @@ to Analog Converter")., f 55;
 audio station \, which is nothing but true \, but also indicates that
 whatever incoming and outcoming audio is analog \, which is not necessarily
 true., f 56;
-#X text 32 232 The fact is that these objects communicate with audio
-drivers and sound cards in your audio configurations \, so it then
-depends on wheter it has analog and/or digital in/outputs and how many
-of them. Most audio cards will have analog in/outs and it'sin the audio
-card that the analo x digital conversion actually takes place \, not
-in Pd., f 56;
 #X text 31 340 By default \, [adc~] and [dac~] deal with stereo in/out
 \, which are numbered as "1" and "2" \, but you can define other channels
 with the arguments., f 56;
@@ -31,15 +25,6 @@ with the arguments., f 56;
 #X obj 839 207 setdsp~;
 #X text 744 235 [setdsp~] =>;
 #X obj 768 9 declare -path else;
-#X text 470 45 The ELSE library \, that you were told to install in
-the last example (so you should have it already) \, contains the [out~]
-object \, which is in fact just a Pd patch (an abstraction) with [dac~]
-inside. This is just for convenience and uses the default stereo output
-configuration (output channels 1 and 2). Check its help file., f 61
-;
-#X text 470 152 Click and drag the slider. If your system is configured
-with an audio sound card connected to speakers \, you should listem
-the oscillator at 440 Hertz!, f 61;
 #X obj 762 316 out2~;
 #X text 759 294 see also:;
 #X text 490 391 Note that the [out~] object automatically turns the
@@ -48,4 +33,19 @@ the DSP On and Off. The [setdsp~] object from ELSE may also turn the
 audio on and off with a toggle so audio objects can operate. It also
 force the audio to be turned on or off when we open the patch. Check
 its help file and also check [out2~] for stereo input., f 58;
+#X text 32 232 The fact is that these objects communicate with audio
+drivers and sound cards in your audio configurations \, so it then
+depends on whether it has analog and/or digital in/outputs and how
+many of them. Most audio cards will have analog in/outs and it's in
+the audio card that the Analog x Digital conversion actually takes
+place \, not in Pd., f 56;
+#X text 470 45 The ELSE library \, that you were told to install in
+the last example (so you should have it already) \, contains the [out~]
+object \, which is in fact an abstraction (a Pd patch) that includes
+[dac~]. This is just for convenience and uses the default stereo output
+configuration (output channels 1 and 2). Check its help file., f 61
+;
+#X text 470 146 Click and drag the slider. If your system is configured
+with an audio sound card connected to speakers \, you should hear the
+oscillator at 440 Hertz!, f 61;
 #X connect 5 0 4 0;
