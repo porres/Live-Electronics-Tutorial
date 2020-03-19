@@ -17,7 +17,7 @@
 #X obj 103 69 s~ \$0-Phase;
 #X obj 429 118 s~ \$0-Amp;
 #X text 501 119 (or "filter");
-#N canvas 156 23 694 514 xsynth 0;
+#N canvas 350 100 694 514 xsynth 0;
 #X obj 110 301 rifft~;
 #X obj 110 438 outlet~;
 #X obj 65 54 inlet~;
@@ -39,24 +39,24 @@
 #X obj 165 362 blocksize~;
 #X obj 105 264 pol2car~;
 #X obj 162 210 mag~;
-#X obj 407 240 rfft~;
-#X obj 465 406 rifft~;
-#X obj 465 366 *~;
-#X obj 504 366 *~;
-#X obj 522 240 rfft~;
-#X obj 407 321 /~;
-#X obj 439 322 /~;
-#X obj 457 289 mag~;
-#X obj 522 287 mag~;
-#X text 361 48 This alternative avoids the phase computation with atan2
-and [car2pol~] and [poltocar~] objects. This is a bit more efficient
-and accurate., f 37;
-#X text 392 239 A;
-#X text 505 241 B;
-#X text 360 115 The ampltidues get normalized to 1 as we did before.
+#X obj 407 270 rfft~;
+#X obj 465 436 rifft~;
+#X obj 465 396 *~;
+#X obj 504 396 *~;
+#X obj 522 270 rfft~;
+#X obj 407 351 /~;
+#X obj 439 352 /~;
+#X obj 457 319 mag~;
+#X obj 522 317 mag~;
+#X text 392 269 A;
+#X text 505 271 B;
+#X text 360 136 The ampltidues get normalized to 1 as we did before.
 This removes the amplitude information so when we multiply by the amplitudes
 of the second source (B) \, those amplitudes get through with the phase
 information of the first source (A)., f 37;
+#X text 361 38 Check to the left how we did this. The alternative below
+avoids the phase computation with atan2 and [car2pol~] and [poltocar~]
+objects. This is a bit more efficient and accurate., f 37;
 #X connect 0 0 10 0;
 #X connect 2 0 11 0;
 #X connect 3 0 13 0;
@@ -93,10 +93,6 @@ information of the first source (A)., f 37;
 #X obj 448 315 r~ \$0-Phase;
 #X obj 558 315 r~ \$0-Amp;
 #X obj 498 390 out~;
-#X text 28 119 We've seen how to implement a Cross synthesis Vocoder
-\, now we do it with FFT by combining the phase output of a sound source
-to the amplitude of another. In the same way as a Vocoder \, the amplitude
-envelope can be considered as an equalizer/filter., f 47;
 #X obj 76 380 out~;
 #X obj 269 380 out~;
 #X obj 76 335 r~ \$0-Phase;
@@ -108,14 +104,20 @@ both below and the crossed synthesized to the right, f 47;
 #X text 522 221 window size;
 #X obj 529 20 declare -path else;
 #X obj 103 39 play.file~ 1 kantele.wav 1 1;
-#X obj 429 76 play.file~ /numbers.wav 1 1;
+#X obj 429 76 play.file~ numbers.wav 1 1;
+#X text 28 119 We've seen how to implement a Cross synthesis Vocoder
+with filters \, now we do it with FFT by combining the phase output
+of a sound source to the amplitude of another. In the same way as a
+Vocoder \, the amplitude envelope can be considered as an equalizer/filter.
+, f 47;
+#X text 574 352 <= click;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;
 #X connect 7 0 10 0;
 #X connect 8 0 7 0;
 #X connect 9 0 7 1;
+#X connect 13 0 11 0;
 #X connect 14 0 12 0;
-#X connect 15 0 13 0;
-#X connect 19 0 4 0;
-#X connect 20 0 5 0;
+#X connect 18 0 4 0;
+#X connect 19 0 5 0;

@@ -1067,10 +1067,6 @@
 #X text 47 170 The sum returns: 2 8 14 12! The output has a number
 of elements that's the sum of the number of elements from both lists
 minus one (2 + 3 - 1 = 4)., f 53;
-#X text 479 322 Here we're using the overlap-add method technique \,
-which needs zero-padding. The IR size is 16.384 samples \, but we have
-an FFT window size of 32.768 (twice as big). The second half of the
-table is filled with zeroes (hence \, zero-padded)., f 61;
 #X text 47 222 Let it be clear this is for the linear convolution \,
 not the circular convolution from the last example! The linear convolution
 is used to implement reverbs by convoluting a signal to an "Impulse
@@ -1112,9 +1108,13 @@ rather than just an actual reverberator. Play the input sound and the
 IR below:;
 #X obj 762 13 declare -path else;
 #X obj 548 158 play.file~ 1 didge.aif 1 1;
+#X text 479 322 Here we're using the overlap-add method technique \,
+which needs zero-padding. The IR size is 16.384 samples \, but we have
+a FFT window size of 32.768 (twice as big). The second half of the
+table is filled with zeroes (hence \, zero-padded)., f 61;
 #X connect 1 0 14 0;
 #X connect 2 0 3 0;
 #X connect 3 0 7 0;
 #X connect 14 0 10 0;
-#X connect 30 0 0 0;
-#X connect 30 0 11 0;
+#X connect 29 0 0 0;
+#X connect 29 0 11 0;

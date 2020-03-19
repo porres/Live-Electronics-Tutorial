@@ -1,4 +1,4 @@
-#N canvas 593 42 489 639 12;
+#N canvas 593 42 501 637 12;
 #X declare -path else;
 #N canvas 366 149 409 244 init 0;
 #X obj 51 131 soundfiler;
@@ -10,38 +10,17 @@
 #X connect 0 0 2 0;
 #X connect 0 0 3 0;
 #X connect 4 0 0 0;
-#X restore 279 540 pd init;
-#X text 33 63 This example expands an example previously presented
-in granulation for Time Stretch/Compress & Pitch Shift. We now include
-a spectral processing known as "Phase Vocoder". This term does not
-specify a single process but is an umbrella term for many spectral
-processes that take into account the phase information of an FFT.,
-f 59;
-#X text 33 157 You may be thinking we've done that already \, so could
-those examples be referred to as "Phase vocoder"? Yes! But anyway \,
-\, ore specifically \, we have here a "Phase accumulation" process.
-;
-#X text 33 223 This example is on a fixed buffer. For keeping the patch
-simple \, we have a fixed window of 2048 and 4 overlaps. As before
-\, a transposition parameter defines a grain size and a speed parameter
-controls a step size. The original grain size is the FFT window size
-(204) and the step is the hop size (512)., f 59;
-#X obj 233 477 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
+#X restore 286 537 pd init;
+#X obj 240 474 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
 0 10 -228856 -1 -1 100 256;
-#X obj 326 475 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-transpo empty 0
+#X obj 333 472 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-transpo empty 0
 -8 0 10 -228856 -1 -1 0 256;
-#X obj 140 476 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 147 473 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X text 135 457 Play;
-#X text 336 456 Cents;
-#X obj 140 556 out~;
-#X text 33 317 But when we have different grain and step sizes \, we
-also have phase discontinuities as the grains do not match anymore
-\, but the phase accumulation process resmoves them. But it needs two
-windows for each grain \, called "back" and "front" \, where the front
-window gets resynthesized in the output with a different phase information.
-Open the subpatch below for more info., f 59;
-#X text 226 456 Speed (%);
+#X text 142 454 Play;
+#X text 343 453 Cents;
+#X obj 147 553 out~;
+#X text 233 453 Speed (%);
 #N canvas 249 78 1041 757 Pitch.Shift-Time.Stretch 0;
 #X obj 178 227 +;
 #X obj 267 127 * 2048;
@@ -416,20 +395,20 @@ discontinuities., f 61;
 #X obj 318 513 tabreceive~ \$0-accum;
 #X obj 320 540 table \$0-accum 1024;
 #X obj 314 567 tabsend~ \$0-accum;
-#X text 500 159 The new hop size is used to access the last ("back")
-window. The phase accumulation consists in 1) get the phase difference
-between the front and back window \, and 2) sum that to the last phase
-output. Step 2 is done with a feedback look via [tabsend~] & [tabreceive~]
-objects. Check the diagram below \, from Miller Puckette's book and
-the subpatch below with more information on how the phase accumulation
-process works:, f 63;
 #X obj 27 255 pack float 46.43 float;
 #X text 500 96 The grain controls generated here are sent to an [envgen~]
 object to read the samples. The step counter is the starting point
 of the sample \, the time duration of the grain is the window size
 in ms (46.43 in a sample rate of 44100 hz)., f 63;
-#X obj 500 311 pic 0 ./gif/accum.gif empty empty;
-#X connect 0 0 58 2;
+#X obj 500 311 pic 0 ./gif/accum.gif empty empty 0;
+#X text 500 159 The new hop size is used to access the last ("back")
+window. The phase accumulation consists in: 1) get the phase difference
+between the front and back window \, and: 2) sum that to the last phase
+output. Step 2 is done with a feedback loop via [tabsend~] & [tabreceive~]
+objects. Check the diagram below \, from Miller Puckette's book and
+the subpatch below with more information on how the phase accumulation
+process works:, f 63;
+#X connect 0 0 57 2;
 #X connect 1 0 0 1;
 #X connect 1 0 13 0;
 #X connect 2 0 17 0;
@@ -438,7 +417,7 @@ in ms (46.43 in a sample rate of 44100 hz)., f 63;
 #X connect 5 0 9 0;
 #X connect 6 0 5 0;
 #X connect 7 0 12 0;
-#X connect 8 0 58 0;
+#X connect 8 0 57 0;
 #X connect 8 1 0 0;
 #X connect 9 0 8 0;
 #X connect 9 0 21 0;
@@ -478,10 +457,32 @@ in ms (46.43 in a sample rate of 44100 hz)., f 63;
 #X connect 50 0 47 1;
 #X connect 50 0 56 0;
 #X connect 54 0 50 1;
-#X connect 58 0 34 0;
-#X restore 140 511 pd Pitch.Shift-Time.Stretch;
-#X obj 295 24 declare -path else;
-#X connect 4 0 12 1;
-#X connect 5 0 12 2;
-#X connect 6 0 12 0;
-#X connect 12 0 9 0;
+#X connect 57 0 34 0;
+#X restore 147 508 pd Pitch.Shift-Time.Stretch;
+#X obj 302 21 declare -path else;
+#X text 40 60 This example expands an example previously presented
+in granulation for Time Stretch/Compress & Pitch Shift. We now include
+a spectral processing known as "Phase Vocoder". This term does not
+specify a single process but is an umbrella term for many spectral
+processes that take into account the phase information of a FFT.,
+f 61;
+#X text 40 154 You may be thinking we've done that already \, so could
+those examples be referred to as "Phase vocoder"? Yes! But anyway \,
+more specifically \, here we have here a "Phase accumulation" process.
+, f 61;
+#X text 40 220 This example is on a fixed buffer. For keeping the patch
+simple \, we have a fixed window of 2048 and 4 overlaps. As before
+\, a transposition parameter defines a grain size and a speed parameter
+controls a step size. The original grain size is the FFT window size
+(2048) and the step is the hop size (512)., f 61;
+#X text 40 314 But when we have different grain and step sizes \, we
+also have phase discontinuities as the grains do not match anymore.
+No problem as the phase accumulation process removes them. For that
+\, it needs two windows for each grain \, called "back" and "front"
+\, where the front window gets resynthesized in the output with a different
+phase information. Open the subpatch below for more info on how it
+works., f 61;
+#X connect 1 0 8 1;
+#X connect 2 0 8 2;
+#X connect 3 0 8 0;
+#X connect 8 0 6 0;

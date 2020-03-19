@@ -44,7 +44,7 @@
 #X obj 342 363 hann~;
 #X obj 414 364 hann~;
 #X obj 383 489 hann~;
-#X text 457 421 Same old...;
+#X text 460 423 Same old...;
 #N canvas 377 157 654 496 Phase.Accum 0;
 #X obj 205 427 outlet~;
 #X obj 426 424 outlet~;

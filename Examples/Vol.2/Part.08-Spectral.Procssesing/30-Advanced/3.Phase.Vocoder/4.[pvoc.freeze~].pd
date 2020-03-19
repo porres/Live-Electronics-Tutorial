@@ -133,12 +133,12 @@ obtained by a delay., f 40;
 #X connect 12 0 5 0;
 #X connect 12 1 5 1;
 #X restore 125 382 pd pvoc-freeze;
-#X obj 291 304 s \$0-freeze;
-#X obj 248 280 tgl 30 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 307 304 s \$0-freeze;
+#X obj 264 280 tgl 30 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 99 456 out~;
 #X obj 99 422 xfade~ 1;
-#X obj 248 398 f2s~ 200;
+#X obj 264 398 f2s~ 200;
 #X text 39 54 Now here's a freeze patch based on the phase accumulation
 and time stretch (when the speed is equal to zero). We just take snapshots
 of the input sound and send them to tables that are considered the
@@ -148,10 +148,10 @@ crossfading.;
 #X text 41 159 The bang freezes the audio \, but can also furtherly
 used to take other snapshots. To unfreeze \, just use the toggle.;
 #X text 69 382 open =>;
-#X obj 248 373 expr if($f1 == 0 \, -1 \, $f1);
-#X obj 291 276 sel 1;
-#X msg 248 224 1;
-#X msg 291 224 0;
+#X obj 264 373 expr if($f1 == 0 \, -1 \, $f1);
+#X obj 307 276 sel 1;
+#X msg 264 224 1;
+#X msg 307 224 0;
 #X obj 211 608 pvoc.freeze~;
 #X text 66 552 The [pvoc.freeze~] object \, from the ELSE librayry
 \, is based on this patch. Check its help file, f 55;

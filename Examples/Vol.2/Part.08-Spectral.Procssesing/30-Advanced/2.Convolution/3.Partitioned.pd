@@ -23,17 +23,11 @@ IR file: a voice sample \, also used in Pd Vanilla's example.;
 #X floatatom 556 176 5 0 0 0 - - -;
 #X obj 556 204 standard~ 100;
 #X obj 682 203 envgen~ 500 1 150 0;
-#X text 59 399 This is to reinforce the idea of using convolution as
-a general sound processor. It's been noted that conviolution is widely
-used as a reverberator \, but you can also think of it as a filter.
-We'll get back to convolution when we discuss in depth filters and
-reverbs \, but for now let's have fun with it in a more creative way.
-;
 #X obj 710 233 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 710 266 + 1;
 #X obj 665 309 xselect~ 2 100 1;
-#X text 525 52 The sound input in the convolution is a chaotic oscillator.
+#X text 524 56 The sound input in the convolution is a chaotic oscillator.
 Since the IR actually sounds more like an input \, we can think of
 the input as the actual IR \, since the operation is commutative (convoluting
 a and B is the same as convoluting B and A). We also have an envelope
@@ -56,16 +50,22 @@ convolution \, one example is [convolve~] by william brent \, see ==>
 , f 66;
 #X obj 659 532 openfile http://williambrent.conflations.com/pagez/research.html
 -h Brent's externals;
+#X text 71 397 This is to reinforce the idea of using convolution as
+a general sound processor. It's been noted that convolution is widely
+used as a reverberator \, but you can also think of it as a filter.
+We'll get back to convolution when we discuss in depth filters and
+reverbs \, but for now let's have fun with it in a more creative way.
+, f 57;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X connect 7 0 16 0;
+#X connect 7 0 15 0;
 #X connect 8 0 12 0;
 #X connect 10 0 11 0;
 #X connect 11 0 7 0;
-#X connect 11 0 19 0;
+#X connect 11 0 18 0;
 #X connect 12 0 7 1;
+#X connect 13 0 14 0;
 #X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X connect 16 0 24 0;
-#X connect 23 0 16 1;
-#X connect 24 0 4 0;
+#X connect 15 0 23 0;
+#X connect 22 0 15 1;
+#X connect 23 0 4 0;

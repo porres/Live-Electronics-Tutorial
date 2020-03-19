@@ -78,12 +78,13 @@
 #X text 428 445 B (cross synthesis);
 #X text 145 332 window size;
 #X text 100 516 click =>;
-#X text 74 64 In this variation we "morph" from one amplitude to another
-\, but it's just a simple crossfade. This goes from a original sound
-to a cross synthesis. Open the subpatch to the right.;
 #X obj 385 23 declare -path else;
 #X obj 125 145 play.file~ 1 kantele.wav 1 1;
 #X obj 125 203 play.file~ numbers.wav 1 1;
+#X text 74 64 In this variation we "morph" from one amplitude to another
+\, but it's just a simple crossfade. This goes from a original sound
+to a cross synthesis. Open the [pd Morph] subpatch for more details.
+;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;
@@ -94,5 +95,5 @@ to a cross synthesis. Open the subpatch to the right.;
 #X connect 11 0 7 1;
 #X connect 14 0 15 0;
 #X connect 15 0 7 2;
-#X connect 22 0 12 0;
-#X connect 23 0 13 0;
+#X connect 21 0 12 0;
+#X connect 22 0 13 0;

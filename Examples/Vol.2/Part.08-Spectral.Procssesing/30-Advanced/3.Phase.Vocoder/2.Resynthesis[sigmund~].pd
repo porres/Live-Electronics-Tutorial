@@ -19,10 +19,6 @@ the acurate pitch of a component \, we can use a bank of oscillators
 to resynthesize an analyzed sound. This opens other possibilities \,
 like having an independent control over each sine component. But in
 this example we just perform a simple pitch shift., f 50;
-#X text 40 144 The native [sigmund~] object is a powerful pitch tracker
-and can also spit separate tone components to feed a bank of oscillators.
-it is based on FFT so we give it parameters like window size (-npts)
-and hop size (-hop)., f 50;
 #X text 661 296 <= open;
 #X text 428 54 For the oscillator bank we use an abstraction loaded
 50 times in [clone]. The "tracks" arguments send the highest energy
@@ -36,12 +32,16 @@ we perform a simple transposition. Open the subpatch for more info.
 seen, f 20;
 #X obj 666 20 declare -path else;
 #X obj 154 246 play.file~ bubul.wav 1 1;
+#X text 40 144 The native [sigmund~] object is a powerful pitch tracker
+and can also spit separate tone components to feed a bank of oscillators.
+It is based on FFT so we give it parameters like window size (-npts)
+and hop size (-hop)., f 50;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 15 0;
+#X connect 3 0 14 0;
 #X connect 5 0 3 0;
 #X connect 8 0 10 0;
-#X connect 10 0 15 1;
-#X connect 15 0 7 0;
-#X connect 18 0 4 0;
-#X connect 18 0 6 0;
+#X connect 10 0 14 1;
+#X connect 14 0 7 0;
+#X connect 17 0 4 0;
+#X connect 17 0 6 0;
