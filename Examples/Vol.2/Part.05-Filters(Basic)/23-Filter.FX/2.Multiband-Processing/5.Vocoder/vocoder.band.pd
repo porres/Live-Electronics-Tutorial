@@ -20,13 +20,13 @@
 #X text 172 257 speech;
 #X text 75 76 This abstraction is used as part of the vocoder example
 inside a [clone] object., f 43;
+#X text 222 517 <= gain adjustment;
+#X obj 275 21 declare -path else;
 #X text 72 126 Each of the 28 instances receive a different central
 frequency. The synth is filtered by a [bandpass~] object and the gain
 output depends on the analysis of the speech input \, done with the
-[mov.rms~] object - which gives us a mean value for each sample.,
-f 44;
-#X text 222 517 <= gain adjustment;
-#X obj 275 21 declare -path else;
+[mov.rms~] object - which \, for each sample \, gives us a mean value
+of the last 512 samples., f 44;
 #X connect 0 0 8 0;
 #X connect 1 0 5 0;
 #X connect 2 0 12 0;

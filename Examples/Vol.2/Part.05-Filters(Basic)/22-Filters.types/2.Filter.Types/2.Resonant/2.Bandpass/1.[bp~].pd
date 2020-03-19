@@ -1,4 +1,4 @@
-#N canvas 218 138 925 477 12;
+#N canvas 370 106 925 477 12;
 #X declare -path else;
 #X obj 711 86 nbx 5 14 1 1e+37 0 0 \$0-q q-set empty 0 -8 0 10 -228856
 -1 -1 10 256;
@@ -505,16 +505,16 @@ data for frequency and "Q". It's quite simple and CPU efficient \,
 but not a perfectly simmetric bandpass filter \, atenuatting more the
 frequencies above the resonant frequency., f 64;
 #X text 658 60 Central/Resonant Frequency;
+#X obj 754 14 declare -path else;
+#X obj 581 143 out~;
 #X text 65 103 This filter actually looks more like a resonant lowpass
 with a gain adjustment so the central frequency is at 0 dB. This will
 be clearer when we see resonant lowpass filters. And about this \,
 note also how a "Q" of 1 makes it quite similar to the [lop~] object.
-Like other vanilla filters \, the response changes for very high frequencies.
-, f 64;
-#X obj 754 14 declare -path else;
-#X obj 581 143 out~;
+Like other vanilla filters already shown here \, the response changes
+for very high frequencies., f 64;
 #X connect 0 0 6 2;
 #X connect 1 0 6 1;
 #X connect 2 0 6 0;
 #X connect 3 0 1 0;
-#X connect 6 0 11 0;
+#X connect 6 0 10 0;

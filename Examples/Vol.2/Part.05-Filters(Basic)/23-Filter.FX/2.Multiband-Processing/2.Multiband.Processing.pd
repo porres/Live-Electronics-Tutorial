@@ -1,4 +1,4 @@
-#N canvas 275 170 1014 484 12;
+#N canvas 347 124 1014 484 12;
 #X declare -path else;
 #X obj 184 192 nbx 5 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
 -1 -1 0 256;
@@ -37,7 +37,7 @@ how the "sky is the limit" \, you can just do about anything \, but
 the most common process is to have different gain adjustments for each
 frequency band \, such as different compression settings for each band.
 , f 66;
-#X text 544 125 In order to obtain more bands with [crossover~] filters
+#X text 511 130 In order to obtain more bands with [crossover~] filters
 \, just connect more than one in cascade like below \, where we now
 have a low \, a medium and a high band., f 62;
 #X text 655 389 Low;

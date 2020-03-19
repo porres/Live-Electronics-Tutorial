@@ -1,21 +1,21 @@
-#N canvas 475 39 899 636 12;
+#N canvas 423 48 899 636 12;
 #X declare -path else;
-#X obj 470 148 out~;
-#X obj 516 17 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
+#X obj 459 151 out~;
+#X obj 505 20 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
 0 10 -228856 -1 -1 6477 0;
-#X obj 559 67 hsl 128 17 0.1 1 1 0 empty \$0-Q-set empty 5 9 0 10 -228856
+#X obj 548 70 hsl 128 17 0.1 1 1 0 empty \$0-Q-set empty 5 9 0 10 -228856
 -1 -1 12700 0;
-#X obj 556 89 nbx 8 14 -1e+37 1e+37 0 0 \$0-Q empty empty 0 -8 0 10
+#X obj 545 92 nbx 8 14 -1e+37 1e+37 0 0 \$0-Q empty empty 0 -8 0 10
 -228856 -1 -1 5 256;
-#X obj 513 45 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq empty empty 0 -8 0
+#X obj 502 48 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq empty empty 0 -8 0
 10 -228856 -1 -1 500 256;
-#X obj 454 55 noise~;
-#X obj 657 100 hsl 128 17 -24 24 0 0 empty \$0-gain-set empty 5 9 0
+#X obj 443 58 noise~;
+#X obj 646 103 hsl 128 17 -24 24 0 0 empty \$0-gain-set empty 5 9 0
 10 -228856 -1 -1 9525 0;
-#X obj 654 122 nbx 8 14 -1e+37 1e+37 0 0 \$0-gain empty empty 0 -8
+#X obj 643 125 nbx 8 14 -1e+37 1e+37 0 0 \$0-gain empty empty 0 -8
 0 10 -228856 -1 -1 12 256;
-#X text 695 100 Gain;
-#X text 586 66 S/Slope;
+#X text 684 103 Gain;
+#X text 575 69 S/Slope;
 #N canvas 9 255 1099 569 (subpatch) 0;
 #N canvas 649 293 231 309 freq-response 0;
 #N canvas 324 327 712 441 init 0;
@@ -384,13 +384,13 @@
 #X text 115 129 0.02;
 #X coords 0 -1 1 1 850 402 1 100 100;
 #X restore 21 220 pd;
-#X obj 470 114 highshelf~ 500 1 12;
-#X text 38 85 The [highshelf~] object from ELSE is also shelving filter
+#X obj 459 117 highshelf~ 500 1 12;
+#X text 58 59 The [highshelf~] object from ELSE is also shelving filter
 and is just the opposite of a Low Shelf filter. It boosts or attenuates
 frequencies higher than the roll off frequency. Check the help file
-for more details., f 54;
-#X text 553 17 Frequency;
-#X obj 754 14 declare -path else;
+for more details., f 43;
+#X text 542 20 Frequency;
+#X obj 743 34 declare -path else;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 11 2;

@@ -49,12 +49,13 @@
 #X text 50 57 A crossover filter splits an audio in different frequency
 bands. It's used in audio for splitting and routing signals to different
 speakers (such as: woofer \, tweeter) \, so each gets a proper band
-of frequencies (low in woofer \, high in tweeter)., f 60;
+of frequencies (low in woofer \, high in tweeter).;
 #X text 298 268 Hz (cutoff);
 #X text 371 317 Hz (cutoff);
 #X text 56 144 Below we have a crossover setting by parallel lowpass
 and highpass filters with the same cutoff. We use [lop~] and [hip~]
-filters in cascade \, open the subpatches for more details.;
+filters in cascade \, open the subpatches for more details., f 58
+;
 #X text 61 494 We also have the [crossover~] object from ELSE \, a
 ready made crossover filter. But this is a 3rd order butterworth filter
 instead (we'll see more details on the butterworth filter topology

@@ -304,10 +304,6 @@
 #X text 97 219 M;
 #X text 97 231 P;
 #X text 281 350 >;
-#X text 40 25 A ressonant filter is any type of filter that favours
-a frequency band over other frequencia. A bandpass is a type of resonant
-filter that only lets through a frequency band as in the graph below.
-, f 53;
 #X text 62 545 The bandwidth is what usually defines the resonance
 of a filter - the smaller the width \, the more resonance we have.
 , f 47;
@@ -352,27 +348,31 @@ as f2 - f1) in which there's a 3dB drop in amplitude around the resonant
 frequency (f0). Here's how to calculate f0 and bandwidth from f2 and
 f1 \, and also how to convert from bandwidth to Q and vice versa.,
 f 53;
-#X text 62 394 Above \, f0 is the central/resonant frequency and the
-frequencies above and below are atenuated simmetrically considering
-a logarithmic scale (such as MIDI pitch). The "f1" and "f2" points
-are where the attenuation reaches -3 dB., f 47;
 #X text 62 473 The frequency band width is the difference in Hz between
 f2 and f1 \, but you can also define this width as the musical interval
 formed by f2/f1., f 47;
 #X obj 565 212 trigger bang float;
-#X connect 29 0 32 0;
-#X connect 29 0 37 0;
-#X connect 32 0 30 0;
-#X connect 34 0 48 0;
-#X connect 36 0 39 0;
-#X connect 37 0 36 0;
-#X connect 39 0 40 0;
-#X connect 45 0 34 0;
-#X connect 45 1 29 0;
-#X connect 46 0 45 0;
-#X connect 46 1 47 0;
-#X connect 48 0 49 0;
-#X connect 54 0 60 0;
-#X connect 55 0 46 0;
-#X connect 60 0 45 0;
-#X connect 60 1 43 0;
+#X text 40 25 A ressonant filter is any type of filter that favours
+a frequency band over other frequencies. A bandpass is a type of resonant
+filter that only lets through a frequency band \, as in the graph below.
+, f 53;
+#X text 62 394 Above \, f0 is the central/resonant frequency and the
+frequencies above and below are atenuated simmetrically \, considering
+a logarithmic scale (such as MIDI pitch). The "f1" and "f2" points
+are where the attenuation reaches -3 dB., f 47;
+#X connect 28 0 31 0;
+#X connect 28 0 36 0;
+#X connect 31 0 29 0;
+#X connect 33 0 47 0;
+#X connect 35 0 38 0;
+#X connect 36 0 35 0;
+#X connect 38 0 39 0;
+#X connect 44 0 33 0;
+#X connect 44 1 28 0;
+#X connect 45 0 44 0;
+#X connect 45 1 46 0;
+#X connect 47 0 48 0;
+#X connect 53 0 58 0;
+#X connect 54 0 45 0;
+#X connect 58 0 44 0;
+#X connect 58 1 42 0;

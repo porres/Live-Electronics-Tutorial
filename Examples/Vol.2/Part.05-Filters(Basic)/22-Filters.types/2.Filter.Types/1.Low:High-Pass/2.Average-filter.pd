@@ -1,4 +1,4 @@
-#N canvas 212 50 943 459 12;
+#N canvas 300 50 943 459 12;
 #X declare -path else;
 #N canvas 128 29 1029 378 (subpatch) 0;
 #X obj 101 101 cnv 15 878 218 empty empty empty 18 9 1 15 -262144 -1
@@ -370,15 +370,15 @@
 #X obj 618 76 mov.avg~ 2;
 #X obj 618 122 out~;
 #X obj 511 123 out~;
-#X text 695 75 <= average filter.;
-#X text 91 47 A simple avergae filter of two samples was used in this
-tutorial as a lowpass filter (in feedback modulation). But this is
-better defined as a "high cut" filter \, since it only filters very
-high frequencies., f 51;
-#X text 91 126 See the frequency response below. We use [mov.avg~]
-from ELSE as the filter., f 51;
 #X text 36 186 Frequency Response:;
 #X obj 743 23 declare -path else;
+#X text 79 29 A simple average filter of two samples was used in this
+tutorial as a lowpass filter (in feedback modulation for FM and PM).
+But this is better defined as a "high cut" filter \, since it only
+filters very high frequencies., f 51;
+#X text 79 120 We use [mov.avg~] from ELSE as the filter. check its
+frequency response below., f 42;
+#X text 698 75 <= average filter;
 #X connect 1 0 2 0;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;

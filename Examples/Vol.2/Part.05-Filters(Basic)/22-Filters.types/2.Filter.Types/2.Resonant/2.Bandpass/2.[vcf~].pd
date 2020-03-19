@@ -1,11 +1,11 @@
-#N canvas 207 30 982 625 12;
+#N canvas 246 30 982 625 12;
 #X declare -path else;
-#X obj 658 76 nbx 5 14 1 1e+37 0 0 \$0-q q-set empty 0 -8 0 10 -228856
+#X obj 708 76 nbx 5 14 1 1e+37 0 0 \$0-q q-set empty 0 -8 0 10 -228856
 -1 -1 10 256;
-#X obj 615 48 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq freq-set empty 0 -8
+#X obj 665 48 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq freq-set empty 0 -8
 0 10 -228856 -1 -1 3000 256;
-#X obj 559 74 noise~;
-#X obj 618 19 hsl 200 15 100 22050 1 0 empty freq-slider-set empty
+#X obj 609 74 noise~;
+#X obj 668 19 hsl 200 15 100 22050 1 0 empty freq-slider-set empty
 -2 -8 0 10 -228856 -1 -1 12544 1;
 #N canvas 246 25 1108 572 (subpatch) 0;
 #N canvas 169 136 742 523 plot 0;
@@ -555,13 +555,13 @@ empty -2 -8 0 10 -228856 -228856 -1 57232 0;
 ;
 #X coords 0 -1 1 1 936 386 2 100 100;
 #X restore 22 211 pd;
-#X text 717 75 Q;
-#X text 671 48 Hz;
-#X obj 615 74 sig~;
-#X obj 593 117 vcf~ 10;
-#X obj 662 118 hsl 128 15 0 1 0 0 empty ganho empty -2 -8 0 10 -228856
+#X text 767 75 Q;
+#X text 721 48 Hz;
+#X obj 665 74 sig~;
+#X obj 643 117 vcf~ 10;
+#X obj 712 118 hsl 128 15 0 1 0 0 empty ganho empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#N canvas 64 23 655 392 output 0;
+#N canvas 68 23 655 392 output 0;
 #X obj 206 206 *~;
 #X obj 225 175 line~;
 #X msg 225 149 \$1 10;
@@ -590,23 +590,23 @@ empty -2 -8 0 10 -228856 -228856 -1 57232 0;
 #X connect 10 0 9 0;
 #X connect 12 0 10 0;
 #X connect 13 0 7 0;
-#X restore 619 160 pd output;
-#X obj 682 138 hsl 128 15 0 1 0 0 empty ganho empty -2 -8 0 10 -228856
+#X restore 669 160 pd output;
+#X obj 732 138 hsl 128 15 0 1 0 0 empty ganho empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X text 649 18 Frequência Ressonante;
-#X text 96 14 The vanilla [vcf~] (from "Voltage Controlled Filter")
+#X text 76 14 The vanilla [vcf~] (from "Voltage Controlled Filter")
 object is also a bandpass filter and the name refers to the fact that
 it accepts audio signals to control the central frequency - just like
 an analog synth's filter accepts audio (that is \, voltage) to control
 this parameter. The Q parameter \, though \, is still only for control
-data input.;
-#X text 706 117 Left;
-#X text 721 136 Right;
-#X text 96 107 This filter has two outputs. The right output resembles
+data input., f 63;
+#X text 756 117 Left;
+#X text 771 136 Right;
+#X text 76 107 This filter has two outputs. The right output resembles
 the frequency response of [bp~] \, though the left output also has
 similar characteristics \, such as not quite a simmetrical response
 - this is more evident with lower Q values. The filter also does not
-behave the same for quite high frequencies (over 7 KHz).;
+behave the same for quite high frequencies (over 7 KHz)., f 63;
+#X text 699 18 Resonant Frequency;
 #X connect 0 0 8 2;
 #X connect 1 0 7 0;
 #X connect 2 0 8 0;

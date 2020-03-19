@@ -22,9 +22,6 @@
 #X obj 195 362 rescale~ 500 2000, f 9;
 #X text 372 311 Min Freq.;
 #X text 412 332 Max Freq.;
-#X text 68 62 The Wah-wah effect stompbox quite known around and used
-in psychodelic rock and stuff. In short \, it's nothing but a lowpass
-"filter sweep" where a pedal controls the cutoff.;
 #X text 74 118 Here we have an LFO controlling this frequency instead
 of a pedal. You can try with other filters \, but here we use [vcf~]
 and also have a [drive~] unit \, cause it sounded alright like that.
@@ -32,6 +29,9 @@ Besides an LFO rate/frequency and filter Q \, we also have controls
 for the minumum and maximum frequency in the filter sweep., f 57;
 #X obj 374 18 declare -path else;
 #X obj 59 250 play.file~ wha-guitar.wav 1 1;
+#X text 68 62 The Wah-wah effect stompbox is quite known around and
+used in psychodelic rock and stuff. In short \, it's nothing but a
+lowpass "filter sweep" where a pedal controls the cutoff.;
 #X connect 0 0 8 2;
 #X connect 1 0 2 0;
 #X connect 2 0 9 0;
@@ -45,4 +45,4 @@ for the minumum and maximum frequency in the filter sweep., f 57;
 #X connect 9 0 15 0;
 #X connect 13 0 14 0;
 #X connect 15 0 8 1;
-#X connect 21 0 8 0;
+#X connect 20 0 8 0;

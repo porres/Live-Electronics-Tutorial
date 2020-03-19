@@ -10,12 +10,7 @@
 #X obj 147 235 noise~;
 #X obj 147 366 out~;
 #X obj 147 323 *~;
-#X text 77 53 An allpass filter does not affect the frequency response
-\, only the phase. This filter will be better presented in a later
-and more advanced section on filters. There we'll also get into more
-details on how to calculate biquad coefficients \, other filter types
-and more about filters in general., f 62;
-#X text 77 134 In this example \, in order to show how an allpass filter
+#X text 77 131 In this example \, in order to show how an allpass filter
 can affect the sound \, we sum a noise input to the filtered output
 \, which cancels frequencies by phase opposition \, rather like a bandstop
 filter., f 62;
@@ -28,6 +23,9 @@ bandstop filter \, it is like the Q parameter controls the bandwidth
 of the band rejection., f 69;
 #X text 61 555 See its help file for more details.;
 #X obj 398 17 declare -path else;
+#X text 77 63 An allpass filter does not affect the frequency response
+\, only the phase. This filter will be better presented in a later
+and more advanced section on filters., f 62;
 #X connect 0 0 4 1;
 #X connect 1 0 4 2;
 #X connect 4 0 7 1;

@@ -359,13 +359,6 @@
 #X text 911 478 -96;
 #X coords 0 -1 1 1 850 402 1 100 100;
 #X restore 45 139 pd;
-#X text 36 16 Generally speaking \, a filter is any process that alters
-your input sound. In accoustics \, we can think of the reverberation
-patterns of a room as a type of filter \, also the body of resonance
-of many musical instruments and even your mouth is a filter. Virtually
-\, anything is a filter. Notwithstandingly \, in our context \, filters
-are modules like equalizers \, which atenuate of amplify certain frequencies.
-, f 61;
 #X text 478 17 The frequency response is a graph that shows us which
 frequencies are being boosted and which are being lowered. The graph
 below is an example \, in which the horizontal axis represents the
@@ -375,6 +368,13 @@ mean they are being removed.;
 #X text 56 564 Besides the frequency response \, there's also a Phase
 Response \, because every filter also promotes phase deviation as a
 function of frequency., f 53;
-#X text 454 562 Nevertheless \, in this introductory section on filters
-\, we'll not bother with phase response yet. This is better discussed
-in the later section on this tutorial about filters.;
+#X text 36 16 Generally speaking \, a filter is any process that alters
+your input sound. In accoustics \, we can think of the reverberation
+patterns of a room as a type of filter \, also the body of resonance
+of many musical instruments. Even your mouth is a filter. Virtually
+\, anything is a filter. Notwithstandingly \, in our context \, filters
+are modules like equalizers \, which atenuate of amplify certain frequencies.
+, f 61;
+#X text 474 562 Nevertheless \, in this introductory section on filters
+\, we'll not bother with the phase response yet. This is better discussed
+in the later section on this tutorial about filters., f 54;

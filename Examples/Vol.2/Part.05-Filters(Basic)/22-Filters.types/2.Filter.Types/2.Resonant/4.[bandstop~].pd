@@ -374,19 +374,20 @@
 #X text 571 45 Resonant Frequency;
 #X text 651 75 Q/Resonance;
 #X obj 530 102 bandstop~;
-#X text 68 30 A bandstop (also called band reject) filter is the opposite
-of a bandpass. With a very narrow bandwidth \, this is also called
-a "notch" filter., f 53;
-#X text 68 84 It might seem a countersense to consider this a resonant
+#X text 68 90 It might seem a countersense to consider this a resonant
 filter \, but it usually is \, as you can set a bandwidth or Q parameter
 just like a bandpass. But in more accurate terms \, it should be considered
 an anti resonance filter. Anyway \, here we check the [bandstop~] object
 from ELSE \, see its help file for more details., f 53;
 #X obj 749 14 declare -path else;
 #X obj 530 136 out~;
+#X text 68 22 A bandstop (also called band reject) filter is the opposite
+of a bandpass. With a very narrow bandwidth \, this is also called
+a "notch" filter (a kind of filter that removes a very narrow band
+of frequency)., f 53;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 8 2;
 #X connect 4 0 8 1;
 #X connect 5 0 8 0;
-#X connect 8 0 12 0;
+#X connect 8 0 11 0;
