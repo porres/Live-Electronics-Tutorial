@@ -75,9 +75,9 @@ feedback lines. We also have an envelope for different feedback values
 for each frequency bin., f 47;
 #X obj 457 31 declare -path else;
 #X obj 78 53 play.file~ guitar.wav 1 1;
-#X obj 114 253 function 200 100 empty empty 0 1 220 220 220 50 50 50
+#X obj 111 253 function 200 100 empty empty 0 1 220 220 220 50 50 50
 0 0 0 0 0 0.5 1 0.5 0;
-#X obj 331 253 function 200 100 empty empty 0 1 220 220 220 50 50 50
+#X obj 328 253 function 200 100 empty empty 0 1 220 220 220 50 50 50
 0 0 0 0 0 0.5 1 0.5 0;
 #X connect 2 0 1 0;
 #X connect 5 0 9 0;

@@ -24,9 +24,9 @@
 #X connect 7 0 1 0;
 #X coords 0 0 1 1 120 60 0;
 #X restore 389 436 pd Window;
-#X obj 460 433 nbx 2 14 1 1e+37 0 1 \$0-overlap \$0-overlap-set empty
+#X obj 462 433 nbx 2 14 1 1e+37 0 1 \$0-overlap \$0-overlap-set empty
 0 -8 0 10 -228856 -1 -1 4 256;
-#X text 491 432 overlaps;
+#X text 493 432 overlaps;
 #X obj 238 398 out~;
 #N canvas 385 106 731 354 filter-table 0;
 #X obj 95 153 phasor~;
@@ -94,9 +94,9 @@ applying a "Spectral Envelope" into a FFT analysis. Open subpatches
 below to see the implementation.;
 #X obj 418 29 declare -path else;
 #X obj 238 322 play.file~ 1 didge.aif 1 1;
-#X obj 88 196 function 200 100 empty empty 0 1 220 220 220 50 50 50
+#X obj 85 196 function 200 100 empty empty 0 1 220 220 220 50 50 50
 1 0 0 0 1 1 1;
-#X text 307 238 <= Click and drag;
+#X text 304 238 <= Click and drag;
 #X obj 85 165 initmess 1 1 1;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;

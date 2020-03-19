@@ -69,13 +69,13 @@ the delay time. The delay depth controls the overall amplitude (that
 is the time parameter) of the envelope., f 43;
 #X obj 541 22 declare -path else;
 #X obj 445 201 play.file~ guitar.wav 1 1;
-#X obj 94 187 function 200 100 empty empty 0 1 220 220 220 50 50 50
+#X obj 91 187 function 200 100 empty empty 0 1 220 220 220 50 50 50
 0 0 0 0 0 0.5 1 0.5 0;
-#X text 22 26 We've seen that a delay can sort of scramble the FFT
-bins \, but you can have delay times that are multiple of the block
-size to prevent this. Not only that \, but you can have different delay
-times for each sample \, which means different frequency bins will
-have different delay times., f 48;
+#X text 22 26 Applying a delay to the FFT can sort of scramble the
+FFT bins pretty much like bin shifting. To avoid it \, you can have
+delay times that are multiple of the block size. Not only that \, but
+you can have different delay times for each sample \, which means different
+frequency bins will have different delay times., f 48;
 #X connect 1 0 0 0;
 #X connect 3 0 8 0;
 #X connect 7 0 1 0;
