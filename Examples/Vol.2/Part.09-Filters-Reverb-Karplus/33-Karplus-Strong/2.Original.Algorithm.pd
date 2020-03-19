@@ -28,20 +28,13 @@
 #X obj 270 275 tempo~ 60 100 -on;
 #X obj 624 403 f2s~ 10;
 #X obj 681 460 initmess \; \$0-fb 0.98 \; \$0-blend 1;
-#X text 46 52 Let's now closely recreate the original Karplus-Strong
-algorythm. Its noise input consisted only in 1 or -1 values stored
-in a table \, we're using a live input from [clipnoise~] instead.,
-f 55;
-#X text 47 118 For the feedback \, the ideal would be to do it in a
+#X text 47 115 For the feedback \, the ideal would be to do it in a
 subpatch with a block size of 1 \, for very high frequencies. We'll
 do this later., f 55;
-#X text 54 169 An important detail is that we have now is a mean filter
+#X text 47 168 An important detail is that we have now is a mean filter
 of two samples inside the feedback loop \, this is a lowpass (high
 cut) filter. The original algorythm also describes a "blend" parameter
-which alters the feedback value., f 54;
-#X text 473 266 As a kind od Waveguide model \, the Karplus-Strong
-is considered a "Wavetable Modification" algorithm \, for at each iteration
-\, the sound clip gets filtered and modified., f 58;
+which alters the feedback value., f 55;
 #X text 468 135 A negative feedback promotes inversion of the polarity
 for each iteration \, which makes it sound an octave lower \, besides
 changing the harmonic content.;
@@ -50,12 +43,19 @@ gives us a negative feedback. Values torwards 0.5 insert random changes
 between 0 and 1 \, 0.5 being white noise (and noise is what it sounds
 like) - this noisiness was aimed to emulate more percussive sounds.
 , f 58;
-#X text 472 194 The Karplus Strong algorythm is from the late 70s and
-is the simplest case of Physical Modelings. More precisely \, an example
-of Waveguide Synthesis. Despite being simple \, it can achieve good
-results modeling plucked instruments., f 58;
 #X obj 270 299 rand.i~ 50 500;
 #X obj 706 21 declare -path else;
+#X text 46 52 Let's now closely recreate the original Karplus-Strong
+algorythm. Its noise input consisted only in 1 or -1 values stored
+in a table \, so we're using a live input from [clipnoise~] instead.
+, f 55;
+#X text 472 194 The Karplus Strong algorythm is from the late 70s and
+is the simplest case of Physical Modeling. More precisely \, an example
+of Waveguide Synthesis. Despite being simple \, it can achieve good
+results modeling plucked instruments., f 58;
+#X text 473 266 As a kind of Waveguide model \, the Karplus-Strong
+is considered a "Wavetable Modification" algorithm \, for at each iteration
+\, the sound clip gets filtered and modified., f 58;
 #X connect 0 0 14 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 1;
@@ -76,6 +76,6 @@ results modeling plucked instruments., f 58;
 #X connect 22 0 18 0;
 #X connect 22 0 17 1;
 #X connect 23 0 17 0;
-#X connect 23 0 33 0;
+#X connect 23 0 30 0;
 #X connect 24 0 11 1;
-#X connect 33 0 22 0;
+#X connect 30 0 22 0;

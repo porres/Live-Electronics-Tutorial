@@ -85,12 +85,6 @@
 #X text 28 30 Now we create the feedback loop with the filter inside
 a subpatch \, with a block of 1! The filter we're using now is [lop~]
 \, which allows us to set a cutoff frequency.;
-#X text 28 82 Another variation allows for a Note On/Note Off input
-\, where you can hold the note down longer than its period. This adds
-a "sustain" for the excitation signal (which is a white noise inside
-the subpatch). But a short value can result in an excitation signal
-shorter than the period. An attack/release parameter adds a fade in/out
-to the exxcitation signal., f 58;
 #X obj 597 194 tempo 150 100 -on;
 #X obj 648 455 lowpass~ 0 5;
 #X obj 648 490 out~;
@@ -108,6 +102,12 @@ and also to show it's not that crazily different., f 53;
 #X obj 597 228 rand.i 25 50;
 #X obj 46 259 rand.i 25 50;
 #X obj 716 13 declare -path else;
+#X text 28 82 Another variation allows for a Note On/Note Off input
+\, where you can hold the note down longer than its period. This adds
+a "sustain" for the excitation signal (which is a white noise inside
+the subpatch). But a short value can result in an excitation signal
+shorter than the period. An attack/release parameter adds a fade in/out
+to the excitation signal., f 58;
 #X connect 0 0 1 0;
 #X connect 1 0 29 3;
 #X connect 3 0 5 0;
@@ -122,23 +122,23 @@ and also to show it's not that crazily different., f 53;
 #X connect 12 0 23 0;
 #X connect 13 0 12 0;
 #X connect 15 0 16 1;
-#X connect 16 0 38 0;
+#X connect 16 0 37 0;
 #X connect 17 0 18 0;
-#X connect 18 0 41 0;
+#X connect 18 0 40 0;
 #X connect 20 0 21 0;
-#X connect 21 0 42 0;
+#X connect 21 0 41 0;
 #X connect 22 0 13 0;
-#X connect 22 0 38 1;
+#X connect 22 0 37 1;
 #X connect 23 0 15 0;
 #X connect 24 0 29 2;
 #X connect 25 0 24 0;
 #X connect 26 0 16 0;
-#X connect 28 0 45 0;
+#X connect 28 0 44 0;
 #X connect 29 0 27 0;
-#X connect 34 0 44 0;
-#X connect 35 0 36 0;
-#X connect 38 0 35 0;
-#X connect 41 0 35 1;
-#X connect 42 0 38 2;
-#X connect 44 0 22 0;
-#X connect 45 0 6 0;
+#X connect 33 0 43 0;
+#X connect 34 0 35 0;
+#X connect 37 0 34 0;
+#X connect 40 0 34 1;
+#X connect 41 0 37 2;
+#X connect 43 0 22 0;
+#X connect 44 0 6 0;
