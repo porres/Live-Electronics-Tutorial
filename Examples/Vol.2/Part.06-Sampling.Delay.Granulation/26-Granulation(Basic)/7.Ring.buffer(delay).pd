@@ -37,18 +37,18 @@
 #X text 56 39 dummy inlet;
 #X obj 234 37 r~ \$0-hz;
 #N canvas 145 110 407 454 grain-1 0;
-#X obj 257 333 *~;
-#X obj 81 96 r~ \$0-grain;
-#X obj 105 184 *~;
-#X obj 136 270 +~;
-#X obj 129 215 r~ \$0-pos;
-#X obj 257 370 outlet~;
-#X obj 182 62 inlet~;
-#X obj 182 97 pimp~;
-#X obj 147 181 sh~;
-#X obj 182 246 sh~;
-#X obj 275 297 envelope~;
-#X obj 136 297 delread4~ \$0-buffer, f 10;
+#X obj 227 357 *~;
+#X obj 82 80 r~ \$0-grain;
+#X obj 106 168 *~;
+#X obj 137 254 +~;
+#X obj 130 199 r~ \$0-pos;
+#X obj 227 394 outlet~;
+#X obj 183 46 inlet~;
+#X obj 183 81 pimp~;
+#X obj 148 165 sh~;
+#X obj 183 230 sh~;
+#X obj 245 281 envelope~;
+#X obj 137 281 delread4~ \$0-buffer, f 10;
 #X connect 0 0 5 0;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;
@@ -65,18 +65,18 @@
 #X connect 11 0 0 0;
 #X restore 150 85 pd grain-1;
 #N canvas 145 110 407 454 grain-2 0;
-#X obj 243 341 *~;
-#X obj 69 96 r~ \$0-grain;
-#X obj 105 184 *~;
-#X obj 136 270 +~;
-#X obj 129 215 r~ \$0-pos;
-#X obj 243 378 outlet~;
-#X obj 165 62 inlet~;
-#X obj 147 181 sh~;
-#X obj 177 246 sh~;
-#X obj 261 305 envelope~;
-#X obj 136 297 delread4~ \$0-buffer, f 9;
-#X obj 165 97 pimp~ 0 0.5;
+#X obj 243 349 *~;
+#X obj 69 84 r~ \$0-grain;
+#X obj 105 172 *~;
+#X obj 136 258 +~;
+#X obj 129 203 r~ \$0-pos;
+#X obj 243 386 outlet~;
+#X obj 165 50 inlet~;
+#X obj 147 169 sh~;
+#X obj 177 234 sh~;
+#X obj 261 313 envelope~;
+#X obj 136 285 delread4~ \$0-buffer, f 9;
+#X obj 165 85 pimp~ 0 0.5;
 #X connect 0 0 5 0;
 #X connect 1 0 7 0;
 #X connect 2 0 3 0;
@@ -106,13 +106,13 @@
 #X text 68 50 Now we adapt what we've seen for ring buffers (delay
 lines). This is useful for live input \, since the past examples needed
 pre recorded samples to be loaded into buffers., f 61;
-#X text 68 102 The adaptation is simple \, we just replace [tabread4~]
-by [delread4~]. There are major differences though \, as the buffer
-read head is always running. in this example we have a 5 seconds delay
-line \, open [pd delread4~] for details. You may use [adc~] for an
-actual live input., f 61;
 #X obj 362 12 declare -path else;
 #X obj 170 405 play.file~ bubul.wav 1 1;
+#X text 68 102 The adaptation is simple \, we just replace [tabread4~]
+by [delread4~]. There are major differences though \, as the buffer
+read head is always running. In this example we have a 5 seconds delay
+line \, open [pd delread4~] for details. You may use [adc~] for an
+actual live input., f 61;
 #X connect 0 0 16 0;
 #X connect 3 0 13 0;
 #X connect 4 0 21 0;
@@ -128,4 +128,4 @@ actual live input., f 61;
 #X connect 19 0 15 0;
 #X connect 20 0 1 0;
 #X connect 21 0 2 0;
-#X connect 25 0 0 0;
+#X connect 24 0 0 0;

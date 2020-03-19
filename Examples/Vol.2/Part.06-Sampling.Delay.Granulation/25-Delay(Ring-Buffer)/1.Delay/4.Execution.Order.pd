@@ -1,13 +1,13 @@
 #N canvas 559 58 532 508 12;
 #X declare -path else;
-#N canvas 134 49 349 226 delwrite~ 0;
-#X obj 58 40 inlet~;
+#N canvas 395 114 349 226 delwrite~ 0;
+#X obj 57 40 inlet~;
 #X obj 103 149 outlet~;
 #X text 163 152 dummy outlet;
 #X obj 57 87 delwrite~ \$0-delay 100;
 #X connect 0 0 3 0;
 #X restore 184 304 pd delwrite~;
-#N canvas 164 51 380 221 delread4~ 0;
+#N canvas 294 164 380 221 delread4~ 0;
 #X obj 133 43 inlet~;
 #X obj 209 145 outlet~;
 #X text 33 43 dummy intlet;

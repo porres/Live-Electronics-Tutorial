@@ -4,7 +4,7 @@
 #X obj 82 320 float;
 #X text 618 317 cents;
 #X obj 608 337 nbx 5 16 -1e+37 1e+37 0 0 empty cents empty 0 -8 0 13
--228856 -1 -1 0 256;
+-228856 -1 -1 -400 256;
 #X obj 519 337 nbx 4 16 -1e+37 1e+37 0 0 empty tempo empty 0 -8 0 13
 -228856 -1 -1 5 256;
 #X obj 698 337 nbx 4 16 64 8192 0 0 empty grao empty 0 -8 0 13 -228856
@@ -21,11 +21,6 @@
 #X obj 163 373 wrap2~;
 #X text 215 372 <= loop;
 #X obj 519 409 out~;
-#X text 24 25 So far any change in speed alters the pitch and vice
-versa \, but now we'll implement independent pitch shiftting and time
-stretching with granular methods. This example is actually the basis
-of the phase vocoder example we'll see when dealing with complex FFT
-processes. Other examples and methods will be presented next.;
 #X text 65 245 counter;
 #X obj 375 388 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -77,7 +72,7 @@ Stretch., f 59;
 #X text 475 226 The [block~] object only resizes the block to powers
 of two \, so these are the only possible grain sizes. Open the subpatch
 below to see how it works., f 59;
-#N canvas 102 117 921 744 Pitch-Shit/Time-Stretch 0;
+#N canvas 472 113 921 744 Pitch-Shit/Time-Stretch 0;
 #X obj 173 697 outlet~;
 #X obj 134 42 inlet;
 #X obj 237 44 inlet;
@@ -86,7 +81,7 @@ below to see how it works., f 59;
 #X obj 243 522 phasor~;
 #X obj 173 632 *~;
 #X obj 237 100 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--236782 -1 -1 0 256;
+-236782 -1 -1 -400 256;
 #X obj 225 607 *~;
 #X obj 173 665 +~;
 #X obj 134 130 / 100;
@@ -216,24 +211,29 @@ f 54;
 #X obj 202 271 r \$0-size;
 #X text 273 269 sample size;
 #X obj 714 25 declare -path else;
+#X text 24 25 So far \, any change in speed alters the pitch and vice
+versa \, but now we'll implement independent pitch shiftting and time
+stretching with granular methods. This example is actually the basis
+of the phase vocoder example we'll see when dealing with complex FFT
+processes. Other examples and methods will be presented next.;
 #X connect 0 0 15 0;
 #X connect 1 0 6 0;
-#X connect 3 0 34 1;
-#X connect 4 0 34 0;
-#X connect 5 0 34 2;
+#X connect 3 0 33 1;
+#X connect 4 0 33 0;
+#X connect 5 0 33 2;
 #X connect 6 0 12 0;
-#X connect 8 0 30 0;
-#X connect 9 0 30 0;
-#X connect 10 0 30 0;
-#X connect 11 0 30 0;
+#X connect 8 0 29 0;
+#X connect 9 0 29 0;
+#X connect 10 0 29 0;
+#X connect 11 0 29 0;
 #X connect 12 0 1 1;
-#X connect 12 0 24 0;
-#X connect 15 0 22 0;
-#X connect 20 0 21 0;
-#X connect 22 0 13 0;
-#X connect 23 0 1 0;
-#X connect 24 0 0 0;
-#X connect 25 0 24 1;
-#X connect 34 0 17 0;
-#X connect 35 0 12 2;
-#X connect 35 0 15 2;
+#X connect 12 0 23 0;
+#X connect 15 0 21 0;
+#X connect 19 0 20 0;
+#X connect 21 0 13 0;
+#X connect 22 0 1 0;
+#X connect 23 0 0 0;
+#X connect 24 0 23 1;
+#X connect 33 0 17 0;
+#X connect 34 0 12 2;
+#X connect 34 0 15 2;

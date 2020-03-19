@@ -149,14 +149,15 @@ to half the new grain size instead of subtracting because this means
 #X connect 56 0 52 0;
 #X connect 57 0 46 0;
 #X restore 230 357 pd pitch-shift/time-stretch;
-#X text 87 68 This example now adapts an earlier pitch shit / time
-stretch patch in which the grain size depends on the block size. As
-the earlier one \, this is the basis of a Phase Vocoder example presented
-later. Open the subpatch for details., f 52;
 #X obj 61 291 initmess \; \$0-speed 50 \; \$0-cents -400 \; \$0-block
 2048;
 #X obj 360 21 declare -path else;
 #X obj 61 198 play.file~ bubul.wav 1 1;
+#X text 87 68 This example now adapts for live input (or delay lines)
+an earlier pitch shit / time stretch patch in which the grain size
+depends on the block size. As the earlier one \, this is the basis
+of a Phase Vocoder example presented later. Open the subpatch for details.
+, f 52;
 #X connect 1 0 13 1;
 #X connect 2 0 13 0;
 #X connect 3 0 13 2;
@@ -166,4 +167,4 @@ later. Open the subpatch for details., f 52;
 #X connect 7 0 3 0;
 #X connect 8 0 3 0;
 #X connect 13 0 9 0;
-#X connect 17 0 10 0;
+#X connect 16 0 10 0;

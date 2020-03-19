@@ -30,7 +30,6 @@
 #X obj 702 484 delread~ \$0-tap-delay 1200;
 #X obj 170 37 bng 40 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
-#X obj 170 98 expr random(30 \, 61);
 #X obj 170 122 t f b;
 #X obj 170 155 mtof;
 #X obj 479 436 throw~ \$0-tapR;
@@ -43,16 +42,17 @@ or more complex rythms. In this example we also explore a stereo effect.
 #X obj 682 30 declare -path else;
 #X obj 555 255 out2~;
 #X obj 170 187 bl.saw~;
+#X obj 170 98 rand.i 30 60;
 #X connect 0 0 1 0;
 #X connect 0 0 18 0;
 #X connect 0 0 19 0;
 #X connect 2 0 4 0;
 #X connect 3 0 6 0;
-#X connect 10 0 37 0;
-#X connect 11 0 37 1;
+#X connect 10 0 36 0;
+#X connect 11 0 36 1;
 #X connect 12 0 5 0;
-#X connect 13 0 32 0;
-#X connect 14 0 33 0;
+#X connect 13 0 31 0;
+#X connect 14 0 32 0;
 #X connect 15 0 7 0;
 #X connect 16 0 8 0;
 #X connect 17 0 9 0;
@@ -64,10 +64,10 @@ or more complex rythms. In this example we also explore a stereo effect.
 #X connect 25 0 15 0;
 #X connect 26 0 16 0;
 #X connect 27 0 17 0;
-#X connect 28 0 29 0;
+#X connect 28 0 38 0;
 #X connect 29 0 30 0;
-#X connect 30 0 31 0;
-#X connect 30 1 34 0;
-#X connect 31 0 38 0;
-#X connect 34 0 0 1;
-#X connect 38 0 0 0;
+#X connect 29 1 33 0;
+#X connect 30 0 37 0;
+#X connect 33 0 0 1;
+#X connect 37 0 0 0;
+#X connect 38 0 29 0;

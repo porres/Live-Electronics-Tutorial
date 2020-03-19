@@ -33,26 +33,26 @@
 #X obj 116 461 delwrite~ \$0-buffer 6000;
 #X obj 651 336 delread4~ \$0-buffer, f 9;
 #X obj 485 323 delread4~ \$0-buffer, f 9;
-#X text 41 47 For this Time Stretch/Compress example \, a grain size
-in ms provides the frequency of [pimp~] objects that drive overlapping
-envelopes. In the same way \, we calculate the frequency of a [phasor~]
-according to the buffer size. This [phasor~] gives us a cmopress/stretch
-step., f 47;
 #X text 42 149 The [pimp~] objects trigger [sh~] objects and get a
 read point from [phasor~]. The step increment from one grain to another
 depends on the speed parameter. We can make it shorter for a time stretch
 or larger for a time compress., f 47;
-#X text 42 233 The speed is adjusted to compensate for the read head
-speed as in the last example with [expr~ 1 - $v1]. By resetting the
-phase of [phasor~] you can jump back to the start of the buffer.,
-f 47;
 #X obj 485 254 *~ 6000;
 #X obj 186 329 initmess \; speed 100 \; grain 100;
 #X obj 713 26 declare -path else;
 #X obj 116 431 play.file~ bubul.wav 1 1;
+#X text 41 47 For this Time Stretch/Compress example \, a grain size
+in ms provides the frequency of [pimp~] objects that drive overlapping
+envelopes. In the same way \, we calculate the frequency of a [phasor~]
+according to the buffer size. This [phasor~] gives us a compress/stretch
+step., f 47;
+#X text 42 233 The speed is adjusted to compensate for the read head
+speed as in the last example with [expr~ 1 - $v1]. By resetting the
+phase of [phasor~] \, you can jump back to the start of the buffer.
+, f 47;
 #X connect 0 0 3 1;
 #X connect 1 0 13 0;
-#X connect 3 0 33 0;
+#X connect 3 0 31 0;
 #X connect 4 0 18 0;
 #X connect 4 0 21 0;
 #X connect 5 0 6 0;
@@ -76,6 +76,6 @@ f 47;
 #X connect 25 0 7 0;
 #X connect 28 0 12 0;
 #X connect 29 0 5 0;
-#X connect 33 0 19 0;
-#X connect 33 0 20 0;
-#X connect 36 0 27 0;
+#X connect 31 0 19 0;
+#X connect 31 0 20 0;
+#X connect 34 0 27 0;

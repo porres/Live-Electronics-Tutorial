@@ -11,10 +11,10 @@
 #X obj 114 507 display~;
 #X obj 76 125 sig2float~;
 #X obj 76 150 vsl 20 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 4384 1;
+-1 -1 6656 1;
 #X obj 253 125 sig2float~;
 #X obj 253 150 vsl 20 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 5516 1;
+-1 -1 3244 1;
 #X obj 253 99 phasor~ -0.5;
 #X obj 76 99 phasor~ 0.5;
 #X obj 174 449 fexpr~ abs($x1[0] - $x1[-1]) < 0.5;
@@ -26,8 +26,6 @@
 #X obj 592 447 +~;
 #X obj 610 367 r \$0-freq;
 #X obj 592 488 out~;
-#X obj 745 394 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
 #X text 17 18 For now we only had positive frequencies examples. Negative
 frequencies on [phasor~] or [pimp~] will read the sample backwards
 \, as it runs in the opposite direction.;
@@ -75,21 +73,6 @@ cleaner.;
 #X connect 10 0 3 1;
 #X connect 11 0 0 1;
 #X restore 524 410 pd grain-1;
-#N canvas 681 47 556 254 buffer 0;
-#X obj 324 192 table \$0-buffer;
-#X obj 196 190 soundfiler;
-#X obj 41 60 openpanel;
-#X obj 41 83 list append \$0-buffer;
-#X msg 41 107 read -resize \$1 \$2;
-#X obj 41 34 inlet;
-#X obj 196 120 initmess read -resize bubul.wav \$0-buffer \; hz 1 \;
-grain 500, f 43;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 4 0 1 0;
-#X connect 5 0 2 0;
-#X connect 6 0 1 0;
-#X restore 745 420 pd buffer;
 #N canvas 457 81 342 422 grain-2 0;
 #X obj 208 338 *~;
 #X obj 48 67 r~ \$0-grain;
@@ -121,6 +104,18 @@ grain 500, f 43;
 #X text 491 201 position (ms), f 8;
 #X text 593 194 grain (ms);
 #X obj 703 19 declare -path else;
+#X obj 744 411 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#N canvas 790 23 285 190 buffer 0;
+#X obj 41 60 openpanel;
+#X obj 41 29 inlet;
+#X obj 41 125 sample~ \$0-buffer bubul.wav;
+#X msg 41 89 load \$1;
+#X obj 137 51 initmess \; hz 1 \; grain 500;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X restore 744 440 pd buffer;
 #X connect 1 0 2 0;
 #X connect 2 0 5 0;
 #X connect 3 0 13 0;
@@ -131,13 +126,13 @@ grain 500, f 43;
 #X connect 12 0 7 0;
 #X connect 13 0 14 1;
 #X connect 14 0 6 0;
-#X connect 15 0 30 0;
-#X connect 16 0 29 0;
+#X connect 15 0 29 0;
+#X connect 16 0 28 0;
 #X connect 19 0 21 0;
+#X connect 20 0 31 0;
 #X connect 20 0 32 0;
-#X connect 20 0 34 0;
-#X connect 22 0 33 0;
-#X connect 29 0 17 0;
-#X connect 30 0 18 0;
-#X connect 32 0 19 0;
-#X connect 34 0 19 1;
+#X connect 28 0 17 0;
+#X connect 29 0 18 0;
+#X connect 31 0 19 0;
+#X connect 32 0 19 1;
+#X connect 36 0 37 0;

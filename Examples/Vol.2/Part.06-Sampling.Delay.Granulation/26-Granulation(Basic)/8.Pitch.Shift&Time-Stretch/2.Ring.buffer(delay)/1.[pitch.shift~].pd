@@ -23,13 +23,6 @@
 #X text 178 202 higher;
 #X msg 111 203 0;
 #X text 109 180 original;
-#X text 33 27 We've used delay as sort of a pitch shifter in the arpeggiator
-example. When we have an ascending ramp \, the delay time increases
-and reading speed slows down. On the other hand \, a downwards ramp
-speeds up. For up and down ramps \, we can use a simple [phasor~] object
-\, but the relationship is inverted - because a positive frequency
-(an ascending ramp) lowers the pitch and a negative frequency (descending
-ramp) raises the pitch., f 53;
 #X text 33 414 Now we need to calculate the frequency of [phasor~]
 from a ratio. First we we need to subtract the reading head speed that's
 always running (that'd be subtracting 1). Then we need to invert the
@@ -70,15 +63,22 @@ and see the [pitch.shift~] object from ELSE \, which is implemented
 this way., f 53;
 #X obj 660 26 declare -path else;
 #X obj 464 82 play.file~ bubul.wav 1 1;
+#X text 23 28 We've used delay as sort of a pitch shifter in the arpeggiator
+example. Remember when we have an ascending ramp \, the delay time
+increases and reading speed slows down. On the other hand \, a downwards
+ramp speeds up. For up and down ramps \, we can use a simple [phasor~]
+object \, but the relationship is inverted - because a positive frequency
+(an ascending ramp) lowers the pitch and a negative frequency (descending
+ramp) raises the pitch., f 56;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 2 0 1 1;
-#X connect 3 0 37 0;
-#X connect 4 0 38 0;
+#X connect 3 0 36 0;
+#X connect 4 0 37 0;
 #X connect 5 0 7 0;
 #X connect 6 0 5 0;
-#X connect 6 0 39 0;
-#X connect 7 0 29 0;
+#X connect 6 0 38 0;
+#X connect 7 0 28 0;
 #X connect 10 0 0 1;
 #X connect 11 0 2 1;
 #X connect 12 0 17 0;
@@ -87,23 +87,23 @@ this way., f 53;
 #X connect 15 0 12 0;
 #X connect 17 0 16 0;
 #X connect 20 0 15 0;
-#X connect 24 0 27 0;
-#X connect 25 0 29 1;
-#X connect 26 0 28 0;
-#X connect 27 0 26 0;
-#X connect 28 0 25 0;
-#X connect 29 0 30 0;
-#X connect 30 0 41 0;
-#X connect 30 0 40 0;
-#X connect 37 0 0 0;
-#X connect 38 0 2 0;
-#X connect 39 0 3 1;
-#X connect 39 0 4 1;
-#X connect 40 0 4 0;
-#X connect 40 0 11 0;
-#X connect 41 0 3 0;
-#X connect 41 0 10 0;
-#X connect 44 0 46 1;
-#X connect 46 0 43 0;
-#X connect 49 0 42 0;
-#X connect 49 0 46 0;
+#X connect 23 0 26 0;
+#X connect 24 0 28 1;
+#X connect 25 0 27 0;
+#X connect 26 0 25 0;
+#X connect 27 0 24 0;
+#X connect 28 0 29 0;
+#X connect 29 0 40 0;
+#X connect 29 0 39 0;
+#X connect 36 0 0 0;
+#X connect 37 0 2 0;
+#X connect 38 0 3 1;
+#X connect 38 0 4 1;
+#X connect 39 0 4 0;
+#X connect 39 0 11 0;
+#X connect 40 0 3 0;
+#X connect 40 0 10 0;
+#X connect 43 0 45 1;
+#X connect 45 0 42 0;
+#X connect 48 0 41 0;
+#X connect 48 0 45 0;

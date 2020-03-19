@@ -1,14 +1,12 @@
-#N canvas 333 24 930 554 12;
+#N canvas 388 225 930 554 12;
 #X declare -path else;
-#X obj 53 364 cnv 15 248 148 empty empty empty 20 12 0 14 -224824 -66577
+#X obj 53 364 cnv 15 248 148 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-cos 441 float 0;
 #X array \$0-sin 441 float 0;
 #X coords 0 1 441 0 250 150 1 0 0;
 #X restore 52 363 graph;
-#X obj 759 92 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856 -1
--1;
 #X obj 445 342 tabread4~ \$0-buffer, f 9;
 #X obj 555 385 *~;
 #X obj 445 315 +~;
@@ -38,7 +36,7 @@
 #X obj 337 415 setdsp~ 1;
 #X obj 782 390 envelope~;
 #X obj 573 350 envelope~;
-#N canvas 4 23 450 300 plot 0;
+#N canvas 315 152 450 300 plot 0;
 #X obj 276 120 metro 300;
 #X obj 276 99 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
@@ -58,10 +56,6 @@
 #X connect 5 0 8 0;
 #X connect 6 0 7 0;
 #X restore 330 362 pd plot;
-#X text 37 43 A single envelope as in the last example generates artifacts
-\, as it is basically just an amplitude modulation implementation.
-We avoid this and also the tremolo effect by overlapping two grain.
-, f 50;
 #X text 38 111 The envelopes need to be out of phase \, for that we
 use the [pimp~] object from ELSE. It combines a [phasor~] and an [imp~]
 object (alias of [impulse~]). As the impulse oscillator \, [pimp~]
@@ -77,57 +71,58 @@ terms \, this means we have an equal power crossfade between grains.
 #X obj 576 93 ms2samps;
 #X text 559 35 size (ms);
 #X text 446 36 position (ms), f 8;
-#N canvas 681 47 587 255 buffer 0;
-#X obj 310 196 table \$0-buffer;
-#X obj 197 196 soundfiler;
-#X obj 48 69 openpanel;
-#X obj 48 92 list append \$0-buffer;
-#X msg 48 116 read -resize \$1 \$2;
-#X obj 48 43 inlet;
-#X obj 197 128 initmess read -resize bubul.wav \$0-buffer \; hz 1 \;
-grain 500, f 43;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 4 0 1 0;
-#X connect 5 0 2 0;
-#X connect 6 0 1 0;
-#X restore 759 118 pd buffer;
 #X text 831 197 out of phase, f 6;
 #X text 38 272 See the overlapping graphs below and the patch implementation
 with both grains to the right., f 50;
 #X obj 767 28 declare -path else;
-#X connect 2 0 42 0;
-#X connect 3 0 4 0;
-#X connect 4 0 13 0;
-#X connect 5 0 3 0;
-#X connect 6 0 5 1;
-#X connect 7 0 8 1;
-#X connect 8 0 5 0;
-#X connect 9 0 39 0;
-#X connect 10 0 38 0;
-#X connect 11 0 24 0;
-#X connect 13 0 23 0;
-#X connect 14 0 15 0;
-#X connect 15 0 13 1;
-#X connect 16 0 14 0;
-#X connect 17 0 16 1;
-#X connect 18 0 19 1;
-#X connect 19 0 16 0;
-#X connect 21 0 17 0;
-#X connect 22 0 6 0;
-#X connect 25 0 26 0;
-#X connect 26 0 8 0;
-#X connect 26 0 7 1;
-#X connect 26 0 6 1;
-#X connect 26 0 31 0;
-#X connect 27 0 19 0;
-#X connect 27 0 18 1;
-#X connect 27 0 17 1;
-#X connect 27 0 30 0;
-#X connect 28 0 27 0;
-#X connect 30 0 15 1;
-#X connect 31 0 4 1;
-#X connect 37 0 7 0;
-#X connect 37 0 18 0;
-#X connect 38 0 20 0;
-#X connect 39 0 36 0;
+#X text 37 43 A single envelope as in the last example generates artifacts
+\, as it is basically just an amplitude modulation implementation.
+We avoid this and also the tremolo effect by overlapping two grains.
+, f 50;
+#X obj 784 83 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#N canvas 790 23 285 190 buffer 0;
+#X obj 41 60 openpanel;
+#X obj 41 29 inlet;
+#X obj 41 125 sample~ \$0-buffer bubul.wav;
+#X msg 41 89 load \$1;
+#X obj 137 51 initmess \; hz 1 \; grain 500;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X restore 784 112 pd buffer;
+#X connect 2 0 3 0;
+#X connect 3 0 12 0;
+#X connect 4 0 2 0;
+#X connect 5 0 4 1;
+#X connect 6 0 7 1;
+#X connect 7 0 4 0;
+#X connect 8 0 37 0;
+#X connect 9 0 36 0;
+#X connect 10 0 23 0;
+#X connect 12 0 22 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 1;
+#X connect 15 0 13 0;
+#X connect 16 0 15 1;
+#X connect 17 0 18 1;
+#X connect 18 0 15 0;
+#X connect 20 0 16 0;
+#X connect 21 0 5 0;
+#X connect 24 0 25 0;
+#X connect 25 0 7 0;
+#X connect 25 0 6 1;
+#X connect 25 0 5 1;
+#X connect 25 0 30 0;
+#X connect 26 0 18 0;
+#X connect 26 0 17 1;
+#X connect 26 0 16 1;
+#X connect 26 0 29 0;
+#X connect 27 0 26 0;
+#X connect 29 0 14 1;
+#X connect 30 0 3 1;
+#X connect 35 0 6 0;
+#X connect 35 0 17 0;
+#X connect 36 0 19 0;
+#X connect 37 0 34 0;
+#X connect 44 0 45 0;
