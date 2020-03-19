@@ -35,19 +35,19 @@
 #X obj 670 41 declare -path else;
 #X msg 691 231 \$1 2000 0;
 #X obj 691 259 envgen~ -exp 4;
-#X text 379 121 Here we use the [vline~] and [envgen~] objects as envelope
-generators. Whike [vline~] can only be linear \, [envgen~] has an exponential
-setting \, but a different one., f 58;
 #X obj 360 233 brown~;
 #X obj 620 236 brown~;
-#X text 46 19 Envelopes are widely used to control amplitude of sounds
+#X msg 431 229 \$1 \, 0 300;
+#X text 54 19 Envelopes are widely used to control amplitude of sounds
 when triggered. The [decay~] object from ELSE is an extremely simple
 envelope \, with just an exponential decay stage. The envelope function
-starts at a maximum amplitude and just decays (until reachinng 0).
-It can be triggered by bangs \, control data numbers and audio impulses.
-Note that yo don't need to worry much about clicks when enveloping
-a noisy or percussive sound!, f 80;
-#X msg 431 229 \$1 \, 0 300;
+starts at a maximum amplitude and just decays (until reaching 0). It
+can be triggered by bangs \, control data numbers and audio impulses.
+Note that you don't need to worry much about clicks when enveloping
+a noisy or percussive sound!, f 76;
+#X text 368 127 Here we use the [vline~] and [envgen~] objects as envelope
+generators. Whike [vline~] can only be linear \, [envgen~] has an exponential
+setting \, but a different one than [decay~].;
 #X connect 0 0 7 0;
 #X connect 1 0 5 0;
 #X connect 5 0 8 0;
@@ -55,8 +55,8 @@ a noisy or percussive sound!, f 80;
 #X connect 7 0 5 1;
 #X connect 7 0 25 0;
 #X connect 10 0 11 0;
-#X connect 12 0 35 0;
-#X connect 13 0 35 0;
+#X connect 12 0 33 0;
+#X connect 13 0 33 0;
 #X connect 14 0 7 0;
 #X connect 16 0 17 0;
 #X connect 18 0 29 0;
@@ -69,6 +69,6 @@ a noisy or percussive sound!, f 80;
 #X connect 29 0 30 0;
 #X connect 30 0 16 1;
 #X connect 30 0 27 0;
-#X connect 32 0 10 0;
-#X connect 33 0 16 0;
-#X connect 35 0 20 0;
+#X connect 31 0 10 0;
+#X connect 32 0 16 0;
+#X connect 33 0 20 0;

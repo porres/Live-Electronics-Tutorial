@@ -66,11 +66,6 @@ and [count], f 19;
 #X text 483 371 Now here's an alternative with [expr] \, which can
 read values from a table and use variables from a [value] object.;
 #X text 240 412 transposition (base value), f 13;
-#X text 29 17 Let's implement a sequencer using arrays to store values
-\, which could be used to control any parameter in a patch but here
-we just control the MIDI pitch of an oscillator. In this example we
-store values from -12 to 12 and add it to base value (initially 60
-\, which is middle C)., f 62;
 #X obj 60 558 initmess \; \$0-base 60 \; \$0-metro 1;
 #X obj 556 562 v base;
 #X obj 544 455 expr i = (i + 1) % 16 \; int(sequencer[i] + base);
@@ -81,6 +76,11 @@ with the native [array set] object. You can also change the values
 with your mouse and retrieve the values with [array get].;
 #X obj 783 13 declare -path else;
 #X obj 506 304 setmess set;
+#X text 29 18 Let's implement a sequencer using arrays to store values
+\, which could be used to control any parameter in a patch but here
+we just control the MIDI pitch of an oscillator. In this example \,
+we store values from -12 to 12 and add it to base value (initially
+60 \, which is middle C)., f 62;
 #X connect 0 0 25 1;
 #X connect 1 0 24 0;
 #X connect 4 0 5 0;
@@ -98,17 +98,17 @@ with your mouse and retrieve the values with [array get].;
 #X connect 16 0 12 0;
 #X connect 17 0 28 0;
 #X connect 18 0 23 0;
-#X connect 19 0 49 0;
+#X connect 19 0 48 0;
 #X connect 20 0 28 1;
-#X connect 24 0 54 0;
+#X connect 24 0 53 0;
 #X connect 25 0 4 0;
 #X connect 26 0 14 1;
 #X connect 28 0 18 0;
-#X connect 29 0 50 0;
+#X connect 29 0 49 0;
 #X connect 31 0 25 0;
 #X connect 36 0 38 0;
 #X connect 38 0 37 0;
 #X connect 40 0 31 0;
 #X connect 41 0 27 0;
-#X connect 50 1 17 0;
-#X connect 54 0 51 0;
+#X connect 49 1 17 0;
+#X connect 53 0 50 0;

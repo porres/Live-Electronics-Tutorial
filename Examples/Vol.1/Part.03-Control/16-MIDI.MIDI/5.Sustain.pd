@@ -34,7 +34,7 @@
 #X obj 173 235 s \$0-note;
 #X obj 282 233 s \$0-vel;
 #X obj 623 156 nbx 3 14 -1e+37 1e+37 0 0 empty \$0-note empty 0 -8
-0 10 -228856 -1 -1 64 256;
+0 10 -228856 -1 -1 60 256;
 #X text 590 154 Note;
 #X obj 667 156 nbx 3 14 -1e+37 1e+37 0 0 empty \$0-vel empty 0 -8 0
 10 -228856 -1 -1 0 256;
@@ -86,25 +86,25 @@ provides the [suspedal] for this purpose.;
 way to implement a sustain pedal with native Pd objects \, by relying
 on the [bag] object. See the subpatch below:;
 #N canvas 806 244 335 366 sustain 0;
-#N canvas 534 277 502 376 sustain 0;
-#X obj 272 49 inlet;
-#X obj 207 48 inlet;
-#X obj 143 48 inlet;
-#X obj 143 137 pack float float float;
-#X obj 95 259 bag;
-#X obj 168 221 stripnote;
-#X msg 51 216 flush;
-#X msg 95 283 \$1 0;
-#X obj 51 146 == 0;
-#X msg 95 216 clear;
-#X obj 51 170 select 1 0;
-#X obj 143 194 route 0 1;
-#X msg 143 170 \$3 \$1 \$2;
-#X obj 219 331 outlet;
-#X obj 143 331 outlet;
-#X obj 272 85 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#N canvas 534 277 555 397 sustain 0;
+#X obj 299 49 inlet;
+#X obj 223 48 inlet;
+#X obj 148 48 inlet;
+#X obj 148 137 pack float float float;
+#X obj 100 259 bag;
+#X obj 178 221 stripnote;
+#X msg 50 216 flush;
+#X msg 100 283 \$1 0;
+#X obj 50 146 == 0;
+#X msg 100 216 clear;
+#X obj 50 170 select 1 0;
+#X obj 148 194 route 0 1;
+#X msg 148 165 \$3 \$1 \$2;
+#X obj 224 331 outlet;
+#X obj 148 331 outlet;
+#X obj 299 85 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X text 268 179 If the sustain toggle is on \, MIDI notes are routed
+#X text 277 189 If the sustain toggle is on \, MIDI notes are routed
 to [stripnote] \, which filters note off messages \, and then sent
 to [bag] \, so it keeps tracks of the pressed notes and sends note
 off messages when the sustain toggle is off., f 33;
@@ -130,16 +130,15 @@ off messages when the sustain toggle is off., f 33;
 #X connect 15 0 8 0;
 #X restore 133 161 pd sustain;
 #X obj 100 78 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-note empty 0 -8 0
-10 -228856 -1 -1 64 256;
+10 -228856 -1 -1 60 256;
 #X text 117 94 Note;
 #X obj 161 78 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-vel empty 0 -8 0
 10 -228856 -1 -1 0 256;
 #X text 167 97 Velocity;
 #X obj 100 38 notein;
-#X text 215 127 sustain;
-#X obj 190 128 tgl 20 0 empty empty empty 0 -6 0 8 -228856 -1 -1 0
+#X text 225 127 sustain;
+#X obj 200 128 tgl 20 0 empty empty empty 0 -6 0 8 -228856 -1 -1 0
 1;
-#X obj 118 270 out~;
 #N canvas 588 58 350 354 voice1 0;
 #X obj 170 230 *~;
 #X obj 51 120 mtof;
@@ -167,7 +166,7 @@ off messages when the sustain toggle is off., f 33;
 #X connect 10 0 11 1;
 #X connect 11 0 0 0;
 #X connect 12 0 10 0;
-#X restore 95 231 pd voice1;
+#X restore 118 231 pd voice1;
 #N canvas 588 58 350 354 voice2 0;
 #X obj 170 230 *~;
 #X obj 51 120 mtof;
@@ -195,19 +194,21 @@ off messages when the sustain toggle is off., f 33;
 #X connect 10 0 11 1;
 #X connect 11 0 0 0;
 #X connect 12 0 10 0;
-#X restore 161 231 pd voice2;
+#X restore 205 229 pd voice2;
 #X obj 133 187 voices 2 1;
-#X text 205 160 <= open;
-#X connect 0 0 11 0;
-#X connect 0 1 11 1;
+#X text 215 160 <= open;
+#X obj 118 270 out2~;
+#X connect 0 0 10 0;
+#X connect 0 1 10 1;
 #X connect 1 0 0 0;
 #X connect 3 0 0 1;
 #X connect 5 0 1 0;
 #X connect 5 1 3 0;
 #X connect 7 0 0 2;
-#X connect 9 0 8 0;
-#X connect 11 0 9 0;
-#X connect 11 1 10 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 1;
+#X connect 10 0 8 0;
+#X connect 10 1 9 0;
 #X restore 335 330 pd sustain;
 #X text 499 63 The [suspedal] object has more functionalities than
 the shown vanilla implementation of a sustain pedal. For more details

@@ -33,19 +33,12 @@
 #X obj 585 229 ctl.out;
 #X obj 584 200 note.out;
 #X obj 586 348 sysrt.in;
-#X text 27 15 Pd has several nastive objects that deal with MIDI. We
-only used [notein] nd MIDI note messages in this series \, but there
-are many other MIDI messages we could use to control a patch. Conversely
-\, we can create and maniplate MIDI data in a patch and send it out
-with MIDI out objects., f 56;
-#X text 27 105 Here are Pd native objects for MIDI separated into MIDI
-message type., f 56;
 #X text 265 148 Note;
 #X text 264 171 Control;
 #X text 266 272 Poliphonic Aftertouch;
 #X text 66 384 There are also MIDI objects that deal with raw MIDI
 data:, f 20;
-#X text 198 307 MIDI system and MIDI real-time input;
+#X text 204 307 MIDI system and MIDI real-time input;
 #X text 278 383 all types but system/real time & sysex, f 14;
 #X text 482 61 The ELSE library also has MIDI objects \, but they receive
 and send raw MIDI data. This means they need [midiin] and [midiout]
@@ -64,3 +57,10 @@ makes them useful to write and read MIDI data from the [midi] object
 \, also provided in the ELSE library. We'll see that in the next section.
 ;
 #X obj 762 22 declare -path else;
+#X text 27 15 Pd has several nastive objects that deal with MIDI. We
+only used [notein] and MIDI note messages in this series \, but there
+are many other MIDI messages we could use to control a patch. Conversely
+\, we can create and maniplate MIDI data in a patch and send it out
+with MIDI out objects., f 57;
+#X text 27 105 Here are Pd native objects for MIDI \, separated into
+MIDI message types., f 57;

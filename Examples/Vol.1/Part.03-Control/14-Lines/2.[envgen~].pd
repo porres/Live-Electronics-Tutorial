@@ -12,11 +12,6 @@
 -1 -1 0 1;
 #X obj 111 362 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X text 86 64 The [envgen~] object from ELSE is similar to the [vline~]
-object as it generate multiple lines \, but it has a quite different
-syntax and also other features \, as it is an envelope generator after
-all. Let's present it here as a line generator before using it as an
-envelope generator in the next examples., f 65;
 #X obj 111 396 envgen~ 0 1000 1 250 0.25 250 0.25 500 1 250 1 250 0
 , f 26;
 #X text 86 144 The line segments are set in pairs of duration and target
@@ -36,12 +31,17 @@ See examples below and check its help file., f 65;
 #X text 85 252 This object is very complex. Take a moment to study
 its help file and keep checking the documentation for the next examples.
 , f 65;
-#X connect 1 0 16 0;
+#X text 86 65 The [envgen~] object from ELSE is similar to the [vline~]
+object as it generate multiple lines \, but it has a quite different
+syntax and also other features \, as it is an envelope generator after
+all. Let's present it here as a line generator before using it as a
+proper envelope generator in the next examples., f 65;
+#X connect 1 0 15 0;
 #X connect 2 0 3 0;
-#X connect 3 0 16 0;
-#X connect 7 0 9 0;
-#X connect 9 0 12 0;
-#X connect 11 0 0 0;
-#X connect 12 0 6 0;
-#X connect 15 0 16 0;
-#X connect 16 0 11 0;
+#X connect 3 0 15 0;
+#X connect 7 0 8 0;
+#X connect 8 0 11 0;
+#X connect 10 0 0 0;
+#X connect 11 0 6 0;
+#X connect 14 0 15 0;
+#X connect 15 0 10 0;

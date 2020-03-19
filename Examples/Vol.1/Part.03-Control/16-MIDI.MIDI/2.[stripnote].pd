@@ -11,7 +11,7 @@
 #X obj 60 248 display;
 #X obj 60 91 keyboard 17 80 3 1 0;
 #X obj 60 187 display;
-#X text 172 188 The native object [stripnote] filters out note off
+#X text 183 191 The native object [stripnote] filters out note off
 messages. This is useful if don't need a gate as an envelope trigger
 \, as is the case with [decay2~] \, for instance - because it only
 needs a trigger at the note on event., f 39;

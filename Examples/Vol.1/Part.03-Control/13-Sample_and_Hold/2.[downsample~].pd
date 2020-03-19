@@ -30,12 +30,12 @@
 #X obj 133 563 rescale~ 50 150;
 #X obj 133 596 bl.saw~;
 #X obj 84 431 rampnoise~ 2;
-#X text 50 64 You can consider [downsample~] as a type of sample and
-hold unitpara fazer um sample and hold.;
-#X text 65 361 Clearly [sh~]is more maleable \, and it can be triggered
+#X obj 384 36 declare -path else;
+#X text 77 46 You can consider [downsample~] as a type of sample and
+hold unit., f 33;
+#X text 65 356 Clearly [sh~] is more maleable \, and it can be triggered
 in many different ways. Use the many impulse and trigger generators
 from ELSE to contol it.;
-#X obj 351 21 declare -path else;
 #X connect 0 0 7 0;
 #X connect 2 0 3 0;
 #X connect 3 0 24 0;

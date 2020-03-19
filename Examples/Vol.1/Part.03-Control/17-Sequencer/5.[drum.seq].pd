@@ -1,4 +1,4 @@
-#N struct 1217-slot float x float y float slotsize float color float
+#N struct 1082-slot float x float y float slotsize float color float
 width float bordercolor;
 #N canvas 466 110 634 469 12;
 #X declare -path else;
@@ -10,8 +10,8 @@ width float bordercolor;
 #X obj 42 83 moses 1;
 #X text 34 47 Play/Stop;
 #X obj 104 141 count 15;
-#X obj 104 84 tempo 60 -div 4;
-#X msg 42 105 set 0;
+#X obj 104 98 tempo 60 -div 4;
+#X msg 42 109 set 0;
 #X obj 464 32 declare -path else;
 #X obj 56 336 play.file~ 1 dholak.aif, f 12;
 #X obj 152 337 play.file~ 1 bagal.aif, f 12;
@@ -34,7 +34,7 @@ slot. The output is the track number and slot value. So you need to
 route the value of each track. We then use select to trigger the sample.
 Check its help file for more info., f 46;
 #X text 497 150 <= preset;
-#X obj 61 389 out2~;
+#X obj 65 389 out2~;
 #X connect 0 0 3 0;
 #X connect 0 0 6 0;
 #X connect 2 0 6 1;

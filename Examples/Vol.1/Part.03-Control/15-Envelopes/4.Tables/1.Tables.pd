@@ -1,4 +1,4 @@
-#N canvas 618 48 690 730 12;
+#N canvas 529 23 690 730 12;
 #X declare -path else;
 #X obj 132 273 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -36,7 +36,15 @@ one of the functions used in the [fader~] object)., f 55;
 #X obj 94 495 osc~ 440;
 #X obj 153 596 out~;
 #X obj 171 530 tabplay~ \$0-sine;
-#N canvas 372 23 893 355 generate 0;
+#X text 48 172 The native [tabplay~] object is used to load the table
+and trigger the envelope. Click on the bangs below., f 55;
+#X text 578 129 duration;
+#X obj 522 32 declare -path else;
+#X text 47 104 The next is here called "sine" \, but it's actually
+just the first half the sine function (this is also used in [fader~]).
+Open the [pd tables] subpatch so see how to create these functions.
+, f 55;
+#N canvas 372 23 893 355 tables 1;
 #X obj 199 34 inlet;
 #X obj 99 227 osc~;
 #X msg 124 200 0.5;
@@ -56,14 +64,14 @@ one of the functions used in the [fader~] object)., f 55;
 #X obj 199 175 / 2;
 #X obj 221 205 sine~;
 #X obj 308 192 send \$0-hann;
+#X obj 39 80 setdsp~ 1;
 #X text 461 117 The table size is given in ms and we calculate the
-number of samples that depends on the sample rate to resize the table
+number of samples (that depends on the sample rate) to resize the table
 \, then we also get the frequency of this period in samples and feed
 it into oscillators that we use to generate the waveform and record
 it into tables with the native [tabwrite~] object. Note we use half
-the frequency for the sine function because we just need half of it.
-, f 55;
-#X obj 39 80 setdsp~ 1;
+the frequency for the sine function because we just need the first
+half of its cycle., f 55;
 #X connect 0 0 9 0;
 #X connect 1 0 6 0;
 #X connect 2 0 1 1;
@@ -85,19 +93,11 @@ the frequency for the sine function because we just need half of it.
 #X connect 15 0 7 0;
 #X connect 16 0 17 0;
 #X connect 17 0 14 0;
-#X restore 507 161 pd generate \; tables;
-#X text 47 104 The next is here called "sine" but it's actually just
-the first half the sine function (this is also used in [fader~]). Open
-the [pd tables] subpatch so see how to create these functions., f
-55;
-#X text 48 172 The native [tabplay~] object is used to load the table
-and trigger the envelope. Click on the bangs below., f 55;
-#X text 578 129 duration;
-#X obj 522 32 declare -path else;
+#X restore 507 161 pd tables;
 #X connect 0 0 16 0;
 #X connect 1 0 14 0;
 #X connect 2 0 1 0;
-#X connect 8 0 22 0;
+#X connect 8 0 26 0;
 #X connect 15 0 8 0;
 #X connect 16 0 1 1;
 #X connect 17 0 21 0;
