@@ -1,10 +1,5 @@
 #N canvas 482 60 564 520 12;
 #X declare -path else;
-#X text 88 74 This is basically the same as the last example \, but
-we get the output of both oscillators instead. Now we can't use [pmosc~]
-to implement this \, we need two [sine~] objects and get the audio
-signal from both \, and not just the signal we feed to the delay line
-as the output., f 55;
 #N canvas 887 255 553 491 Cross_Phase_Modulation 0;
 #X obj 298 57 inlet~;
 #X obj 377 57 inlet~;
@@ -56,27 +51,31 @@ as the output., f 55;
 #X text 155 276 index 1;
 #X text 67 284 Freq 1;
 #X text 287 283 Freq 2;
-#X text 88 166 This implies we have a stereo output. Open the subpacth
-below to check out how to implement this and see also the [xmod~] object
-\, from ELSE \, which does cross modulation for phase and frequency
-modulation., f 55;
 #X obj 412 364 initmess \; index1 0.3 \; index2 0.2 \; freq1 150 \;
 freq2 250;
-#X obj 259 384 xmod~ -pm;
-#X obj 326 31 declare -path else;
+#X obj 269 384 xmod~ -pm;
+#X obj 327 37 declare -path else;
 #X obj 97 425 out2~;
-#X obj 259 424 out2~;
-#X connect 1 0 16 0;
-#X connect 1 1 16 1;
-#X connect 2 0 3 0;
-#X connect 3 0 1 1;
-#X connect 3 0 14 1;
-#X connect 4 0 1 0;
-#X connect 4 0 14 0;
-#X connect 5 0 6 0;
-#X connect 6 0 1 3;
-#X connect 6 0 14 3;
-#X connect 7 0 1 2;
-#X connect 7 0 14 2;
-#X connect 14 0 17 0;
-#X connect 14 1 17 1;
+#X obj 269 424 out2~;
+#X text 74 88 This is basically the same as the last example \, but
+we get the output of both oscillators instead. Now we can't use [pmosc~]
+to implement this \, we need two [sine~] objects and get the audio
+signal from both., f 58;
+#X text 74 166 This implies we have a "stereo" output. Open the subpacth
+below to check out how to implement this. Also check the [xmod~] object
+from ELSE \, which does cross modulation for phase and frequency modulation.
+;
+#X connect 0 0 14 0;
+#X connect 0 1 14 1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 1;
+#X connect 2 0 12 1;
+#X connect 3 0 0 0;
+#X connect 3 0 12 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 3;
+#X connect 5 0 12 3;
+#X connect 6 0 0 2;
+#X connect 6 0 12 2;
+#X connect 12 0 15 0;
+#X connect 12 1 15 1;

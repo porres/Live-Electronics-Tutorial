@@ -69,14 +69,15 @@
 #X text 448 288 Frequency Modulation (Sawtooth), f 20;
 #X obj 270 353 expr $f1 / (4*mod);
 #X obj 683 354 expr $f1 * (4*mod);
-#X text 481 52 Rather than using an oscillator for the PM \, we just
-turn the saw wave into a parabola by raising to the power of two. You
-can invert the polarity of the sawtooth with the toggle., f 51;
 #X text 37 32 A PM being modulated by a parabola is the same as an
 FM modulated by sawtooth. To adjust the index for the FM we also multiply
 by the modulator frequency. But we also need to multiply it by a factor
 of four.;
 #X obj 699 18 declare -path else;
+#X text 481 52 Rather than using an oscillator for the PM \, we just
+turn the saw wave into a parabola by raising to the power of two. You
+can invert the polarity of the sawtooth with the toggle. Test it.,
+f 51;
 #X connect 0 0 6 1;
 #X connect 1 0 3 0;
 #X connect 2 0 11 0;

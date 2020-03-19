@@ -37,12 +37,6 @@
 #X msg 691 400 \; index_fm set \$1;
 #X obj 691 374 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 31.4159 256;
-#X text 32 50 It's time to show the relationship between FM and PM
-in practice \, not theory. For sine waves \, we need a phase difference
-of 90 degrees \, so as the phase modulation signal is a sine wave and
-the frequency modulation signal is a cosine wave. Another detail is
-that we need to adjust the value of the modulation index \, which is
-also done in this patch., f 55;
 #X text 197 179 Carrier;
 #X text 307 175 Mod;
 #X text 437 184 PM index;
@@ -52,11 +46,9 @@ also done in this patch., f 55;
 #X text 78 286 PHASE MODULATION;
 #X text 468 287 FREQUENCY MODULATION;
 #X obj 535 448 cosine~;
-#X text 445 127 This is a crucial diference where the modulating frequency
-affects the index \, so to speak \, in phase modulation.;
 #N canvas 994 421 242 172 init 0;
-#X obj 135 56 pi;
-#X obj 135 85 v pi;
+#X obj 155 56 pi;
+#X obj 155 85 v pi;
 #X obj 34 50 initmess \; carrier 440 \; mod 1 \; index_pm 1 \; pd dsp
 1;
 #X connect 0 0 1 0;
@@ -69,33 +61,41 @@ the frequency deviation is also higher.;
 #X obj 553 345 sine~;
 #X obj 310 293 s index_pm;
 #X obj 708 15 declare -path else;
+#X text 32 50 It's time to show the relationship between FM and PM
+in practice \, not theory. If the phase modulation signal is a sine
+wave \, the frequency modulation signal needs to be a cosine wave.
+Another detail is that we need to adjust the value of the modulation
+index \, which is also done in this patch., f 55;
+#X text 445 127 This is a crucial diference \, that the modulating
+frequency affects the index \, so to speak \, in phase modulation.
+;
 #X connect 0 0 8 1;
 #X connect 1 0 3 0;
 #X connect 2 0 25 0;
-#X connect 3 0 45 0;
+#X connect 3 0 43 0;
 #X connect 3 1 4 0;
 #X connect 3 1 5 0;
-#X connect 6 0 44 0;
+#X connect 6 0 42 0;
 #X connect 7 0 21 0;
-#X connect 8 0 40 0;
+#X connect 8 0 39 0;
 #X connect 9 0 10 0;
 #X connect 11 0 8 0;
 #X connect 12 0 23 0;
 #X connect 13 0 23 2;
 #X connect 14 0 26 0;
 #X connect 15 0 20 0;
-#X connect 16 0 36 0;
+#X connect 16 0 35 0;
 #X connect 17 0 30 0;
-#X connect 17 0 37 0;
+#X connect 17 0 36 0;
 #X connect 18 0 17 0;
-#X connect 19 0 37 0;
+#X connect 19 0 36 0;
 #X connect 20 0 27 0;
-#X connect 20 0 36 0;
+#X connect 20 0 35 0;
 #X connect 21 0 13 0;
 #X connect 23 0 22 0;
 #X connect 27 0 28 0;
 #X connect 30 0 29 0;
-#X connect 36 0 13 1;
-#X connect 37 0 0 1;
-#X connect 40 0 24 0;
-#X connect 44 0 0 0;
+#X connect 35 0 13 1;
+#X connect 36 0 0 1;
+#X connect 39 0 24 0;
+#X connect 42 0 0 0;
