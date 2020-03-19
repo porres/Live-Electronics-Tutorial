@@ -45,8 +45,6 @@ parts and snippets (or even "grains" in a granular perspective).,
 f 47;
 #X obj 701 506 table;
 #X obj 761 505 array;
-#X text 551 458 You can also use the native [table] or [array] objects
-to load an array - check their help files., f 47;
 #X text 40 22 For more playing flexibility \, we need to store the
 file in a "buffer" (term that indicates allocated memory). For such
 \, we load the file in an array with the native [soundfiler] object
@@ -57,6 +55,8 @@ like number of channels and sample rate). Check help file for more
 details., f 61;
 #X obj 714 21 declare -path else;
 #X obj 55 188 initmess read -resize bubul.wav \$0-sample, f 21;
+#X text 551 458 You can also use the native [table] or [array] objects
+to create an array - check their help files., f 47;
 #X connect 0 0 20 0;
 #X connect 1 0 2 0;
 #X connect 2 0 23 0;
@@ -75,4 +75,4 @@ details., f 61;
 #X connect 18 0 0 0;
 #X connect 19 0 3 0;
 #X connect 25 0 12 1;
-#X connect 34 0 1 0;
+#X connect 33 0 1 0;

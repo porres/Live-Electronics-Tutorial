@@ -35,26 +35,26 @@ offer not that many features. Check help file for more details.;
 #X msg 628 255 stop;
 #X text 490 139 Check its help file for more details and features.
 ;
-#X text 488 51 The [play.file~] obhect from ELSE is an abstraction
-that relies on the [readsf~] object. A big convenience is that it has
-multi channel support and can query the number of channels from a sound
-file given as an argument., f 54;
 #X obj 695 14 declare -path else;
 #X obj 161 244 symbol;
 #X obj 571 302 play.file~ violin.wav;
+#X text 488 51 The [play.file~] object from ELSE is an abstraction
+that relies on the [readsf~] object. A big convenience is that it has
+multi channel support and can query the number of channels from a sound
+file given as an argument., f 54;
 #X connect 0 0 8 0;
 #X connect 0 1 2 0;
 #X connect 1 0 0 0;
-#X connect 2 0 25 0;
+#X connect 2 0 24 0;
 #X connect 3 0 2 1;
-#X connect 5 0 25 0;
+#X connect 5 0 24 0;
 #X connect 6 0 5 0;
 #X connect 7 0 0 0;
-#X connect 9 0 25 0;
-#X connect 15 0 26 0;
+#X connect 9 0 24 0;
+#X connect 15 0 25 0;
 #X connect 16 0 18 0;
-#X connect 18 0 26 0;
-#X connect 19 0 26 0;
-#X connect 21 0 26 0;
-#X connect 25 0 7 0;
-#X connect 26 0 14 0;
+#X connect 18 0 25 0;
+#X connect 19 0 25 0;
+#X connect 21 0 25 0;
+#X connect 24 0 7 0;
+#X connect 25 0 14 0;

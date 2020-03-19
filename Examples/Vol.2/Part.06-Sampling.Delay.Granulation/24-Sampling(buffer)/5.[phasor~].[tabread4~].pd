@@ -1,4 +1,4 @@
-#N canvas 323 55 961 702 12;
+#N canvas 459 55 961 702 12;
 #X declare -path else;
 #X obj 728 345 phasor~;
 #X obj 728 404 tabread4~ \$0-buffer;
@@ -40,9 +40,6 @@ as the native [tabread4~] object or [table~] from ELSE., f 61;
 1.5x) which means the reading point will fall in between samples \,
 hence you need to interpolate. We'll see the interpolation type of
 [tabread4~] a bit later., f 61;
-#X text 37 142 These objects also allow you to play files with a different
-sample rate than Pd is running \, because since you can play the file
-at different speeds \, you can also compensate the difference.;
 #X obj 355 537 cnv 15 385 140 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #X text 373 541 Interpolation error:;
@@ -66,6 +63,10 @@ than Pd's) by the number of samples - both information are given by
 is based on)., f 61;
 #X obj 729 26 declare -path else;
 #X obj 171 343 sample~ \$0-buffer sax.wav;
+#X text 37 142 These objects also allow you to play files with a different
+sample rate than Pd is running \, because since you can play the file
+at different speeds \, you can also compensate the difference in speed.
+;
 #X connect 0 0 16 0;
 #X connect 1 0 11 0;
 #X connect 2 0 6 0;
@@ -80,10 +81,10 @@ is based on)., f 61;
 #X connect 18 0 20 1;
 #X connect 20 0 0 0;
 #X connect 21 0 4 0;
-#X connect 33 0 35 0;
-#X connect 33 0 3 0;
-#X connect 33 1 34 0;
-#X connect 34 0 35 1;
-#X connect 35 0 21 0;
-#X connect 35 1 21 1;
-#X connect 39 0 33 0;
+#X connect 32 0 34 0;
+#X connect 32 0 3 0;
+#X connect 32 1 33 0;
+#X connect 33 0 34 1;
+#X connect 34 0 21 0;
+#X connect 34 1 21 1;
+#X connect 38 0 32 0;

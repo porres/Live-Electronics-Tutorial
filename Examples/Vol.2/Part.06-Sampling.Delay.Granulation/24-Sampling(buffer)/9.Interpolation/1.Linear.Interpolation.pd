@@ -1,4 +1,4 @@
-#N canvas 349 23 907 531 12;
+#N canvas 374 105 907 531 12;
 #X declare -path else;
 #X obj 144 215 hsl 200 15 0 7 0 0 empty slider empty -2 -8 0 10 -228856
 -1 -1 1421 0;
@@ -69,10 +69,6 @@
 #X obj 173 269 nbx 5 14 -1e+37 1e+37 0 0 index empty empty 0 -8 0 10
 -228856 -1 -1 0.5 256;
 #X text 768 451 (n = 8);
-#X text 33 32 Interpolation is needed to find values in between samples
-or indexes in a table - such as 1.5 as a mid point between 1 and 2
-values \, for example. A sound file is an array of samples \, where
-each index corresponds to a sample amplitude value., f 58;
 #X text 33 111 The [readsf~] object does not interpolate so it can
 only play the file at the same speed Pd is running or multiple ones
 (twice as fast / twice as slow \, etc). Interpolation makes it possible
@@ -86,10 +82,15 @@ fractional mid values between samples., f 58;
 as in a linear interpolation. Arrays in Pd that are drawn as polygons
 do visually display a linear interpolation to connect the array's points.
 , f 53;
-#X text 477 157 Let's see this example with an 8 point array. Below
-we calculate the interpolation (indicated by the red dot)., f 53;
 #X obj 338 291 initmess \; slider 0.5;
 #X obj 680 22 declare -path else;
+#X text 33 32 Interpolation is needed to find values in between samples
+or indexes in a table - such as 1.5 as a mid point between values 1
+and 2 \, for example. A sound file is an array of samples \, where
+each index corresponds to a sample amplitude value., f 58;
+#X text 477 157 Let's see this example with an 8 point array. Below
+we calculate the linear interpolation (indicated by the red dot).,
+f 53;
 #X connect 0 0 2 0;
 #X connect 1 0 11 0;
 #X connect 1 1 12 0;

@@ -15,19 +15,19 @@
 object \, but we're playing a file with a sample rate of 88.2 Khz.
 Hence it has twice as much samples and the playing speed drops in half
 and an octave lower.;
-#X text 57 407 A workaround to read a sound file with a different sample
-rate is possible with resampling. In the subpatch above we have a 2x
-upsampling \, which makes it possible to play at the right speed (it'd
-also be possible to play a 96 Khz file when runnong Pd at 48 khz with
-2x upsampling \, or even a 192 Khz file with 4x oversampling).;
+#X obj 361 16 declare -path else;
+#X obj 85 238 initmess open sax.wav \, 1;
 #X text 59 64 For sound files to be played correctly with [tabplay~]
 and [readsf~] (or [play.file~] by extension) \, Pd needs to run at
 the same sample rate as the sound file's. Or else it'll play at a different
 speed. By the way \, most of the sound files used on this tutorial
-are at 44.1 Khz \, the usual one.;
-#X obj 361 16 declare -path else;
-#X obj 85 238 initmess open sax.wav \, 1;
+are at 44.1 Khz \, the most usual one.;
+#X text 57 407 A workaround to read a sound file with a different sample
+rate is possible with resampling. In the subpatch above we have a 2x
+upsampling \, which makes it possible to play at the right speed (it'd
+also be possible to play a 96 Khz file when running Pd at 48 khz with
+2x upsampling \, or even a 192 Khz file with 4x oversampling).;
 #X connect 0 0 1 0;
 #X connect 3 0 4 0;
-#X connect 3 1 9 0;
-#X connect 9 0 3 0;
+#X connect 3 1 7 0;
+#X connect 7 0 3 0;
