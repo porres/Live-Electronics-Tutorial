@@ -1,5 +1,5 @@
-#N struct 1024-DS float x float y array 1024-table 1024-element;
-#N struct 1024-element float x float y;
+#N struct 1003-DS float x float y array 1003-table 1003-element;
+#N struct 1003-element float x float y;
 #N canvas 387 93 534 598 12;
 #X obj 412 339 pointer;
 #N canvas 636 221 509 380 template 0;
@@ -7,19 +7,19 @@
 #X text 61 46 Data Structure named "\$0-DS" holding coordinates floats
 "x/y" and an array named "\$0-table" using the element struct named
 "\$0-f" defined in the other subpatch., f 53;
+#X obj 53 131 struct \$0-DS float x float y array \$0-table \$0-element
+;
 #X text 72 178 The drawing instruction now does not specify a spacing
 value between the floats in the array. This is because it would get
-ignored because we also have a "x" variable inthe element's struct.
+ignored because we also have a "x" variable in the element's struct.
 Hence \, it takes 'x' from the data itself. The 'x' values are initialized
 as "0" \, so all values in the array are grouped together at initialization.
 , f 47;
-#X obj 53 131 struct \$0-DS float x float y array \$0-table \$0-element
-;
 #X restore 357 157 pd template;
 #X msg 47 272 0 20 40 60 80 100 120 140 160 180 200 220 240 260 280
 300;
-#X obj 229 473 display;
-#X text 257 474 <= sets size;
+#X obj 210 473 display;
+#X text 238 474 <= sets size;
 #X text 77 21 In this example we're able to set the values of both
 'x' and 'y' elements in an array., f 52;
 #X text 76 67 You can now click and drag each point in the array both
@@ -28,18 +28,20 @@ vertically and horizontaly., f 52;
 #X text 66 312 You can later drag around also in the 'x' axis., f
 19;
 #X obj 303 369 append \$0-DS x y;
-#X obj 229 503 array size -s \$0-DS \$0-table;
+#X obj 210 503 array size -s \$0-DS \$0-table;
 #X obj 47 402 array set -s \$0-DS \$0-table -f \$0-f x;
 #X obj 60 129 initmess \; pd-\$0-display clear \, vis 1 \; \$0-pointer
 traverse pd-\$0-display \, bang \; \$0-coords 10 105 \; \$0-size 16
 ;
 #N canvas 1005 301 334 221 \$0-display 1;
-#X scalar 1024-DS 10 105 \; 0 0 \; \;;
+#X scalar 1003-DS 10 105 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; \;;
 #X coords 0 221 1 220 0 0 0;
 #X restore 357 184 pd \$0-display;
 #X obj 412 309 r \$0-pointer;
 #X obj 303 328 r \$0-coords;
-#X obj 229 445 r \$0-size;
+#X obj 210 445 r \$0-size;
 #N canvas 442 23 480 272 \$0-element 0;
 #X obj 92 230 filledpolygon 0 0 1 -2 -2 2 -2 2 2 -2 2;
 #X text 89 200 draw a black dot to represent the value:;

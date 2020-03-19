@@ -1,3 +1,5 @@
+#N struct 1010-DS float x float y array 1010-table 1010-element;
+#N struct 1010-element float y;
 #N canvas 361 46 520 606 12;
 #X obj 421 387 pointer;
 #N canvas 689 169 474 279 template 0;
@@ -25,16 +27,18 @@ defined in the other subpatch., f 53;
 #X text 147 482 <= sets size;
 #X text 77 14 You can also use the [array] object to set \, get and
 do all sorts of operations in a Data Structure array (as well with
-other regular arrays in Pd)., f 49;
-#X text 77 84 Here we use it instead of [setsize]/[getsize]. In the
+other regular arrays in Pd)., f 50;
+#X text 77 80 Here we use it instead of [setsize]/[getsize]. In the
 case of arrays composed only of floats \, it eliminates the need of
-the [element] and [set] objects as well., f 49;
+the [element] and [set] objects as well., f 50;
 #X obj 312 418 append \$0-DS x y;
 #X obj 119 519 array size -s \$0-DS \$0-table;
 #X obj 97 408 array set -s \$0-DS \$0-table;
 #X text 77 154 Check in [pd element] that we also added a drawing instruction
 for the float element as well.;
 #N canvas 965 238 334 221 \$0-display 1;
+#X scalar 1010-DS 10 105 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; \;;
 #X coords 0 221 1 220 0 0 0;
 #X restore 356 285 pd \$0-display;
 #X obj 421 356 r \$0-pointer;

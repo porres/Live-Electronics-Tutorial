@@ -26,9 +26,9 @@
 #X text 233 288 - draw an array;
 #X text 423 249 (actually these are the same), f 15;
 #X text 57 98 1) Data templates (objects to declare and draw Data Structures):
-, f 38;
+, f 34;
 #X text 67 339 2) Data Access (objects that add \, access and edit
-Data Structures):, f 41;
+Data Structures):, f 33;
 #X text 147 418 Get/store the location (pointer) of a Data Structure:
 , f 30;
 #X text 211 390 Add a Data Structure:;

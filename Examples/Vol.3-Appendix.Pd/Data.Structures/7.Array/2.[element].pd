@@ -1,25 +1,25 @@
-#N struct 1003-DS float x float y array 1003-table 1003-element;
-#N struct 1003-element float y;
-#N canvas 221 174 719 421 12;
+#N struct 1004-DS float x float y array 1004-table 1004-element;
+#N struct 1004-element float y;
+#N canvas 264 158 719 421 12;
 #X obj 567 124 pointer;
 #N canvas 364 371 509 380 template 0;
-#X text 83 200 The drawing instruction now add more arguments. Besides
+#X text 83 190 The drawing instruction now add more arguments. Besides
 the name we have the color number \, a line width \, a coordinates
 pair and a spacing value (20) between the floats in the array., f
 47;
-#X obj 169 292 plot \$0-table 900 2 0 0 20;
+#X obj 169 282 plot \$0-table 900 2 0 0 20;
 #X obj 53 128 struct \$0-DS float x float y array \$0-table \$0-element
 ;
 #X text 61 46 Data Structure named "\$0-DS" holding coordinates floats
 "x/y" and an array named "\$0-table" using the struct named "\$0-element"
 defined in the other subpatch., f 53;
-#X restore 119 154 pd template;
+#X restore 120 154 pd template;
 #X obj 307 156 display;
 #X text 497 333 <= pointer to element;
 #X obj 485 276 nbx 3 16 0 15 0 0 empty \$0-index empty 0 -8 0 12 -228856
 -1 -1 5 256;
 #X obj 376 276 nbx 4 16 -100 100 0 0 empty empty empty 0 -8 0 12 -228856
--1 -1 20 256;
+-1 -1 0 256;
 #X text 492 252 index;
 #X text 380 252 value;
 #X obj 458 154 append \$0-DS x y;
@@ -32,10 +32,10 @@ traverse pd-\$0-display \, bang \; \$0-coords 10 105 \; \$0-size 16
 #X obj 458 113 r \$0-coords;
 #X obj 567 94 r \$0-pointer;
 #N canvas 1026 253 334 221 \$0-display 1;
-#X scalar 1003-DS 10 105 \; 0 \; 0 \; 0 \; 0 \; 0 \; 20 \; 0 \; 0 \;
+#X scalar 1004-DS 10 105 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; \;;
 #X coords 0 221 1 220 0 0 0;
-#X restore 118 182 pd \$0-display;
+#X restore 120 177 pd \$0-display;
 #N canvas 489 118 484 283 \$0-element 0;
 #X obj 133 219 filledpolygon 0 0 1 -2 -2 2 -2 2 2 -2 2;
 #X text 65 171 We can also use drawing instructions for each element

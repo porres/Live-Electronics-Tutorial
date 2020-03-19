@@ -1,5 +1,5 @@
 #N struct 1006-DS float color float x float y;
-#N canvas 341 131 460 376 12;
+#N canvas 449 122 460 376 12;
 #N canvas 408 46 478 607 template 0;
 #X obj 144 301 drawcurve color 2 0 0 50 100 100 0;
 #X obj 106 549 filledcurve color 0 5 0 100 100 100 50 50;
@@ -13,7 +13,7 @@ in [struct])., f 51;
 pixels. The next arguments are pairs of point coordinates to connect
 with the line \, which is now curved. Here we have just three pairs
 of coordinates (0/0) \, (50/100) and (100/0) - so a curved line is
-drawn to connect these three dots., f 51;
+drawn to connect these three dots., f 52;
 #X text 84 473 The [filledcurve] object is also similar to [filledpolygon]
 \, it needs an extra first argument to set interior color and now all
 dots are connected to form a closed shape, f 43;
@@ -24,7 +24,7 @@ dots are connected to form a closed shape, f 43;
 #X text 42 22 Now let's have more fun with curved shapes. See the [pd
 template] subpatch for details. As in the last example \, click and
 drag the "color" number to see the colors changing., f 52;
-#N canvas 840 215 282 196 \$0-display 1;
+#N canvas 938 199 282 196 \$0-display 1;
 #X scalar 1006-DS 500 50 50 \;;
 #X restore 196 142 pd \$0-display;
 #X obj 213 283 pointer;

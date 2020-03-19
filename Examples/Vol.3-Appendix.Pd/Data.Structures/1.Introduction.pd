@@ -26,30 +26,30 @@ it., f 61;
 template name as defined in a [struct] object ("DS-1" in our example)
 \, the remaining arguments are the declared data types ("number" in
 this case)., f 61;
-#X text 47 23 In this subpatch we concentrate the code for managing
-data structures. Here \, we simply create an instance of the template
-we defined in the previous subpatch - which is a graphical object and
-also called a "scalar" in Pd (but the term is confusing as it relates
-to something else in math and computing)., f 61;
 #X text 47 264 The [append] object needs to know where to add the scalar
 \, this is done by receiving a pointer in the right inlet \, given
 by the [pointer] object. In Pd \, a "pointer" points at a certain data
 structure object in a subptach used for display., f 61;
-#X text 47 330 The "traverse" message to [pointer] tells which subpatch
-to look for data structures objects. Next \, a "bang" message outputs
-the head of the list of objects in that subpatch area - think of it
-as a pointer to the beginning of an empty list of objects \, with this
-pointer we can then "append" an object after the head with [append].
-, f 61;
 #X text 47 424 The patch to the right deals with all that and it starts
 by clearing the [pd graphic] subptach before adding the data structure.
 You can then see the added data structure object in the [pd graphic]
 subpatch \, which you can click and drag to change values or also click
 and type a new value., f 61;
 #X obj 616 394 append \$0-DS-1 number;
-#X connect 0 0 16 1;
+#X text 47 23 In this subpatch we concentrate the code for managing
+data structures. Here \, we simply create an instance of the template
+we defined in the previous subpatch - which is a graphical object -
+also called a "scalar" in Pd (but the term is confusing as it relates
+to something else in math and computing)., f 61;
+#X text 47 330 The "traverse" message to [pointer] tells which subpatch
+to look for data structures objects. Next \, a "bang" message outputs
+the head of the list of objects in that subpatch area - think of it
+as a pointer to the beginning of an empty list of objects \, with this
+pointer we can then "append" an object after the head with the [append]
+object., f 61;
+#X connect 0 0 14 1;
 #X connect 1 0 9 0;
-#X connect 2 0 16 0;
+#X connect 2 0 14 0;
 #X connect 2 1 4 0;
 #X connect 2 2 3 0;
 #X connect 3 0 7 0;
