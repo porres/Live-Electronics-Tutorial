@@ -1,4 +1,4 @@
-#N canvas 389 36 571 485 12;
+#N canvas 618 87 571 500 12;
 #X declare -path else;
 #X obj 105 371 complex-mod~;
 #X obj 105 342 hilbert~;
@@ -10,10 +10,6 @@
 -1 -1 0 256;
 #X obj 306 331 osc~ 440;
 #X text 390 313 Modulator;
-#X text 71 142 This abstraction also provides a second output \, which
-is a separate and opposite sideband. That is a frequency shift to the
-opposite direction. Thinking of a Ring Modulator \, is like you the
-two sidebands appart.;
 #X obj 306 367 freq.shift~;
 #X obj 345 30 declare -path else;
 #X obj 102 403 out2~;
@@ -25,13 +21,17 @@ modulation. It needs a complex signal input and a modulating frequency.
 [freq.shift~]. The difference is that it doesn't need a complex signal
 input \, but a real one \, because the conversion to a complex signal
 is done internally.;
-#X connect 0 0 11 0;
-#X connect 0 1 11 1;
+#X text 71 142 This abstraction also provides a second output \, which
+is a separate and opposite sideband (a frequency shift to the opposite
+direction). Thinking of a Ring Modulator \, is like you the two sidebands
+separately.;
+#X connect 0 0 10 0;
+#X connect 0 1 10 1;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
 #X connect 2 0 0 2;
 #X connect 3 0 1 0;
-#X connect 5 0 9 1;
-#X connect 6 0 9 0;
-#X connect 9 0 12 0;
-#X connect 9 1 12 1;
+#X connect 5 0 8 1;
+#X connect 6 0 8 0;
+#X connect 8 0 11 0;
+#X connect 8 1 11 1;

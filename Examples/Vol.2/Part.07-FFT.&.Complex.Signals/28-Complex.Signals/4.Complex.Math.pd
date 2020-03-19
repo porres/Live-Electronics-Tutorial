@@ -1,11 +1,9 @@
-#N canvas 353 26 840 368 12;
+#N canvas 321 81 880 356 12;
 #X declare -path else;
 #X text 169 259 [(b * c) + (a * d)]i;
 #X text 34 29 Complex math has special properties from the imaginary
 unit \, which gives us -1 when squared. Let's see what happens when
 multiplying two complex numbers., f 47;
-#X text 44 99 - so we have: (a + b.i) * (c + d.i) \; - After the distributive
-property we gots \; (a * c) + (b.i * d.i) + (b.i * c) + (a * d.i);
 #X text 37 164 In the first half we have: (a * c) + (b.i * d.i). The
 multiplication of the imaginary units (b.i * d.i) gives us "-1" \,
 so we end up with (a * c) - (b * d)., f 49;
@@ -16,7 +14,7 @@ the second half is the imaginary part., f 51;
 #X text 427 48 The subpatch below implements this complex multiplication
 and shows us a mathematical property \, which is the fact that we get
 the same result by multiplying the amplitudes and summing the initial
-phases., f 52;
+phases., f 57;
 #N canvas 293 23 878 562 Complex-Multiply 0;
 #X obj 314 91 v Re1;
 #X obj 374 91 v Im1;
@@ -126,7 +124,7 @@ the amplitudes and summing the initial phases., f 41;
 #X connect 41 0 32 0;
 #X connect 41 1 33 0;
 #X restore 584 132 pd Complex-Multiply;
-#N canvas 235 23 969 732 Complex-Division 0;
+#N canvas 235 23 917 740 Complex-Division 0;
 #X text 470 198 Amplitudes;
 #X obj 494 109 nbx 4 18 -1e+37 1e+37 0 0 empty \$0-Re1 Re1 0 -8 0 12
 -262130 -1 -1 30 256;
@@ -286,4 +284,6 @@ the amplitudes and summing the initial phases., f 41;
 #X text 438 174 For complex division \, we have a similar property
 \, where we have the same result by dividing the amplitudes and subtracting
 the initial phases. We also need a normalization factor. Open the subpatch
-below for more details., f 50;
+below for more details., f 55;
+#X text 44 99 - so we have: (a + b.i) * (c + d.i) \; - After the distributive
+property we get \; (a * c) + (b.i * d.i) + (b.i * c) + (a * d.i);
