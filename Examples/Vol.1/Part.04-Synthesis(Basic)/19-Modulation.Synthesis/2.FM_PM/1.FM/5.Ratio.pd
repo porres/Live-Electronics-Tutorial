@@ -1,30 +1,30 @@
-#N canvas 601 27 554 581 12;
+#N canvas 569 28 554 581 12;
 #X declare -path else;
-#X obj 211 468 out~;
-#X obj 211 425 sine~;
-#X obj 211 387 +~;
-#X obj 161 235 f2s~ 10;
-#X obj 229 318 sine~;
-#X obj 229 351 *~;
-#X obj 295 338 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-index empty 0 -8
+#X obj 210 487 out~;
+#X obj 210 444 sine~;
+#X obj 210 406 +~;
+#X obj 160 248 f2s~ 10;
+#X obj 228 337 sine~;
+#X obj 228 370 *~;
+#X obj 294 357 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-index empty 0 -8
 0 10 -228856 -1 -1 100 256;
-#X text 352 336 Index;
-#X obj 229 266 *~;
-#X obj 247 235 f2s~ 10 1;
-#X obj 295 363 f2s~ 10;
-#X obj 247 212 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X text 351 355 Index;
+#X obj 228 285 *~;
+#X obj 246 254 f2s~ 10 1;
+#X obj 294 382 f2s~ 10;
+#X obj 246 231 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0.5 256;
-#X obj 161 212 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-carrier empty 0
+#X obj 160 225 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-carrier empty 0
 -8 0 10 -228856 -1 -1 300 256;
-#X obj 353 426 initmess \; \$0-carrier 300 \; \$0-ratio 0.5 \; \$0-index
+#X obj 352 445 initmess \; \$0-carrier 300 \; \$0-ratio 0.5 \; \$0-index
 100;
-#X obj 250 189 hsl 128 15 0.5 2 0 0 empty \$0-ratio empty -2 -8 0 10
+#X obj 249 208 hsl 128 15 0.5 2 0 0 empty \$0-ratio empty -2 -8 0 10
 -228856 -1 -1 0 1;
-#X text 164 189 Hz;
-#X text 108 317 carrier =>;
-#X text 241 289 <= modulator;
-#X text 307 208 Ratio;
-#X text 63 53 It is common to set the modulator frequency as a ratio
+#X text 163 202 Hz;
+#X text 107 336 carrier =>;
+#X text 240 308 <= modulator;
+#X text 306 227 Ratio;
+#X text 62 67 It is common to set the modulator frequency as a ratio
 of the carrier frequency. By doing so \, you only have one frequency
 input. This structure also keeps the same sonority for different picthes
 as the ratio relationship is intact. After all \, it is this ratio

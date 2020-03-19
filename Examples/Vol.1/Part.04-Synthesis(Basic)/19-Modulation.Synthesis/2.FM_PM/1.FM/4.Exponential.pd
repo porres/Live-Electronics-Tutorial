@@ -1,4 +1,4 @@
-#N canvas 680 44 553 590 12;
+#N canvas 584 43 553 590 12;
 #X declare -path else;
 #X obj 213 502 out~;
 #X obj 213 467 sine~;
@@ -26,11 +26,11 @@ is now in semitones \, not hertz!;
 #X obj 293 413 initmess \; \$0-carrier 60 \; \$0-mod 34 \; \$0-index
 28;
 #X text 287 242 (deviation in MIDI values);
+#X obj 356 18 declare -path else;
 #X text 63 125 This does change the overall modulating signal. We basically
-have a different and non simmetrical waveform as a result \, ehich
+have a different and non simmetrical waveform as a result \, which
 promotes a distinct behaviour and output. The main difference in the
 patch is to just use [mtof~] to convert to hertz!;
-#X obj 356 18 declare -path else;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;

@@ -8,7 +8,7 @@
 #X obj 133 52 inlet;
 #X obj 133 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
-#X text 164 154 This patch is used inside [clone] in one of the examples
+#X text 205 168 This patch is used inside [clone] in one of the examples
 in this series., f 22;
 #X obj 61 114 rand.i 200 1500, f 8;
 #X obj 257 62 declare -path else;

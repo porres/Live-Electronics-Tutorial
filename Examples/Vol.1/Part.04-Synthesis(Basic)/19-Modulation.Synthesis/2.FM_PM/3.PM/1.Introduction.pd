@@ -1,4 +1,4 @@
-#N canvas 145 42 1209 546 12;
+#N canvas 204 58 1209 546 12;
 #X declare -path else;
 #X obj 172 231 +~;
 #X obj 114 123 nbx 4 14 -1e+37 1e+37 0 1 empty portadora empty 0 -8
@@ -42,7 +42,7 @@
 #X obj 900 141 nbx 4 14 -1e+37 1e+37 0 1 empty portadora empty 0 -8
 0 10 -228856 -1 -1 400 256;
 #X obj 919 271 out~;
-#X obj 965 171 osc~;
+#X obj 965 166 osc~;
 #X obj 965 193 *~;
 #X obj 965 141 nbx 4 14 -1e+37 1e+37 0 1 empty moduladora empty 0 -8
 0 10 -228856 -1 -1 1 256;
@@ -71,13 +71,13 @@
 #X obj 936 415 pmosc~;
 #X obj 882 374 nbx 4 14 -1e+37 1e+37 0 1 empty portadora empty 0 -8
 0 10 -228856 -1 -1 400 256;
-#X obj 947 374 nbx 4 14 -1e+37 1e+37 0 1 empty moduladora empty 0 -8
+#X obj 949 374 nbx 4 14 -1e+37 1e+37 0 1 empty moduladora empty 0 -8
 0 10 -228856 -1 -1 1 256;
-#X obj 1005 354 nbx 4 14 0 1e+37 0 1 empty indice empty 0 -8 0 10 -228856
+#X obj 1008 354 nbx 4 14 0 1e+37 0 1 empty indice empty 0 -8 0 10 -228856
 -1 -1 10 256;
-#X obj 1005 380 float2sig~ 10;
-#X text 1053 352 Index;
-#X text 948 353 Mod;
+#X obj 1008 380 float2sig~ 10;
+#X text 1056 352 Index;
+#X text 950 353 Mod;
 #X text 875 353 Carrier;
 #X text 803 63 The [cosine~] external from ELSE makes it simpler by
 just using its phase input. The [pmosc~] object from ELSE provides
@@ -86,12 +86,6 @@ a PM structure with sine waves as well. Check it out., f 53;
 frequency modulation structure using phase signals. But now we'll see
 a proper phase modulation structure instead \, which is not equivalent.
 Here's Frequency Modulation's structure once again., f 52;
-#X text 77 412 The reason to stress so much the relationship between
-Frequency and Phase modulation is because it is common to see something
-labeled as a Frequency Modulation when it is actually Phase Modulation.
-One example is the famous DX7 synth. So we'll dig quite deep into this
-ans see how you can achieve the same result with both implementations
-, f 67;
 #X text 419 35 In phase modulation's classic structure we just have
 an oscillator as modulating signal going straight into the phase input
 \, and not like we did before \, where that signal went through a [phasor~].
@@ -101,12 +95,18 @@ You can also visualize that the [osc~] object has been split into a
 #X obj 649 198 f2s~ 10;
 #X obj 1018 187 f2s~ 10;
 #X obj 1027 21 declare -path else;
+#X text 40 412 The reason to stress so much the relationship between
+Frequency and Phase modulation is because it is common to see something
+labeled as a Frequency Modulation when it is actually Phase Modulation.
+One example is the famous DX7 synth. So we'll dig quite deep into this
+and see how you can achieve the same result with both implementations
+, f 70;
 #X connect 0 0 7 0;
 #X connect 1 0 6 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 1;
 #X connect 4 0 2 0;
-#X connect 5 0 71 0;
+#X connect 5 0 70 0;
 #X connect 6 0 0 0;
 #X connect 7 0 27 0;
 #X connect 8 0 9 0;
@@ -117,18 +117,18 @@ You can also visualize that the [osc~] object has been split into a
 #X connect 29 0 30 0;
 #X connect 30 0 11 1;
 #X connect 31 0 29 0;
-#X connect 32 0 72 0;
+#X connect 32 0 71 0;
 #X connect 33 0 39 0;
 #X connect 35 0 36 0;
 #X connect 36 0 39 2;
 #X connect 37 0 35 0;
-#X connect 38 0 73 0;
+#X connect 38 0 72 0;
 #X connect 39 0 34 0;
 #X connect 59 0 58 0;
 #X connect 60 0 59 0;
 #X connect 61 0 59 1;
 #X connect 62 0 63 0;
 #X connect 63 0 59 2;
-#X connect 71 0 3 1;
-#X connect 72 0 30 1;
-#X connect 73 0 36 1;
+#X connect 70 0 3 1;
+#X connect 71 0 30 1;
+#X connect 72 0 36 1;

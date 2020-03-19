@@ -1,4 +1,4 @@
-#N canvas 211 67 1110 532 12;
+#N canvas 254 83 1110 532 12;
 #X obj 883 354 cnv 15 198 138 empty empty empty 20 12 0 14 -211497
 -66577 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -753,11 +753,11 @@
 #X text 792 65 derivative;
 #X text 790 237 derivative;
 #X text 788 389 derivative;
-#X text 77 24 And now for a simple revision of all waveforms we've
-seen int this section. On the left we have the frequency signal waveforms
-and on the right the phase signal.;
 #X text 77 80 Let's remember the functions can be converted to and
 back with the derivative and the integral. More precisely \, departing
 from a frequency signal \, the phase signal can be obtained by calculating
 the integral \, and the derivative gives us the frequency signal of
 a phase signal.;
+#X text 77 24 And now for a simple revision of all waveforms we've
+seen in this section. On the left we have the frequency signal waveforms
+\, and on the right the phase signal., f 58;

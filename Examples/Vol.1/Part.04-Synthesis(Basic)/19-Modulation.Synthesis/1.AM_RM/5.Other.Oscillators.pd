@@ -137,15 +137,15 @@
 #X text 409 69 carrier;
 #X text 561 67 mod;
 #X text 569 234 Amplitude Modulation, f 10;
-#X text 32 17 More complex modulator signals will create more partials
-in any Amplitude Modulation patch (including Ring Modulation). We usually
-see just sine waves as the modulator signal because that just might
-be enough \, specially as an effects processor. As for synthesis \,
-a more interesting and efficient technique to generating complex sounds
-is with frequency and phase modulation \, as we'll see next., f 45
-;
 #X obj 524 25 declare -path else;
 #X obj 58 178 play.file~ bubul.wav 1 1, f 25;
+#X text 23 18 More complex modulator signals will create more partials
+in any Amplitude Modulation patch (including Ring Modulation). We usually
+see just sine waves as the modulator signal because that is probably
+just enough \, specially as an effects processor. As for synthesis
+\, a more interesting and efficient technique to generating complex
+sounds is with frequency and phase modulation \, as we'll see next.
+, f 48;
 #X connect 0 0 4 1;
 #X connect 2 0 0 0;
 #X connect 4 0 3 0;
@@ -156,4 +156,4 @@ is with frequency and phase modulation \, as we'll see next., f 45
 #X connect 18 0 21 0;
 #X connect 19 0 18 0;
 #X connect 21 0 15 1;
-#X connect 27 0 4 0;
+#X connect 26 0 4 0;

@@ -1,4 +1,4 @@
-#N canvas 690 89 552 562 12;
+#N canvas 618 90 552 562 12;
 #X declare -path else;
 #N canvas 179 95 483 427 oscillator 0;
 #X obj 175 343 outlet~;
@@ -74,21 +74,21 @@
 #X text 110 213 Carrier;
 #X obj 208 166 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-mod empty 82 9 0
 15 -228856 -1 -1 50.5 256;
-#X text 65 62 In this patch we can test different combinations of oscillators.
-Waveforms are ordered by spectral content from a simple sinewave to
-a rich sawtooth (the only which contains odd and even harmonics). The
-more complex the oscillator \, the more complex is the result., f
-57;
-#X text 237 363 For the modulating signal \, we have non bandlimited
-waveforms \, that is perfect shapes. But the oscillator that receives
-the frequency modulated signal is band limited., f 31;
 #X obj 352 270 f2s~ 10;
 #X obj 360 23 declare -path else;
+#X text 66 62 In this patch we can test different combinations of oscillators.
+Waveforms are ordered by spectral content from a simple sinewave to
+a richer sawtooth (the only which contains odd and even harmonics).
+The more complex the oscillator \, the more complex the result is.
+, f 57;
+#X text 237 363 For the modulating signal \, we have non bandlimited
+waveforms (that is 'perfect' shapes). But the oscillator that receives
+the frequency modulated signal is band limited., f 31;
 #X connect 0 0 1 0;
 #X connect 1 0 3 1;
-#X connect 2 0 13 0;
+#X connect 2 0 11 0;
 #X connect 3 0 6 0;
 #X connect 4 0 3 0;
 #X connect 6 0 5 0;
 #X connect 10 0 0 0;
-#X connect 13 0 1 1;
+#X connect 11 0 1 1;

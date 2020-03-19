@@ -3,7 +3,7 @@
 #X obj 502 303 mtof;
 #X obj 502 330 trigger float bang;
 #X obj 502 278 nbx 2 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
--228856 -1 -1 55 256;
+-228856 -1 -1 56 256;
 #N canvas 680 54 531 551 parcial 0;
 #X obj 201 201 cnv 15 186 78 empty empty empty 20 12 0 14 -249661 -66577
 0;
@@ -292,12 +292,7 @@
 \$0-p3 3.01 0.85 0.5 \; \$0-p4 4.03 0 1 \; \$0-p5 4.95 0.325 0.4 \;
 \$0-p6 6.05 0.9 0.7 \; \$0-p7 7.07 0.7 0.6 \; \$0-p8 7.93 0.25 0.8
 ;
-#X text 25 110 Open any subpatch below to see what's going on.;
-#X text 23 17 In this example we have eight oscillators with independent
-control for frequency \, amplitude and phase. The fundamental frequency
-is given from random pitches and each partial's frequency is obtained
-from a ratio. By the dfault \, we habe an inharmonic/detuned series
-\, which was not possible with the "sinesum" command.;
+#X text 25 119 Open any subpatch below to see what's going on.;
 #X text 486 57 Here we can also test the effect of changing the phase
 of a partial (also not possible with the "sinesum" command). Though
 it does change the waveform \, you can note how it doesn't change our
@@ -308,11 +303,17 @@ perception of the resulting sound., f 49;
 #X obj 502 219 tempo 30 100;
 #X obj 502 248 rand.i 36 60;
 #X obj 695 27 declare -path else;
+#X text 24 17 In this example we have eight oscillators with independent
+controls for frequency \, amplitude and phase. The fundamental frequency
+is given from random pitches and each partial's frequency is obtained
+from a ratio. By the dfault \, we have an inharmonic/detuned series
+\, which was not possible with array with the "sinesum" command and
+[tabread4~].;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 2 0 0 0;
 #X connect 4 0 7 0;
+#X connect 18 0 19 0;
 #X connect 19 0 20 0;
 #X connect 20 0 21 0;
-#X connect 21 0 22 0;
-#X connect 22 0 2 0;
+#X connect 21 0 2 0;

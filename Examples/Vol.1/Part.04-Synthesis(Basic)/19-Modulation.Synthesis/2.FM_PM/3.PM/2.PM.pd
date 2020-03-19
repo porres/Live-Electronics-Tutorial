@@ -1,4 +1,4 @@
-#N canvas 364 33 828 448 12;
+#N canvas 463 94 828 448 12;
 #X declare -path else;
 #X obj 89 242 cnv 15 298 138 empty empty empty 20 12 0 14 -228856 -66577
 0;
@@ -585,12 +585,6 @@
 in Frequency Modulation \, and the behaviour is similar. One big difference
 is that the modulation index is usually between 0 and 1 \, whereas
 in FM it's quite higher., f 55;
-#X text 37 109 The index is the deviation amplitude \, in the context
-of phase \, the 0 to 1 range is a full cycloe (360 degrees). So \,
-for example \, an index of 0.25 promotes a deviation of half a cycle
-(from 0.25 to -0.25). As in FM \, a higher index generates more partials
-\, spaced in bands that correspond to the modulator frequency., f
-55;
 #X text 470 158 Carrier;
 #X text 533 158 Mod;
 #X text 581 158 Index;
@@ -602,10 +596,16 @@ for example \, an index of 0.25 promotes a deviation of half a cycle
 #X text 679 152 Harmonic;
 #X obj 623 13 declare -path else;
 #X obj 459 313 out~;
+#X text 37 109 The index is the deviation amplitude \, in the context
+of phase \, the 0 to 1 range is a full cycloe (360 degrees). So \,
+for example \, an index of 0.25 promotes a deviation of half a cycle
+(from 0.25 to -0.25). As in FM \, a higher index generates more partials
+\, spaced in bands that correspond to the modulator's frequency.,
+f 55;
 #X connect 9 0 13 0;
 #X connect 10 0 13 1;
-#X connect 12 0 20 0;
+#X connect 12 0 19 0;
 #X connect 13 0 11 0;
 #X connect 13 0 14 0;
-#X connect 13 0 27 0;
-#X connect 20 0 13 2;
+#X connect 13 0 26 0;
+#X connect 19 0 13 2;

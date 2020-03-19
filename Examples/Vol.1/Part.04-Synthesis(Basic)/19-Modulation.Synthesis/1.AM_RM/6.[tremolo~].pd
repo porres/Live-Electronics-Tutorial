@@ -26,7 +26,7 @@
 #X obj 264 288 expr 1 - $f1;
 #X floatatom 264 314 5 0 0 0 - - -;
 #X obj 291 454 vsl 20 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 3049 1;
+-1 -1 4827 1;
 #X obj 264 266 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X text 316 546 0;
@@ -49,11 +49,11 @@ bypass.;
 #X text 24 23 A tremolo effect is basically a low frequency amplitude
 modulation. What's new is a "depth" parameter that goes from 0 to 1
 and controls how much of the modulation we have., f 56;
-#X text 24 87 Hence \, at "0" we have the no tremolo and "1" gives
-us a full tremolo. This is done with a simple rescaling of the modulating
-signal \, below we use [rescale~] for that., f 56;
 #X obj 711 20 declare -path else;
 #X obj 112 156 play.file~ violin.wav 1 1, f 26;
+#X text 24 87 Hence \, at "0" we have no tremolo and "1" gives us a
+full tremolo. This is done with a simple rescaling of the modulating
+signal \, below we use [rescale~] for that.;
 #X connect 0 0 21 0;
 #X connect 2 0 8 0;
 #X connect 3 0 2 0;
@@ -71,4 +71,4 @@ signal \, below we use [rescale~] for that., f 56;
 #X connect 21 0 18 0;
 #X connect 26 0 17 1;
 #X connect 27 0 20 0;
-#X connect 33 0 1 0;
+#X connect 32 0 1 0;

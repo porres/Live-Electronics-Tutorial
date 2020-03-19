@@ -12,12 +12,6 @@
 #X obj 542 123 sig~;
 #X obj 600 263 osc~;
 #X obj 600 303 out~;
-#X text 27 26 Generally speaking \, modulating a signal means only
-applying any change to it \, but in the context of computer music and
-synthesis \, we're talking about a modulating signal controlling a
-parameter \, such as the amplitude as we've seen. Let's check now the
-basic structure of Frequency Modulation with an oscillator as the modulating
-singal., f 60;
 #X text 535 59 Carrier Frequency, f 9;
 #X text 614 56 Modulator Frequency, f 9;
 #X text 721 97 Modulating Index, f 10;
@@ -25,28 +19,34 @@ singal., f 60;
 #X text 511 160 carrier signal =>, f 9;
 #X text 611 227 <= Frequency Modulated (FM) signal;
 #X text 504 262 oscillator =>;
+#X obj 671 137 f2s~ 10;
+#X obj 750 41 declare -path else;
+#X text 27 26 Generally speaking \, modulating a signal means applying
+any change to it. But in the context of computer music and synthesis
+\, we're talking about a modulating signal that controls a parameter
+\, such as the amplitude as we've seen. Let's check now the basic structure
+of Frequency Modulation with an oscillator as the modulating signal.
+;
 #X text 27 122 The signal to be modulated is called the "Carrier" -
 in the case of frequency modulation \, this can also be called "Carrier
 Frequency". Conversely \, we also have a Modulator frequency \, which
 is the frequency of the modulating oscillator. The frequency deviation
-is controlled by the oscillator's amplitude \, and is also usually
-called "modulation index". The modulation procedure is simple \, just
-add the carrier signal to the modulating signal - see example to the
-right.;
+is controlled by the oscillator's amplitude and is also usually called
+"modulation index". The modulation procedure is simple \, just add
+the carrier signal to the modulating signal - see the example to the
+right., f 59;
 #X text 27 260 By default \, we have a 400 Hz carrier signal \, a low
 frequency of 1 as the modulating frequency and an index of 100 - this
 means the modulating signal oscillates between -100 and 100 at every
 second \, and the resulting frequency modulating signal varies from
 300 to 500 hz. Note that a low frequency modulator generates vibrato
-like effects.;
-#X obj 671 137 f2s~ 10;
-#X obj 750 41 declare -path else;
+like effects \, but try higher frequencies.;
 #X connect 0 0 7 0;
 #X connect 1 0 6 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 1;
 #X connect 4 0 2 0;
-#X connect 5 0 19 0;
+#X connect 5 0 16 0;
 #X connect 6 0 0 0;
 #X connect 7 0 8 0;
-#X connect 19 0 3 1;
+#X connect 16 0 3 1;

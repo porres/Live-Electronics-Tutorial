@@ -30,13 +30,7 @@
 #X obj 92 333 cos~;
 #X obj 748 391 out~;
 #X obj 497 378 out~;
-#X text 24 27 The [phasor~] object receives a frequency input and generates
-a phase signal. Therefore \, these signals are related \, where The
-frequency is the angular velocity and the phase is the angular position.
-This means a specific frequency signal corresponds to a phase signal
-and vice-versa., f 54;
 #X text 105 258 <= Angular Velocity (Frequency);
-#X text 105 309 <= Angulo Position (Phase);
 #X text 24 121 In other words \, we can convert between each other
 \, and this is done with the integral and derivative of a function.
 Not that we need to know how to calculate these \, it's just good to
@@ -68,6 +62,12 @@ formed by a [phasor~] and a [cos~] for the FM signal. For the PM signal
 #X obj 569 208 f2s~ 10;
 #X obj 849 208 f2s~ 10;
 #X obj 756 22 declare -path else;
+#X text 25 27 The [phasor~] object receives a frequency input and generates
+a phase signal. Therefore \, these signals are related \, where The
+frequency is the angular velocity and the phase is the angular position.
+This means that a specific frequency signal corresponds to a phase
+signal and vice-versa., f 54;
+#X text 105 309 <= Angle Position (Phase);
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 2 0 22 0;
@@ -77,7 +77,7 @@ formed by a [phasor~] and a [cos~] for the FM signal. For the PM signal
 #X connect 6 0 7 0;
 #X connect 7 0 4 1;
 #X connect 8 0 6 0;
-#X connect 9 0 44 0;
+#X connect 9 0 42 0;
 #X connect 10 0 23 0;
 #X connect 11 0 10 0;
 #X connect 12 0 4 0;
@@ -85,9 +85,9 @@ formed by a [phasor~] and a [cos~] for the FM signal. For the PM signal
 #X connect 14 0 15 0;
 #X connect 15 0 3 0;
 #X connect 16 0 14 0;
-#X connect 17 0 45 0;
+#X connect 17 0 43 0;
 #X connect 18 0 1 0;
 #X connect 19 0 21 0;
 #X connect 20 0 19 0;
-#X connect 44 0 7 1;
-#X connect 45 0 15 1;
+#X connect 42 0 7 1;
+#X connect 43 0 15 1;
