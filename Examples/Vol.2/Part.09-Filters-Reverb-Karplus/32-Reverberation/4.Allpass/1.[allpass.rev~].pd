@@ -63,7 +63,7 @@
 #X text 60 474 Input;
 #X text 507 453 In the subpatch below we have an allpass implementation
 with native Pd objects., f 55;
-#N canvas 345 152 510 380 allpass 0;
+#N canvas 489 178 510 380 allpass 0;
 #X obj 67 128 * -1;
 #X obj 49 155 *~;
 #X obj 72 191 +~;
@@ -100,12 +100,7 @@ with native Pd objects., f 55;
 #X restore 649 544 pd allpass;
 #X obj 165 476 xselect~ 2 100 1;
 #X obj 729 361 initmess \; ms 7 \; g -0.9;
-#X text 734 279 ganin (feedforward;
-#X text 783 293 and feedback);
-#X text 36 327 The reverberation comes from the feedback in the delay
-line that keeps reflecting the input signal. The feedback gainis an
-index of how much energy gets lost at each iteration and defines the
-reverberation decay.;
+#X text 772 293 and feedback);
 #X text 143 404 <= change from steady to enveloped input;
 #X obj 165 436 pulse~ 0.5 0.2;
 #X text 475 49 For being an "allpass" type \, this reverberator does
@@ -115,8 +110,8 @@ density.;
 after the input ceases (note the ringing frequencies). Therefore \,
 it affects more transients and percussive sounds and this is noticeable
 with the short noise bursts of this example. Check its help file for
-more details.;
-#X text 34 234 Note how this is the same diagram as shown earlier for
+more details., f 59;
+#X text 35 234 Note how this is the same diagram as shown earlier for
 allpass filters \, but now we have a delay time parameter (d) which
 defines the number of samples. Note this is different than an 'n' order
 allpass filter and this is why this object is better defined as a reverberator
@@ -125,6 +120,11 @@ rather than a filter.;
 \, this is its diagram:;
 #X obj 738 13 declare -path else;
 #X obj 649 577 out~;
+#X text 36 327 The reverberation comes from the feedback in the delay
+line that keeps reflecting the input signal. The feedback gain is an
+index of how much energy gets lost at each iteration and defines the
+reverberation decay.;
+#X text 734 279 gain (feedforward;
 #X connect 0 0 5 0;
 #X connect 0 0 47 1;
 #X connect 1 0 47 2;
@@ -140,6 +140,6 @@ rather than a filter.;
 #X connect 50 0 58 0;
 #X connect 51 0 59 1;
 #X connect 52 0 59 0;
-#X connect 58 0 71 0;
+#X connect 58 0 69 0;
 #X connect 59 0 6 1;
-#X connect 65 0 59 0;
+#X connect 63 0 59 0;

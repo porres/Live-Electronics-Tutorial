@@ -209,24 +209,24 @@ you can try prime numbers as a basis instead as in the 8-stage example.
 #X connect 4 0 2 1;
 #X connect 5 0 0 0;
 #X restore 599 332 pd test;
-#X text 26 16 As a first reverberator example with delay lines \, we
-have a simple patch with only feedforward lines that emulates echoes
-with short delay times \, which can be used to produce early reflections
-in a reverb algorithm. Below to the left we have a test sound (a sine
-wave sweep) to be compared to the exmaples on the right. We have a
-mono input but a stereo output. Open the suboatches for implementation
-details., f 64;
-#X text 511 173 [echo.rev~] is an echo/reverb asbtraction based on
-this patch. You can set the number of echo stages with the first argument
-and the room size with the second argument/inlet. A typical value is
-the default. It uses a prime sequence and the size parameter expands
-the delay times., f 55;
 #X obj 687 336 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X text 746 335 size;
 #X obj 599 364 echo.rev~ 8 1;
 #X obj 745 10 declare -path else;
 #X obj 599 397 out~;
+#X text 26 16 As a first reverberator example with delay lines \, we
+have a simple patch with only feedforward lines that emulates echoes
+with short delay times \, which can be used to produce early reflections
+in a reverb algorithm. Below to the left we have a test sound (a sine
+wave sweep) to be compared to the exmaples on the right. We have a
+mono input but a stereo output. Open the subpatches for implementation
+details., f 64;
+#X text 511 173 [echo.rev~] is an echo/reverb asbtraction from ELSE
+based on this patch. You can set the number of echo stages with the
+first argument and the room size with the second argument/inlet. A
+typical value is the default. It uses a prime sequence and the size
+parameter expands the delay times., f 55;
 #X connect 0 0 5 0;
 #X connect 1 0 4 0;
 #X connect 4 0 10 0;
@@ -235,8 +235,8 @@ the delay times., f 55;
 #X connect 8 0 9 0;
 #X connect 9 0 7 0;
 #X connect 10 0 3 0;
-#X connect 14 0 19 0;
+#X connect 14 0 17 0;
 #X connect 15 0 16 0;
-#X connect 16 0 21 0;
-#X connect 19 0 21 1;
-#X connect 21 0 23 0;
+#X connect 16 0 19 0;
+#X connect 17 0 19 1;
+#X connect 19 0 21 0;

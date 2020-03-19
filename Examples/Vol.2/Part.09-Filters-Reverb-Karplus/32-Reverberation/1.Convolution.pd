@@ -69,25 +69,25 @@ as we'll see later \, but before that let's recapitulate the convolution
 tecnhique. We've also seen how convolution can also act as a general
 filter \, but this is only to say and reinforce how filters and reverbs
 are intertwined concepts., f 64;
-#X text 58 181 Convolution reverbs depends on "Impulse Responses" ("IR").
-These are sound recordings of an impulse in a reverberant space that
-capture the reverberation or colloration model of the space. It's easy
-to find "IR" sound file libraries for convolution reverbs out there
-in wave and aif files. That's all you need for a convolution reverb
-in Pd. Otherwise you can still record an IR from your bathroom or something.
-The example below uses an IR of a church., f 64;
 #X obj 375 22 declare -path else;
 #X obj 206 677 out~;
 #X obj 62 406 out~;
 #X obj 217 408 out~;
 #X obj 217 371 play.file~ 1 church.wav;
 #X obj 206 643 conv~ 2048 church.wav;
-#X connect 0 0 14 0;
+#X text 58 181 Convolution reverbs depends on "Impulse Responses" ("IR").
+These are sound recordings of an impulse in a reverberant space that
+capture the reverberation or colloration model of the space. It's easy
+to find "IR" sound file libraries for convolution reverbs out there
+in .wav and .aif files. That's all you need for a convolution reverb
+in Pd. Otherwise you can still record an IR from your bathroom or something.
+The example below uses an IR of a church., f 64;
+#X connect 0 0 13 0;
 #X connect 1 0 5 0;
-#X connect 2 0 15 0;
+#X connect 2 0 14 0;
 #X connect 3 0 4 0;
-#X connect 4 0 12 0;
-#X connect 5 0 15 0;
+#X connect 4 0 11 0;
+#X connect 5 0 14 0;
 #X connect 6 0 2 0;
-#X connect 14 0 13 0;
-#X connect 15 0 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 10 0;
