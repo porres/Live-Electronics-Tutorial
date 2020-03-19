@@ -52,7 +52,6 @@
 #X obj 270 132 inlet~;
 #X obj 119 268 bl.sine~;
 #X obj 185 268 bl.tri~;
-#X obj 269 241 sig~ 0.5;
 #X obj 332 269 bl.saw~;
 #X obj 247 268 bl.square~;
 #X connect 1 0 2 0;
@@ -60,13 +59,12 @@
 #X connect 3 0 0 0;
 #X connect 8 0 9 0;
 #X connect 8 0 10 0;
+#X connect 8 0 11 0;
 #X connect 8 0 12 0;
-#X connect 8 0 13 0;
 #X connect 9 0 3 0;
 #X connect 10 0 3 1;
-#X connect 11 0 13 1;
-#X connect 12 0 3 3;
-#X connect 13 0 3 2;
+#X connect 11 0 3 3;
+#X connect 12 0 3 2;
 #X coords 0 -1 1 1 104 80 2 100 100;
 #X restore 107 352 pd oscillator;
 #X text 358 209 Index;

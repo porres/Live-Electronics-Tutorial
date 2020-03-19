@@ -1,8 +1,8 @@
-#N canvas 333 87 734 598 12;
+#N canvas 366 79 734 598 12;
 #X declare -path else;
 #X obj 120 312 mtof;
 #X obj 120 348 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 138.591 256;
+-228856 -1 -1 110 256;
 #X text 99 346 Hz;
 #X obj 543 456 vcf~ 7;
 #X obj 557 222 vcf~ 15;
@@ -27,7 +27,7 @@
 #X text 40 62 Instead of LFOs \, we can use random generators such
 as low frequency noise objects like [stepnoise~] and [rampnoise~].
 , f 50;
-#N canvas 751 343 375 257 oscillator 1;
+#N canvas 751 343 375 257 oscillator 0;
 #X obj 193 155 *~ 0.5;
 #X obj 193 194 outlet~;
 #X text 63 85 detuned octave above, f 7;

@@ -31,8 +31,7 @@
 1;
 #X obj 95 319 * 1.8;
 #X obj 163 355 square~;
-#X obj 155 446 out~;
-#X obj 145 506 graph~ 500 20;
+#X obj 145 442 graph~ 500 20;
 #X text 29 170 We implement this with a square wave with half of the
 master's frequency. This way \, at every period transition \, we have
 a sign reversal from 1 to -1 \, which we use to mulitpy to the slave's
@@ -45,8 +44,8 @@ is to avoid a harsh clicks that happen when there's a big amplitude
 jump when resetting the oscillator. Hence \, this type of sync does
 not generate discontinuities in the signal and sounds much softer.
 ;
+#X obj 145 596 out~;
 #X connect 1 0 11 0;
-#X connect 1 0 12 0;
 #X connect 3 0 1 0;
 #X connect 4 0 10 0;
 #X connect 5 0 3 0;
@@ -56,3 +55,4 @@ not generate discontinuities in the signal and sounds much softer.
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 1;
+#X connect 11 0 16 0;
