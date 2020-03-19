@@ -1,6 +1,6 @@
 #N canvas 490 70 565 438 12;
 #X declare -path else;
-#X floatatom 346 85 5 0 0 0 - - -;
+#X floatatom 346 105 5 0 0 0 - - -;
 #X obj 88 179 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 2048 256;
 #X obj 202 179 nbx 2 14 1 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
@@ -29,7 +29,7 @@
 #X text 207 226 formula:;
 #X obj 116 509 tabwrite~ \$0-hamming;
 #X text 216 244 (cos(x) * 0.46) + 0.54;
-#X text 40 352 window size;
+#X text 31 352 window size;
 #X connect 2 0 12 0;
 #X connect 3 0 11 0;
 #X connect 4 0 2 1;
@@ -42,7 +42,7 @@
 #X connect 11 0 5 0;
 #X connect 12 0 13 0;
 #X connect 13 0 15 0;
-#X restore 142 347 pd Hamming;
+#X restore 163 350 pd Hamming;
 #N canvas 131 45 395 514 Cosine 0;
 #X text 91 38 1;
 #X text 90 153 0;
@@ -78,7 +78,7 @@
 #X connect 12 0 10 1;
 #X connect 13 0 14 0;
 #X connect 14 0 11 0;
-#X restore 309 347 pd Cosine;
+#X restore 330 350 pd Cosine;
 #N canvas 195 35 612 504 Welch 0;
 #X text 34 27 1;
 #X text 33 142 0;
@@ -156,7 +156,7 @@
 #X connect 55 0 21 0;
 #X connect 56 0 16 0;
 #X connect 58 0 11 0;
-#X restore 142 369 pd Welch;
+#X restore 163 372 pd Welch;
 #N canvas 121 23 587 380 Barlett 0;
 #X text 58 51 1;
 #X text 57 166 0;
@@ -190,7 +190,7 @@
 #X connect 11 0 8 0;
 #X connect 12 0 10 0;
 #X connect 13 0 12 1;
-#X restore 222 369 pd Barlett;
+#X restore 243 372 pd Barlett;
 #N canvas 455 28 352 514 Connes 0;
 #X text 49 31 1;
 #X text 48 146 0;
@@ -229,7 +229,7 @@
 #X connect 15 0 9 0;
 #X connect 17 0 11 0;
 #X connect 18 0 4 0;
-#X restore 222 347 pd Connes;
+#X restore 243 350 pd Connes;
 #N canvas 102 33 566 407 Blackman 0;
 #X text 44 50 1;
 #X text 43 165 0;
@@ -277,7 +277,7 @@
 #X connect 17 0 9 0;
 #X connect 18 0 17 0;
 #X connect 19 0 3 0;
-#X restore 304 369 pd Blackman;
+#X restore 325 372 pd Blackman;
 #N canvas 216 23 611 558 Lanczos 0;
 #X text 43 36 1;
 #X text 42 151 0;
@@ -324,7 +324,7 @@
 #X connect 22 0 8 0;
 #X connect 22 1 9 0;
 #X connect 24 0 2 0;
-#X restore 395 347 pd Lanczos;
+#X restore 416 350 pd Lanczos;
 #N canvas 199 89 447 594 Gaussian 0;
 #X text 71 29 1;
 #X text 70 144 0;
@@ -374,10 +374,8 @@
 #X connect 16 1 20 1;
 #X connect 16 1 21 0;
 #X connect 20 0 12 0;
-#X restore 392 369 pd Gaussian;
+#X restore 413 372 pd Gaussian;
 #X obj 346 204 out~;
-#X obj 346 136 bl.saw~;
-#X obj 346 110 sig~ 400;
 #X text 57 260 OTHER WINDOW TYPES:;
 #X text 439 170 <= click;
 #X obj 88 205 s \$0-size;
@@ -441,17 +439,17 @@ average., f 42;
 #X connect 22 0 8 0;
 #X connect 24 0 22 0;
 #X restore 346 168 pd normalize;
-#X text 58 285 Here are other FFT windows cmmonly used \, though the
-hann window is the one we'll use for all the spectral processing examples.
-;
 #X obj 202 142 initmess 4;
 #X obj 88 140 initmess 2048;
 #X obj 390 30 declare -path else;
-#X connect 0 0 13 0;
-#X connect 1 0 16 0;
-#X connect 2 0 17 0;
-#X connect 12 0 21 0;
-#X connect 13 0 12 0;
-#X connect 21 0 11 0;
-#X connect 23 0 2 0;
-#X connect 24 0 1 0;
+#X obj 346 135 bl.saw~ 400;
+#X text 58 285 Here are other FFT windows commonly used \, though the
+hann window is the one we'll use for all the spectral processing examples.
+;
+#X connect 0 0 23 0;
+#X connect 1 0 14 0;
+#X connect 2 0 15 0;
+#X connect 19 0 11 0;
+#X connect 20 0 2 0;
+#X connect 21 0 1 0;
+#X connect 23 0 19 0;

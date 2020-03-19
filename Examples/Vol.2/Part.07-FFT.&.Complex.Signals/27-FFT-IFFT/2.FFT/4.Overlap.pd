@@ -1,4 +1,4 @@
-#N canvas 105 65 1319 483 12;
+#N canvas 245 85 1319 483 12;
 #X declare -path else;
 #X obj 817 225 cnv 15 420 170 empty empty 4-Overlaps 150 25 0 20 -1
 -262144 0;
@@ -3305,8 +3305,8 @@
 #X coords 0 1 2047 0 200 100 1;
 #X restore 422 36 graph;
 #X text 751 60 As we did with granulation \, we should overlap different
-analysis windows to compensate for losses promoted by the window envelope.
-Here we a window size of 2048 and 4 overlaps. This gives us a hop size
-of 512 \, which is the step between two analysis windows. To the left
-we have independent window tracks \, and below a graph that justaposes
-them., f 66;
+analysis windows to compensate for losses promoted by the envelope.
+Here we have a window size of 2048 and 4 overlaps. This gives us a
+hop size of 512 \, which is the step between two analysis windows.
+To the left we have independent window tracks \, and below a graph
+that justaposes them., f 66;

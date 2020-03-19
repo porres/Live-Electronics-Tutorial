@@ -35,13 +35,13 @@
 #X obj 36 196 tabreceive~ \$0-log_index;
 #X obj 246 194 tabwrite \$0-log_index;
 #X obj 218 95 loadbang;
-#X obj 81 285 cnv 15 298 148 empty empty empty 20 12 0 14 -216569 -66577
+#X obj 81 285 cnv 15 298 148 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-log_index 1024 float 0;
 #X coords 0 1024 1023 0 300 150 1;
 #X restore 80 284 graph;
-#X obj 196 96 bng 15 250 50 0 empty empty empty 17 7 0 10 -212472 -1
+#X obj 196 96 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
 #X obj 37 121 tabsend~ \$0-Amp;
 #X obj 37 157 table \$0-Amp 1024;
@@ -50,14 +50,9 @@
 #X floatatom 612 301 0 0 12 0 - - -;
 #X floatatom 612 348 0 0 0 0 - - -;
 #X obj 218 149 expr pow(1023 \, $f1/1022) \; $f1 + 1;
-#X obj 615 281 hsl 128 15 0 12 0 0 empty empty empty -2 -8 0 10 -200122
+#X obj 615 281 hsl 128 15 0 12 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 218 121 loop 1023;
-#X text 451 93 The array named "\$0-log_index" loads values of a logarythmic
-scale used as indexes to read the FFT data \, which is stored in a
-tabel named "\$0-Amp" via the [tabsend~] object. In this way \, [tabreceive~
-\$0-log_index] throws the table indexes and we use them to access the
-FFT with [tabread4~ \$0-Amp].;
 #X text 539 300 semitones;
 #X text 568 348 ratio;
 #X text 451 170 Let's go back to the theory of musical intervals. Below
@@ -65,6 +60,11 @@ we have a division of the octave in 12 parts \, so an input in semitones
 from 0 to 12 is converted to logarythmic ratios as below (we just adapt
 this to a wider range that depends on the index values \, see to the
 left).;
+#X text 451 93 The array named "\$0-log_index" loads values of a logarythmic
+scale used as indexes to read the FFT data \, which is stored in a
+table named "\$0-Amp" via the [tabsend~] object. In this way \, [tabreceive~
+\$0-log_index] throws the table indexes and we use them to access the
+FFT with [tabread4~ \$0-Amp].;
 #X connect 0 0 8 0;
 #X connect 2 0 10 0;
 #X connect 4 0 16 0;

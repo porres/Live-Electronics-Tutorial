@@ -1,6 +1,6 @@
 #N canvas 516 46 819 484 12;
 #X declare -path else;
-#X obj 512 136 nbx 6 14 64 1e+37 0 0 \$0-w_size \$0-w_size-set empty
+#X obj 522 137 nbx 6 14 64 1e+37 0 0 \$0-w_size \$0-w_size-set empty
 0 -8 0 10 -228856 -1 -1 16384 256;
 #N canvas 636 295 609 422 zeropad 0;
 #X obj 90 247 s \$0-set-block;
@@ -35,11 +35,11 @@
 #X connect 12 0 0 0;
 #X connect 13 0 14 0;
 #X coords 0 0 1 1 120 60 0;
-#X restore 512 168 pd zeropad;
+#X restore 522 169 pd zeropad;
 #X obj 146 279 tabplay~ \$0-sample;
 #X obj 146 248 bng 18 250 50 0 \$0-bang empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 667 141 table \$0-zeropad;
+#X obj 677 142 table \$0-zeropad;
 #N canvas 568 184 405 309 FFT 0;
 #X obj 70 109 *~;
 #X obj 70 43 inlet~;
@@ -60,17 +60,13 @@
 #X connect 7 0 8 0;
 #X connect 8 0 6 0;
 #X connect 9 0 6 0;
-#X restore 69 336 pd FFT;
-#X obj 361 235 cnv 15 398 198 empty empty empty 20 12 0 14 -228856
+#X restore 171 321 pd FFT;
+#X obj 361 255 cnv 15 398 198 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-Amplitude 16384 float 0;
 #X coords 0 100 16383 -1 400 200 1;
-#X restore 360 234 graph;
-#X text 39 33 Zero Padding consists in adding zeros by the end of an
-audio signal to increase is size and fit into an analysis window. This
-is usually done to increase the window and its frequency resolution.
-, f 59;
+#X restore 360 254 graph;
 #X text 39 96 Another approach is to use a window that zeroes out values
 from an input \, and this will be used later in a convolution example.
 ;
@@ -78,14 +74,18 @@ from an input \, and this will be used later in a convolution example.
 and a zero padding table to zero out values above 16384 For the example
 \, though \, we have a sound file with 16384 samples.;
 #X text 168 246 play/analyse;
-#X obj 146 323 out~;
+#X obj 146 360 out~;
 #X obj 638 29 declare -path else;
-#X text 578 121 number of samples, f 9;
-#X obj 512 85 sample~ \$0-sample IR.wav;
-#X msg 512 110 \$1;
+#X text 588 122 number of samples, f 9;
+#X obj 522 86 sample~ \$0-sample IR.wav;
+#X msg 522 111 \$1;
+#X text 39 33 Zero Padding consists in adding zeros by the end of an
+audio signal to increase its size and fit into an analysis window.
+This is usually done to increase the window and its frequency resolution.
+, f 59;
 #X connect 0 0 1 0;
 #X connect 2 0 5 0;
-#X connect 2 0 12 0;
+#X connect 2 0 11 0;
 #X connect 3 0 2 0;
-#X connect 15 0 16 0;
-#X connect 16 0 0 0;
+#X connect 14 0 15 0;
+#X connect 15 0 0 0;

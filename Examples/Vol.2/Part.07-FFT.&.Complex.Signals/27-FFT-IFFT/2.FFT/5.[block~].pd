@@ -1,15 +1,8 @@
 #N canvas 682 48 528 350 12;
 #X declare -path else;
-#X floatatom 165 157 5 0 0 0 - - -;
-#X obj 165 184 sig~ 100;
-#X obj 165 208 bl.saw~;
-#X obj 287 165 setdsp~;
-#X text 65 44 The overlapping is automatically done in Pd so we don't
-need to worry about it. This is performed by [inlet~] and [outlet~]
-objects and you can set the overlap factor with [block~] or [switch~].
-The subpatch below performs an FFT with windowing and overlapping.
-Check it out.;
-#X text 266 258 <= click and open;
+#X floatatom 165 181 5 0 0 0 - - -;
+#X obj 328 163 setdsp~;
+#X text 266 268 <= click and open;
 #N canvas 349 184 972 490 FFT-Graphs 0;
 #X obj 106 128 rfft~;
 #X obj 106 54 inlet~;
@@ -44,19 +37,18 @@ we have a window size of 2048 with 4 overlaps., f 34;
 #X restore 606 259 graph;
 #X obj 607 260 cnv 15 254 198 empty empty empty 20 12 0 14 -203904
 -66577 0;
-#N canvas 159 39 467 405 plot-graphs 0;
+#N canvas 244 515 522 453 plot-graphs 0;
 #X obj 42 41 inlet~;
 #X obj 104 40 inlet~;
-#X obj 260 80 loadbang;
-#X obj 260 105 tgl 15 0 empty empty empty 0 -6 0 10 -228856 -1 -1 1
+#X obj 290 80 loadbang;
+#X obj 290 105 tgl 15 0 empty empty empty 0 -6 0 10 -228856 -1 -1 1
 1;
-#X obj 260 126 metro 205;
-#X obj 181 337 tabwrite~ \$0-Amplitude;
+#X obj 290 126 metro 205;
+#X obj 228 337 tabwrite~ \$0-Amplitude;
 #X obj 145 183 tabwrite~ \$0-Re;
-#X obj 277 184 tabwrite~ \$0-Im;
-#X obj 42 221 car2pol~;
-#X obj 241 308 tabwrite~ \$0-Phase;
-#X obj 232 45 declare -path else;
+#X obj 307 184 tabwrite~ \$0-Im;
+#X obj 53 221 car2pol~;
+#X obj 288 308 tabwrite~ \$0-Phase;
 #X connect 0 0 6 0;
 #X connect 0 0 8 0;
 #X connect 1 0 7 0;
@@ -76,7 +68,13 @@ fourth of the block size., f 31;
 #X connect 0 1 16 1;
 #X connect 1 0 3 0;
 #X connect 3 0 0 0;
-#X restore 165 257 pd FFT-Graphs;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 6 0;
+#X restore 165 267 pd FFT-Graphs;
+#X text 65 54 The overlapping is automatically done in Pd so we don't
+need to worry about it. This is performed by [inlet~] and [outlet~]
+objects and you can set the overlap factor with [block~] or [switch~].
+The subpatch below performs a FFT with windowing and overlapping. Check
+it out.;
+#X obj 165 218 bl.saw~ 100;
+#X obj 339 19 declare -path else;
+#X connect 0 0 5 0;
+#X connect 5 0 3 0;
