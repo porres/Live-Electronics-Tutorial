@@ -1,9 +1,9 @@
-#N canvas 622 53 502 530 12;
+#N canvas 588 57 502 530 12;
 #X declare -path else;
 #X obj 119 395 *~;
 #X obj 73 202 mtof;
 #X obj 73 238 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 41.2034 256;
+-228856 -1 -1 123.471 256;
 #X text 131 236 Hz;
 #X obj 283 291 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
@@ -43,21 +43,19 @@ the filter frequency. Here we have two envelopes \, one to control
 the amplitude and another to control the filter.;
 #X text 108 136 Generate Random Pitches;
 #X text 288 267 Maximum Frequency;
-#N canvas 390 230 249 266 oscillator 0;
+#N canvas 390 230 249 266 oscillator 1;
 #X obj 110 163 *~ 0.5;
 #X obj 110 32 inlet;
 #X obj 110 216 outlet~;
 #X obj 44 89 *~ 2.01;
-#X obj 132 71 sig~ 0.5;
 #X obj 110 109 bl.square~;
 #X obj 44 123 bl.saw~;
 #X connect 0 0 2 0;
-#X connect 1 0 5 0;
+#X connect 1 0 4 0;
 #X connect 1 0 3 0;
-#X connect 3 0 6 0;
-#X connect 4 0 5 1;
+#X connect 3 0 5 0;
+#X connect 4 0 0 0;
 #X connect 5 0 0 0;
-#X connect 6 0 0 0;
 #X restore 73 266 pd oscillator;
 #X obj 73 348 lowpass~ 0 10;
 #X obj 202 232 adsr~ 100 150 0.5 250;

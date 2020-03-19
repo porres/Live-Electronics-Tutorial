@@ -1,67 +1,65 @@
-#N canvas 499 42 739 584 12;
+#N canvas 333 87 734 598 12;
 #X declare -path else;
-#X obj 115 287 mtof;
-#X obj 115 323 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 73.4162 256;
-#X text 94 321 Hz;
-#X obj 507 438 vcf~ 7;
-#X obj 523 218 vcf~ 15;
-#X obj 475 159 *~ 5;
-#X obj 115 224 tempo 60 100;
-#X obj 193 473 out~;
-#X obj 192 427 lowpass~;
-#X obj 218 322 stepnoise~ 5;
-#X obj 288 352 rampnoise~ 0.5;
-#X obj 218 355 rescale~ 500 3500, f 8;
-#X obj 475 133 bl.saw~;
-#X obj 475 102 rescale~ 30 130;
-#X obj 475 67 rampnoise~ 1.5;
-#X obj 546 160 stepnoise~ 15;
-#X obj 546 189 rescale~ 100 500;
-#X obj 507 472 out~;
-#X obj 442 402 bl.saw~;
-#X obj 442 361 rescale~ 500 1500, f 8;
-#X obj 442 333 stepnoise~ 8;
-#X obj 526 362 rampnoise~ 15;
-#X obj 526 389 rescale~ 100 3000, f 8;
-#X text 35 37 Instead of LFOs \, we can use random generators such
+#X obj 120 312 mtof;
+#X obj 120 348 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 138.591 256;
+#X text 99 346 Hz;
+#X obj 543 456 vcf~ 7;
+#X obj 557 222 vcf~ 15;
+#X obj 509 163 *~ 5;
+#X obj 120 249 tempo 60 100;
+#X obj 198 498 out~;
+#X obj 197 452 lowpass~;
+#X obj 223 347 stepnoise~ 5;
+#X obj 293 377 rampnoise~ 0.5;
+#X obj 223 380 rescale~ 500 3500, f 8;
+#X obj 509 137 bl.saw~;
+#X obj 509 106 rescale~ 30 130;
+#X obj 509 71 rampnoise~ 1.5;
+#X obj 580 164 stepnoise~ 15;
+#X obj 580 193 rescale~ 100 500;
+#X obj 543 490 out~;
+#X obj 478 420 bl.saw~;
+#X obj 478 379 rescale~ 500 1500, f 8;
+#X obj 478 351 stepnoise~ 8;
+#X obj 562 380 rampnoise~ 15;
+#X obj 562 407 rescale~ 100 3000, f 8;
+#X text 40 62 Instead of LFOs \, we can use random generators such
 as low frequency noise objects like [stepnoise~] and [rampnoise~].
 , f 50;
-#N canvas 751 343 375 257 oscillator 0;
+#N canvas 751 343 375 257 oscillator 1;
 #X obj 193 155 *~ 0.5;
 #X obj 193 194 outlet~;
 #X text 63 85 detuned octave above, f 7;
 #X obj 123 78 *~ 2.01;
 #X obj 193 34 inlet~;
-#X obj 215 82 sig~ 0.5;
 #X obj 193 112 bl.square~;
 #X obj 123 112 bl.saw~;
 #X connect 0 0 1 0;
-#X connect 3 0 7 0;
+#X connect 3 0 6 0;
 #X connect 4 0 3 0;
-#X connect 4 0 6 0;
-#X connect 5 0 6 1;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
 #X connect 6 0 0 0;
-#X connect 7 0 0 0;
-#X restore 115 391 pd oscillator;
-#X text 38 360 Portamento;
-#X obj 115 360 f2s~ 125;
-#X obj 288 379 rescale~ 1 50, f 8;
-#X text 51 181 Generate Random pitches, f 9;
-#X text 310 322 Frequency;
-#X text 393 351 Q;
-#X text 415 35 More examples:;
-#X text 550 340 Frequency;
-#X text 35 91 Below we have the oscillator setion in a subpatch. We
+#X restore 120 416 pd oscillator;
+#X text 43 385 Portamento;
+#X obj 120 385 f2s~ 125;
+#X obj 293 404 rescale~ 1 50, f 8;
+#X text 56 206 Generate Random pitches, f 9;
+#X text 315 347 Frequency;
+#X text 398 376 Q;
+#X text 485 38 More examples:;
+#X text 586 358 Frequency;
+#X text 40 116 Below we have the oscillator setion in a subpatch. We
 use a rich sound tha combines a sqaure and a sawtooth oscillator.,
 f 50;
-#X text 560 135 Frequency;
-#X obj 115 255 rand.i 24 51;
-#X obj 115 186 tgl 30 0 empty empty empty 0 -6 0 8 -228856 -1 -1 1
+#X text 594 139 Frequency;
+#X obj 120 280 rand.i 24 51;
+#X obj 120 211 tgl 30 0 empty empty empty 0 -6 0 8 -228856 -1 -1 1
 1;
-#X obj 115 159 loadbang;
-#X obj 582 22 declare -path else;
-#X obj 523 249 out2~;
+#X obj 120 184 loadbang;
+#X obj 48 24 declare -path else;
+#X obj 557 253 out2~;
 #X connect 0 0 1 0;
 #X connect 1 0 26 0;
 #X connect 3 0 17 0;

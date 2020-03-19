@@ -247,25 +247,17 @@ t7[$f1] * c7 + t8[$f1] * c8 + t9[$f1] * c9 + t10[$f1] * c10 + t11[$f1]
 #X text 372 448 1;
 #X text 366 595 -1;
 #X text 371 523 0;
-#X obj 761 523 out~;
+#X obj 761 512 out~;
 #X obj 761 409 osc~ 200;
-#X obj 761 485 shaper~ shape_\$0;
+#X obj 761 483 shaper~ shape_\$0;
 #X obj 834 449 f2s~ 10;
 #X text 6 153 Coefficients:;
-#X text 15 322 Chebyshev polinomials as transfer functions generate
-harmonics for a sine wave input. For instance \, t2 generates the 2nd
-harmonic (an octave above) \, t5 the 5th and so on - t0 generates a
-DC component (0 Hz) and t1 is a linear function (hence \, the original
-input), f 52;
-#X text 392 321 Enter coefficient values above in the number boxes
-\, they set the amplitude of each function/component in the final transfer
-function (the "shape_\$0" table below)., f 40;
 #X text 698 320 We can listen to the result with [shaper~]. The "output_\$0"
 table is the result of a sine wave through the transfer function.,
 f 33;
-#X text 463 392 The formulas for each polinomial is given in this subpatch:
+#X text 441 394 The formulas for each polinomial is given in this subpatch:
 , f 37;
-#N canvas 37 71 1279 736 polinomials 0;
+#N canvas 193 76 1279 736 polinomials 0;
 #X text 578 119 T2(x);
 #X text 1129 117 T4(x);
 #X text 165 271 T5(x);
@@ -446,13 +438,21 @@ f 33;
 #X connect 90 2 11 0;
 #X connect 90 2 78 0;
 #X connect 91 0 9 0;
-#X restore 627 411 pd polinomials;
+#X restore 605 413 pd polinomials;
 #X obj 837 416 hsl 100 20 0 1 0 0 \$0-amp empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X text 856 418 Amplitude;
-#X obj 141 416 declare -path else;
+#X obj 824 588 declare -path else;
+#X text 37 319 Chebyshev polinomials as transfer functions generate
+harmonics for a sine wave input. For instance \, t2 generates the 2nd
+harmonic (an octave above) \, t5 the 5th and so on - t0 generates a
+DC component (0 Hz) and t1 is a linear function (hence \, the original
+input or 'fundamental'), f 46;
+#X text 387 321 Enter coefficient values above in the number boxes
+\, they set the amplitude of each function/component in the final transfer
+function (the "shape_\$0" table)., f 41;
 #X connect 30 0 38 0;
 #X connect 37 0 30 0;
 #X connect 38 0 36 0;
 #X connect 39 0 30 1;
-#X connect 46 0 39 0;
+#X connect 44 0 39 0;
