@@ -79,7 +79,7 @@ how they act \, when the Z-Plane is presented.;
 #X obj 733 24 declare -path else;
 #X text 757 220 <= pole coefficient;
 #X text 657 283 =;
-#X obj 64 113 pic 0 ../files/SOS.gif empty empty;
+#X obj 64 113 pic 0 ../files/SOS.gif empty empty 0;
 #X text 48 172 Zero 1 ==>;
 #X text 48 241 Zero 2 ==>;
 #X text 340 171 <== Pole 1;

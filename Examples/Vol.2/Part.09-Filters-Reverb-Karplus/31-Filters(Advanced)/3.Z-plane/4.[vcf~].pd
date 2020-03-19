@@ -342,18 +342,18 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X restore 487 306 pd Z-Plane-biquad;
 #X obj 674 162 *~;
 #X obj 637 129 noise~;
-#X obj 160 471 nbx 5 14 1 100 1 1 \$0-Q empty empty 0 -8 0 10 -228856
+#X obj 171 490 nbx 5 14 1 100 1 1 \$0-Q empty empty 0 -8 0 10 -228856
 -1 -1 2.64165 256;
-#X floatatom 384 439 0 0 0 0 - #0-gain -;
-#X floatatom 313 439 0 0 0 0 - #0-im -;
-#X floatatom 243 439 0 0 0 0 - #0-re -;
-#X obj 384 470 v g;
-#X obj 313 467 v ai;
-#X obj 243 467 v ar;
-#X text 241 488 coef;
-#X text 312 490 coef;
-#X text 248 499 re;
-#X text 316 502 im;
+#X floatatom 395 458 0 0 0 0 - #0-gain -;
+#X floatatom 324 458 0 0 0 0 - #0-im -;
+#X floatatom 254 458 0 0 0 0 - #0-re -;
+#X obj 395 489 v g;
+#X obj 324 486 v ai;
+#X obj 254 486 v ar;
+#X text 252 507 coef;
+#X text 323 509 coef;
+#X text 259 518 re;
+#X text 327 521 im;
 #X text 92 87 y1[n] = x1[n] + ar * y1[n-1] - ai * y2[n-1] \; y2[n]
 = x2[n] + ai * y1[n-1] + ar * y2[n-1];
 #X floatatom 692 129 5 0 0 0 - #0-gain -;
@@ -363,15 +363,15 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X obj 519 74 fexpr~ g * $x1 + ar * $y1[-1] - ai * $y2[-1] \; ai *
 $y1[-1] + ar * $y2[-1];
 #X obj 519 46 noise~;
-#X obj 58 468 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq-send \$0-freq empty
+#X obj 69 487 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq-send \$0-freq empty
 0 -8 0 10 -228856 -1 -1 0 256;
-#X text 33 465 Hz;
-#X obj 136 532 noise~;
-#X obj 255 532 nbx 5 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 -228856
+#X text 44 484 Hz;
+#X obj 147 551 noise~;
+#X obj 266 551 nbx 5 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 -228856
 -1 -1 2.64165 256;
-#X obj 191 533 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty
+#X obj 202 552 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty
 0 -8 0 10 -228856 -1 -1 0 256;
-#X obj 158 562 vcf~ 500 1;
+#X obj 169 581 vcf~ 500 1;
 #X text 753 157 re;
 #X text 775 181 im;
 #X obj 85 229 cnv 15 315 120 empty empty empty 20 12 0 14 -216246 -66577
@@ -431,30 +431,30 @@ cf * qinv \, 0) \; max($f1 * 2 * pi / sr \, 0) \; 1/Q \; max($f2 \,
 #X connect 13 0 17 0;
 #X connect 16 0 15 0;
 #X connect 17 0 14 0;
-#X restore 58 495 pd coefficients;
-#X text 384 488 gain;
+#X restore 69 514 pd coefficients;
+#X text 395 507 gain;
 #X obj 734 237 out~;
 #X obj 631 237 out~;
 #X text 734 128 gain;
-#X obj 115 594 out~;
-#X obj 225 594 out~;
+#X obj 126 613 out~;
+#X obj 236 613 out~;
 #X obj 519 173 out~;
 #X obj 831 165 out~;
 #X text 48 135 Where x1[n] & y1[n] are the real input and output \,
 and x2[n] & y2[n] the imaginary input and output \, whereas "ar" is
 the real part of the coefficient and "ai" the imaginary part. And here's
 the transfer function of both parts below., f 54;
-#X text 6 365 The coefficients are caclulates in the suboatch below
+#X text 46 709 Compare the [vcf~] patch above to [fexpr~] and [cpole~].
+Check the Z Plane plot to the right. Again \, the angle represents
+the frequency and the radius the resonance.;
+#X obj 72 464 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0 10
+-228856 -1 -1 0 1;
+#X text 156 488 Q;
+#X obj 804 27 declare -path else;
+#X text 30 377 The coefficients are caclulated in the suboatch below
 from frequency and Q values. This is used in [fexpr~] but the difference
 equation is simplified because we don't have an imaginaty input.,
 f 56;
-#X text 35 690 Compare the [vcf~] patch above to [fexpr~] and [cpole~].
-Check the Z Plane plot to the right. Again \, the angle represents
-the frequency and the radius the resonance.;
-#X obj 61 445 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0 10
--228856 -1 -1 0 1;
-#X text 145 469 Q;
-#X obj 804 27 declare -path else;
 #X connect 1 0 16 0;
 #X connect 2 0 1 0;
 #X connect 3 0 40 1;
@@ -475,4 +475,4 @@ the frequency and the radius the resonance.;
 #X connect 25 0 26 1;
 #X connect 26 0 45 0;
 #X connect 26 1 46 0;
-#X connect 52 0 21 0;
+#X connect 51 0 21 0;

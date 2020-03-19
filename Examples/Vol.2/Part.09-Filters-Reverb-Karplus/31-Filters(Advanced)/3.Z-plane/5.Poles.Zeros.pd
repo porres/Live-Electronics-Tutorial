@@ -503,7 +503,7 @@
 #X connect 23 0 18 0;
 #X connect 23 0 20 0;
 #X restore 93 98 pd Poles;
-#N canvas 0 216 1069 510 Zeros 0;
+#N canvas 68 216 1069 510 Zeros 0;
 #X obj 183 251 pack;
 #X msg 183 277 label_pos \$1 \$2;
 #X obj 183 165 * 150;
@@ -596,7 +596,7 @@
 #X obj 406 46 inlet;
 #X obj 455 47 inlet;
 #X obj 505 47 inlet;
-#X obj 448 229 v sign_\$0;
+#X obj 505 238 v sign_\$0;
 #X obj 109 239 pack float float float float float;
 #X obj 109 278 outlet;
 #X obj 36 60 r \$0-coef;
@@ -677,7 +677,7 @@
 #N canvas 0 22 450 300 (subpatch) 0;
 #X coords 0 1 100 -1 452 538 1;
 #X restore 100 -1 graph;
-#N canvas 65 63 1299 625 GUI 0;
+#N canvas 68 63 1299 625 GUI 0;
 #X obj 117 211 s \$0-P1-im;
 #X obj 6 211 s \$0-P1-re;
 #X obj 228 211 s \$0-P2-re;
@@ -880,7 +880,7 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X connect 90 0 92 0;
 #X connect 92 0 9 0;
 #X connect 92 1 85 0;
-#X restore 711 275 pd GUI;
+#X restore 720 275 pd GUI;
 #X obj 633 307 s \$0-coeficientes;
 #N canvas 772 177 437 438 init 0;
 #X obj 119 47 loadbang;
@@ -922,8 +922,8 @@ a resonant frequency., f 46;
 are at 1 now to kill lower frequencies., f 46;
 #X text 39 162 The bandpass has a zero at -1 and 1 to attenuate both
 lower and higher frequencies., f 46;
-#X text 42 213 The peak has poles and zeros in the same angle but their
-amplitude defines if we have a resonance peak or dip. For instance
+#X text 42 213 The peak has poles and zeros in the same angle \, but
+their amplitude defines if we have a resonance peak or dip. For instance
 \, a peak happens if Poles have a higher amplitude., f 46;
 #X restore 1144 111 pd text;
 #X text 959 111 more on pole/zero action:;

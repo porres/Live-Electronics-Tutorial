@@ -21,13 +21,9 @@
 #X text 195 339 ---->;
 #X text 193 294 |;
 #X obj 555 235 ffdelay~ 1 -samps;
-#X obj 537 205 bl.saw~;
-#X obj 537 178 sig~ 300;
 #X obj 537 323 out~;
 #X obj 763 308 out~;
 #X obj 763 266 mov.avg~ 8;
-#X obj 762 218 sig~ 300;
-#X obj 762 244 bl.saw~;
 #X text 29 30 Let's look at filter diagram representations. Below \,
 "x" represents the input signal and "y" the output. The input and output
 are a function of "n" \, which is the sample number.;
@@ -47,12 +43,12 @@ The diagram tells us we have a sum of the two samples divided by two
 we also have the average filter object [mov.avg~]. Below it performs
 an average on 8 samples. See its help file for more details.;
 #X obj 716 51 declare -path else;
+#X obj 537 205 bl.saw~ 300;
+#X obj 763 240 bl.saw~ 300;
 #X connect 0 0 1 0;
-#X connect 1 0 22 0;
+#X connect 1 0 20 0;
 #X connect 19 0 0 1;
-#X connect 20 0 0 0;
-#X connect 20 0 19 0;
-#X connect 21 0 20 0;
-#X connect 24 0 23 0;
-#X connect 25 0 26 0;
-#X connect 26 0 24 0;
+#X connect 22 0 21 0;
+#X connect 31 0 0 0;
+#X connect 31 0 19 0;
+#X connect 32 0 22 0;

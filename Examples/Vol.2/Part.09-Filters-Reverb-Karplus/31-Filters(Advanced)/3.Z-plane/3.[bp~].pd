@@ -560,7 +560,6 @@ and Q input \, the coefficients are loaded inside [fexpr~] for comparison:
 ;
 #X text 87 473 gain;
 #N canvas 148 23 862 659 Poles 0;
-#X text 544 600 polo 1;
 #X obj 578 580 outlet;
 #X obj 525 580 outlet;
 #X text 135 104 X =;
@@ -609,7 +608,6 @@ and Q input \, the coefficients are loaded inside [fexpr~] for comparison:
 #X obj 649 580 outlet;
 #X floatatom 702 557 0 0 0 0 - - -;
 #X floatatom 649 534 0 0 0 0 - - -;
-#X text 669 599 polo 2;
 #X obj 637 429 v im;
 #X obj 591 429 v re;
 #X obj 525 459 expr (b + re) / 2 \; im / 2 \; (b - re) / 2 \; -im /
@@ -640,47 +638,47 @@ reversed \, so we have:;
 #X text 43 58 The pole extraction is based in bhaskara:;
 #X text 85 507 Real Part =;
 #X text 256 506 Imaginary Part =;
-#X text 52 381 If (b^2 - 4.c) is negativo \, we're extracting a square
+#X text 69 559 the ( ) indicates how to extract both poles (one with
+"+" \, the other with "-").;
+#X text 521 46 Let's finally calculate this in a patch:;
+#X text 625 284 complex;
+#X text 52 381 If (b^2 - 4.c) is negative \, we're extracting a square
 root of a negative value \, hence we're dealing with a complex number!
 That means: a Complex Pole! So we need to check if it's positive or
 negative. If positive \, this is the real part and the imaginary part
 is 0 \, but if negative \, it's the imaginary part and the real part
 is 0 - we then have both parts as:;
-#X text 69 559 the ( ) indicates how to extract both poles (one with
-"+" \, the other with "-").;
-#X text 521 46 Let's finally calculate this in a patch:;
-#X text 625 284 complex;
-#X connect 10 0 30 0;
-#X connect 11 0 26 0;
-#X connect 11 1 27 0;
-#X connect 29 0 32 0;
-#X connect 30 0 29 0;
-#X connect 30 1 11 0;
-#X connect 32 0 51 0;
-#X connect 32 1 39 0;
-#X connect 32 2 35 1;
-#X connect 33 0 38 0;
-#X connect 33 1 36 0;
-#X connect 34 0 35 0;
-#X connect 35 0 33 0;
-#X connect 36 0 37 0;
+#X text 544 600 pole 1;
+#X text 669 599 pole 2;
+#X connect 9 0 29 0;
+#X connect 10 0 25 0;
+#X connect 10 1 26 0;
+#X connect 28 0 31 0;
+#X connect 29 0 28 0;
+#X connect 29 1 10 0;
+#X connect 31 0 49 0;
+#X connect 31 1 38 0;
+#X connect 31 2 34 1;
+#X connect 32 0 37 0;
+#X connect 32 1 35 0;
+#X connect 33 0 34 0;
+#X connect 34 0 32 0;
+#X connect 35 0 36 0;
+#X connect 36 0 39 0;
 #X connect 37 0 40 0;
-#X connect 38 0 41 0;
-#X connect 39 0 34 0;
-#X connect 40 0 49 0;
-#X connect 41 0 50 0;
+#X connect 38 0 33 0;
+#X connect 39 0 47 0;
+#X connect 40 0 48 0;
+#X connect 41 0 0 0;
 #X connect 42 0 1 0;
-#X connect 43 0 2 0;
+#X connect 45 0 43 0;
 #X connect 46 0 44 0;
-#X connect 47 0 45 0;
-#X connect 51 0 43 0;
-#X connect 51 1 42 0;
-#X connect 51 2 47 0;
-#X connect 51 3 46 0;
+#X connect 49 0 42 0;
+#X connect 49 1 41 0;
+#X connect 49 2 46 0;
+#X connect 49 3 45 0;
 #X restore 302 521 pd Poles;
 #X text 267 127 Q;
-#X text 26 404 And see how we canalso implement this filter with two
-[cpole~] objects (complex pole filters) below.;
 #X text 490 51 Even though the coefficients' values are real \, we're
 dealing with complex poles. More precisely a conjugate pair \, where
 the imaginary values are inverted (and get cancelled out). The subpatch
@@ -692,6 +690,8 @@ the maximum amplitude value is 0 dB. The angle represents the resonant
 frequency.;
 #X obj 767 13 declare -path else;
 #X obj 302 495 r \$0-coefficients;
+#X text 26 404 And see how we can also implement this filter with two
+[cpole~] objects (complex pole filters) below.;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
 #X connect 2 0 28 0;
@@ -721,5 +721,5 @@ frequency.;
 #X connect 34 1 11 0;
 #X connect 34 2 10 0;
 #X connect 34 3 9 0;
-#X connect 40 0 14 0;
-#X connect 40 0 34 0;
+#X connect 39 0 14 0;
+#X connect 39 0 34 0;

@@ -10,27 +10,23 @@
 #X text 247 604 -a*sin(w);
 #X text 155 541 Re[H(z)] =;
 #X text 155 593 Im[H(z)] =;
-#X floatatom 638 312 0 0 0 0 - - -;
-#X obj 641 285 hsl 128 15 0 3.14 0 0 empty empty empty -2 -8 0 10 -228856
+#X floatatom 658 312 0 0 0 0 - - -;
+#X obj 661 285 hsl 128 15 0 3.14 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 725 362 v a;
-#X floatatom 709 334 0 0 0 0 - - -;
-#X obj 712 311 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+#X obj 745 362 v a;
+#X floatatom 729 334 0 0 0 0 - - -;
+#X obj 732 311 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X floatatom 691 503 6 0 0 0 - - -;
-#X floatatom 779 500 6 0 0 0 - - -;
-#X obj 691 460 expr 1 / $f1 \; 0 - $f2;
+#X floatatom 711 503 6 0 0 0 - - -;
+#X floatatom 799 500 6 0 0 0 - - -;
+#X obj 711 460 expr 1 / $f1 \; 0 - $f2;
 #X obj 189 307 cnv 15 160 45 empty empty empty 20 12 0 14 -216246 -66577
 0;
 #X text 242 316 _____________;
 #X text 277 310 1;
 #X text 195 322 H(z) =;
 #X text 248 330 1 - a*z^-1;
-#X obj 691 432 car2pol;
-#X text 37 36 A filter's response is an amplitude and phase value as
-a function of frequency \, which represents how the filter affects
-the gain and phase of an incomin frequency. We can calculate it with
-the transfer function., f 60;
+#X obj 711 432 car2pol;
 #X text 36 100 The transfer function is in the frequency domain and
 is a function of a complex frequency "z" (with real/imaginary parts).
 The amplitude and phase (or filter response) is then obtained with
@@ -42,31 +38,15 @@ In this way \, z^-1 relates to "w" \, z^-2 to 2*w and so on. The real
 part of "z" is the cosine of "w" and the imaginary part is the sine
 of "w". With both parts \, we can convert it to amplitude and frequency
 with [car2pol].;
-#X text 38 277 Let's see how to do this with a 1-pole filter. HEre's
-the transfer function:;
-#X text 43 373 Where "a" is the pole coefficient \, z^-1 is a complex
-frequency. Now let's adapt it to include "w". Starting with the denominator
-\, we have "1" \, which is a real number (so it's imaginary part is
-0). So we have:;
-#X text 41 500 And can separate into two transfer functions \, a real
-and imaginary., f 52;
-#X text 509 61 Now we're ready to get the amplitude \, for instance.
-Check the formular below \, where |H(z)| is the amplitude of the transfer
-function \, "a" is the pole coefficient and "w" the frequency in radians
-per sample.;
-#X obj 691 361 hot;
-#X text 670 283 frequency;
-#X obj 691 388 expr 1 - a*cos($f1) \; -a*sin($f1);
-#X text 824 502 Phase;
-#X text 656 502 Amp;
-#X text 735 310 coefficient;
-#X text 508 217 On phase calculation \, we need to subtract its value
-because we have a division in the transfer function \, and complex
-math defines that it requires subtracting the phases. See patch below:
-;
-#X text 533 583 Now check the subpatch below for how to get the frequency
+#X obj 711 361 hot;
+#X text 690 283 frequency;
+#X obj 711 388 expr 1 - a*cos($f1) \; -a*sin($f1);
+#X text 844 502 Phase;
+#X text 676 502 Amp;
+#X text 755 310 coefficient;
+#X text 526 571 Now check the subpatch below for how to get the frequency
 response of [lop~].;
-#N canvas 152 39 958 660 [lop~]-respone 0;
+#N canvas 289 55 958 660 [lop~]-respone 0;
 #N canvas 172 85 1026 565 (subpatch) 0;
 #X obj 101 101 cnv 15 808 388 empty empty empty 20 12 0 14 -1 -262144
 0;
@@ -145,14 +125,14 @@ empty -2 -8 0 10 -228856 -228856 -1 0 0;
 -0.842773 -0.870437 -0.898923 -0.928234 -0.95841 -0.989456 -1.02139
 -1.05424 -1.08802 -1.12274 -1.15844 -1.19512 -1.2328 -1.27151 -1.31126
 -1.35206 -1.39394 -1.43693 -1.48102 -1.52624 -1.57261 -1.62014 -1.66885
--1.71875 -1.76987 -1.8222 -1.87578 -1.93061 -1.9867 -2.04406 -2.10272
+-1.71875 -1.76986 -1.8222 -1.87578 -1.93061 -1.9867 -2.04406 -2.10272
 -2.16268 -2.22394 -2.28653 -2.35044 -2.41569 -2.48229 -2.55023 -2.61953
 -2.69019 -2.76222 -2.83561 -2.91038 -2.98652 -3.06403 -3.14291 -3.22317
 -3.30479 -3.38778 -3.47213 -3.55784 -3.64491 -3.73332 -3.82307 -3.91414
 -4.00655 -4.10027 -4.19528 -4.2916 -4.38919 -4.48805 -4.58817 -4.68953
 -4.79211 -4.89592 -5.00091 -5.1071 -5.21445 -5.32295 -5.43259 -5.54334
 -5.65519 -5.76813 -5.88212 -5.99716 -6.11323 -6.23031 -6.34837 -6.46741
--6.5874 -6.70832 -6.83015 -6.95288 -7.07648 -7.20093 -7.32623 -7.45234
+-6.5874 -6.70832 -6.83015 -6.95288 -7.07648 -7.20094 -7.32623 -7.45234
 -7.57925 -7.70694 -7.83539 -7.96458 -8.09449 -8.22512 -8.35642 -8.4884
 -8.62103 -8.7543 -8.88819 -9.02267 -9.15773 -9.29337 -9.42955 -9.56627
 -9.7035 -9.84125 -9.97947 -10.1182 -10.2573 -10.3969 -10.537 -10.6774
@@ -166,7 +146,7 @@ empty -2 -8 0 10 -228856 -228856 -1 0 0;
 -19.0133 -19.1601 -19.3068 -19.4533 -19.5997 -19.7458 -19.8918 -20.0376
 -20.1831 -20.3284 -20.4735 -20.6184 -20.7629 -20.9072 -21.0512 -21.1949
 -21.3383 -21.4813 -21.624 -21.7664 -21.9083 -22.0499 -22.191 -22.3317
--22.472 -22.6118 -22.7511 -22.8898 -23.0281 -23.1658 -23.3029 -23.4395
+-22.472 -22.6118 -22.751 -22.8898 -23.0281 -23.1658 -23.3029 -23.4395
 -23.5754 -23.7106 -23.8452 -23.9791 -24 -24 -24 -24 -24 -24 -24 -24
 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24
 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24 -24
@@ -446,18 +426,38 @@ empty -2 -8 0 10 -228856 -228856 -1 0 0;
 #X connect 9 1 10 0;
 #X connect 23 0 5 0;
 #X connect 25 0 3 0;
-#X restore 720 628 pd [lop~]-respone;
+#X restore 713 616 pd [lop~]-respone;
 #X obj 756 16 declare -path else;
-#X obj 566 142 pic 0 ../files/amp.gif empty empty;
-#X connect 10 0 31 0;
+#X obj 566 142 pic 0 ../files/amp.gif empty empty 0;
+#X text 36 36 A filter's response are amplitude and phase values as
+a function of frequency \, which represents how the filter affects
+the gain and phase of an incoming frequency. We can calculate it with
+the transfer function., f 60;
+#X text 38 277 Let's see how to do this with a 1-pole filter. Here's
+the transfer function:;
+#X text 43 373 Where "a" is the pole coefficient \, z^-1 is a complex
+frequency. Now let's adapt it to include "w". Starting with the denominator
+\, we have "1" \, which is a real number (and it's imaginary part is
+0). So we have:;
+#X text 41 500 We can separate into two transfer functions \, a real
+and imaginary., f 52;
+#X text 509 60 Now we're ready to get the amplitude \, for instance.
+Check the formula below \, where |H(z)| is the amplitude of the transfer
+function \, "a" is the pole coefficient and "w" the frequency in radians
+per sample.;
+#X text 508 216 On phase calculation \, we need to subtract its value
+because we have a division in the transfer function \, and complex
+math defines that it requires subtracting the phases. See the patch
+below:;
+#X connect 10 0 26 0;
 #X connect 11 0 10 0;
-#X connect 13 0 31 1;
+#X connect 13 0 26 1;
 #X connect 14 0 13 0;
 #X connect 17 0 15 0;
 #X connect 17 1 16 0;
 #X connect 23 0 17 0;
 #X connect 23 1 17 1;
-#X connect 31 0 33 0;
-#X connect 31 1 12 0;
-#X connect 33 0 23 0;
-#X connect 33 1 23 1;
+#X connect 26 0 28 0;
+#X connect 26 1 12 0;
+#X connect 28 0 23 0;
+#X connect 28 1 23 1;

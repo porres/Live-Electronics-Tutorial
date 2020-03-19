@@ -1,4 +1,4 @@
-#N canvas 225 23 886 601 12;
+#N canvas 429 56 886 601 12;
 #X declare -path else;
 #X obj 503 338 rpole~;
 #X obj 503 365 rzero~ 1;
@@ -17,7 +17,7 @@
 #X obj 655 271 send \$0-a;
 #X obj 542 311 receive \$0-a;
 #X obj 674 477 receive \$0-a;
-#X obj 139 247 fexpr~ $x - $x[-1] + a * $y[-1];
+#X obj 124 241 fexpr~ $x - $x[-1] + a * $y[-1];
 #X text 113 318 y[n] = x[n] - x[n-1] + a * y[n-1];
 #X obj 680 320 cnv 15 150 50 empty empty empty 5 12 0 14 -261234 -66577
 0;
@@ -26,14 +26,11 @@
 #X text 732 347 1 - a * z^-1;
 #X text 740 324 1 - z^-1;
 #X obj 174 131 fexpr~ $x - a*$x[-1];
-#X text 30 30 The [hip~] object is a 1 Pole / 1 Zero filter. It can
+#X text 29 21 The [hip~] object is a 1 Pole / 1 Zero filter. It can
 then be implemented with the [rpole~] object plus the [rzero~] \, which
 is a one zero filter whose difference equation and [fexpr~] implementation
 is:, f 53;
 #X obj 88 101 rzero~;
-#X text 32 175 The zero coefficient for [hip~] is always 1 \, so we
-just have y[n] = x[n] - x[n-1]. Let's join that the one pole equation
-y[n] = x[n] + a * y[n-1] and we get:, f 53;
 #X text 75 292 Difference equation:;
 #X obj 431 516 out~;
 #X obj 503 406 out~;
@@ -62,22 +59,25 @@ implementations., f 34;
 #X text 27 78 We get:;
 #X restore 777 371 pd H(z);
 #X obj 703 16 declare -path else;
+#X text 32 175 The zero coefficient for [hip~] is always 1 \, so we
+just have y[n] = x[n] - x[n-1]. Let's join it to the one pole equation
+y[n] = x[n] + a * y[n-1] and we get:, f 53;
 #X connect 0 0 1 0;
-#X connect 1 0 28 0;
-#X connect 2 0 33 0;
+#X connect 1 0 27 0;
+#X connect 2 0 32 0;
 #X connect 3 0 2 1;
-#X connect 3 0 35 0;
+#X connect 3 0 34 0;
 #X connect 4 0 0 0;
 #X connect 4 0 2 0;
-#X connect 4 0 37 0;
+#X connect 4 0 36 0;
 #X connect 5 0 3 0;
 #X connect 7 0 9 0;
-#X connect 8 0 29 0;
+#X connect 8 0 28 0;
 #X connect 13 0 0 1;
 #X connect 14 0 11 0;
-#X connect 29 0 30 0;
-#X connect 30 0 7 0;
-#X connect 34 0 12 0;
-#X connect 35 0 36 0;
-#X connect 36 0 34 0;
-#X connect 37 0 27 0;
+#X connect 28 0 29 0;
+#X connect 29 0 7 0;
+#X connect 33 0 12 0;
+#X connect 34 0 35 0;
+#X connect 35 0 33 0;
+#X connect 36 0 26 0;

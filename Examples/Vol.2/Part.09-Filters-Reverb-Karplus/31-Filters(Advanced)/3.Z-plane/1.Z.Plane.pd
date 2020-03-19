@@ -1012,25 +1012,23 @@ It only uses the real axis \, because we're dealing with real Poles
 and Zeros. The gain coefficient is neither a pole or zero \, so it's
 not plotted., f 55;
 #N canvas 538 23 496 404 text 0;
-#X text 36 23 A Pole is a resonance \, it boosts a frequency. On the
+#X text 37 32 A Pole is a resonance \, it boosts a frequency. On the
 other hand \, a Zero is an anti resonance and attenuates (or zeros)
 a frequency.;
-#X text 35 78 Note the Z Plane has a circle \, which is the unitary
+#X text 36 87 Note the Z Plane has a circle \, which is the unitary
 circle \, with a radius of "1"! If poles go over this circle \, they
 need to be compensated with zeroes \, or the filter explodes!;
-#X text 36 135 In this example \, the value of the pole goes from 0
-to 1 \, while the zero has a 1 value. A Pole is a resonance \, it boosts
-a frequency. On the other hand \, a Zero is an anti resonance and attenuates
-(or zeros) a frequency. The frequency of the pole or zero is defined
-by an angle \, in this case the angle is 0 and the frequency is also
-0 hz!, f 58;
-#X text 36 233 Hence \, for [lop~] \, as the pole coefficient reaches
+#X text 37 217 Hence \, for [lop~] \, as the pole coefficient reaches
 1 \, the lower frequencies get a boost \, which is compensated by the
-gain parameter \, turning it into a low pass filter.;
-#X text 36 290 As for [hip~] \, a zero at 1 forces removes 0Hz \, but
+gain parameter \, turning it into a low pass filter., f 59;
+#X text 37 274 As for [hip~] \, a zero at 1 forces removes 0Hz \, but
 we have a decay curve from Nyquist until it reaches 0Hz. With the pole
 coefficient we can add gain to lower frequencies and compensate for
-this loss \, so it acts like a frequency cutoff., f 58;
+this loss \, so it acts like a frequency cutoff., f 59;
+#X text 37 144 In this example \, the value of the pole goes from 0
+to 1 \, while the zero has a value of "1". The frequency of the pole
+or zero is defined by an angle \, in this case the angle is 0 and the
+frequency is also 0 hz!;
 #X restore 327 192 pd text;
 #X text 154 166 More on how to interpret the graph in this subpatch:
 , f 28;

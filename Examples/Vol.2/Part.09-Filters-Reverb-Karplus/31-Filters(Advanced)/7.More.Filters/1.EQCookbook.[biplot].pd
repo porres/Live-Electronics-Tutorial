@@ -626,8 +626,6 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X restore 26 328 pd menu;
 #X obj 162 341 nbx 5 14 0 100 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X text 21 134 Select filter type in [pd menu] \, see the filters response
-in [pd biplot] and poles/zeros and gain to the right., f 54;
 #X text 21 186 Lowshelf and highshelf take a slope value (between 0
 and 1) instead of "Q". They also need a gain parameter (in dB). The
 "Eq" filter also needs a gain parameter \, but for others this is optional
@@ -647,11 +645,7 @@ that they take signal input to control the parameters. Another difference
 is that only [eq~] \, [lowshelf~] and [highshelf~] have a gain input.
 , f 89;
 #X text 164 437 <= click;
-#X text 21 55 The filters from Robert Bristow-Johnson's "Cookbook formulae
-for audio EQ biquad filter coefficients" are reviewed again in this
-example \, which also presents the [biplot] object from ELSE that plots
-the filter response from biquad coefficients., f 54;
-#X obj 244 24 declare -path else;
+#X obj 250 22 declare -path else;
 #N canvas 232 273 1021 510 vanilla 0;
 #N canvas 114 184 549 267 lowpass 0;
 #X obj 39 165 pack f f f f f;
@@ -934,9 +928,6 @@ b0 \; - a0 = (1 - alphaQ) / b0 \; - a1 = -2*cos(w) / b0 \; - a2 = 1
 -228856 -1 -1 0 256;
 #X obj 326 164 nbx 5 18 0 100 0 0 empty empty empty 0 -8 0 14 -228856
 -1 -1 0 256;
-#X text 44 26 With the parâmetros of: frequency \, Q (for resonant
-filters) or S (for shelving filters) and gain (for peak/shelving) we
-can calculate biquad coefficients., f 60;
 #X text 44 74 First \, the frequency value in Hz is converted to radians
 per sample. The gain input value in dB is also converted to linear
 amplitude.;
@@ -1034,10 +1025,13 @@ b0 \; - b2 = (alphaQ - 1) / b0 \; - a0 = 1 / b0 \; - a1 = -2*cos(w)
 #X obj 595 365 biquad~;
 #X obj 376 231 max 0.5;
 #X obj 595 274 r \$0-coeffs;
+#X text 44 26 With the parameters of: frequency \, Q (for resonant
+filters) or S (for shelving filters) and gain (for peak/shelving) we
+can calculate biquad coefficients., f 60;
 #X connect 9 0 25 0;
 #X connect 10 0 16 0;
 #X connect 10 1 22 0;
-#X connect 10 1 59 0;
+#X connect 10 1 58 0;
 #X connect 11 0 17 0;
 #X connect 11 1 12 0;
 #X connect 15 0 8 0;
@@ -1053,17 +1047,24 @@ b0 \; - b2 = (alphaQ - 1) / b0 \; - a0 = 1 / b0 \; - a1 = -2*cos(w)
 #X connect 33 0 24 0;
 #X connect 34 0 9 0;
 #X connect 35 0 23 0;
-#X connect 38 0 58 0;
-#X connect 40 0 41 0;
-#X connect 41 0 43 0;
-#X connect 41 1 42 0;
-#X connect 55 0 58 0;
-#X connect 58 0 56 0;
-#X connect 59 0 13 0;
-#X connect 60 0 38 0;
+#X connect 37 0 57 0;
+#X connect 39 0 40 0;
+#X connect 40 0 42 0;
+#X connect 40 1 41 0;
+#X connect 54 0 57 0;
+#X connect 57 0 55 0;
+#X connect 58 0 13 0;
+#X connect 59 0 37 0;
 #X restore 91 555 pd vanilla;
 #X text 40 476 Below we have a patch implementation of the biquad coefficient
 calculations., f 23;
+#X text 21 55 The filter equations from Robert Bristow-Johnson's "Cookbook
+formulae for audio EQ biquad filter coefficients" are presented in
+this example as the basis of the [bicoeff] object., f 54;
+#X text 21 120 The [biplot] object from ELSE that plots the filter
+response from biquad coefficients. Select filter type in [pd menu]
+\, see the filters response in [pd biplot] and poles/zeros and gain
+to the right., f 54;
 #X connect 5 0 7 0;
 #X connect 6 0 5 0;
 #X connect 9 0 10 0;

@@ -1,4 +1,4 @@
-#N canvas 314 53 866 687 12;
+#N canvas 434 92 866 687 12;
 #X declare -path else;
 #X obj 663 119 setdsp~;
 #X obj 685 58 declare -path else;
@@ -6,10 +6,6 @@
 linear and exponential slew (portamento). The 3rd and 5th inlet were
 used to set the linear ramp \, while the 4th and 6th controlled the
 non linear one., f 61;
-#X text 64 202 So if you just use the 4th/6th inlets you have a "simple"
-one pole filter. Let's consider the same value input for both inlets.
-This input is the cuttof frequency in radians per sample \, lets call
-it 'rad'. Its filter formula can thenbe simplified as:, f 61;
 #X text 196 275 y[n] = y[-1] + (x[n] - y[-1]) * rad;
 #X obj 73 584 v rad;
 #X obj 232 436 fexpr~ $y1 + ($x1-$y1) * rad;
@@ -33,26 +29,30 @@ most flexible nonlinear one-pole filter he could., f 61;
 #X floatatom 73 552 0 0 0 0 - - -;
 #X obj 73 385 initmess 125;
 #X obj 706 292 initmess 125;
-#X text 67 311 You can see this implemente in [fexpr~] below. The input
-is the ramp up/down in ms \, converted to hz and then radians per sample.
-;
 #X text 115 420 ms;
 #X floatatom 73 492 5 10 125 0 - - -;
 #X text 115 493 Hz;
 #X text 745 321 ms;
 #X text 539 240 Compare it now to the [slop~] object.;
-#X connect 6 0 17 0;
-#X connect 8 0 14 5;
-#X connect 8 0 14 3;
-#X connect 9 0 8 0;
-#X connect 11 0 9 0;
-#X connect 13 0 14 0;
-#X connect 14 0 12 0;
-#X connect 15 0 20 0;
-#X connect 16 0 6 0;
-#X connect 18 0 25 0;
-#X connect 19 0 18 0;
-#X connect 20 0 5 0;
-#X connect 21 0 19 0;
-#X connect 22 0 11 0;
-#X connect 25 0 15 0;
+#X text 64 202 So if you just use the 4th/6th inlets you have a "simple"
+one pole filter. Let's consider the same value input for both inlets.
+This input is the cuttof frequency in radians per sample \, lets call
+it 'rad'. Its filter formula can then be simplified as:, f 61;
+#X text 67 311 You can see this implemented in [fexpr~] below. The
+input is the ramp up/down in ms \, converted to hz and then radians
+per sample.;
+#X connect 5 0 16 0;
+#X connect 7 0 13 5;
+#X connect 7 0 13 3;
+#X connect 8 0 7 0;
+#X connect 10 0 8 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 19 0;
+#X connect 15 0 5 0;
+#X connect 17 0 23 0;
+#X connect 18 0 17 0;
+#X connect 19 0 4 0;
+#X connect 20 0 18 0;
+#X connect 21 0 10 0;
+#X connect 23 0 14 0;

@@ -16,7 +16,7 @@
 #X obj 150 252 r~ \$0-coef;
 #X text 357 62 LFO;
 #N canvas 345 151 691 411 phaser-stereo 0;
-#X obj 61 280 +~;
+#X obj 61 298 +~;
 #N canvas 172 23 283 355 4stages 0;
 #X obj 62 107 rpole~;
 #X obj 62 82 rzero_rev~;
@@ -49,7 +49,7 @@
 #X connect 11 0 7 1;
 #X connect 11 0 6 1;
 #X connect 12 0 1 0;
-#X restore 76 114 pd 4stages;
+#X restore 76 132 pd 4stages;
 #N canvas 172 23 283 355 4stages 0;
 #X obj 62 107 rpole~;
 #X obj 62 82 rzero_rev~;
@@ -82,7 +82,7 @@
 #X connect 11 0 7 1;
 #X connect 11 0 6 1;
 #X connect 12 0 1 0;
-#X restore 88 145 pd 4stages;
+#X restore 88 163 pd 4stages;
 #N canvas 172 23 283 355 4stages 0;
 #X obj 62 107 rpole~;
 #X obj 62 82 rzero_rev~;
@@ -115,9 +115,9 @@
 #X connect 11 0 7 1;
 #X connect 11 0 6 1;
 #X connect 12 0 1 0;
-#X restore 99 182 pd 4stages;
-#X obj 61 341 outlet~;
-#X obj 220 284 +~;
+#X restore 99 200 pd 4stages;
+#X obj 61 359 outlet~;
+#X obj 220 302 +~;
 #N canvas 172 23 283 355 4stages 0;
 #X obj 62 107 rpole~;
 #X obj 62 82 rzero_rev~;
@@ -150,8 +150,8 @@
 #X connect 11 0 7 1;
 #X connect 11 0 6 1;
 #X connect 12 0 1 0;
-#X restore 245 153 pd 4stages;
-#X obj 220 340 outlet~;
+#X restore 245 171 pd 4stages;
+#X obj 220 358 outlet~;
 #N canvas 172 23 258 280 2stages 0;
 #X obj 62 107 rpole~;
 #X obj 62 82 rzero_rev~;
@@ -170,7 +170,7 @@
 #X connect 5 0 3 1;
 #X connect 5 0 2 1;
 #X connect 6 0 1 0;
-#X restore 233 122 pd 2stages;
+#X restore 233 140 pd 2stages;
 #N canvas 172 23 283 355 4stages 0;
 #X obj 62 107 rpole~;
 #X obj 62 82 rzero_rev~;
@@ -203,7 +203,7 @@
 #X connect 11 0 7 1;
 #X connect 11 0 6 1;
 #X connect 12 0 1 0;
-#X restore 257 189 pd 4stages;
+#X restore 257 207 pd 4stages;
 #N canvas 172 23 283 355 4stages 0;
 #X obj 62 107 rpole~;
 #X obj 62 82 rzero_rev~;
@@ -236,7 +236,7 @@
 #X connect 11 0 7 1;
 #X connect 11 0 6 1;
 #X connect 12 0 1 0;
-#X restore 275 225 pd 4stages;
+#X restore 275 243 pd 4stages;
 #N canvas 172 23 283 355 4stages 0;
 #X obj 62 107 rpole~;
 #X obj 62 82 rzero_rev~;
@@ -269,16 +269,17 @@
 #X connect 11 0 7 1;
 #X connect 11 0 6 1;
 #X connect 12 0 1 0;
-#X restore 111 224 pd 4stages;
-#X obj 147 25 sig~ 40;
-#X obj 218 62 +~ 0.5;
-#X obj 61 81 bl.saw~;
-#X obj 218 89 bl.saw~;
-#X obj 220 311 drive~;
-#X obj 61 309 drive~;
-#X text 390 124 This design fools around and also sums the output of
+#X restore 111 242 pd 4stages;
+#X obj 147 43 sig~ 40;
+#X obj 218 80 +~ 0.5;
+#X obj 61 99 bl.saw~;
+#X obj 218 107 bl.saw~;
+#X obj 220 329 drive~;
+#X obj 61 327 drive~;
+#X text 390 142 This design fools around and also sums the output of
 every stage \, which maximizes the phaser effect. A [drive~] object
 compresses so many sums., f 30;
+#X floatatom 147 17 5 0 0 0 - - -;
 #X connect 0 0 17 0;
 #X connect 1 0 0 1;
 #X connect 1 0 2 0;
@@ -304,6 +305,7 @@ compresses so many sums., f 30;
 #X connect 15 0 8 0;
 #X connect 16 0 7 0;
 #X connect 17 0 4 0;
+#X connect 19 0 12 0;
 #X restore 384 300 pd phaser-stereo;
 #X obj 392 61 rescale~ 0.62 0.98;
 #X obj 48 332 out~;

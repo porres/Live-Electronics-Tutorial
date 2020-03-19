@@ -1,4 +1,4 @@
-#N canvas 666 23 536 572 12;
+#N canvas 531 46 536 572 12;
 #X declare -path else;
 #X obj 126 189 fexpr~ ($x1[0] + $x1[-1] + $x1[-2] + $x1[-3] + $x1[-4]
 + $x1[-5] + $x1[-6] + $x1[-7]) * 0.125, f 46;
@@ -11,21 +11,21 @@
 #X obj 142 344 noise~;
 #X obj 142 373 fexpr~ $x + a * $y;
 #X obj 142 411 out~;
-#X text 48 68 A filter with only feedforward lines is called "non recursive"
-and "Finite Impulse Response" \, or just FIR. On the other hand \,
-a filter with feedback is known as "recursive" or Ininite Impulse Response
-(IIR). This is because a feedback can lead to infinite repetition.
-, f 55;
 #X text 49 153 An example of FIR filter is the average filter:;
 #X text 319 402 coefficient;
 #X text 51 264 And now as an example of IIR \, the one sample feedback
 filter from the last example - the difference is that we're abreviatting
 the variables and using a value object to insert in the equation as
 the coefficient:;
-#X text 52 496 Note that if the coefficient is equal to 1 \, then the
-filter becomes indeed infinite. Values over 1 explodes the filter pretty
-quickly!;
 #X obj 332 24 declare -path else;
+#X text 58 68 A filter with only feedforward lines is called "non recursive"
+and "Finite Impulse Response" \, or just "FIR". On the other hand \,
+a filter with feedback is known as "recursive" or Ininite Impulse Response
+(IIR). This is because a feedback can lead to infinite repetitions.
+, f 56;
+#X text 52 496 Note that if the coefficient is equal to 1 \, then the
+filter becomes indeed infinite. Values over 1 explode the filter pretty
+quickly!;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X connect 6 0 7 0;

@@ -46,15 +46,15 @@ y(n-1) + b2 * y(n-2), f 36;
 delay \, difference equation and [fexpr~] implementation:, f 46;
 #X text 670 471 gain;
 #X obj 548 377 initmess 1.99 -0.995 0.00246 0 -0.00246;
+#X obj 712 18 declare -path else;
+#X obj 46 154 pic 0 ../files/FOS.gif empty empty 0;
+#X obj 515 117 pic 0 ../files/SOS.gif empty empty 0;
 #X text 65 25 A first order filter has a decay of 6dB per octave \,
 a second order has 12 dB \, fourth has 24 and so on. Filters in cascade
 sum their orders (two 1st order filters become 2nd order). The number
 of delayed samples defines the order \, where a first order filter
 can only have one sample delay for a feedforward and a feedback line.
-Here's a "First Order System" filter:, f 57;
-#X obj 712 18 declare -path else;
-#X obj 46 154 pic 0 ../files/FOS.gif empty empty;
-#X obj 515 117 pic 0 ../files/SOS.gif empty empty;
+Here's a "First Order System" filter diagram:, f 57;
 #X connect 5 0 4 0;
 #X connect 6 0 3 0;
 #X connect 7 0 2 0;

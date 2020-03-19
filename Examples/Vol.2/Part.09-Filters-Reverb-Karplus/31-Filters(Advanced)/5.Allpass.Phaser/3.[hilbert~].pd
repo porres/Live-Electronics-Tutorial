@@ -1,6 +1,6 @@
-#N canvas 238 23 1042 569 12;
+#N canvas 238 23 1042 561 12;
 #X declare -path else;
-#X obj 337 119 hilbert~;
+#X obj 339 122 hilbert~;
 #N canvas 167 73 1108 572 (subpatch) 0;
 #N canvas 606 377 578 406 plot 0;
 #N canvas 259 145 659 527 init 0;
@@ -260,17 +260,17 @@
 #X restore 300 45 pd plot;
 #X obj 101 101 cnv 15 888 288 empty empty empty 18 9 1 15 -262144 -1
 0;
-#X obj 146 109 cnv 15 805 235 empty empty empty 20 12 0 14 -1 -66577
+#X obj 159 109 cnv 15 805 235 empty empty empty 20 12 0 14 -1 -66577
 0;
-#X obj 481 366 cnv 15 15 15 empty empty Kilohertz 18 9 1 16 -262144
+#X obj 494 366 cnv 15 15 15 empty empty Kilohertz 18 9 1 16 -262144
 -1 0;
-#X obj 150 314 cnv 15 798 27 empty empty empty 20 12 0 14 -257983 -66577
+#X obj 163 314 cnv 15 798 27 empty empty empty 20 12 0 14 -257983 -66577
 0;
-#X obj 150 258 cnv 15 798 27 empty empty empty 20 12 0 14 -257983 -66577
+#X obj 163 258 cnv 15 798 27 empty empty empty 20 12 0 14 -257983 -66577
 0;
-#X obj 150 286 cnv 15 798 27 empty empty empty 20 12 0 14 -241340 -66577
+#X obj 163 286 cnv 15 798 27 empty empty empty 20 12 0 14 -241340 -66577
 0;
-#X obj 150 230 cnv 15 798 27 empty empty empty 20 12 0 14 -241340 -66577
+#X obj 163 230 cnv 15 798 27 empty empty empty 20 12 0 14 -241340 -66577
 0;
 #N canvas 391 118 975 563 (subpatch) 0;
 #X array \$0-fase 400 float 1;
@@ -329,52 +329,52 @@
 -0.196718 -0.181519 -0.166127 -0.150534 -0.134731 -0.118709 -0.102459
 -0.0859698 -0.06923 -0.0522275 -0.034949 -0.0173806;
 #X coords 0 1 399 -1 800 111 1;
-#X restore 149 230 graph;
-#X obj 150 198 cnv 15 798 27 empty empty empty 20 12 0 14 -257983 -66577
+#X restore 162 230 graph;
+#X obj 163 198 cnv 15 798 27 empty empty empty 20 12 0 14 -257983 -66577
 0;
-#X obj 150 142 cnv 15 798 27 empty empty empty 20 12 0 14 -257983 -66577
+#X obj 163 142 cnv 15 798 27 empty empty empty 20 12 0 14 -257983 -66577
 0;
-#X text 254 344 0.05;
-#X text 154 344 0.02;
-#X obj 150 170 cnv 15 798 27 empty empty empty 20 12 0 14 -241340 -66577
+#X text 267 344 0.05;
+#X text 167 344 0.02;
+#X obj 163 170 cnv 15 798 27 empty empty empty 20 12 0 14 -241340 -66577
 0;
-#X text 855 343 10;
-#X text 932 344 20;
-#X text 780 343 5;
-#X text 677 343 2;
-#X text 599 344 1;
-#X text 513 344 0.5;
-#X text 411 344 0.2;
-#X text 331 344 0.1;
-#X obj 150 114 cnv 15 798 27 empty empty empty 20 12 0 14 -241340 -66577
+#X text 868 343 10;
+#X text 945 344 20;
+#X text 793 343 5;
+#X text 690 343 2;
+#X text 612 344 1;
+#X text 526 344 0.5;
+#X text 424 344 0.2;
+#X text 344 344 0.1;
+#X obj 163 114 cnv 15 798 27 empty empty empty 20 12 0 14 -241340 -66577
 0;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 100 227 1;
-#X restore 167 114 graph;
+#X restore 180 114 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 77 227 1;
-#X restore 267 114 graph;
+#X restore 280 114 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 80 227 1;
-#X restore 344 114 graph;
+#X restore 357 114 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 102 227 1;
-#X restore 424 114 graph;
+#X restore 437 114 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 78 227 1;
-#X restore 526 114 graph;
+#X restore 539 114 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 78 227 1;
-#X restore 604 114 graph;
+#X restore 617 114 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 103 227 1;
-#X restore 682 114 graph;
+#X restore 695 114 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 78 227 1;
-#X restore 785 114 graph;
+#X restore 798 114 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 78 227 1;
-#X restore 863 114 graph;
+#X restore 876 114 graph;
 #N canvas 391 118 975 563 (subpatch) 0;
 #X array \$0-amp 400 float 1;
 #A 0 0.00133987 0.0498253 0.0654358 0.0767844 0.0860199 0.0939372 0.100953
@@ -431,40 +431,38 @@
 -0.474361 -0.433956 -0.390577 -0.344059 -0.294299 -0.241284 -0.185125
 -0.126081 -0.0645816 -0.00121961 -0.00121963;
 #X coords 0 1 399 -1 800 113 1;
-#X restore 149 114 graph;
-#X obj 102 276 cnv 15 15 15 empty empty Fase 0 0 1 17 -262144 -1 0
-;
-#X text 952 331 -pi;
-#X text 953 305 -pi/2;
-#X text 954 275 0;
-#X text 954 248 pi/2;
-#X text 955 226 pi;
-#X obj 109 296 cnv 15 15 15 empty empty rad 0 0 1 17 -262144 -1 0;
+#X restore 162 114 graph;
+#X text 965 331 -pi;
+#X text 966 305 -pi/2;
+#X text 967 275 0;
+#X text 967 248 pi/2;
+#X text 968 226 pi;
+#X obj 110 296 cnv 15 15 15 empty empty rad 0 0 1 17 -262144 -1 0;
 #X obj 101 101 cnv 8 888 8 empty empty empty 18 9 1 15 -262144 -1 0
 ;
-#X obj 103 164 cnv 15 15 15 empty empty Fase 0 0 1 17 -262144 -1 0
+#X obj 104 164 cnv 15 15 15 empty empty Phase 0 0 1 17 -262144 -1 0
 ;
-#X obj 110 184 cnv 15 15 15 empty empty rad 0 0 1 17 -262144 -1 0;
-#X text 952 211 -pi;
-#X text 952 189 -pi/2;
-#X text 953 159 0;
-#X text 953 131 pi/2;
-#X text 954 106 pi;
+#X obj 111 184 cnv 15 15 15 empty empty rad 0 0 1 17 -262144 -1 0;
+#X text 965 211 -pi;
+#X text 965 189 -pi/2;
+#X text 966 159 0;
+#X text 966 131 pi/2;
+#X text 967 106 pi;
+#X obj 105 277 cnv 15 15 15 empty empty Phase 0 0 1 17 -262144 -1 0
+;
 #X coords 0 -1 1 1 890 290 2 100 100;
-#X restore 96 162 pd;
-#X text 56 225 REAL;
-#X text 24 343 IMAGINARY;
-#X text 587 31 Each [biquad~] implements a 2nd order allpass filter.
+#X restore 98 165 pd;
+#X text 58 228 REAL;
+#X text 26 346 IMAGINARY;
+#X text 589 34 Each [biquad~] implements a 2nd order allpass filter.
 Since they are a cascaded pair \, we have a 4th order filter. See the
 phase response of both outputs below. We don't plot the amplitudes
 because they are unchanged., f 53;
-#X text 130 35 The [hilbert~] object is an extra vanilla object and
+#X text 132 38 The [hilbert~] object is an extra vanilla object and
 consists of a pair of 4th order allpass filters \, where the outputs
 have a phase difference of 90 degrees. It is an abstraction implemented
 with [biquad~] filters. Open it., f 61;
-#X text 133 472 Note how when compared to the 2nd order filter \, the
-4th order allpass is able to distort the phase twice as much. Hence
-it is able of two cycles instead of one.;
-#X text 551 472 An the first order filter could only distort to half
-a cycle. Therefore \, at each 2nd order stage \, an allpass is able
-to shift one full cycle.;
+#X text 127 472 Note how when compared to the 2nd order filter \, the
+4th order allpass is able to distort the phase twice as much.;
+#X text 553 475 Hence it is able of two cycles instead of just one
+(with a 2nd order filter).;

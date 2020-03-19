@@ -1,7 +1,7 @@
-#N canvas 436 102 608 497 12;
+#N canvas 436 101 608 497 12;
 #X declare -path else;
 #X obj 62 170 noise~;
-#X obj 61 246 out~;
+#X obj 62 246 out~;
 #X obj 322 255 v a0;
 #X obj 384 255 v a1;
 #X obj 198 255 v b1;

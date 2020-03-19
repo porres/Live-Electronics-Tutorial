@@ -1,8 +1,8 @@
 #N canvas 430 23 959 766 12;
 #X declare -path else;
-#X obj 630 151 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 630 161 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 630 188 impseq~;
+#X obj 630 198 impseq~;
 #N canvas 864 173 371 586 analyze 0;
 #X floatatom 100 104 0 0 0 0 - - -;
 #X obj 137 260 - 60;
@@ -39,74 +39,74 @@
 #X connect 12 0 14 0;
 #X connect 14 0 0 0;
 #X connect 15 0 9 0;
-#X restore 745 275 pd analyze;
-#X obj 630 228 resonant~ 1000 3000;
-#X obj 745 307 display 7;
-#X text 489 53 Let's put it to the test. The subpatch below analyzes
+#X restore 745 285 pd analyze;
+#X obj 630 238 resonant~ 1000 3000;
+#X obj 745 317 display 7;
+#X text 489 63 Let's put it to the test. The subpatch below analyzes
 the output of the filter and sends a value when it falls under 60 dB
 of the attack. The analysis isn't perfect \, but it gets pretty close
 indeed to the default settings. Try it \, and check its help file.
 ;
-#X text 493 383 So this type of filter acts as a resonator \, which
+#X text 493 393 So this type of filter acts as a resonator \, which
 is a kind of reverberator. See also the [resonbank~] object \, which
 is a bank of resonators. Below \, it filters a brown noise with 4 resonators.
 ;
-#X obj 619 450 brown~;
-#X obj 619 557 out~;
-#X obj 217 301 / 1000;
-#X obj 217 346 expr log(1000) / ($f1 * pi);
-#X obj 217 375 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 619 460 brown~;
+#X obj 619 567 out~;
+#X obj 217 311 / 1000;
+#X obj 217 356 expr log(1000) / ($f1 * pi);
+#X obj 217 385 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 279 374 bandwidth in hertz;
-#X obj 199 404 /;
-#X obj 136 319 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X text 279 384 bandwidth in hertz;
+#X obj 199 414 /;
+#X obj 136 329 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 1000 256;
-#X obj 199 430 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 199 440 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 258 428 Q;
-#X obj 185 244 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X text 258 438 Q;
+#X obj 185 254 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X text 85 319 center;
-#X text 74 339 frequency;
-#X obj 181 457 /;
-#X obj 181 483 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X text 85 329 center;
+#X text 74 349 frequency;
+#X obj 181 467 /;
+#X obj 181 493 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 167 378 t f f;
-#X text 242 480 bandwidth in hertz;
-#X obj 181 511 expr log(1000) / ($f1 * pi);
-#X obj 181 554 * 1000;
-#X obj 181 579 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 167 388 t f f;
+#X text 242 490 bandwidth in hertz;
+#X obj 181 521 expr log(1000) / ($f1 * pi);
+#X obj 181 564 * 1000;
+#X obj 181 589 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X msg 185 220 2000;
-#X obj 185 196 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
+#X msg 185 230 2000;
+#X obj 185 206 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 325 444 v pi;
-#X obj 325 418 pi;
-#X obj 185 267 t b f;
-#X obj 104 258 initmess set 1000, f 8;
-#X text 243 243 t60 (decay time in ms);
-#X text 239 578 t60 (decay time in ms);
-#X text 228 322 <= seconds;
-#X text 189 532 <= seconds;
-#X text 25 88 The bandwidth and Q of a bandpass resonant filter also
+#X obj 325 454 v pi;
+#X obj 325 428 pi;
+#X obj 185 277 t b f;
+#X obj 104 268 initmess set 1000, f 8;
+#X text 243 253 t60 (decay time in ms);
+#X text 239 588 t60 (decay time in ms);
+#X text 228 332 <= seconds;
+#X text 189 542 <= seconds;
+#X text 25 98 The bandwidth and Q of a bandpass resonant filter also
 specifies a decay time (a.k.a "damping time" or "ring time"). The "t60"
 is a measure of the decay time \, and is the time it takes for the
 impulse signal to drop 60dB. You can convert bandwidth to t60 and back
 with the same formula (see below). We also convert bandwidth to Q with
 center frequency.;
-#X text 25 21 A resonator or reverberator filter is a type of resonant
+#X text 25 31 A resonator or reverberator filter is a type of resonant
 filter that has a decay time for an impulse excitation. For instance
 \, the [resonant~] object from ELSE can either take a resonance value
 as either Q or t60 (default).;
-#X text 225 666 Check also [resonant2~] and [resonbank2~] \, which
+#X text 255 665 Check also [resonant2~] and [resonbank2~] \, which
 also have an attack parameter rather than just a decay time., f 55
 ;
-#X obj 654 653 resonant2~;
-#X obj 655 682 resonbank2~ 4;
-#X obj 619 490 resonbank~ 4 -freq 200 300 700 800 -decay 900 800 700
+#X obj 654 663 resonant2~;
+#X obj 655 692 resonbank2~ 4;
+#X obj 619 500 resonbank~ 4 -freq 200 300 700 800 -decay 900 800 700
 900 -amp 0.4 0.3 0.2 0.2, f 28;
-#X obj 732 18 declare -path else;
-#X obj 630 296 out~;
+#X obj 732 28 declare -path else;
+#X obj 630 306 out~;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
