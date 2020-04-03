@@ -1,9 +1,9 @@
-#N canvas 399 121 953 571 12;
-#X floatatom 93 262 5 0 0 0 - - -;
-#X floatatom 93 328 5 0 0 0 - - -;
-#X floatatom 146 261 5 0 0 0 - - -;
-#X floatatom 146 327 5 0 0 0 - - -;
-#X obj 305 331 dac~;
+#N canvas 399 121 967 569 12;
+#X floatatom 73 262 5 0 0 0 - - -;
+#X floatatom 73 328 5 0 0 0 - - -;
+#X floatatom 126 261 5 0 0 0 - - -;
+#X floatatom 126 327 5 0 0 0 - - -;
+#X obj 285 331 dac~;
 #N canvas 281 177 369 315 sum 0;
 #X obj 83 95 inlet;
 #X obj 83 183 outlet;
@@ -23,32 +23,31 @@
 #X connect 2 0 1 0;
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;
-#X restore 101 293 pd sum;
+#X restore 81 293 pd sum;
 #X text 57 229 Subpatches:;
-#X obj 347 250 osc~ 440;
-#X text 156 295 <= click to open =>;
-#X symbolatom 552 311 10 0 0 0 - - -;
-#X floatatom 640 310 5 0 0 0 - - -;
-#X msg 552 229 bang;
-#X floatatom 691 172 5 0 0 0 - - -;
-#X floatatom 691 318 5 0 0 0 - - -;
-#X obj 552 263 abstraction-1 example 1, f 13;
-#X obj 691 204 abstraction-2;
-#X text 527 182 Abstractions:;
+#X obj 327 250 osc~ 440;
+#X text 136 295 <= click to open =>;
+#X symbolatom 590 307 10 0 0 0 - - -;
+#X floatatom 678 306 5 0 0 0 - - -;
+#X msg 590 225 bang;
+#X floatatom 740 169 5 0 0 0 - - -;
+#X floatatom 740 315 5 0 0 0 - - -;
+#X obj 590 259 abstraction-1 example 1, f 13;
+#X obj 740 201 abstraction-2;
+#X text 532 180 Abstractions:;
 #X text 42 482 Abstractions behave like objects. They load arguments
 \, which are loaded in the abstraction by the usage of dollar signs
 within objects - not to be confused with the usage of dollar signs
 inside messages!, f 59;
-#X text 496 101 The “Graph on Parent” option hides object boxes
+#X text 496 94 The “Graph on Parent” option hides object boxes
 \, message boxes and cord connections \, but other GUI elements are
-shown (including arrays \, atom boxes and comments)., f 59;
-#X text 486 264 click to open =>, f 9;
-#X text 798 238 <= right click and chose "open", f 16;
-#X obj 617 459 savestate;
-#X obj 757 459 clone;
-#X text 501 499 And also check out the help file of [clone] \, which
+shown (including arrays \, atom boxes and comments)., f 63;
+#X text 472 258 click to open =>;
+#X obj 626 458 savestate;
+#X obj 766 458 clone;
+#X text 510 498 And also check out the help file of [clone] \, which
 can load multiple instances of an abstraction in a Pd patch.;
-#X text 493 350 ============================================================
+#X text 502 349 ============================================================
 ;
 #X text 42 373 An abstraction is a separate Pd patch (a separate file
 document) that is opened inside another patch. It is also a kind of
@@ -56,7 +55,7 @@ external \, even though not being a compiled object. For a patch to
 be loaded as an abstraction \, it must be in a folder that Pd automatically
 searches for such as the user added paths (Pd => Preferences => Path)
 or in the same folder as the patch that loads it.;
-#X text 495 374 Check out the help file of [savestate] \, which can
+#X text 504 373 Check out the help file of [savestate] \, which can
 save a list of parameters (or its 'state') from the abstraction when
 you save the owning patch. Note the the 'state' is not saved as a list
 of arguments \, but as a hidden list in the patch.;
@@ -71,8 +70,8 @@ audio signal \, use the signal variants: [inlet~] and [outlet~]. Note
 that [inlet~] can also receive control data with the 'fwd' argument.
 Check the help file of [inlet~] for more details and how it can also
 take default signal values., f 58;
-#X msg 265 249 volume \$1;
-#X obj 268 222 hsl 128 15 0 0.1 0 0 empty empty empty -2 -8 0 10 -228856
+#X msg 245 249 volume \$1;
+#X obj 248 222 hsl 128 15 0 0.1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #N canvas 274 307 729 287 gain 0;
 #X obj 79 136 *~;
@@ -91,26 +90,28 @@ messages.;
 #X connect 3 0 5 0;
 #X connect 4 0 0 1;
 #X connect 5 0 4 0;
-#X restore 305 294 pd gain;
-#X msg 378 311 \; pd dsp 1;
-#X obj 378 285 loadbang;
-#X text 496 24 A patch that has a subpatch or an abstraction is called
+#X restore 285 294 pd gain;
+#X msg 358 311 \; pd dsp 1;
+#X obj 358 285 loadbang;
+#X text 496 17 A patch that has a subpatch or an abstraction is called
 the parent (so subpatches/abstractions are "children"). The “Graph
 on Parent” is an option in a patch window’s properties to allow
 it to display graphical contents on the parent patch \, be it a subpatch
-or an abstraction!;
+or an abstraction!, f 63;
+#X text 847 235 <= right click and choose "open", f 13;
+#X text 478 274 (right click & choose help), f 14;
 #X connect 0 0 5 0;
 #X connect 2 0 5 1;
 #X connect 5 0 1 0;
 #X connect 5 1 3 0;
-#X connect 7 0 31 0;
+#X connect 7 0 30 0;
 #X connect 11 0 14 0;
 #X connect 12 0 15 0;
 #X connect 14 0 9 0;
 #X connect 14 1 10 0;
 #X connect 15 0 13 0;
-#X connect 29 0 31 0;
-#X connect 30 0 29 0;
-#X connect 31 0 4 0;
-#X connect 31 0 4 1;
-#X connect 33 0 32 0;
+#X connect 28 0 30 0;
+#X connect 29 0 28 0;
+#X connect 30 0 4 0;
+#X connect 30 0 4 1;
+#X connect 32 0 31 0;
