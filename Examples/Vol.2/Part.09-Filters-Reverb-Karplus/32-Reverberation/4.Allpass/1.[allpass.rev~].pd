@@ -4,10 +4,10 @@
 #X floatatom 690 278 5 0 0 0 - - -;
 #X obj 124 406 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 693 256 hsl 128 15 -0.999 0.999 0 0 empty g ganho -2 -8 0 10
--228856 -1 -1 629 1;
+#X obj 693 256 hsl 128 15 -0.999 0.999 0 0 empty g gain -2 -8 0 10
+-228856 -1 -1 0 1;
 #X obj 617 217 hsl 128 15 1 100 1 0 empty ms empty -2 -8 0 10 -191407
--1 -1 5366 0;
+-1 -1 2800 0;
 #X obj 622 271 s \$0-del;
 #X obj 147 504 *~;
 #X obj 109 474 noise~;
@@ -49,7 +49,7 @@
 #X text 100 182 y[n] = -g*x[n] + x[n-d] + g*y[n-d];
 #X text 227 146 -(*g)-;
 #X text 86 96 x[n] -----(*-g)--(+)--(+)----------- y[n];
-#X obj 540 364 out~;
+#X obj 539 364 out~;
 #X obj 146 560 out~;
 #X obj 539 316 allpass.rev~ 100 0.8 1;
 #X obj 526 255 r~ \$0-in;
