@@ -1,60 +1,85 @@
-#N canvas 384 95 996 514 12;
-#X symbolatom 73 210 20 0 0 0 - - -;
-#X obj 169 422 symbol \$0-x;
-#X obj 169 395 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#N canvas 316 60 1101 625 12;
+#X symbolatom 73 211 20 0 0 0 - - -;
+#X obj 672 243 symbol \$0-x;
+#X obj 672 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X symbolatom 169 463 10 0 0 0 - - -;
-#X obj 306 396 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X symbolatom 306 464 10 0 0 0 - - -;
-#X obj 306 423 symbol \\\$0-x;
-#X obj 597 290 text fromlist example;
-#X obj 623 432 text define example;
-#X msg 597 200 list Hi \\\, how are you? \\\; Fine \\\, thanks! \\\;
+#X symbolatom 672 284 10 0 0 0 - - -;
+#X obj 198 458 text fromlist example;
+#X obj 231 543 text define example;
+#X msg 198 368 list Hi \\\, how are you? \\\; Fine \\\, thanks! \\\;
 ;
-#X text 565 37 Here's another example. Below we have a list where commas
+#X text 78 262 Here's another example. Below we have a list where commas
 and semicolons are escaped and therefore they are not treated as they
 normally would. The comma does not separate the message and the semicolon
 does not define a send address., f 54;
-#X msg 625 242 list \\\$1 is literal and \$1 is not;
-#X text 770 432 <= click to open text window, f 16;
-#X text 605 148 Click on the messages below to see them getting stored
-in the [text] object., f 40;
-#X msg 73 146 symbol one\ symbol;
-#X msg 83 177 symbol one\\\,\\\ symbol;
-#X msg 275 146 list one\ item two 3;
-#X symbolatom 275 210 10 0 0 0 - - -;
-#X symbolatom 364 210 10 0 0 0 - - -;
-#X floatatom 454 210 5 0 0 0 - - -;
-#X obj 275 177 unpack symbol symbol float;
-#X text 277 125 three items list;
-#X text 43 260 If you type the messages "one symbol" and "one \, symbol"
-in a symbol box \, you'll see it automatically generates a preceding
-backlash character. This will also happen for the other special characters
-(such as semicolons and dollar signs). We've seen how this can be useful
-to set a receive name in a GUI and save it as a literal '\$0' without
-expanding to the patch ID number. See below how the symbol to the left
-gets expanded when it comes out of the [symbol] object \, whereas the
-one to the right does not., f 68;
-#X text 52 23 The backlash character is used in Pd to escape special
+#X msg 226 410 list \\\$1 is literal and \$1 is not;
+#X text 378 543 <= click to open text window, f 16;
+#X msg 73 147 symbol one\ symbol;
+#X msg 83 178 symbol one\\\,\\\ symbol;
+#X msg 275 147 list one\ item two 3;
+#X symbolatom 275 211 10 0 0 0 - - -;
+#X symbolatom 364 211 10 0 0 0 - - -;
+#X floatatom 454 211 5 0 0 0 - - -;
+#X obj 275 178 unpack symbol symbol float;
+#X text 277 126 three items list;
+#X text 52 24 The backlash character is used in Pd to escape special
 characters that are handled differently in Pd. Such characters are:
 commas \, semicolons \, space and dollar signs (as we've seen in the
 last example). Another such character is the backlash character itself.
 Hence \, you can use backlashes in message boxes for these cases. For
 instance \, below we create symbols with commas and spaces., f 66
 ;
-#X text 575 341 This way \, the messages above get properly stored
-in the text object \, which is an object that defines and manipulates
+#X text 42 494 This way \, the messages above get properly stored in
+the text object \, which is an object that defines and manipulates
 texts in Pd., f 53;
+#X obj 654 321 s;
+#X obj 663 369 r \$0-x;
+#X floatatom 663 405 5 0 0 0 - - -;
+#X floatatom 608 267 5 0 0 0 - - -;
+#X obj 892 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X symbolatom 892 284 10 0 0 0 - - -;
+#X obj 874 321 s;
+#X floatatom 883 405 5 0 0 0 - - -;
+#X floatatom 828 267 5 0 0 0 - - -;
+#X obj 892 243 symbol \\\$0-x;
+#X obj 883 369 r \\\$0-x;
+#X text 36 373 Click on the messages to store them in the [text] object.
+, f 21;
+#X text 565 25 Note that if you type the messages "one symbol" and
+"one \, symbol" in a symbol box \, you'll see it automatically generates
+a preceding backlash character for the space and comma. This will also
+happen for the other special characters (such as semicolons and dollar
+signs)., f 68;
+#X text 564 106 We've seen how this can be useful to set a receive
+name in a GUI and save it as a literal '\$0' without expanding to the
+patch ID number. In the next example we have to do things differently.
+See below how the symbol to the left gets expanded when it comes out
+of the [symbol] object \, whereas the one to the right does not.,
+f 68;
+#X text 570 453 Now let's understand that in order to match the [receive
+\$0-x] object \, you cannot set it as a "symbol \\\$0-x" in a symbol
+box. You actually need the expanded symbol that comes out of the object
+[symbol \$0-x]., f 65;
+#X text 570 519 Setting with the escaped "\\\$0-x" symbol can only
+match an object with a literal "\\\$0-x" \, and it must be clear now
+how it is not the same thing \, as [receive \\\$0-x] is not actually
+loading the locality variable., f 65;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
-#X connect 4 0 6 0;
-#X connect 6 0 5 0;
-#X connect 9 0 7 0;
-#X connect 11 0 7 0;
-#X connect 14 0 0 0;
-#X connect 15 0 0 0;
-#X connect 16 0 20 0;
-#X connect 20 0 17 0;
-#X connect 20 1 18 0;
-#X connect 20 2 19 0;
+#X connect 3 0 20 1;
+#X connect 6 0 4 0;
+#X connect 8 0 4 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 16 0;
+#X connect 16 0 13 0;
+#X connect 16 1 14 0;
+#X connect 16 2 15 0;
+#X connect 21 0 22 0;
+#X connect 23 0 20 0;
+#X connect 24 0 29 0;
+#X connect 25 0 26 1;
+#X connect 28 0 26 0;
+#X connect 29 0 25 0;
+#X connect 30 0 27 0;
