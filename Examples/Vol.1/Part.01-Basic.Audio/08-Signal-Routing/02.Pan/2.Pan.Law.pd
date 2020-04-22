@@ -1,5 +1,5 @@
 #N canvas 495 60 848 541 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 626 191 osc~ 440;
 #X obj 577 234 env~;
 #X floatatom 577 263 5 0 0 0 - - -;
@@ -181,7 +181,7 @@ from ELSE. Check its help file for more info., f 52;
 the 6 and 3 dB laws. We're literally talking about a point in between
 of 4.5 dB. Check the subpatches below to see more examples of functions
 that can be used for each law.;
-#X obj 651 29 declare -path else;
+#X obj 651 29 declare -lib else;
 #X text 483 63 One thing to be clear is that whatever pan law you have
 \, you never have the input signal being duplicated when in the middle
 point \, as there's always an attenuation. If you want to just send

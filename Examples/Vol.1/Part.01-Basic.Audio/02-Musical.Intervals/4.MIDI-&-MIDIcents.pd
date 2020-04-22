@@ -1,5 +1,5 @@
 #N canvas 278 23 885 739 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 109 643 ftom;
 #X obj 139 609 nbx 5 14 -1e+37 1e+37 0 0 empty empty Hz 18 -6 0 10
 -228856 -1 -1 0 256;
@@ -83,7 +83,7 @@ cent!, f 57;
 #X text 217 487 sum to middle A in MIDI;
 #X obj 180 403 log 2;
 #X obj 180 429 * 12;
-#X obj 700 31 declare -path else;
+#X obj 700 31 declare -lib else;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 1 0 32 0;

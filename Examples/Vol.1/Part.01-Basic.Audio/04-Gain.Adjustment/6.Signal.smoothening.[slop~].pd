@@ -1,6 +1,6 @@
 #N canvas 353 85 946 636 12;
-#X declare -path else;
-#X obj 739 31 declare -path else;
+#X declare -lib else;
+#X obj 739 31 declare -lib else;
 #X floatatom 262 236 5 10 125 0 - - -;
 #X floatatom 262 390 10 0 0 0 - - -;
 #X obj 262 295 *;

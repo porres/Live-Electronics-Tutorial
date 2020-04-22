@@ -1,5 +1,5 @@
 #N canvas 447 127 958 515 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 699 364 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 850 362 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -58,7 +58,7 @@ accurate trigger and can be thought of the audio counterpart of a bang.
 [status~] object sends an impulse at every transition and we can the
 measures the time interval with [detect~] object from ELSE and get
 the same perfect result: 500 ms., f 62;
-#X obj 775 25 declare -path else;
+#X obj 775 25 declare -lib else;
 #X text 255 245 <= frequency of 1 Hz \, period of 1000ms (500ms for
 on "1" and off "0"), f 24;
 #X text 507 127 The issue comes when we use an object like [trig2bang~]

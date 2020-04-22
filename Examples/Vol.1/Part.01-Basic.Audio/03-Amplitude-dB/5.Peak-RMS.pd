@@ -1,6 +1,6 @@
 #N canvas 352 155 1015 532 12;
-#X declare -path else;
-#X declare -path else;
+#X declare -lib else;
+#X declare -lib else;
 #X obj 210 325 *~;
 #X obj 231 277 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
@@ -61,7 +61,7 @@ analysis of [rms~]., f 70;
 #X text 577 226 Below we have the graph of the resulting sinusoid and
 the root mean square line for this period window.;
 #X text 310 423 RMS (linear);
-#X obj 822 81 declare -path else;
+#X obj 822 81 declare -lib else;
 #X obj 160 122 t b b b f;
 #X connect 0 0 2 0;
 #X connect 1 0 14 0;
@@ -128,7 +128,7 @@ one. The [rms~] object from ELSE reports us the RMS amplitude \, while
 #X text 752 400 window size of 4096;
 #X text 733 371 dBFS output;
 #X text 735 346 linear output;
-#X obj 767 22 declare -path else;
+#X obj 767 22 declare -lib else;
 #X text 525 256 The [mov.rms~] \, from ElSE \, gives us another kind
 of RMS that is "moving". This means it returns a different RMS value
 for each sample \, according to an analysis done in the previous samples.

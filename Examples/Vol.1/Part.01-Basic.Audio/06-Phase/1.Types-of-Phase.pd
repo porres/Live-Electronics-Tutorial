@@ -1,5 +1,5 @@
 #N canvas 272 46 1024 773 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 85 287 cnv 15 298 99 empty empty empty 20 12 0 14 -220534 -66577
 0;
 #X obj 85 188 cnv 15 298 99 empty empty empty 20 12 0 14 -228856 -66577
@@ -165,7 +165,7 @@ the output of [phasor~]., f 40;
 -0.156425 -0.125323 -0.0940986 -0.0627817 -0.0314018;
 #X coords 0 1.01 199 -1.01 499 203 1 0 0;
 #X restore 455 281 graph;
-#X obj 833 17 declare -path else;
+#X obj 833 17 declare -lib else;
 #X text 27 20 The term "Phase" can be used in different contexts \,
 being ambiguous and confusing. One way to avoid is to use more specific
 terminology instead of just abbreviating as "phase". On its own \,

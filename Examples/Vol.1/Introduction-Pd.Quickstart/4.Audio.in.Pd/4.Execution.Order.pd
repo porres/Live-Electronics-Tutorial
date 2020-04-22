@@ -1,5 +1,5 @@
 #N canvas 592 49 564 645 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 114 281 t b b;
 #X obj 146 328 vsnapshot~;
 #X floatatom 146 355 0 0 0 0 - - -;
@@ -42,7 +42,7 @@
 #X text 86 475 The "dummy" [inlet~] / [outlet~] objects are only used
 to connect the subpatches and have no other purpose than that \, but
 that's what forces the order of execution anyway.;
-#X obj 365 21 declare -path else;
+#X obj 365 21 declare -lib else;
 #X text 85 530 The same mechanism can be applied to other similar objects
 like: [tabsend~]/[tabreceive~] & [throw~]/[catch~] pairs. We'll also
 see later in this tutorial how to use this mechanism when it comes

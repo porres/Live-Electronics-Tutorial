@@ -1,5 +1,5 @@
 #N canvas 375 122 764 445 12;
-#X declare -path else;
+#X declare -lib else;
 #X text 512 312 Cents;
 #X obj 559 286 ratio2cents;
 #X obj 559 341 cents2ratio;
@@ -41,7 +41,7 @@ equal temperament. See the default values to the right \, we load a
 equal temperament has 7 semitones and 700 cents. So there's a tiny
 difference where the just intonation interval is almost only 2 cents
 higher., f 59;
-#X obj 583 45 declare -path else;
+#X obj 583 45 declare -lib else;
 #X connect 1 0 9 0;
 #X connect 2 0 10 0;
 #X connect 3 0 4 1;

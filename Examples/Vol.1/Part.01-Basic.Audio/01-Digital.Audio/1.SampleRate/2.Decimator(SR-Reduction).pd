@@ -1,5 +1,5 @@
 #N canvas 491 93 942 368 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 700 220 downsample~;
 #X obj 790 80 initmess \; \$0-sr 44100;
 #X obj 553 207 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -25,7 +25,7 @@ to the original sample rate., f 60;
 #X text 30 263 A simpler alternative is to use [downsample~] from ELSE
 \, which only needs a downsampling frequency value., f 60;
 #X text 495 54 [play.file~] plays audio files;
-#X obj 769 23 declare -path else;
+#X obj 769 23 declare -lib else;
 #X obj 494 80 play.file~ bubul.wav 1 1;
 #X text 29 60 The "decimator" is a process that consist in reducing
 the sample rate of a signal - also known as "downsampling"., f 60

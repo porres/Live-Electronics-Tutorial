@@ -1,5 +1,5 @@
 #N canvas 406 173 1006 611 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 204 231 samplerate~;
 #X obj 204 189 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -48,7 +48,7 @@ sample rate in Khz. Below \, we use [sr~] \, which can also give you
 the sample rate in Khz with the -khz flag.;
 #X obj 820 485 ms2samps~;
 #X obj 820 538 samps2ms~;
-#X obj 828 12 declare -path else;
+#X obj 828 12 declare -lib else;
 #X text 34 40 The native [samplerate~] object gives us the current
 sample rate Pd is running on (which can be set in audio settings).
 By default \, the sample rate is 44.1 Khz (44100 samples per second).

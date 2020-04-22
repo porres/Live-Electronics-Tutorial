@@ -1,5 +1,5 @@
 #N canvas 261 100 1057 569 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 36 302 *~;
 #X obj 153 302 *~;
 #X obj 171 267 sin~;
@@ -223,7 +223,7 @@ of the power of the two amplitudes is the same. More precisely \, the
 sum is equal to "1"! check the math below \, and how any input value
 is equal to 1!, f 52;
 #X obj 171 192 f2s~ 10;
-#X obj 878 34 declare -path else;
+#X obj 878 34 declare -lib else;
 #X connect 0 0 4 0;
 #X connect 1 0 4 1;
 #X connect 2 0 1 1;

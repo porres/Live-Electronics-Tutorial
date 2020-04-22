@@ -1,5 +1,5 @@
 #N canvas 639 67 468 645 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 149 561 vline~;
 #X obj 139 492 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -25,7 +25,7 @@ We use this to generate random values from 0 to 99 with the native
 #X text 122 144 click:;
 #X text 89 492 click:;
 #X obj 307 156 setdsp~;
-#X obj 290 19 declare -path else;
+#X obj 290 19 declare -lib else;
 #X text 53 55 The native [sig~] object converts control data to audio
 signal. But \, as we've seen \, Pd usually has an inherent control
 rate that prevents more than one control value affecting an audio block

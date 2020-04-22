@@ -1,5 +1,5 @@
 #N canvas 528 105 743 605 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 399 402 nbx 5 14 1 100 0 0 \$0-ratio empty empty 0 -8 0 10 -228856
 -1 -1 1 256;
 #X obj 399 383 nbx 5 14 -100 0 0 0 \$0-thresh empty empty 0 -8 0 10
@@ -50,7 +50,7 @@ acts quicker. You can also have this mode in [compress~] if you set
 the window size to 1!, f 52;
 #X text 320 336 Anyway \, for this patch \, we don't have an overall
 gain. But try messing with the parameters below:, f 51;
-#X obj 551 32 declare -path else;
+#X obj 551 32 declare -lib else;
 #X obj 198 50 glide~ 500;
 #X obj 138 110 lin2db~;
 #X obj 154 175 f2s~ 10;

@@ -1,5 +1,5 @@
 #N canvas 442 83 980 635 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 262 408 *;
 #X obj 262 431 display;
 #X obj 300 382 sr~ -ms;
@@ -78,7 +78,7 @@ dsp needs to be on and the [switch~] object cannot be on., f 57;
 #X text 497 48 The [print~] object prints the whole block of audio
 in Pd's terminal window when it receives a bang. Check it below.,
 f 63;
-#X obj 796 12 declare -path else;
+#X obj 796 12 declare -lib else;
 #X obj 770 210 print control;
 #X text 228 183 [display] object \, from ELSE displays control messages
 , f 27;

@@ -1,5 +1,5 @@
 #N canvas 362 64 948 509 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 158 89 adc~;
 #X obj 158 121 dac~;
 #X obj 321 408 adc~ 1 3 5;
@@ -24,7 +24,7 @@ with the arguments., f 56;
 #X text 195 123 audio output;
 #X obj 839 207 setdsp~;
 #X text 744 235 [setdsp~] =>;
-#X obj 768 9 declare -path else;
+#X obj 768 9 declare -lib else;
 #X obj 762 316 out2~;
 #X text 759 294 see also:;
 #X text 490 391 Note that the [out~] object automatically turns the

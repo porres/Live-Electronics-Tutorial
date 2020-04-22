@@ -1,5 +1,5 @@
 #N canvas 682 246 615 496 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 313 396 * 6.0206;
 #X text 273 368 bits;
 #X obj 313 368 nbx 3 15 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 11
@@ -7,7 +7,7 @@
 #X obj 313 423 display;
 #X text 181 425 Dynamic Range (dB);
 #X text 109 326 Convert bit resolution to Dynamic Range:;
-#X obj 420 16 declare -path else;
+#X obj 420 16 declare -lib else;
 #X text 36 55 By converting an analog signal into a digital one \,
 we need to approximate the values to the possible ones according to
 the bit depth. This process is called "Quantization" and generates

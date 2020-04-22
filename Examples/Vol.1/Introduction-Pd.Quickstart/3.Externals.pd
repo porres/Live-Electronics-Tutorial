@@ -1,17 +1,16 @@
 #N canvas 482 59 851 666 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 151 147 rev1~;
 #X obj 204 147 rev2~, f 8;
 #X obj 278 147 rev3~, f 8;
 #X obj 699 322 pluck~;
-#X obj 560 487 else/fbdelay~;
+#X obj 628 483 else/fbdelay~;
 #X text 419 525 This will only work if the folder containing the external
 library is included in a folder that Pd automatically searches for
 files \, as is the case with Pd's externals folder \, the usual folder
 for externals in Pd., f 58;
 #X obj 67 147 sigmund~;
-#X obj 462 322 declare -path else;
-#N canvas 718 62 447 276 open-readme 0;
+#N canvas 602 31 447 276 open-readme 1;
 #X obj 107 167 pdcontrol;
 #X obj 107 112 pdcontrol;
 #X msg 107 87 dir;
@@ -21,35 +20,26 @@ for externals in Pd., f 58;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
 #X connect 4 0 0 0;
-#X restore 472 134 pd open-readme;
-#X obj 472 97 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
--1;
-#X obj 657 96 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856 -1
--1;
-#N canvas 718 62 463 208 open-else 0;
+#X restore 472 144 pd open-readme;
+#X obj 472 107 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 657 106 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#N canvas 908 23 463 208 open-else 0;
 #X obj 108 111 pdcontrol;
 #X obj 108 47 inlet;
 #X msg 108 83 browse https://github.com/porres/pd-else;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
-#X restore 657 136 pd open-else;
+#X restore 657 146 pd open-else;
 #X obj 626 322 sine~;
 #X text 29 499 The order of the user added paths matter \, as the search
 is prioritized to the first ones. You may have many installed libraries
 where different externals can have the same name. Using [declare] forces
 a priority over the user added paths and can help you control that.
 , f 49;
-#X text 418 438 For single binaries \, as is the case with else \,
-you could alternatively use relative paths \, such as:, f 58;
-#X text 496 95 <= Tutorial's Readme, f 13;
-#X text 682 94 <= ELSE's repository, f 14;
-#X text 410 15 Make sure to download the right version of ELSE for
-this tutorial. You can find this information on this tutorial's readme.
-Check also ELSE's repository on github. Click on the bang buttons below
-to open them., f 57;
-#X text 419 596 For more information on how Pd handles externals \,
-check section 4 of Pd's manual in the browser. In Window => Help Browser
-go to (Pure Data/1.manual/x4.htm).;
+#X text 496 105 <= Tutorial's Readme, f 13;
+#X text 682 104 <= ELSE's repository, f 14;
 #X text 417 236 If no objects below are shown \, then you hadn't downloaded
 ELSE when you opened this patch. So download it and reload the patch
 so you can instantiate [sine~] and [pluck~]. Here's how to use [declare]
@@ -79,12 +69,23 @@ you don't want it \, like when it's a single binary pack)., f 49;
 kinds of libraries. But it loads them just for the patch containing
 it \, unlike adding to the Path/Statup (which installs permanently).
 , f 49;
+#X obj 462 322 declare -lib else;
 #X text 29 591 If you haven't already \, please download the "ELSE"
-library that us needed for this tutorial and widely used from this
+library that is needed for this tutorial and widely used from this
 point onward. You can use 'deken' for it., f 49;
-#X text 418 365 ELSE comes with separate binaries \, so you need to
-load it with the -path flag in [declare]. this tutorial uses the declare
-object in all examples \, so you don't need to add else's folder to
-the user added search paths., f 58;
-#X connect 9 0 8 0;
-#X connect 10 0 11 0;
+#X text 410 15 Actually \, installing the ELSE library already dowloads
+this tutorial and this is what you should have done. You can find installing
+information on this tutorial's readme. Check also ELSE's repository
+on github. Click on the bang buttons below to open them.;
+#X text 418 365 ELSE comes with separate binaries \, so you could add
+else's folder to the user added search paths. Nonetheless \, you should
+use [declare -lib] \, which loads the path and shows the version information.
+This tutorial uses [declare] in all examples.;
+#X text 418 443 But in the end \, since you just have single binaries
+or abstractions in the ELSE library \, you could alternatively use
+relative paths \, such as:;
+#X text 419 596 For more information on how Pd handles externals \,
+check section 4 of Pd's manual in the browser. In Window => Help Browser
+go to (Pure Data/1.manual/x4.htm).;
+#X connect 8 0 7 0;
+#X connect 9 0 10 0;

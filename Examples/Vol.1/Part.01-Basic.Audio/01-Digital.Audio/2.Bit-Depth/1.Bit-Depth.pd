@@ -1,5 +1,5 @@
 #N canvas 365 118 1132 555 12;
-#X declare -path else;
+#X declare -lib else;
 #X msg 180 171 2;
 #X obj 180 225 else/display;
 #X obj 631 213 else/display;
@@ -29,7 +29,7 @@ on your sound card. If you have a cheap one that can only deal with
 16 bits \, then that's what you have. But anyway \, even though many
 professional audio cards say they operate with 24 bit precision \,
 it is a known fact they can't actually perform that task., f 75;
-#X obj 869 25 declare -path else;
+#X obj 869 25 declare -lib else;
 #X text 29 29 The sample rate regards a timing resolution. Now the
 amplitude resolution depends on the bit rate or bit depth. 1 bit is
 a binary unit \, which can be either 0 or 1 \, so only 2 possible values

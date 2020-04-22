@@ -1,5 +1,5 @@
 #N canvas 314 23 846 688 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 446 246 *~;
 #X obj 387 163 osc~ 440;
 #X obj 446 299 out~;
@@ -17,7 +17,7 @@
 #X obj 679 132 pulse~ 0.5;
 #X obj 679 160 display~;
 #X obj 391 246 s2f~;
-#X obj 630 16 declare -path else;
+#X obj 630 16 declare -lib else;
 #X obj 679 196 glide2~ 1000 500;
 #X obj 467 534 *~;
 #X obj 408 448 osc~ 440;

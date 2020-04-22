@@ -1,5 +1,5 @@
 #N canvas 658 102 516 593 12;
-#X declare -path else;
+#X declare -lib else;
 #X floatatom 298 261 8 0 0 0 - - -;
 #X obj 280 321 *~;
 #X obj 298 203 nbx 5 17 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
@@ -19,7 +19,7 @@ dB input and using [db2lin] to convert it to a ratio., f 57;
 #X obj 298 292 f2s~ 10 1;
 #X text 44 162 Compare the VU meter of the original sound with the
 gain adjusted one.;
-#X obj 303 26 declare -path else;
+#X obj 303 26 declare -lib else;
 #X obj 61 256 play.file~ bubul.wav 1 1;
 #X text 44 123 This way we can add gain (or boost it) with positive
 dB values or decrease its intensity with negative values., f 57;

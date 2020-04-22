@@ -1,5 +1,5 @@
 #N canvas 488 49 557 628 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 224 148 sqrt;
 #X msg 224 125 2;
 #X msg 186 146 2;
@@ -31,7 +31,7 @@ of semitones \, but you multiply it by 1200 instead of 12!, f 65;
 #X text 279 401 Ratio;
 #X obj 224 176 log 2;
 #X obj 224 205 * 1200;
-#X obj 364 13 declare -path else;
+#X obj 364 13 declare -lib else;
 #X text 76 286 The ELSE library has objects that convert to and back
 from cents \, they are: [ratio2cents] and [cents2ratio]., f 55;
 #X text 68 516 Musical intervals in cents are clearly related to the

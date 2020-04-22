@@ -1,5 +1,5 @@
 #N canvas 318 24 1029 580 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 129 264 hsl 128 15 0 5 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 108 311 *~;
@@ -22,7 +22,7 @@ distortion is a special type \, known as "clipping"., f 66;
 #X obj 613 323 osc~ 440;
 #X obj 783 320 osc~ 440;
 #X obj 613 509 out~;
-#X obj 822 21 declare -path else;
+#X obj 822 21 declare -lib else;
 #X obj 766 506 out2~;
 #X text 26 131 The maximum peak amplitude is 1 (0 dBFS). Greater values
 are "clipped" \, which means they become 1 as that's the maximum representable

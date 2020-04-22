@@ -1,5 +1,5 @@
 #N canvas 503 23 807 625 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 142 516 vsnapshot~;
 #X obj 245 516 snapshot~;
 #X obj 247 159 osc~ 440;
@@ -49,7 +49,7 @@ the block (63)., f 48;
 #X text 422 51 The [sig2float~] object can be abbreviated as [s2f~]
 and can get any sample within a block via an offset parameter., f
 48;
-#X obj 632 13 declare -path else;
+#X obj 632 13 declare -lib else;
 #X text 28 26 The native [snapshot~] object converts audio to control
 data when it receives a bang \, sent here by the [metro] at a fixed
 rate of 200 ms. ELSE has the [sig2float~] object \, which is more convenient

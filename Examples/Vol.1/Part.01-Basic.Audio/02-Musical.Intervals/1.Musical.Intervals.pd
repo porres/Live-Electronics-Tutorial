@@ -1,5 +1,5 @@
 #N canvas 329 93 1014 643 12;
-#X declare -path else;
+#X declare -lib else;
 #X floatatom 182 147 5 0 15 0 - - -;
 #X obj 156 489 sqrt;
 #X msg 156 460 2;
@@ -83,7 +83,7 @@ get the number of semitones by simply multiplying it by 12!, f 62
 example \, an octave is a proportion (or ratio) of two to one (2/1)
 \, as in: 220Hz/110Hz. in this way \, 220Hz is an octave above 110Hz
 \, and 440Hz an octave higher than 220Hz., f 63;
-#X obj 800 26 declare -path else;
+#X obj 800 26 declare -lib else;
 #X connect 0 0 25 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;

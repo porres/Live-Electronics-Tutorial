@@ -1,5 +1,5 @@
 #N canvas 294 34 924 613 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 236 431 *~;
 #X obj 104 439 *~;
 #X obj 257 327 hsl 128 15 0 1 0 0 pan-set empty empty -2 -8 0 10 -228856
@@ -210,7 +210,7 @@ to one! Check above.;
 #X text 527 370 <= linear amp;
 #X text 710 372 linear amp =>;
 #X text 64 293 Alternate between sources:;
-#X obj 718 29 declare -path else;
+#X obj 718 29 declare -lib else;
 #X connect 0 0 27 1;
 #X connect 1 0 27 0;
 #X connect 2 0 41 0;

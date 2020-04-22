@@ -1,5 +1,5 @@
 #N canvas 418 98 922 643 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 92 198 graph~ 441 19 -1 1;
 #X obj 92 141 osc~ 111;
 #X text 25 19 The amplitude of a sound represents the sound source's
@@ -31,7 +31,7 @@ in the time window, f 46;
 #X obj 337 226 setdsp~;
 #X obj 151 555 out~;
 #X text 49 458 white noise => generator, f 14;
-#X obj 713 31 declare -path else;
+#X obj 713 31 declare -lib else;
 #X obj 553 182 pic 0 amp.gif empty empty 0;
 #X text 25 59 There are different types of amplitude concept. The "running
 amplitude" refers to the dynamic amplitude signal output such as the

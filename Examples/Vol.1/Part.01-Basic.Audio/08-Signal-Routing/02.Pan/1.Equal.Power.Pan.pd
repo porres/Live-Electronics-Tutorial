@@ -1,7 +1,7 @@
 #N struct 1070-point float x0 float y0 float xs float ys float fg float
 in float gridx float gridy;
 #N canvas 364 58 893 602 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 40 305 osc~ 400;
 #X obj 262 306 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 6350 1;
@@ -61,7 +61,7 @@ middle point \, we have a -3 dB attenuation for both channels., f
 #X obj 259 359 f2s~ 20;
 #X obj 596 241 f2s~ 20;
 #X obj 675 427 pan4~, f 20;
-#X obj 675 24 declare -path else;
+#X obj 675 24 declare -lib else;
 #X text 515 437 see also:;
 #X obj 525 466 pan8~, f 13;
 #X obj 743 306 slider2d 64 64 -1 1 -1 1 0 210 210 210 0 0 0 1 0 1 32

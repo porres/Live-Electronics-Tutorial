@@ -1,5 +1,5 @@
 #N canvas 539 219 998 469 12;
-#X declare -path else;
+#X declare -lib else;
 #X text 220 216 =;
 #X obj 159 219 cos~;
 #X msg 302 158 0;
@@ -22,7 +22,7 @@ both options. For example \, the second inlet also resets the phase
 #X obj 249 255 s2f~;
 #X obj 159 255 s2f~;
 #X obj 635 275 s2f~;
-#X obj 742 33 declare -path else;
+#X obj 742 33 declare -lib else;
 #X text 500 72 The [osc~] object does not allow phase modulation \,
 we did this with [phasor~] in the previous examples. Hence \, the structure
 wirh [phasor~] and [cos~] allows both processes of modulating the phase

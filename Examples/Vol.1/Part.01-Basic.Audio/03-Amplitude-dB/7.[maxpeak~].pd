@@ -1,5 +1,5 @@
 #N canvas 573 111 507 497 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 185 255 maxpeak~;
 #X obj 305 350 setdsp~;
 #X obj 238 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -18,7 +18,7 @@ the maximum amplitude value., f 55;
 #X obj 185 188 adc~ 1;
 #X obj 185 221 *~ 2;
 #X obj 185 282 display~ 4;
-#X obj 298 30 declare -path else;
+#X obj 298 30 declare -lib else;
 #X connect 0 0 11 0;
 #X connect 0 1 6 0;
 #X connect 2 0 0 1;

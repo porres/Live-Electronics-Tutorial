@@ -1,5 +1,5 @@
 #N canvas 404 144 931 453 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 177 178 expr pow(10 \, $f1 / 20);
 #X text 157 149 dB;
 #X msg 209 111 6.0206;
@@ -49,7 +49,7 @@ dimension to this convertion \, instead of converting to and from linear
 #X text 699 244 Ratio;
 #X text 699 364 Ratio;
 #X text 134 253 Ratio;
-#X obj 697 35 declare -path else;
+#X obj 697 35 declare -lib else;
 #X connect 0 0 17 0;
 #X connect 2 0 6 0;
 #X connect 3 0 6 0;

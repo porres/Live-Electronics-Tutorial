@@ -1,5 +1,5 @@
 #N canvas 654 88 496 642 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 280 160 hsl 128 15 0 1 0 0 empty pos1 empty -2 -8 0 10 -228856
 -1 -1 6350 1;
 #X obj 335 237 pi;
@@ -28,7 +28,7 @@ now more than famous sin/cos equal power function., f 62;
 kind of equal power balance., f 44;
 #X obj 277 190 f2s~ 10;
 #X obj 230 499 f2s~ 10;
-#X obj 292 25 declare -path else;
+#X obj 292 25 declare -lib else;
 #X obj 164 243 out2~;
 #X obj 101 547 out2~;
 #X connect 0 0 20 0;

@@ -1,5 +1,5 @@
 #N canvas 382 118 923 439 12;
-#X declare -path else;
+#X declare -lib else;
 #X text 274 263 1;
 #X text 268 397 -1;
 #X text 274 330 0;
@@ -175,7 +175,7 @@ same as adding the first signal to another one with the inverted polarity.
 #X text 562 140 Thus \, this:;
 #X text 547 247 Is the same as:;
 #X obj 432 158 setdsp~ 1;
-#X obj 695 20 declare -path else;
+#X obj 695 20 declare -lib else;
 #X connect 10 0 22 1;
 #X connect 11 0 22 0;
 #X connect 11 0 10 0;
