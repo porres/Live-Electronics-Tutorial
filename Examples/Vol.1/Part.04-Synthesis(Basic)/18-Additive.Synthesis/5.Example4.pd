@@ -1,5 +1,5 @@
 #N canvas 702 63 498 533 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 186 357 mtof;
 #X obj 186 325 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
 -228856 -1 -1 46 256;
@@ -343,7 +343,7 @@ as well as an independent panoramic control. The attacks of each envelope
 happens also at a random delayed time after the attack.;
 #X text 34 139 Open [pd additive] for more details.;
 #X obj 186 292 rand.i 36 61;
-#X obj 317 29 declare -path else;
+#X obj 317 29 declare -lib else;
 #X obj 184 430 out2~;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;

@@ -1,5 +1,5 @@
 #N canvas 700 23 497 468 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 60 219 stripnote;
 #X obj 102 343 *~;
 #X obj 60 282 mtof;
@@ -15,7 +15,7 @@
 messages. This is useful if don't need a gate as an envelope trigger
 \, as is the case with [decay2~] \, for instance - because it only
 needs a trigger at the note on event., f 39;
-#X obj 323 29 declare -path else;
+#X obj 323 29 declare -lib else;
 #X connect 0 0 8 0;
 #X connect 0 1 7 0;
 #X connect 1 0 3 0;

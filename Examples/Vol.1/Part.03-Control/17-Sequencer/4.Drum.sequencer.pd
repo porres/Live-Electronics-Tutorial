@@ -1,5 +1,5 @@
 #N canvas 498 100 720 560 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 132 33 tgl 30 0 empty metro empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X text 265 41 TEMPO;
@@ -253,7 +253,7 @@ them to the arrays., f 36;
 #X text 269 247 In the subpatch graph below \, you can turn on and
 off the toggles to change the rythm. The horizontal radio is just used
 for visualizing the sequence point., f 58;
-#X obj 513 34 declare -path else;
+#X obj 513 34 declare -lib else;
 #X obj 36 257 play.file~ 1 dholak.aif, f 12;
 #X obj 132 258 play.file~ 1 bagal.aif, f 12;
 #X obj 45 313 out2~;

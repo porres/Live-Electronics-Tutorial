@@ -1,5 +1,5 @@
 #N canvas 422 103 891 580 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 308 211 308 379 voice1 0;
 #X obj 126 282 *~;
 #X obj 71 132 mtof;
@@ -136,7 +136,7 @@
 #X text 683 414 <= click;
 #X text 233 533 see also:;
 #X obj 535 446 plate.rev~ 50 0.6 0.25 0.8 0.8, f 16;
-#X obj 721 26 declare -path else;
+#X obj 721 26 declare -lib else;
 #X obj 542 492 out2~;
 #X text 46 20 The [voices] object \, from ELSE \, manages polyphony.
 The first argument is the number of voices it handles and each voice

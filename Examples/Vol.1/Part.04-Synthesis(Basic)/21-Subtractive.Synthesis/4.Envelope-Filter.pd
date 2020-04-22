@@ -1,5 +1,5 @@
 #N canvas 569 57 502 530 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 119 395 *~;
 #X obj 73 202 mtof;
 #X obj 73 238 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -61,7 +61,7 @@ the amplitude and another to control the filter.;
 #X obj 202 232 adsr~ 100 150 0.5 250;
 #X text 265 420 This example is similar to Pd's J08.classicsynth.,
 f 25;
-#X obj 335 97 declare -path else;
+#X obj 335 97 declare -lib else;
 #X connect 0 0 13 0;
 #X connect 1 0 2 0;
 #X connect 2 0 18 0;

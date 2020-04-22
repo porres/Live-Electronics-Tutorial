@@ -1,5 +1,5 @@
 #N canvas 317 54 940 442 12;
-#X declare -path else;
+#X declare -lib else;
 #X text 734 183 sustain;
 #N canvas 588 58 350 354 voice1 0;
 #X obj 170 230 *~;
@@ -215,7 +215,7 @@ the shown vanilla implementation of a sustain pedal. For more details
 \, check its help file., f 53;
 #X text 266 145 random picthes;
 #X obj 173 159 rand.i 48 72;
-#X obj 729 28 declare -path else;
+#X obj 729 28 declare -lib else;
 #X connect 1 0 17 0;
 #X connect 2 0 12 2;
 #X connect 5 0 12 0;

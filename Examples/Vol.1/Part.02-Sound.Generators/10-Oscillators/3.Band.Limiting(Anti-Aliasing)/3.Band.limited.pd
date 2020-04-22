@@ -1,5 +1,5 @@
 #N canvas 405 269 826 433 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 255 339 out~;
 #X obj 255 301 bl.saw~;
 #X obj 278 260 impulse~;
@@ -51,7 +51,7 @@ it out., f 57;
 #X text 508 313 Hard sync generates aliasing because any significant
 discontinuity in the signal can generate artifacts and components over
 the Nyquist., f 37;
-#X obj 618 25 declare -path else;
+#X obj 618 25 declare -lib else;
 #X text 473 74 And here are the other variants from ELSE. There's even
 [bl.sine~] \, because you can generate aliasing with hard sync and
 even other techniques such as phase or frequency modulation., f 42

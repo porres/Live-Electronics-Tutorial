@@ -1,5 +1,5 @@
 #N canvas 611 123 487 365 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 114 228 *~;
 #X obj 56 118 mtof;
 #X floatatom 56 148 5 0 0 0 - - -;
@@ -15,7 +15,7 @@
 #X text 208 93 This abstraction is loaded in the [clone] object in
 one of this series' example., f 29;
 #X text 165 256 <= gain compensation with the argument, f 21;
-#X obj 313 27 declare -path else;
+#X obj 313 27 declare -lib else;
 #X connect 0 0 9 0;
 #X connect 1 0 2 0;
 #X connect 2 0 10 0;

@@ -1,5 +1,5 @@
 #N canvas 478 26 512 588 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 786 159 450 300 sequencer 0;
 #X obj 195 193 mtof;
 #X obj 72 132 metro 200;
@@ -38,7 +38,7 @@ the waveform. Check its help file for more info., f 59;
 \, from sawtooths to triangular. Also note that a width of 0 and 1
 are the same \, but with the polarity inverted.;
 #X text 203 202 (0 and 1 invert the polarity);
-#X obj 311 19 declare -path else;
+#X obj 311 19 declare -lib else;
 #X connect 0 0 5 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;

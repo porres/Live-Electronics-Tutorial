@@ -1,5 +1,5 @@
 #N canvas 243 56 966 622 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array shape_\$0 1024 float 0;
 #X coords 0 1 1023 -1 300 150 2 0 0;
@@ -442,7 +442,7 @@ f 33;
 #X obj 837 416 hsl 100 20 0 1 0 0 \$0-amp empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X text 856 418 Amplitude;
-#X obj 824 588 declare -path else;
+#X obj 824 588 declare -lib else;
 #X text 37 319 Chebyshev polinomials as transfer functions generate
 harmonics for a sine wave input. For instance \, t2 generates the 2nd
 harmonic (an octave above) \, t5 the 5th and so on - t0 generates a

@@ -1,5 +1,5 @@
 #N canvas 376 79 968 513 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 89 253 *~;
 #X obj 59 214 osc~;
 #X obj 262 230 osc~;
@@ -42,7 +42,7 @@ random controls in patches and replace random number generators. Below
 we have random ramps in the left and random steps in the right. And
 why not add some reverb so just it sounds cooler? See the [plate.rev~]
 object from ELSE., f 63;
-#X obj 769 23 declare -path else;
+#X obj 769 23 declare -lib else;
 #X floatatom 496 188 5 0.1 10 0 - - -;
 #X obj 499 238 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 8289 1;

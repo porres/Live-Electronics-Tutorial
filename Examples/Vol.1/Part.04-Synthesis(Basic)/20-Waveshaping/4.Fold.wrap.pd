@@ -1,5 +1,5 @@
 #N canvas 303 57 925 543 12;
-#X declare -path else;
+#X declare -lib else;
 #X floatatom 163 107 5 0 0 0 - - -;
 #X obj 163 179 *~;
 #X obj 238 140 hsl 128 15 0 4 0 0 empty empty empty -2 -8 0 10 -228856
@@ -24,7 +24,7 @@
 which can be considered as a type of waveshaper. What it does is that
 when it reaches the maximum and minimum points (-1 and 1 by default)
 \, it folds back. Check it out.;
-#X obj 739 13 declare -path else;
+#X obj 739 13 declare -lib else;
 #X obj 163 432 out~;
 #X obj 577 456 out~;
 #X text 472 49 On the other hand \, [wrap2~] from ELSE performs a "wrapping"

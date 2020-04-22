@@ -1,5 +1,5 @@
 #N canvas 474 68 1010 454 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 138 216 osc~ 440;
 #X obj 188 275 *~;
 #X obj 240 304 tabwrite~ env;
@@ -27,7 +27,7 @@ mean a function that controls the overall amplitude. In order to apply
 an envelope into a signal \, we just multiply the signal to this function.
 Below we have the first half of a sine function as the envelope.,
 f 59;
-#X obj 790 31 declare -path else;
+#X obj 790 31 declare -lib else;
 #X text 28 13 The envelope of a signal is a function that delineates
 its peaks of amplitude. An audio signal has an upper (positive) and
 lower (negative). Both positive and negative can have the same outline

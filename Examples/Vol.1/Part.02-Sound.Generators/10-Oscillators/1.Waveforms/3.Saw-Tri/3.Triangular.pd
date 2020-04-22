@@ -1,5 +1,5 @@
 #N canvas 661 245 843 534 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 178 355 nbx 5 14 -1e+37 1e+37 0 1 empty hz empty 0 -8 0 10 -228856
 -1 -1 110 256;
 #N canvas 751 108 751 605 triangular 0;
@@ -69,7 +69,7 @@ example \, enter the number of harmonics in the number box to generate
 the waveform. Realize also that you'd need an infinite sum of harmonics
 for a "perfect" triangular wave., f 61;
 #X text 275 140 <= open;
-#X obj 636 36 declare -path else;
+#X obj 636 36 declare -lib else;
 #X text 502 86 The [tri~] object \, from ELSE \, is a "perfect" triangular
 wave with infinite harmonics., f 42;
 #N canvas 212 77 267 219 sequencer 0;

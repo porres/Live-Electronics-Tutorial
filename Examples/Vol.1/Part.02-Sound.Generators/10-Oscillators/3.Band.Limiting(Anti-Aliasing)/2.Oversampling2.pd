@@ -1,5 +1,5 @@
 #N canvas 221 115 1070 421 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 338 205 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-hz Hz 0 -8 0 10
 -228856 -1 -1 2000 256;
 #X obj 93 201 phasor~;
@@ -493,7 +493,7 @@
 41.4306 40.7213 40.4926;
 #X coords 0 100 2047 40 512 120 1;
 #X restore 506 223 graph;
-#X obj 855 24 declare -path else;
+#X obj 855 24 declare -lib else;
 #N canvas 68 23 460 269 Band-Limited 0;
 #X obj 82 209 outlet~;
 #X obj 82 38 inlet;

@@ -1,5 +1,5 @@
 #N canvas 664 84 865 625 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 665 303 *~;
 #X obj 615 262 r~ \$0-sample;
 #X obj 711 255 nbx 5 14 -20000 20000 0 1 empty \$0-freq empty 0 -8
@@ -38,7 +38,7 @@ It's worth noting it treats a 0 Hz input as a bypass. This is important
 because at 0 Hz \, the oscillator outputs whatever amplitude value
 according to that instantaneous phase \, and it won't likely be "1"
 \, so you have an undesired gain change., f 71;
-#X obj 533 29 declare -path else;
+#X obj 533 29 declare -lib else;
 #X obj 175 185 play.file~ bubul.wav 1 1;
 #X text 38 19 In this example \, we have a sample as the carrier instead
 of an oscillator \, which illustrates the usage of amplitude modulation

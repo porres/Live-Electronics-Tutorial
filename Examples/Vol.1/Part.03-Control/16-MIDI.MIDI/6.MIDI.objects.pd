@@ -1,5 +1,5 @@
 #N canvas 354 23 948 501 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 115 221 pgmin;
 #X obj 109 197 bendin;
 #X obj 101 247 touchin;
@@ -56,7 +56,7 @@ cases there are also more functionalities than the native counterparts
 makes them useful to write and read MIDI data from the [midi] object
 \, also provided in the ELSE library. We'll see that in the next section.
 ;
-#X obj 762 22 declare -path else;
+#X obj 762 22 declare -lib else;
 #X text 27 15 Pd has several nastive objects that deal with MIDI. We
 only used [notein] and MIDI note messages in this series \, but there
 are many other MIDI messages we could use to control a patch. Conversely

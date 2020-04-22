@@ -1,5 +1,5 @@
 #N canvas 336 78 927 424 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 78 274 out~;
 #X floatatom 721 109 5 0.1 10 0 - - -;
 #X obj 724 160 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
@@ -30,7 +30,7 @@ audio signals into a new control range (here it maps the -1 to 1 input
 range to an output range from 500 to 1500)., f 25;
 #X obj 460 197 setdsp~;
 #X obj 558 238 display~;
-#X obj 51 26 declare -path else;
+#X obj 51 26 declare -lib else;
 #X text 19 67 "LFOs" (Low Frequency Oscilators) are just any oscillator
 running at a low frequency \, simple as that! We use them to control
 all sorts of parameters in a patch. Below we have a sine wave controlling

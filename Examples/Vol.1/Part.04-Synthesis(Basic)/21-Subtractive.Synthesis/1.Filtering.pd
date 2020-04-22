@@ -1,5 +1,5 @@
 #N canvas 290 86 846 448 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 258 310 nbx 5 14 0 10 0 0 \$0-reson \$0-reson-set empty 0 -8
 0 10 -228856 -1 -1 0 256;
 #X obj 166 260 nbx 5 14 20 20000 0 0 \$0-freq \$0-freq-set empty 0
@@ -38,7 +38,7 @@ frequency., f 49;
 #X text 496 352 You can check the help files of these filters for more
 details \, before the next section where we have a deeper look into
 basic filters., f 38;
-#X obj 649 16 declare -path else;
+#X obj 649 16 declare -lib else;
 #X text 461 51 Noise sources are also suitable for filtering in subtractive
 synthesis. Here's [noise~] going through [bandpass~] \, a filter that
 only passes a band/range of frequency and whose resonance controls

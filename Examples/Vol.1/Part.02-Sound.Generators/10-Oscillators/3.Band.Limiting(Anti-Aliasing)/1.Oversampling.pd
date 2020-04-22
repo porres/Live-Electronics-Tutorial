@@ -1,5 +1,5 @@
 #N canvas 316 288 1118 555 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 232 59 415 307 plot 0;
 #X obj 56 28 inlet~;
 #X obj 56 66 rfft~;
@@ -118,7 +118,7 @@ for example \, you need an infinite sum of partials. Now \, because
 of the Nyquist theorem \, we know that there's a frequency limit in
 digital audio. If you cross this limit \, we have aliasing \, which
 sounds bad!, f 74;
-#X obj 356 25 declare -path else;
+#X obj 356 25 declare -lib else;
 #X obj 456 82 setdsp~ 1;
 #X connect 1 0 16 0;
 #X connect 1 0 4 0;

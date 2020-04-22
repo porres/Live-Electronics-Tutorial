@@ -1,5 +1,5 @@
 #N canvas 338 23 969 482 12;
-#X declare -path else;
+#X declare -lib else;
 #X floatatom 376 117 5 0 0 0 - freq5 -;
 #X text 414 117 freq_5;
 #X floatatom 386 138 5 0 1 0 - index_5 -;
@@ -50,7 +50,7 @@ the diagram below., f 55;
 #X obj 94 201 f2s~ 10;
 #X obj 232 140 f2s~ 10;
 #X obj 262 192 f2s~ 10;
-#X obj 720 34 declare -path else;
+#X obj 720 34 declare -lib else;
 #X obj 244 326 out~;
 #X obj 711 171 pic 0 ./files/ex6.gif empty empty 0;
 #X connect 0 0 26 0;

@@ -1,5 +1,5 @@
 #N canvas 416 167 936 478 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 226 122 pinknoise~;
 #X obj 226 162 out~;
 #X obj 191 371 out~;
@@ -31,7 +31,7 @@ by brownian motion. The term red noise is also used for a color analogy.
 #X text 505 216 The ELSE library has also many other noise and chaotic
 or stochastic generators. The ones below are chaotic map attractors.
 Check the help file for more details., f 54;
-#X obj 754 20 declare -path else;
+#X obj 754 20 declare -lib else;
 #X text 491 55 The [gray~] object from ELSE is not to be confused with
 "grey" \, and it comes from "gray code" \, which changes bits randomly.
 ;

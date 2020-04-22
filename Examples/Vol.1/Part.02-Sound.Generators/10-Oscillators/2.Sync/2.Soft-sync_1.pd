@@ -1,5 +1,5 @@
 #N canvas 617 58 539 691 12;
-#X declare -path else;
+#X declare -lib else;
 #X text 88 331 "soft sync";
 #X obj 229 442 out~;
 #X obj 228 289 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
@@ -24,7 +24,7 @@ a maximum function and keeps the slave frequency the same as the master's
 if it is lower., f 58;
 #X text 232 270 master;
 #X text 164 270 slave;
-#X obj 312 26 declare -path else;
+#X obj 312 26 declare -lib else;
 #X connect 2 0 6 0;
 #X connect 2 0 8 1;
 #X connect 4 0 8 0;

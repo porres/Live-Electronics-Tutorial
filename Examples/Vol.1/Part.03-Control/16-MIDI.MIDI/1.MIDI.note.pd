@@ -1,5 +1,5 @@
 #N canvas 324 68 966 638 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 253 506 *~;
 #X text 106 354 pitch;
 #X obj 155 415 mtof;
@@ -50,7 +50,7 @@ frequency of an oscillator and trigger [adsr~]. In the context of MIDI
 values in the range of 0 to 127 \, we need [mtof] to convert the pitch
 to hertz and divide the velocity by 127 to trigger the envelope.,
 f 62;
-#X obj 790 16 declare -path else;
+#X obj 790 16 declare -lib else;
 #X text 26 31 MIDI controllers send "Note" messages from key action.
 A "Note On" message is sent when a key is pressed \, and a "Note Off"
 when released. The native object [makenote] emulates MIDI notes \,

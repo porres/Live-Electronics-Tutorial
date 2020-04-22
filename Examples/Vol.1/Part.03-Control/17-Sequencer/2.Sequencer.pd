@@ -1,5 +1,5 @@
 #N canvas 322 32 964 670 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 190 301 + 1;
 #X obj 506 254 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -74,7 +74,7 @@ read values from a table and use variables from a [value] object.;
 #X text 497 45 Find below the array used as a sequencer. It is initiaized
 with the native [array set] object. You can also change the values
 with your mouse and retrieve the values with [array get].;
-#X obj 783 13 declare -path else;
+#X obj 783 13 declare -lib else;
 #X obj 506 304 setmess set;
 #X text 29 18 Let's implement a sequencer using arrays to store values
 \, which could be used to control any parameter in a patch but here

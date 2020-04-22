@@ -1,5 +1,5 @@
 #N canvas 338 80 876 669 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 123 470 cnv 15 298 148 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #X obj 437 472 cnv 15 298 148 empty empty empty 20 12 0 14 -191407
@@ -103,7 +103,7 @@ as the phase signal and you can draw any kind of phase function.;
 #X msg 515 68 0 1 1;
 #X obj 564 212 function 200 100 empty empty 0 1 220 220 220 50 50 50
 0 0 0 0 0 1 1;
-#X obj 687 35 declare -path else;
+#X obj 687 35 declare -lib else;
 #X text 40 22 The Phase Distortion technique was developed by Casio
 and implemented in some of its synths. It's nothing but a kind of waveshaping
 as it consists in changing (or "distorting") the phase signal \, in

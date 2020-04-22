@@ -1,5 +1,5 @@
 #N canvas 668 58 491 556 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 287 242 spigot;
 #X obj 326 217 tgl 15 0 empty loop empty 17 7 0 10 -228856 -1 -1 1
 1;
@@ -74,7 +74,7 @@
 outlet when the file sequence is over \, and we can use this for looping
 it. Here we have a two voice polyphonic synth to play this MIDI file.
 Each voice is a variable sawtooth waveform., f 52;
-#X obj 308 23 declare -path else;
+#X obj 308 23 declare -lib else;
 #X obj 107 386 out2~;
 #X text 49 58 The [midi] external \, from ELSE \, can read MIDI files
 like in this example \, but it outputs raw MIDI informtaion \, so we

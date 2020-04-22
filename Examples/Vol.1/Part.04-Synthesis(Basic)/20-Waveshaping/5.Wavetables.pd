@@ -1,5 +1,5 @@
 #N canvas 295 50 1064 592 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 53 200 wrap~;
 #X floatatom 53 20 5 0 0 0 - - -;
 #X obj 53 54 osc~ 40;
@@ -51,7 +51,7 @@ affecting the output., f 53;
 a convenient object for waveshaping. It automatically wraps the audio
 input and does everything the patch to the left is doing! It also has
 a DC filter and everything., f 48;
-#X obj 846 27 declare -path else;
+#X obj 846 27 declare -lib else;
 #X obj 53 509 out~;
 #X text 294 21 Now we'll get back to working with tables as transfer
 functions and use "sinesum" e "cosinesum" to generate wavetables. Not

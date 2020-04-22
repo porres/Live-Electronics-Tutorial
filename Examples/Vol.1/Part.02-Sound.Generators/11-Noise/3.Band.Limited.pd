@@ -1,5 +1,5 @@
 #N canvas 475 52 950 740 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 668 453 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 10922 1;
 #X obj 549 455 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -228856
@@ -51,7 +51,7 @@ random steps (no interpolation) and [rampnoise~] generates random ramps
 (with interpolation).;
 #X obj 549 424 s2f~;
 #X obj 668 422 s2f~;
-#X obj 730 20 declare -path else;
+#X obj 730 20 declare -lib else;
 #X text 74 61 We can limit the frequency band of a noise source with
 downsampling. The external [downsample~] object can decrease the sample
 rate with or without interpolation., f 55;

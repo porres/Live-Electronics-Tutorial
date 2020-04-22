@@ -1,5 +1,5 @@
 #N canvas 370 27 931 558 12;
-#X declare -path else;
+#X declare -lib else;
 #X msg 130 194 \$1 1000;
 #X obj 130 224 line 0 1;
 #X floatatom 130 170 2 0 0 0 - - -;
@@ -55,7 +55,7 @@ ms before starting the ramp. You can then send it several messages
 and schedule different line segments at once.;
 #X obj 603 256 s2f~;
 #X obj 579 483 s2f~;
-#X obj 736 19 declare -path else;
+#X obj 736 19 declare -lib else;
 #X connect 0 0 1 0;
 #X connect 1 0 17 0;
 #X connect 2 0 0 0;

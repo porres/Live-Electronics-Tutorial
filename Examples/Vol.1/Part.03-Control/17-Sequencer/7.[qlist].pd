@@ -1,5 +1,5 @@
 #N canvas 515 23 587 648 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 156 459 mtof;
 #X obj 212 524 *~;
 #X obj 156 411 trigger f b;
@@ -36,7 +36,7 @@ is done. We use this bang to loop the sequence.;
 ;
 #X text 270 271 change the tempo;
 #X obj 156 489 bl.tri~;
-#X obj 375 21 declare -path else;
+#X obj 375 21 declare -lib else;
 #X connect 0 0 23 0;
 #X connect 1 0 18 0;
 #X connect 2 0 14 0;

@@ -1,5 +1,5 @@
 #N canvas 473 83 936 720 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 29 305 *~;
 #X obj 78 180 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
@@ -62,7 +62,7 @@ left \, we have band limited oscillators., f 54;
 #X obj 336 339 f2s~ 50;
 #X obj 200 272 f2s~ 50;
 #X obj 75 206 f2s~ 50;
-#X obj 751 30 declare -path else;
+#X obj 751 30 declare -lib else;
 #X connect 0 0 2 0;
 #X connect 1 0 43 0;
 #X connect 2 0 21 0;

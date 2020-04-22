@@ -1,5 +1,5 @@
 #N canvas 307 73 851 497 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 91 187 nbx 5 14 1 3000 0 1 empty empty empty 0 -8 0 10 -228856
 -1 -1 32 256;
 #X obj 251 169 cnv 15 198 138 empty empty empty 20 12 0 14 -228856
@@ -87,7 +87,7 @@ where "p" is the patial number.;
 #X text 510 64 The [saw~] object \, from ELSE \, is a "perfect" sawtooth
 wave generator \, which is basically a descending ramp. Check its help
 file for more details., f 38;
-#X obj 647 20 declare -path else;
+#X obj 647 20 declare -lib else;
 #X text 23 13 You can generate a sawtooth waveform from a sum of harmonic
 partials \, which means we can use "sinesum" again and [tabosc4~].
 Open the [pd saw] subpatch to see how that works., f 61;

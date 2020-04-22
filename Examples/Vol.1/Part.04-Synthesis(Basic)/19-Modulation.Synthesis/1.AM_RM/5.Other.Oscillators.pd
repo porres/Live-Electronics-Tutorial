@@ -1,5 +1,5 @@
 #N canvas 549 53 697 522 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 179 95 483 427 oscillator 0;
 #X obj 175 343 outlet~;
 #X obj 175 270 sine~;
@@ -137,7 +137,7 @@
 #X text 409 69 carrier;
 #X text 561 67 mod;
 #X text 569 234 Amplitude Modulation, f 10;
-#X obj 524 25 declare -path else;
+#X obj 524 25 declare -lib else;
 #X obj 58 178 play.file~ bubul.wav 1 1, f 25;
 #X text 23 18 More complex modulator signals will create more partials
 in any Amplitude Modulation patch (including Ring Modulation). We usually
