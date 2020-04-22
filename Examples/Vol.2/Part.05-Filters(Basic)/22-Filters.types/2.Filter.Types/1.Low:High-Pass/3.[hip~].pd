@@ -1,5 +1,5 @@
 #N canvas 264 73 1055 656 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 74 26 1057 399 (subpatch) 0;
 #X obj 101 101 cnv 15 878 231 empty empty empty 18 9 1 15 -262144 -1
 0;
@@ -969,7 +969,7 @@ roll-off frequencies.;
 #X text 102 356 Frequency Response:;
 #X text 350 321 With DC Offset;
 #X text 577 320 Without DC Offset;
-#X obj 860 27 declare -path else;
+#X obj 860 27 declare -lib else;
 #X obj 802 311 out~;
 #X text 132 24 Contrary to a lowpass \, a highpass only lets through
 frequencies above a cutoff/rolloff point. It's possible to derive a

@@ -1,5 +1,5 @@
 #N canvas 281 23 896 640 12;
-#X declare -path else;
+#X declare -lib else;
 #X floatatom 614 192 5 -1 1 0 - a -;
 #X floatatom 657 239 5 -1 1 0 - b -;
 #X floatatom 700 286 5 -1 1 0 - c -;
@@ -115,7 +115,7 @@ The [comb.rev~] object from ELSE has the following diagram:, f 44
 lines. And let's remember how this object was already presented in
 this tutorial to implement variable delay effects \, such as flanger
 and chorus., f 53;
-#X obj 698 12 declare -path else;
+#X obj 698 12 declare -lib else;
 #X obj 528 349 out~;
 #X text 463 488 The fact that a so called "filter" and "reverberator"
 are basically the same animal can again reinforce how the concept of

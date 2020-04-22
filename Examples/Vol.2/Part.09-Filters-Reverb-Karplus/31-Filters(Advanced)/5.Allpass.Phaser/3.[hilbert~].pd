@@ -1,5 +1,5 @@
 #N canvas 238 23 1042 561 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 339 122 hilbert~;
 #N canvas 167 73 1108 572 (subpatch) 0;
 #N canvas 606 377 578 406 plot 0;
@@ -243,7 +243,7 @@
 0.870686 -1.8685 1 1.94632 -0.94657 0.94657 -1.94632 1 0.83774 -0.06338
 0.06338 -0.83774 1;
 #X obj 84 180 loop 400;
-#X obj 310 35 declare -path else;
+#X obj 310 35 declare -lib else;
 #X connect 1 0 2 0;
 #X connect 1 1 4 1;
 #X connect 1 1 5 1;

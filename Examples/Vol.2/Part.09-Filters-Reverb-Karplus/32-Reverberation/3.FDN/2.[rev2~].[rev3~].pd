@@ -1,5 +1,5 @@
 #N canvas 527 23 532 690 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 273 308 rev2~ 100 90 3000 20;
 #X obj 273 236 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -98,7 +98,7 @@ reflexions. The new addition is that we now have a lowpass filter in
 the feedback loop. This enables us to to atenuate higher frequencies.
 This is a usual parameter in reverb design called 'high frequency damping'.
 ;
-#X obj 357 18 declare -path else;
+#X obj 357 18 declare -lib else;
 #X obj 210 602 out~;
 #X obj 296 354 out2~;
 #X connect 0 0 14 0;

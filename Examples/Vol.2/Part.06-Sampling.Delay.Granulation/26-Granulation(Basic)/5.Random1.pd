@@ -1,5 +1,5 @@
 #N canvas 565 23 656 608 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 66 355 s~ \$0-pos;
 #X obj 449 210 nbx 5 14 -1e+37 1e+37 0 0 empty lfnoise-freq empty 0
 -8 0 10 -228856 -1 -1 2 256;
@@ -118,7 +118,7 @@ controlled by [stepnoise~] \, but you can also try [rampnoise~] instead.
 #X connect 11 1 9 1;
 #X restore 277 445 pd grain-2;
 #X obj 277 402 r~ \$0-freq;
-#X obj 427 14 declare -path else;
+#X obj 427 14 declare -lib else;
 #X obj 444 464 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 790 23 285 190 buffer 0;

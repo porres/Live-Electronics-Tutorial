@@ -1,5 +1,5 @@
 #N canvas 365 48 910 674 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 721 69 noise~;
 #N canvas 9 255 1099 569 (subpatch) 0;
 #N canvas 1021 22 212 339 freq-response 0;
@@ -575,7 +575,7 @@ for [biquad~] is not trivial for musicians \, but the [bicoeff] object
 from ELSE generates coefficients for nine filter types from Robert
 Bristow-Johnson's "Cookbook formulae for audio EQ biquad filter coefficients".
 All these filter types have already been presented here., f 57;
-#X obj 756 14 declare -path else;
+#X obj 756 14 declare -lib else;
 #X obj 721 167 out~;
 #X text 40 22 The vanilla objec [biquad~] is a general filter that
 can act as several types depending on its coefficients. The "biquad"

@@ -1,5 +1,5 @@
 #N canvas 297 137 1220 472 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 480 140 lop~;
 #X obj 142 185 hsl 128 15 20 7050 1 1 empty set-Hz empty -2 -8 0 10
 -191407 -1 -1 6970 1;
@@ -45,7 +45,7 @@ frequency input is about 7 Khz., f 53;
 #X obj 139 153 initmess 500;
 #X text 863 90 And here's also how to implement it with [biquad~],
 f 29;
-#X obj 939 25 declare -path else;
+#X obj 939 25 declare -lib else;
 #X obj 457 354 out~;
 #X connect 0 0 19 0;
 #X connect 1 0 5 0;

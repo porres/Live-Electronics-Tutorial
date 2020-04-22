@@ -1,5 +1,5 @@
 #N canvas 429 56 886 601 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 503 338 rpole~;
 #X obj 503 365 rzero~ 1;
 #X obj 540 185 hip~;
@@ -58,7 +58,7 @@ implementations., f 34;
 #X text 25 43 From: y[n] = x[n] - x[n-1] + a * y[n-1];
 #X text 27 78 We get:;
 #X restore 777 371 pd H(z);
-#X obj 703 16 declare -path else;
+#X obj 703 16 declare -lib else;
 #X text 32 175 The zero coefficient for [hip~] is always 1 \, so we
 just have y[n] = x[n] - x[n-1]. Let's join it to the one pole equation
 y[n] = x[n] + a * y[n-1] and we get:, f 53;

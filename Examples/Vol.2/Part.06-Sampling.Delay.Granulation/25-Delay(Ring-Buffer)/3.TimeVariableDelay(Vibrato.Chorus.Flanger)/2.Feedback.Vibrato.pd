@@ -1,5 +1,5 @@
 #N canvas 512 50 731 564 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 106 239 loadbang;
 #X obj 549 353 hsl 128 15 -0.999 0.999 0 0 empty feedback empty -2
 -6 0 8 -228856 -1 -1 1901 1;
@@ -39,7 +39,7 @@ check the presets below.;
 ;
 #X msg 106 436 \; rate 0.05 \; depth 15 \; delay 5 \; feedback 0.91
 ;
-#X obj 523 53 declare -path else;
+#X obj 523 53 declare -lib else;
 #X obj 248 208 play.file~ guitar.wav 1 1;
 #X connect 0 0 23 0;
 #X connect 1 0 3 0;

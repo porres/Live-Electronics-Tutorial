@@ -1,5 +1,5 @@
 #N canvas 285 25 952 604 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 264 350 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 1 256;
 #X text 726 276 signal;
@@ -181,7 +181,7 @@ A level parameter is multiplied by this average., f 45;
 #X obj 264 319 initmess 1;
 #X text 726 543 signal;
 #X text 545 546 noise floor;
-#X obj 90 46 declare -path else;
+#X obj 90 46 declare -lib else;
 #X obj 137 231 play.file~ 1 kantele.wav -loop;
 #X text 324 349 threshold;
 #X text 476 320 The last example also uses an average value for the

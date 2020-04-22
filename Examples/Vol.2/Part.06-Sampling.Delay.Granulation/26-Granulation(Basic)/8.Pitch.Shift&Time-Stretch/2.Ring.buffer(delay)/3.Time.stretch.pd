@@ -1,5 +1,5 @@
 #N canvas 289 98 904 554 12;
-#X declare -path else;
+#X declare -lib else;
 #X msg 531 181 0;
 #X obj 728 104 hsl 128 15 0 1000 0 0 empty grain grain-ms -2 -8 0 10
 -228856 -1 -1 1270 1;
@@ -39,7 +39,7 @@ depends on the speed parameter. We can make it shorter for a time stretch
 or larger for a time compress., f 47;
 #X obj 485 254 *~ 6000;
 #X obj 186 329 initmess \; speed 100 \; grain 100;
-#X obj 713 26 declare -path else;
+#X obj 713 26 declare -lib else;
 #X obj 116 431 play.file~ bubul.wav 1 1;
 #X text 41 47 For this Time Stretch/Compress example \, a grain size
 in ms provides the frequency of [pimp~] objects that drive overlapping

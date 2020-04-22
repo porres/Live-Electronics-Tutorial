@@ -1,5 +1,5 @@
 #N canvas 483 99 606 614 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 237 231 nbx 5 14 100 10000 1 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 100 256;
 #X obj 309 262 nbx 5 14 0.1 100 1 0 empty empty empty 0 -8 0 10 -228856
@@ -22,7 +22,7 @@ Q parameter. In the context of this example \, where it acts like a
 bandstop filter \, it is like the Q parameter controls the bandwidth
 of the band rejection., f 69;
 #X text 61 555 See its help file for more details.;
-#X obj 398 17 declare -path else;
+#X obj 398 17 declare -lib else;
 #X text 77 63 An allpass filter does not affect the frequency response
 \, only the phase. This filter will be better presented in a later
 and more advanced section on filters., f 62;

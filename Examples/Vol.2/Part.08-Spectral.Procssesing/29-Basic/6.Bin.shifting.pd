@@ -1,5 +1,5 @@
 #N canvas 419 90 838 461 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 598 236 r~ \$0-sample;
 #X obj 91 235 s~ \$0-sample;
 #X obj 598 306 out~;
@@ -80,7 +80,7 @@ zeroed out values \, whereas in [bin.shift~] you can also wrap them.
 #X connect 8 0 1 0;
 #X connect 9 0 5 0;
 #X restore 598 268 pd lrshift;
-#X obj 567 59 declare -path else;
+#X obj 567 59 declare -lib else;
 #X obj 91 200 play.file~ bubul.wav 1 1;
 #X connect 0 0 12 0;
 #X connect 5 0 7 1;

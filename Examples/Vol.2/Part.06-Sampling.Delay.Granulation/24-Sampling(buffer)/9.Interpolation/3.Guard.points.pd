@@ -1,5 +1,5 @@
 #N canvas 373 68 975 519 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 246 266 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0.330709 256;
 #X obj 246 335 display~;
@@ -46,7 +46,7 @@ The table was initialized with the sinesum command \, and creates a
 table with 64 points plus 3 guard points \, so we have 67 points and
 indexes from 0 to 66 - move the slider below to acess index values.
 ;
-#X obj 771 14 declare -path else;
+#X obj 771 14 declare -lib else;
 #X text 34 56 The [table~] object from ELSE is much like [tabread4~].
 By default \, the index input is normalized (from 0 to 1). It can also
 either access the guard points or ignore them.;

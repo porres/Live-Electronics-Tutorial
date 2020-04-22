@@ -1,5 +1,5 @@
 #N canvas 364 32 939 654 12;
-#X declare -path else;
+#X declare -lib else;
 #X floatatom 614 239 5 0 1000 0 - - -;
 #X floatatom 690 278 5 0 0 0 - - -;
 #X obj 124 406 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
@@ -118,7 +118,7 @@ allpass filter and this is why this object is better defined as a reverberator
 rather than a filter.;
 #X text 29 28 The [allpass.rev~] object from ELSE is an allpass reverberator
 \, this is its diagram:;
-#X obj 738 13 declare -path else;
+#X obj 738 13 declare -lib else;
 #X obj 649 577 out~;
 #X text 36 327 The reverberation comes from the feedback in the delay
 line that keeps reflecting the input signal. The feedback gain is an

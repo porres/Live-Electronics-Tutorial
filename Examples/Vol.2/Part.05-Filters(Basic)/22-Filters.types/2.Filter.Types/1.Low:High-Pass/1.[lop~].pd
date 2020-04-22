@@ -1,5 +1,5 @@
 #N canvas 482 253 928 575 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 272 55 344 273 cutoff 0;
 #X obj 109 225 outlet;
 #X obj 101 101 cnv 15 150 65 empty empty Roll-off(Hz) 13 16 0 16 -1
@@ -552,7 +552,7 @@ we have about 3 dB loss at the roll off frequency. After this point
 \, there's a loss of 6 dB per octave. But the behaviour changes over
 5 khz., f 53;
 #X text 40 488 Frequency Response:;
-#X obj 737 9 declare -path else;
+#X obj 737 9 declare -lib else;
 #X obj 616 241 out~;
 #X text 36 13 The vanilla [lop~] (from "lowpass") is a simple low pass
 filter. It receives a cutoff frequency \, which is the point after

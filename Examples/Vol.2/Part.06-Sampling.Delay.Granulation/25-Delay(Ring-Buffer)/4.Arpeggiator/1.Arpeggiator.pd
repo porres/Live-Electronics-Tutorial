@@ -1,5 +1,5 @@
 #N canvas 586 23 568 725 12;
-#X declare -path else;
+#X declare -lib else;
 #X floatatom 159 458 5 0 0 0 - - -;
 #X obj 159 555 *~;
 #X obj 245 519 hsl 128 15 10 500 0 0 empty depth empty -2 -8 0 10 -228856
@@ -18,7 +18,7 @@
 #X text 120 457 rate;
 #X text 51 232 So we have a sort of arpeggio with three different pitches
 that depend on the rate and depth. Have fun., f 60;
-#X obj 354 13 declare -path else;
+#X obj 354 13 declare -lib else;
 #X obj 78 298 play.file~ 1 violin.wav 1 1;
 #X obj 234 401 function 200 100 empty empty 0 1 220 220 220 50 50 50
 1 0 0 0 0 0.3 1 0.4 1 0.3 0;

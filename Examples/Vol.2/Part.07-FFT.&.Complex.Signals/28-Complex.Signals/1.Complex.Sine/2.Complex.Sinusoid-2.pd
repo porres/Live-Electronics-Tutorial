@@ -1,5 +1,5 @@
 #N canvas 317 75 1030 502 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 621 163 cos~;
 #X text 579 162 Real;
 #X obj 621 220 *~;
@@ -55,7 +55,7 @@ math has also other properties we'll see soon.;
 #X obj 621 305 s2f~ 50;
 #X obj 736 304 s2f~;
 #X obj 832 166 s2f~;
-#X obj 822 45 declare -path else;
+#X obj 822 45 declare -lib else;
 #X connect 0 0 2 0;
 #X connect 2 0 17 0;
 #X connect 2 0 15 0;

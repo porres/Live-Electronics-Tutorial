@@ -1,11 +1,11 @@
 #N canvas 655 96 517 502 12;
-#X declare -path else;
+#X declare -lib else;
 #X text 73 58 The [giga.rev~] object from ELSE is an abstraction that
 implements the widely known 'gigaverb' open source algorithm., f 50
 ;
 #X obj 126 348 giga.rev~ -size 40 -decay 4 -damp 0.9 -bw 0.75 -dry
 1 -early 0.795 -late 0.04, f 39;
-#X obj 321 21 declare -path else;
+#X obj 321 21 declare -lib else;
 #X obj 126 296 play.file~ 1 didge.aif 1 1, f 27;
 #X obj 207 411 out2~;
 #X text 73 107 It uses the same design with early reflections made

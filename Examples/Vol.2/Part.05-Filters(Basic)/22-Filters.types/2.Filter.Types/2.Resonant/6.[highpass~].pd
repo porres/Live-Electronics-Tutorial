@@ -1,5 +1,5 @@
 #N canvas 475 39 899 636 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 9 255 1099 569 (subpatch) 0;
 #N canvas 649 293 231 309 freq-response 0;
 #N canvas 324 327 712 441 init 0;
@@ -377,7 +377,7 @@
 #X text 67 79 This is the [highpass~] object from ELSE \, it is a highpass
 resonant filter and much like [lowpass~] \, but it's a highpass instead.
 Check its help file for more details., f 50;
-#X obj 737 19 declare -path else;
+#X obj 737 19 declare -lib else;
 #X obj 473 122 out~;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;

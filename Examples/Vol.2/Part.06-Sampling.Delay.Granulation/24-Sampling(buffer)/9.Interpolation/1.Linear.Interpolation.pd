@@ -1,5 +1,5 @@
 #N canvas 374 105 907 531 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 144 215 hsl 200 15 0 7 0 0 empty slider empty -2 -8 0 10 -228856
 -1 -1 1421 0;
 #X obj 173 291 expr interpolation[i] \; interpolation[i + 1] \; $f1
@@ -83,7 +83,7 @@ as in a linear interpolation. Arrays in Pd that are drawn as polygons
 do visually display a linear interpolation to connect the array's points.
 , f 53;
 #X obj 338 291 initmess \; slider 0.5;
-#X obj 680 22 declare -path else;
+#X obj 680 22 declare -lib else;
 #X text 33 32 Interpolation is needed to find values in between samples
 or indexes in a table - such as 1.5 as a mid point between values 1
 and 2 \, for example. A sound file is an array of samples \, where

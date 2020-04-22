@@ -1,5 +1,5 @@
 #N canvas 271 45 969 547 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 118 238 nbx 5 16 -2000 2000 0 0 empty \$0-carrier empty 0 -8
 0 13 -228856 -1 -1 220 256;
 #X obj 292 311 *~;
@@ -64,7 +64,7 @@ like a square wave in frequency modulation).;
 1;
 #X obj 507 313 + 1;
 #X obj 654 314 adc~ 1;
-#X obj 692 29 declare -path else;
+#X obj 692 29 declare -lib else;
 #X obj 218 437 out~;
 #X text 41 65 Frequency shifting allows for a Frequency modulation
 into any signal. This is not exactly like FM because changing the frequency

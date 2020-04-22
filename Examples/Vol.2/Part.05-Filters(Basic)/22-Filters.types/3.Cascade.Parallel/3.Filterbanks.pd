@@ -1,12 +1,12 @@
 #N canvas 563 23 558 410 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 68 182 noise~;
 #X obj 68 218 bpbank~ 4 -freq 250 600 1050 1470 -q 30 25 30 20, f
 24;
 #X obj 265 182 noise~;
 #X obj 265 218 resonbank~ 4 -freq 150 400 950 1270 -decay 50 100 70
 90, f 31;
-#X obj 369 16 declare -path else;
+#X obj 369 16 declare -lib else;
 #X obj 265 268 out~;
 #X obj 68 268 out~;
 #X text 70 66 The ELSE library has a few filterbank objects. These

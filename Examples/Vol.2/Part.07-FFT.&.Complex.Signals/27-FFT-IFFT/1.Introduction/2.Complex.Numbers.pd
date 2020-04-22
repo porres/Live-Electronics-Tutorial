@@ -1,5 +1,5 @@
 #N canvas 497 54 974 718 12;
-#X declare -path else;
+#X declare -lib else;
 #X floatatom 591 241 8 0 0 0 - - -;
 #X text 509 242 Amplitude;
 #X floatatom 625 340 5 0 0 0 - - -;
@@ -45,7 +45,7 @@ back with [expr] and objects from the ELSE library.;
 #X text 746 549 [mag] returns the magnitude (amplitude) from real/imaginary
 parts., f 21;
 #X obj 831 647 mag~;
-#X obj 756 26 declare -path else;
+#X obj 756 26 declare -lib else;
 #X obj 58 149 pic 0 euler.gif empty empty 0;
 #X text 31 618 The cartesian representation of a complex number is
 by its (a \, b) coordinates \, but you can also represent it in the

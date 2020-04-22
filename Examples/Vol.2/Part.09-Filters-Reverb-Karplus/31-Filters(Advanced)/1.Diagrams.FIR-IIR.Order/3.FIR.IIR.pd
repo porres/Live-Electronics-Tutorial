@@ -1,5 +1,5 @@
 #N canvas 531 46 536 572 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 126 189 fexpr~ ($x1[0] + $x1[-1] + $x1[-2] + $x1[-3] + $x1[-4]
 + $x1[-5] + $x1[-6] + $x1[-7]) * 0.125, f 46;
 #X obj 292 401 v a;
@@ -17,7 +17,7 @@
 filter from the last example - the difference is that we're abreviatting
 the variables and using a value object to insert in the equation as
 the coefficient:;
-#X obj 332 24 declare -path else;
+#X obj 332 24 declare -lib else;
 #X text 58 68 A filter with only feedforward lines is called "non recursive"
 and "Finite Impulse Response" \, or just "FIR". On the other hand \,
 a filter with feedback is known as "recursive" or Ininite Impulse Response

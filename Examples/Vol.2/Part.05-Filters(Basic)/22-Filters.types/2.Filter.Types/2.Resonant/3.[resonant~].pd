@@ -1,5 +1,5 @@
 #N canvas 417 45 924 663 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 9 255 1099 569 (subpatch) 0;
 #N canvas 649 293 231 309 freq-response 0;
 #N canvas 324 327 712 441 init 0;
@@ -382,7 +382,7 @@ you can set the resonance as the reverberating time. We'll get back
 to this later in this tutorial when we treat filters more in depth
 and present other such kinds of filters like the comb filter. For now
 \, check its help file for more details., f 64;
-#X obj 754 14 declare -path else;
+#X obj 754 14 declare -lib else;
 #X obj 599 156 out~;
 #X text 55 12 This is a distinct type of bandpass filter. We've seen
 "constant gain" filters \, where the maximum amplitude is always at

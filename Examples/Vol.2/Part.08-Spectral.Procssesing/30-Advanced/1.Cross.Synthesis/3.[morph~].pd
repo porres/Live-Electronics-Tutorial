@@ -1,5 +1,5 @@
 #N canvas 513 23 582 634 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 228 335 out~;
 #X obj 366 335 out~;
 #X obj 176 549 out~;
@@ -22,7 +22,7 @@
 #X text 282 492 A;
 #X text 424 430 B (amplitude);
 #X text 436 492 B (phase);
-#X obj 392 22 declare -path else;
+#X obj 392 22 declare -lib else;
 #X obj 113 242 play.file~ numbers.wav 1 1;
 #X obj 113 183 play.file~ 1 kantele.wav 1 1;
 #X text 68 58 The [morph~] object \, an abstraction from ELSE \, is

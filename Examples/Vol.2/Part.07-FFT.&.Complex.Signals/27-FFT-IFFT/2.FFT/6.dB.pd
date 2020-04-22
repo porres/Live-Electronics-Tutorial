@@ -1,5 +1,5 @@
 #N canvas 481 63 1093 476 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-linear 1024 float 0;
 #X coords 0 1 1023 0 600 150 1;
@@ -75,7 +75,7 @@ we can convert them to a dB scale \, as it's better for visualizing
 the data (compare to the right). Check the analysis result of a sine
 wave and sawtooth wave. Note how it's easier to see the upper harmonics
 of a sawtooth wave when displaying in dB., f 48;
-#X obj 893 33 declare -path else;
+#X obj 893 33 declare -lib else;
 #X connect 12 0 18 0;
 #X connect 13 0 19 0;
 #X connect 14 0 13 0;

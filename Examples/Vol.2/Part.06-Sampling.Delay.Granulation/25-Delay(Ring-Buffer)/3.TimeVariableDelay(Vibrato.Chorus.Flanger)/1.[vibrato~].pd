@@ -1,5 +1,5 @@
 #N canvas 504 23 638 639 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 347 198 nbx 5 14 0.1 20 0 0 empty \$0-LFO empty 0 -8 0 10 -228856
 -1 -1 0.1 256;
 #X text 347 180 Rate;
@@ -33,7 +33,7 @@
 is actually based on a granular pitch shifter \, that we'll see later.
 Here it performs a vibrato where the depth is the pitch deviation in
 cents., f 35;
-#X obj 419 10 declare -path else;
+#X obj 419 10 declare -lib else;
 #X obj 75 217 play.file~ guitar.wav 1 1;
 #X text 88 53 Varying the delay time can be used for vibrato \, chorus
 and flanger effects. In this example a LFO controls the delay time

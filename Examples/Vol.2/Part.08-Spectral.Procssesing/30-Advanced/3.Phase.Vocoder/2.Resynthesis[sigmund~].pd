@@ -1,5 +1,5 @@
 #N canvas 379 84 882 419 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 512 186 nbx 2 14 1 50 0 0 \$0-peaks empty empty 0 -8 0 10 -228856
 -1 -1 1 256;
 #X text 469 183 peaks;
@@ -30,7 +30,7 @@ we perform a simple transposition. Open the subpatch for more info.
 #X obj 512 295 clone 50 oscillator;
 #X text 671 341 compare this pitch shifter with the last two we've
 seen, f 20;
-#X obj 666 20 declare -path else;
+#X obj 666 20 declare -lib else;
 #X obj 154 246 play.file~ bubul.wav 1 1;
 #X text 40 144 The native [sigmund~] object is a powerful pitch tracker
 and can also spit separate tone components to feed a bank of oscillators.

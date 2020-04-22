@@ -1,5 +1,5 @@
 #N canvas 245 85 1319 483 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 817 225 cnv 15 420 170 empty empty 4-Overlaps 150 25 0 20 -1
 -262144 0;
 #N canvas 64 23 1050 442 overlap 0;
@@ -24,7 +24,7 @@
 #X obj 748 227 sine~ 200 0.5;
 #X obj 570 87 sine~ 200 0;
 #X obj 743 298 sine~ 200 0.25;
-#X obj 838 67 declare -path else;
+#X obj 838 67 declare -lib else;
 #X connect 2 0 3 0;
 #X connect 3 0 8 0;
 #X connect 8 0 4 0;

@@ -1,5 +1,5 @@
 #N canvas 280 23 1171 677 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 629 488 cnv 15 498 148 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -586,7 +586,7 @@
 #X text 53 338 The output was recorded and is loaded in [sample~].
 ;
 #X obj 324 437 conv~ 128 files/IR.wav;
-#X obj 958 16 declare -path else;
+#X obj 958 16 declare -lib else;
 #X text 629 62 Below we can prove that convoluting to an IR works by
 comparing the [conv~] object to the filter that generated the IR.,
 f 63;

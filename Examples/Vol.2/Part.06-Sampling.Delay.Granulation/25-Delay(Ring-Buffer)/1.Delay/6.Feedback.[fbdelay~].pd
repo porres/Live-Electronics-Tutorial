@@ -1,5 +1,5 @@
 #N canvas 464 37 772 581 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 96 279 *~;
 #X obj 139 244 hsl 128 15 -0.999 0.999 0 0 empty \$0-fb empty -2 -6
 0 8 -228856 -1 -1 12071 1;
@@ -84,7 +84,7 @@ the amplitude as the last one - check the patch to the left., f 63
 #X text 56 499 (click/open);
 #X text 581 453 <== Feedback index (Decay time in ms), f 18;
 #X obj 426 402 pulse~ 1 0.05;
-#X obj 602 13 declare -path else;
+#X obj 602 13 declare -lib else;
 #X text 297 162 The feedback implies a minimum delay \, otherwise you'd
 have an infinite loop. This delay is of at least one block of audio
 \, which is 64 samples by default (and needed by [adc~] and [dac~]

@@ -1,5 +1,5 @@
 #N canvas 496 23 924 726 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 544 17 r \$0-size;
 #X obj 505 83 random;
 #X obj 440 83 random;
@@ -62,7 +62,7 @@ in different speeds as in this example. Note how we're also using a
 ratio compensation here.;
 #X text 68 264 Let's just use [soundfiler] again for a change:, f
 30;
-#X obj 736 43 declare -path else;
+#X obj 736 43 declare -lib else;
 #X obj 113 317 initmess read -resize sax.wav \$0-buffer, f 22;
 #X obj 641 243 function 200 100 empty empty 0 1 220 220 220 50 50 50
 0 0 0 0 0 0.1 1 0.8 1 0.1 0;

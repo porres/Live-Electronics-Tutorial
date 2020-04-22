@@ -1,5 +1,5 @@
 #N canvas 388 225 930 554 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 53 364 cnv 15 248 148 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -74,7 +74,7 @@ terms \, this means we have an equal power crossfade between grains.
 #X text 831 197 out of phase, f 6;
 #X text 38 272 See the overlapping graphs below and the patch implementation
 with both grains to the right., f 50;
-#X obj 767 28 declare -path else;
+#X obj 767 28 declare -lib else;
 #X text 37 43 A single envelope as in the last example generates artifacts
 \, as it is basically just an amplitude modulation implementation.
 We avoid this and also the tremolo effect by overlapping two grains.

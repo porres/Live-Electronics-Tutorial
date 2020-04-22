@@ -1,5 +1,5 @@
 #N canvas 639 23 565 698 12;
-#X declare -path else;
+#X declare -lib else;
 #X text 254 297 1;
 #X text 253 412 0;
 #X text 270 428 0;
@@ -38,7 +38,7 @@ file.;
 #X obj 332 539 *~;
 #X text 127 508 After generating an array \, you can access it with
 the [tabreceive~] object., f 26;
-#X obj 349 17 declare -path else;
+#X obj 349 17 declare -lib else;
 #X text 64 121 When we apply an envelope in the grain \, the analysis
 result has less artifcts \, and it's also forced to become periodic.
 This envelope is called a "window" in the context of FFT. The hann

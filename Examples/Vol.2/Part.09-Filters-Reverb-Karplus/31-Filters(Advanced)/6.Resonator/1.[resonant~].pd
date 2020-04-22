@@ -1,5 +1,5 @@
 #N canvas 430 23 959 766 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 630 161 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 630 198 impseq~;
@@ -105,7 +105,7 @@ also have an attack parameter rather than just a decay time., f 55
 #X obj 655 692 resonbank2~ 4;
 #X obj 619 500 resonbank~ 4 -freq 200 300 700 800 -decay 900 800 700
 900 -amp 0.4 0.3 0.2 0.2, f 28;
-#X obj 732 28 declare -path else;
+#X obj 732 28 declare -lib else;
 #X obj 630 306 out~;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;

@@ -1,5 +1,5 @@
 #N canvas 578 68 580 606 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 265 490 tabplay~ \$0-sample;
 #X obj 265 391 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -24,7 +24,7 @@ table. It can also be used to create an audio buffer that you can record
 into as we'll show later in this section of the tutorial.;
 #X obj 118 375 s \$0-size;
 #X text 158 279 <= shows and hides internal buffer;
-#X obj 382 15 declare -path else;
+#X obj 382 15 declare -lib else;
 #X obj 118 317 sample~ \$0-sample bubul.wav;
 #X text 68 150 One advantage of [sample~] is that it can be used to
 load multi channel files. Check its help file for more details. Below

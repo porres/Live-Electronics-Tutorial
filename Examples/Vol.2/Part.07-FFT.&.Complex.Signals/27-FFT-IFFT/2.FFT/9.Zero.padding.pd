@@ -1,5 +1,5 @@
 #N canvas 516 46 819 484 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 522 137 nbx 6 14 64 1e+37 0 0 \$0-w_size \$0-w_size-set empty
 0 -8 0 10 -228856 -1 -1 16384 256;
 #N canvas 636 295 609 422 zeropad 0;
@@ -75,7 +75,7 @@ and a zero padding table to zero out values above 16384 For the example
 \, though \, we have a sound file with 16384 samples.;
 #X text 168 246 play/analyse;
 #X obj 146 360 out~;
-#X obj 638 29 declare -path else;
+#X obj 638 29 declare -lib else;
 #X text 588 122 number of samples, f 9;
 #X obj 522 86 sample~ \$0-sample IR.wav;
 #X msg 522 111 \$1;

@@ -1,5 +1,5 @@
 #N canvas 300 50 943 459 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 128 29 1029 378 (subpatch) 0;
 #X obj 101 101 cnv 15 878 218 empty empty empty 18 9 1 15 -262144 -1
 0;
@@ -371,7 +371,7 @@
 #X obj 618 122 out~;
 #X obj 511 123 out~;
 #X text 36 186 Frequency Response:;
-#X obj 743 23 declare -path else;
+#X obj 743 23 declare -lib else;
 #X text 79 29 A simple average filter of two samples was used in this
 tutorial as a lowpass filter (in feedback modulation for FM and PM).
 But this is better defined as a "high cut" filter \, since it only

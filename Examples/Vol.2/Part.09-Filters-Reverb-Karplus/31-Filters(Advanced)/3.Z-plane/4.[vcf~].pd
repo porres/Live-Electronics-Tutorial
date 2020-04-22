@@ -1,5 +1,5 @@
 #N canvas 331 23 988 790 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 122 91 603 581 Z-Plane-biquad 0;
 #X obj 101 101 cnv 15 450 450 empty empty empty 20 12 1 14 -191407
 -66577 0;
@@ -450,7 +450,7 @@ the frequency and the radius the resonance.;
 #X obj 72 464 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
 #X text 156 488 Q;
-#X obj 804 27 declare -path else;
+#X obj 804 27 declare -lib else;
 #X text 30 377 The coefficients are caclulated in the suboatch below
 from frequency and Q values. This is used in [fexpr~] but the difference
 equation is simplified because we don't have an imaginaty input.,

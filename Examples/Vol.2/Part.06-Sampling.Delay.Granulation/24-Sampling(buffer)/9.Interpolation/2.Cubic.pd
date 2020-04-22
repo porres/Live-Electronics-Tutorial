@@ -1,5 +1,5 @@
 #N canvas 421 69 867 518 12;
-#X declare -path else;
+#X declare -lib else;
 #X floatatom 557 194 0 0 0 0 - - -;
 #X floatatom 557 86 0 0 0 0 - - -;
 #X obj 560 63 hsl 200 15 0 7 0 0 empty slider empty -2 -8 0 10 -228856
@@ -131,7 +131,7 @@ dot.;
 #X text 51 411 The [pd lagrange] subpatch calculates the interpolation.
 You can compare the result with the output of [tabread4] to see that
 they match.;
-#X obj 680 20 declare -path else;
+#X obj 680 20 declare -lib else;
 #X connect 1 0 3 0;
 #X connect 1 0 4 0;
 #X connect 2 0 1 0;

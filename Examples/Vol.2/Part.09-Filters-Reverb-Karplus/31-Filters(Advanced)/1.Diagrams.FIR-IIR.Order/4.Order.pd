@@ -1,5 +1,5 @@
 #N canvas 296 53 900 679 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 101 375 cnv 15 330 30 empty empty empty 5 12 0 14 -233017 -66577
 0;
 #X text 107 382 y(n) = a0 * x(n) + a1 * x(n-1) + b1 * y(n-1);
@@ -46,7 +46,7 @@ y(n-1) + b2 * y(n-2), f 36;
 delay \, difference equation and [fexpr~] implementation:, f 46;
 #X text 670 471 gain;
 #X obj 548 377 initmess 1.99 -0.995 0.00246 0 -0.00246;
-#X obj 712 18 declare -path else;
+#X obj 712 18 declare -lib else;
 #X obj 46 154 pic 0 ../files/FOS.gif empty empty 0;
 #X obj 515 117 pic 0 ../files/SOS.gif empty empty 0;
 #X text 65 25 A first order filter has a decay of 6dB per octave \,

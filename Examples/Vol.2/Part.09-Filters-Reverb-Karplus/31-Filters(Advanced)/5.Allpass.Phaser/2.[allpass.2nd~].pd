@@ -1,5 +1,5 @@
 #N canvas 359 64 958 441 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 726 58 hsl 128 15 0.001 100 1 0 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
 #X obj 565 48 noise~;
@@ -265,7 +265,7 @@ hear the phase cancellation. In practice \, this becomes a bandstop
 filter., f 32;
 #X text 258 409 We don't plot the amplitudes because they are unchanged.
 , f 58;
-#X obj 769 11 declare -path else;
+#X obj 769 11 declare -lib else;
 #X obj 565 154 out~;
 #X text 47 23 The [allpass.2nd~] object has been introduced before.
 It is a 2nd order allpass filter \, and you can check its help file

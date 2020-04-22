@@ -1,5 +1,5 @@
 #N canvas 423 48 899 636 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 459 151 out~;
 #X obj 505 20 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
 0 10 -228856 -1 -1 6477 0;
@@ -390,7 +390,7 @@ and is just the opposite of a Low Shelf filter. It boosts or attenuates
 frequencies higher than the roll off frequency. Check the help file
 for more details., f 43;
 #X text 542 20 Frequency;
-#X obj 743 34 declare -path else;
+#X obj 743 34 declare -lib else;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 11 2;

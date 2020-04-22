@@ -1,5 +1,5 @@
 #N canvas 557 36 534 591 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 162 252 noise~;
 #X obj 236 269 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 500 256;
@@ -60,7 +60,7 @@ filters in cascade \, open the subpatches for more details., f 58
 ready made crossover filter. But this is a 3rd order butterworth filter
 instead (we'll see more details on the butterworth filter topology
 later in this tutorial).;
-#X obj 356 18 declare -path else;
+#X obj 356 18 declare -lib else;
 #X obj 261 410 out2~;
 #X obj 75 362 out2~;
 #X connect 0 0 2 0;

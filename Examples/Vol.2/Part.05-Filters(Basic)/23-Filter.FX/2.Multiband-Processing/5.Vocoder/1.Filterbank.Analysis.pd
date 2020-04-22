@@ -1,5 +1,5 @@
 #N canvas 510 29 604 698 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 325 327 856 358 band-analyzer 0;
 #X obj 151 81 cnv 15 538 194 empty empty empty 20 12 0 14 -128992 -66577
 0;
@@ -131,7 +131,7 @@ to inside [clone]., f 50;
 #X connect 6 0 7 0;
 #X connect 7 0 2 0;
 #X restore 304 343 pd set-central-frequencies;
-#X obj 407 8 declare -path else;
+#X obj 407 8 declare -lib else;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 2 0 9 0;

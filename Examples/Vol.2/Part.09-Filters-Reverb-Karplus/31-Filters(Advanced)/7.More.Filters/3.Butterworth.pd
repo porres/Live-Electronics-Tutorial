@@ -1,5 +1,5 @@
 #N canvas 372 119 969 615 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 599 126 noise~;
 #X obj 701 143 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 2000 256;
@@ -312,7 +312,7 @@ We could use [cpole~] instead (see H13.butterworth).;
 are: [lop.bw~] (lowpass) and [hip.bw~] (highpass). They are an abstraction
 that depend on the [biquads~] object \, also from ELSE. Open help files
 for more details.;
-#X obj 774 24 declare -path else;
+#X obj 774 24 declare -lib else;
 #X obj 599 213 out~;
 #N canvas 299 23 985 489 filter-response 0;
 #X text 45 46 hz;

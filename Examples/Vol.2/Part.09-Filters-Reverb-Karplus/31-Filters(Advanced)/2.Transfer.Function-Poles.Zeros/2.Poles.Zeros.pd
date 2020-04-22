@@ -1,5 +1,5 @@
 #N canvas 314 34 940 526 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 52 436 cnv 15 275 50 empty empty empty 5 12 0 14 -232693 -66577
 0;
 #X text 59 451 H(z) = ------------------------------;
@@ -76,7 +76,7 @@ This is nothing but the IIR filter example we've been dealing with.
 #X text 511 68 A pole represents a resonance \, and a zero is an anti
 resonance \, this is where they get their names from. We'll see later
 how they act \, when the Z-Plane is presented.;
-#X obj 733 24 declare -path else;
+#X obj 733 24 declare -lib else;
 #X text 757 220 <= pole coefficient;
 #X text 657 283 =;
 #X obj 64 113 pic 0 ../files/SOS.gif empty empty 0;

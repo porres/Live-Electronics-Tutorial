@@ -1,5 +1,5 @@
 #N canvas 682 48 528 350 12;
-#X declare -path else;
+#X declare -lib else;
 #X floatatom 165 181 5 0 0 0 - - -;
 #X obj 328 163 setdsp~;
 #X text 266 268 <= click and open;
@@ -75,6 +75,6 @@ objects and you can set the overlap factor with [block~] or [switch~].
 The subpatch below performs a FFT with windowing and overlapping. Check
 it out.;
 #X obj 165 218 bl.saw~ 100;
-#X obj 339 19 declare -path else;
+#X obj 339 19 declare -lib else;
 #X connect 0 0 5 0;
 #X connect 5 0 3 0;

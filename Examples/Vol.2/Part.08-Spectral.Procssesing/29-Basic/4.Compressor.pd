@@ -1,5 +1,5 @@
 #N canvas 565 61 546 438 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 899 361 694 425 Compressor 0;
 #X obj 56 33 inlet~;
 #X obj 56 370 outlet~;
@@ -57,7 +57,7 @@
 a slider control to morph between the original and normalized or "compressed"
 output. The math is simple and relies on the [clip~] object.;
 #X text 95 260 click =>;
-#X obj 338 24 declare -path else;
+#X obj 338 24 declare -lib else;
 #X obj 163 175 play.file~ bubul.wav 1 1;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;

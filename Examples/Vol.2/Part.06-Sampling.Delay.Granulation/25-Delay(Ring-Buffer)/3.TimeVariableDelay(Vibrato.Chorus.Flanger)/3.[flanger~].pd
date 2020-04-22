@@ -1,5 +1,5 @@
 #N canvas 306 44 938 588 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 349 456 loadbang;
 #X obj 45 314 s~ \$0-in;
 #X obj 45 256 sig~ 40;
@@ -65,7 +65,7 @@ the frequency of the LFO that controls the delay time in ms \, and
 a "depth" is given by the minimum and maximum delay times., f 61;
 #X text 529 112 feedforward flanger;
 #X text 718 112 feedback flanger;
-#X obj 735 13 declare -path else;
+#X obj 735 13 declare -lib else;
 #X text 499 53 The [comb.rev~] object below now uses just a feedforward
 line for a feedforward flanger \, but also just a feedback line as
 the patch to the right.;

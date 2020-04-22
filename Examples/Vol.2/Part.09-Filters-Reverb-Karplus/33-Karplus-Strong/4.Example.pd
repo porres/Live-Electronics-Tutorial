@@ -1,5 +1,5 @@
 #N canvas 519 194 693 397 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 376 234 hsl 200 15 1 40 0 0 \$0-width \$0-width-set Sustain
 -2 -8 1 12 -191407 -1 -1 3572 1;
 #X obj 376 269 hsl 200 15 0.9 0.999 0 0 \$0-feedback \$0-feedback-set
@@ -483,7 +483,7 @@ subpatch and also attacked with a random delay., f 40;
 #X text 336 143 Not much else is new \, we have the same duration/sustain
 parameter from the last example., f 40;
 #X obj 205 154 rand.i 1 8;
-#X obj 461 24 declare -path else;
+#X obj 461 24 declare -lib else;
 #X connect 3 0 9 0;
 #X connect 4 0 9 1;
 #X connect 5 0 4 0;

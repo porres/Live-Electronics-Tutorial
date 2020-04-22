@@ -1,7 +1,7 @@
 #N struct 1693-point float x0 float y0 float size float fg float in
 float grid;
 #N canvas 431 30 936 688 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array Sine 515 float 1;
 #A 0 -0.00662662 0 0.00662662 0.0132523 0.0198759 0.0264965 0.0331132
@@ -296,7 +296,7 @@ empty 60 8 0 10 -262130 -1 -1 0.54 256;
 #X text 645 550 cosine "a";
 #X text 784 618 Initial Phase, f 7;
 #X obj 785 132 cnv 5 5 5 empty empty 2 0 0 0 14 -233017 -66577 0;
-#X obj 750 24 declare -path else;
+#X obj 750 24 declare -lib else;
 #X text 48 152 Move the circular slider ([else/circle] object) to the
 right to set amplitudes for both cosine (horizontal axis) and sine
 (vertical axis). Note that negative values invert the polarity of the

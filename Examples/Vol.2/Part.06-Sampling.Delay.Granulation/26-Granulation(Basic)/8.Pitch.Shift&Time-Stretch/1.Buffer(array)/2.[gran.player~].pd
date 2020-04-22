@@ -1,5 +1,5 @@
 #N canvas 278 23 857 637 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 519 152 samplerate~;
 #X obj 596 181 /;
 #X msg 215 434 \; speed 8 \; cents -4200 \; grain 400;
@@ -137,7 +137,7 @@ are combined and the sample is accessed.;
 #X text 692 415 Hz;
 #X text 770 379 speed;
 #X obj 731 323 / 100;
-#X obj 669 27 declare -path else;
+#X obj 669 27 declare -lib else;
 #X obj 519 96 sample~ \$0-buffer voice.wav;
 #X connect 0 0 1 0;
 #X connect 1 0 13 0;

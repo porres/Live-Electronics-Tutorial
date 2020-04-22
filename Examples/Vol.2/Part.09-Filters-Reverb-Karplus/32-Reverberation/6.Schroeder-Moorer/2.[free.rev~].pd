@@ -1,5 +1,5 @@
 #N canvas 495 87 562 689 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 191 538 free.rev~;
 #X text 58 57 The [free.rev~] object from ELSE is an abstraction that
 implements the widely known 'freeverb' open source algorithm., f 59
@@ -23,7 +23,7 @@ coefficient of the comb filters) and a high frequency damping parameter
 -1 -1 12700 0;
 #X floatatom 349 462 5 0 0 0 - - -;
 #X msg 349 486 wet \$1;
-#X obj 331 16 declare -path else;
+#X obj 331 16 declare -lib else;
 #X obj 128 338 play.file~ 1 didge.aif 1 1;
 #X obj 175 577 out2~;
 #X text 58 219 Additionally \, it has a 'width' parameter that controls

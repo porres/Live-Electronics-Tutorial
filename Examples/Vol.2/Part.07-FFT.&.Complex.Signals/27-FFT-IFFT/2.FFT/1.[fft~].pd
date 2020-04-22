@@ -1,5 +1,5 @@
 #N canvas 414 70 950 511 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 642 165 nbx 4 14 0 44.1 0 0 empty Khz Khz 0 -6 0 10 -228856
 -1 -1 5 256;
 #X floatatom 520 207 0 0 0 0 - - -;
@@ -157,7 +157,7 @@ a frequency point (a.k.a frequency bands or bins). The frequency band
 is calculated by dividing the sample rate by the block size \, and
 the frequency points are then a harmonic series formed by multiples
 of this frequency value! Open the subpatch below:;
-#X obj 734 35 declare -path else;
+#X obj 734 35 declare -lib else;
 #X text 19 28 A "Fourier Transform" transforms from the time domain
 to the frequency domain. In Pd and live electronics \, we're dealing
 basically with STFT ("Short Time Fourier Transform") \, which are analysis

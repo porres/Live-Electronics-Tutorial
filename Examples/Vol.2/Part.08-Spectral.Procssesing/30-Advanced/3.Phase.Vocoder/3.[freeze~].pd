@@ -1,5 +1,5 @@
 #N canvas 530 23 509 667 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 68 234 sigmund~ -npts 2048 -hop 512 -npeak 50 tracks;
 #X obj 211 366 tgl 25 1 empty freee empty 17 7 0 10 -228856 -1 -1 1
 1;
@@ -23,7 +23,7 @@ f 49;
 #X obj 216 624 freeze~;
 #X text 79 559 The freeze object \, from the ELSE library \, is based
 on this patch. Check its help file., f 50;
-#X obj 310 24 declare -path else;
+#X obj 310 24 declare -lib else;
 #X obj 68 203 play.file~ 1 didge.aif 1 1;
 #X connect 0 0 11 0;
 #X connect 1 0 11 1;

@@ -1,5 +1,5 @@
 #N canvas 267 73 1055 373 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 43 240 loadbang;
 #X obj 245 229 s~ \$0-in;
 #X text 41 213 Presets;
@@ -31,7 +31,7 @@
 #X obj 528 115 osc~;
 #X text 836 132 The [chorus~] object from the ELSE is based on this
 patch. Check its help file., f 22;
-#X obj 865 27 declare -path else;
+#X obj 865 27 declare -lib else;
 #X obj 245 198 play.file~ guitar.wav 1 1;
 #X text 44 25 In the vibrato example \, we've seen how mixing a dry
 signal with a processed vibrato gives us a chorus like effect. Indeed

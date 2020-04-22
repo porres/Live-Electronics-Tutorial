@@ -1,5 +1,5 @@
 #N canvas 325 111 913 418 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 161 293 readsf~;
 #X msg 116 259 stop;
 #X obj 236 295 spigot;
@@ -35,7 +35,7 @@ offer not that many features. Check help file for more details.;
 #X msg 628 255 stop;
 #X text 490 139 Check its help file for more details and features.
 ;
-#X obj 695 14 declare -path else;
+#X obj 695 14 declare -lib else;
 #X obj 161 244 symbol;
 #X obj 571 302 play.file~ violin.wav;
 #X text 488 51 The [play.file~] object from ELSE is an abstraction

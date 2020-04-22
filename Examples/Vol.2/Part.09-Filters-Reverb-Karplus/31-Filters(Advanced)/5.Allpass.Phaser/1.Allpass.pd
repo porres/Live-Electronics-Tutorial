@@ -1,5 +1,5 @@
 #N canvas 480 83 858 571 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 517 136 rzero_rev~;
 #X text 597 135 =;
 #X text 598 111 =;
@@ -305,7 +305,7 @@
 #X restore 592 249 pd transfer_function;
 #X text 221 534 We don't plot the amplitudes because they are unchanged.
 , f 58;
-#X obj 651 9 declare -path else;
+#X obj 651 9 declare -lib else;
 #X text 41 14 All filters promote phase distortion \, but the allpass
 filter only promotes that. A 1st order allpass can be implemented with
 [rzero_rev~] & [rpole~]. The Pole & Zero effect on the amplitude gets

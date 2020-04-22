@@ -1,5 +1,5 @@
 #N canvas 380 123 971 566 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 295 139 tabwrite~ \$0-noise;
 #X obj 126 431 tabread4~ \$0-noise;
 #X obj 126 358 phasor~ 1;
@@ -62,7 +62,7 @@ work with a live noise input. There are subtle differences because
 the same grain doesn't get repeated anymore \, which makes it more
 dynamic. See both below.;
 #X obj 486 244 rand.i 50 500;
-#X obj 756 19 declare -path else;
+#X obj 756 19 declare -lib else;
 #X connect 1 0 23 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 1;
