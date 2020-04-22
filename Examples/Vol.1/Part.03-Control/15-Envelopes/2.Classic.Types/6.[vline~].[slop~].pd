@@ -1,5 +1,5 @@
 #N canvas 365 31 750 629 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 270 498 *~;
 #X obj 268 358 vline~;
 #X obj 120 217 t f f;
@@ -31,7 +31,7 @@ calculate the sustain point from the gate input value and also take
 care to set different downward periods for the decay and release part.
 The patch to the left relates to the [adsr~] object with the parameters
 below., f 43;
-#X obj 518 36 declare -path else;
+#X obj 518 36 declare -lib else;
 #X obj 437 233 adsr~ 150 100 0.5 250 -log;
 #X connect 0 0 7 0;
 #X connect 1 0 20 0;

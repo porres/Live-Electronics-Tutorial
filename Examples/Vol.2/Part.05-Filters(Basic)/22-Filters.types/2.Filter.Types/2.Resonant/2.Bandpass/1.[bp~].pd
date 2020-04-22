@@ -1,5 +1,5 @@
 #N canvas 370 106 925 477 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 711 86 nbx 5 14 1 1e+37 0 0 \$0-q q-set empty 0 -8 0 10 -228856
 -1 -1 10 256;
 #X obj 646 86 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq freq-set empty 0 -8
@@ -505,7 +505,7 @@ data for frequency and "Q". It's quite simple and CPU efficient \,
 but not a perfectly simmetric bandpass filter \, atenuatting more the
 frequencies above the resonant frequency., f 64;
 #X text 658 60 Central/Resonant Frequency;
-#X obj 754 14 declare -path else;
+#X obj 754 14 declare -lib else;
 #X obj 581 143 out~;
 #X text 65 103 This filter actually looks more like a resonant lowpass
 with a gain adjustment so the central frequency is at 0 dB. This will

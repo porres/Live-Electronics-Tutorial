@@ -1,5 +1,5 @@
 #N canvas 246 30 982 625 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 708 76 nbx 5 14 1 1e+37 0 0 \$0-q q-set empty 0 -8 0 10 -228856
 -1 -1 10 256;
 #X obj 665 48 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq freq-set empty 0 -8
@@ -323,7 +323,7 @@ cf * qinv \, 0) \; max($f1 * 2 * pi_\$0 / sr_\$0 \, 0) \; 1/Q \; max($f2
 #X obj 184 309 car2pol;
 #X obj 101 309 car2pol;
 #X obj 385 309 car2pol;
-#X obj 452 49 declare -path else;
+#X obj 452 49 declare -lib else;
 #X connect 0 0 16 0;
 #X connect 2 0 8 0;
 #X connect 3 0 8 1;

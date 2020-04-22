@@ -1,5 +1,5 @@
 #N canvas 650 34 466 474 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 169 373 out~;
 #X obj 169 337 bob~;
 #X obj 335 371 initmess \; cutoff 500 \; Q 3;
@@ -18,7 +18,7 @@
 designed by Robert Moog (hence the name \, [bob~]). Though not specified
 as such \, this is is a lowpass resonant filter. Check its help file
 for more details., f 55;
-#X obj 297 21 declare -path else;
+#X obj 297 21 declare -lib else;
 #X text 39 69 The vanilla [bob~] is the latest filter addition to Pure
 Data. It accepts audio signals for both resonant frequency and Q!,
 f 55;
