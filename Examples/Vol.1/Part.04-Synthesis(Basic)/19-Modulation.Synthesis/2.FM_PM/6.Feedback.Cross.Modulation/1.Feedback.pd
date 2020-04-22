@@ -1,5 +1,5 @@
 #N canvas 506 27 857 781 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 481 58 cnv 15 298 138 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -906,7 +906,7 @@ Instruments. Open the subpatch below for more info., f 51;
 #X text 62 548 The ELSE library has the [fbsine~] object which implements
 a feedback phase modulation. It also includes a filter. Check help
 file for more details., f 47;
-#X obj 645 18 declare -path else;
+#X obj 645 18 declare -lib else;
 #X text 38 16 The output of an oscillator can modulate its own frequency
 or phase. We need a feedback loop for that \, where the output is fed
 back with a minimum delay. This minimum delay is of one sample and

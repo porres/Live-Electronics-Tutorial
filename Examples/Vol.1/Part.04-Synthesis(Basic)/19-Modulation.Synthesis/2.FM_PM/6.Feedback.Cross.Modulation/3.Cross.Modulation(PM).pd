@@ -1,5 +1,5 @@
 #N canvas 482 60 564 520 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 887 255 553 491 Cross_Phase_Modulation 0;
 #X obj 298 57 inlet~;
 #X obj 377 57 inlet~;
@@ -54,7 +54,7 @@
 #X obj 412 364 initmess \; index1 0.3 \; index2 0.2 \; freq1 150 \;
 freq2 250;
 #X obj 269 384 xmod~ -pm;
-#X obj 327 37 declare -path else;
+#X obj 327 37 declare -lib else;
 #X obj 97 425 out2~;
 #X obj 269 424 out2~;
 #X text 74 88 This is basically the same as the last example \, but

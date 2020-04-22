@@ -1,5 +1,5 @@
 #N canvas 618 90 552 562 12;
-#X declare -path else;
+#X declare -lib else;
 #N canvas 179 95 483 427 oscillator 0;
 #X obj 175 343 outlet~;
 #X obj 175 270 sine~;
@@ -73,7 +73,7 @@
 #X obj 208 166 nbx 5 20 -1e+37 1e+37 0 0 empty \$0-mod empty 82 9 0
 15 -228856 -1 -1 50.5 256;
 #X obj 352 270 f2s~ 10;
-#X obj 360 23 declare -path else;
+#X obj 360 23 declare -lib else;
 #X text 66 62 In this patch we can test different combinations of oscillators.
 Waveforms are ordered by spectral content from a simple sinewave to
 a richer sawtooth (the only which contains odd and even harmonics).

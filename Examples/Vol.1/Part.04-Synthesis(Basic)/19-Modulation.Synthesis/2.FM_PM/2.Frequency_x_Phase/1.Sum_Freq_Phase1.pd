@@ -1,5 +1,5 @@
 #N canvas 227 72 993 474 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 748 299 +~;
 #X obj 720 246 phasor~;
 #X obj 748 353 cos~;
@@ -61,7 +61,7 @@ formed by a [phasor~] and a [cos~] for the FM signal. For the PM signal
 [phasor~] object., f 66;
 #X obj 569 208 f2s~ 10;
 #X obj 849 208 f2s~ 10;
-#X obj 756 22 declare -path else;
+#X obj 756 22 declare -lib else;
 #X text 25 27 The [phasor~] object receives a frequency input and generates
 a phase signal. Therefore \, these signals are related \, where The
 frequency is the angular velocity and the phase is the angular position.

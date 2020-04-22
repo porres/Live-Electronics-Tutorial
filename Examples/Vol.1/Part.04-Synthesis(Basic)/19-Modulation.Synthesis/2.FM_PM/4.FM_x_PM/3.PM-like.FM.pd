@@ -1,5 +1,5 @@
 #N canvas 575 23 513 639 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 161 376 sine~;
 #X obj 137 278 f2s~ 50;
 #X obj 210 377 *~;
@@ -28,7 +28,7 @@ is clearly an adaptation to make the FM more like PM. This is quite
 easy to implement and does not complicate the patch very much.;
 #X text 223 428 <= multiply index by modulator freq., f 18;
 #X text 288 281 Harmonic Ratio;
-#X obj 316 22 declare -path else;
+#X obj 316 22 declare -lib else;
 #X text 41 59 We've seen how to generate FM patches that produce the
 same result as PM for didactical purposes only \, as it is not quite
 practical to do that (just use PM if that's what you want).;

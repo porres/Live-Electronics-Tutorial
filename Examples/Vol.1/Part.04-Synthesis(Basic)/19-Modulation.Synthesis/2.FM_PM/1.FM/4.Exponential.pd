@@ -1,5 +1,5 @@
 #N canvas 584 43 553 590 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 213 502 out~;
 #X obj 213 467 sine~;
 #X obj 213 399 +~;
@@ -26,7 +26,7 @@ is now in semitones \, not hertz!;
 #X obj 293 413 initmess \; \$0-carrier 60 \; \$0-mod 34 \; \$0-index
 28;
 #X text 287 242 (deviation in MIDI values);
-#X obj 356 18 declare -path else;
+#X obj 356 18 declare -lib else;
 #X text 63 125 This does change the overall modulating signal. We basically
 have a different and non simmetrical waveform as a result \, which
 promotes a distinct behaviour and output. The main difference in the

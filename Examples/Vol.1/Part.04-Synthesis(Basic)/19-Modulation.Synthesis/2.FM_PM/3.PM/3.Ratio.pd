@@ -1,5 +1,5 @@
 #N canvas 547 60 696 464 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 255 148 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 237 318 *~;
@@ -25,7 +25,7 @@ index., f 54;
 #X obj 255 280 envgen~ 1000 1 500 0.7 1500 0.7 2000 0;
 #X text 530 280 Amplitude;
 #X obj 237 370 out~;
-#X obj 511 49 declare -path else;
+#X obj 511 49 declare -lib else;
 #X connect 0 0 13 0;
 #X connect 0 0 15 0;
 #X connect 1 0 17 0;

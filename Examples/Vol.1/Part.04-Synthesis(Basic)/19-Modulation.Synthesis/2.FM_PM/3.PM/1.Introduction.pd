@@ -1,5 +1,5 @@
 #N canvas 204 58 1209 546 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 172 231 +~;
 #X obj 114 123 nbx 4 14 -1e+37 1e+37 0 1 empty portadora empty 0 -8
 0 10 -228856 -1 -1 400 256;
@@ -94,7 +94,7 @@ You can also visualize that the [osc~] object has been split into a
 #X obj 240 175 f2s~ 10;
 #X obj 649 198 f2s~ 10;
 #X obj 1018 187 f2s~ 10;
-#X obj 1027 21 declare -path else;
+#X obj 1027 21 declare -lib else;
 #X text 40 412 The reason to stress so much the relationship between
 Frequency and Phase modulation is because it is common to see something
 labeled as a Frequency Modulation when it is actually Phase Modulation.
