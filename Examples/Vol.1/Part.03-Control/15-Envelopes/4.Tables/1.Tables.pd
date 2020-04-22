@@ -1,5 +1,5 @@
 #N canvas 529 23 690 730 12;
-#X declare -path else;
+#X declare -lib else;
 #X obj 132 273 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 114 352 *~;
@@ -39,7 +39,7 @@ one of the functions used in the [fader~] object)., f 55;
 #X text 48 172 The native [tabplay~] object is used to load the table
 and trigger the envelope. Click on the bangs below., f 55;
 #X text 578 129 duration;
-#X obj 522 32 declare -path else;
+#X obj 522 32 declare -lib else;
 #X text 47 104 The next is here called "sine" \, but it's actually
 just the first half the sine function (this is also used in [fader~]).
 Open the [pd tables] subpatch so see how to create these functions.
