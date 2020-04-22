@@ -1,5 +1,5 @@
 #N canvas 354 50 880 625 12;
-#X declare -path else;
+#X declare -lib else;
 #X text 49 394 0 Hz;
 #X text 69 570 0;
 #X obj 86 267 cnv 15 198 138 empty empty empty 20 12 0 14 -233017 -66577
@@ -119,7 +119,7 @@ is a triangular wave as the phase signal., f 56;
 #X connect 2 0 3 0;
 #X connect 2 0 4 0;
 #X restore 451 198 pd plot;
-#X obj 646 86 declare -path else;
+#X obj 646 86 declare -lib else;
 #X text 502 178 <== phase;
 #X text 412 178 freq ==>;
 #X text 153 112 <= Freq;
