@@ -12,7 +12,7 @@
 
 --------------------------------------------------------------------------
 
-#### Version: 1.0 beta-28: Released june 6th 2020
+#### Version: 1.0 beta-28: Released june 7th 2020
 
  - This particular version of the tutorial requires **Pd 0.51-0** or later and depends on **ELSE 1.0 beta 28** (https://github.com/porres/pd-else/releases/tag/v1.0-beta28)! 
 
@@ -35,8 +35,8 @@ This didactic work is licenced via Creative Commons Attribution-NonCommercial-No
 
    ### Downloading and Installing this tutorial:
 
-​	This version of the tutorial needs at least Pd 0.51-0! You can look for releases of this tutorial in https://github.com/porres/Live-Electronics-Tutorial/releases - where early versions of it are also still present, but it's best just to download this directly via Pd or get the ELSE library, because this tutorial is part of it.
+​	This version of the tutorial needs at least Pd 0.51-0! You can look for releases of this tutorial in https://github.com/porres/Live-Electronics-Tutorial/releases - where early versions of it are also still present, but it's best just to download this directly via Pd or get the ELSE library, because this tutorial is also provided as part of it.
 
 ​	You need to install the "ELSE" library in order to use this tutorial anyway. So if you try to download the ELSE library directly via Pd, you'll find a download that also contains this tutorial. In the same way, if you try to download the tutorial directly from Pd, you'll also get ELSE as part of the download. So in Pd just go to the "Help" menu and click on "Find Externals", then just search for 'else' or 'live electronics tutorial'. For more details on the ELSE library, check: <https://github.com/porres/pd-else/>, where you can also download and check earlier versions of the library. You can also download ELSE from its GitHub repository and it'll also contain this tutorial as part of the download. In this combo download, you'll always get compatibility between the tutorial and the ELSE library.
 
-​	To install the tutorial, just add the folder's path to Pd via "Preferences => Path", so you can navigate through it in Pd's browser (Help => Browser). If downloaded via the combo download directly from Pd, you probably have this tutorial in the 'externals' folder. You may move it to ~/pd/documents instead before adding the path, leaving the 'externals' folder just for actual externals as the ELSE library.
+​	If installed directly via Pd, the 'live electronics folder' resides inside the 'else' folder. To install the tutorial, just add the folder's path to Pd via "Preferences => Path", so you can navigate through it in Pd's browser (Help => Browser). You can and probably should also move the folder from inside the else folder. A good place to move it to is *~/pd/documents*, so I suggest you to do this before adding the path, leaving the 'externals' folder just for actual externals as the ELSE library.
