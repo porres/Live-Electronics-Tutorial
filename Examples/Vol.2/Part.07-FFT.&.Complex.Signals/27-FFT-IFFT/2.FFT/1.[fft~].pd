@@ -1,11 +1,11 @@
-#N canvas 485 110 950 511 12;
+#N canvas 401 100 950 511 12;
 #X declare -lib else;
 #X obj 642 165 nbx 4 14 0 44.1 0 0 empty Khz Khz 0 -6 0 10 -228856
--1 -1 31 256;
+-1 -1 5 256;
 #X floatatom 520 207 0 0 0 0 - - -;
 #X text 500 206 Hz;
 #X obj 702 164 nbx 4 14 0 1 0 0 empty empty phase 0 -6 0 10 -228856
--1 -1 0.57 256;
+-1 -1 0 256;
 #X msg 712 189 0;
 #X msg 743 189 0.25;
 #X msg 782 189 0.5;
@@ -55,7 +55,7 @@ xticks 0 32 1 \; \$0-Phase xticks 0 32 1 \; \$0-Amplitude xticks 0
 #X connect 19 1 7 1;
 #X restore 627 316 pd plot;
 #X obj 520 165 nbx 3 14 0 127 0 0 empty empty empty 0 -8 0 12 -228856
--1 -1 11 256;
+-1 -1 0 256;
 #X text 502 145 "Harmonic";
 #X obj 642 196 * 1000;
 #X obj 520 183 expr $i1 * band;
@@ -63,7 +63,7 @@ xticks 0 32 1 \; \$0-Phase xticks 0 32 1 \; \$0-Amplitude xticks 0
 defined by Cosine (real) and Sine (imaginary) amplitudes. Hence \,
 we have two outputs in the frequency domain - where the left outlet
 is the real part \, and the right outlet is the imaginary part.;
-#N canvas 124 197 662 630 graphs 0;
+#N canvas 785 61 662 630 graphs 0;
 #X obj 10 6 cnv 15 630 610 empty empty empty 20 12 0 14 -33289 -66577
 0;
 #X obj 25 15 cnv 15 600 280 empty empty Cartesian 20 12 0 14 -262130
