@@ -8,12 +8,12 @@
 f 27;
 #X text 80 284 drawing instructions for the data structure., f 24
 ;
-#X text 53 24 One last element of Pd is Data Structures \, which are
-graphical objects that store data and can be used in different ways
-\, from display to interaction. Below \, we have a simple data structure
-scalar as a graphical object., f 53;
 #X text 64 374 Data structures are not that simple to use and is more
 of a feature for advanced users. Therefore \, this is not treated as
 part of this quick start guide or the rest of the tutorial. Nonetheless
 \, this tutorial offers a data structures guide in an appendix section.
 , f 49;
+#X text 53 24 One last element group of Pd is Data Structures \, which
+are graphical objects that store data and can be used in different
+ways \, from display to interaction. Below \, we have a simple data
+structure scalar as a graphical object., f 53;

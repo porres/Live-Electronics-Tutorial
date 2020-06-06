@@ -1,68 +1,71 @@
-#N canvas 434 105 927 596 12;
-#X obj 168 187 print;
-#X msg 168 103 Hello World;
-#X text 177 148 <== conection cord;
-#X text 254 102 <== message box;
-#X text 97 92 inlet ==>;
-#X text 90 114 outlet ==>;
-#X text 99 174 inlet ==>;
-#X msg 47 368 one;
-#X obj 47 440 print;
-#X text 371 399 three-messages;
-#X text 341 367 one-message;
-#X msg 63 398 1 2 3;
-#X msg 297 368 a b c;
-#X msg 312 398 a \, b \, c;
-#X obj 297 440 print;
-#X obj 593 64 float;
-#X floatatom 593 121 5 0 0 0 - - -;
-#X symbolatom 593 149 7 0 0 0 - - -;
-#X text 502 121 3) Number;
-#X text 502 150 4) Symbol;
-#X text 502 92 2) Message;
-#X text 502 63 1) Object;
-#X text 503 180 5) Comment;
-#X text 656 64 Object Box;
-#X text 489 28 Basic types of boxes from the Put Menu:;
-#X msg 593 92 bang;
-#X text 656 91 Message Box;
-#X text 655 119 "Number Atom Box";
-#X text 654 152 "Symbol Atom Box";
-#X text 53 23 We program in Pd by conecting "boxes" from "outlets"
-to "inlets". Click on the box that says "Hello_World!" and see the
-result at Pd's terminal window (Window => Pd)., f 55;
-#X floatatom 597 364 5 0 0 0 - - -;
-#X symbolatom 700 362 10 0 0 0 - - -;
-#X obj 597 396 print;
-#X obj 700 398 print;
-#X text 486 242 To ask for help: Right-Click on any box then go for
+#N canvas 434 105 944 596 12;
+#X obj 168 211 print;
+#X msg 168 132 Hello World;
+#X text 177 172 <== conection cord;
+#X text 254 131 <== message box;
+#X text 97 121 inlet ==>;
+#X text 90 143 outlet ==>;
+#X text 99 198 inlet ==>;
+#X msg 47 388 one;
+#X obj 47 460 print;
+#X text 371 419 three-messages;
+#X text 341 387 one-message;
+#X msg 63 418 1 2 3;
+#X msg 297 388 a b c;
+#X msg 312 418 a \, b \, c;
+#X obj 297 460 print;
+#X obj 617 82 float;
+#X floatatom 617 139 5 0 0 0 - - -;
+#X symbolatom 617 167 7 0 0 0 - - -;
+#X text 526 139 3) Number;
+#X text 526 168 4) Symbol;
+#X text 526 110 2) Message;
+#X text 526 81 1) Object;
+#X text 527 198 5) Comment;
+#X text 680 82 Object Box;
+#X msg 617 110 bang;
+#X text 680 109 Message Box;
+#X text 679 137 "Number Atom Box";
+#X text 678 170 "Symbol Atom Box";
+#X floatatom 599 367 5 0 0 0 - - -;
+#X symbolatom 702 365 10 0 0 0 - - -;
+#X obj 599 399 print;
+#X obj 702 401 print;
+#X text 488 245 To ask for help: Right-Click on any box then go for
 "Help" - this works even for comments \, try it. You should check the
 help file of every object you see in this tutorial that you do not
 know! If you right click on an empty space in your patch and ask for
 help \, Pd gives you a list of all its built-in objects!;
-#X text 210 186 <== object box*;
-#X text 132 221 * The [print] object displays messages in the terminal
+#X text 210 210 <== object box*;
+#X text 132 245 * The [print] object displays messages in the terminal
 window, f 31;
-#X text 43 481 Numbers in Pd are 32 bit floating point numbers. Pd
-only represents 6 significant digits \, otherwise it uses an exponential
-format such as "1e+6". Anything that is not considered a number atom
-is treated as a symbol atom.;
-#X text 55 275 A message may contain one or more elements \, which
+#X text 55 299 A message may contain one or more elements \, which
 are called “atoms” and can be either a number or a symbol. A comma
 allows you to have more than one message in a message box., f 49;
-#X text 76 367 one element (atom);
-#X text 109 398 three elements (atoms);
-#X text 488 444 Atom boxes are interactive \, you can click and drag
+#X text 615 198 just a textual display;
+#X text 39 18 Welcome to this tutorial on Live Electronics with Pd
+and the ELSE library. Let's jump right into it!, f 59;
+#X text 40 54 We program in Pd by conecting "boxes" from "outlets"
+to "inlets". Click on the box that says "Hello_World!" and see the
+result at Pd's terminal window (Window => Pd).;
+#X text 76 387 one element/atom;
+#X text 109 418 three elements/atoms;
+#X text 43 501 Numbers in Pd are 32 bit floating point. Pd only represents
+6 significant digits \, otherwise it uses an exponential format such
+as "1e+6". Anything that is not considered a number atom is treated
+as a symbol atom.;
+#X text 491 26 These are the basic types of boxes \, you can insert
+them from the Put Menu or their shortcuts:;
+#X text 490 447 Atom boxes are interactive \, you can click and drag
 into a number box to generate number values. You can also click on
 it \, type a number and then enter. The same click/enter functionality
 is present in the symbol box. try it above. Both of these also have
-properties windows \, right click and select it to check it out.,
-f 57;
-#X text 591 180 just a textual display;
+properties windows \, right click and select it to check it out \,
+as well as their help file., f 57;
 #X connect 1 0 0 0;
 #X connect 7 0 8 0;
 #X connect 11 0 8 0;
 #X connect 12 0 14 0;
 #X connect 13 0 14 0;
-#X connect 30 0 32 0;
-#X connect 31 0 33 0;
+#X connect 28 0 30 0;
+#X connect 29 0 31 0;

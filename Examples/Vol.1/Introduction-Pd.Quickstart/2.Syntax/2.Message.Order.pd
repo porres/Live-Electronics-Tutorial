@@ -41,8 +41,8 @@
 #X obj 776 319 + 1;
 #X obj 776 426 print Sequence;
 #X obj 776 271 trigger float float float;
-#X msg 489 532 1 \, 2 \, 3 \, 4 \, five \, six \, 7, f 12;
-#X obj 488 596 print Several_Messages;
+#X msg 472 533 1 \, 2 \, 3 \, 4 \, five \, six \, 7, f 12;
+#X obj 471 597 print Several_Messages;
 #X text 56 193 Undefined order;
 #X text 510 24 The flow of data in Pd is executed in depth first fashion.
 This means that whenever there is a new branch of data \, Pd will reach
@@ -53,7 +53,7 @@ of the next [trigger] object and then again to the last [trigger] rightmost
 outlet. Once it reaches that branch \, the data needs to go to the
 end of the chain and into the [print] object before it moves on to
 the next output of the [trigger] object and so on., f 69;
-#X text 394 459 Messages separated by commas are sent in the left to
+#X text 406 459 Messages separated by commas are sent in the left to
 right order \, as common sense would predict., f 32;
 #X obj 723 600 +;
 #X msg 723 564 1 3;

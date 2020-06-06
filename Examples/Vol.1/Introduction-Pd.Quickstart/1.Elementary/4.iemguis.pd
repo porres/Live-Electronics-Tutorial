@@ -44,7 +44,7 @@
 #X obj 737 251 hsl 128 15 1.27 127 1 0 empty empty logarythmic 4 -12
 0 14 -228856 -1 -205449 0 1;
 #X obj 734 275 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
--1 -262144 -1 -100 256;
+-1 -262144 -1 0 256;
 #X msg 734 202 -100;
 #X obj 539 412 cnv 15 290 200 empty empty empty 20 12 0 14 -99347 -66577
 0;
@@ -77,6 +77,7 @@ from object boxes (unlike messages \, number/symbol atom boxes and
 comments). These GUIs have more properties setting like color and size.
 Right click for properties and also check their help files., f 57
 ;
+#X text 774 202 outside range;
 #X text 457 19 Sliders and number boxes can behave logarithmically.
 A toggle can have a different value for an "on" state and its state
 changes when it receives a bang. Note that an atom number box with
@@ -85,9 +86,8 @@ passed through even though they're outside the range. All of these
 objects but [cnv] and [vu] have a special "init" property \, in which
 it outputs the last saved value when the patch is loaded. For the bang
 GUI ([bng]) \, "init" sends a bang at initialization - which \, by
-the way \, is the same as using a [loadbang] object(as it sends a bang
-when the patch is loaded)., f 61;
-#X text 774 202 outside range;
+the way \, is the same as using a [loadbang] object (as it sends a
+bang when the patch is loaded)., f 61;
 #X connect 0 0 25 0;
 #X connect 2 0 19 0;
 #X connect 4 0 20 0;
