@@ -197,7 +197,7 @@ off messages when the sustain toggle is off., f 33;
 #X restore 205 229 pd voice2;
 #X obj 133 187 voices 2 1;
 #X text 215 160 <= open;
-#X obj 118 270 out2~;
+#X obj 118 270 out~;
 #X connect 0 0 10 0;
 #X connect 0 1 10 1;
 #X connect 1 0 0 0;

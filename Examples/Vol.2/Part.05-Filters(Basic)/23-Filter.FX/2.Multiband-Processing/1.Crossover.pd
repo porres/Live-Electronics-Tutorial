@@ -61,8 +61,8 @@ ready made crossover filter. But this is a 3rd order butterworth filter
 instead (we'll see more details on the butterworth filter topology
 later in this tutorial).;
 #X obj 356 18 declare -lib else;
-#X obj 261 410 out2~;
-#X obj 75 362 out2~;
+#X obj 261 410 out~;
+#X obj 75 362 out~;
 #X connect 0 0 2 0;
 #X connect 0 0 3 0;
 #X connect 1 0 2 1;

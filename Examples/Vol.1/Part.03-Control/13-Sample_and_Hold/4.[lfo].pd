@@ -18,8 +18,8 @@
 #X obj 92 355 plate.rev~ 50 0.6 0.5 0.8 0.6, f 18;
 #X obj 309 359 plate.rev~ 50 0.6 0.5 0.8 0.6, f 18;
 #X obj 357 31 declare -lib else;
-#X obj 326 414 out2~;
-#X obj 109 411 out2~;
+#X obj 326 414 out~;
+#X obj 109 411 out~;
 #X text 51 74 The [lfo] object has a refresh rate which can also be
 considered as a sample and hold. These are examples taken from its
 help file. Open the help file for more details., f 66;

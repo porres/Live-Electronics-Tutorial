@@ -61,7 +61,7 @@
 -1 -1 0 1;
 #X floatatom 304 275 5 0 0 0 - - -;
 #X obj 320 19 declare -lib else;
-#X obj 231 366 out2~;
+#X obj 231 366 out~;
 #X text 62 67 The ELSE library has an object similar to [rev3~]. The
 main difference is that we can set a 'size' paramter and change the
 length of the delay lines of the FDN., f 54;

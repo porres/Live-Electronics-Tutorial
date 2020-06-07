@@ -180,7 +180,7 @@ same way as the first example \, we can implement a crossover filter.
 ;
 #X text 697 91 cutoff bin;
 #X obj 688 29 declare -lib else;
-#X obj 515 118 out2~;
+#X obj 515 118 out~;
 #X connect 4 0 20 0;
 #X connect 9 0 12 0;
 #X connect 12 0 24 0;

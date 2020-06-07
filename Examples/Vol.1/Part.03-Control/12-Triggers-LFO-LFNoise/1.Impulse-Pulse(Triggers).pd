@@ -104,7 +104,7 @@ See below., f 37;
 -228856 -1 -1 0 256;
 #X obj 826 683 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 250 384 out2~;
+#X obj 250 384 out~;
 #X connect 1 0 0 0;
 #X connect 3 0 47 0;
 #X connect 4 0 69 0;

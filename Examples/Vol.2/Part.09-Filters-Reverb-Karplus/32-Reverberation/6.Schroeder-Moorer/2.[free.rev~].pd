@@ -25,7 +25,7 @@ coefficient of the comb filters) and a high frequency damping parameter
 #X msg 349 486 wet \$1;
 #X obj 331 16 declare -lib else;
 #X obj 128 338 play.file~ 1 didge.aif 1 1;
-#X obj 175 577 out2~;
+#X obj 175 577 out~;
 #X text 58 219 Additionally \, it has a 'width' parameter that controls
 how much both inputs are mixed or not. This controls the stereo spread.
 Open the abstraction to check it out. Check also its help file.;

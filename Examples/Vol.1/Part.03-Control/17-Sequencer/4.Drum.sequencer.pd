@@ -256,7 +256,7 @@ for visualizing the sequence point., f 58;
 #X obj 513 34 declare -lib else;
 #X obj 36 257 play.file~ 1 dholak.aif, f 12;
 #X obj 132 258 play.file~ 1 bagal.aif, f 12;
-#X obj 45 313 out2~;
+#X obj 45 313 out~;
 #X text 269 104 Here we have a sequencer in the style of a "Drum Machine".
 We have a series of toggles whose values are stored in an array. Actually
 we have two tracks \, each in a horizontal line and stored in a different

@@ -36,7 +36,7 @@ the trigger rate \, this is what determines different patterns., f
 #X text 803 200 Trigger;
 #X obj 740 384 plate.rev~ 50 0.6 0.25 0.8 0.5, f 16;
 #X obj 737 29 declare -lib else;
-#X obj 749 434 out2~;
+#X obj 749 434 out~;
 #X text 33 23 The native [samphold~] object is a "sample and hold"
 unit designed to be triggered by [phasor~]. In fact \, it is triggered
 when the current input is smaller than the previous \, which is true

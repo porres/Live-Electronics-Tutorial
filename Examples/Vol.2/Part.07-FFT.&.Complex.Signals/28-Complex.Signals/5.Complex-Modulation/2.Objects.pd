@@ -12,8 +12,8 @@
 #X text 390 313 Modulator;
 #X obj 306 367 freq.shift~;
 #X obj 345 30 declare -lib else;
-#X obj 102 403 out2~;
-#X obj 300 400 out2~;
+#X obj 102 403 out~;
+#X obj 300 400 out~;
 #X text 71 87 Pd Vanilla also provides an extra abstraction for complex
 modulation. It needs a complex signal input and a modulating frequency.
 ;

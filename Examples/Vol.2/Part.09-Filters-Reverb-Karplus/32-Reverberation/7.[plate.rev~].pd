@@ -41,7 +41,7 @@ frequency dammping as [rev2~] and [rev3~].;
 it uses LFOs to modulate some of the allpass filters as a way to produce
 more dinamic results.;
 #X obj 303 17 declare -lib else;
-#X obj 218 415 out2~;
+#X obj 218 415 out~;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 3 0 8 0;

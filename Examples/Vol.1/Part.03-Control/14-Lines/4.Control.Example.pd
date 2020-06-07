@@ -14,7 +14,7 @@ of a brown noise source., f 56;
 #X obj 218 269 s2f~;
 #X obj 221 299 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 6350 1;
-#X obj 99 300 out2~;
+#X obj 99 300 out~;
 #X connect 0 0 3 0;
 #X connect 1 0 9 0;
 #X connect 1 1 9 1;

@@ -7,7 +7,7 @@ implements the widely known 'gigaverb' open source algorithm., f 50
 1 -early 0.795 -late 0.04, f 39;
 #X obj 321 21 declare -lib else;
 #X obj 126 296 play.file~ 1 didge.aif 1 1, f 27;
-#X obj 207 411 out2~;
+#X obj 207 411 out~;
 #X text 73 107 It uses the same design with early reflections made
 by feedforward delay lines and late reflections from a FDN., f 50
 ;

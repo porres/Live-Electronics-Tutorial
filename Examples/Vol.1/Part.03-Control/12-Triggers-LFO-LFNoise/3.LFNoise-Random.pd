@@ -87,8 +87,8 @@ low frequencies, f 33;
 #X obj 592 334 stepnoise;
 #X obj 591 358 rampnoise;
 #X text 575 307 see also:;
-#X obj 281 321 out2~;
-#X obj 104 343 out2~;
+#X obj 281 321 out~;
+#X obj 104 343 out~;
 #X text 494 61 The native object [random] is a random number generator.
 You could use it to generate random control values and even random
 ramps (check [pd random] below). The ELSE library also has a [lfnoise]

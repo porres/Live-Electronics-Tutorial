@@ -59,7 +59,7 @@ f 50;
 1;
 #X obj 120 184 loadbang;
 #X obj 48 24 declare -lib else;
-#X obj 557 253 out2~;
+#X obj 557 253 out~;
 #X connect 0 0 1 0;
 #X connect 1 0 26 0;
 #X connect 3 0 17 0;

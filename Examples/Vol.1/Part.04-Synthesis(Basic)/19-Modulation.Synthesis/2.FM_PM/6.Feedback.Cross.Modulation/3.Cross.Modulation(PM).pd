@@ -55,8 +55,8 @@
 freq2 250;
 #X obj 269 384 xmod~ -pm;
 #X obj 327 37 declare -lib else;
-#X obj 97 425 out2~;
-#X obj 269 424 out2~;
+#X obj 97 425 out~;
+#X obj 269 424 out~;
 #X text 74 88 This is basically the same as the last example \, but
 we get the output of both oscillators instead. Now we can't use [pmosc~]
 to implement this \, we need two [sine~] objects and get the audio

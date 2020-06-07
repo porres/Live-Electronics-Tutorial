@@ -34,7 +34,7 @@ slot. The output is the track number and slot value. So you need to
 route the value of each track. We then use select to trigger the sample.
 Check its help file for more info., f 46;
 #X text 497 150 <= preset;
-#X obj 65 389 out2~;
+#X obj 65 389 out~;
 #X connect 0 0 3 0;
 #X connect 0 0 6 0;
 #X connect 2 0 6 1;

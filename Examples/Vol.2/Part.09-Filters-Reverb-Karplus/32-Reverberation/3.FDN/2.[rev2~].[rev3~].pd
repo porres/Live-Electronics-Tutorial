@@ -100,7 +100,7 @@ This is a usual parameter in reverb design called 'high frequency damping'.
 ;
 #X obj 357 18 declare -lib else;
 #X obj 210 602 out~;
-#X obj 296 354 out2~;
+#X obj 296 354 out~;
 #X connect 0 0 14 0;
 #X connect 0 1 14 1;
 #X connect 0 2 14 0;

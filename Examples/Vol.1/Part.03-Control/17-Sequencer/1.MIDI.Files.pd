@@ -75,7 +75,7 @@ outlet when the file sequence is over \, and we can use this for looping
 it. Here we have a two voice polyphonic synth to play this MIDI file.
 Each voice is a variable sawtooth waveform., f 52;
 #X obj 308 23 declare -lib else;
-#X obj 107 386 out2~;
+#X obj 107 386 out~;
 #X text 49 58 The [midi] external \, from ELSE \, can read MIDI files
 like in this example \, but it outputs raw MIDI informtaion \, so we
 need other objects to extract data such as [note.in] \, which retrieves

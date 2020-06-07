@@ -65,7 +65,7 @@ level object for building and experimenting with reverbs. It is a compiled
 object that you can change the number of delay lines in a matrix and
 set the delay line lengths. Check its help file.;
 #X obj 359 22 declare -lib else;
-#X obj 256 391 out2~;
+#X obj 256 391 out~;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 2 0 3 0;

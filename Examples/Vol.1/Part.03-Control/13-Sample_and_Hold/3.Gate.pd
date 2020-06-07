@@ -35,9 +35,9 @@ below.;
 #X obj 515 444 plate.rev~ 50 0.6 0.25 0.8 0.6, f 18;
 #X obj 741 418 plate.rev~ 50 0.6 0.25 0.8 0.6, f 18;
 #X obj 740 24 declare -lib else;
-#X obj 174 471 out2~;
-#X obj 515 496 out2~;
-#X obj 741 470 out2~;
+#X obj 174 471 out~;
+#X obj 515 496 out~;
+#X obj 741 470 out~;
 #X text 42 28 By default \, [sh~] operates in "gate" mode \, in which
 it lets the signal through if the trigger signal is above a threshold
 value (0 by default)., f 55;

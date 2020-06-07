@@ -65,7 +65,7 @@
 own matrix., f 52;
 #X obj 311 256 *~ -1;
 #X obj 309 22 declare -lib else;
-#X obj 237 316 out2~;
+#X obj 237 316 out~;
 #X connect 0 0 1 0;
 #X connect 1 0 8 0;
 #X connect 1 0 10 0;
