@@ -8,14 +8,13 @@
 #X obj 246 431 out8~;
 #X text 105 495 quadraphonic;
 #X text 264 491 octaphonic;
-#X obj 119 219 out2~;
-#X text 279 174 stereo input;
-#X obj 206 178 osc~ 660;
-#X text 93 113 The else library also offers [out2~] for stereo inputs.
-, f 36;
 #X text 75 308 There are also [out4~] and [out8~] for quadraphonic
 and octaphonic input/output setups., f 40;
-#X connect 0 0 8 0;
+#X obj 119 219 out1~;
+#X text 94 113 The else library also offers [out1~] for mono input/output.
+, f 36;
+#X text 190 177 mono input;
+#X connect 0 0 9 0;
 #X connect 2 0 3 0;
 #X connect 2 0 3 1;
 #X connect 2 0 3 2;
@@ -28,4 +27,3 @@ and octaphonic input/output setups., f 40;
 #X connect 4 0 5 5;
 #X connect 4 0 5 6;
 #X connect 4 0 5 7;
-#X connect 10 0 8 1;

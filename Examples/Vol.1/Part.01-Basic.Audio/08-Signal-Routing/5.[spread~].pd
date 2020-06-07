@@ -8,7 +8,7 @@ output channels with equal power panning., f 59;
 #X obj 258 323 osc~ 880;
 #X obj 184 362 spread~ 3 2;
 #X obj 321 42 declare -lib else;
-#X obj 178 414 out2~;
+#X obj 178 414 out~;
 #X text 247 252 spread to left speaker;
 #X text 324 323 spread to right speaker;
 #X text 289 288 spread to both;

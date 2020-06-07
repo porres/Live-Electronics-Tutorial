@@ -44,7 +44,7 @@ channels. Check its help file., f 46;
 #X obj 662 245 osc~ 440;
 #X obj 729 244 noise~;
 #X obj 664 47 declare -lib else;
-#X obj 547 452 out2~;
+#X obj 547 452 out~;
 #X text 81 298 Similarly \, [xgate2~] also lets you specify the crossfading
 point. Check its help file., f 46;
 #X text 508 117 Here we also use the [spread~] object \, from the ELSE

@@ -34,9 +34,9 @@ music \, why not do both? Have some fun!, f 39;
 #X obj 259 445 f2s~ 10 7;
 #X obj 713 26 declare -lib else;
 #X obj 97 365 play.file~ bubul.wav 1 1;
-#X obj 648 494 out2~;
-#X obj 662 276 out2~;
-#X obj 98 498 out2~;
+#X obj 648 494 out~;
+#X obj 662 276 out~;
+#X obj 98 498 out~;
 #X text 27 42 Stereo widening is any technique that increases the perceived
 stereo width or spread of a signal into the stereo field. Panning is
 one such technique \, but this example shows you other cheap and dirty

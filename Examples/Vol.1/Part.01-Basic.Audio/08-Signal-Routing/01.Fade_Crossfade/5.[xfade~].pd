@@ -27,7 +27,7 @@
 #X obj 240 225 f2s~ 10;
 #X obj 314 462 f2s~ 10;
 #X obj 321 26 declare -lib else;
-#X obj 150 546 out2~;
+#X obj 150 546 out~;
 #X text 52 78 The [xfade~] object \, from ELSE \, performs a sin/cos
 equal power crossfade between two sound sources of any number of channels
 (mono \, stereo \, quadriphonic \, etc). Its argument defines the number

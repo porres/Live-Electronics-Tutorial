@@ -28,8 +28,8 @@ You can give it as many more as you want. Check its help file., f
 #X obj 289 108 f2s~ 100;
 #X obj 561 293 f2s~ 100;
 #X obj 554 47 declare -lib else;
-#X obj 109 379 out2~;
-#X obj 424 338 out2~;
+#X obj 109 379 out~;
+#X obj 424 338 out~;
 #X connect 0 0 19 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;

@@ -69,7 +69,7 @@ is more conveniently done with the [mtx.ctl] (from "matrix control")
 \, also provided in ELSE., f 55;
 #X obj 622 390 mtx~ 4 2 100, f 17;
 #X obj 637 55 declare -lib else;
-#X obj 604 434 out2~;
+#X obj 604 434 out~;
 #X text 141 40 The [xselect~] object \, from ELSE \, receives different
 audio signals \, but only selects one of them. When changing from one
 source to another \, a crossfade is performed.;

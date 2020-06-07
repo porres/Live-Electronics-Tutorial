@@ -19,7 +19,7 @@ Pd process is greater than the measure in this patch.;
 #X text 65 468 CPU % =>;
 #X text 393 177 <= CPU %;
 #X text 58 293 click to open a new instance:, f 19;
-#X obj 210 450 out2~;
+#X obj 210 450 out~;
 #X msg 160 374 tempo \$1;
 #X floatatom 160 347 5 0 0 0 - - -;
 #X text 225 373 <= send control;

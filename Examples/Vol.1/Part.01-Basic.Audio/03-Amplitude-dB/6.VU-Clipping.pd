@@ -23,7 +23,7 @@ distortion is a special type \, known as "clipping"., f 66;
 #X obj 783 320 osc~ 440;
 #X obj 613 509 out~;
 #X obj 822 21 declare -lib else;
-#X obj 766 506 out2~;
+#X obj 766 506 out~;
 #X text 26 131 The maximum peak amplitude is 1 (0 dBFS). Greater values
 are "clipped" \, which means they become 1 as that's the maximum representable
 value. In practice \, we have resulting waves that are a bit square
