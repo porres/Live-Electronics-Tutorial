@@ -1,10 +1,10 @@
-#N canvas 627 35 661 528 12;
+#N canvas 574 64 661 528 12;
 #X declare -lib else;
 #X text 497 213 Hz;
 #X obj 438 190 hsl 128 15 -5 5 0 0 empty hz empty -2 -8 0 10 -228856
--1 -1 7620 1;
+-1 -1 9500 1;
 #X obj 435 216 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 1 256;
+-228856 -1 -1 2.5 256;
 #X obj 435 244 s \$0-freq;
 #X floatatom 297 189 0 0 1e+06 0 - grain -;
 #X obj 128 263 s~ \$0-pos;
@@ -14,7 +14,7 @@
 #X obj 281 455 out~;
 #X obj 297 224 ms2samps;
 #X text 455 170 frequency;
-#N canvas 457 81 342 422 grain-1 0;
+#N canvas 216 148 342 422 grain-1 0;
 #X obj 208 338 *~;
 #X obj 48 67 r~ \$0-grain;
 #X obj 73 164 *~;
@@ -72,8 +72,6 @@
 #X restore 299 377 pd grain-2;
 #X text 301 273 grain size;
 #X text 128 288 position;
-#X obj 74 193 drunkard~ 0.2;
-#X obj 74 162 imp~ 1;
 #X text 131 70 Here's a good example to use the [drunkard~] object
 \, which generates a random walk to set the position and the randomly
 scroll through the sample. We just need to rescale its output to the
@@ -87,16 +85,18 @@ sample size.;
 #X msg 41 89 load \$1;
 #X obj 137 51 initmess \; hz 1 \; grain 500;
 #X obj 41 195 s \$0-size;
-#X obj 41 125 sample~ \$0-buffer bubul.wav;
 #X msg 41 161 \$1;
+#X obj 41 125 sample~ \$0-buffer bubul.wav;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
-#X connect 2 0 5 0;
-#X connect 5 0 6 0;
-#X connect 6 0 4 0;
+#X connect 2 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
 #X restore 437 407 pd buffer;
 #X obj 195 181 r \$0-size;
 #X obj 128 230 rescale~ 0;
+#X obj 54 193 drunkard~ 0.1 0 1;
+#X obj 54 162 imp~ 2;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 4 0 10 0;
@@ -106,8 +106,8 @@ sample size.;
 #X connect 10 0 6 0;
 #X connect 12 0 7 0;
 #X connect 13 0 7 1;
-#X connect 16 0 23 0;
-#X connect 17 0 16 0;
-#X connect 20 0 21 0;
-#X connect 22 0 23 2;
-#X connect 23 0 5 0;
+#X connect 18 0 19 0;
+#X connect 20 0 21 2;
+#X connect 21 0 5 0;
+#X connect 22 0 21 0;
+#X connect 23 0 22 0;
