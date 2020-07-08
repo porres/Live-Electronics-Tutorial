@@ -9,11 +9,11 @@
 #X obj 66 265 rpole~;
 #X obj 66 240 rzero_rev~;
 #X obj 48 300 +~;
-#X obj 153 110 r~ \$0-coef;
+#X obj 163 110 r~ \$0-coef;
 #X obj 392 86 s~ \$0-coef;
-#X obj 150 152 r~ \$0-coef;
-#X obj 148 195 r~ \$0-coef;
-#X obj 150 252 r~ \$0-coef;
+#X obj 160 152 r~ \$0-coef;
+#X obj 158 195 r~ \$0-coef;
+#X obj 160 252 r~ \$0-coef;
 #X text 357 62 LFO;
 #N canvas 345 151 691 411 phaser-stereo 0;
 #X obj 61 298 +~;
