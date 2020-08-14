@@ -1,4 +1,4 @@
-#N canvas 434 105 944 596 12;
+#N canvas 434 105 944 621 12;
 #X obj 168 211 print;
 #X msg 168 132 Hello World;
 #X text 177 172 <== conection cord;
@@ -15,8 +15,8 @@
 #X msg 312 418 a \, b \, c;
 #X obj 297 460 print;
 #X obj 617 82 float;
-#X floatatom 617 139 5 0 0 0 - - -;
-#X symbolatom 617 167 7 0 0 0 - - -;
+#X floatatom 617 139 5 0 0 0 - - -, f 5;
+#X symbolatom 617 167 7 0 0 0 - - -, f 7;
 #X text 526 139 3) Number;
 #X text 526 168 4) Symbol;
 #X text 526 110 2) Message;
@@ -27,8 +27,8 @@
 #X text 680 109 Message Box;
 #X text 679 137 "Number Atom Box";
 #X text 678 170 "Symbol Atom Box";
-#X floatatom 599 367 5 0 0 0 - - -;
-#X symbolatom 702 365 10 0 0 0 - - -;
+#X floatatom 599 367 5 0 0 0 - - -, f 5;
+#X symbolatom 702 365 10 0 0 0 - - -, f 10;
 #X obj 599 399 print;
 #X obj 702 401 print;
 #X text 488 245 To ask for help: Right-Click on any box then go for
@@ -50,10 +50,6 @@ to "inlets". Click on the box that says "Hello_World!" and see the
 result at Pd's terminal window (Window => Pd).;
 #X text 76 387 one element/atom;
 #X text 109 418 three elements/atoms;
-#X text 43 501 Numbers in Pd are 32 bit floating point. Pd only represents
-6 significant digits \, otherwise it uses an exponential format such
-as "1e+6". Anything that is not considered a number atom is treated
-as a symbol atom.;
 #X text 491 26 These are the basic types of boxes \, you can insert
 them from the Put Menu or their shortcuts:;
 #X text 490 447 Atom boxes are interactive \, you can click and drag
@@ -62,6 +58,11 @@ it \, type a number and then enter. The same click/enter functionality
 is present in the symbol box. try it above. Both of these also have
 properties windows \, right click and select it to check it out \,
 as well as their help file., f 57;
+#X text 43 501 Numbers in Pd are floating point (have decimal points
+\, such "1.2") with 32 bit resolution (more on this type/resolution
+later). Pd only represents 6 significant digits \, otherwise it uses
+an exponential format such as "1e+6". Anything that is not considered
+a number atom is treated as a symbol atom.;
 #X connect 1 0 0 0;
 #X connect 7 0 8 0;
 #X connect 11 0 8 0;
