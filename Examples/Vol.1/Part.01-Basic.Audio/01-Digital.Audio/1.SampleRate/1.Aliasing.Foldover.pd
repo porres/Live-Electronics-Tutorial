@@ -1,16 +1,16 @@
-#N canvas 366 109 942 549 12;
+#N canvas 479 110 942 549 12;
 #X declare -lib else;
-#X obj 587 386 * 1000;
-#X obj 587 427 osc~;
-#X text 784 423 KHz;
-#X obj 587 333 nbx 3 19 0 100 0 0 empty empty empty 0 -8 0 14 -228856
+#X obj 587 391 * 1000;
+#X obj 587 432 osc~;
+#X text 784 431 KHz;
+#X obj 587 338 nbx 3 19 0 100 0 0 empty empty empty 0 -8 0 14 -228856
 -1 -1 40 256;
 #X obj 587 477 out~;
-#X obj 201 132 display;
+#X obj 201 135 display;
 #X obj 201 108 nyquist~;
-#X obj 685 385 fold;
-#X obj 685 411 nbx 6 15 -1e+37 1e+37 0 0 empty osc empty 0 -8 0 11
--228856 -1 -1 4.1 256;
+#X obj 685 390 fold;
+#X obj 685 419 nbx 6 15 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 11
+-228856 -1 -1 40 256;
 #X text 24 20 Nyquist's theorem says the highest frequency we can represent
 (also called "nyquist frequncy") is half the sample rate. Higher frequencies
 generate "Aliasing" or "Foldover". The [nyquist~] object \, from ELSE
@@ -27,14 +27,14 @@ and it has a lower frequency than the original.;
 ELSE. By default \, we're sending a frequency of 40 Khz to [osc~] \,
 but the resulting oscillation has a frequency of 4.1 Khz. Change the
 number values to try it out., f 63;
-#X text 758 410 <= Alias;
+#X text 758 418 <= Alias;
 #X text 407 382 <= [pic] object \, from ELSE, f 16;
 #X obj 587 277 initmess 40;
-#X text 492 334 Kilohertz =>;
-#X obj 587 302 trigger float bang;
-#X obj 710 356 nyquist~ -khz;
+#X text 492 339 Kilohertz =>;
+#X obj 587 307 trigger float bang;
+#X obj 710 361 nyquist~ -khz;
 #X obj 774 24 declare -lib else;
-#X obj 77 251 pic 0 foldover.gif empty empty 0;
+#X obj 77 251 pic 0 foldover.gif empty empty 0 0;
 #X text 467 59 If the frequency starts passing over the Nyquist \,
 it folds back and starts descending. For example \, in a Nyquist frequency
 of 22.05 Khz \, 23.1 Khz becomes 21 Khz. Mathematically speaking:,

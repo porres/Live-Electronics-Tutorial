@@ -1,4 +1,4 @@
-#N canvas 418 61 1040 693 12;
+#N canvas 589 53 1054 873 12;
 #X msg 363 259 1;
 #X obj 212 231 trigger bang bang bang;
 #X msg 287 260 2;
@@ -83,6 +83,20 @@ with [swap] \, which also has a cold and hot inlet \, but the output
 is inverted - where the left (hot) input is sent out the right outlet
 first \, and the value sent to the right (cold) is sent out later to
 the left outlet.;
+#X obj 690 781 delay 5;
+#X obj 601 746 trigger bang bang bang, f 26;
+#X obj 601 717 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 780 817 print one;
+#X obj 690 817 print two;
+#X obj 601 817 print three;
+#X text 54 681 ------------------------------------------------------------------------------------------------------------------------------------------
+, f 139;
+#X text 129 737 Note that "depth first" has an exception with a time
+object like [delay]. The delay object receives a bang and delays it
+for a given amount in miliseconds (ms). Hence \, the output of [delay]
+gets delayed for 5 ms and you can check that it is output later in
+the terminal window.;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 1 1 2 0;
@@ -133,3 +147,8 @@ the left outlet.;
 #X connect 52 0 54 0;
 #X connect 53 0 52 0;
 #X connect 55 0 52 3;
+#X connect 59 0 63 0;
+#X connect 60 0 64 0;
+#X connect 60 1 59 0;
+#X connect 60 2 62 0;
+#X connect 61 0 60 0;

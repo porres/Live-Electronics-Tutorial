@@ -1,4 +1,4 @@
-#N canvas 434 105 944 621 12;
+#N canvas 434 105 972 607 12;
 #X obj 168 211 print;
 #X msg 168 132 Hello World;
 #X text 177 172 <== conection cord;
@@ -14,24 +14,24 @@
 #X msg 297 388 a b c;
 #X msg 312 418 a \, b \, c;
 #X obj 297 460 print;
-#X obj 617 82 float;
-#X floatatom 617 139 5 0 0 0 - - -, f 5;
-#X symbolatom 617 167 7 0 0 0 - - -, f 7;
-#X text 526 139 3) Number;
-#X text 526 168 4) Symbol;
-#X text 526 110 2) Message;
-#X text 526 81 1) Object;
-#X text 527 198 5) Comment;
-#X text 680 82 Object Box;
-#X msg 617 110 bang;
-#X text 680 109 Message Box;
-#X text 679 137 "Number Atom Box";
-#X text 678 170 "Symbol Atom Box";
-#X floatatom 599 367 5 0 0 0 - - -, f 5;
-#X symbolatom 702 365 10 0 0 0 - - -, f 10;
-#X obj 599 399 print;
-#X obj 702 401 print;
-#X text 488 245 To ask for help: Right-Click on any box then go for
+#X obj 644 93 float;
+#X floatatom 644 150 5 0 0 0 - - -;
+#X symbolatom 644 178 7 0 0 0 - - -;
+#X text 553 150 3) Number;
+#X text 553 179 4) Symbol;
+#X text 553 121 2) Message;
+#X text 553 92 1) Object;
+#X text 554 209 5) Comment;
+#X text 707 93 Object Box;
+#X msg 644 121 bang;
+#X text 707 120 Message Box;
+#X text 706 148 "Number Atom Box";
+#X text 705 181 "Symbol Atom Box";
+#X floatatom 626 378 5 0 0 0 - - -;
+#X symbolatom 729 376 10 0 0 0 - - -;
+#X obj 626 410 print;
+#X obj 729 412 print;
+#X text 515 256 To ask for help: Right-Click on any box then go for
 "Help" - this works even for comments \, try it. You should check the
 help file of every object you see in this tutorial that you do not
 know! If you right click on an empty space in your patch and ask for
@@ -42,7 +42,7 @@ window, f 31;
 #X text 55 299 A message may contain one or more elements \, which
 are called “atoms” and can be either a number or a symbol. A comma
 allows you to have more than one message in a message box., f 49;
-#X text 615 198 just a textual display;
+#X text 642 209 just a textual display;
 #X text 39 18 Welcome to this tutorial on Live Electronics with Pd
 and the ELSE library. Let's jump right into it!, f 59;
 #X text 40 54 We program in Pd by conecting "boxes" from "outlets"
@@ -50,9 +50,9 @@ to "inlets". Click on the box that says "Hello_World!" and see the
 result at Pd's terminal window (Window => Pd).;
 #X text 76 387 one element/atom;
 #X text 109 418 three elements/atoms;
-#X text 491 26 These are the basic types of boxes \, you can insert
+#X text 518 37 These are the basic types of boxes \, you can insert
 them from the Put Menu or their shortcuts:;
-#X text 490 447 Atom boxes are interactive \, you can click and drag
+#X text 517 458 Atom boxes are interactive \, you can click and drag
 into a number box to generate number values. You can also click on
 it \, type a number and then enter. The same click/enter functionality
 is present in the symbol box. try it above. Both of these also have

@@ -1,10 +1,10 @@
-#N canvas 367 42 907 676 12;
+#N canvas 367 42 923 676 12;
 #X declare -lib else;
 #X obj 129 252 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 76 287 adc~ 1;
 #X msg 316 160 open \$1;
-#X obj 316 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 316 110 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 316 137 savepanel;
 #X msg 132 172 stop;
@@ -29,8 +29,8 @@
 #X obj 329 282 s size;
 #X msg 117 145 open ./Test.wav \, start;
 #X obj 316 256 ms2samps;
-#X text 320 96 choose where;
-#X text 341 110 to record;
+#X text 320 89 choose where;
+#X text 341 103 to record;
 #X text 78 252 Record;
 #X text 310 213 set array size;
 #X text 373 231 in ms;
@@ -42,29 +42,30 @@ the [soundfiler] object as below., f 45;
 records directly to your hard drive. The native [tabwrite~] object
 records into an array - check help files for more info.;
 #X obj 209 405 table \$0-sample 4410;
-#X text 463 109 The [rec.file~] object \, from the ELSE library \,
+#X text 473 104 The [rec.file~] object \, from the ELSE library \,
 is an abstraction based on [writesf~] and makes some things more convenient.
 One nice feature is that it includes an [autofade~] object to avoid
-clicks when sampling live input - check its help file., f 54;
-#X obj 551 221 brown~;
-#X obj 688 223 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+clicks when sampling live input - check its help file., f 56;
+#X obj 718 207 brown~;
+#X obj 581 209 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 551 251 rec.file~ ./Test.wav;
-#X obj 606 390 sample~ \$0-record -ms 2000;
-#X text 471 296 The [sample~] object can be used to load files recorded
+#X obj 581 242 rec.file~ ./Test.wav;
+#X obj 598 391 sample~ \$0-record -ms 2000;
+#X msg 593 562 rec;
+#X msg 632 562 stop;
+#X obj 727 562 adc~ 1;
+#X obj 632 610 rec~ \$0-record;
+#X obj 673 46 declare -lib else;
+#X text 468 290 The [sample~] object can be used to load files recorded
 with [writesf~] or [rec.file~] \, but it can also be used as a memory
-buffer to record audio into by using something like [tabwrite~]. Below
-we set a buffer size of 2000 ms., f 55;
-#X msg 590 560 rec;
-#X msg 629 560 stop;
-#X obj 724 560 adc~ 1;
-#X obj 629 608 rec~ \$0-record;
-#X text 474 432 The [rec~] object \, from the ELSE library can also
+buffer to record audio into by using something like [tabwrite~] or
+the [rec~] object presented below. Below we set a buffer size of 2000
+ms., f 58;
+#X text 474 439 The [rec~] object (from the ELSE library) can also
 be used to record into arrays. One advantage is that you can start
 a recording with sample accuracy and it can record up to 64 signal
 channels into arrays simultaneously. This object goes well with [sample~]
-\, see its help file for more details., f 55;
-#X obj 673 46 declare -lib else;
+\, see its help file for more details., f 58;
 #X connect 0 0 9 0;
 #X connect 1 0 9 0;
 #X connect 2 0 16 0;
@@ -85,8 +86,8 @@ channels into arrays simultaneously. This object goes well with [sample~]
 #X connect 22 0 16 0;
 #X connect 23 0 18 0;
 #X connect 23 0 21 0;
-#X connect 35 0 37 0;
-#X connect 36 0 37 1;
-#X connect 40 0 43 0;
-#X connect 41 0 43 0;
-#X connect 42 0 43 1;
+#X connect 35 0 37 1;
+#X connect 36 0 37 0;
+#X connect 39 0 42 0;
+#X connect 40 0 42 0;
+#X connect 41 0 42 1;
