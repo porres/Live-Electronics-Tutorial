@@ -58,10 +58,10 @@ that output audio generate signal values for each sample in this given
 rate. For instance \, the oscillator below spits 44100 amplitude samples
 per second. There's also a difference between audio and control conncetions.
 Note that audio connections are thicker., f 63;
-#X text 529 247 There's also a difference between audio and control
-conncetions. Note that audio connections are thicker., f 62;
 #X text 473 492 audio connection => (thicker), f 20;
 #X text 281 497 <= control connection;
+#X text 529 247 There's also a difference between audio and control
+connections. Note that audio connections are thicker., f 62;
 #X connect 0 0 24 0;
 #X connect 3 0 23 0;
 #X connect 22 0 26 0;

@@ -40,7 +40,7 @@
 -1 -262144 -1 10 256;
 #X obj 622 213 bng 15 250 50 1 empty empty init 0 -6 0 12 -257070 -1
 -160712;
-#X floatatom 557 201 1 0 0 0 - - -;
+#X floatatom 574 201 1 0 0 0 - - -;
 #X obj 737 251 hsl 128 15 1.27 127 1 0 empty empty logarythmic 4 -12
 0 14 -228856 -1 -205449 0 1;
 #X obj 734 275 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
@@ -56,12 +56,10 @@
 -150 -262144 -1 0 256;
 #X obj 710 554 nbx 4 30 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 18
 -160 -262144 -1 0 256;
-#X text 493 200 atom =>;
 #X text 186 481 [my_canvas];
 #X text 207 500 or [cnv];
 #X obj 507 287 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
-#X text 492 219 with 1 digit;
 #X obj 507 256 loadbang;
 #X text 476 323 A canvas GUI ([my_canvas] or [cnv]) is useful for colorful
 backgrounds (see below). But note that the order it is created defines
@@ -88,6 +86,7 @@ it outputs the last saved value when the patch is loaded. For the bang
 GUI ([bng]) \, "init" sends a bang at initialization - which \, by
 the way \, is the same as using a [loadbang] object (as it sends a
 bang when the patch is loaded)., f 61;
+#X text 438 200 number atom box => with 1 digit width, f 19;
 #X connect 0 0 25 0;
 #X connect 2 0 19 0;
 #X connect 4 0 20 0;
@@ -101,4 +100,4 @@ bang when the patch is loaded)., f 61;
 #X connect 33 0 31 0;
 #X connect 35 0 37 0;
 #X connect 36 0 38 0;
-#X connect 44 0 42 0;
+#X connect 42 0 41 0;
