@@ -1,4 +1,4 @@
-#N canvas 435 112 1064 677 12;
+#N canvas 561 75 1064 677 12;
 #X declare -lib else;
 #X obj 129 252 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -8,23 +8,23 @@
 -1 -1;
 #X obj 316 137 savepanel;
 #X msg 132 172 stop;
-#X obj 113 609 soundfiler;
-#X obj 113 510 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 108 624 soundfiler;
+#X obj 108 525 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 113 532 savepanel;
+#X obj 108 547 savepanel;
 #X obj 129 361 tabwrite~ \$0-sample;
 #X msg 222 321 stop;
 #X msg 147 317 start \$1;
 #X obj 147 295 nbx 6 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 0 256;
-#X obj 82 115 adc~ 1;
-#X msg 113 584 write \$1 \$2;
-#X obj 113 558 list append \$0-sample;
+#X obj 82 110 adc~ 1;
+#X msg 108 599 write \$1 \$2;
+#X obj 108 573 list append \$0-sample;
 #X obj 117 204 writesf~;
 #X obj 316 357 send \$0-sample;
 #X floatatom 316 308 0 0 0 0 - - -;
 #X obj 316 233 nbx 5 14 100 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
--1 -1 100 256;
+-1 -1 143 256;
 #X msg 316 332 resize \$1;
 #X obj 329 282 s size;
 #X msg 117 145 open ./Test.wav \, start;
@@ -35,55 +35,59 @@
 #X text 310 213 set array size;
 #X text 373 231 in ms;
 #X text 148 277 index to record;
-#X text 62 450 You can also export an array into a sound file with
-the [soundfiler] object as below., f 45;
-#X text 133 508 <= choose where to save;
-#X text 48 23 Similarly to [readsf~] \, the native [writesf~] object
-records directly to your hard drive. The native [tabwrite~] object
-records into an array - check help files for more info.;
-#X obj 209 405 table \$0-sample 4410;
+#X text 128 523 <= choose where to save;
+#X obj 215 415 table \$0-sample 4410;
 #X obj 739 180 brown~;
 #X obj 602 182 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 602 215 rec.file~ ./Test.wav;
-#X msg 571 526 rec;
-#X msg 610 526 stop;
-#X obj 866 32 declare -lib else;
+#X msg 568 540 rec;
+#X msg 607 540 stop;
+#X obj 866 19 declare -lib else;
 #X obj 564 319 batch.rec~ ./Test.wav;
 #X msg 583 289 rec 1000;
-#X obj 610 594 display~;
-#X obj 347 548 setdsp~ 1;
-#X obj 610 564 rec~ \$0-record;
+#X obj 607 608 display~;
+#X obj 342 563 setdsp~ 1;
+#X obj 607 578 rec~ \$0-record;
 #X text 650 288 <= record 1 second;
 #X obj 564 258 cusp~ 500;
-#X obj 839 266 else/out~;
+#X obj 837 272 else/out~;
 #X text 522 182 record =>;
-#X obj 839 192 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 837 198 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 839 230 play.file~ ./Test.wav;
+#X obj 837 236 play.file~ ./Test.wav;
 #X obj 564 347 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X text 585 345 <= finished;
-#X text 506 60 The [rec.file~] object \, from the ELSE library \, is
-an abstraction based on [writesf~] and makes some things more convenient.
-One nice feature is that it includes an [autofade~] object to avoid
-clicks when sampling live input - use the toggle to start and stop
-recording and check its help file. You can also perform batch recordnig
-(as in rendering offline) with [batch.rec~] \, also from ELSE \, check
-its help file also. Use [play.file~] to play back the result., f 71
-;
-#X text 739 475 <= click;
-#X obj 863 551 else/out~;
-#X obj 705 524 standard~ 300;
-#X obj 553 475 sample~ \$0-record -ms 500;
-#X obj 863 510 tabplay~ \$0-record;
-#X obj 863 475 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
+#X text 736 489 <= click;
+#X obj 860 565 else/out~;
+#X obj 702 538 standard~ 300;
+#X obj 550 489 sample~ \$0-record -ms 500;
+#X obj 860 524 tabplay~ \$0-record;
+#X obj 860 489 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X text 506 385 The [sample~] object can also be used to record into
+#X text 505 382 The [sample~] object can also be used to record into
 by using something like [tabwrite~] or the [rec~] object presented
 below \, where we have a buffer size of 2000 ms. An advantage of [rec~]
 is that it provides sample accuracy and multi-channel support \, check
 its help file., f 71;
+#X text 47 23 Similarly to [readsf~] \, the native [writesf~] object
+records directly to your hard drive. The native [tabwrite~] object
+records into an array - check their help files for more information.
+;
+#X text 135 111 record from input;
+#X text 75 402 array to record to (click to open) ==>, f 19;
+#X text 61 467 You can also export/save an array into a sound file
+with the [soundfiler] object as below., f 47;
+#X msg 550 462 show;
+#X text 506 52 The [rec.file~] object \, from the ELSE library \, is
+an abstraction based on [writesf~] and makes some things more convenient.
+One nice feature is that it has multi-channel support \, and it includes
+an [autofade~] object to avoid clicks when sampling live input. ELSE
+also offers [batch.rec~] to perform batch recording \, which renders
+a sound as fast as possible - it also has multi-channel support \,
+check the help of both objects. Record below and use [play.file~] to
+play back the result., f 71;
 #X connect 0 0 9 0;
 #X connect 1 0 9 0;
 #X connect 2 0 16 0;
@@ -104,16 +108,17 @@ its help file., f 71;
 #X connect 22 0 16 0;
 #X connect 23 0 18 0;
 #X connect 23 0 21 0;
-#X connect 34 0 36 1;
-#X connect 35 0 36 0;
-#X connect 37 0 44 0;
-#X connect 38 0 44 0;
-#X connect 40 0 51 0;
-#X connect 41 0 40 0;
-#X connect 44 0 42 0;
-#X connect 46 0 40 0;
-#X connect 49 0 50 0;
-#X connect 50 0 47 0;
-#X connect 56 0 44 1;
-#X connect 58 0 55 0;
-#X connect 59 0 58 0;
+#X connect 32 0 34 1;
+#X connect 33 0 34 0;
+#X connect 35 0 42 0;
+#X connect 36 0 42 0;
+#X connect 38 0 49 0;
+#X connect 39 0 38 0;
+#X connect 42 0 40 0;
+#X connect 44 0 38 0;
+#X connect 47 0 48 0;
+#X connect 48 0 45 0;
+#X connect 53 0 42 1;
+#X connect 55 0 52 0;
+#X connect 56 0 55 0;
+#X connect 62 0 54 0;
