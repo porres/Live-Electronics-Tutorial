@@ -1,60 +1,60 @@
-#N canvas 325 111 913 418 12;
+#N canvas 325 111 944 449 12;
 #X declare -lib else;
-#X obj 161 293 readsf~;
-#X msg 116 259 stop;
-#X obj 236 295 spigot;
-#X obj 275 272 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 156 323 readsf~;
+#X msg 111 289 stop;
+#X obj 231 325 spigot;
+#X obj 270 302 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X text 291 271 loop;
-#X obj 161 218 openpanel;
-#X obj 161 196 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+#X text 286 301 loop;
+#X obj 206 236 openpanel;
+#X obj 206 214 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X msg 161 268 open \$1 \, 1;
-#X obj 161 323 out~;
-#X obj 137 219 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+#X msg 156 298 open \$1 \, 1;
+#X obj 156 356 out~;
+#X obj 156 198 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X text 181 194 Choose file;
-#X text 92 218 play;
-#X text 35 89 An open message with a sound file is needed every time
+#X text 226 212 Choose file;
+#X text 113 197 play;
+#X text 30 89 An open message with a sound file is needed every time
 before playing the file. A "start" message (or a non zero number) plays
 the file \, and a "stop" (or zero) stops it. When its done playing
 \, a bang is sent out the right outlet. We use this bang for a loop
-below., f 58;
-#X text 35 27 The simplest way to play a sound file in Pd Vanilla is
+below., f 60;
+#X text 30 27 The simplest way to play a sound file in Pd Vanilla is
 with the [readsf~] object. It plays directly from your hard drive and
 offer not that many features. Check help file for more details.;
-#X obj 571 338 out~;
-#X obj 571 235 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+#X obj 589 342 out~;
+#X obj 589 239 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 623 179 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+#X obj 641 183 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X text 534 235 play;
-#X msg 623 201 loop \$1;
-#X msg 627 229 open;
-#X text 668 230 Choose file;
-#X msg 628 255 stop;
-#X text 490 139 Check its help file for more details and features.
+#X text 552 239 play;
+#X msg 641 205 loop \$1;
+#X msg 645 233 open;
+#X text 686 234 Choose file;
+#X msg 646 259 stop;
+#X text 508 143 Check its help file for more details and features.
 ;
-#X obj 695 14 declare -lib else;
-#X obj 161 244 symbol;
-#X obj 571 302 play.file~ violin.wav;
-#X text 488 51 The [play.file~] object from ELSE is an abstraction
+#X obj 713 18 declare -lib else;
+#X obj 589 306 play.file~ violin.wav;
+#X text 506 55 The [play.file~] object from ELSE is an abstraction
 that relies on the [readsf~] object. A big convenience is that it has
 multi channel support and can query the number of channels from a sound
 file given as an argument., f 54;
+#X obj 156 274 symbol violin.wav;
 #X connect 0 0 8 0;
 #X connect 0 1 2 0;
 #X connect 1 0 0 0;
-#X connect 2 0 24 0;
+#X connect 2 0 9 0;
 #X connect 3 0 2 1;
-#X connect 5 0 24 0;
+#X connect 5 0 26 0;
 #X connect 6 0 5 0;
 #X connect 7 0 0 0;
-#X connect 9 0 24 0;
-#X connect 15 0 25 0;
+#X connect 9 0 26 0;
+#X connect 15 0 24 0;
 #X connect 16 0 18 0;
-#X connect 18 0 25 0;
-#X connect 19 0 25 0;
-#X connect 21 0 25 0;
-#X connect 24 0 7 0;
-#X connect 25 0 14 0;
+#X connect 18 0 24 0;
+#X connect 19 0 24 0;
+#X connect 21 0 24 0;
+#X connect 24 0 14 0;
+#X connect 26 0 7 0;
