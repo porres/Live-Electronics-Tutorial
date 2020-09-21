@@ -1,4 +1,4 @@
-#N canvas 603 30 554 546 12;
+#N canvas 744 118 554 546 12;
 #X declare -lib else;
 #N canvas 585 381 444 188 upsample-88.2Khz 0;
 #X obj 175 90 block~ 64 1 2;
@@ -6,9 +6,9 @@
 #X text 272 89 <= 2x upsample;
 #X obj 67 40 play.file~ sax.wav 1 1;
 #X connect 3 0 1 0;
-#X restore 304 285 pd upsample-88.2Khz;
-#X obj 304 326 out~;
-#X obj 394 237 sr~ 44100;
+#X restore 286 285 pd upsample-88.2Khz;
+#X obj 286 326 out~;
+#X obj 344 238 sr~ 44100;
 #X obj 85 271 readsf~;
 #X obj 85 313 out~;
 #X text 60 147 Here we have Pd set to run at 44.1 Khz via the [sr~]
@@ -27,6 +27,7 @@ rate is possible with resampling. In the subpatch above we have a 2x
 upsampling \, which makes it possible to play at the right speed (it'd
 also be possible to play a 96 Khz file when running Pd at 48 khz with
 2x upsampling \, or even a 192 Khz file with 4x oversampling).;
+#X text 429 284 <= click;
 #X connect 0 0 1 0;
 #X connect 3 0 4 0;
 #X connect 3 1 7 0;
