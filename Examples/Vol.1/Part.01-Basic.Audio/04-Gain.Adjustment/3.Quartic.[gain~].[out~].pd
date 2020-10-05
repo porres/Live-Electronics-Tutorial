@@ -1,4 +1,4 @@
-#N canvas 442 77 836 656 12;
+#N canvas 524 75 871 679 12;
 #X declare -lib else;
 #X obj 115 127 cnv 15 198 198 empty empty empty 20 12 0 14 -228856
 -66577 0;
@@ -137,17 +137,17 @@
 0.981982 0.990961;
 #X coords 0 1.01 441 0 200 200 1;
 #X restore 114 126 graph;
-#X obj 589 270 gain~;
-#X obj 531 209 osc~ 440;
-#X obj 564 396 dac~;
+#X obj 599 293 gain~ 1 0 20 0 0.422222;
+#X obj 528 222 osc~ 440;
+#X obj 574 419 dac~;
 #X obj 354 133 setdsp~ 1;
-#X msg 602 237 mode \$1;
-#X obj 602 160 vradio 15 1 0 3 \$0-dummy \$0-dummy-set empty 0 -8 0
+#X msg 599 250 mode \$1;
+#X obj 599 173 vradio 15 1 0 3 \$0-dummy \$0-dummy-set empty 0 -8 0
 10 -228856 -1 -1 0;
-#X text 621 175 dB;
-#X text 621 189 linear;
-#X floatatom 602 213 5 0 0 0 - - -;
-#X text 512 311 [gain~] =>;
+#X text 618 188 dB;
+#X text 618 202 linear;
+#X floatatom 599 226 5 0 0 0 - - -;
+#X text 522 334 [gain~] =>;
 #X obj 203 436 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 153 576 *~;
@@ -158,14 +158,14 @@
 #X obj 145 610 dac~;
 #X obj 200 504 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 560 481 osc~ 440;
-#X obj 560 522 out~;
-#X msg 647 482 mode \$1;
-#X obj 647 405 vradio 15 1 0 3 \$0-dummy \$0-dummy-set empty 0 -8 0
+#X obj 574 510 osc~ 440;
+#X obj 574 551 out~;
+#X msg 661 511 mode \$1;
+#X obj 661 434 vradio 15 1 0 3 \$0-dummy \$0-dummy-set empty 0 -8 0
 10 -228856 -1 -1 0;
-#X text 666 420 dB;
-#X text 666 434 linear;
-#X floatatom 647 458 5 0 0 0 - - -;
+#X text 680 449 dB;
+#X text 680 463 linear;
+#X floatatom 661 487 5 0 0 0 - - -;
 #N canvas 512 150 323 279 plot 0;
 #X obj 190 106 loadbang;
 #X obj 29 159 dbtorms~;
@@ -189,18 +189,21 @@
 #X text 43 363 Note how the dB scale has a steeper curve. The quartic
 scale generates more audible signals with a smaller slider value. We
 can use the native [pow] object to perform a quartic rescaling.;
-#X text 477 85 The [gain~] and [out~] objects \, from ELSE \, adopt
-a quartic scaling by default \, but can also offer dB and linear.,
-f 43;
-#X text 620 159 quartic;
-#X text 665 404 quartic;
+#X text 617 172 quartic;
+#X text 679 433 quartic;
 #X obj 200 531 f2s~ 10;
-#X text 422 588 In this tutorial \, the [out~] object is widely used
+#X text 436 617 In this tutorial \, the [out~] object is widely used
 for its convenience for gain adjustment and audio output., f 54;
 #X obj 625 39 declare -lib else;
 #X text 31 37 Alternatively to the dB scale we can adopt a quartic
 one (which is the same as raising a linear input to the power of 4)
 \, compare the difference between both curves below., f 57;
+#X obj 678 253 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 698 252 mute/unmute;
+#X text 477 75 The [gain~] and [out~] objects \, from ELSE \, adopt
+a quartic scaling by default \, but can also offer dB and linear. They
+can also be muted/unmuted. Check their help files., f 48;
 #X connect 4 0 6 0;
 #X connect 4 0 6 1;
 #X connect 5 0 4 0;
@@ -213,9 +216,10 @@ one (which is the same as raising a linear input to the power of 4)
 #X connect 16 0 18 0;
 #X connect 17 0 15 0;
 #X connect 18 0 20 0;
-#X connect 20 0 33 0;
+#X connect 20 0 32 0;
 #X connect 21 0 22 0;
 #X connect 23 0 22 0;
 #X connect 24 0 27 0;
 #X connect 27 0 23 0;
-#X connect 33 0 15 1;
+#X connect 32 0 15 1;
+#X connect 36 0 4 0;

@@ -1,20 +1,28 @@
-#N canvas 526 128 454 589 12;
+#N canvas 912 77 573 504 12;
 #X declare -lib else;
-#X obj 119 178 osc~ 440;
-#X obj 142 32 declare -lib else;
-#X obj 147 390 osc~ 440;
-#X obj 105 431 out4~;
-#X obj 286 390 osc~ 440;
-#X obj 246 431 out8~;
-#X text 105 495 quadraphonic;
-#X text 264 491 octaphonic;
-#X text 75 308 There are also [out4~] and [out8~] for quadraphonic
+#X obj 322 82 osc~ 440;
+#X obj 49 51 declare -lib else;
+#X obj 308 296 osc~ 440;
+#X obj 266 339 out4~;
+#X obj 447 296 osc~ 440;
+#X obj 407 339 out8~;
+#X text 262 216 There are also [out4~] and [out8~] for quadraphonic
 and octaphonic input/output setups., f 40;
-#X obj 119 219 out1~;
-#X text 94 113 The else library also offers [out1~] for mono input/output.
+#X text 393 81 mono input;
+#X obj 80 245 gain2~ 1 0 20 0 0.0555556;
+#X text 123 274 <= [gain2~];
+#X text 127 298 for stereo;
+#X obj 80 204 osc~ 440;
+#X obj 123 237 noise~;
+#X obj 72 365 dac~;
+#X text 63 118 There's also [gain2~] for stereo inputs, f 13;
+#X text 250 19 The ELSE library also offers [out1~] for mono input/output.
 , f 36;
-#X text 190 177 mono input;
-#X connect 0 0 9 0;
+#X obj 322 123 out1~ -ch 2;
+#X text 266 403 Quadraphonic;
+#X text 425 403 Octaphonic;
+#X text 172 455 Check their help files!;
+#X connect 0 0 16 0;
 #X connect 2 0 3 0;
 #X connect 2 0 3 1;
 #X connect 2 0 3 2;
@@ -27,3 +35,7 @@ and octaphonic input/output setups., f 40;
 #X connect 4 0 5 5;
 #X connect 4 0 5 6;
 #X connect 4 0 5 7;
+#X connect 8 0 13 0;
+#X connect 8 1 13 1;
+#X connect 11 0 8 0;
+#X connect 12 0 8 1;
