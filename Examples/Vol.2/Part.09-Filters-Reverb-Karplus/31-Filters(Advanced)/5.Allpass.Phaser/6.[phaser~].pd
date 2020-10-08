@@ -1,5 +1,5 @@
 #N canvas 476 23 656 614 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 146 355 out~;
 #X obj 220 278 rescale~ 100 1000;
 #X obj 121 166 s~ \$0-in;
@@ -45,7 +45,7 @@ based on the [allpass.filt~] object. It's just a bit more convenient.
 #X restore 343 478 pd phaser-stereo;
 #X text 167 463 Here's a stereo setting with [phaser~] click ==>,
 f 25;
-#X obj 480 57 declare -lib else;
+#X obj 480 57 declare -path else;
 #X obj 121 126 play.file~ guitar.wav 1 1;
 #X obj 350 516 out~;
 #X obj 343 451 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10

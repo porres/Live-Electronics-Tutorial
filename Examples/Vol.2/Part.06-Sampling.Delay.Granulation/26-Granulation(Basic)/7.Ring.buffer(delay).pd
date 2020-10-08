@@ -1,5 +1,5 @@
 #N canvas 513 23 595 645 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 148 27 361 174 delwrite 0;
 #X obj 69 44 inlet~;
 #X obj 70 121 outlet~;
@@ -106,7 +106,7 @@
 #X text 68 50 Now we adapt what we've seen for ring buffers (delay
 lines). This is useful for live input \, since the past examples needed
 pre recorded samples to be loaded into buffers., f 61;
-#X obj 362 12 declare -lib else;
+#X obj 362 12 declare -path else;
 #X obj 170 405 play.file~ bubul.wav 1 1;
 #X text 68 102 The adaptation is simple \, we just replace [tabread4~]
 by [delread4~]. There are major differences though \, as the buffer

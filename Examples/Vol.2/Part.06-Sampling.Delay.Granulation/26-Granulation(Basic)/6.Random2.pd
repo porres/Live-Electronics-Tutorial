@@ -1,5 +1,5 @@
 #N canvas 296 95 924 555 12;
-#X declare -lib else;
+#X declare -path else;
 #X floatatom 430 206 5 0 0 0 - - -;
 #X obj 433 181 hsl 128 15 1 100 1 0 empty freq-amp empty -2 -8 0 10
 -228856 -1 -1 3823 1;
@@ -201,7 +201,7 @@ controlling the amplitude output.;
 #X restore 610 282 pd left;
 #X obj 779 293 decay2~ 50 250;
 #X obj 779 262 tempo 180 200;
-#X obj 715 29 declare -lib else;
+#X obj 715 29 declare -path else;
 #X obj 610 393 out~;
 #X obj 787 95 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;

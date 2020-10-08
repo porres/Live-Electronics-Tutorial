@@ -1,7 +1,7 @@
 #N canvas 434 92 866 687 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 663 119 setdsp~;
-#X obj 685 58 declare -lib else;
+#X obj 685 58 declare -path else;
 #X text 64 132 This object was used in this tutorial to implement a
 linear and exponential slew (portamento). The 3rd and 5th inlet were
 used to set the linear ramp \, while the 4th and 6th controlled the

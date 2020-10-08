@@ -1,5 +1,5 @@
 #N canvas 253 23 991 605 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 121 335 fexpr~ ($x1[0] + $x1[-1] + $x1[-2] + $x1[-3] + $x1[-4]
 + $x1[-5] + $x1[-6] + $x1[-7]) * 0.125, f 46;
 #X obj 75 119 cnv 15 365 40 empty empty empty 5 12 0 14 -233017 -66577
@@ -46,7 +46,7 @@ represents a delay of three samples.;
 #X text 526 66 Now let's see a diagram with feedback:;
 #X text 530 245 The equation then looks like this:;
 #X text 744 514 check [fexpr~]'s help file for more info, f 21;
-#X obj 748 29 declare -lib else;
+#X obj 748 29 declare -path else;
 #X text 29 40 As [expr~] \, the native [fexpr~] object belongs to the
 [expr] family of objects and may be used to implement filter equations
 (a.k.a. difference equations). Let's then implement an average filter

@@ -1,5 +1,5 @@
 #N canvas 565 71 488 430 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 154 433 949 357 biplot 0;
 #X obj 21 44 biplot;
 #X text 118 18 [biplot] from ELSE;
@@ -21,7 +21,7 @@
 It serves as a series of biquad filters in cascade and the [biplot]
 object can also plot the resulting frequency and phase response. Check
 their help files for more details., f 51;
-#X obj 265 23 declare -lib else;
+#X obj 265 23 declare -path else;
 #X obj 98 350 out~;
 #X connect 2 0 7 0;
 #X connect 3 0 8 0;

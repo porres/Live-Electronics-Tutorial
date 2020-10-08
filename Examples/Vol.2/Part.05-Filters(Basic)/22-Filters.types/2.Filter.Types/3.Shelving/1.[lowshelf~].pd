@@ -1,5 +1,5 @@
 #N canvas 369 38 899 636 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 467 146 out~;
 #X obj 511 15 hsl 140 17 20 20000 1 0 empty \$0-freq-set empty 5 9
 0 10 -228856 -1 -1 6477 0;
@@ -392,7 +392,7 @@ frequencies lower than the roll off frequency. There's also a Slope
 parameter \, which controls the steepness of the shelving curve.,
 f 49;
 #X text 547 15 Frequency;
-#X obj 741 30 declare -lib else;
+#X obj 741 30 declare -path else;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 10 2;

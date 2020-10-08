@@ -1,5 +1,5 @@
 #N canvas 744 118 554 546 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 585 381 444 188 upsample-88.2Khz 0;
 #X obj 175 90 block~ 64 1 2;
 #X obj 67 120 outlet~;
@@ -15,7 +15,7 @@
 object \, but we're playing a file with a sample rate of 88.2 Khz.
 Hence it has twice as much samples and the playing speed drops in half
 and an octave lower.;
-#X obj 361 16 declare -lib else;
+#X obj 361 16 declare -path else;
 #X obj 85 238 initmess open sax.wav \, 1;
 #X text 59 64 For sound files to be played correctly with [tabplay~]
 and [readsf~] (or [play.file~] by extension) \, Pd needs to run at

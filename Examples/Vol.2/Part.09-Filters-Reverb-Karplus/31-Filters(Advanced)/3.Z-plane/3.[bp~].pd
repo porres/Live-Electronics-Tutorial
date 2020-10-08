@@ -1,5 +1,5 @@
 #N canvas 350 53 973 728 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 122 91 603 581 Z-Plane-biquad 0;
 #X obj 101 101 cnv 15 450 450 empty empty empty 20 12 1 14 -191407
 -66577 0;
@@ -688,7 +688,7 @@ the imaginary values are inverted (and get cancelled out). The subpatch
 of the poles. The gain parameter compensates this boost in order that
 the maximum amplitude value is 0 dB. The angle represents the resonant
 frequency.;
-#X obj 767 13 declare -lib else;
+#X obj 767 13 declare -path else;
 #X obj 302 495 r \$0-coefficients;
 #X text 26 404 And see how we can also implement this filter with two
 [cpole~] objects (complex pole filters) below.;

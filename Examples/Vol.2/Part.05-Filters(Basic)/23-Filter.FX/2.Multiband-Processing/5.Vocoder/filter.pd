@@ -1,5 +1,5 @@
 #N canvas 497 160 687 449 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 155 116 mtof;
 #X floatatom 125 329 0 0 0 0 - - -;
 #X floatatom 155 81 5 0 0 0 - - -;
@@ -21,7 +21,7 @@ analysis example inside a [clone] object., f 39;
 #X text 279 220 Each of the 24 instances contain two bandpass filters
 in cascade with a different central frequency \, given by the [pd set-freq]
 subpatch in the parent patch., f 45;
-#X obj 413 70 declare -lib else;
+#X obj 413 70 declare -path else;
 #X connect 0 0 6 0;
 #X connect 1 0 11 0;
 #X connect 2 0 0 0;

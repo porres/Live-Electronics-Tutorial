@@ -1,5 +1,5 @@
 #N canvas 459 213 586 422 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 113 271 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X text 89 268 Hz;
@@ -15,7 +15,7 @@
 #X obj 215 252 impseq~;
 #X obj 156 302 pluck~ 0 4000 10000, f 26;
 #X obj 113 238 rand.f 50 300;
-#X obj 340 17 declare -lib else;
+#X obj 340 17 declare -path else;
 #X text 59 59 The ELSE library has the [pluck~] object \, which implements
 a Karplus Strong Algorythm. By default \, it uses an internal white
 noise generator as an excitation signal and can be triggered by impulses.

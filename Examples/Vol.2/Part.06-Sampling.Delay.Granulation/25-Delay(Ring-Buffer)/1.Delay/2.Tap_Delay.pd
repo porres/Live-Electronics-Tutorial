@@ -1,5 +1,5 @@
 #N canvas 327 52 939 611 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 249 230 *~;
 #X obj 249 312 delwrite~ \$0-tap-delay 3000;
 #X obj 76 408 *~ 0.7;
@@ -39,7 +39,7 @@
 at different points. We can use this to implement simple repetitions
 or more complex rythms. In this example we also explore a stereo effect.
 , f 52;
-#X obj 682 30 declare -lib else;
+#X obj 682 30 declare -path else;
 #X obj 555 255 out~;
 #X obj 170 187 bl.saw~;
 #X obj 170 98 rand.i 30 60;

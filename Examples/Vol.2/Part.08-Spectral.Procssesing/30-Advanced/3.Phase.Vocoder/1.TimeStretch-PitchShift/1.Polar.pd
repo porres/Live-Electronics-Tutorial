@@ -1,5 +1,5 @@
 #N canvas 593 42 501 637 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 366 149 409 244 init 0;
 #X obj 51 131 soundfiler;
 #X obj 201 134 table \$0-sample;
@@ -459,7 +459,7 @@ process works:, f 63;
 #X connect 54 0 50 1;
 #X connect 57 0 34 0;
 #X restore 147 508 pd Pitch.Shift-Time.Stretch;
-#X obj 302 21 declare -lib else;
+#X obj 302 21 declare -path else;
 #X text 40 60 This example expands an example previously presented
 in granulation for Time Stretch/Compress & Pitch Shift. We now include
 a spectral processing known as "Phase Vocoder". This term does not

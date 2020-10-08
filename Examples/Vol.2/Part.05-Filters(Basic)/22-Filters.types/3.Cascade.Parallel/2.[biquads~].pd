@@ -1,5 +1,5 @@
 #N canvas 565 31 500 447 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 104 283 noise~;
 #X obj 100 239 bicoeff eq 500 10 24;
 #X obj 253 238 bicoeff eq 900 10 24;
@@ -15,7 +15,7 @@ filters in cascade. Each biquad section is defined as a list of 5 coefficients
 (in the same way as Pd Vanilla's [biquad~]). Check its help file for
 more details., f 55;
 #X obj 186 284 merge 2 -1;
-#X obj 330 26 declare -lib else;
+#X obj 330 26 declare -path else;
 #X text 54 138 Here we use the [merge] object from ELSE to combine
 two lists of biquad coefficients.;
 #X connect 0 0 5 0;

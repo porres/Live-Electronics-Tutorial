@@ -1,5 +1,5 @@
 #N canvas 722 322 862 517 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 191 321 table \$0-buffer;
 #X obj 61 318 soundfiler, f 12;
 #X msg 142 346 \$1;
@@ -12,7 +12,7 @@
 #X obj 142 452 s \$0-ratio;
 #X text 54 221 Let's just use [soundfiler] again for a change:, f
 30;
-#X obj 650 38 declare -lib else;
+#X obj 650 38 declare -path else;
 #X obj 61 274 initmess read -resize sax.wav \$0-buffer, f 22;
 #X obj 174 392 sr~;
 #X text 173 348 <= sound file's sample rate, f 15;

@@ -1,5 +1,5 @@
 #N canvas 596 60 508 391 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 120 251 osc~ 5000;
 #X text 164 302 Imaginary;
 #X text 82 298 Real;
@@ -93,7 +93,7 @@ pd dsp 1;
 #X text 53 158 One big difference is that [rfft~] outputs frequency
 points only up to the nyquist frequency. This has the advantage of
 being more CPU efficient. Check the graphs below., f 57;
-#X obj 307 33 declare -lib else;
+#X obj 307 33 declare -path else;
 #X text 52 78 The [rfft~] is better suited for most cases \, as [fft~]
 is actually for complex signals \, whereas [rfft~] is for real signals.
 Thus \, [fft~] has two inlets (for the real and imaginary part) \,

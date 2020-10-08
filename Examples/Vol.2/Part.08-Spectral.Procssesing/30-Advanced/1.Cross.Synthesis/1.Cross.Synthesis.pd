@@ -1,5 +1,5 @@
 #N canvas 637 55 730 479 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 464 176 hradio 15 1 0 10 empty \$0-window empty 0 -8 0 10 -228856
 -1 -1 4;
 #X obj 464 224 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
@@ -102,7 +102,7 @@ quality of the input. We then have a tonal source for the phase information
 and a noisy speech for the amplitude (or filter control). Listen to
 both below and the crossed synthesized to the right, f 47;
 #X text 522 221 window size;
-#X obj 529 20 declare -lib else;
+#X obj 529 20 declare -path else;
 #X obj 103 39 play.file~ 1 kantele.wav 1 1;
 #X obj 429 76 play.file~ numbers.wav 1 1;
 #X text 28 119 We've seen how to implement a Cross synthesis Vocoder

@@ -1,5 +1,5 @@
 #N canvas 279 50 967 391 12;
-#X declare -lib else;
+#X declare -path else;
 #X floatatom 763 223 5 -0.99 0.99 0 - a -;
 #X floatatom 687 220 5 0 100 0 - del -;
 #X obj 91 184 cnv 15 320 140 empty empty empty 20 12 0 14 -233017 -66577
@@ -39,7 +39,7 @@ for reflections in a reverb system. It can be viewed as a simplification
 of the comb filter diagram \, with just the feedback section. With
 [comb.rev~] you could achieve the same by just zeroing the feedforward
 gain and setting the input gain to 1!;
-#X obj 738 17 declare -lib else;
+#X obj 738 17 declare -path else;
 #X text 496 105 One difference between [fbdelay~] and [comb.rev~] is
 that [fbdelay~] can also set the feedback parameter as t60 - this is
 actually the default setting \, but here we have a gain coefficient

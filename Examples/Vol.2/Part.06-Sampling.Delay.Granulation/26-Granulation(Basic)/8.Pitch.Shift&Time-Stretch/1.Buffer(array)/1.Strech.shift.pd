@@ -1,5 +1,5 @@
 #N canvas 263 104 915 523 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 144 343 vline~;
 #X obj 82 320 float;
 #X text 618 317 cents;
@@ -210,7 +210,7 @@ f 54;
 #X restore 519 363 pd Pitch-Shit/Time-Stretch;
 #X obj 202 271 r \$0-size;
 #X text 273 269 sample size;
-#X obj 714 25 declare -lib else;
+#X obj 714 25 declare -path else;
 #X text 24 25 So far \, any change in speed alters the pitch and vice
 versa \, but now we'll implement independent pitch shiftting and time
 stretching with granular methods. This example is actually the basis

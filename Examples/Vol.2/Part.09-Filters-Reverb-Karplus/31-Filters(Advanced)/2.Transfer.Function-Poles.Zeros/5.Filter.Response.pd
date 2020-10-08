@@ -1,5 +1,5 @@
 #N canvas 244 29 1002 683 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 175 444 Re = 1 - a*cos(w);
 #X text 175 460 Im = 0 - a*sin(w);
 #X text 264 529 1;
@@ -427,7 +427,7 @@ empty -2 -8 0 10 -228856 -228856 -1 0 0;
 #X connect 23 0 5 0;
 #X connect 25 0 3 0;
 #X restore 713 616 pd [lop~]-respone;
-#X obj 756 16 declare -lib else;
+#X obj 756 16 declare -path else;
 #X obj 566 142 pic 0 ../files/amp.gif empty empty 0;
 #X text 36 36 A filter's response are amplitude and phase values as
 a function of frequency \, which represents how the filter affects

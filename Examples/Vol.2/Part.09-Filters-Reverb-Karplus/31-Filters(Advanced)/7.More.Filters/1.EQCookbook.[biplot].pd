@@ -1,5 +1,5 @@
 #N canvas 460 81 951 601 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 74 96 603 581 Z-Plane-biquad 0;
 #X obj 101 101 cnv 15 450 450 empty empty empty 20 12 1 14 -191407
 -66577 0;
@@ -645,7 +645,7 @@ that they take signal input to control the parameters. Another difference
 is that only [eq~] \, [lowshelf~] and [highshelf~] have a gain input.
 , f 89;
 #X text 164 437 <= click;
-#X obj 250 22 declare -lib else;
+#X obj 250 22 declare -path else;
 #N canvas 232 273 1021 510 vanilla 0;
 #N canvas 114 184 549 267 lowpass 0;
 #X obj 39 165 pack f f f f f;

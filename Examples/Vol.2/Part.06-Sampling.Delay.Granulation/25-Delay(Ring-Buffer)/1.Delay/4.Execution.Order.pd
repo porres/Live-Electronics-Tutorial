@@ -1,5 +1,5 @@
 #N canvas 559 58 532 508 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 395 114 349 226 delwrite~ 0;
 #X obj 57 40 inlet~;
 #X obj 103 149 outlet~;
@@ -32,7 +32,7 @@ a noise input to its delayed signal. By forcing an order of execution
 \, we can be assured the minimum delay can be less than a block of
 audio (1 sample in the case of [delread4~] and 0 samples in the case
 of [delread~]).;
-#X obj 337 15 declare -lib else;
+#X obj 337 15 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 4 1;
 #X connect 2 0 0 0;

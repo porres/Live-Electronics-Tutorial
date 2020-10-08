@@ -1,5 +1,5 @@
 #N canvas 475 39 899 636 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 9 255 1099 569 (subpatch) 0;
 #N canvas 649 293 231 309 freq-response 0;
 #N canvas 324 327 712 441 init 0;
@@ -379,7 +379,7 @@ filter \, but it usually is \, as you can set a bandwidth or Q parameter
 just like a bandpass. But in more accurate terms \, it should be considered
 an anti resonance filter. Anyway \, here we check the [bandstop~] object
 from ELSE \, see its help file for more details., f 53;
-#X obj 749 14 declare -lib else;
+#X obj 749 14 declare -path else;
 #X obj 530 136 out~;
 #X text 68 22 A bandstop (also called band reject) filter is the opposite
 of a bandpass. With a very narrow bandwidth \, this is also called

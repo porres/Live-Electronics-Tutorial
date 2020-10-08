@@ -1,5 +1,5 @@
 #N canvas 552 55 555 572 12;
-#X declare -lib else;
+#X declare -path else;
 #X floatatom 324 391 5 0 0 0 - - -;
 #X obj 158 287 hsl 128 15 0.1 5 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
@@ -27,7 +27,7 @@ of a pedal. You can try with other filters \, but here we use [vcf~]
 and also have a [drive~] unit \, cause it sounded alright like that.
 Besides an LFO rate/frequency and filter Q \, we also have controls
 for the minumum and maximum frequency in the filter sweep., f 57;
-#X obj 374 18 declare -lib else;
+#X obj 374 18 declare -path else;
 #X obj 59 250 play.file~ wha-guitar.wav 1 1;
 #X text 68 62 The Wah-wah effect stompbox is quite known around and
 used in psychodelic rock and stuff. In short \, it's nothing but a

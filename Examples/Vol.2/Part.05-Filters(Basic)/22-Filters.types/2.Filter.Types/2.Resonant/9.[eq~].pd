@@ -1,5 +1,5 @@
 #N canvas 411 54 899 636 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 9 255 1099 569 (subpatch) 0;
 #N canvas 649 293 231 309 freq-response 0;
 #N canvas 324 327 712 441 init 0;
@@ -390,7 +390,7 @@ It can boost or attenuate a given frequency with a gain parameter.
 The resonance/Q parameter sets the bandwidth. When fltering out frequencies
 with high attenuations \, this type of filter also behaves like a bandreject/notch.
 Check its help file for more details., f 54;
-#X obj 733 26 declare -lib else;
+#X obj 733 26 declare -path else;
 #X obj 500 155 out~;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;

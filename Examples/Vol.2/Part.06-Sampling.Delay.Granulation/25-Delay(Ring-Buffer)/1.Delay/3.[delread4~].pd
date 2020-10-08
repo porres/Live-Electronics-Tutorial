@@ -1,5 +1,5 @@
 #N canvas 581 25 578 771 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 373 322 hsl 128 15 0 1000 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X floatatom 370 353 0 0 0 0 - - -;
@@ -16,7 +16,7 @@
 as it is supposed to be a guard point. In practical terms \, the object's
 minimum delay is 1 sample (whereas [delread~] can have a minimum delay
 of 0).;
-#X obj 373 15 declare -lib else;
+#X obj 373 15 declare -path else;
 #X obj 98 370 play.file~ bubul.wav 1 1, f 25;
 #X text 77 52 The [delread~] object only has control input and does
 not interpolate \, so it can only read back in a buffer at a specific

@@ -1,5 +1,5 @@
 #N canvas 244 44 950 603 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 140 386 *~;
 #X obj 402 485 *~;
 #X obj 420 454 *~;
@@ -44,7 +44,7 @@ between 0 and 1 \, 0.5 being white noise (and noise is what it sounds
 like) - this noisiness was aimed to emulate more percussive sounds.
 , f 58;
 #X obj 270 299 rand.i~ 50 500;
-#X obj 706 21 declare -lib else;
+#X obj 706 21 declare -path else;
 #X text 46 52 Let's now closely recreate the original Karplus-Strong
 algorythm. Its noise input consisted only in 1 or -1 values stored
 in a table \, so we're using a live input from [clipnoise~] instead.

@@ -1,5 +1,5 @@
 #N canvas 578 68 586 691 12;
-#X declare -lib else;
+#X declare -path else;
 #X msg 338 448 stop;
 #X obj 313 576 out~;
 #X msg 118 279 show;
@@ -7,7 +7,7 @@
 #X floatatom 118 347 0 0 0 0 - - -;
 #X obj 118 375 s \$0-size;
 #X text 158 279 <= shows and hides internal buffer;
-#X obj 382 15 declare -lib else;
+#X obj 382 15 declare -path else;
 #X obj 118 317 sample~ \$0-sample bubul.wav;
 #X obj 313 540 tabplayer~ \$0-sample;
 #X msg 314 394 start 4000 2000;

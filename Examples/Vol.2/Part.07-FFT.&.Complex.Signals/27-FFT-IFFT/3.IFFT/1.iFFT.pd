@@ -1,5 +1,5 @@
 #N canvas 466 56 934 594 12;
-#X declare -lib else;
+#X declare -path else;
 #X floatatom 281 278 5 0 0 0 - - -;
 #N canvas 262 23 567 466 FFT-iFFT 0;
 #X obj 85 119 rfft~;
@@ -96,7 +96,7 @@ See how the value is converted to and back. It needs a normalization
 though. Open the subpatch below to the left for more details. Then
 check the sawtooth being transformed to the frequency domain and back
 and open the subprach to the right for more details., f 48;
-#X obj 672 43 declare -lib else;
+#X obj 672 43 declare -path else;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;

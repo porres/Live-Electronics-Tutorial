@@ -1,5 +1,5 @@
 #N canvas 475 39 899 636 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 9 255 1099 569 (subpatch) 0;
 #N canvas 649 293 231 309 freq-response 0;
 #N canvas 324 327 712 441 init 0;
@@ -383,7 +383,7 @@ music. Most of the time when it's not specified what type of resonant
 filter it is \, we're talking about a lowpass resonant filter. This
 is the [lowpass~] object from the ELSE library \, check its help file
 for more details., f 55;
-#X obj 748 16 declare -lib else;
+#X obj 748 16 declare -path else;
 #X obj 523 132 out~;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;

@@ -1,5 +1,5 @@
 #N canvas 347 124 1014 484 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 184 192 nbx 5 14 -1e+37 1e+37 0 0 empty hz empty 0 -8 0 10 -228856
 -1 -1 0 256;
 #X obj 204 244 *~;
@@ -43,7 +43,7 @@ have a low \, a medium and a high band., f 62;
 #X text 655 389 Low;
 #X text 755 389 Medium;
 #X text 873 388 High;
-#X obj 797 39 declare -lib else;
+#X obj 797 39 declare -path else;
 #X obj 117 135 initmess open bubul.wav \, 1;
 #X connect 0 0 12 1;
 #X connect 1 0 2 1;

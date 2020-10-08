@@ -1,5 +1,5 @@
 #N canvas 315 87 947 475 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 54 152 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856 -1
 -1;
 #X obj 183 132 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -213,7 +213,7 @@ you can try prime numbers as a basis instead as in the 8-stage example.
 -228856 -1 -1 0 256;
 #X text 746 335 size;
 #X obj 599 364 echo.rev~ 8 1;
-#X obj 745 10 declare -lib else;
+#X obj 745 10 declare -path else;
 #X obj 599 397 out~;
 #X text 26 16 As a first reverberator example with delay lines \, we
 have a simple patch with only feedforward lines that emulates echoes

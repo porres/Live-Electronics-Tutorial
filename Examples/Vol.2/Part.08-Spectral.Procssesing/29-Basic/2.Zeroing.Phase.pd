@@ -1,5 +1,5 @@
 #N canvas 567 83 564 645 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 206 318 osc~ 0.1;
 #X text 95 293 sample;
 #X text 97 314 synth;
@@ -90,7 +90,7 @@ additive synthesis.;
 see how the original tonal quality is lost and we just hear the same
 harmonic series as a result. Try different input sources.;
 #X text 85 497 click =>;
-#X obj 368 23 declare -lib else;
+#X obj 368 23 declare -path else;
 #X obj 156 282 play.file~ 1 kantele.wav 1 1;
 #X connect 0 0 15 0;
 #X connect 3 0 21 2;

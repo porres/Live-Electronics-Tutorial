@@ -1,5 +1,5 @@
 #N canvas 472 23 631 792 12;
-#X declare -lib else;
+#X declare -path else;
 #X msg 151 342 0;
 #X text 180 343 reset;
 #X obj 105 367 phasor~;
@@ -51,7 +51,7 @@
 #X text 37 399 position;
 #X obj 139 162 stretch.shift~;
 #X text 30 162 Check it out =>;
-#X obj 435 137 declare -lib else;
+#X obj 435 137 declare -path else;
 #X obj 310 173 play.file~ bubul.wav 1 1;
 #X text 61 23 In this example we put together the last two for a pitch
 shift / time stretch patch! As in the first example \, we multiply

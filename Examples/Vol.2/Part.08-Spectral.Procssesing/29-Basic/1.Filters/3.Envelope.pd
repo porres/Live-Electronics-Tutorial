@@ -1,5 +1,5 @@
 #N canvas 476 78 652 490 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 389 411 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 2048 256;
 #X obj 389 363 hradio 15 1 0 8 empty \$0-set-window empty 0 -8 0 10
@@ -92,7 +92,7 @@ Nyquist., f 46;
 envelope generator to generate the filter table. We can also say we're
 applying a "Spectral Envelope" into a FFT analysis. Open subpatches
 below to see the implementation.;
-#X obj 418 29 declare -lib else;
+#X obj 418 29 declare -path else;
 #X obj 238 322 play.file~ 1 didge.aif 1 1;
 #X obj 85 196 function 200 100 empty empty 0 1 220 220 220 50 50 50
 1 0 0 0 1 1 1;

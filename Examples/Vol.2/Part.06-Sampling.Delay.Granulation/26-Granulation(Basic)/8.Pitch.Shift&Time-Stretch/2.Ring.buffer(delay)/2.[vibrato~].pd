@@ -1,5 +1,5 @@
 #N canvas 592 76 507 434 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 145 349 out~;
 #X obj 199 260 nbx 5 14 -2400 2400 0 0 empty \$0-cents empty 0 -8 0
 10 -228856 -1 -1 0 256;
@@ -14,7 +14,7 @@ is controlled by an internal LFO., f 56;
 #X text 50 149 This is an abstraction \, so you can open it to see
 hwo it works. Check its help file.;
 #X obj 145 306 vibrato~ 0.3 100;
-#X obj 290 23 declare -lib else;
+#X obj 290 23 declare -path else;
 #X obj 145 221 play.file~ bubul.wav 1 1;
 #X connect 1 0 7 1;
 #X connect 2 0 7 2;

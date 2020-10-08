@@ -1,5 +1,5 @@
 #N canvas 528 55 961 702 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 728 345 phasor~;
 #X obj 728 404 tabread4~ \$0-buffer;
 #X obj 648 234 nbx 5 18 -1e+37 1e+37 0 0 empty tempo empty 0 -8 0 13
@@ -50,7 +50,7 @@ We do that by dividing the sample rate of the file (even if it's different
 than Pd's) by the number of samples - both information are given by
 [sample~] (one could use [soundfiler] instead \, in which [sample~]
 is based on)., f 61;
-#X obj 729 26 declare -lib else;
+#X obj 729 26 declare -path else;
 #X obj 171 343 sample~ \$0-buffer sax.wav;
 #X text 36 150 These objects also allow you to play files with a different
 sample rate than Pd is running \, because since you can play the file

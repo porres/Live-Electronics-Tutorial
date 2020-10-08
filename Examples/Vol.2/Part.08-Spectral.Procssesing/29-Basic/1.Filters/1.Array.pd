@@ -1,5 +1,5 @@
 #N canvas 244 190 1058 510 12;
-#X declare -lib else;
+#X declare -path else;
 #X msg 806 209 const \$1;
 #X obj 809 188 hsl 100 12 0 1 0 0 empty const empty -2 -6 0 10 -228856
 -1 -1 9900 1;
@@ -435,7 +435,7 @@ above to the left is the FFT analysis \, then we have the filter array
 \, which represents the frequency response and you can click and draw
 on it. The last graph is the filtered output. Open [pd Spectral-Filter]
 for details.;
-#X obj 805 24 declare -lib else;
+#X obj 805 24 declare -path else;
 #X text 616 389 The subpatch below has some logic routines to implement
 differen pass filters.;
 #X connect 0 0 26 0;

@@ -1,5 +1,5 @@
 #N canvas 648 25 481 613 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 98 248 noise~;
 #N canvas 470 47 734 661 Equalizador_Gráfico(4_bandas) 0;
 #X obj 134 521 outlet~;
@@ -67,6 +67,6 @@ only relies on adjusting the gain of different frequency bands. This
 is done by summing the output of filters in parallel.;
 #X text 38 183 The gain adjustment is made with values in dB from the
 sliders below. Open the subpatch and check it out., f 56;
-#X obj 306 18 declare -lib else;
+#X obj 306 18 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;

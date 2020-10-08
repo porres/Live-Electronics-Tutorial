@@ -1,5 +1,5 @@
 #N canvas 419 58 748 430 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 66 119 rpole~;
 #X obj 66 94 rzero_rev~;
 #X obj 66 168 rpole~;
@@ -319,7 +319,7 @@ is a 4th order allpass filter. An LFO controls the filter coefficient
 #X text 276 225 Other configurations are possible with a different
 number of stages (such as 6 \, 8 \, 10 \, 12 stages \, etc). Below
 we have a stereo patch with 16 and 14 stages. Open it.;
-#X obj 563 36 declare -lib else;
+#X obj 563 36 declare -path else;
 #X obj 393 335 out~;
 #X obj 47 64 bl.saw~ 80;
 #X connect 0 0 3 0;

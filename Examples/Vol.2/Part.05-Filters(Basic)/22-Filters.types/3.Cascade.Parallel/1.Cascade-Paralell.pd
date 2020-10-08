@@ -1,5 +1,5 @@
 #N canvas 544 23 506 652 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 97 441 noise~;
 #X obj 210 530 +~;
 #X obj 272 202 noise~;
@@ -27,7 +27,7 @@ f 59;
 #X text 40 367 A parallel conneection is when the input goes in parallel
 into different filters and then summed at the end. Here we have two
 bandpass filters in parallel.;
-#X obj 331 15 declare -lib else;
+#X obj 331 15 declare -path else;
 #X obj 210 564 out~;
 #X connect 0 0 12 0;
 #X connect 0 0 13 0;

@@ -1,5 +1,5 @@
 #N canvas 579 23 654 740 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 142 384 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
 0 10 -228856 -1 -1 100 256;
 #X obj 217 384 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-transpo empty 0
@@ -578,7 +578,7 @@ the front window. This order is necessary to apply the phase lock stage.
 #X obj 365 652 pvoc.player~;
 #X text 110 607 The [pvoc.player~] \, from the ELSE library \, is based
 on this patch. Check its help file.;
-#X obj 415 30 declare -lib else;
+#X obj 415 30 declare -path else;
 #X text 102 71 Here we have a more mathematically complicated version
 of the last example as it avoids the phase computation. This is needed
 for implementing Miller Puckette's "phase-locked" algorithm. It's also

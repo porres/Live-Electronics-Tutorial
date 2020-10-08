@@ -1,5 +1,5 @@
 #N canvas 575 28 545 443 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 279 189 cents;
 #X obj 325 189 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
 0 10 -228856 -1 -1 100 256;
@@ -185,7 +185,7 @@ the cartesian form with phase lock on. Open the subpatch.;
 #X obj 81 234 delwrite~ \$0-buffer 500;
 #X text 105 368 Compare this pitch shifter with the earlier version
 that only relies in granulation., f 43;
-#X obj 343 26 declare -lib else;
+#X obj 343 26 declare -path else;
 #X obj 81 200 play.file~ bubul.wav 1 1;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;

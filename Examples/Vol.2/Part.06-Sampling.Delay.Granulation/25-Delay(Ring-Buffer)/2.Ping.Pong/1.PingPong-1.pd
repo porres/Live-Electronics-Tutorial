@@ -1,5 +1,5 @@
 #N canvas 516 23 563 689 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 104 290 +~;
 #X obj 146 289 +~;
 #X obj 164 259 *~;
@@ -44,7 +44,7 @@ sounds like watching a ping pong match indeed., f 46;
 #X text 110 547 This is the base of the [ping.pong~] object \, an abstraction
 from ELSE., f 24;
 #X obj 48 85 rand.i 36 60;
-#X obj 373 16 declare -lib else;
+#X obj 373 16 declare -path else;
 #X obj 312 594 out~;
 #X obj 104 401 out~;
 #X connect 0 0 18 0;

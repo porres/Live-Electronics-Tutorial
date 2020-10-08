@@ -1,5 +1,5 @@
 #N canvas 618 87 571 500 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 105 371 complex-mod~;
 #X obj 105 342 hilbert~;
 #X obj 186 341 nbx 5 16 -2000 2000 0 0 empty mod empty 0 -8 0 13 -228856
@@ -11,7 +11,7 @@
 #X obj 306 331 osc~ 440;
 #X text 390 313 Modulator;
 #X obj 306 367 freq.shift~;
-#X obj 345 30 declare -lib else;
+#X obj 345 30 declare -path else;
 #X obj 102 403 out~;
 #X obj 300 400 out~;
 #X text 71 87 Pd Vanilla also provides an extra abstraction for complex

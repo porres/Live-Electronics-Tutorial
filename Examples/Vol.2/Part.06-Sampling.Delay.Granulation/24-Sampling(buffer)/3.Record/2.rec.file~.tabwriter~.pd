@@ -1,8 +1,8 @@
 #N canvas 708 54 615 806 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 237 174 tgl 20 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 423 22 declare -lib else;
+#X obj 423 22 declare -path else;
 #X obj 121 239 setdsp~ 1;
 #X obj 243 322 else/out~;
 #X text 157 174 record =>;

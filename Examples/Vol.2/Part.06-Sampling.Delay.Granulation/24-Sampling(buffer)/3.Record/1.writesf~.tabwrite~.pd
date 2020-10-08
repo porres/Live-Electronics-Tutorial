@@ -1,5 +1,5 @@
 #N canvas 819 23 954 732 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 587 159 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 534 194 adc~ 1;
@@ -30,7 +30,7 @@
 #X text 823 169 in ms;
 #X text 606 184 index to record;
 #X text 736 547 <= choose where to save;
-#X obj 727 34 declare -lib else;
+#X obj 727 34 declare -path else;
 #X obj 435 311 setdsp~ 1;
 #X obj 73 632 out~;
 #X obj 114 378 writesf~ 2;

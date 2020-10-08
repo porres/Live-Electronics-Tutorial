@@ -1,5 +1,5 @@
 #N canvas 528 23 511 635 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 175 158 noise~;
 #N canvas 837 269 700 390 4-band-split 0;
 #X obj 49 245 outlet~;
@@ -31,7 +31,7 @@ and apply different compression settings for each., f 47;
 #X obj 209 261 compress~ -20 10 5 5 5;
 #X obj 244 298 compress~ -50 15 5 5 18;
 #X obj 278 330 compress~ -50 20 5 5 26;
-#X obj 322 31 declare -lib else;
+#X obj 322 31 declare -path else;
 #X obj 244 554 out~;
 #X connect 0 0 1 0;
 #X connect 1 0 7 0;

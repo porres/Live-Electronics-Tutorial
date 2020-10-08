@@ -1,5 +1,5 @@
 #N canvas 508 63 586 646 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 82 285 hradio 15 1 0 10 empty \$0-size empty 0 -8 0 10 -228856
 -1 -1 4;
 #X obj 82 333 nbx 5 14 64 1e+37 0 0 \$0-w_size \$0-w_size-set empty
@@ -78,7 +78,7 @@
 #X text 428 445 B (cross synthesis);
 #X text 145 332 window size;
 #X text 100 516 click =>;
-#X obj 385 23 declare -lib else;
+#X obj 385 23 declare -path else;
 #X obj 125 145 play.file~ 1 kantele.wav 1 1;
 #X obj 125 203 play.file~ numbers.wav 1 1;
 #X text 74 64 In this variation we "morph" from one amplitude to another

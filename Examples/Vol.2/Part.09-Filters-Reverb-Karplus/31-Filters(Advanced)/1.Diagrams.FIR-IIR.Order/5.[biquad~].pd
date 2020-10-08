@@ -1,5 +1,5 @@
 #N canvas 436 101 608 497 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 62 170 noise~;
 #X obj 62 246 out~;
 #X obj 322 255 v a0;
@@ -27,7 +27,7 @@ $y[-1] + b2 * $y[-2], f 36;
 #X text 87 83 A second order system is nothing but a [biquad~] filter!
 It expects a list of 5 coefficients that correspond to the coefficients:
 b1 \, b2 \, a0 \, a1 & a2. Compare it below., f 56;
-#X obj 373 29 declare -lib else;
+#X obj 373 29 declare -path else;
 #X connect 0 0 22 0;
 #X connect 5 0 4 0;
 #X connect 6 0 3 0;

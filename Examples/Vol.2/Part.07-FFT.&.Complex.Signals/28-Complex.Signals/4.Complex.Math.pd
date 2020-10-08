@@ -1,5 +1,5 @@
 #N canvas 321 81 880 356 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 169 259 [(b * c) + (a * d)]i;
 #X text 34 29 Complex math has special properties from the imaginary
 unit \, which gives us -1 when squared. Let's see what happens when
@@ -84,7 +84,7 @@ phases., f 57;
 the amplitudes and summing the initial phases., f 41;
 #X text 191 481 The Cartesian form is more accurate and CPU efficient.
 , f 27;
-#X obj 674 33 declare -lib else;
+#X obj 674 33 declare -path else;
 #X connect 4 0 5 0;
 #X connect 5 0 17 0;
 #X connect 6 0 5 1;

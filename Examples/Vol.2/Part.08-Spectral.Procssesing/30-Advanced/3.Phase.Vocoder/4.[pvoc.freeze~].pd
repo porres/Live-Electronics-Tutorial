@@ -1,5 +1,5 @@
 #N canvas 601 82 507 661 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 673 189 440 375 pvoc-freeze 0;
 #X obj 163 306 outlet~;
 #X obj 134 31 inlet~;
@@ -155,7 +155,7 @@ used to take other snapshots. To unfreeze \, just use the toggle.;
 #X obj 211 608 pvoc.freeze~;
 #X text 66 552 The [pvoc.freeze~] object \, from the ELSE librayry
 \, is based on this patch. Check its help file, f 55;
-#X obj 318 22 declare -lib else;
+#X obj 318 22 declare -path else;
 #X obj 99 338 play.file~ 1 violin.wav 1 1;
 #X connect 0 0 4 1;
 #X connect 2 0 9 0;

@@ -1,5 +1,5 @@
 #N canvas 595 49 570 511 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 210 291 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 797 186 322 336 test 0;
@@ -40,7 +40,7 @@ frequency dammping as [rev2~] and [rev3~].;
 #X text 70 197 One important characteristic of this reverb is that
 it uses LFOs to modulate some of the allpass filters as a way to produce
 more dinamic results.;
-#X obj 303 17 declare -lib else;
+#X obj 303 17 declare -path else;
 #X obj 218 415 out~;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;

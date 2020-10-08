@@ -1,5 +1,5 @@
 #N canvas 329 89 905 684 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 518 508 *~;
 #X obj 555 554 +~;
 #X obj 600 548 *~;
@@ -61,7 +61,7 @@ only affects the result if it is too small or too big \, so we usually
 have it at a fixed reasonable value. Check how this works to the right
 and see the [pitch.shift~] object from ELSE \, which is implemented
 this way., f 53;
-#X obj 660 26 declare -lib else;
+#X obj 660 26 declare -path else;
 #X obj 464 82 play.file~ bubul.wav 1 1;
 #X text 23 28 We've used delay as sort of a pitch shifter in the arpeggiator
 example. Remember when we have an ascending ramp \, the delay time

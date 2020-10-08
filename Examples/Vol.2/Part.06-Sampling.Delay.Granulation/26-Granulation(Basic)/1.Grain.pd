@@ -1,5 +1,5 @@
 #N canvas 412 47 912 545 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 407 407 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X floatatom 756 195 6 0 100 0 - hz -;
@@ -55,7 +55,7 @@ through at period transitions., f 54;
 #X text 453 407 load another file into the buffer, f 17;
 #X text 518 203 position;
 #X text 627 160 size;
-#X obj 708 31 declare -lib else;
+#X obj 708 31 declare -path else;
 #X text 40 129 Besides the frequency \, we have a grain size parameter
 in ms and its position in the buffer also in ms (both values are converted
 to samples and read as indexes). The grain size and frequency affect

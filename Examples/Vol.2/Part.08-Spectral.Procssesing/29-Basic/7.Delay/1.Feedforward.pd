@@ -1,5 +1,5 @@
 #N canvas 408 114 747 399 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 445 292 out~;
 #N canvas 507 133 431 572 Spectral-Delay 0;
 #X obj 262 422 block~ 512 4;
@@ -67,7 +67,7 @@ each sample. We generate one with the [function] object \, where the
 horizontal axis represent the frequency points and the vertical axis
 the delay time. The delay depth controls the overall amplitude (that
 is the time parameter) of the envelope., f 43;
-#X obj 541 22 declare -lib else;
+#X obj 541 22 declare -path else;
 #X obj 445 201 play.file~ guitar.wav 1 1;
 #X obj 91 187 function 200 100 empty empty 0 1 220 220 220 50 50 50
 0 0 0 0 0 0.5 1 0.5 0;

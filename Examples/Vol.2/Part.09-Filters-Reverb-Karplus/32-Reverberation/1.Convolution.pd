@@ -1,5 +1,5 @@
 #N canvas 539 23 577 770 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 217 332 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 283 570 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -69,7 +69,7 @@ as we'll see later \, but before that let's recapitulate the convolution
 tecnhique. We've also seen how convolution can also act as a general
 filter \, but this is only to say and reinforce how filters and reverbs
 are intertwined concepts., f 64;
-#X obj 375 22 declare -lib else;
+#X obj 375 22 declare -path else;
 #X obj 206 677 out~;
 #X obj 62 406 out~;
 #X obj 217 408 out~;

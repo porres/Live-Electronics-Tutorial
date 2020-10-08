@@ -1,5 +1,5 @@
 #N canvas 346 23 910 528 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 116 305 Re1;
 #X text 168 305 Im1;
 #X text 224 306 Re2;
@@ -93,7 +93,7 @@ how to calculate this with both the polar and cartesian form., f 30
 #X connect 6 0 7 0;
 #X restore 174 383 pd plot;
 #X obj 144 169 initmess 100;
-#X obj 683 20 declare -lib else;
+#X obj 683 20 declare -path else;
 #X text 41 25 This is the same as a Ring Modulation (RM) \, but with
 complex signals. Remember that RM gives us two sideband \, but with
 complex signals \, we just have one sideband. Hence \, this process

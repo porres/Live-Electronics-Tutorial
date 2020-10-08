@@ -1,5 +1,5 @@
 #N canvas 243 217 1131 354 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-gain1 1024 float 1;
 #A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -179,7 +179,7 @@
 same way as the first example \, we can implement a crossover filter.
 ;
 #X text 697 91 cutoff bin;
-#X obj 688 29 declare -lib else;
+#X obj 688 29 declare -path else;
 #X obj 515 118 out~;
 #X connect 4 0 20 0;
 #X connect 9 0 12 0;

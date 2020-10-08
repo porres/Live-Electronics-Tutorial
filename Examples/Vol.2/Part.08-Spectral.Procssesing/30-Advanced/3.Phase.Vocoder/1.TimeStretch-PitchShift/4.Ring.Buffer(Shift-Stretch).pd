@@ -1,5 +1,5 @@
 #N canvas 575 211 502 592 12;
-#X declare -lib else;
+#X declare -path else;
 #N canvas 586 112 760 704 pvoc 0;
 #X obj 305 320 +~;
 #X obj 305 233 pack float float float;
@@ -209,7 +209,7 @@ series. Now is time to check out the Pitch Shifter and Time Stretch
 on a ring buffer with the phase accumulation. Nothing should be new
 \, just the same kind of adaptation., f 57;
 #X obj 247 530 pvoc.live~ 6000;
-#X obj 317 18 declare -lib else;
+#X obj 317 18 declare -path else;
 #X obj 213 161 play.file~ bubul.wav 1 1;
 #X text 99 468 The [pvoc.live~] \, from the ELSE library \, is based
 on this patch. Check its help file., f 43;

@@ -1,5 +1,5 @@
 #N canvas 574 64 661 528 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 497 213 Hz;
 #X obj 438 190 hsl 128 15 -5 5 0 0 empty hz empty -2 -8 0 10 -228856
 -1 -1 9500 1;
@@ -76,7 +76,7 @@
 \, which generates a random walk to set the position and the randomly
 scroll through the sample. We just need to rescale its output to the
 sample size.;
-#X obj 442 21 declare -lib else;
+#X obj 442 21 declare -path else;
 #X obj 437 378 bng 20 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #N canvas 793 125 302 299 buffer 0;

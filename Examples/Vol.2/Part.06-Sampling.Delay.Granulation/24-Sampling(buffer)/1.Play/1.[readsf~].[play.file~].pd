@@ -1,5 +1,5 @@
 #N canvas 439 131 944 449 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 156 323 readsf~;
 #X msg 111 289 stop;
 #X obj 231 325 spigot;
@@ -32,7 +32,7 @@ below., f 60;
 #X msg 646 259 stop;
 #X text 508 143 Check its help file for more details and features.
 ;
-#X obj 713 18 declare -lib else;
+#X obj 713 18 declare -path else;
 #X obj 589 306 play.file~ violin.wav;
 #X text 506 55 The [play.file~] object from ELSE is an abstraction
 that relies on the [readsf~] object. A big convenience is that it has

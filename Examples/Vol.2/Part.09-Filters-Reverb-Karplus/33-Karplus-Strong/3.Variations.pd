@@ -1,5 +1,5 @@
 #N canvas 255 71 947 570 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 251 321 hsl 128 15 0 0.9999 0 0 empty fb empty -2 -6 0 8 -228856
 -1 -1 12638 1;
 #X floatatom 248 345 6 0 0 0 - - -;
@@ -101,7 +101,7 @@ and also to show it's not that crazily different., f 53;
 #X obj 340 433 initmess \; fb 0.995 \; t60 2000 \; cutoff 5700;
 #X obj 597 228 rand.i 25 50;
 #X obj 46 259 rand.i 25 50;
-#X obj 716 13 declare -lib else;
+#X obj 716 13 declare -path else;
 #X text 28 82 Another variation allows for a Note On/Note Off input
 \, where you can hold the note down longer than its period. This adds
 a "sustain" for the excitation signal (which is a white noise inside

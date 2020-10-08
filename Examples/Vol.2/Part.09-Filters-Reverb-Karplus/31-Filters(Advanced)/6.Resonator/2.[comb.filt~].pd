@@ -1,5 +1,5 @@
 #N canvas 519 192 1053 590 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 557 160 impseq~;
 #X obj 103 132 cnv 15 320 120 empty empty empty 20 12 0 14 -233017
 -66577 0;
@@ -241,7 +241,7 @@ t60. This promotes different decay time values for the same gain parameter.
 , f 47;
 #X text 610 522 More details about the conversion between gain coefficient
 and decay time:, f 42;
-#X obj 889 43 declare -lib else;
+#X obj 889 43 declare -path else;
 #X text 33 23 The Comb Filter is a type of resonator. The [comb.rev~]
 object (which we'll see in the detail in the next section on reverberation)
 has already been introduced in this tutorial. The [comb.filt~] object

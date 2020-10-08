@@ -1,5 +1,5 @@
 #N canvas 645 57 569 416 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 299 286 rev1~;
 #X obj 245 192 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -65,7 +65,7 @@ reverb model. The [rev1~] abstraction that comes with Pd Vanilla uses
 10 stages of allpass filters. It's a very simple reverb with only a
 decay parameter \, which indicates how much dB the output has after
 1 second in percentage of dB. Check its help file., f 54;
-#X obj 341 23 declare -lib else;
+#X obj 341 23 declare -path else;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;

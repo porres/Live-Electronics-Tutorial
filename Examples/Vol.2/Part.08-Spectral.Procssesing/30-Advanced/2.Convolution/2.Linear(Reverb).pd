@@ -1,5 +1,5 @@
 #N canvas 249 39 958 688 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 566 196 s~ \$0-input;
 #X obj 652 555 r~ \$0-input;
 #X obj 713 197 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -1106,7 +1106,7 @@ that was recorded from an actual room. This is just a "clap" sample
 sorts of files and use the convolution as a general sound processor
 rather than just an actual reverberator. Play the input sound and the
 IR below:;
-#X obj 762 13 declare -lib else;
+#X obj 762 13 declare -path else;
 #X obj 548 158 play.file~ 1 didge.aif 1 1;
 #X text 479 322 Here we're using the overlap-add method technique \,
 which needs zero-padding. The IR size is 16.384 samples \, but we have

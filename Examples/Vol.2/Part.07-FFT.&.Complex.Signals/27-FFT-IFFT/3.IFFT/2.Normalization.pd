@@ -1,5 +1,5 @@
 #N canvas 490 70 565 438 12;
-#X declare -lib else;
+#X declare -path else;
 #X floatatom 346 105 5 0 0 0 - - -;
 #X obj 88 179 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
 -1 -1 2048 256;
@@ -441,7 +441,7 @@ average., f 42;
 #X restore 346 168 pd normalize;
 #X obj 202 142 initmess 4;
 #X obj 88 140 initmess 2048;
-#X obj 390 30 declare -lib else;
+#X obj 390 30 declare -path else;
 #X obj 346 135 bl.saw~ 400;
 #X text 58 285 Here are other FFT windows commonly used \, though the
 hann window is the one we'll use for all the spectral processing examples.

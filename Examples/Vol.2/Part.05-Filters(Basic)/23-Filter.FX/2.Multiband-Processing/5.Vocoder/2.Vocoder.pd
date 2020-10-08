@@ -1,5 +1,5 @@
 #N canvas 311 67 981 512 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 45 289 mtof;
 #X obj 45 268 nbx 5 14 25 74 0 0 \$0-ramp_note \$0-pitch empty 0 -8
 0 10 -228856 -1 -1 30 256;
@@ -285,7 +285,7 @@ steps for the frequencies - open:;
 #X text 605 427 See also the [vocoder~] object from the ELSE library
 \, based on this patch., f 44;
 #X obj 829 456 vocoder~ 24;
-#X obj 782 16 declare -lib else;
+#X obj 782 16 declare -path else;
 #X obj 117 275 play.file~ numbers.wav 1 1, f 27;
 #X text 59 162 Now we have a bank with 28 bandpass filters \, where
 each parameter can be set independently. The left input is our synth

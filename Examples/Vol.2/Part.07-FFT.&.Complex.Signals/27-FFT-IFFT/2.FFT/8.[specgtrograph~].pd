@@ -1,5 +1,5 @@
 #N canvas 663 167 488 499 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 85 311 spectrograph~;
 #X msg 183 203 size \$1;
 #X obj 194 231 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
@@ -11,7 +11,7 @@
 #X msg 222 170 1024;
 #X msg 183 170 256;
 #X obj 351 178 setdsp~;
-#X obj 306 26 declare -lib else;
+#X obj 306 26 declare -path else;
 #X text 51 71 The ELSE library offers [spectrograph~] \, which is an
 abstraction that plots spectral amplitude information based on what
 we've seen so far. You can set its size and how to display the amplitude

@@ -1,5 +1,5 @@
 #N canvas 636 117 474 630 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 236 283 inlet;
 #X obj 188 520 *~;
 #X obj 236 348 mtof;
@@ -21,7 +21,7 @@
 #X text 75 76 This abstraction is used as part of the vocoder example
 inside a [clone] object., f 43;
 #X text 222 517 <= gain adjustment;
-#X obj 275 21 declare -lib else;
+#X obj 275 21 declare -path else;
 #X text 72 126 Each of the 28 instances receive a different central
 frequency. The synth is filtered by a [bandpass~] object and the gain
 output depends on the analysis of the speech input \, done with the

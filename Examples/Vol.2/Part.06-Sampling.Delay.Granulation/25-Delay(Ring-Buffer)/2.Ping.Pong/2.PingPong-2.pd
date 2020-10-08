@@ -1,5 +1,5 @@
 #N canvas 601 23 512 665 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 122 412 +~;
 #X obj 297 439 +~;
 #X obj 122 535 +~;
@@ -42,7 +42,7 @@ the channels. At each iteration \, the delay output is fed into another
 channel and vice versa. Headphones might be better to notice the ping
 pong effects., f 53;
 #X obj 309 205 f2s~ 10 0.85;
-#X obj 312 13 declare -lib else;
+#X obj 312 13 declare -path else;
 #X obj 184 589 out~;
 #X connect 0 0 2 0;
 #X connect 0 0 25 0;

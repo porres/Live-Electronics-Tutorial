@@ -1,5 +1,5 @@
 #N canvas 644 116 566 624 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 381 216 phasor~;
 #X obj 381 290 out~;
 #X obj 412 184 r \$0-hz;
@@ -23,7 +23,7 @@ One advantage that makes it simpler is that we don't need to bother
 multiplying the output of [phasor~] \, as the index input is mapped
 from 0 to 1!, f 42;
 #X obj 84 223 unpack;
-#X obj 391 41 declare -lib else;
+#X obj 391 41 declare -path else;
 #X obj 84 182 sample~ \$0-buffer violin.wav;
 #X obj 334 513 player~ violin.wav 1 1;
 #X text 81 405 But even much more convenient is the [player~] object
