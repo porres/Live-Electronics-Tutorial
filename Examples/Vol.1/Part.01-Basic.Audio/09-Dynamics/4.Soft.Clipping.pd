@@ -1,5 +1,5 @@
 #N canvas 396 23 786 576 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 239 185 nbx 5 14 0 40 0 0 empty ganho empty 0 -8 0 10 -228856
 -1 -1 0 256;
 #X floatatom 239 231 7 0 0 0 - - -;
@@ -32,7 +32,7 @@ kind of soft clipping with the tanh function. It also has yet another
 mode \, based on another exponential function \, check its help file
 for more details., f 44;
 #X obj 239 255 f2s~ 10 1;
-#X obj 542 80 declare -lib else;
+#X obj 542 80 declare -path else;
 #X connect 0 0 2 0;
 #X connect 1 0 20 0;
 #X connect 2 0 1 0;

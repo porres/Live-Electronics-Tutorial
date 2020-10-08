@@ -1,5 +1,5 @@
 #N canvas 747 110 829 738 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 109 648 ftom;
 #X obj 139 614 nbx 5 14 -1e+37 1e+37 0 0 empty empty Hz 18 -6 0 10
 -228856 -1 -1 0 256;
@@ -71,7 +71,7 @@ So any frequency input becomes an interval ratio to 440Hz., f 53;
 #X text 217 492 sum to middle A in MIDI;
 #X obj 180 408 log 2;
 #X obj 180 436 * 12;
-#X obj 653 23 declare -lib else;
+#X obj 653 23 declare -path else;
 #X text 460 240 MIDI data is only about integer values from 0 to 127
 \, but in Pd we have more resolution with floats. Therefore \, we have
 a finer resolution after the decimal point. You can also consider this

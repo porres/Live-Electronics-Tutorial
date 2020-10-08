@@ -1,7 +1,7 @@
 #N canvas 912 77 573 504 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 322 82 osc~ 440;
-#X obj 49 51 declare -lib else;
+#X obj 49 51 declare -path else;
 #X obj 308 296 osc~ 440;
 #X obj 266 339 out4~;
 #X obj 447 296 osc~ 440;

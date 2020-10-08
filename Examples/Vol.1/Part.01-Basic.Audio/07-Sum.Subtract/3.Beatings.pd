@@ -1,5 +1,5 @@
 #N canvas 490 92 760 566 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 486 382 1;
 #X text 480 516 -1;
 #X text 486 449 0;
@@ -108,7 +108,7 @@ beatings.;
 #X obj 255 277 osc~ 401;
 #X obj 98 335 f2s~ 10;
 #X obj 273 334 f2s~ 10;
-#X obj 70 45 declare -lib else;
+#X obj 70 45 declare -path else;
 #X text 28 131 This is because they keep getting in and out of phase.
 That is \, at one point they sum and add up their amplitudes and in
 another they get cancelled out. The cycle in which this occurs has

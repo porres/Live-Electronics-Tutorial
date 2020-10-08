@@ -1,5 +1,5 @@
 #N canvas 647 152 764 445 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 562 299 Cents;
 #X obj 609 269 ratio2cents;
 #X obj 609 328 cents2ratio;
@@ -27,7 +27,7 @@ an irrational number., f 59;
 is a series of integers that represent the ratio of harmonics. This
 implies that all harmonics are multiples of a fundamental tone., f
 59;
-#X obj 600 39 declare -lib else;
+#X obj 600 39 declare -path else;
 #X text 25 165 As an example \, the just interval obtained with the
 3/2 ratio is that of a Just Perfect Fifth \, and corresponds to the
 relationship between the third and second elements in the harmonic

@@ -1,5 +1,5 @@
 #N canvas 404 33 903 518 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 375 458 nbx 4 17 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
 -228856 -1 -1 -20 256;
 #X text 434 459 dBFS;
@@ -33,7 +33,7 @@ gate (in an earlier stage) to avoid that a noise floor is raised to
 the normalized value!, f 41;
 #X text 445 100 This realtime normalizer patch continuously adjusts
 the gain to a fixed RMS value., f 61;
-#X obj 697 59 declare -lib else;
+#X obj 697 59 declare -path else;
 #X obj 494 299 play.file~ 1 MouthBow.wav 1 1;
 #X obj 70 71 play.file~ 1 kantele.wav 1 1, f 15;
 #X connect 2 0 3 0;

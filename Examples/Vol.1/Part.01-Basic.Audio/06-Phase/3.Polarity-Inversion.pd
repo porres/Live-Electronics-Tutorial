@@ -1,5 +1,5 @@
 #N canvas 291 74 1179 665 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 502 539 0;
 #X obj 518 479 cnv 15 198 138 empty empty empty 20 12 0 14 -228856
 -66577 0;
@@ -183,7 +183,7 @@ sawtooth summed with its inverted polarity signal can cancell out.
 , f 58;
 #X text 786 589 By the way \, there's no difference in our perception
 when changing the polarity!!!, f 41;
-#X obj 539 41 declare -lib else;
+#X obj 539 41 declare -path else;
 #X text 27 16 Summing two waveforms with phase opposition promotes
 a cancelling of the signal \, but this depends on the waveform! It
 does happen with sine waves \, for instance \, but not all wave forms

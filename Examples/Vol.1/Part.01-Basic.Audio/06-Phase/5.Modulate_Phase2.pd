@@ -1,5 +1,5 @@
 #N canvas 567 97 757 565 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 479 386 cnv 15 198 138 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -160,7 +160,7 @@ f 54;
 #X connect 6 0 11 0;
 #X connect 7 0 8 0;
 #X restore 121 445 pd plot;
-#X obj 65 35 declare -lib else;
+#X obj 65 35 declare -path else;
 #X connect 8 0 24 2;
 #X connect 8 0 13 0;
 #X connect 9 0 11 0;

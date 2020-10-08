@@ -1,5 +1,5 @@
 #N canvas 378 23 913 587 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 749 246 *~ -1;
 #X obj 97 391 s~ \$0-sample;
 #X obj 662 211 r~ \$0-sample;
@@ -32,7 +32,7 @@ See the difference below., f 55;
 music \, why not do both? Have some fun!, f 39;
 #X obj 735 465 *~ -1;
 #X obj 259 445 f2s~ 10 7;
-#X obj 713 26 declare -lib else;
+#X obj 713 26 declare -path else;
 #X obj 97 365 play.file~ bubul.wav 1 1;
 #X obj 648 494 out~;
 #X obj 662 276 out~;

@@ -1,5 +1,5 @@
 #N canvas 385 123 936 497 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 278 148 nbx 4 17 -100 0 0 0 empty empty empty 0 -8 0 13 -228856
 -1 -1 -30 256;
 #X text 340 150 dB;
@@ -30,7 +30,7 @@ to measure the running RMS and compare its value to a "threshold" or
 , f 65;
 #X text 462 262 the patch to the left is implemented inside the [noisgate~]
 abstraction from ELSE \, check it below \, open its help file.;
-#X obj 733 22 declare -lib else;
+#X obj 733 22 declare -path else;
 #X obj 79 34 play.file~ 1 MouthBow.wav 1 1;
 #X obj 558 323 play.file~ 1 MouthBow.wav 1 1;
 #X obj 183 112 op~ >;

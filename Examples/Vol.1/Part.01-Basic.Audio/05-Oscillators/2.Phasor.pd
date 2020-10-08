@@ -1,5 +1,5 @@
 #N canvas 391 44 965 695 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 99 116 cnv 15 300 290 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 132 286 cnv 15 248 110 empty empty empty 20 12 0 14 -220534
@@ -73,7 +73,7 @@ time. In the upper one we have phase in the vertical axis \, which
 increases at a constant rate \, generating a linear ramp. The lower
 graph shows us the resulting sine output \, with amplitude in the vertical
 axis.;
-#X obj 762 17 declare -lib else;
+#X obj 762 17 declare -path else;
 #X text 117 158 P;
 #X text 117 171 H;
 #X text 28 523 The [phasor~] object generates a phase signal like the

@@ -1,5 +1,5 @@
 #N canvas 363 23 956 723 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 814 221 pi;
 #X obj 814 183 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -182,7 +182,7 @@
 #X obj 661 658 display~ 7;
 #X obj 564 658 display~ 7;
 #X obj 796 606 setdsp~;
-#X obj 745 15 declare -lib else;
+#X obj 745 15 declare -path else;
 #X obj 151 155 pic 0 files/angle.gif empty empty 0;
 #X obj 85 455 pic 0 files/sine.gif empty empty 0;
 #X text 25 51 A "pure tone" contains a single frequency and is produced

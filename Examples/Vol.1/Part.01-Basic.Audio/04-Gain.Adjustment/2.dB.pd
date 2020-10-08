@@ -1,5 +1,5 @@
 #N canvas 616 62 584 619 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 209 235 nbx 5 14 -1e+37 1e+37 0 0 bkjhgk hfjhgd empty 0 -8 0
 10 -228856 -1 -1 0 256;
 #X obj 209 364 *~;
@@ -19,7 +19,7 @@
 #X text 360 299 Linear Amplitude;
 #X text 66 299 Oscillator (values between -1 e 1) ==>, f 19;
 #X text 237 364 Multiply between 0-1 to adjust gain!;
-#X obj 389 20 declare -lib else;
+#X obj 389 20 declare -path else;
 #X text 340 326 smoothened audio signal;
 #X text 35 128 Since our perception is non linear \, we can adopt a
 logarithmic scale to adjust the gain \, such as with [db2lin] below.

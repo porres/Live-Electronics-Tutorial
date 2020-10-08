@@ -1,5 +1,5 @@
 #N canvas 566 94 1016 643 12;
-#X declare -lib else;
+#X declare -path else;
 #X floatatom 178 172 5 0 15 0 - - -;
 #X obj 151 470 sqrt;
 #X msg 151 441 2;
@@ -65,7 +65,7 @@ get the number of semitones by simply multiplying it by 12!, f 62
 #X obj 710 507 log 2;
 #X obj 178 265 log 2;
 #X obj 226 533 expr $f1*$f1;
-#X obj 839 19 declare -lib else;
+#X obj 839 19 declare -path else;
 #X text 26 17 A musical interval is a proportional relationship. For
 example \, an octave is a proportion (or ratio) of two to one (2/1)
 \, as in: 220Hz/110Hz. Therefore \, 220Hz is an octave above 110Hz

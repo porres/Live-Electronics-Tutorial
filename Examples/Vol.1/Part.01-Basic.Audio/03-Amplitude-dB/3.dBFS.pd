@@ -1,5 +1,5 @@
 #N canvas 614 66 522 544 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 171 250 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 168 274 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -13,7 +13,7 @@
 #X text 230 328 dBFS;
 #X text 228 272 Linear Amp;
 #X text 228 387 Linear Amp;
-#X obj 293 18 declare -lib else;
+#X obj 293 18 declare -path else;
 #X text 51 52 In analog audio \, we have different dB scales with different
 reference values in Watts or Volts for 0 dB \, but in digital audio
 we have a scale that has no such reference point in Watts/Volts \,

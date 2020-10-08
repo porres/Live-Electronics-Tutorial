@@ -1,5 +1,5 @@
 #N canvas 382 111 1062 532 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 824 401 cnv 15 198 98 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -149,7 +149,7 @@ Again \, a phase difference of 0.5 cancells the signal out.;
 #X text 370 442 is the same as:;
 #X obj 548 130 f2s~ 50;
 #X obj 713 99 f2s~ 50;
-#X obj 892 39 declare -lib else;
+#X obj 892 39 declare -path else;
 #N canvas 500 141 631 262 plot 0;
 #X obj 79 33 inlet~;
 #X obj 214 33 inlet~;

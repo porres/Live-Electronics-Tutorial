@@ -1,5 +1,5 @@
 #N canvas 411 85 864 469 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 566 300 1;
 #X text 560 434 -1;
 #X text 566 367 0;
@@ -250,7 +250,7 @@ divide it by 2 (or multiply it by 0.5)., f 56;
 #X text 460 51 But in Pd we also add signals by connecting more than
 one audio connection to the same input \, so [+~] may be redundanct.
 See below., f 53;
-#X obj 665 14 declare -lib else;
+#X obj 665 14 declare -path else;
 #X connect 15 0 18 0;
 #X connect 16 0 15 0;
 #X connect 17 0 15 0;

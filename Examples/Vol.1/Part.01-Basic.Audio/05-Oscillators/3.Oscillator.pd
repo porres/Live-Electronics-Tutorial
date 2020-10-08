@@ -1,5 +1,5 @@
 #N canvas 357 106 918 586 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 146 376 cos~;
 #X obj 424 429 cnv 15 448 110 empty empty empty 20 12 0 14 -228856
 -66577 0;
@@ -57,7 +57,7 @@ phase doesn't affect our perception of a pure tone., f 58;
 as the [osc~] object., f 39;
 #X obj 214 423 tabwrite~ wave;
 #X msg 104 240 -300;
-#X obj 731 31 declare -lib else;
+#X obj 731 31 declare -path else;
 #X text 450 176 Try this patch with different initial phases. Note
 that the phasor object also accepts negative frequencies \, which makes
 the phase run in the opposite direction.;

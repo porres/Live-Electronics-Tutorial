@@ -1,5 +1,5 @@
 #N canvas 778 81 557 681 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 125 179 sqrt;
 #X msg 125 156 2;
 #X msg 87 177 2;
@@ -25,7 +25,7 @@
 #X text 279 452 Ratio;
 #X obj 125 235 log 2;
 #X obj 125 264 * 1200;
-#X obj 376 13 declare -lib else;
+#X obj 376 13 declare -path else;
 #X text 76 331 The ELSE library has objects that convert to and back
 from cents \, they are: [ratio2cents] and [cents2ratio]., f 55;
 #X text 68 561 Musical intervals in cents are clearly related to the

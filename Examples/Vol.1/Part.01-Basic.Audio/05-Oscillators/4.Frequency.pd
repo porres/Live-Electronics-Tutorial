@@ -1,5 +1,5 @@
 #N canvas 374 50 947 750 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 406 684 v pi;
 #X obj 92 588 nbx 7 14 -1e+37 1e+37 0 0 hz empty empty 0 -8 0 10 -228856
 -1 -1 0 256;
@@ -94,7 +94,7 @@ velocity in radians per sample;
 #X text 552 549 A more complete and classic formula also tales into
 account "a" as the peak amplitude and "ø" as the initial phase., f
 37;
-#X obj 748 26 declare -lib else;
+#X obj 748 26 declare -path else;
 #X text 32 14 Frequency was presented here as "angular velocity"! One
 measurement unit is hertz \, which is the same as "cycle per second".
 A frequency also determines a period of oscillation \, which is the

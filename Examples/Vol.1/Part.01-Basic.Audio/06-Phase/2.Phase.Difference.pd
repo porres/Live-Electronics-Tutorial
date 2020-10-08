@@ -1,5 +1,5 @@
 #N canvas 479 114 719 406 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 454 29 1;
 #X text 448 163 -1;
 #X text 454 96 0;
@@ -82,7 +82,7 @@
 #X obj 245 256 tabwrite~ wave-2;
 #X obj 101 253 tabwrite~ wave-1;
 #X obj 420 172 setdsp~ 1;
-#X obj 351 88 declare -lib else;
+#X obj 351 88 declare -path else;
 #X obj 155 45 r in-phase;
 #X obj 61 45 r opposition;
 #X connect 0 0 10 0;

@@ -1,5 +1,5 @@
 #N canvas 615 76 548 670 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 135 340 *~;
 #X obj 242 358 * -1;
 #X obj 209 382 clip~ -1 1;
@@ -24,7 +24,7 @@ clip value.;
 #X text 66 63 The native [clip~] object just clips the input signal
 into a given range \, so we can use it to generate clipping distortion.
 ;
-#X obj 325 26 declare -lib else;
+#X obj 325 26 declare -path else;
 #X obj 134 185 play.file~ bubul.wav 1 1;
 #X connect 0 0 2 0;
 #X connect 1 0 2 1;

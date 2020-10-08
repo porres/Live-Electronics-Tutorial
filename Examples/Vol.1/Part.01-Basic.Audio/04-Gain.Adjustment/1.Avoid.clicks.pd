@@ -1,5 +1,5 @@
 #N canvas 430 83 939 513 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 540 259 *~;
 #X obj 558 232 line~;
 #X msg 558 209 \$1 10;
@@ -33,7 +33,7 @@
 1;
 #X obj 833 282 f2s~ 500;
 #X text 741 282 abbreviation;
-#X obj 727 26 declare -lib else;
+#X obj 727 26 declare -path else;
 #X text 17 57 Below \, we use use [*~] to turn audio on (by multiplying
 by "1") and turn it off (or "mute" by multiplying by "0"). But note
 how this generates discontinuities in the signal that do not sound
