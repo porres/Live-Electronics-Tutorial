@@ -1,5 +1,5 @@
 #N canvas 479 110 942 549 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 587 391 * 1000;
 #X obj 587 432 osc~;
 #X text 784 431 KHz;
@@ -33,7 +33,7 @@ number values to try it out., f 63;
 #X text 492 339 Kilohertz =>;
 #X obj 587 307 trigger float bang;
 #X obj 710 361 nyquist~ -khz;
-#X obj 774 24 declare -lib else;
+#X obj 774 24 declare -path else;
 #X obj 77 251 pic 0 foldover.gif empty empty 0 0;
 #X text 467 59 If the frequency starts passing over the Nyquist \,
 it folds back and starts descending. For example \, in a Nyquist frequency

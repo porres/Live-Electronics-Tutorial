@@ -1,5 +1,5 @@
 #N canvas 611 61 760 637 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 409 40 osc~ 100;
 #X obj 451 77 graph~ 444 8;
 #X obj 409 468 graph~ 444 8;
@@ -62,7 +62,7 @@ upsampling is to interpolate between two sample values. The [downsample~]
 object also performs a simple linear interpolation. Test it below and
 check the difference., f 51;
 #X text 636 324 Interpolated;
-#X obj 600 16 declare -lib else;
+#X obj 600 16 declare -path else;
 #X obj 102 228 play.file~ bubul.wav 1 1;
 #X text 33 490 The subpatch below shows how to implement downsampling
 with interpolation with just native Pd Vanilla objects, f 50;

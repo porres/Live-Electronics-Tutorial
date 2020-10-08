@@ -1,5 +1,5 @@
 #N canvas 355 43 960 562 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 52 388 graph~ 230 48;
 #X obj 150 264 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
@@ -37,7 +37,7 @@ a Bit Crushing effect is used in conjunction with decimation and vice
 versa.;
 #X text 661 167 crush (0-1);
 #X text 721 200 decimate (0-1);
-#X obj 792 24 declare -lib else;
+#X obj 792 24 declare -path else;
 #X text 21 29 With a simple rounding process \, we can simulate a bit
 depth reduction. This adds noise and reduces the dynamic range and
 is known as a "bit-crusher" effect \, used as a type of distortion.

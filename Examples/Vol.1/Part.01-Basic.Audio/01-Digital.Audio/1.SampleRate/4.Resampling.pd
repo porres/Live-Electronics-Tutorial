@@ -1,5 +1,5 @@
 #N canvas 546 114 557 482 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 196 278 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 440 256;
 #N canvas 435 46 937 528 Resampling 0;
@@ -72,7 +72,7 @@ locally change the sample rate - performing both "downsampling" and
 "upsampling". In fact \, the [inlet~] and [outlet~] objects are actually
 the objects that perform the resampling.;
 #X obj 196 251 initmess 440;
-#X obj 309 10 declare -lib else;
+#X obj 309 10 declare -path else;
 #X text 42 126 This also makes sense inside a subpatch \, to avoid
 conflicts again with [adc~] and [dac~] in the same way as with the
 block size \, because [adc~] and [dac~] need to have the same sample
