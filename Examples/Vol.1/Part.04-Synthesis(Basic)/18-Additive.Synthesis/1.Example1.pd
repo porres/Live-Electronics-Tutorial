@@ -1,5 +1,5 @@
 #N canvas 412 64 857 509 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 502 303 mtof;
 #X obj 502 330 trigger float bang;
 #X obj 502 278 nbx 2 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
@@ -302,7 +302,7 @@ perception of the resulting sound., f 49;
 1;
 #X obj 502 219 tempo 30 100;
 #X obj 502 248 rand.i 36 60;
-#X obj 695 27 declare -lib else;
+#X obj 695 27 declare -path else;
 #X text 24 17 In this example we have eight oscillators with independent
 controls for frequency \, amplitude and phase. The fundamental frequency
 is given from random pitches and each partial's frequency is obtained

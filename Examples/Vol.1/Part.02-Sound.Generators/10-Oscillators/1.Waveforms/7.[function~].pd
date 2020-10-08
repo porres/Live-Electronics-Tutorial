@@ -1,5 +1,5 @@
 #N canvas 635 203 941 657 12;
-#X declare -lib else;
+#X declare -path else;
 #X floatatom 55 267 5 0 0 0 - - -;
 #X obj 55 217 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
@@ -10,7 +10,7 @@
 #X obj 181 187 initmess 0 0.25 1 0.15 1 0.35 0 0.05 -1 0.1 -1 0.1 0
 , f 31;
 #X text 396 270 <= [function];
-#X obj 316 46 declare -lib else;
+#X obj 316 46 declare -path else;
 #X obj 181 232 function 200 100 empty empty -1 1 220 220 220 50 50
 50 0 0 0 0 0 0.25 1 0.15 1 0.35 0 0.05 -1 0.1 -1 0.1 0;
 #X obj 572 201 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10

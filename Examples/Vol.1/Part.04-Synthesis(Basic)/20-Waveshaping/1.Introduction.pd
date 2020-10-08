@@ -1,5 +1,5 @@
 #N canvas 416 87 857 635 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 101 246 nbx 5 19 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14
 -228856 -1 -1 0 256;
 #X obj 104 220 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
@@ -104,7 +104,7 @@ to read the table with [tabread4~].;
 #X text 657 73 Like Ring Modulation \, Waveshaping can be used outside
 the context of synthesis as an effects processor. It's widely used
 as a distortion unit \, for example., f 23;
-#X obj 688 31 declare -lib else;
+#X obj 688 31 declare -path else;
 #X text 18 12 The Waveshaping technique is needs a transfer function
 for a signal to go through. We can use a table in Pd for that (see
 below). This way \, the audio input represents the indices and (horizontal

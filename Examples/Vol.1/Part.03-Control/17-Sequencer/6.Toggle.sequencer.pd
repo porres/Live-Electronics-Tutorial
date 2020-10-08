@@ -1,5 +1,5 @@
 #N canvas 405 110 745 493 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 87 38 tgl 30 0 empty empty empty 17 7 0 10 -228856 -1 -1 0 1
 ;
 #X text 218 46 TEMPO;
@@ -274,7 +274,7 @@
 implement a note sequencer that is controlled by toggles. This way
 you can generate melodic rythms. The notes sequence is now controlled
 by sliders. Open the subpatch below for more info., f 61;
-#X obj 555 43 declare -lib else;
+#X obj 555 43 declare -path else;
 #X connect 0 0 3 0;
 #X connect 0 0 25 0;
 #X connect 2 0 25 1;

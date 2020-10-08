@@ -1,5 +1,5 @@
 #N canvas 368 71 950 616 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 165 210 vcf~ 10;
 #X text 256 121 LFO;
 #X text 167 177 Hz;
@@ -44,7 +44,7 @@ to 2500 hz., f 56;
 #X obj 700 447 rescale~ 500 2500, f 9;
 #X obj 694 155 rescale~ 200 5000, f 9;
 #X obj 694 128 osc~ 0.17;
-#X obj 770 44 declare -lib else;
+#X obj 770 44 declare -path else;
 #X text 533 45 The [svfilter~] offers different kind of filters \,
 test them., f 22;
 #X text 59 321 Next we have other examples with other filter objects

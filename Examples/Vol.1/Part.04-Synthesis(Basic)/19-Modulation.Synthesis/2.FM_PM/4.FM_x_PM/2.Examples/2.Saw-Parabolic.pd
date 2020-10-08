@@ -1,5 +1,5 @@
 #N canvas 333 37 893 572 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 546 365 *~;
 #X obj 170 137 nbx 5 14 -1e+37 1e+37 0 0 empty mod empty 0 -8 0 10
 -228856 -1 -1 1 256;
@@ -73,7 +73,7 @@
 FM modulated by sawtooth. To adjust the index for the FM we also multiply
 by the modulator frequency. But we also need to multiply it by a factor
 of four.;
-#X obj 699 18 declare -lib else;
+#X obj 699 18 declare -path else;
 #X text 481 52 Rather than using an oscillator for the PM \, we just
 turn the saw wave into a parabola by raising to the power of two. You
 can invert the polarity of the sawtooth with the toggle. Test it.,

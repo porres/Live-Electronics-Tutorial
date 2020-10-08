@@ -1,5 +1,5 @@
 #N canvas 319 23 931 608 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 598 421 cnv 15 200 140 empty empty empty 20 12 0 14 -162474
 -66577 0;
 #X obj 363 252 cnv 15 198 138 empty empty empty 20 12 0 14 -228856
@@ -323,7 +323,7 @@ frequency of 200 hz).;
 #X text 478 141 Check the patch below how both outputs are equivalent
 and see the graphs \, where we have the output of both [phasor~] objects
 \, the sum \, and the wrapped result., f 60;
-#X obj 712 21 declare -lib else;
+#X obj 712 21 declare -path else;
 #X text 45 113 A [phasor~] outputs values between 0 and 1 \, by summing
 two [phasor~] objects we can go from 0 to 2 \, but the range from 1
 to 2 is the same thing as 0 to 1 \, because phase is cyclical. We can

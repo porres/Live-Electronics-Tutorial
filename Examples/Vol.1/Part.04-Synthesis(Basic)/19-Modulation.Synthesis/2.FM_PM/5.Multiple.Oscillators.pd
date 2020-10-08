@@ -1,5 +1,5 @@
 #N canvas 453 52 847 624 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 156 238 mtof;
 #X floatatom 156 262 0 0 0 0 - - -;
 #X obj 188 301 / 2.05;
@@ -64,7 +64,7 @@ have two chains in paralel \, each containing 3 oscillators in series.
 Note we're not only using sine wave oscillators., f 43;
 #X obj 156 215 rand.i 35 60;
 #X obj 656 185 rand.i 45 60;
-#X obj 636 22 declare -lib else;
+#X obj 636 22 declare -path else;
 #X text 36 75 The example below contains 4 oscillators in series. Note
 they have slightly inharmonic relationships \, which generates a rather
 harmonic result but with beatings. The same patch is implemented in

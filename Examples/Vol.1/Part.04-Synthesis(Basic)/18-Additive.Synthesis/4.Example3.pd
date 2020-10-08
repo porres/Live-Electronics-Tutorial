@@ -1,5 +1,5 @@
 #N canvas 691 224 608 453 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 167 316 *~;
 #X obj 62 196 mtof;
 #X obj 62 233 trigger float bang;
@@ -170,7 +170,7 @@ a pair of oscilatores., f 36;
 #X text 209 250 ADSR envelope;
 #X obj 185 274 envgen~ 400 1 100 0.7 2000 0.7 500 0;
 #X obj 62 133 rand.i 36 73;
-#X obj 403 42 declare -lib else;
+#X obj 403 42 declare -path else;
 #X text 175 84 Here's another additive synthesis example. This patch
 receives a fundamental frequency \, from which an inharmonic series
 of 8 partials is generated. For each partial \, we have a pair of oscillators

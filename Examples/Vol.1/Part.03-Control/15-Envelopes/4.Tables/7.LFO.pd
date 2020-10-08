@@ -1,5 +1,5 @@
 #N canvas 310 71 1009 532 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 684 131 hsl 128 15 0.1 0.9 0 0 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
 #X floatatom 681 158 5 0 0 0 - - -;
@@ -29,7 +29,7 @@
 #X text 521 74 Pulse signals are quite useful as envelopes. Here we
 also use [glide2~] as a smoothener for generating attack and release
 ramps.;
-#X obj 783 36 declare -lib else;
+#X obj 783 36 declare -path else;
 #X text 33 60 So yeah \, why not use actual oscillators as LFOs and
 treat them as envelopes? Here are a few examples. First \, [vsaw~]
 is used for an attack release envelope (below \, the [rescale~] object

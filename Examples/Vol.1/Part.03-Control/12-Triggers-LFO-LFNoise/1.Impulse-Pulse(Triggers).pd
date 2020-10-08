@@ -1,5 +1,5 @@
 #N canvas 334 97 953 738 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 577 405 out~;
 #X obj 577 371 zerocross~;
 #X obj 224 235 display~;
@@ -75,7 +75,7 @@ The [rand.i~] object is trigered at positive to negative or negative
 to positive transitions \, so you can use either an impulse or a gate
 to trigger it.;
 #X obj 365 167 setdsp~;
-#X obj 779 23 declare -lib else;
+#X obj 779 23 declare -path else;
 #X obj 384 545 randpulse2 1;
 #X obj 278 545 randpulse 1;
 #X floatatom 278 575 8 0 0 0 - - -;

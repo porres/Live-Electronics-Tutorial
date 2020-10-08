@@ -1,5 +1,5 @@
 #N canvas 373 46 908 589 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 267 243 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
 #X obj 112 198 s~ \$0-sample;
@@ -49,7 +49,7 @@ bypass.;
 #X text 24 23 A tremolo effect is basically a low frequency amplitude
 modulation. What's new is a "depth" parameter that goes from 0 to 1
 and controls how much of the modulation we have., f 56;
-#X obj 711 20 declare -lib else;
+#X obj 711 20 declare -path else;
 #X obj 112 156 play.file~ violin.wav 1 1, f 26;
 #X text 24 87 Hence \, at "0" we have no tremolo and "1" gives us a
 full tremolo. This is done with a simple rescaling of the modulating

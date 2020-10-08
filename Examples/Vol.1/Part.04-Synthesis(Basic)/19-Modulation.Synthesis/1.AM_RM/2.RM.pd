@@ -1,5 +1,5 @@
 #N canvas 606 71 733 657 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 293 368 *~;
 #X obj 324 168 nbx 5 14 -1e+37 1e+37 0 0 empty Hz2 empty 0 -8 0 10
 -228856 -1 -1 0 256;
@@ -31,7 +31,7 @@ signal is an oscillator., f 44;
 #X text 27 413 -1;
 #X text 33 345 0;
 #X text 32 277 1;
-#X obj 562 21 declare -lib else;
+#X obj 562 21 declare -path else;
 #X connect 0 0 7 0;
 #X connect 1 0 3 0;
 #X connect 2 0 5 0;

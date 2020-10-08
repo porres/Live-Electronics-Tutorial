@@ -1,5 +1,5 @@
 #N canvas 433 115 869 401 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 37 270 vsl 16 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
 #X obj 90 243 *~;
@@ -25,7 +25,7 @@ of 450 ms - the total duration of the envelope is 500 ms.;
 #X text 57 262 1;
 #X obj 577 252 s2f~;
 #X obj 37 236 s2f~;
-#X obj 682 23 declare -lib else;
+#X obj 682 23 declare -path else;
 #X text 489 62 The [decay2~] object from ELSE is a variant of [decay~]
 that has an attack stage \, which is the first argument. But the total
 duration still depends on the decay time., f 47;

@@ -1,5 +1,5 @@
 #N canvas 366 50 971 591 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 762 223 +~;
 #X obj 714 188 phasor~;
 #X obj 762 252 cos~;
@@ -69,7 +69,7 @@ see three equivalent ways to sum frequencies and phase., f 59;
 #X obj 591 175 f2s~ 10;
 #X obj 827 162 f2s~ 10;
 #X obj 692 408 f2s~ 10;
-#X obj 774 13 declare -lib else;
+#X obj 774 13 declare -path else;
 #X text 23 49 The [cosine~]'s right inlet is a phase input \, so we
 can connect a [phasor~] into it. The frequency of the [phasor~] will
 then be summed to the [cosine~]'s - which is 0 hz below \, so in practice

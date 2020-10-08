@@ -1,5 +1,5 @@
 #N canvas 373 49 823 615 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 467 413 *~;
 #X obj 197 153 nbx 5 14 -1e+37 1e+37 0 0 empty moduladora empty 0 -8
 0 10 -228856 -1 -1 0 256;
@@ -49,7 +49,7 @@
 5;
 #X text 44 58 For a triangular wave as the frequency modulation signal
 we need a parabolic wave as the PM signal for equivalency., f 38;
-#X obj 62 21 declare -lib else;
+#X obj 62 21 declare -path else;
 #X text 365 38 Instead of mathematically deriving a parabola from the
 input \, we're now using the [parabolic~] oscillator from ELSE. We
 need an initial phase adjustment besides an index adjustment. The index

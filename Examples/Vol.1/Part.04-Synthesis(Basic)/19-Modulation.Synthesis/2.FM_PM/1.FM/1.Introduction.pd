@@ -1,5 +1,5 @@
 #N canvas 375 41 914 436 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 600 198 +~;
 #X obj 542 97 nbx 4 14 -1e+37 1e+37 0 1 empty portadora empty 0 -8
 0 10 -228856 -1 -1 400 256;
@@ -20,7 +20,7 @@
 #X text 611 227 <= Frequency Modulated (FM) signal;
 #X text 504 262 oscillator =>;
 #X obj 671 137 f2s~ 10;
-#X obj 750 41 declare -lib else;
+#X obj 750 41 declare -path else;
 #X text 27 26 Generally speaking \, modulating a signal means applying
 any change to it. But in the context of computer music and synthesis
 \, we're talking about a modulating signal that controls a parameter

@@ -1,5 +1,5 @@
 #N canvas 299 75 913 469 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 549 82 cnv 15 298 138 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -697,7 +697,7 @@
 #X connect 2 0 1 0;
 #X restore 88 324 pd plot;
 #X obj 74 359 out~;
-#X obj 708 38 declare -lib else;
+#X obj 708 38 declare -path else;
 #X text 56 29 In this example we have phase modulation with a pair
 of oscillators using the [pmosc~] object. In the same idea as the last
 example \, we take the output and feed it back to modulate the phase

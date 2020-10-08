@@ -1,5 +1,5 @@
 #N canvas 485 141 936 478 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 226 122 pinknoise~;
 #X obj 226 162 out~;
 #X obj 191 371 out~;
@@ -19,7 +19,7 @@
 #X obj 702 366 lincong~;
 #X obj 702 390 quad~;
 #X obj 702 414 logistic~;
-#X obj 754 20 declare -lib else;
+#X obj 754 20 declare -path else;
 #X obj 743 172 out~;
 #X obj 743 139 perlin~ 666;
 #X text 25 27 All these other than white noise generators are from

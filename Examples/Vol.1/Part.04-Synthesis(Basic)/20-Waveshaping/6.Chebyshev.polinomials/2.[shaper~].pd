@@ -1,5 +1,5 @@
 #N canvas 546 46 489 632 12;
-#X declare -lib else;
+#X declare -path else;
 #X floatatom 127 236 5 0 0 0 - - -;
 #X obj 127 290 *~;
 #X obj 209 246 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -18,7 +18,7 @@ other waveforms., f 58;
 Again \, the example reinforces the fact that the input amplitude has
 an impact in the result \, and this is a strong characteristic of waveshaping
 as said before., f 58;
-#X obj 302 14 declare -lib else;
+#X obj 302 14 declare -path else;
 #X connect 0 0 3 0;
 #X connect 1 0 6 0;
 #X connect 2 0 8 0;

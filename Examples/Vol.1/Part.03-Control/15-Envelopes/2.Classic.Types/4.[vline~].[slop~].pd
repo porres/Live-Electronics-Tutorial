@@ -1,9 +1,9 @@
 #N canvas 645 80 618 579 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 119 386 *~;
 #X obj 59 308 osc~ 440;
 #X obj 119 420 out~;
-#X obj 398 107 declare -lib else;
+#X obj 398 107 declare -path else;
 #X obj 137 275 vline~;
 #X text 100 21 For those looking for a pure vanilla exponential envelope
 \, there's the possibility to use [slop~]. For something like a "AR"

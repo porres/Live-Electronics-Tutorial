@@ -1,5 +1,5 @@
 #N canvas 378 46 938 548 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 198 325 tempo 60 50 -on;
 #X obj 658 291 out~;
 #X obj 661 170 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -82,7 +82,7 @@ see band limited versions of them in the next section., f 41;
 #X restore 441 449 pd vanilla trick;
 #X text 420 402 Here's a vanilla trick to force hard sync, f 22;
 #X obj 102 389 s2f~;
-#X obj 728 25 declare -lib else;
+#X obj 728 25 declare -path else;
 #X text 29 98 If the slave's frequency is lower than the master's \,
 then it is forced to restart the cycle before it finishes it. Whereas
 if the slave's frequency is higher \, then it repeats at least a portion

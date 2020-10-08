@@ -1,5 +1,5 @@
 #N canvas 427 62 866 521 12;
-#X declare -lib else;
+#X declare -path else;
 #X floatatom 231 178 5 0 0 0 - - -;
 #X obj 231 212 osc~ 40;
 #X obj 231 258 *~;
@@ -103,7 +103,7 @@
 can use the phase input of [wavetable~] as a waveshaper., f 49;
 #X text 61 82 This example has more didactic purposes than practical
 ones. Compare the result of both outputs below., f 49;
-#X obj 580 29 declare -lib else;
+#X obj 580 29 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 17 0;

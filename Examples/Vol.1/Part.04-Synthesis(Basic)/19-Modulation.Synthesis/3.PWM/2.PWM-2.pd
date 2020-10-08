@@ -1,5 +1,5 @@
 #N canvas 448 85 806 522 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 546 183 osc~;
 #X obj 480 185 nbx 4 14 -1e+37 1e+37 0 1 empty \$0-carrier empty 0
 -8 0 10 -228856 -1 -1 700 256;
@@ -679,7 +679,7 @@ f 49;
 partials are created \, spaced by a frequency band equal to the modulation
 frequency. And the higher the index \, the more partials are created.
 , f 51;
-#X obj 637 17 declare -lib else;
+#X obj 637 17 declare -path else;
 #X connect 0 0 13 0;
 #X connect 1 0 33 0;
 #X connect 2 0 0 0;

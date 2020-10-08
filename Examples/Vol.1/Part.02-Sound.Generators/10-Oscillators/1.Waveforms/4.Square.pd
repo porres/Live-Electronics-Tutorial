@@ -1,5 +1,5 @@
 #N canvas 444 109 907 654 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 59 216 nbx 5 14 1 100 0 1 empty empty empty 0 -8 0 10 -228856
 -1 -1 11 256;
 #X obj 163 441 tabosc4~ square;
@@ -103,7 +103,7 @@ to one \, and a width of 1 makes only the last sample equal to -1!
 #X restore 479 308 pd sequencer;
 #X obj 479 285 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
 1;
-#X obj 672 24 declare -lib else;
+#X obj 672 24 declare -path else;
 #X text 25 63 And yet again \, we can generate square waves with a
 sum of partials. See how it's done in [pd square]. As before \, enter
 the number of harmonics into the number box. Not suprisingly \, a perfect

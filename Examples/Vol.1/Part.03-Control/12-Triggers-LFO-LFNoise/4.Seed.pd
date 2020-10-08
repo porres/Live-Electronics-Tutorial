@@ -1,5 +1,5 @@
 #N canvas 578 23 536 728 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 262 486 random 100;
 #X obj 262 442 bng 16 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
@@ -51,7 +51,7 @@ low frequency noise generators. We could also use [gray~] \, from ELSE
 #X obj 395 639 rand.f~ 20 50;
 #X msg 180 602 seed 500;
 #X msg 395 601 seed 500;
-#X obj 343 19 declare -lib else;
+#X obj 343 19 declare -path else;
 #X text 55 391 The native objects [noise~] and [random] also take a
 seed value via a seed message:;
 #X connect 0 0 4 0;

@@ -1,7 +1,7 @@
 #N struct 1082-slot float x float y float slotsize float color float
 width float bordercolor;
 #N canvas 466 110 634 469 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 104 41 tgl 30 0 empty metro empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X text 169 24 TEMPO;
@@ -12,7 +12,7 @@ width float bordercolor;
 #X obj 104 141 count 15;
 #X obj 104 98 tempo 60 -div 4;
 #X msg 42 109 set 0;
-#X obj 464 32 declare -lib else;
+#X obj 464 32 declare -path else;
 #X obj 56 336 play.file~ 1 dholak.aif, f 12;
 #X obj 152 337 play.file~ 1 bagal.aif, f 12;
 #X obj 104 194 drum.seq 2 16 20 0 0 0 0 0 0 0 0 0 0 0 0;

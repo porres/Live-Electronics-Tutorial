@@ -1,5 +1,5 @@
 #N canvas 476 60 769 556 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 132 430 /~ 16;
 #X obj 132 460 *~;
 #X obj 243 420 decay2~ 100 6000;
@@ -202,7 +202,7 @@ object in this case., f 32;
 #X text 501 184 Each instance of osc generates a random frequency when
 receiving a bang. Open the abstraction for more details., f 32;
 #X obj 565 414 clone 16 osc 16;
-#X obj 595 25 declare -lib else;
+#X obj 595 25 declare -path else;
 #X text 29 166 The problem is that this process is limited \, as we
 cannot change the initial phase of the sine wave components and we
 can only have harmonic partials. Like in the last example \, we need

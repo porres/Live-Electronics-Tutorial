@@ -1,5 +1,5 @@
 #N canvas 675 47 505 634 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 213 520 *~;
 #X obj 171 328 mtof;
 #X obj 231 327 / 127;
@@ -12,7 +12,7 @@ and emulates the behaviour of classic monophonic synthesizers.;
 \, any new note is played \, but when you release it \, it plays back
 the last pressed note. Check the help file for more information.;
 #X obj 213 552 out~;
-#X obj 322 22 declare -lib else;
+#X obj 322 22 declare -path else;
 #X obj 171 173 keyboard 17 80 2 3 1;
 #X obj 171 424 glide~;
 #X obj 231 485 adsr~ 200 50 0.75 250;

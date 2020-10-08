@@ -1,5 +1,5 @@
 #N canvas 410 23 890 632 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 605 225 *~;
 #X obj 728 231 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
 -1 -1 0 1;
@@ -42,7 +42,7 @@ Decay stage after the attack. Here's how it works on [envgen~].;
 #X obj 260 179 s2f~;
 #X obj 280 465 s2f~;
 #X obj 728 203 s2f~;
-#X obj 654 22 declare -lib else;
+#X obj 654 22 declare -path else;
 #X obj 180 402 envgen~ 50 1 50 0.5 200 0 -suspoint 2 -exp -0.25 -0.5
 -1 -0.5, f 37;
 #X text 66 336 Exponential and with a "gate" input:, f 22;

@@ -1,5 +1,5 @@
 #N canvas 588 29 564 456 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 271 327 vsl 18 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 0 1;
 #X obj 271 195 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
@@ -7,7 +7,7 @@
 #X msg 271 220 500 \$1;
 #X text 318 219 duration \, target;
 #X obj 271 291 s2f~;
-#X obj 356 16 declare -lib else;
+#X obj 356 16 declare -path else;
 #X obj 396 334 setdsp~;
 #X obj 271 252 envgen~ -exp 4;
 #X obj 124 252 osc~ 440;

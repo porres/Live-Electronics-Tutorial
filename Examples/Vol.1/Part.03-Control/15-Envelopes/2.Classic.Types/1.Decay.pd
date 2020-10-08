@@ -1,5 +1,5 @@
 #N canvas 288 96 844 463 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 159 159 impseq~;
 #X obj 90 192 brown~;
 #X obj 77 296 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
@@ -32,7 +32,7 @@
 #X obj 77 268 s2f~;
 #X obj 363 290 s2f~;
 #X obj 623 292 s2f~;
-#X obj 670 41 declare -lib else;
+#X obj 670 41 declare -path else;
 #X msg 691 231 \$1 2000 0;
 #X obj 691 259 envgen~ -exp 4;
 #X obj 360 233 brown~;

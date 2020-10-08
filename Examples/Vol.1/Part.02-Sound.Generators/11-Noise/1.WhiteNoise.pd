@@ -1,5 +1,5 @@
 #N canvas 438 58 917 537 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 187 111 noise~;
 #X obj 187 142 out~;
 #X obj 154 423 out~;
@@ -31,7 +31,7 @@ White noise has energy equally distributed over the whole spectral
 range (from 0 Hz to Nyquist). Calling it white is an analogy to white
 light \, which is a combination of lights of different wavelengths
 in the visible spectrum.;
-#X obj 718 22 declare -lib else;
+#X obj 718 22 declare -path else;
 #X obj 531 220 meter~;
 #X obj 680 197 expr~ if($v1 > 0 \, 1 \, -1);
 #X obj 680 170 noise~;

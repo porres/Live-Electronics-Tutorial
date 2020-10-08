@@ -1,5 +1,5 @@
 #N canvas 574 57 831 529 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 58 220 nbx 5 14 1 3000 0 1 empty empty empty 0 -8 0 10 -228856
 -1 -1 26 256;
 #X obj 189 180 cnv 15 198 138 empty empty empty 20 12 0 14 -228856
@@ -94,7 +94,7 @@ polarity;
 below. Realize that \, in order to generate a perfect sawtooth \, you
 need an infinite harmonic series. Open the [pd saw2] subpatch for more
 details., f 61;
-#X obj 616 35 declare -lib else;
+#X obj 616 35 declare -path else;
 #X text 498 81 The ELSE library also provides a [saw2~] variant waveform
 \, but "perfect" (with infinite harmonics). Check its help file for
 more details., f 41;

@@ -1,5 +1,5 @@
 #N canvas 406 23 933 671 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 133 357 +~;
 #X obj 81 319 phasor~;
 #X obj 133 388 cos~;
@@ -190,7 +190,7 @@ can just insert the oscillator signal into the frequency input as below.
 We then have the same structure for an equivalent PM patch and we can
 consider these cases as a straightforward waveshaping patch!, f 54
 ;
-#X obj 695 22 declare -lib else;
+#X obj 695 22 declare -path else;
 #X text 43 105 Below to the right we have the same thing. We just get
 rid of the modulation index \, because multiplying by 1 doesn't do
 anything! It's a different interpretation \, where the oscillator waveform

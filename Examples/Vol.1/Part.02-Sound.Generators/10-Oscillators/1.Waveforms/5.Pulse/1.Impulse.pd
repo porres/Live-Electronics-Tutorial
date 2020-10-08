@@ -1,5 +1,5 @@
 #N canvas 438 58 837 582 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 500 157 impulse~ 300;
 #X text 558 134 Hz;
 #X obj 275 183 nbx 5 14 1 100 0 1 empty empty empty 0 -8 0 10 -228856
@@ -68,7 +68,7 @@ of 1 \, and we can use bangs to generate it., f 73;
 #X text 425 58 The [impulse~] (or [imp~] for short) object from ELSE
 is an impulse oscillator that generated a single sample with a value
 of 1 at the beggining of each period., f 49;
-#X obj 636 15 declare -lib else;
+#X obj 636 15 declare -path else;
 #X obj 58 289 tabosc4~ impulse;
 #X connect 0 0 9 0;
 #X connect 0 0 10 0;

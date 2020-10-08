@@ -1,5 +1,5 @@
 #N canvas 404 70 861 624 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 544 278 +~;
 #X obj 503 191 nbx 4 14 -1e+37 1e+37 0 1 empty carrier empty 0 -8 0
 10 -228856 -1 -1 200 256;
@@ -36,7 +36,7 @@
 #X text 593 73 Harmonic;
 #X text 119 506 Increase the modulation index and see the creation
 of partials above, f 40;
-#X obj 684 31 declare -lib else;
+#X obj 684 31 declare -path else;
 #X text 38 30 Again we have the same structure \, but now using [sine~]
 instead of [osc~]. Besides a vibrato example \, we have proper FM examples.
 Similarly to Amplitude Modulation \, side band partials are created

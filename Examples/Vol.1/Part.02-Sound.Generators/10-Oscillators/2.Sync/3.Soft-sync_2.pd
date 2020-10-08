@@ -1,5 +1,5 @@
 #N canvas 671 50 496 680 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 54 350 Slave;
 #X obj 145 410 osc~;
 #X text 224 302 master;
@@ -37,7 +37,7 @@ master's frequency. This way \, at every period transition \, we have
 a sign reversal from 1 to -1 \, which we use to mulitpy to the slave's
 frequency., f 59;
 #X text 218 355 <== square with half the frequency, f 18;
-#X obj 292 26 declare -lib else;
+#X obj 292 26 declare -path else;
 #X text 29 67 In this example \, we have s Soft Sync patch where the
 direction of the oscillator reverses instead of being resetted. This
 is to avoid a harsh clicks that happen when there's a big amplitude

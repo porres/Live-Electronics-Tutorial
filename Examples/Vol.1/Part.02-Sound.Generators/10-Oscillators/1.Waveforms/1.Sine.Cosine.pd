@@ -1,5 +1,5 @@
 #N canvas 548 42 490 683 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 128 221 sin~;
 #X obj 163 398 osc~ 440;
 #X obj 128 184 phasor~ 440;
@@ -25,7 +25,7 @@ have a cosine wave oscillator. We can implement these oscillators with
 #X text 46 510 The ELSE library has Sine and Cosine wave oscillators
 \, both of wich allows phase reset (as with [osc~] and [phasor~] \,
 but they also allow phase modulation on the right inlet.;
-#X obj 284 19 declare -lib else;
+#X obj 284 19 declare -path else;
 #X connect 0 0 3 0;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;

@@ -1,5 +1,5 @@
 #N canvas 415 38 790 567 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 444 362 *~;
 #X obj 218 125 nbx 5 14 -1e+37 1e+37 0 0 empty mod empty 0 -8 0 10
 -228856 -1 -1 1 256;
@@ -49,7 +49,7 @@
 #X text 54 33 Finally \, a square wave as the Frequency Modulation
 signal needs a triangular wave as the phase signal., f 41;
 #X obj 89 346 tri~ 0 0.75;
-#X obj 559 20 declare -lib else;
+#X obj 559 20 declare -path else;
 #X text 402 56 We also need a phase adjustment for the triangular wave.
 About the index \, it is also the same principle as the last couple
 of previous examples., f 41;

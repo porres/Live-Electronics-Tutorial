@@ -1,5 +1,5 @@
 #N canvas 336 86 958 499 12;
-#X declare -lib else;
+#X declare -path else;
 #X text 210 225 LFO;
 #X text 586 188 LFO;
 #X obj 776 241 hsl 128 15 50 400 0 0 empty sl empty -2 -8 0 10 -228856
@@ -35,7 +35,7 @@ the trigger rate \, this is what determines different patterns., f
 74;
 #X text 803 200 Trigger;
 #X obj 740 384 plate.rev~ 50 0.6 0.25 0.8 0.5, f 16;
-#X obj 737 29 declare -lib else;
+#X obj 737 29 declare -path else;
 #X obj 749 434 out~;
 #X text 33 23 The native [samphold~] object is a "sample and hold"
 unit designed to be triggered by [phasor~]. In fact \, it is triggered

@@ -1,5 +1,5 @@
 #N canvas 463 94 828 448 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 89 242 cnv 15 298 138 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #N canvas 0 22 478 328 (subpatch) 0;
@@ -594,7 +594,7 @@ in FM it's quite higher., f 55;
 #X msg 679 169 \; carrier 500 \; mod 100 \; index 0.1;
 #X text 684 66 Inharmonic;
 #X text 679 152 Harmonic;
-#X obj 623 13 declare -lib else;
+#X obj 623 13 declare -path else;
 #X obj 459 313 out~;
 #X text 37 109 The index is the deviation amplitude \, in the context
 of phase \, the 0 to 1 range is a full cycloe (360 degrees). So \,
