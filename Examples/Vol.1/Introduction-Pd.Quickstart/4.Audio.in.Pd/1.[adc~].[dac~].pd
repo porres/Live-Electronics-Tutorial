@@ -1,5 +1,5 @@
 #N canvas 362 64 948 509 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 158 101 adc~;
 #X obj 158 133 dac~;
 #X obj 321 420 adc~ 1 3 5;
@@ -24,7 +24,7 @@ with the arguments., f 56;
 #X text 195 135 audio output;
 #X obj 807 247 setdsp~;
 #X text 712 275 [setdsp~] =>;
-#X obj 768 18 declare -lib else;
+#X obj 768 18 declare -path else;
 #X text 490 376 Note that the [out~] object automatically turns the
 DSP On when dragging the slider \, and that it has a toggle for turning
 the DSP On and Off. The [setdsp~] object from ELSE may also turn the

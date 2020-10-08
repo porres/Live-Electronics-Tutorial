@@ -1,5 +1,5 @@
 #N canvas 478 123 908 484 12;
-#X declare -lib else;
+#X declare -path else;
 #X obj 199 262 +~;
 #X obj 242 264 +~ 1;
 #X obj 199 214 sig~ 0;
@@ -19,7 +19,7 @@ the computation of that audio chain is turned off., f 56;
 signal connected to [send~] arrives at [receive~] with a delay of one
 block \, preventing an infinite loop from happening., f 49;
 #X text 732 167 <= loop/feedback with one block delay, f 20;
-#X obj 727 22 declare -lib else;
+#X obj 727 22 declare -path else;
 #X text 48 348 To avoid an infinite loop \, we need to perform a feedback
 with a delay of one block of audio. This can be done with native objects
 such as: [send~] / [receive~] \, [tabsend~] / [tabreceive~] \, [throw~]

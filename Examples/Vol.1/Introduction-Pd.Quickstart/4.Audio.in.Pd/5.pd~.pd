@@ -1,6 +1,6 @@
 #N canvas 672 59 528 691 12;
-#X declare -lib else;
-#X obj 346 19 declare -lib else;
+#X declare -path else;
+#X obj 346 19 declare -path else;
 #X obj 347 137 meter;
 #X floatatom 347 176 5 0 0 0 - - -;
 #X msg 129 315 pd~ start patch.pd;
