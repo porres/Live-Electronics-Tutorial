@@ -19,7 +19,7 @@
 #X obj 28 269 tgl 16 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 178 286 initmess 44100;
-#N canvas 669 119 544 609 vanila 1;
+#N canvas 669 119 544 609 vanila 0;
 #X obj 110 242 vsnapshot~;
 #X obj 110 294 vline~;
 #X obj 151 341 graph~ 441 20;
