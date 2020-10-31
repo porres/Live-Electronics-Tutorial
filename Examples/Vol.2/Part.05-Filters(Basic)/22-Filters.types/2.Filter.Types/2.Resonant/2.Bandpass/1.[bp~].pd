@@ -1,12 +1,12 @@
-#N canvas 370 106 925 477 12;
+#N canvas 510 97 925 477 12;
 #X declare -path else;
 #X obj 711 86 nbx 5 14 1 1e+37 0 0 \$0-q q-set empty 0 -8 0 10 -228856
--1 -1 16 256;
+-1 -1 10 256;
 #X obj 646 86 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq freq-set empty 0 -8
-0 10 -228856 -1 -1 2025.5 256;
+0 10 -228856 -1 -1 3000 256;
 #X obj 581 73 noise~;
 #X obj 649 61 hsl 200 15 100 10000 1 0 empty freq-slider-set empty
--2 -8 0 10 -228856 -1 -1 13097 1;
+-2 -8 0 10 -228856 -1 -1 14697 1;
 #N canvas 197 83 1057 399 (subpatch) 0;
 #X obj 101 101 cnv 15 878 231 empty empty empty 18 9 1 15 -262144 -1
 0;
@@ -17,7 +17,7 @@
 #X obj 111 273 cnv 15 798 27 empty empty empty 20 12 0 14 -257983 -66577
 0;
 #X obj 113 131 hsl 795 29 0 127 0 0 \$0-freq-slider \$0-freq-slider-set
-empty -2 -8 0 10 -228856 -228856 -1 52867 0;
+empty -2 -8 0 10 -228856 -228856 -1 0 0;
 #X obj 111 161 cnv 15 798 27 empty empty empty 20 12 0 14 -261429 -66577
 0;
 #X obj 111 217 cnv 15 798 27 empty empty empty 20 12 0 14 -257983 -66577
@@ -493,7 +493,7 @@ set 3000 \; pd dsp 1;
 #X connect 5 0 7 0;
 #X connect 6 0 3 0;
 #X restore 211 67 pd plot;
-#X obj 101 107 cnv 15 815 20 empty \$0-label 2.026Khz 532 9 1 15 -262144
+#X obj 101 107 cnv 15 815 20 empty \$0-label 0.020Khz 532 9 1 15 -262144
 -1 0;
 #X coords 0 -1 1 1 880 233 2 100 100;
 #X restore 28 219 pd;
