@@ -1,4 +1,4 @@
-#N canvas 870 235 555 558 12;
+#N canvas 670 46 555 558 12;
 #X declare -path else;
 #X obj 183 353 mtof;
 #X obj 51 31 inlet;
@@ -49,6 +49,14 @@
 #X obj 51 117 pipe;
 #X text 163 93 <= attack at a random value im ms;
 #X obj 51 63 t f b;
+#X obj 434 467 display;
+#X obj 458 152 f \$0;
+#X obj 452 119 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 464 190 5 0 0 0 - - -;
+#X obj 435 430 dollsym 1;
+#X msg 434 390 symbol \\\$0-x;
+#X symbolatom 413 355 10 0 0 0 - - -;
 #X connect 0 0 7 0;
 #X connect 1 0 28 0;
 #X connect 2 0 4 1;
@@ -74,3 +82,8 @@
 #X connect 26 0 18 0;
 #X connect 28 0 26 0;
 #X connect 28 1 25 0;
+#X connect 30 0 32 0;
+#X connect 31 0 30 0;
+#X connect 33 0 29 0;
+#X connect 34 0 33 0;
+#X connect 35 0 33 0;
