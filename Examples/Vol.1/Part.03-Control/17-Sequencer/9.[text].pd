@@ -1,0 +1,71 @@
+#N canvas 728 37 597 709 12;
+#X declare -path else;
+#X obj 368 501 mtof;
+#X obj 424 566 *~;
+#X obj 368 453 trigger f b;
+#X obj 442 486 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X floatatom 368 477 5 0 0 0 - - -;
+#X obj 442 531 decay2~ 50 500;
+#X obj 424 612 out~;
+#X obj 368 531 bl.tri~;
+#X obj 348 16 declare -path else;
+#X text 293 171 <= click to open;
+#X obj 368 424 r \$0-note;
+#X msg 64 447 line 0 \, auto;
+#X obj 112 613 text sequence \$0-seq -g;
+#X obj 71 647 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X msg 112 547 stop;
+#X text 160 445 <= rewind and start sequence automatically, f 22;
+#X obj 130 171 text define -k \$0-seq;
+#A set \$1-note 69 \; 500 \$1-note 60 \; 500 \$1-note 60 \; 500 \$1-note
+69 \; 500 \$1-note 69 \; 1500 \$1-note 60 \; 500 \$1-note 60 \; 500
+\$1-note 69 \; 500 \$1-note 69 \; 500 \$1-note 60 \; 500 \$1-note 62
+\; 500 \$1-note 60 \; 500 \$1-note 59 \; 500 \$1-note 59 \; 500 \$1-note
+59 \; 500 \$1-note 68 \; 500 \$1-note 68 \; 1500 \;;
+#X text 77 213 Note that we have "\$1" in the messages inside [text
+define]. We do this just so we can send "\$0" as an argument in [text
+sequence] so "\$1" gets the ID value of this patch \, and then we can
+use local sends/receive. This was much harder to achieve with [qlist].
+;
+#X text 70 53 The native [text] object is a multiple purpose text manager
+that also has a sequencing functionality with [text sequence]. We need
+to use [text define] to set a text name ("\$0-seq" below). The '-k'
+flag is used to keep and store the values with the patch. You can click
+on the object to open a window so yu can see and edit values., f 61
+;
+#X text 294 582 <= send ID value, f 8;
+#X obj 170 581 initmess args \$0;
+#X text 78 295 Unlike [qlist] \, we can also use [text sequence] to
+output values to its left outlet \, but we're using the '-g' flag to
+set send symbols and make an example similar to the last one., f 60
+;
+#X msg 155 547 tempo \$1 permsec;
+#X text 94 648 done;
+#X msg 122 492 0.5;
+#X msg 155 492 1;
+#X msg 187 492 2;
+#X floatatom 155 523 5 0.1 5 0 - - -;
+#X text 219 491 <= change the tempo, f 9;
+#X text 78 362 The 'tempo' message can be used to change the playing
+speed. Check the help file of [text] for more details.;
+#X connect 0 0 7 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 0;
+#X connect 2 1 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 0;
+#X connect 5 0 1 1;
+#X connect 7 0 1 0;
+#X connect 10 0 2 0;
+#X connect 11 0 12 0;
+#X connect 12 1 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 12 0;
+#X connect 20 0 12 0;
+#X connect 22 0 12 0;
+#X connect 24 0 27 0;
+#X connect 25 0 27 0;
+#X connect 26 0 27 0;
+#X connect 27 0 22 0;
