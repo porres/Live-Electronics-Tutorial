@@ -1,4 +1,4 @@
-#N canvas 622 48 816 508 12;
+#N canvas 490 59 836 612 12;
 #X declare -path else;
 #X obj 577 325 mtof;
 #X obj 633 394 *~;
@@ -54,6 +54,9 @@ on the [qlist] object to see and edit its contents.;
 new native object [text] is more powerful and versatile for sequencing
 as well as for other purposes., f 41;
 #X text 218 419 <= click;
+#X text 200 527 The [qlist] object is also used in the audio examples
+of Pd Vanilla. See from D11.samplepoly.pd to D13.additive.qlist.pd
+, f 61;
 #X connect 0 0 15 0;
 #X connect 1 0 12 0;
 #X connect 2 0 0 0;
