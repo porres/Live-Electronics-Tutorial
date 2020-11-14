@@ -1,0 +1,79 @@
+#N canvas 295 23 801 639 12;
+#X declare -path else;
+#X obj 601 221 phasor~;
+#X obj 601 295 out~;
+#X obj 632 189 r \$0-hz;
+#X obj 104 344 s \$0-hz;
+#X obj 601 189 *~;
+#X obj 104 318 /;
+#X obj 104 293 swap;
+#X obj 601 255 table~ \$0-buffer;
+#X obj 601 153 display~ 8;
+#X text 671 155 Ratio;
+#X obj 601 89 rampnoise~ 0.25;
+#X obj 601 120 *~ 3;
+#X obj 478 550 out~;
+#X msg 478 489 speed \$1;
+#X obj 478 467 nbx 6 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 -217.312 256;
+#X obj 90 262 unpack;
+#X obj 582 39 declare -path else;
+#X obj 478 519 player~ violin.wav 1 1;
+#X obj 478 436 rescale -300 300;
+#X obj 478 404 rampnoise 0.1;
+#X text 547 465 percentage;
+#X obj 91 377 s \$0-size;
+#X obj 420 295 out~;
+#X obj 420 219 *~;
+#X obj 451 219 r \$0-size;
+#X obj 90 221 sample~ \$0-buffer violin.wav;
+#X obj 420 255 tabplayer~ \$0-buffer;
+#X obj 451 157 r \$0-hz;
+#X obj 420 157 *~;
+#X obj 420 67 rampnoise~ 0.25;
+#X obj 420 98 *~ 3;
+#X obj 420 185 phasor~;
+#X text 45 118 Alternatively \, we can also use [table~] from the ELSE
+library. One advantage that makes it simpler is that we don't need
+to bother multiplying the output of [phasor~] \, as the index input
+is mapped from 0 to 1!, f 43;
+#X obj 420 126 display~ 8;
+#X text 489 128 Ratio;
+#X text 45 27 In this example we start by showing how [tabplayer~]
+also behaves like [tabread4~] if its fed by a sgnal value. But the
+difference now is that we have a random ramp generator to change the
+frequency ratio., f 43;
+#X text 225 411 But even much more convenient is the [player~] object
+from ELSE. This is an abstraction that relies on [tabplayer~] and already
+loads a file internally. Like [sample~] \, it has multi channel support
+and can query the number of channels from a sound file given as an
+argument. Check its help file for more details and features., f 29
+;
+#X connect 0 0 7 0;
+#X connect 2 0 4 1;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 1 0;
+#X connect 8 0 4 0;
+#X connect 10 0 11 0;
+#X connect 11 0 8 0;
+#X connect 13 0 17 0;
+#X connect 14 0 13 0;
+#X connect 15 0 6 0;
+#X connect 15 0 21 0;
+#X connect 15 1 6 1;
+#X connect 17 0 12 0;
+#X connect 18 0 14 0;
+#X connect 19 0 18 0;
+#X connect 23 0 26 0;
+#X connect 24 0 23 1;
+#X connect 25 0 15 0;
+#X connect 26 0 22 0;
+#X connect 27 0 28 1;
+#X connect 28 0 31 0;
+#X connect 29 0 30 0;
+#X connect 30 0 33 0;
+#X connect 31 0 23 0;
+#X connect 33 0 28 0;
