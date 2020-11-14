@@ -1,4 +1,4 @@
-#N canvas 529 128 964 464 12;
+#N canvas 529 128 976 568 12;
 #X declare -path else;
 #X text 30 308 Note \, however \, that [tabread4~] has a second inlet
 to set an onset value and this is a hacky way for extending the precision
@@ -47,6 +47,11 @@ speeds via control messages and this works fine for most cases.;
 #X text 702 383 with [tabplayer~] you can just set a variable speed
 and be done with it., f 26;
 #X text 673 383 <==;
+#X text 230 482 Note also that the ELSE library has a few abstractions
+based on [tabplayer~]. One of which is [player~] \, already presented
+in this tutorial. There are yet others to be presented \, and none
+of them have this issue!, f 57;
+#X obj 704 504 player~;
 #X connect 1 0 2 1;
 #X connect 6 0 5 0;
 #X connect 7 0 6 0;
