@@ -1,4 +1,4 @@
-#N canvas 529 128 976 568 12;
+#N canvas 529 128 976 588 12;
 #X declare -path else;
 #X text 30 308 Note \, however \, that [tabread4~] has a second inlet
 to set an onset value and this is a hacky way for extending the precision
@@ -28,17 +28,17 @@ in a similar fashion \, [table~] (which has an index input from 0-1)
 is not free from this issue as well. Anyway \, this means that it's
 fine if [tabplay~] or [tabplayer~] are just reading through an array
 on their own via control messages., f 63;
-#X text 504 56 You can use check B15.tabread4~-onset.pd as part of
+#X text 504 63 You can use check B15.tabread4~-onset.pd as part of
 the Pd's audio examples to see how this works. Check also the next
 example (B16.long-varispeed.pd) for a practical example on how to use
 this to play long files with a signal input.;
-#X text 503 126 This example is not so easy to understand \, but instead
+#X text 503 133 This example is not so easy to understand \, but instead
 of reproducing the example in this tutorial in a simpler way and trying
 to better explain and deal with this \, I currently think is best just
 to wait until Pd 64 bits is more of a reality than it already is (be
 patient \, it's just around the corner) - then we can just forget about
 this.;
-#X text 503 224 Note this is more of a vanilla concern as the only
+#X text 503 231 Note this is more of a vanilla concern as the only
 way to perform variable speed in vanilla is via a signal input into
 [tabread4~]. The B16 example uses a [phasor~] to feed sample values
 into [tabread4~] and achieve that. With the ELSE library \, this is
@@ -47,11 +47,10 @@ speeds via control messages and this works fine for most cases.;
 #X text 702 383 with [tabplayer~] you can just set a variable speed
 and be done with it., f 26;
 #X text 673 383 <==;
-#X text 230 482 Note also that the ELSE library has a few abstractions
-based on [tabplayer~]. One of which is [player~] \, already presented
-in this tutorial. There are yet others to be presented \, and none
-of them have this issue!, f 57;
-#X obj 704 504 player~;
+#X obj 520 514 player~;
+#X text 582 513 <= based on [tabplayer~], f 12;
+#X text 253 483 Note also that [player~] \, is based on [tabplayer~]
+\, so it also doesn't have this issue., f 51;
 #X connect 1 0 2 1;
 #X connect 6 0 5 0;
 #X connect 7 0 6 0;
