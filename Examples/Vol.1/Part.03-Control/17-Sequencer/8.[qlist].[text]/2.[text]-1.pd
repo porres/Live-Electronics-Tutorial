@@ -28,12 +28,6 @@ define]. We do this just so we can send "\$0" as an argument in [text
 sequence] so "\$1" gets the ID value of this patch \, and then we can
 use local sends/receive. This was much harder to achieve with [qlist].
 , f 66;
-#X text 42 57 The native [text] object is a multiple purpose text manager
-that also has a sequencing functionality with [text sequence]. We need
-to use [text define] to set a text name ("\$0-seq" below). The '-k'
-flag is used to keep and store the values with the patch. You can click
-on the object to open a window so yu can see and edit values., f 64
-;
 #X text 300 568 <= send ID value, f 8;
 #X obj 178 568 initmess args \$0;
 #X text 39 295 Unlike [qlist] \, we can also use [text sequence] to
@@ -49,8 +43,14 @@ set send symbols and make an example similar to the last one., f 66
 #X text 227 478 <= change the tempo, f 9;
 #X text 40 353 The 'tempo' message can be used to change the playing
 speed. Check the help file of [text] for more details., f 66;
-#X text 165 434 <=, f 2;
+#X text 165 434 <=;
 #X text 182 435 rewind and start automatically, f 16;
+#X text 42 57 The native [text] object is a multiple purpose text manager
+that also has a sequencing functionality with [text sequence]. We need
+to use [text define] to set a text name ("\$0-seq" below). The '-k'
+flag is used to keep and store the values with the patch. You can click
+on the object to open a window so you can see and edit values., f
+64;
 #X connect 0 0 7 0;
 #X connect 1 0 6 0;
 #X connect 2 0 4 0;
@@ -64,9 +64,9 @@ speed. Check the help file of [text] for more details., f 66;
 #X connect 12 1 13 0;
 #X connect 13 0 11 0;
 #X connect 14 0 12 0;
-#X connect 19 0 12 0;
-#X connect 21 0 12 0;
-#X connect 23 0 26 0;
-#X connect 24 0 26 0;
-#X connect 25 0 26 0;
-#X connect 26 0 21 0;
+#X connect 18 0 12 0;
+#X connect 20 0 12 0;
+#X connect 22 0 25 0;
+#X connect 23 0 25 0;
+#X connect 24 0 25 0;
+#X connect 25 0 20 0;

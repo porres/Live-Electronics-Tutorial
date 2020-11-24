@@ -1,54 +1,55 @@
-#N canvas 500 42 747 618 12;
+#N canvas 500 42 747 608 12;
 #X declare -path else;
-#X obj 573 220 phasor~;
-#X obj 573 294 out~;
-#X obj 604 188 r \$0-hz;
-#X obj 101 359 s \$0-hz;
-#X obj 573 188 *~;
-#X obj 101 333 /;
-#X obj 101 308 swap;
-#X obj 573 254 table~ \$0-buffer;
-#X obj 573 152 display~ 8;
-#X text 643 154 Ratio;
-#X obj 573 88 rampnoise~ 0.25;
-#X obj 573 119 *~ 3;
-#X obj 454 536 out~;
-#X msg 454 475 speed \$1;
-#X obj 454 453 nbx 6 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 51.2752 256;
-#X obj 87 277 unpack;
-#X obj 554 38 declare -path else;
-#X obj 454 505 player~ violin.wav 1 1;
-#X obj 454 422 rescale -300 300;
-#X obj 454 390 rampnoise 0.1;
-#X text 535 449 percentage;
-#X obj 88 392 s \$0-size;
-#X obj 387 282 out~;
-#X obj 387 206 *~;
-#X obj 418 206 r \$0-size;
-#X obj 87 236 sample~ \$0-buffer violin.wav;
-#X obj 387 242 tabplayer~ \$0-buffer;
-#X obj 418 144 r \$0-hz;
-#X obj 387 144 *~;
-#X obj 387 54 rampnoise~ 0.25;
-#X obj 387 85 *~ 3;
-#X obj 387 172 phasor~;
-#X text 42 133 Alternatively \, we can also use [table~] from the ELSE
-library. One advantage that makes it simpler is that we don't need
-to bother multiplying the output of [phasor~] \, as the index input
-is mapped from 0 to 1!, f 43;
-#X obj 387 113 display~ 8;
-#X text 456 115 Ratio;
-#X text 42 42 In this example we start by showing how [tabplayer~]
-also behaves like [tabread4~] if its fed by a sgnal value. But the
-difference now is that we have a random ramp generator to change the
-frequency ratio., f 43;
-#X text 61 447 But even much more convenient is the [player~] object
+#X obj 573 210 phasor~;
+#X obj 573 284 out~;
+#X obj 604 178 r \$0-hz;
+#X obj 119 362 s \$0-hz;
+#X obj 573 178 *~;
+#X obj 119 336 /;
+#X obj 119 311 swap;
+#X obj 573 244 table~ \$0-buffer;
+#X obj 573 142 display~ 8;
+#X text 643 144 Ratio;
+#X obj 573 78 rampnoise~ 0.25;
+#X obj 573 109 *~ 3;
+#X obj 454 526 out~;
+#X msg 454 465 speed \$1;
+#X obj 454 443 nbx 6 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 -20.4994 256;
+#X obj 105 280 unpack;
+#X obj 554 28 declare -path else;
+#X obj 454 495 player~ violin.wav 1 1;
+#X obj 454 412 rescale -300 300;
+#X obj 454 380 rampnoise 0.1;
+#X text 535 439 percentage;
+#X obj 106 395 s \$0-size;
+#X obj 387 272 out~;
+#X obj 387 196 *~;
+#X obj 418 196 r \$0-size;
+#X obj 105 254 sample~ \$0-buffer violin.wav;
+#X obj 387 232 tabplayer~ \$0-buffer;
+#X obj 418 134 r \$0-hz;
+#X obj 387 134 *~;
+#X obj 387 44 rampnoise~ 0.25;
+#X obj 387 75 *~ 3;
+#X obj 387 162 phasor~;
+#X obj 387 103 display~ 8;
+#X text 456 105 Ratio;
+#X text 61 437 But even much more convenient is the [player~] object
 from ELSE. This is an abstraction that relies on [tabplayer~] and already
 loads a file internally. It's like a conjunction of [sample~] and [tabplayer].
 Like [sample~] \, it has multi channel support and can query the number
 of channels from a sound file given as an argument. Check its help
 file for more details and features., f 53;
+#X text 37 32 In this example we start by showing how [tabplayer~]
+also behaves like [tabread4~] if its fed with a signal value. But the
+difference now is that we have a random ramp generator to change the
+frequency ratio., f 44;
+#X text 37 123 Alternatively \, we can also use [table~] from the ELSE
+library \, which is kind of the same as [tabread4~]. At least it has
+the same interpolation type. One advantage that makes it simpler is
+that we don't need to bother multiplying the output of [phasor~] \,
+as the index input can be mapped from 0 to 1!, f 44;
 #X connect 0 0 7 0;
 #X connect 2 0 4 1;
 #X connect 4 0 0 0;
@@ -74,6 +75,6 @@ file for more details and features., f 53;
 #X connect 27 0 28 1;
 #X connect 28 0 31 0;
 #X connect 29 0 30 0;
-#X connect 30 0 33 0;
+#X connect 30 0 32 0;
 #X connect 31 0 23 0;
-#X connect 33 0 28 0;
+#X connect 32 0 28 0;

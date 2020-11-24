@@ -1,4 +1,4 @@
-#N canvas 330 62 915 523 12;
+#N canvas 470 93 915 523 12;
 #X declare -path else;
 #X obj 144 343 vline~;
 #X obj 82 320 float;
@@ -72,7 +72,7 @@ Stretch., f 59;
 #X text 475 226 The [block~] object only resizes the block to powers
 of two \, so these are the only possible grain sizes. Open the subpatch
 below to see how it works., f 59;
-#N canvas 752 48 777 864 Pitch-Shit/Time-Stretch 1;
+#N canvas 752 48 777 864 Pitch-Shit/Time-Stretch 0;
 #X obj 173 812 outlet~;
 #X obj 124 46 inlet;
 #X obj 237 48 inlet;

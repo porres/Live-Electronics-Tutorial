@@ -12,9 +12,6 @@
 #X obj 214 516 tabplayer~ \$0-sample;
 #X msg 264 433 pause;
 #X msg 271 460 resume;
-#X text 29 458 The [tabplayer~] object from ELSE is also a much more
-powerful alternative to [tabplay~] and also offers multi-channel support.
-Check its help file., f 25;
 #X text 24 49 The [sample~] object from the ELSE library is a convenient
 abstraction based on [soundfiler] that can load a sample into an internal
 table. It can also be used to create an audio buffer that you can record
@@ -39,18 +36,21 @@ same as last example). Its outlet also outputs the table size in samples
 (the output is actually a list with size \, sample rate and number
 of channels) \, so we have basically the same thing as the last example.
 , f 66;
+#X text 26 447 The [tabplayer~] object from ELSE is also a much more
+powerful alternative to [tabplay~] that offers different reading speeds
+and also has multi-channel support. Check its help file., f 26;
 #X connect 0 0 9 0;
 #X connect 2 0 8 0;
 #X connect 3 0 8 0;
 #X connect 4 0 5 0;
 #X connect 8 0 4 0;
 #X connect 9 0 1 0;
-#X connect 9 1 19 0;
+#X connect 9 1 18 0;
 #X connect 10 0 9 0;
 #X connect 11 0 9 0;
+#X connect 13 0 9 0;
 #X connect 14 0 9 0;
 #X connect 15 0 9 0;
 #X connect 16 0 9 0;
 #X connect 17 0 9 0;
-#X connect 18 0 9 0;
-#X connect 21 0 9 0;
+#X connect 20 0 9 0;
