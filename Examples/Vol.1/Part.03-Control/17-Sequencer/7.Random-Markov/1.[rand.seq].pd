@@ -1,0 +1,67 @@
+#N canvas 388 78 997 485 12;
+#X declare -path else;
+#X floatatom 697 200 3 0 0 0 - - -;
+#X obj 697 280 mtof;
+#X obj 834 173 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 697 250 display;
+#X obj 697 329 osc~;
+#X obj 743 329 decay2~ 50 500;
+#X obj 743 307 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 725 360 *~;
+#X obj 222 220 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 92 197 until;
+#X obj 92 171 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856 -1
+-1;
+#X obj 222 292 display;
+#X text 112 167 generate series;
+#X obj 725 401 out~;
+#X obj 697 117 tempo 60 50 -on;
+#X obj 697 147 rand.seq 5 4 1 3 2 1;
+#X obj 92 221 rand.seq 12;
+#X obj 333 175 declare -path else;
+#X obj 222 265 group;
+#X text 34 24 In this section we'll see randomic and probabilistic
+sequences (as n markov chains). First let's take a look in [rand.seq].
+, f 63;
+#X text 35 64 The [rand.seq] object can be used to generate an unrepeated
+random sequence of integer numbers. You can \, for instance \, use
+it to generate a dodecaphonic series as in the example below. With
+the argument of "12" \, it generates a random sequence of 12 values
+from 0 to 11 without repeating any element., f 63;
+#X text 40 333 But this object can also generated a weighted series
+\, where you can define how many times one of the numbers can be repeated
+while generating the sequence. Once all numbers have been output with
+their respective repetition \, a whole new random sequence restarts.
+, f 63;
+#X obj 697 224 sequencer 60 64 69 71 76;
+#X obj 697 174 + 1;
+#X text 726 200 <= element number;
+#X text 529 26 By setting different weigths you can specify which value
+has more chances to appear. In the example below \, [rand.seq] generates
+values from 0 to 4 and the occurance is: 0 (4 times) \, 1 (once) \,
+2 (3 times) \, 3 (2 times) and 4 (once)., f 61;
+#X text 510 239 play random notes with different weigths ====>, f
+23;
+#X connect 0 0 22 0;
+#X connect 1 0 4 0;
+#X connect 1 0 6 0;
+#X connect 3 0 1 0;
+#X connect 4 0 7 0;
+#X connect 5 0 7 1;
+#X connect 6 0 5 0;
+#X connect 7 0 13 0;
+#X connect 8 0 9 1;
+#X connect 8 0 18 0;
+#X connect 9 0 16 0;
+#X connect 10 0 9 0;
+#X connect 14 0 15 0;
+#X connect 15 0 23 0;
+#X connect 15 1 2 0;
+#X connect 16 0 18 0;
+#X connect 16 1 8 0;
+#X connect 18 0 11 0;
+#X connect 22 0 3 0;
+#X connect 23 0 0 0;

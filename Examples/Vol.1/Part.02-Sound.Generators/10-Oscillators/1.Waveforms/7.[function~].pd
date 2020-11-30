@@ -1,4 +1,4 @@
-#N canvas 635 203 941 657 12;
+#N canvas 511 125 941 657 12;
 #X declare -path else;
 #X floatatom 55 267 5 0 0 0 - - -;
 #X obj 55 217 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
@@ -20,7 +20,7 @@
 #X obj 674 196 expr -$f1 \; -$f1 \; $f1 \; $f1;
 #X obj 668 266 pack f f f f;
 #X obj 677 147 hsl 128 15 1 10 1 0 empty empty empty -2 -8 0 10 -228856
--1 -1 1800 1;
+-1 -1 0 1;
 #X floatatom 674 171 5 0 0 0 - - -;
 #X obj 572 223 phasor~ 100;
 #X obj 572 372 function~ 0 0.5 1 0.5 0 0.5 -1 0.5 0 -exp -2 -2 2 2
