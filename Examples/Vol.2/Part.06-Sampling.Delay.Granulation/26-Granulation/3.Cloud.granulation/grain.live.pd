@@ -18,32 +18,39 @@
 #X obj 339 376 *~ 0;
 #X obj 139 402 delread4~ \$2;
 #X obj 93 34 inlet~;
-#N canvas 796 301 664 399 transp 0;
+#N canvas 796 301 826 507 transp 0;
 #X obj 101 65 inlet;
 #X obj 101 98 cents2ratio;
-#X obj 101 182 *;
-#X obj 101 206 t f b;
-#X obj 199 136 /;
-#X msg 101 129 1 \$1;
-#X msg 199 112 1000 \$1;
-#X obj 101 153 -;
-#X obj 94 288 *~ 0;
-#X obj 143 286 r \$0-ms;
-#X obj 94 325 outlet~;
-#X obj 94 258 phasor~;
-#X msg 140 233 0;
-#X obj 199 65 inlet;
-#X text 207 43 ms;
+#X obj 251 294 *;
+#X obj 251 328 t f b;
+#X obj 269 166 /;
+#X msg 130 218 1 \$1;
+#X msg 269 142 1000 \$1;
+#X obj 130 242 -;
+#X obj 251 410 *~ 0;
+#X obj 276 383 r \$0-ms;
+#X obj 251 449 outlet~;
+#X obj 251 352 phasor~;
+#X msg 297 328 0;
+#X obj 269 65 inlet;
+#X text 277 43 ms;
 #X text 100 43 cents;
-#X text 294 114 The transposition parameter is in cents \, so we need
-to convert to ratio., f 42;
-#X text 294 153 To alter the reading speed according to the transposition
+#X obj 101 128 t f b;
+#X obj 130 185 * 1;
+#X msg 148 157 -1;
+#X msg 208 156 1;
+#X obj 148 130 chance 50;
+#X text 366 126 The transposition parameter is in cents \, so we need
+to convert to ratio. We do the same as before and make it negative
+50% of the time4s so it plays backwards., f 42;
+#X text 366 192 To alter the reading speed according to the transposition
 parameter \, we use the same structure from the pitch shifting example
 implemented with granulation. So we take the grain size in ms and use
 it to calculate the hertz input for [phasor~] \, whose output is rescaled
-to the grain size in ms in the same way as done before., f 42;
+to the grain size in ms like in the pitch shiffting example., f 42
+;
 #X connect 0 0 1 0;
-#X connect 1 0 5 0;
+#X connect 1 0 16 0;
 #X connect 2 0 3 0;
 #X connect 3 0 11 0;
 #X connect 3 1 12 0;
@@ -56,6 +63,13 @@ to the grain size in ms in the same way as done before., f 42;
 #X connect 11 0 8 0;
 #X connect 12 0 11 1;
 #X connect 13 0 6 0;
+#X connect 16 0 17 0;
+#X connect 16 1 20 0;
+#X connect 17 0 5 0;
+#X connect 18 0 17 1;
+#X connect 19 0 17 1;
+#X connect 20 0 18 0;
+#X connect 20 1 19 0;
 #X restore 104 332 pd transp;
 #N canvas 546 388 755 331 pos 0;
 #X obj 114 167 +~ 0;
