@@ -1,0 +1,25 @@
+#N canvas 721 53 683 606 12;
+#X declare -path else;
+#X obj 123 332 noise~;
+#X obj 168 372 *~;
+#X obj 284 387 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 226 365 nbx 3 14 0 300 0 0 empty empty empty 0 -8 0 10 -228856
+-1 -1 0 256;
+#X text 269 363 Delay time (ms);
+#X obj 168 410 fbdelay~ 100 2000;
+#X obj 168 444 out~;
+#X text 341 386 <== Feedback index (Decay time in ms), f 18;
+#X obj 186 335 pulse~ 1 0.05;
+#X obj 350 26 declare -path else;
+#X text 53 64 The [fbdelay~] object from ELSE is a feedback delay line.
+By default the feedback index is not a multiplication factor \, but
+a decay time \, which is the time in ms that the input decays 60 dB
+\, but this can be changed to a multiplication factor. Check the help
+file for more details., f 63;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 5 2;
+#X connect 3 0 5 1;
+#X connect 5 0 6 0;
+#X connect 8 0 1 1;

@@ -1,0 +1,46 @@
+#N canvas 684 23 563 634 12;
+#X declare -path else;
+#X obj 334 260 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 336 411 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 80 465 out~;
+#X obj 334 326 out~;
+#X obj 336 477 out~;
+#X obj 366 21 declare -path else;
+#X obj 80 265 play.file~ bubul.wav 1 1;
+#X obj 105 430 del~ in \$0-del 3000;
+#X obj 334 290 del~ out \$0-del 500;
+#X obj 336 441 del~ out \$0-del 1500;
+#X msg 105 300 size 1500;
+#X msg 118 327 size 3000;
+#X msg 133 390 freeze \$1;
+#X obj 133 364 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X text 156 362 <= freeze;
+#X text 29 178 Check the help file for more details. Below \, check
+how you can resize the delay line and also freeze it. When frozen \,
+the write head stops writing to the delay line but keeps moving.,
+f 69;
+#X text 80 558 Note that this object also has the order of execution
+issue. But [del~ in] has a dummy signal outlet to help this \, check
+the example in the help file.;
+#X text 29 57 The [del~] object from ELSE basically comprises both
+[delwrite~] and [dlread4~]. This object behaves like [delwrite~] if
+created as [del~ in] \, and as [delred4~] if creted as [del~ out].
+It also offers more functionalitites not present in the native delay
+objects (at least yet) \, like being able to resize the delay line
+in [del~ in] and also "freeze" the recording. This object also fixes
+a bug present in [delwrite~]/[delread~]/[delread4~] when the read and
+write objects have different block sizes mentioned earlier., f 69
+;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 6 0 2 0;
+#X connect 6 0 7 0;
+#X connect 8 0 3 0;
+#X connect 9 0 4 0;
+#X connect 10 0 7 0;
+#X connect 11 0 7 0;
+#X connect 12 0 7 0;
+#X connect 13 0 12 0;
