@@ -12,9 +12,9 @@
 
 --------------------------------------------------------------------------
 
-#### Version: 1.0-0 beta-36: Released December 28th 2020
+#### Version: 1.0-0 beta-37: Released March 13th 2021
 
- - This particular version of the tutorial requires **Pd 0.51-3** or later and depends on **ELSE 1.0-0 beta 36 (https://github.com/porres/pd-else/releases/tag/v1.0-beta36)! 
+ - This particular version of the tutorial requires **Pd 0.51-3** or later and depends on **ELSE 1.0-0 beta 37 (https://github.com/porres/pd-else/releases/tag/v1.0-beta37)! 
 
 --------------------------------------------------------------------------
 
@@ -38,6 +38,6 @@ This didactic work is licenced via Creative Commons Attribution-NonCommercial-No
 
 ​	This version of the tutorial needs at least Pd 0.51-1! You can look for releases of this tutorial in https://github.com/porres/Live-Electronics-Tutorial/releases - where early versions of it are also still present, but it's best just to download this directly via Pd along with the ELSE library, because this tutorial is also provided as part of it (and you need to install the "ELSE" library in order to use this tutorial anyway).
 
-​	So in Pd just go to the "Help" menu and click on "Find Externals", then just search for 'else' for the latest version (1.0-0beta36 by the time of this release). You can also download ELSE from its GitHub repository  <https://github.com/porres/pd-else/> and it'll also contain this tutorial as part of the download. In this combo download, you'll always get compatibility between the tutorial and the ELSE library.
+​	So in Pd just go to the "Help" menu and click on "Find Externals", then just search for 'else' for the latest version (1.0-0beta37 by the time of this release). You can also download ELSE from its GitHub repository  <https://github.com/porres/pd-else/> and it'll also contain this tutorial as part of the download. In this combo download, you'll always get compatibility between the tutorial and the ELSE library.
 
 ​	If you download from Pd, look for the  'live-electronics-folder' inside the else folder and move it somewhere else, preferably to ~/Pd/Documents (leave ~/Pd/Documents/externals just for proper external libraries, like the ELSE library). Then you can add the folder's path to Pd via "Preferences => Path", so you can navigate through it in Pd's browser (Help => Browser). 
