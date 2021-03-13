@@ -1,32 +1,25 @@
-#N canvas 956 57 507 549 12;
+#N canvas 839 56 507 549 12;
 #X declare -path else;
-#X text 340 234 cents;
-#X obj 280 235 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
+#X text 339 253 cents;
+#X obj 279 254 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
 0 10 -228856 -1 -1 -100 256;
-#X obj 283 209 hsl 128 15 -2400 2400 0 0 empty empty empty -2 -8 0
+#X obj 282 228 hsl 128 15 -2400 2400 0 0 empty empty empty -2 -8 0
 10 -228856 -1 -1 0 1;
-#X obj 218 235 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
+#X obj 217 254 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
 0 10 -228856 -1 -1 90 256;
-#X text 173 234 speed;
-#X obj 157 319 out~;
-#X text 293 273 <= click;
+#X text 217 230 speed;
+#X obj 156 338 out~;
+#X text 292 292 <= click;
 #X text 44 56 Again we adapt a previously presented patch in the granulation
 series. Now is time to check out the Pitch Shifter and Time Stretch
 on a ring buffer with the phase accumulation. Nothing should be new
 \, just the same kind of adaptation., f 62;
 #X obj 292 492 pvoc.live~ 6000;
 #X obj 334 21 declare -path else;
-#X obj 156 170 play.file~ bubul.wav 1 1;
+#X obj 154 153 play.file~ bubul.wav 1 1;
 #X text 99 443 The [pvoc.live~] \, from the ELSE library \, is based
 on this patch. Check its help file., f 43;
-#N canvas 586 112 677 384 pvoc-live 0;
-#N canvas 636 77 567 475 write 0;
-#X obj 88 194 del~ in \$0-buffer 1000;
-#X obj 88 102 inlet~;
-#X obj 114 277 outlet~;
-#X connect 1 0 0 0;
-#X restore 139 156 pd write;
-#N canvas 636 77 820 746 read-delay-line 0;
+#N canvas 586 112 795 699 pvoc-live 0;
 #X obj 352 338 +~;
 #X obj 352 251 pack float float float;
 #X obj 535 45 inlet;
@@ -155,23 +148,23 @@ on this patch. Check its help file., f 43;
 #X obj 333 118 initmess bang \; \$0-window 2048 \; \$0-cents -100 \;
 \$0-speed 90;
 #X obj 286 277 loadbang;
-#X msg 286 300 60000;
 #X obj 286 326 s \$0-buff_ms;
 #X text 326 298 <= buffer size;
 #X obj 112 133 t b f f;
 #X obj 134 270 s \$0-block;
-#X connect 1 0 14 0;
-#X connect 4 0 15 0;
+#X msg 286 300 10000;
+#X connect 1 0 13 0;
+#X connect 4 0 14 0;
 #X connect 7 0 6 0;
 #X connect 8 0 0 0;
 #X connect 8 0 5 0;
 #X connect 9 0 7 0;
-#X connect 10 0 11 0;
-#X connect 11 0 12 0;
-#X connect 14 0 3 0;
-#X connect 14 1 4 0;
-#X connect 14 1 8 0;
-#X connect 14 2 2 0;
+#X connect 10 0 15 0;
+#X connect 13 0 3 0;
+#X connect 13 1 4 0;
+#X connect 13 1 8 0;
+#X connect 13 2 2 0;
+#X connect 15 0 11 0;
 #X restore 202 324 pd init;
 #X obj 201 373 r \$0-block;
 #X obj 201 398 block~;
@@ -219,21 +212,12 @@ on this patch. Check its help file., f 43;
 #X connect 39 0 40 0;
 #X connect 41 0 31 0;
 #X connect 42 0 32 0;
-#X restore 139 209 pd read-delay-line;
-#X f 23;
-#X obj 139 106 inlet~;
-#X obj 218 106 inlet;
-#X obj 297 106 inlet;
-#X obj 139 263 outlet~;
-#X connect 0 0 1 0;
-#X connect 1 0 5 0;
-#X connect 2 0 0 0;
-#X connect 3 0 1 1;
-#X connect 4 0 1 2;
-#X restore 157 272 pd pvoc-live;
+#X restore 156 291 pd pvoc-live;
 #X f 18;
+#X obj 154 181 del~ in \$0-buffer 10000;
 #X connect 1 0 12 2;
 #X connect 2 0 1 0;
 #X connect 3 0 12 1;
-#X connect 10 0 12 0;
+#X connect 10 0 13 0;
 #X connect 12 0 5 0;
+#X connect 13 0 12 0;

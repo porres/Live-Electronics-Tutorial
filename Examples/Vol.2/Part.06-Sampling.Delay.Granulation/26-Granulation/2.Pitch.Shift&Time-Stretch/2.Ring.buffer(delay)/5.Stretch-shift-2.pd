@@ -1,24 +1,24 @@
 #N canvas 699 72 586 517 12;
 #X declare -path else;
-#X text 341 302 cents;
-#X obj 323 324 nbx 5 16 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
-0 13 -228856 -1 -1 -647 256;
-#X obj 230 323 nbx 4 16 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
-0 13 -228856 -1 -1 15 256;
-#X obj 416 323 nbx 4 16 64 8192 0 0 empty \$0-block empty 0 -8 0 13
+#X text 291 305 cents;
+#X obj 273 327 nbx 5 16 -1e+37 1e+37 0 0 empty \$0-cents empty 0 -8
+0 13 -228856 -1 -1 -400 256;
+#X obj 211 326 nbx 4 16 -1e+37 1e+37 0 0 empty \$0-speed empty 0 -8
+0 13 -228856 -1 -1 50 256;
+#X obj 346 326 nbx 4 16 64 8192 0 0 empty \$0-block empty 0 -8 0 13
 -228856 -1 -1 8192 256;
-#X msg 430 207 512;
-#X msg 453 273 1024;
-#X msg 444 230 2048;
-#X msg 416 183 8192;
-#X msg 448 252 4096;
-#X obj 230 403 out~;
-#X text 439 304 size;
-#X text 237 303 speed;
+#X msg 360 210 512;
+#X msg 383 276 1024;
+#X msg 374 233 2048;
+#X msg 346 186 8192;
+#X msg 378 255 4096;
+#X obj 149 406 out~;
+#X text 369 307 size;
+#X text 218 306 speed;
 #N canvas 475 45 1115 793 pitch-shift/time-stretch 0;
 #X obj 266 262 bang~;
 #X obj 338 251 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--204800 -1 -1 0 256;
+-204800 -1 -1 4096 256;
 #X obj 367 700 outlet~;
 #X obj 338 39 inlet;
 #X obj 569 39 inlet;
@@ -26,11 +26,11 @@
 #X obj 450 548 phasor~;
 #X obj 454 39 inlet;
 #X obj 454 99 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--236782 -1 -1 0 256;
+-236782 -1 -1 -400 256;
 #X obj 338 100 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--183865 -1 -1 0 256;
+-183865 -1 -1 50 256;
 #X obj 569 258 nbx 5 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 15
--257904 -1 -1 0 256;
+-257904 -1 -1 8192 256;
 #X obj 432 619 *~;
 #X obj 367 666 +~;
 #X obj 588 323 block~;
@@ -51,7 +51,6 @@
 #X obj 266 415 pack f f f;
 #X obj 354 416 +;
 #X text 365 307 loop;
-#X msg 782 126 6000;
 #X obj 320 306 wrap2;
 #X obj 266 336 samps2ms;
 #X obj 432 645 ffdelay~ 4096 -samps;
@@ -89,80 +88,87 @@ to half the new grain size instead of subtracting because this means
 #X obj 356 560 del~ out \$0-buffer, f 9;
 #X obj 217 39 inlet~;
 #X text 159 38 dummy;
+#X msg 782 126 10000;
 #X connect 0 0 20 0;
 #X connect 1 0 14 1;
 #X connect 3 0 9 0;
 #X connect 4 0 10 0;
 #X connect 5 0 13 0;
-#X connect 6 0 36 0;
+#X connect 6 0 35 0;
 #X connect 7 0 8 0;
-#X connect 8 0 40 0;
+#X connect 8 0 39 0;
 #X connect 9 0 21 0;
 #X connect 10 0 5 0;
 #X connect 10 0 17 0;
-#X connect 10 0 44 1;
-#X connect 10 0 48 0;
-#X connect 11 0 34 0;
+#X connect 10 0 43 1;
+#X connect 10 0 47 0;
+#X connect 11 0 33 0;
 #X connect 12 0 2 0;
-#X connect 14 0 32 0;
+#X connect 14 0 31 0;
 #X connect 15 0 12 0;
-#X connect 16 0 34 1;
+#X connect 16 0 33 1;
 #X connect 17 0 16 0;
-#X connect 18 0 54 0;
-#X connect 19 0 31 0;
+#X connect 18 0 53 0;
+#X connect 19 0 63 0;
 #X connect 20 0 14 0;
-#X connect 20 0 33 0;
-#X connect 21 0 55 0;
-#X connect 22 0 37 0;
-#X connect 24 0 32 2;
+#X connect 20 0 32 0;
+#X connect 21 0 54 0;
+#X connect 22 0 36 0;
+#X connect 24 0 31 2;
+#X connect 26 0 36 2;
 #X connect 26 0 37 2;
-#X connect 26 0 38 2;
 #X connect 27 0 22 1;
-#X connect 28 0 39 0;
+#X connect 28 0 38 0;
 #X connect 29 0 28 2;
-#X connect 31 0 25 0;
-#X connect 31 0 41 0;
-#X connect 32 0 20 1;
-#X connect 33 0 47 0;
-#X connect 35 0 6 0;
-#X connect 36 0 11 1;
-#X connect 36 0 15 1;
-#X connect 37 0 61 0;
-#X connect 38 0 60 0;
-#X connect 39 0 22 0;
-#X connect 39 0 38 0;
-#X connect 40 0 18 0;
-#X connect 41 0 23 0;
-#X connect 43 0 1 0;
-#X connect 44 0 43 0;
-#X connect 44 1 43 1;
-#X connect 47 0 28 0;
-#X connect 47 1 29 0;
-#X connect 48 0 50 1;
-#X connect 48 0 28 1;
-#X connect 49 0 29 1;
-#X connect 49 0 27 0;
-#X connect 50 0 51 0;
-#X connect 50 1 51 1;
-#X connect 51 0 49 0;
-#X connect 54 0 50 0;
-#X connect 55 0 44 0;
-#X connect 60 0 15 0;
-#X connect 61 0 11 0;
-#X restore 230 357 pd pitch-shift/time-stretch;
-#X obj 467 383 initmess \; \$0-speed 50 \; \$0-cents -400 \; \$0-block
+#X connect 31 0 20 1;
+#X connect 32 0 46 0;
+#X connect 34 0 6 0;
+#X connect 35 0 11 1;
+#X connect 35 0 15 1;
+#X connect 36 0 60 0;
+#X connect 37 0 59 0;
+#X connect 38 0 22 0;
+#X connect 38 0 37 0;
+#X connect 39 0 18 0;
+#X connect 40 0 23 0;
+#X connect 42 0 1 0;
+#X connect 43 0 42 0;
+#X connect 43 1 42 1;
+#X connect 46 0 28 0;
+#X connect 46 1 29 0;
+#X connect 47 0 49 1;
+#X connect 47 0 28 1;
+#X connect 48 0 29 1;
+#X connect 48 0 27 0;
+#X connect 49 0 50 0;
+#X connect 49 1 50 1;
+#X connect 50 0 48 0;
+#X connect 53 0 49 0;
+#X connect 54 0 43 0;
+#X connect 59 0 15 0;
+#X connect 60 0 11 0;
+#X connect 63 0 25 0;
+#X connect 63 0 40 0;
+#X restore 149 360 pd pitch-shift/time-stretch;
+#X obj 400 400 initmess \; \$0-speed 50 \; \$0-cents -400 \; \$0-block
 2048;
 #X obj 350 26 declare -path else;
-#X obj 61 198 play.file~ bubul.wav 1 1;
+#X obj 149 177 play.file~ bubul.wav 1 1;
 #X text 87 68 This example now adapts for live input (or delay lines)
 an earlier pitch shit / time stretch patch in which the grain size
 depends on the block size. As the earlier one \, this is the basis
 of a Phase Vocoder example presented later. Open the subpatch for details.
-, f 55;
-#X obj 61 249 del~ in \$0-buffer 6000;
+;
+#X text 163 249 <= force order of execution, f 14;
+#X obj 149 218 del~ in \$0-buffer 10000;
+#X connect 1 0 12 2;
+#X connect 2 0 12 1;
+#X connect 3 0 12 3;
 #X connect 4 0 3 0;
 #X connect 5 0 3 0;
 #X connect 6 0 3 0;
 #X connect 7 0 3 0;
 #X connect 8 0 3 0;
-#X connect 15 0 17 0;
+#X connect 12 0 9 0;
+#X connect 15 0 18 0;
+#X connect 18 0 12 0;
