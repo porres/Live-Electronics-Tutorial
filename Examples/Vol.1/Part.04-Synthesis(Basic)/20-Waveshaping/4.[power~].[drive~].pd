@@ -1,4 +1,4 @@
-#N canvas 560 23 1056 676 12;
+#N canvas 560 23 1064 729 12;
 #X declare -path else;
 #X obj 193 151 *~;
 #X obj 293 152 hsl 128 15 0.5 2 0 0 empty empty empty -2 -8 0 10 -228856
@@ -6,10 +6,10 @@
 #X obj 290 174 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
 #X obj 193 95 osc~ 400;
-#X obj 697 403 catch~ \$0-out;
+#X obj 701 455 catch~ \$0-out;
 #X obj 193 237 throw~ \$0-out;
-#X obj 697 436 graph~ 446 11 -1 1;
-#X obj 697 590 out~;
+#X obj 701 488 graph~ 446 11 -1 1;
+#X obj 701 642 out~;
 #X text 130 197 Transfer Function, f 8;
 #X obj 862 22 declare -path else;
 #X obj 193 203 pow~;
@@ -36,24 +36,24 @@ alter the shape of a sound \, such as power functions., f 70;
 -228856 -1 -1 0 256;
 #X obj 248 477 f2s~ 50;
 #X obj 158 564 power~;
-#X obj 774 135 drive~;
-#X obj 607 262 *~;
-#X obj 859 213 hsl 128 15 0.1 10 1 0 empty empty empty -2 -8 0 10 -228856
+#X obj 778 187 drive~;
+#X obj 611 314 *~;
+#X obj 863 265 hsl 128 15 0.1 10 1 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
-#X obj 856 235 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 860 287 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 0 256;
-#X obj 607 206 osc~ 400;
-#X obj 607 348 throw~ \$0-out;
-#X obj 856 260 f2s~ 50 1;
-#X obj 700 180 hsl 128 15 0 1 0 1 empty empty -2 -8 0 0 4 -228856 -1
+#X obj 611 258 osc~ 400;
+#X obj 611 400 throw~ \$0-out;
+#X obj 860 312 f2s~ 50 1;
+#X obj 704 232 hsl 128 15 0 1 0 1 empty empty -2 -8 0 0 4 -228856 -1
 -1 12700 0;
-#X obj 697 202 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 701 254 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -228856 -1 -1 1 256;
-#X obj 697 227 f2s~ 50;
-#X obj 607 294 expr~ if($v1 > 0 \, 1 - pow(1. - $v1 \, $v2) \, pow(1.
+#X obj 701 279 f2s~ 50;
+#X obj 611 346 expr~ if($v1 > 0 \, 1 - pow(1. - $v1 \, $v2) \, pow(1.
 + $v1 \, $v2) - 1.), f 36;
-#X text 834 133 <= check its help file;
-#X text 870 293 Transfer Function, f 8;
+#X text 838 185 <= check its help file;
+#X text 874 345 Transfer Function, f 8;
 #X text 26 281 Above \, we have [pow~] \, note that a power function
 would originally give us a 'nan' (Not a Number) if a negative signal
 'a' is raised by a non integer exponent 'b'. In this case \, [pow~]
@@ -63,10 +63,15 @@ values become positive., f 72;
 \, b) in the case of a negative input \, which extends the usual definition
 of exponentiation and allows exponentiation of negative signal values.
 This makes it a kind of power function waveshaper., f 72;
-#X text 562 67 Check also the [drive~] object from ELSE. It has two
+#X text 566 119 Check also the [drive~] object from ELSE. It has two
 modes of waveshaping distortion \, one is the 'tanh' function presented
 earlier and the second mode is another power function described in
 the equation below., f 63;
+#X obj 133 678 expr~ copysign(pow(abs($v1) \, $v2) \, $v1);
+#X text 116 650 Here's a way to implement [power~] in [expr~];
+#X text 566 68 Try also [power~] with samples and live input. Exponential
+values below 1 and towards zero result in a harsh distortion., f 63
+;
 #X connect 0 0 10 0;
 #X connect 1 0 2 0;
 #X connect 2 0 11 0;
