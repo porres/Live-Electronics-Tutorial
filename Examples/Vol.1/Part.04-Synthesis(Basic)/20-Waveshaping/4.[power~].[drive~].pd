@@ -21,15 +21,6 @@
 #X obj 283 116 f2s~ 50;
 #X text 24 14 We can also use many different kinds of functions that
 alter the shape of a sound \, such as power functions., f 70;
-#X text 26 281 Above we have [pow~] \, note that a power function would
-originally give us a 'nan' (Not a Number) if a negative signal 'a'
-is raised by a non integer exponent 'b'. In this case \, [pow~] gives
-us "0" instead. for the case of integer exponentials \, the negative
-values become positive., f 72;
-#X text 26 344 Below \, the [power~] object from ELSE gives us -pow(-a
-\, b) in the case of a negative input \, which extends the usual definition
-of exponentiation and allows exponentiation of negative signal values.
-, f 72;
 #X obj 158 512 *~;
 #X obj 258 513 hsl 128 15 0.1 10 1 0 empty empty empty -2 -8 0 10 -228856
 -1 -1 0 1;
@@ -63,10 +54,19 @@ of exponentiation and allows exponentiation of negative signal values.
 + $v1 \, $v2) - 1.), f 36;
 #X text 834 133 <= check its help file;
 #X text 870 293 Transfer Function, f 8;
-#X text 573 71 Check also the [drive~] object from ELSE. It has two
+#X text 26 281 Above \, we have [pow~] \, note that a power function
+would originally give us a 'nan' (Not a Number) if a negative signal
+'a' is raised by a non integer exponent 'b'. In this case \, [pow~]
+gives us "0" instead. for the case of integer exponentials \, the negative
+values become positive., f 72;
+#X text 26 344 Below \, the [power~] object from ELSE gives us -pow(-a
+\, b) in the case of a negative input \, which extends the usual definition
+of exponentiation and allows exponentiation of negative signal values.
+This makes it a kind of power function waveshaper., f 72;
+#X text 562 67 Check also the [drive~] object from ELSE. It has two
 modes of waveshaping distortion \, one is the 'tanh' function presented
-earlier and the second mode is a power function described in the equation
-below., f 61;
+earlier and the second mode is another power function described in
+the equation below., f 63;
 #X connect 0 0 10 0;
 #X connect 1 0 2 0;
 #X connect 2 0 11 0;
@@ -78,21 +78,21 @@ below., f 61;
 #X connect 12 0 13 0;
 #X connect 13 0 14 0;
 #X connect 14 0 0 1;
-#X connect 18 0 28 0;
-#X connect 19 0 20 0;
-#X connect 20 0 24 0;
-#X connect 21 0 18 0;
-#X connect 24 0 28 1;
-#X connect 25 0 26 0;
-#X connect 26 0 27 0;
-#X connect 27 0 18 1;
-#X connect 28 0 22 0;
-#X connect 30 0 39 0;
-#X connect 31 0 32 0;
-#X connect 32 0 35 0;
-#X connect 33 0 30 0;
-#X connect 35 0 39 1;
-#X connect 36 0 37 0;
-#X connect 37 0 38 0;
-#X connect 38 0 30 1;
-#X connect 39 0 34 0;
+#X connect 16 0 26 0;
+#X connect 17 0 18 0;
+#X connect 18 0 22 0;
+#X connect 19 0 16 0;
+#X connect 22 0 26 1;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 16 1;
+#X connect 26 0 20 0;
+#X connect 28 0 37 0;
+#X connect 29 0 30 0;
+#X connect 30 0 33 0;
+#X connect 31 0 28 0;
+#X connect 33 0 37 1;
+#X connect 34 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 28 1;
+#X connect 37 0 32 0;
