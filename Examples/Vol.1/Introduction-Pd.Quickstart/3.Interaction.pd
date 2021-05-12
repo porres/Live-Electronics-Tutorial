@@ -1,4 +1,4 @@
-#N canvas 573 60 918 529 12;
+#N canvas 502 49 918 602 12;
 #X text 23 25 Basic interaction with Pd patches is possible via GUI
 elements via mouse clicks. These elements are the GUI objects like
 number boxes \, sliders \, bang buttons \, etc. You can also interact
@@ -48,11 +48,11 @@ tutorial. Check the help file of native MIDI objects., f 61;
 #X text 589 84 <= right click for help;
 #X obj 480 445 netreceive 3001;
 #X msg 447 268 connect localhost 3001;
-#X obj 497 362 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 497 362 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X floatatom 497 306 5 0 0 0 - - -;
 #X floatatom 480 476 5 0 0 0 - - -;
-#X obj 662 382 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 662 382 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X msg 661 268 connect localhost 4001;
 #X obj 663 421 netreceive -u -b 4001;
@@ -75,6 +75,9 @@ from other computers. Lot's of wild stuff can happen!, f 62;
 #X text 430 175 It's also possible to communicate between aplications
 via OSC protocol. We'll also see more about this later in this tutorial.
 For now \, check the help files of the objects below., f 62;
+#X text 275 537 More is possible with externals \, which include more
+GUI objects and other interaction possibilities \, so we'll first se
+how to load them in the next example., f 52;
 #X connect 2 0 3 0;
 #X connect 3 0 9 0;
 #X connect 4 0 11 0;
