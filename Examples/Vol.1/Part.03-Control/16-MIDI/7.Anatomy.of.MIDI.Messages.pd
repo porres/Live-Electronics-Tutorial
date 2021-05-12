@@ -1,12 +1,6 @@
 #N canvas 368 48 1013 513 12;
 #X declare -path else;
 #X obj 819 28 declare -path else;
-#X text 56 377 - 128 to 143: Note Off message in channels 1-16 \; -
-144 to 159: Note On message in channels 1-16 \; - 160 to 175: Polyphonic
-Aftertouch in channels - 16 \; - 176 to 191: Control Change messages
-in channels 1-16 \; - 192 to 207: Program Change messages in channels
-1-16 \; - 208 to 223: Channel Aftertouch in channels 1-16 \; - 224
-to 239: Pitch Bend messages in channels 1-16;
 #X text 531 170 Program Change and Aftertouch only need to be followed
 by one more value to represent \, respectively \, Program number and
 Aftertouch value. Let's check all of these in detail below., f 62
@@ -438,3 +432,9 @@ before \, two values will codify a Pitch Bend value with 14-bits resolution.
 so called "System Messages". These are: "System Common Messages" \,
 "System Real Time Messages" and "System Exclusive Messages" (or "sysex").
 Let's check them out:, f 65;
+#X text 56 377 - 128 to 143: Note Off message in channels 1-16 \; -
+144 to 159: Note On message in channels 1-16 \; - 160 to 175: Polyphonic
+Aftertouch in channels 1-16 \; - 176 to 191: Control Change messages
+in channels 1-16 \; - 192 to 207: Program Change messages in channels
+1-16 \; - 208 to 223: Channel Aftertouch in channels 1-16 \; - 224
+to 239: Pitch Bend messages in channels 1-16;
