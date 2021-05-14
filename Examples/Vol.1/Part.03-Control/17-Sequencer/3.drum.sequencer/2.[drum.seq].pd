@@ -1,6 +1,6 @@
-#N struct 1016-slot float x float y float slotsize float color float
+#N struct 1007-slot float x float y float slotsize float color float
 width float bordercolor;
-#N canvas 466 110 634 469 12;
+#N canvas 199 70 634 469 12;
 #X declare -path else;
 #X obj 104 41 tgl 30 0 empty metro empty 17 7 0 10 -228856 -1 -1 1
 1;
@@ -28,13 +28,13 @@ arrays. Click on the slots and change their state., f 45;
 slot. The output is the track number and slot value. So you need to
 route the value of each track. We then use select to trigger the sample.
 Check its help file for more info., f 46;
-#X text 497 150 <= preset;
+#X text 503 150 <= preset;
 #X obj 65 389 out~;
 #X obj 104 141 count 1 16;
 #X msg 42 109 set 1;
 #X obj 104 255 route 1 2;
-#X obj 207 142 initmess import 1 0 1 0 1 1 1 0 1 0 0 1 0 1 0 1 1 0
-0 1 0 1 0 0 1 0 1 0 1 0 0 0, f 40;
+#X obj 207 142 initmess import 1 0 1 0 1 1 1 0 1 0 0 1 0 1 0 1 || 1
+0 0 1 0 1 0 0 1 0 1 0 1 0 0 0, f 41;
 #X connect 0 0 3 0;
 #X connect 0 0 5 0;
 #X connect 2 0 5 1;
