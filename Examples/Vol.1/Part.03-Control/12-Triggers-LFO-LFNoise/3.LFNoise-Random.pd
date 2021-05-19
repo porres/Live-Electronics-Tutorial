@@ -45,31 +45,31 @@ object from ELSE., f 63;
 #X obj 769 23 declare -path else;
 #X floatatom 496 188 5 0.1 10 0 - - -;
 #X obj 499 238 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 8289 1;
+-1 -1 3786 1;
 #X obj 496 260 rescale 500 1500;
 #X obj 470 309 bp~ 0 10;
 #X obj 442 238 noise~;
 #X obj 470 346 out~;
 #X obj 496 286 nbx 7 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 1152.67 256;
+-228856 -1 -1 798.088 256;
 #X obj 496 212 lfnoise 0.5 1;
 #N canvas 508 120 525 301 random 0;
 #X obj 92 81 metro 500;
 #X obj 92 54 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 1 1
 ;
 #X obj 92 219 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 54.99 256;
+-228856 -1 -1 84.04 256;
 #X obj 92 158 pack float 500;
 #X obj 92 27 loadbang;
 #X obj 95 246 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 5499 1;
+-1 -1 8404 1;
 #X obj 92 112 random 128;
 #X obj 92 188 line 0 5;
 #X obj 187 52 nbx 3 14 -1e+37 1e+37 0 0 empty empty ms 0 -8 0 12 -228856
 -1 -1 0 256;
 #X obj 92 136 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 58 256;
-#X text 242 112 How to implement a "ramp noise" with random and [line].
+-228856 -1 -1 5 256;
+#X text 242 112 How to implement a "ramp noise" with [random] and [line].
 , f 31;
 #X connect 0 0 6 0;
 #X connect 1 0 0 0;

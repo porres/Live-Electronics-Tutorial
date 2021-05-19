@@ -3,7 +3,7 @@
 #X text 210 225 LFO;
 #X text 586 188 LFO;
 #X obj 776 241 hsl 128 15 50 400 0 0 empty sl empty -2 -8 0 10 -228856
--1 -1 3800 1;
+-1 -1 0 1;
 #X text 803 240 portamento;
 #X obj 316 397 out~;
 #X obj 94 297 graph~ 5000 2;
@@ -28,11 +28,6 @@
 #X obj 376 224 phasor~ 9.11;
 #X obj 316 259 samphold~;
 #X text 465 224 Trigger;
-#X text 33 115 You can use sample and hold techniques to achieve interesting
-control gestures. See what happens when we pass an LFO into a sample
-and hold unit. Try different frequency values for both the LFO and
-the trigger rate \, this is what determines different patterns., f
-74;
 #X text 803 200 Trigger;
 #X obj 740 384 plate.rev~ 50 0.6 0.25 0.8 0.5, f 16;
 #X obj 737 29 declare -path else;
@@ -44,9 +39,14 @@ for each new period of [phasor~] for positive frequencies smaller than
 the nyquist frequency. The [sh~] object from ELSE is another sample
 and hold unit triggered by impulses or pulses and is more versatile.
 , f 74;
-#X text 590 66 Now we use [sh~] and [glidew~] is also used to generate
-a smoothened output \, or a "portamento" between the sampled and held
-values when the values increase., f 47;
+#X text 33 115 You can use sample and hold techniques to achieve interesting
+control gestures. See what happens when we pass a LFO into a sample
+and hold unit. Try different frequency values for both the LFO and
+the trigger rate \, this is what determines different patterns., f
+74;
+#X text 590 67 Now we use [sh~] and [glide2~] is also used to generate
+a smoothened output (or a "portamento") between the sampled and held
+values when the values increase., f 48;
 #X connect 2 0 17 1;
 #X connect 6 0 5 0;
 #X connect 6 0 21 0;
@@ -57,7 +57,7 @@ values when the values increase., f 47;
 #X connect 12 0 20 0;
 #X connect 13 0 17 0;
 #X connect 14 0 13 0;
-#X connect 15 0 25 0;
+#X connect 15 0 24 0;
 #X connect 16 0 13 1;
 #X connect 17 0 8 0;
 #X connect 18 0 14 0;
@@ -65,5 +65,5 @@ values when the values increase., f 47;
 #X connect 20 0 21 1;
 #X connect 21 0 7 0;
 #X connect 21 0 9 0;
-#X connect 25 0 27 0;
-#X connect 25 1 27 1;
+#X connect 24 0 26 0;
+#X connect 24 1 26 1;
