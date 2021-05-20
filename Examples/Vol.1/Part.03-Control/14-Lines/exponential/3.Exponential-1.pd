@@ -1,0 +1,69 @@
+#N canvas 332 59 1038 466 12;
+#X declare -path else;
+#X obj 271 327 vsl 18 100 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 0 1;
+#X obj 271 195 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X msg 271 220 500 \$1;
+#X text 318 219 duration \, target;
+#X obj 271 291 s2f~;
+#X obj 356 16 declare -path else;
+#X obj 396 334 setdsp~;
+#X obj 271 252 envgen~ -exp 4;
+#X obj 124 252 osc~ 440;
+#X obj 124 297 *~;
+#X obj 124 353 out~;
+#X text 39 64 The [envgen~] object can also generate exponential and
+curved lines \, unlike the native objects [line~] and [vline~]. In
+the example below \, we have a power of 4 \, and this is exactly the
+same as the quartic function we've used many times to control the volume
+logarythmically. In this way \, the example below implements fade in/out
+with [envgen~]. Check its help file for more details on setting exponential
+values., f 65;
+#X obj 741 316 vsl 18 100 -1 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
+-1 -1 4708 1;
+#X text 767 313 1;
+#X obj 741 280 s2f~;
+#X obj 862 280 s2f~;
+#X text 764 406 -1;
+#X text 767 355 0;
+#X obj 862 316 vsl 18 100 -1 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
+-1 -1 2974 1;
+#X text 888 313 1;
+#X text 885 406 -1;
+#X text 888 355 0;
+#X obj 611 316 vsl 18 100 -1 1 0 0 ewtwet wefwert empty 0 -9 0 10 -228856
+-1 -1 2140 1;
+#X text 637 313 1;
+#X obj 611 280 s2f~;
+#X text 634 406 -1;
+#X text 637 355 0;
+#X obj 741 175 rand.f -1 1;
+#X obj 741 140 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X msg 611 217 1000 \$1;
+#X obj 741 246 lag~ 1000;
+#X obj 862 246 glide~ 1000;
+#X obj 741 107 tempo 60 -on;
+#X text 577 35 The [lag~] and [glide~] objects also generate exponential
+lines. Compare them to [envgen~] below.;
+#X obj 611 246 envgen~ -exp 2;
+#X connect 1 0 2 0;
+#X connect 2 0 7 0;
+#X connect 4 0 0 0;
+#X connect 7 0 4 0;
+#X connect 7 0 9 1;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 14 0 12 0;
+#X connect 15 0 18 0;
+#X connect 24 0 22 0;
+#X connect 27 0 29 0;
+#X connect 27 0 30 0;
+#X connect 27 0 31 0;
+#X connect 28 0 27 0;
+#X connect 29 0 34 0;
+#X connect 30 0 14 0;
+#X connect 31 0 15 0;
+#X connect 32 0 28 0;
+#X connect 34 0 24 0;

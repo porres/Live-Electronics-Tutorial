@@ -1,0 +1,72 @@
+#N canvas 734 102 938 736 12;
+#X declare -path else;
+#X obj 739 31 declare -path else;
+#X floatatom 315 273 5 10 125 0 - - -;
+#X obj 315 332 *;
+#X floatatom 315 360 8 0 0 0 - - -;
+#X text 380 352 period in samples, f 9;
+#X text 355 273 period in ms;
+#X obj 136 431 slop~ 1e+09, f 23;
+#X obj 532 256 setdsp~;
+#X text 36 20 You can also have an incoming signal that controls your
+amplitude \, such as a pulse/gate (as we'll see later in this tutorial).
+This audio signal needs then to be smoothened. A vanilla solution requires
+[slop~] - a slew limiter and lowpass filter whose details are provided
+only later in this tutorial (with other filters)., f 67;
+#X floatatom 134 258 6 0 0 0 - - -;
+#X obj 134 224 tgl 16 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+1;
+#X obj 161 208 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 63 258 target =>;
+#X text 70 222 click =>;
+#X obj 134 331 sig~;
+#X obj 161 232 rand.f 0 1;
+#X obj 139 500 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 6591 1;
+#X obj 136 475 s2f~;
+#X obj 315 243 initmess 1000;
+#X obj 333 303 sr~ -khz;
+#X floatatom 777 285 0 0 0 0 - - -;
+#X obj 777 240 expr 1000./$f1;
+#X text 680 206 period in ms;
+#X text 707 284 frequency;
+#X floatatom 777 206 5 10 125 0 - - -;
+#X obj 647 248 pulse~ 4;
+#X obj 647 336 slop~ 1e+09, f 19;
+#X obj 654 424 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X obj 651 399 s2f~;
+#X obj 777 176 initmess 1000;
+#X obj 40 359 lastvalue;
+#X obj 199 335 -;
+#X obj 195 305 t f f;
+#X floatatom 199 363 6 0 0 0 - - -;
+#X obj 199 388 expr abs($f1)/$f2;
+#X obj 402 496 cyclone/rampsmooth~;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 34 1;
+#X connect 6 0 17 0;
+#X connect 9 0 14 0;
+#X connect 9 0 32 0;
+#X connect 10 0 9 0;
+#X connect 11 0 15 0;
+#X connect 14 0 6 0;
+#X connect 15 0 9 0;
+#X connect 17 0 16 0;
+#X connect 18 0 1 0;
+#X connect 19 0 2 1;
+#X connect 20 0 26 5;
+#X connect 20 0 26 3;
+#X connect 21 0 20 0;
+#X connect 24 0 21 0;
+#X connect 26 0 28 0;
+#X connect 28 0 27 0;
+#X connect 29 0 24 0;
+#X connect 31 0 33 0;
+#X connect 32 0 31 1;
+#X connect 32 1 31 0;
+#X connect 33 0 34 0;
+#X connect 34 0 6 2;
+#X connect 34 0 6 4;

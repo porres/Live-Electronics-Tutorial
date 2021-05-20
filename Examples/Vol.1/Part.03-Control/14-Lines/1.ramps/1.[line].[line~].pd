@@ -1,0 +1,55 @@
+#N canvas 567 42 850 386 12;
+#X declare -path else;
+#X msg 145 273 \$1 1000;
+#X obj 145 303 line 0 1;
+#X floatatom 145 247 6 0 0 0 - - -;
+#X obj 145 213 tgl 16 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 592 203 tgl 18 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 592 272 line~;
+#X obj 595 323 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 8511 1;
+#X obj 148 334 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X text 203 273 ramp of 1000 ms;
+#X text 211 303 one value at every 1 ms;
+#X obj 750 222 setdsp~ 1;
+#X obj 592 298 s2f~;
+#X obj 682 28 declare -path else;
+#X text 28 19 The simplest form of generating lines is to generate
+single ramps. That is \, generating a single line segment from a start
+point to an end point. We'll also see how to generate more complex
+and compound line segments. Let's first check the native object [line]
+and [line~].;
+#X obj 172 197 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 172 221 rand.f 0 1;
+#X text 74 247 target =>;
+#X text 81 211 click =>;
+#X text 28 100 They expect a list message with a target value and a
+time period to reach it. The 1st argument of [line] defines the starting
+point. By default \, it generates a value at an interval rate of 20
+ms \, but you can change it with the 2nd argument or third inlet. More
+details in the help file., f 59;
+#X text 480 61 The [line~] object is the audio rate counterpart \,
+and thus it generates values at each new sample. One restrain is that
+it always start generating values at the beggining of a block of audio
+and it also can only finish a ramp at the end of a block of audio -
+so it doesn't have the best time resolution., f 49;
+#X obj 506 188 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 506 212 rand.f 0 1;
+#X msg 592 243 \$1 1000;
+#X connect 0 0 1 0;
+#X connect 1 0 7 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 22 0;
+#X connect 5 0 11 0;
+#X connect 11 0 6 0;
+#X connect 14 0 15 0;
+#X connect 15 0 2 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 5 0;
