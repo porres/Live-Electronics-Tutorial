@@ -28,7 +28,6 @@ are different in shape., f 44;
 #X obj 136 431 slop~ 1e+09, f 23;
 #X obj 643 401 slop~ 1e+09, f 19;
 #X obj 493 316 setdsp~;
-#X obj 262 208 initmess 50;
 #X text 36 111 For a linear smoothening \, we use the 3rd inlet (for
 the downwards ramp) and 5th inlet (for upwards). We specify an equal
 period for both ramps in ms. We then need to convert to the period
@@ -38,13 +37,14 @@ value to get a maximum amplitude increment \, or "slew limit"., f
 #X text 552 82 The [slop~] object can also smoothen the signal logarythmincally
 with the 4th (downwards) and 6th (upwards) inlet. For this we just
 need to convert from the period in ms., f 47;
-#X obj 280 265 sr~ -khz;
 #X text 36 20 You can also have an incoming signal that controls your
 amplitude \, such as a pulse/gate (as we'll see later in this tutorial).
 But the pulse/gate audo signal needs then to be smoothened. A vanilla
 solution requires [slop~] - a slew limiter and lowpass filter whose
 details are provided only later in this tutorial (with other filters).
 , f 67;
+#X obj 280 265 sr~ -khz;
+#X obj 262 208 initmess 50;
 #X connect 1 0 3 0;
 #X connect 2 0 22 4;
 #X connect 2 0 22 2;
@@ -60,5 +60,5 @@ details are provided only later in this tutorial (with other filters).
 #X connect 21 0 23 0;
 #X connect 22 0 17 0;
 #X connect 23 0 18 0;
-#X connect 25 0 1 0;
 #X connect 28 0 3 1;
+#X connect 29 0 1 0;
