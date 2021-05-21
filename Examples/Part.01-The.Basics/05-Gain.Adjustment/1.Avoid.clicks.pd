@@ -31,7 +31,6 @@
 #X obj 833 309 display~;
 #X obj 833 255 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
-#X obj 833 282 f2s~ 500;
 #X text 741 282 abbreviation;
 #X obj 727 26 declare -path else;
 #X text 17 57 Below \, we use use [*~] to turn audio on (by multiplying
@@ -47,6 +46,8 @@ quick smoothened ramp to avoid clicks with a fast fade in/out (here
 at 10 ms). Another option is to use [float2sig~] (or [f2s~] for short)
 from ELSE \, which converts floats to signal but also generates linear
 ramps., f 61;
+#X obj 833 282 f2s~ 10;
+#X text 602 208 Quick;
 #X connect 0 0 3 0;
 #X connect 0 0 3 1;
 #X connect 0 0 14 0;
@@ -67,5 +68,5 @@ ramps., f 61;
 #X connect 18 0 14 0;
 #X connect 20 0 18 0;
 #X connect 21 0 16 0;
-#X connect 26 0 27 0;
-#X connect 27 0 25 0;
+#X connect 26 0 33 0;
+#X connect 33 0 25 0;
