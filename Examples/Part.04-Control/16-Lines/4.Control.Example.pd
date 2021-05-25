@@ -5,7 +5,7 @@
 #X obj 101 263 pan2~, f 12;
 #X obj 101 210 brown~;
 #X obj 182 226 envgen~ 1500 1 1000 -1 1500 1 1500 0;
-#X text 54 72 The usage of line generators can be used to control any
+#X text 53 72 The usage of line generators can be used to control any
 parameter you desire. You can use it as a control of amplitude (such
 as an envelope) or just about anything., f 56;
 #X text 54 129 In this example \, we use [envgen~] to control the panning
