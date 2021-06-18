@@ -1,4 +1,4 @@
-#N canvas 676 126 789 652 12;
+#N canvas 551 70 789 652 12;
 #X declare -path else;
 #X obj 121 556 out~;
 #X obj 363 110 text define -k \$0-seq;
@@ -54,7 +54,7 @@
 #X obj 237 458 r \$0-release;
 #X obj 121 457 voices 4 -list;
 #X obj 121 521 clone 4 voice2;
-#X text 381 164 Here the sequence is exactly the same as the last example.
+#X text 413 155 Here the sequence is exactly the same as the last example.
 And the output list represents: pitch \, amplitude \, Attack+Sustain
 time and release time., f 45;
 #X msg 81 128 tempo \$1 permsec;
@@ -64,7 +64,7 @@ time and release time., f 45;
 #X obj 282 295 expr 1 / $f1;
 #X obj 174 276 * 1;
 #X obj 211 303 * 1;
-#X text 381 231 We're now using [makenote] and [voices] \, and note
+#X text 413 222 We're now using [makenote] and [voices] \, and note
 how the tempo is used to also adjust the values of Attack+Sustain and
 Release times., f 45;
 #X text 523 111 <= sequence;
@@ -75,6 +75,9 @@ is sent to [clone]. The whole list sent to [clone] represents: 1) voice
 number. 2) pitch. 3) Gate (amplitude) and 4) release time. Open [clone]
 to see how the values are treated., f 61;
 #X text 259 161 <= start playing, f 8;
+#X text 413 271 This is good because now the sequence adapts to any
+tempo \, whereas before it'd hold the notes for the same amount independently
+of the tempo., f 45;
 #X connect 2 0 4 0;
 #X connect 3 0 10 0;
 #X connect 4 0 10 0;
