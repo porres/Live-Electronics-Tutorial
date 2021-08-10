@@ -6,7 +6,7 @@
 
 --------------------------------------------------------------------------
 
-	Copyright © 2008-2020 Alexandre Torres Porres
+	Copyright © 2008-2021 Alexandre Torres Porres
 
 **Link:** <https://github.com/porres/Live-Electronics-Tutorial>.
 
