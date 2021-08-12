@@ -318,12 +318,12 @@ for more details.;
 #X text 45 46 hz;
 #X text 120 45 order;
 #X obj 114 65 nbx 5 14 1 16 0 0 empty \$0-order empty 0 -8 0 10 -228856
--1 -1 8 256;
+-1 -1 12 256;
 #X obj 40 66 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 500 256;
+-228856 -1 -1 2293.8 256;
 #X obj 40 170 biplot;
 #X obj 43 23 hsl 128 15 20 22000 1 0 empty \$0-freq empty -2 -8 0 10
--228856 -1 -1 5837 1;
+-228856 -1 -1 8637 1;
 #N canvas 172 344 498 356 lowpass 0;
 #X obj 178 40 inlet;
 #X obj 120 282 outlet;
@@ -427,7 +427,7 @@ for more details.;
 #X text 245 46 hz;
 #X text 320 45 order;
 #X obj 240 66 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 500 256;
+-228856 -1 -1 267.045 256;
 #N canvas 172 344 514 321 highpass 0;
 #X obj 162 26 inlet;
 #X obj 121 268 outlet;
@@ -531,7 +531,7 @@ for more details.;
 of the [lop.bw~] and [hip.bw~]. We get the output that goes to [biquads~]
 and use it to plot the frequency response with [biplot]., f 45;
 #X obj 243 23 hsl 128 15 20 22000 1 0 empty \$0-freq empty -2 -8 0
-10 -228856 -1 -1 5837 1;
+10 -228856 -1 -1 4737 1;
 #X obj 314 65 nbx 5 14 1 16 0 0 empty \$0-order empty 0 -8 0 10 -228856
 -1 -1 8 256;
 #X obj 821 50 initmess \; \$0-order 8 \; \$0-freq 500;

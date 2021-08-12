@@ -1,4 +1,4 @@
-#N canvas 316 60 905 446 12;
+#N canvas 384 73 905 446 12;
 #X obj 152 251 cnv 15 200 25 empty empty empty 5 12 0 14 -233017 -66577
 0;
 #X obj 550 94 cnv 15 200 25 empty empty empty 5 12 0 14 -261234 -66577
@@ -43,7 +43,7 @@ as a multiplication in the frequency domain \, we have:, f 54;
 filter of 4 samples. Let's start with the difference equation and [fexpr~]
 implementation.;
 #X restore 590 395 pd FIR;
-#N canvas 277 28 581 537 IIR 0;
+#N canvas 846 61 581 537 IIR 0;
 #X obj 99 83 cnv 15 180 25 empty empty empty 5 12 0 14 -233017 -66577
 0;
 #X obj 253 170 cnv 15 200 25 empty empty empty 5 12 0 14 -233017 -66577

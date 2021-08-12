@@ -4,9 +4,9 @@
 #X obj 503 365 rzero~ 1;
 #X obj 540 185 hip~;
 #X obj 565 141 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
+-228856 -1 -1 20 256;
 #X obj 503 115 noise~;
-#X obj 568 114 hsl 128 15 20 20000 1 0 empty empty empty -2 -8 0 10
+#X obj 568 114 hsl 128 15 20 20000 1 1 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
 #X text 146 99 y[n] = x[n] - a[n] * x[n-1];
 #X obj 227 505 clip 0 1;
@@ -45,7 +45,7 @@ is:, f 53;
 #X obj 431 480 fexpr~ $x - $x[-1] + a*$y1[-1];
 #X text 488 65 Compare below the [hip~] object to other equivalent
 implementations., f 34;
-#N canvas 622 45 456 398 H(z) 0;
+#N canvas 762 140 455 370 H(z) 0;
 #X text 98 109 Y(z) = X(z) - X(z)z^-1 + a * Y(z)z^-1;
 #X text 105 134 X(z) - X(z)z^-1 = Y(z) - a * Y(z)z^-1;
 #X text 106 154 X(z) (1 - z^-1) = Y(z) - a * Y(z)z^-1;

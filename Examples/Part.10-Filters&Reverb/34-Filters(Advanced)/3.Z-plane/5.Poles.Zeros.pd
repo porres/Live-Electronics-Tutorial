@@ -1,4 +1,4 @@
-#N canvas 108 81 1318 552 12;
+#N canvas 194 81 1318 552 12;
 #N canvas 187 23 1179 724 Biquad-Frequency-Response 0;
 #X obj 101 101 cnv 15 843 391 empty empty empty 18 9 1 16 -262144 -1
 0;
@@ -279,7 +279,6 @@
 #X connect 6 0 7 0;
 #X restore 24 235 pd db-range;
 #X obj 24 265 tabwrite \$0-response;
-#X obj 24 51 r \$0-coeficientes;
 #N canvas 186 28 463 231 H(z) 0;
 #X obj 45 19 inlet;
 #X obj 45 200 outlet;
@@ -306,14 +305,15 @@
 #X connect 4 4 3 5;
 #X connect 5 0 4 0;
 #X restore 24 205 pd H(z);
-#X connect 1 0 7 0;
+#X obj 24 51 r \$0-coefficients;
+#X connect 1 0 6 0;
 #X connect 1 1 5 1;
 #X connect 2 0 3 0;
-#X connect 2 1 7 1;
+#X connect 2 1 6 1;
 #X connect 3 0 1 0;
 #X connect 4 0 5 0;
-#X connect 6 0 2 0;
-#X connect 7 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 2 0;
 #X restore 268 71 pd plot_freq-response;
 #X obj 102 123 cnv 15 100 15 empty empty empty 18 9 1 16 -262144 -1
 0;
@@ -437,7 +437,7 @@
 0;
 #X obj 100 310 cnv 1 450 2 empty empty empty 20 12 0 14 -258113 -66577
 0;
-#X obj 177 162 cnv 15 15 15 empty \$0-pole1 X 145 150 0 14 -191407
+#X obj 177 162 cnv 15 15 15 empty \$0-pole1 X 117 150 0 14 -191407
 -66577 0;
 #X obj 177 162 cnv 15 15 15 empty \$0-zero1 O 145 150 0 14 -191407
 -66577 0;
@@ -638,7 +638,7 @@
 #X obj 1 1 cnv 15 448 83 empty empty empty 20 12 0 14 -241339 -66577
 0;
 #X obj 34 30 hsl 128 15 0 1 0 0 \$0-p1-sl \$0-p1-sl-set amp_1 -2 -8
-0 10 -228856 -1 -1 6350 1;
+0 10 -228856 -1 -1 5200 1;
 #X obj 34 63 hsl 128 15 0 1 0 0 \$0-p2-sl \$0-p2-sl-set amp_2 -2 -8
 0 10 -228856 -1 -1 6350 1;
 #X obj 282 30 hsl 128 15 0 1 0 0 \$0-z1-sl \$0-z1-sl-set amp_1 -2 -8
@@ -881,7 +881,6 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X connect 92 0 9 0;
 #X connect 92 1 85 0;
 #X restore 720 275 pd GUI;
-#X obj 633 307 s \$0-coeficientes;
 #N canvas 772 177 437 438 init 0;
 #X obj 119 47 loadbang;
 #X obj 115 256 s \$0-p1-sl-set;
@@ -905,7 +904,8 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X connect 8 0 9 0;
 #X connect 8 0 10 0;
 #X restore 633 119 pd init;
-#X connect 44 0 48 0;
+#X obj 633 307 s \$0-coefficients;
+#X connect 44 0 49 0;
 #X coords 0 -1 1 1 452 540 2 100 -2;
 #X restore 5 2 pd Plano-Z;
 #X text 892 25 - Resonant Highpass: zeros at 1 \, conjugated poles

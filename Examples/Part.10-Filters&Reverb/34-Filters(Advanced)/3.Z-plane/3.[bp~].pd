@@ -117,16 +117,15 @@
 0;
 #X obj 100 325 cnv 1 450 2 empty empty empty 20 12 0 14 -258113 -66577
 0;
-#X obj 177 177 cnv 15 15 15 empty \$0-pole1 X 295 150 0 14 -191407
--66577 0;
+#X obj 177 177 cnv 15 15 15 empty \$0-pole1 X 176 29 0 14 -191407 -66577
+0;
 #X obj 177 177 cnv 15 15 15 empty \$0-zero1 empty 145 150 0 14 -191407
 -66577 0;
-#X obj 177 177 cnv 15 15 15 empty \$0-pole2 X 295 150 0 14 -191407
+#X obj 177 177 cnv 15 15 15 empty \$0-pole2 X 176 270 0 14 -191407
 -66577 0;
 #X obj 177 177 cnv 15 15 15 empty \$0-zero2 empty 145 150 0 14 -191407
 -66577 0;
 #N canvas 576 25 310 167 z-plane 0;
-#X obj 36 34 r \$0-coeficientes;
 #N canvas 502 195 417 257 find_poles 0;
 #X obj 36 182 outlet;
 #X obj 48 155 outlet;
@@ -438,50 +437,45 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X connect 2 0 4 2;
 #X connect 3 0 4 3;
 #X restore 36 100 pd plot;
+#X obj 36 34 r \$0-coefficients;
 #X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 1 1 2 1;
-#X connect 1 2 2 2;
-#X connect 1 3 2 3;
+#X connect 0 1 1 1;
+#X connect 0 2 1 2;
+#X connect 0 3 1 3;
+#X connect 2 0 0 0;
 #X restore 191 67 pd z-plane;
 #X coords 0 -1 1 1 452 452 2 100 100;
-#X restore 485 221 pd Z-Plane-biquad;
-#X obj 109 575 cpole~;
-#X obj 135 605 cpole~;
-#X obj 109 531 *~;
-#X obj 68 500 noise~;
-#X obj 282 129 nbx 5 14 1 100 1 0 \$0-Q \$0-q_set empty 0 -8 0 10 -228856
--1 -1 1 256;
-#X floatatom 302 184 0 0 0 0 - - -;
-#X floatatom 231 184 0 0 0 0 - - -;
-#X floatatom 160 184 0 0 0 0 - - -;
-#X floatatom 247 562 0 0 0 0 - - -;
-#X floatatom 215 561 0 0 0 0 - - -;
-#X floatatom 175 531 0 0 0 0 - - -;
-#X floatatom 144 531 0 0 0 0 - - -;
-#X obj 302 215 v g;
-#X msg 127 471 \$3;
-#X obj 228 257 noise~;
-#X obj 160 212 v a1;
-#X obj 231 212 v a2;
-#X obj 85 247 noise~;
-#X obj 180 128 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq-send \$0-freq empty
-0 -8 0 10 -228856 -1 -1 0 256;
-#X text 159 126 Hz;
-#X obj 135 299 nbx 5 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 -228856
--1 -1 1 256;
-#X obj 111 275 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty
-0 -8 0 10 -228856 -1 -1 0 256;
-#X obj 102 299 bp~;
-#X obj 228 281 fexpr~ g * $x[0] + a1 * $y[-1] + a2 * $y[-2], f 30
+#X restore 485 246 pd Z-Plane-biquad;
+#X obj 135 576 cpole~, f 12;
+#X obj 140 617 cpole~, f 33;
+#X obj 107 537 *~;
+#X obj 66 506 noise~;
+#X obj 296 129 nbx 5 14 0.1 100 1 0 \$0-Q \$0-q_set empty 0 -8 0 10
+-228856 -1 -1 7.2993 256;
+#X floatatom 160 181 8 0 0 0 - - -;
+#X obj 302 212 v g;
+#X msg 125 478 \$3;
+#X obj 228 252 noise~;
+#X obj 160 209 v a1;
+#X obj 231 209 v a2;
+#X obj 57 234 noise~;
+#X obj 166 128 nbx 8 14 100 20000 1 0 \$0-freq-send \$0-freq empty
+0 -8 0 10 -228856 -1 -1 8567.72 100;
+#X text 145 126 Hz;
+#X obj 107 286 nbx 5 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 -228856
+-1 -1 7.2993 256;
+#X obj 83 262 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty 0
+-8 0 10 -228856 -1 -1 8567.72 256;
+#X obj 74 286 bp~;
+#X obj 228 276 fexpr~ g * $x[0] + a1 * $y[-1] + a2 * $y[-2], f 30
 ;
-#X obj 59 86 cnv 15 330 20 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 84 82 cnv 15 330 20 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 69 86 y[n] = g * x[n] + a1 * y[n-1] + a2 * y[n-2];
-#X floatatom 127 499 0 0 0 0 - - -;
-#X obj 135 640 out~;
-#X obj 228 330 out~;
-#X obj 102 329 out~;
+#X text 94 82 y[n] = g * x[n] + a1 * y[n-1] + a2 * y[n-2];
+#X floatatom 125 505 8 0 0 0 - - -;
+#X obj 140 650 out~;
+#X obj 228 325 out~;
+#X obj 74 316 out~;
 #N canvas 576 173 488 480 coefficients 0;
 #X obj 116 48 inlet;
 #X obj 50 48 inlet;
@@ -553,12 +547,13 @@ $f1 * $f1;
 #X connect 10 2 11 0;
 #X connect 14 0 15 0;
 #X connect 16 0 10 0;
-#X restore 180 152 pd coefficients;
-#X text 11 9 The [bp~] filter has 2 complex poles \, here's the difference
+#X restore 166 152 pd coefficients;
+#X f 19;
+#X text 23 9 The [bp~] filter has 2 complex poles \, here's the difference
 equation and a subpatch that generates the coefficients from a frequency
 and Q input \, the coefficients are loaded inside [fexpr~] for comparison:
 ;
-#X text 87 473 gain;
+#X text 85 477 gain;
 #N canvas 772 85 862 659 Poles 0;
 #X obj 578 577 outlet;
 #X obj 525 577 outlet;
@@ -593,7 +588,7 @@ and Q input \, the coefficients are loaded inside [fexpr~] for comparison:
 #X text 569 83 (a1 a2 b0);
 #X obj 525 234 trigger bang float float;
 #X obj 607 338 route 0 1;
-#X obj 607 285 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 607 285 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 607 311 pack float float;
 #X obj 637 362 abs;
@@ -677,49 +672,56 @@ is 0 - we then have both parts as:;
 #X connect 49 1 41 0;
 #X connect 49 2 46 0;
 #X connect 49 3 45 0;
-#X restore 194 495 pd Poles;
-#X text 267 127 Q;
-#X text 490 51 Even though the coefficients' values are real \, we're
+#X restore 188 478 pd Poles;
+#X f 29;
+#X text 281 127 Q;
+#X text 500 66 Even though the coefficients' values are real \, we're
 dealing with complex poles. More precisely a conjugate pair \, where
 the imaginary values are inverted (and get cancelled out). The subpatch
 [pd Poles] gets the complex pole values from the coefficient input.
 ;
-#X text 490 135 The "Q" is the resonance and controls the amplitude
+#X text 500 150 The "Q" is the resonance and controls the amplitude
 of the poles. The gain parameter compensates this boost in order that
 the maximum amplitude value is 0 dB. The angle represents the resonant
 frequency.;
-#X obj 767 13 declare -path else;
-#X obj 194 469 r \$0-coefficients;
-#X text 26 404 And see how we can also implement this filter with two
+#X obj 781 18 declare -path else;
+#X obj 188 445 r \$0-coefficients;
+#X text 44 394 And see how we can also implement this filter with two
 [cpole~] objects (complex pole filters) below.;
+#X floatatom 302 181 8 0 0 0 - - -;
+#X floatatom 231 181 8 0 0 0 - - -;
+#X floatatom 388 537 8 0 0 0 - - -;
+#X floatatom 321 537 8 0 0 0 - - -;
+#X floatatom 254 537 8 0 0 0 - - -;
+#X floatatom 189 537 8 0 0 0 - - -;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
-#X connect 2 0 28 0;
+#X connect 2 0 22 0;
 #X connect 3 0 1 0;
 #X connect 4 0 3 0;
-#X connect 5 0 31 1;
-#X connect 6 0 13 0;
-#X connect 7 0 17 0;
-#X connect 8 0 16 0;
-#X connect 9 0 2 3;
-#X connect 10 0 2 2;
-#X connect 11 0 1 3;
-#X connect 12 0 1 2;
-#X connect 14 0 27 0;
-#X connect 15 0 24 0;
+#X connect 5 0 25 1;
+#X connect 6 0 10 0;
+#X connect 8 0 21 0;
+#X connect 9 0 18 0;
+#X connect 12 0 17 0;
+#X connect 13 0 25 0;
+#X connect 15 0 17 2;
+#X connect 16 0 17 1;
+#X connect 17 0 24 0;
 #X connect 18 0 23 0;
-#X connect 19 0 31 0;
-#X connect 21 0 23 2;
-#X connect 22 0 23 1;
-#X connect 23 0 30 0;
-#X connect 24 0 29 0;
-#X connect 27 0 3 1;
-#X connect 31 0 8 0;
-#X connect 31 1 7 0;
-#X connect 31 2 6 0;
-#X connect 34 0 12 0;
-#X connect 34 1 11 0;
-#X connect 34 2 10 0;
-#X connect 34 3 9 0;
-#X connect 39 0 14 0;
-#X connect 39 0 34 0;
+#X connect 21 0 3 1;
+#X connect 25 0 6 0;
+#X connect 25 1 36 0;
+#X connect 25 2 35 0;
+#X connect 28 0 40 0;
+#X connect 28 1 39 0;
+#X connect 28 2 38 0;
+#X connect 28 3 37 0;
+#X connect 33 0 8 0;
+#X connect 33 0 28 0;
+#X connect 35 0 7 0;
+#X connect 36 0 11 0;
+#X connect 37 0 2 3;
+#X connect 38 0 2 2;
+#X connect 39 0 1 3;
+#X connect 40 0 1 2;

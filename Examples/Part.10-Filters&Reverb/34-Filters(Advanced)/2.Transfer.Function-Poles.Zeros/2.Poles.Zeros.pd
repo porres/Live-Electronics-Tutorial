@@ -1,4 +1,4 @@
-#N canvas 314 34 940 526 12;
+#N canvas 345 34 940 526 12;
 #X declare -path else;
 #X obj 52 436 cnv 15 275 50 empty empty empty 5 12 0 14 -232693 -66577
 0;
@@ -61,17 +61,8 @@ as a 2-Pole / 2-Zero filter \, you're also defining its order., f
 #X text 111 411 Transfer function of [biquad~]:;
 #X text 331 439 <== Zeros (a1/a2);
 #X text 331 464 <== Poles (b1/b2);
-#X text 39 328 Hence \, a1 & a2 are Zeros and b1 & b2 are Poles (note
-a0 isn't a zero). In a transfer function \, the Zeroes are the numerators
-\, and poles the denominator. Open [pd get-H(z)] to see how to derive
-the transfer function from the difference equation.;
-#X text 511 118 The [rpole~] object is a one pole filter object provided
-as a native object in Pd. It takes a pole coeficient in the right inlet.
-This is nothing but the IIR filter example we've been dealing with.
-, f 57;
 #X obj 688 283 fexpr~ $x[0] + $x2 * $y[-1];
 #X obj 688 323 out~;
-#X text 575 411 Transfer Function:;
 #X text 816 461 <== Pole;
 #X text 511 68 A pole represents a resonance \, and a zero is an anti
 resonance \, this is where they get their names from. We'll see later
@@ -79,14 +70,20 @@ how they act \, when the Z-Plane is presented.;
 #X obj 733 24 declare -path else;
 #X text 757 220 <= pole coefficient;
 #X text 657 283 =;
-#X obj 64 113 pic 0 ../files/SOS.gif empty empty 0;
-#X text 48 172 Zero 1 ==>;
-#X text 48 241 Zero 2 ==>;
-#X text 340 171 <== Pole 1;
-#X text 340 241 <== Pole 2;
+#X obj 78 117 pic 0 ../files/SOS.gif empty empty 0 0;
+#X text 39 323 Hence \, a1 & a2 are the Zeros and b1 & b2 are the Poles
+(note that a0 isn't a zero \, but an input gain coefficient). In a
+transfer function \, the Zeroes are the numerators \, and poles the
+denominator. Open [pd get-H(z)] to see how to derive this transfer
+function from the difference equation., f 61;
+#X text 511 118 The [rpole~] object is a one pole filter object provided
+as a native object in Pd. It takes a pole coeficient in the right inlet.
+This is nothing but the IIR filter example we've already seen in the
+previous examples., f 57;
+#X text 575 411 The Transfer Function:;
 #X connect 3 0 16 0;
 #X connect 4 0 3 0;
-#X connect 4 0 24 0;
+#X connect 4 0 22 0;
 #X connect 5 0 3 1;
-#X connect 5 0 24 1;
-#X connect 24 0 25 0;
+#X connect 5 0 22 1;
+#X connect 22 0 23 0;

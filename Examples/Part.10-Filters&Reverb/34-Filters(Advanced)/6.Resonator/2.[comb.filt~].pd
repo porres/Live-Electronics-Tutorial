@@ -1,4 +1,4 @@
-#N canvas 519 192 1053 590 12;
+#N canvas 381 182 1053 590 12;
 #X declare -path else;
 #X obj 557 160 impseq~;
 #X obj 103 132 cnv 15 320 120 empty empty empty 20 12 0 14 -233017
@@ -171,7 +171,7 @@ to resize the table., f 36;
 #X restore 574 226 pd IR;
 #X obj 558 253 out~;
 #X obj 557 188 comb.filt~ 1000 50;
-#N canvas 673 55 516 558 t60 1;
+#N canvas 673 55 516 558 t60 0;
 #X floatatom 137 165 0 0 0 0 - - -;
 #X floatatom 137 116 7 0 0 0 - feedback -;
 #X floatatom 225 168 0 0 0 0 - Hz -;

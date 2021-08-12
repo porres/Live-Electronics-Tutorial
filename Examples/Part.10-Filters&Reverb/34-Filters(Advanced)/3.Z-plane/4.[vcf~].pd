@@ -117,17 +117,17 @@
 0;
 #X obj 100 325 cnv 1 450 2 empty empty empty 20 12 0 14 -258113 -66577
 0;
-#X obj 177 177 cnv 15 15 15 empty \$0-pole1 X 295 150 0 14 -191407
--66577 0;
+#X obj 177 177 cnv 15 15 15 empty \$0-pole1 X 254 83 0 14 -191407 -66577
+0;
 #X obj 177 177 cnv 15 15 15 empty \$0-zero1 empty 145 150 0 14 -191407
 -66577 0;
 #X obj 177 177 cnv 15 15 15 empty \$0-pole2 empty 294 150 0 14 -191407
 -66577 0;
 #X obj 177 177 cnv 15 15 15 empty \$0-zero2 empty 145 150 0 14 -191407
 -66577 0;
-#X floatatom 291 27 0 0 0 0 - im -;
-#X floatatom 220 27 0 0 0 0 - re -;
-#N canvas 14 68 1299 625 GUI 0;
+#X floatatom 291 27 0 0 0 0 - #0-im -;
+#X floatatom 238 27 0 0 0 0 - #0-re -;
+#N canvas 136 76 1299 625 GUI 0;
 #X obj 117 211 s \$0-P1-im;
 #X obj 6 211 s \$0-P1-re;
 #X obj 228 211 s \$0-P2-re;
@@ -161,8 +161,8 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X obj 486 92 trigger bang float;
 #X obj 363 62 r \$0-p2-sl-set;
 #X obj 363 85 route set;
-#X obj 952 73 route set;
-#X obj 952 50 r \$0-z2-sl-set;
+#X obj 980 70 route set;
+#X obj 980 47 r \$0-z2-sl-set;
 #X obj 1004 314 v z_pair_\$0;
 #X obj 898 309 v p_pair_\$0;
 #X obj 895 274 r \$0-pair_p;
@@ -311,7 +311,7 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X connect 79 1 35 0;
 #X connect 81 0 82 0;
 #X restore 354 59 pd GUI;
-#N canvas 149 34 774 400 Poles 0;
+#N canvas 149 34 458 384 Poles 0;
 #X obj 183 305 s \$0-pole1;
 #X obj 183 251 pack;
 #X msg 183 277 label_pos \$1 \$2;
@@ -343,7 +343,7 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X obj 674 162 *~;
 #X obj 637 129 noise~;
 #X obj 171 490 nbx 5 14 1 100 1 1 \$0-Q empty empty 0 -8 0 10 -228856
--1 -1 2.64165 256;
+-1 -1 3.71803 256;
 #X floatatom 395 458 0 0 0 0 - #0-gain -;
 #X floatatom 324 458 0 0 0 0 - #0-im -;
 #X floatatom 254 458 0 0 0 0 - #0-re -;
@@ -364,13 +364,13 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 $y1[-1] + ar * $y2[-1];
 #X obj 519 46 noise~;
 #X obj 69 487 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq-send \$0-freq empty
-0 -8 0 10 -228856 -1 -1 0 256;
+0 -8 0 10 -228856 -1 -1 3841.73 256;
 #X text 44 484 Hz;
 #X obj 147 551 noise~;
 #X obj 266 551 nbx 5 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 -228856
--1 -1 2.64165 256;
+-1 -1 3.71803 256;
 #X obj 202 552 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty
-0 -8 0 10 -228856 -1 -1 0 256;
+0 -8 0 10 -228856 -1 -1 3841.73 256;
 #X obj 169 581 vcf~ 500 1;
 #X text 753 157 re;
 #X text 775 181 im;
@@ -448,7 +448,7 @@ the transfer function of both parts below., f 54;
 Check the Z Plane plot to the right. Again \, the angle represents
 the frequency and the radius the resonance.;
 #X obj 72 464 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0 10
--228856 -1 -1 0 1;
+-228856 -1 -1 4800 1;
 #X text 156 488 Q;
 #X obj 804 27 declare -path else;
 #X text 30 377 The coefficients are caclulated in the suboatch below

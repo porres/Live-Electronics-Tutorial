@@ -1,8 +1,8 @@
-#N canvas 297 137 1220 472 12;
+#N canvas 272 117 1220 472 12;
 #X declare -path else;
 #X obj 480 140 lop~;
 #X obj 142 185 hsl 128 15 20 7050 1 1 empty set-Hz empty -2 -8 0 10
--191407 -1 -1 6970 1;
+-191407 -1 -1 0 1;
 #X obj 139 344 clip 0 1;
 #X obj 151 241 s \$0-hz;
 #X obj 505 112 r \$0-hz;
@@ -24,11 +24,6 @@
 #X obj 633 169 out~;
 #X obj 686 64 r \$0-radians;
 #X text 462 34 Compare below:;
-#X text 37 27 The [lop~] object is a one pole filter. let's see how
-to implement it. First we convert the frequency from hertz to radians
-per sample. This value is used as a basis value for the coefficient
-\, but since a maximum value for the coefficient is one \, the maximum
-frequency input is about 7 Khz., f 53;
 #X text 695 122 coefifcient;
 #X obj 457 286 noise~;
 #X obj 457 318 fexpr~ ($x1 * $x2) + ((1 - $x2) * $y1);
@@ -43,10 +38,15 @@ frequency input is about 7 Khz., f 53;
 #X obj 904 353 out~;
 #X obj 992 307 display;
 #X obj 139 153 initmess 500;
-#X text 863 90 And here's also how to implement it with [biquad~],
-f 29;
-#X obj 939 25 declare -path else;
+#X text 903 104 And here's also how to implement it with [biquad~]
+, f 29;
+#X obj 957 38 declare -path else;
 #X obj 457 354 out~;
+#X text 38 27 The [lop~] object is a one pole filter. let's see how
+to implement it. First we convert the frequency from hertz to radians
+per sample. This value is used as a basis value for the coefficient
+and input gain \, but since a maximum value for the coefficient is
+one \, the maximum frequency input is about 7 Khz., f 53;
 #X connect 0 0 19 0;
 #X connect 1 0 5 0;
 #X connect 2 0 9 0;
@@ -63,15 +63,15 @@ f 29;
 #X connect 15 0 7 0;
 #X connect 21 0 11 1;
 #X connect 21 0 12 0;
-#X connect 25 0 26 0;
-#X connect 26 0 40 0;
-#X connect 27 0 26 1;
-#X connect 29 0 35 0;
-#X connect 30 0 29 0;
+#X connect 24 0 25 0;
+#X connect 25 0 39 0;
+#X connect 26 0 25 1;
+#X connect 28 0 34 0;
+#X connect 29 0 28 0;
+#X connect 30 0 31 0;
+#X connect 30 1 32 2;
 #X connect 31 0 32 0;
-#X connect 31 1 33 2;
-#X connect 32 0 33 0;
-#X connect 33 0 29 0;
-#X connect 33 0 36 0;
-#X connect 34 0 31 0;
-#X connect 37 0 1 0;
+#X connect 32 0 28 0;
+#X connect 32 0 35 0;
+#X connect 33 0 30 0;
+#X connect 36 0 1 0;
