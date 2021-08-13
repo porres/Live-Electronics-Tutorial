@@ -596,13 +596,6 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X text 22 127 We can use then a [rzero~] object to get the difference
 between two samples with a coefficient of 1 \, then we get the average
 by dividing by 2 (or multiplying by 0.5)., f 62;
-#X text 31 254 Below we can implement derive this filter with coefficients
-of a biquad filter and see how an average of 2 samples result in a
-single Zero at the nyquist frequency. We can also get the average of
-3 samples in a biquad system \, then we get a complex Zero at 3/4 of
-the nyquist (about 16.5Khz). We're using the [biplot] object from ELSE
-to plot the response and we'll see more about this object next., f
-62;
 #X text 22 21 We've seen how to use [fexpr~] to implement a moving
 average flter. We've also seeen a moving average filter of 2 samples
 in the first section on filters and used it in the feedback phase modulation
@@ -610,6 +603,13 @@ sine. Here we'll see other ways to implement it. First \, it is important
 to note this filter has no feedback coefficients \, so it only has
 zeros (no poles). It's also a kind of lowpass filter as previously
 stated., f 62;
+#X text 31 254 Below we can implement derive this filter with coefficients
+of a biquad filter and see how an average of 2 samples result in a
+single Zero at the nyquist frequency. We can also get the average of
+3 samples in a biquad system \, then we get a complex Zero at 2/3 of
+the nyquist (14.7Khz in 44.1Khz sample rate). We're using the [biplot]
+object from ELSE to plot the response and we'll see more about this
+object next., f 62;
 #X connect 8 0 7 0;
 #X connect 9 0 7 0;
 #X connect 12 0 10 0;
