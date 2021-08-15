@@ -1,0 +1,132 @@
+#N canvas 404 106 975 679 12;
+#X declare -path else;
+#X obj 136 513 cpole~, f 12;
+#X obj 141 554 cpole~, f 33;
+#X obj 75 479 *~;
+#X obj 75 411 noise~;
+#X obj 348 197 nbx 5 14 0.1 100 1 0 \$0-Q \$0-q_set empty 0 -8 0 10
+-228856 -1 -1 1 256;
+#X obj 218 196 nbx 8 14 100 20000 1 0 \$0-freq-send \$0-freq empty
+0 -8 0 10 -228856 -1 -1 500 100;
+#X text 230 172 Hz;
+#X floatatom 126 442 8 0 0 0 - - -;
+#X obj 141 587 out~;
+#N canvas 761 216 485 388 coefficients 0;
+#X obj 99 48 inlet;
+#X obj 50 48 inlet;
+#X obj 216 263 v r;
+#X obj 327 257 v omega;
+#X obj 272 288 v oneminusr;
+#X obj 99 87 t b f;
+#X obj 50 159 expr omega \; - r * r \; 2 * oneminusr * (oneminusr +
+r * omega) \; 1 - oneminusr \; min(omega / $f2 \, 1) \; $f1 * 2*pi
+/ sr;
+#N canvas 526 56 548 260 a1 0;
+#X obj 62 -35 inlet;
+#X obj 59 114 outlet;
+#X obj 365 47 v g;
+#X obj 59 5 expr (((g*g*g * (-1/720) + g*g*(1/24)) - g*0.5) + 1) \;
+$f1 * $f1;
+#X obj 59 67 expr max(2 * $f1 * r \, -1);
+#X connect 0 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 2 0;
+#X connect 4 0 1 0;
+#X restore 50 256 pd a1;
+#X text 59 21 Hz;
+#X text 106 21 Q;
+#X text 183 73 This is how we get the coefficients from the Hz and
+Q input. This is taken from [bp~]'s source code., f 38;
+#N canvas 1008 151 422 270 init 0;
+#X msg 76 150 500;
+#X obj 257 88 v pi;
+#X obj 260 149 v sr;
+#X obj 157 151 s \$0-q_set;
+#X obj 76 77 loadbanger 2;
+#X obj 76 174 s \$0-freq;
+#X obj 257 62 pi;
+#X obj 259 121 sr~;
+#X msg 157 119 set 1;
+#X connect 0 0 5 0;
+#X connect 4 0 0 0;
+#X connect 4 1 8 0;
+#X connect 4 1 6 0;
+#X connect 4 1 7 0;
+#X connect 6 0 1 0;
+#X connect 7 0 2 0;
+#X connect 8 0 3 0;
+#X restore 382 173 pd init;
+#X obj 73 315 outlet;
+#X obj 73 284 pack f f f 0 0;
+#X obj 50 131 pack float 1;
+#X connect 0 0 5 0;
+#X connect 1 0 14 0;
+#X connect 5 0 14 0;
+#X connect 5 1 14 1;
+#X connect 6 0 7 0;
+#X connect 6 1 13 1;
+#X connect 6 2 13 2;
+#X connect 6 3 2 0;
+#X connect 6 4 4 0;
+#X connect 6 5 3 0;
+#X connect 7 0 13 0;
+#X connect 13 0 12 0;
+#X connect 14 0 6 0;
+#X restore 218 223 pd coefficients;
+#X f 19;
+#X text 359 177 Q;
+#X obj 816 20 declare -path else;
+#X obj 189 342 r \$0-coefficients;
+#X floatatom 389 474 8 0 0 0 - - -;
+#X floatatom 322 474 8 0 0 0 - - -;
+#X floatatom 255 474 8 0 0 0 - - -;
+#X floatatom 190 474 8 0 0 0 - - -;
+#X obj 189 375 coeff2pz, f 9;
+#X obj 190 443 unpack f f f f, f 29;
+#X obj 218 294 s \$0-coefficients;
+#X obj 218 257 display;
+#X obj 66 226 r \$0-coefficients;
+#X obj 51 260 biquad~;
+#X obj 51 189 noise~;
+#X obj 51 294 out~;
+#X obj 487 198 zbiplot;
+#X obj 236 412 s \$0-poles;
+#X obj 487 164 r \$0-poles;
+#X text 18 27 Since the [bp~] object is a 2-pole filter \, we can implement
+it with [biquad~] \, which is a 2-Pole and 2-Zero filter. For that
+we just ignore the feedforward coefficients (which means they are equal
+to 0).;
+#X text 18 97 The three coefficients from the last example are actually
+the feedback coefficients and the gain input \, which are the first
+3 coefficients for the [biquad~] object. Compare it below.;
+#X text 88 442 gain;
+#X text 474 70 And now we're using the [coeff2pz] object from ELSE.
+This converts biquad coefficients to poles and zeros. The [zbiplot]
+object just plots the poles and zeros on the Z-plane. Check their help
+files., f 66;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 8 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 9 1;
+#X connect 5 0 9 0;
+#X connect 7 0 2 1;
+#X connect 9 0 20 0;
+#X connect 12 0 17 0;
+#X connect 13 0 1 3;
+#X connect 14 0 1 2;
+#X connect 15 0 0 3;
+#X connect 16 0 0 2;
+#X connect 17 0 18 0;
+#X connect 17 0 26 0;
+#X connect 17 2 7 0;
+#X connect 18 0 16 0;
+#X connect 18 1 15 0;
+#X connect 18 2 14 0;
+#X connect 18 3 13 0;
+#X connect 20 0 19 0;
+#X connect 21 0 22 0;
+#X connect 22 0 24 0;
+#X connect 23 0 22 0;
+#X connect 27 0 25 0;

@@ -591,12 +591,12 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 -1 -1 0 256;
 #X text 116 292 frequency;
 #X text 160 316 Q/Slope;
-#N canvas 417 569 949 357 biplot 0;
+#N canvas 384 398 949 357 biplot 0;
 #X obj 21 44 biplot;
 #X text 118 18 [biplot] from ELSE;
 #X obj 21 16 r \$0-coeffs;
 #X connect 2 0 0 0;
-#X restore 91 438 pd biplot;
+#X restore 81 438 pd biplot;
 #X obj 87 364 bicoeff lowpass 500 10;
 #X obj 329 326 r \$0-coeffs;
 #X text 241 320 gain;
@@ -644,7 +644,7 @@ separate objects in the ELSE library \, and the main difference is
 that they take signal input to control the parameters. Another difference
 is that only [eq~] \, [lowshelf~] and [highshelf~] have a gain input.
 , f 89;
-#X text 164 437 <= click;
+#X text 154 437 <= click;
 #X obj 250 22 declare -path else;
 #N canvas 232 273 1021 510 vanilla 0;
 #N canvas 114 184 549 267 lowpass 0;
