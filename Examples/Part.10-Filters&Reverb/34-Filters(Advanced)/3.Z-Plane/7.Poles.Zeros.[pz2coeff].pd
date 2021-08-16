@@ -1,4 +1,4 @@
-#N canvas 195 194 1394 649 12;
+#N canvas 188 77 1394 649 12;
 #X declare -path else;
 #X text 676 71 - Resonant Highpass: zeros at 1 \, conjugated poles
 \; - Resonant Lowpass: zeros at -1 \, conjugated poles \; - Bandpass:
@@ -14,22 +14,22 @@ zeros in the same angle;
 #N canvas 250 62 870 526 (subpatch) 0;
 #X obj 51 51 cnv 15 448 83 empty empty empty 20 12 0 14 -241339 -66577
 0;
-#X obj 84 80 hsl 128 15 0 1 0 0 \$0-p1-sl \$0-p1-sl-set amp -2 -8 0
-10 -228856 -1 -1 10400 1;
-#X obj 84 113 hsl 128 15 0 1 0 0 \$0-p2-sl \$0-p2-sl-set angle -2 -8
-0 10 -228856 -1 -1 2550 1;
+#X obj 84 80 hsl 128 15 0 1 0 0 \$0-p1-sl \$0-p1-sl-set amp_1 -2 -8
+0 10 -228856 -1 -1 6350 1;
+#X obj 84 113 hsl 128 15 0 1 0 0 \$0-p2-sl \$0-p2-sl-set amp_2 -2 -8
+0 10 -228856 -1 -1 6350 1;
 #X obj 332 80 hsl 128 15 0 1 0 0 \$0-z1-sl \$0-z1-sl-set amp_1 -2 -8
-0 10 -191407 -1 -1 12400 1;
+0 10 -191407 -1 -1 6350 1;
 #X obj 332 113 hsl 128 15 0 1 0 0 \$0-z2-sl \$0-z2-sl-set amp_2 -2
--8 0 10 -191407 -1 -1 5800 1;
+-8 0 10 -191407 -1 -1 6350 1;
 #X obj 390 60 tgl 15 0 \$0-pair_z \$0-pair_z-set pair 17 7 0 10 -191407
 -1 -1 0 1;
 #X obj 155 60 tgl 15 0 \$0-pair_p \$0-pair_p-set pair 17 7 0 10 -228856
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 476 57 vsl 17 70 0.05 5 1 0 \$0-gain-out \$0-gain-set empty
-0 -9 0 10 -228139 -1 -1 3000 1;
+0 -9 0 10 -228139 -1 -1 4489 1;
 #X obj 239 55 vradio 15 1 0 5 \$0-type \$0-type-set empty 0 -8 0 10
--211239 -99865 -1 2;
+-211239 -99865 -1 3;
 #X text 256 54 Hip;
 #X text 256 69 Lop;
 #X text 257 84 BP;
