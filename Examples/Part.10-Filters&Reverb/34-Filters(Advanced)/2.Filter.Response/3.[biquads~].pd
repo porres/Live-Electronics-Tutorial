@@ -1,6 +1,6 @@
-#N canvas 565 71 488 430 12;
+#N canvas 693 55 488 430 12;
 #X declare -path else;
-#N canvas 154 433 949 357 biplot 0;
+#N canvas 389 454 949 357 biplot 1;
 #X obj 21 44 biplot;
 #X text 118 18 [biplot] from ELSE;
 #X obj 21 16 inlet;

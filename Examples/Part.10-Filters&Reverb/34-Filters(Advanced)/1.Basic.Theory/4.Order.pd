@@ -20,19 +20,17 @@
 #X floatatom 797 427 7 0 0.99 0 - - -;
 #X obj 797 452 v a2;
 #X obj 548 403 unpack float float float float float;
-#X obj 580 517 noise~;
+#X obj 541 517 noise~;
 #X obj 558 325 cnv 15 290 32 empty empty empty 5 12 0 14 -233017 -66577
 0;
 #X obj 108 629 fexpr~ a0 * $x[0] + a1 * $x[-1] + b1 * $y[-1];
-#X obj 580 550 fexpr~ a0 * $x[0] + a1 * $x[-1] + a2 * $x[-2] + b1 *
-$y[-1] + b2 * $y[-2], f 36;
 #X text 275 585 ff;
 #X text 329 586 fb;
 #X text 549 474 fb1;
 #X text 616 474 fb2;
 #X text 739 472 ff1;
 #X text 802 472 ff2;
-#X obj 580 593 out~;
+#X obj 541 593 out~;
 #X text 49 341 The difference equation of the above diagram is:;
 #X text 111 564 coefficients:;
 #X text 210 584 gain;
@@ -55,6 +53,8 @@ Here's a "First Order System" filter diagram:, f 57;
 the feedback (fb) coefficient and "a0" is a gain coefficient applied
 to the input signal (independently from the feedforward signal). Here's
 an implementation of this in [fexpr~]:, f 55;
+#X obj 541 550 fexpr~ a0 * $x1[0] + a1 * $x1[-1] + a2 * $x1[-2] + b1
+* $y1[-1] + b2 * $y1[-2], f 49;
 #X connect 5 0 4 0;
 #X connect 6 0 3 0;
 #X connect 7 0 2 0;
@@ -68,6 +68,6 @@ an implementation of this in [fexpr~]:, f 55;
 #X connect 18 2 13 0;
 #X connect 18 3 12 0;
 #X connect 18 4 16 0;
-#X connect 19 0 22 0;
-#X connect 22 0 29 0;
-#X connect 36 0 18 0;
+#X connect 19 0 41 0;
+#X connect 35 0 18 0;
+#X connect 41 0 28 0;

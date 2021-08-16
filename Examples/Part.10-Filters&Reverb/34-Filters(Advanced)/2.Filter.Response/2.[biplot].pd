@@ -2,9 +2,9 @@
 #X obj 711 46 lop~;
 #X obj 711 14 noise~;
 #X obj 770 28 hsl 128 15 20 7000 1 0 empty empty empty -2 -8 0 10 -228856
--1 -1 10200 1;
+-1 -1 0 1;
 #X obj 767 55 nbx 8 14 -1e+37 1e+37 0 0 \$0-lop empty empty 0 -8 0
-10 -228856 -1 -1 2209.52 256;
+10 -228856 -1 -1 0 256;
 #X text 856 54 Hz;
 #X obj 711 86 out~;
 #N canvas 713 437 419 303 coefficients 0;
@@ -37,7 +37,7 @@
 #X obj 770 168 hsl 128 15 20 7000 1 0 empty empty empty -2 -8 0 10
 -228856 -1 -1 0 1;
 #X obj 767 195 nbx 8 14 -1e+37 1e+37 0 0 \$0-hip empty empty 0 -8 0
-10 -228856 -1 -1 20 256;
+10 -228856 -1 -1 0 256;
 #X text 856 194 Hz;
 #X obj 711 226 out~;
 #X obj 711 186 hip~;
@@ -45,19 +45,18 @@
 #X obj 58 131 biquad~;
 #X obj 58 155 out~;
 #X text 50 262 [biplot]:;
-#X text 295 165 Hence \, we get the same coefficients calculated as
-before and put it in a list of coefficients proper for the [biquad~]
-object. Compare both to the right with [biquad~]. When you set the
-frequency slider of [lop~] \, [biquad~] will correspond to it and you
-can see the response below. Same happens when you set the slider of
-[hip~]., f 47;
-#X text 295 85 Remember that a Biquad system is a 2-pole and 2-Zero
-filter diagram. The [lop~] object is a 1-pole filter and the [hip~]
-object is a 1-Pole and 1-Zero filter \, so both fit into a biquad system.
-, f 47;
-#X text 295 16 The [biplot] object from ELSE plots the filter response
+#X text 295 18 The [biplot] object from ELSE plots the filter response
 from an input of Biquad coefficients taking into account the theory
-from the last example (ccheck its help file)., f 47;
+from the last example (check its help file)., f 47;
+#X text 295 87 As we've seen \, both [lop~] (a 1-pole filter) and [hip~]
+(a 1-Pole and 1-Zero filter) fit into a biquad system (which is a 2-Pole
+and 2-Zero filter)., f 47;
+#X text 295 154 Hence \, we get the same coefficients calculated as
+before and put it in a list of coefficients proper for the [biquad~]
+object so we can plot it. Compare both to the right with [biquad~].
+When you set the frequency slider of [lop~] \, [biquad~] will correspond
+to it and you can see the response below. Same happens when you set
+the slider of [hip~]., f 47;
 #X connect 0 0 5 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;

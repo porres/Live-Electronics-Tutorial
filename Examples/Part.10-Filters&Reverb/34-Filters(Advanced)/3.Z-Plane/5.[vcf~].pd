@@ -117,8 +117,8 @@
 0;
 #X obj 100 325 cnv 1 450 2 empty empty empty 20 12 0 14 -258113 -66577
 0;
-#X obj 177 177 cnv 15 15 15 empty \$0-pole1 X 206 77 0 14 -191407 -66577
-0;
+#X obj 177 177 cnv 15 15 15 empty \$0-pole1 X 295 150 0 14 -191407
+-66577 0;
 #X obj 177 177 cnv 15 15 15 empty \$0-zero1 empty 145 150 0 14 -191407
 -66577 0;
 #X obj 177 177 cnv 15 15 15 empty \$0-pole2 empty 294 150 0 14 -191407
@@ -342,18 +342,18 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X restore 487 306 pd Z-Plane-biquad;
 #X obj 674 162 *~;
 #X obj 637 129 noise~;
-#X obj 178 483 nbx 5 14 1 100 1 1 \$0-Q empty empty 0 -8 0 10 -228856
+#X obj 178 463 nbx 5 14 1 100 1 1 \$0-Q empty empty 0 -8 0 10 -228856
 -1 -1 2.37137 256;
-#X floatatom 402 451 0 0 0 0 - #0-gain -;
-#X floatatom 331 451 0 0 0 0 - #0-im -;
-#X floatatom 261 451 0 0 0 0 - #0-re -;
-#X obj 402 482 v g;
-#X obj 331 479 v ai;
-#X obj 261 479 v ar;
-#X text 259 500 coef;
-#X text 330 502 coef;
-#X text 266 511 re;
-#X text 334 514 im;
+#X floatatom 402 431 0 0 0 0 - #0-gain -;
+#X floatatom 331 431 0 0 0 0 - #0-im -;
+#X floatatom 261 431 0 0 0 0 - #0-re -;
+#X obj 402 462 v g;
+#X obj 331 459 v ai;
+#X obj 261 459 v ar;
+#X text 259 480 coef;
+#X text 330 482 coef;
+#X text 266 491 re;
+#X text 334 494 im;
 #X text 92 57 y1[n] = x1[n] + ar * y1[n-1] - ai * y2[n-1] \; y2[n]
 = x2[n] + ai * y1[n-1] + ar * y2[n-1];
 #X floatatom 692 129 5 0 0 0 - #0-gain -;
@@ -363,30 +363,30 @@ if (p_pair_\$0 == 1 \, sin($f2 * pi_\$0) * -$f1 \, 0);
 #X obj 519 74 fexpr~ g * $x1 + ar * $y1[-1] - ai * $y2[-1] \; ai *
 $y1[-1] + ar * $y2[-1];
 #X obj 519 46 noise~;
-#X obj 76 480 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq-send \$0-freq empty
-0 -8 0 10 -228856 -1 -1 6102.36 256;
-#X text 51 477 Hz;
-#X obj 168 562 noise~;
-#X obj 287 562 nbx 5 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 -228856
+#X obj 76 460 nbx 5 14 -1e+37 1e+37 0 0 \$0-freq-send \$0-freq empty
+0 -8 0 10 -228856 -1 -1 0 256;
+#X text 51 457 Hz;
+#X obj 168 522 noise~;
+#X obj 287 522 nbx 5 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 -228856
 -1 -1 2.37137 256;
-#X obj 223 563 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty
-0 -8 0 10 -228856 -1 -1 6102.36 256;
-#X obj 190 592 vcf~ 500 1;
+#X obj 223 523 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty
+0 -8 0 10 -228856 -1 -1 0 256;
+#X obj 190 552 vcf~ 500 1;
 #X text 753 157 re;
 #X text 775 181 im;
-#X obj 85 199 cnv 15 315 120 empty empty empty 20 12 0 14 -216246 -66577
+#X obj 85 189 cnv 15 315 120 empty empty empty 20 12 0 14 -216246 -66577
 0;
-#X text 212 209 1 - ar*z^-1;
-#X text 179 226 1 - 2*ar*z^-1 + |a|^2*z^-2;
-#X text 226 249 ai*z^-1;
-#X text 175 265 1 - 2*ar*z^-1 + |a|^2*z^-2;
-#X text 159 250 ________________________________;
-#X text 160 211 ________________________________;
-#X text 91 217 Re_H(z) =;
-#X text 90 257 Im_H(z) =;
+#X text 212 199 1 - ar*z^-1;
+#X text 179 216 1 - 2*ar*z^-1 + |a|^2*z^-2;
+#X text 226 239 ai*z^-1;
+#X text 175 255 1 - 2*ar*z^-1 + |a|^2*z^-2;
+#X text 159 240 ________________________________;
+#X text 160 201 ________________________________;
+#X text 91 207 Re_H(z) =;
+#X text 90 247 Im_H(z) =;
 #X text 49 22 The [vcf~] object is a complex pole filter that can be
 implemented with [cpole~] \, whose difference equation is:, f 54;
-#X text 156 292 where |a|^2 = ar^2 + ai^2;
+#X text 156 282 where |a|^2 = ar^2 + ai^2;
 #N canvas 107 28 642 423 coefficients 0;
 #X obj 364 23 inlet;
 #X obj 24 28 inlet;
@@ -432,34 +432,33 @@ cf * qinv \, 0) \; max($f1 * 2 * pi / sr \, 0) \; 1/Q \; max($f2 \,
 #X connect 13 0 17 0;
 #X connect 16 0 15 0;
 #X connect 17 0 14 0;
-#X restore 76 507 pd coefficients;
-#X text 402 500 gain;
+#X restore 76 487 pd coefficients;
+#X text 402 480 gain;
 #X obj 734 237 out~;
 #X obj 631 237 out~;
 #X text 734 128 gain;
-#X obj 147 624 out~;
-#X obj 257 624 out~;
+#X obj 147 584 out~;
+#X obj 257 584 out~;
 #X obj 519 173 out~;
 #X obj 831 165 out~;
-#X text 48 105 Where x1[n] & y1[n] are the real input and output \,
+#X text 48 99 Where x1[n] & y1[n] are the real input and output \,
 and x2[n] & y2[n] the imaginary input and output \, whereas "ar" is
 the real part of the coefficient and "ai" the imaginary part. And here's
 the transfer function of both parts below., f 54;
-#X text 46 709 Compare the [vcf~] patch above to [fexpr~] and [cpole~].
+#X text 46 651 Compare the [vcf~] patch above to [fexpr~] and [cpole~].
 Check the Z Plane plot to the right. Again \, the angle represents
 the frequency and the radius the resonance.;
-#X obj 79 457 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0 10
--228856 -1 -1 7700 1;
-#X text 163 481 Q;
+#X obj 79 437 hsl 128 15 100 10000 0 0 empty empty empty -2 -8 0 10
+-228856 -1 -1 0 1;
+#X text 163 461 Q;
 #X obj 804 27 declare -path else;
-#X text 45 347 The coefficients are caclulated in the suboatch below
+#X text 45 327 The coefficients are caclulated in the suboatch below
 from frequency and Q values. This is used in [fexpr~] but the difference
 equation is simplified because we don't have an imaginaty input. See
 [pd coefficients] to see how we get the complex pole's coordinates.
 , f 53;
-#X obj 576 5 cnv 15 100 60 empty empty empty 20 12 0 14 -258113 -66577
-0;
-#X text 510 14 can't be implemented in biquad~;
+#X text 46 716 Note that [vcf~] is not a pair of conjugate complex
+poles and thus it can't be implemented with [biquad~]!;
 #X connect 1 0 16 0;
 #X connect 2 0 1 0;
 #X connect 3 0 40 1;
