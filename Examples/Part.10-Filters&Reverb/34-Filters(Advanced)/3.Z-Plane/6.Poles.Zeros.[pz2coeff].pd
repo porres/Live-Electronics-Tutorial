@@ -1,5 +1,5 @@
 #N canvas 194 81 1434 681 12;
-#N canvas 404 48 943 696 Plano-Z 1;
+#N canvas 404 48 943 696 Plano-Z 0;
 #N canvas 250 62 651 132 (subpatch) 0;
 #X obj 1 1 cnv 15 448 83 empty empty empty 20 12 0 14 -241339 -66577
 0;
@@ -64,7 +64,7 @@
 #X connect 8 0 10 0;
 #X restore 365 170 pd init;
 #X obj 171 205 outlet;
-#N canvas 186 785 1161 315 GUI_(PLOT-POLES-AND-ZEROS) 1;
+#N canvas 186 713 1161 315 GUI_(PLOT-POLES-AND-ZEROS) 0;
 #X obj 826 191 outlet;
 #X obj 775 191 outlet;
 #X obj 717 191 outlet;
