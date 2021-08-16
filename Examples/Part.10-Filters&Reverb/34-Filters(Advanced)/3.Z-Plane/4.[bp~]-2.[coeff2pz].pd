@@ -1,11 +1,11 @@
-#N canvas 438 41 950 883 12;
+#N canvas 469 42 950 883 12;
 #X declare -path else;
-#X obj 283 118 nbx 5 14 0.1 100 1 0 \$0-Q \$0-q_set empty 0 -8 0 10
--228856 -1 -1 15.5384 256;
-#X obj 153 117 nbx 8 14 100 20000 1 0 \$0-freq-send \$0-freq empty
-0 -8 0 10 -228856 -1 -1 2816.11 100;
-#X text 129 114 Hz;
-#X floatatom 235 233 8 0 0 0 - - -;
+#X obj 153 118 nbx 5 14 0.1 100 1 0 \$0-Q \$0-q_set empty 0 -8 0 10
+-228856 -1 -1 1.30975 256;
+#X obj 23 117 nbx 8 14 100 20000 1 0 \$0-freq-send \$0-freq empty 0
+-8 0 10 -228856 -1 -1 2090.49 100;
+#X text 105 116 Hz;
+#X floatatom 103 258 8 0 0 0 - - #0-gain;
 #N canvas 761 216 485 388 coefficients 0;
 #X obj 99 48 inlet;
 #X obj 50 48 inlet;
@@ -67,40 +67,48 @@ Q input. This is taken from [bp~]'s source code., f 38;
 #X connect 7 0 13 0;
 #X connect 13 0 12 0;
 #X connect 14 0 6 0;
-#X restore 153 144 pd coefficients;
+#X restore 23 144 pd coefficients;
 #X f 19;
-#X text 265 116 Q;
+#X text 212 116 Q;
 #X obj 794 67 declare -path else;
-#X obj 153 231 coeff2pz, f 9;
-#X obj 153 178 display;
-#X obj 29 179 biquad~;
-#X obj 29 118 noise~;
-#X obj 29 209 out~;
+#X obj 43 232 coeff2pz, f 9;
+#X obj 23 194 display;
+#X obj 262 182 biquad~;
+#X obj 262 141 noise~;
+#X obj 262 212 out~;
 #X obj 469 109 zbiplot;
-#X obj 167 270 s \$0-poles;
+#X obj 57 287 s \$0-poles;
 #X obj 469 24 r \$0-poles;
-#X text 238 208 gain;
+#X text 126 236 gain;
 #X obj 469 66 display;
-#X obj 153 309 unpack;
-#X obj 154 349 car2pol;
-#X obj 200 380 rad2hz;
-#X floatatom 200 408 0 0 0 0 - - -;
+#X obj 43 322 unpack;
+#X obj 43 352 car2pol;
+#X obj 89 381 rad2hz;
+#X floatatom 89 409 0 0 0 0 - - -;
 #X obj 22 561 biplot;
-#X text 31 16 Now we're using the [coeff2pz] object from ELSE (check
-its help file). This converts biquad coefficients to poles and zeros
-based on the theory from the last example. We also have [biplot] and
-[zbiplot] to better visualize the action of this filter.;
-#X text 253 259 [coeff2pz] outputs poles \, zeros and the overall gain
-coefficient, f 26;
-#X text 289 328 Here we take the coordinate of a single pole \, which
-is in the cartesian form and convert it to polar., f 16;
-#X floatatom 131 409 0 0 0 0 - - -;
-#X text 72 457 We can see in the polar form that the angle represents
-the frequency and we can get it by converting from radians per sample
-to Hz! We can also see how Q controls the amplitude of the poles.,
-f 54;
+#X text 145 284 [coeff2pz] outputs poles \, zeros and the overall gain
+coefficient, f 32;
+#X floatatom 39 410 6 0 0 0 - - -;
 #X text 578 17 This time we're taking the pole's coordinates directly
 into [zbiplot]., f 45;
+#X text 31 16 Now we're using the [coeff2pz] object from ELSE to converts
+biquad coefficients to poles and zeros based on the theory from the
+last example. We also have [biplot] and [zbiplot] to better visualize
+the action of this filter.;
+#X text 157 357 Here we take the coordinate of a single pole (which
+is in the cartesian form) and convert it to polar. We find the frequency
+from the angle in radians by converting from radians per sample to
+Hz!, f 39;
+#X text 60 466 See how Q controls the amplitude of the poles. Thus
+it controls a boost in this frequency! The gain parameter compensates
+the boost in order that the maximum amplitude value is 0 dB., f 51
+;
+#X obj 447 112 vsl 22 157 0 1.1 0 0 xxx \$0-gain empty 0 -9 0 10 -66577
+-258113 -1 2951 1;
+#X obj 454 160 cnv 5 5 5 empty empty G 0 0 0 14 -66577 -262144 0;
+#X obj 454 176 cnv 5 5 5 empty empty A 0 0 0 14 -66577 -262144 0;
+#X obj 454 192 cnv 5 5 5 empty empty I 0 0 0 14 -66577 -262144 0;
+#X obj 454 212 cnv 5 5 5 empty empty N 0 0 0 14 -66577 -262144 0;
 #X connect 0 0 4 1;
 #X connect 1 0 4 0;
 #X connect 4 0 8 0;
@@ -116,6 +124,6 @@ into [zbiplot]., f 45;
 #X connect 16 0 12 0;
 #X connect 17 0 18 0;
 #X connect 17 1 18 1;
-#X connect 18 0 25 0;
+#X connect 18 0 23 0;
 #X connect 18 1 19 0;
 #X connect 19 0 20 0;
