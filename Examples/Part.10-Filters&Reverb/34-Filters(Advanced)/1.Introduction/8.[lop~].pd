@@ -2,7 +2,7 @@
 #X declare -path else;
 #X obj 480 140 lop~;
 #X obj 142 185 hsl 128 15 20 7050 1 1 empty set-Hz empty -2 -8 0 10
--191407 -1 -1 0 1;
+-191407 -1 -1 6970 1;
 #X obj 139 344 clip 0 1;
 #X obj 151 241 s \$0-hz;
 #X obj 505 112 r \$0-hz;
@@ -47,6 +47,10 @@ to implement it. First we convert the frequency from hertz to radians
 per sample. This value is used as a basis value for the coefficient
 and input gain \, but since a maximum value for the coefficient is
 one \, the maximum frequency input is about 7 Khz., f 53;
+#X text 628 360 add;
+#X obj 628 382 biquad~;
+#X obj 659 370 cnv 15 100 60 empty empty empty 20 12 0 14 -258113 -66577
+0;
 #X connect 0 0 19 0;
 #X connect 1 0 5 0;
 #X connect 2 0 9 0;
