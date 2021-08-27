@@ -1,0 +1,20 @@
+#N canvas 608 398 924 507 12;
+#X declare -path else;
+#X obj 51 26 declare -path else;
+#X obj 88 292 out~;
+#X obj 88 258 zerocross~;
+#X obj 88 226 rampnoise~ 10;
+#X obj 274 261 schmitt~;
+#X obj 274 288 changed~;
+#X obj 274 313 changed2~;
+#X text 91 102 Other objects in ELSE generate impulses as part of a
+signal analysis. See [zerocross~] \, for instance \, that outputs impulses
+when a signal crosses from negative to positive or positive to negative.
+Check also these other objects related to [zerocross~]:, f 44;
+#X text 258 235 related:;
+#X obj 352 261 above~;
+#X obj 352 287 status~;
+#X obj 542 161 pimp~;
+#X obj 622 183 pimp;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;

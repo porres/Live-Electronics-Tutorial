@@ -325,7 +325,7 @@
 #X connect 22 1 9 0;
 #X connect 24 0 2 0;
 #X restore 416 350 pd Lanczos;
-#N canvas 687 136 496 629 Gaussian 1;
+#N canvas 687 136 496 629 Gaussian 0;
 #X text 119 38 1;
 #X text 118 153 0;
 #X obj 154 318 samplerate~;
@@ -348,7 +348,7 @@
 #X obj 154 420 -~ 0.5;
 #X obj 79 559 tabwrite~ \$0-gauss;
 #X obj 163 228 hsl 128 15 1 20 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 3800 1;
+-1 -1 0 1;
 #X obj 160 254 trigger bang float;
 #X text 300 227 X;
 #X obj 258 466 *~ 6;

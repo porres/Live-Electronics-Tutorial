@@ -1,0 +1,27 @@
+#N canvas 514 101 924 507 12;
+#X declare -path else;
+#X obj 51 26 declare -path else;
+#X obj 126 193 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X obj 126 221 else/pimp~ 1, f 17;
+#X obj 242 269 else/out~;
+#X obj 126 281 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0.737778 256;
+#X obj 126 312 vsl 20 90 0 1 0 0 dsfsk sfg empty 0 -9 0 10 -228856
+-1 -1 6566 1;
+#X text 250 242 <= impulse;
+#X text 66 350 phase =>;
+#X text 115 390 0;
+#X text 115 308 1;
+#X obj 126 252 s2f~;
+#X text 19 67 ELSE has [pimp~] \, which combines [phasor~] and [imp~].
+We noted how [phasor~] can be used with low frequencies to control
+things and we'll see examples of that. The [pimp~] object also offers
+an impulse every time there's a period transition \, also meant to
+be used as a trigger in low frequency settings. See example below and
+check the help file.;
+#X connect 1 0 2 0;
+#X connect 2 0 10 0;
+#X connect 2 1 3 0;
+#X connect 4 0 5 0;
+#X connect 10 0 4 0;
