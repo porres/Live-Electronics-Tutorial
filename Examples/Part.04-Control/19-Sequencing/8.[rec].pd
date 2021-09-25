@@ -1,0 +1,39 @@
+#N canvas 610 23 544 501 12;
+#X declare -path else;
+#X obj 332 37 declare -path else;
+#X msg 107 166 record;
+#X msg 162 166 stop \, play;
+#X text 33 180 recording;
+#X text 42 166 start =>;
+#X text 238 165 <= stop recording and start playing;
+#X obj 309 252 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 2800 1;
+#X obj 261 228 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 7300 1;
+#X obj 213 204 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X text 249 203 Track 1;
+#X text 303 227 Track 2;
+#X text 344 251 Track 3;
+#X floatatom 162 317 5 0 0 0 - - -;
+#X floatatom 233 317 5 0 0 0 - - -;
+#X floatatom 291 317 5 0 0 0 - - -;
+#X text 60 86 [rec] can record any messages in different tracks \,
+so it can be used to record and play a sequence. Check its help file.
+, f 57;
+#X obj 162 283 rec 3, f 21;
+#X text 53 368 The [rec] object can save to text files in a format
+that is also somewhat compatible to [text sequence] \, where the first
+float in a line represent a wait time. The thing is that tracks are
+separated subsequentially.;
+#X connect 1 0 16 0;
+#X connect 2 0 16 0;
+#X connect 6 0 16 3;
+#X connect 7 0 16 2;
+#X connect 8 0 16 1;
+#X connect 12 0 8 0;
+#X connect 13 0 7 0;
+#X connect 14 0 6 0;
+#X connect 16 0 12 0;
+#X connect 16 1 13 0;
+#X connect 16 2 14 0;
