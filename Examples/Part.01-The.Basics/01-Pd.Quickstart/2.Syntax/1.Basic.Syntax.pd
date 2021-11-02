@@ -1,17 +1,17 @@
 #N canvas 472 77 988 680 12;
-#X obj 643 303 float 5.5;
-#X msg 643 256 bang;
-#X floatatom 643 336 5 0 0 0 - - -;
-#X msg 703 255 1;
-#X text 543 256 hot inlet =>;
+#X obj 661 304 float 5.5;
+#X msg 661 260 bang;
+#X floatatom 661 337 5 0 0 0 - - - 0;
+#X msg 721 259 1;
+#X text 561 260 hot inlet =>;
 #X msg 599 550 0;
 #X text 633 550 reset;
 #X obj 773 586 + 1;
-#X floatatom 773 630 5 0 0 0 - - -;
+#X floatatom 773 630 5 0 0 0 - - - 0;
 #X text 757 548 Danger! Infinite Loop!;
 #X text 502 513 Counter:;
 #X text 809 581 See the Error at Pd's window, f 15;
-#X floatatom 625 611 5 0 0 0 - - -;
+#X floatatom 625 611 5 0 0 0 - - - 0;
 #X obj 625 581 + 1;
 #X obj 567 581 float;
 #X obj 724 586 float;
@@ -28,8 +28,8 @@
 #X text 74 270 float;
 #X msg 280 252 turn on;
 #X msg 280 284 open file4.aif;
-#X floatatom 277 629 5 0 0 0 - - -;
-#X symbolatom 106 609 15 0 0 0 - - -;
+#X floatatom 277 629 5 0 0 0 - - - 0;
+#X symbolatom 106 609 15 0 0 0 - - - 0;
 #X msg 106 542 symbol nice;
 #X msg 106 573 symbol \$1!!!;
 #X text 64 499 Dollar sign variables:;
@@ -38,21 +38,11 @@
 #X msg 250 501 list one 2 three;
 #X msg 293 562 Midi Note 69;
 #X text 52 168 Special selectors:;
-#X obj 567 514 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
+#X obj 567 514 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
+#000000 #000000;
 #X text 594 512 <= bang GUI (same as "bang" message);
-#X obj 724 549 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
-#X text 492 19 Most objects take creation "arguments" \, which are
-initializing parameters. If none are given \, default values are loaded.
-For instance \, the [float] object stores numbers it receives on its
-inlets \, but it can initially store a number given as an argument.
-If no argument is given \, [float] initially stores “0”. The Argument
-"5.5" is the initially stored value of the [float] object below. The
-inlet to the right stores a new value and overwrites the argument \,
-but note that it is not updated inside the object box and the given
-argument will still be there when the patch is reloaded (see example
-below)., f 63;
+#X obj 724 549 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
+#000000 #000000;
 #X msg 280 314 stop;
 #X msg 346 252 turn off;
 #X text 40 19 A message selector is the first symbol in a message and
@@ -70,12 +60,8 @@ in messages. The dollar sign numbers correspond to elements of an incoming
 message (number or symbol) \, so "\$1" is the 1st element \, \$2 the
 2nd and so on. Note that the message selector does not count as a message
 element.;
-#X text 492 171 Usually the left inlet is the "hot" one as it forces
-an output \, whereas the others do not and are "cold". This is only
-in respect to control data objects - since audio objects generate data
-constantly \, the hot/cold idea is not pertinent!, f 63;
-#X text 737 256 <= cold inlet (updates argument), f 19;
-#X text 719 304 <= 5.5 is the argument;
+#X text 755 260 <= cold inlet (updates argument), f 19;
+#X text 737 305 <= 5.5 is the argument;
 #X text 501 369 Now let's implement a counter. Below \, on the left
 \, we have a correct way of doing it. The [float] object outputs the
 stored value on bang messages \, which is added to “1” and stored
@@ -84,6 +70,20 @@ number goes back into the hot inlet \, creating an infinite loop \,
 where Pd would freeze if it didn’t have a mechanism to break it and
 report an error (see "stack overflow" error in terminal window). Click
 on the bangs and try it out., f 63;
+#X text 492 19 Most objects take creation "arguments" \, which are
+initializing parameters. If none are given \, default values are loaded.
+For instance \, the [float] object stores numbers it receives in its
+inlets \, but it can initially store a number given as an argument.
+If no argument is given \, [float] initially stores “0”. The Argument
+"5.5" is the initially stored value of the [float] object below. The
+inlet to the right stores a new value and overwrites the argument \,
+but note that it is not updated inside the object box and the given
+argument will still be there when the patch is reloaded., f 63;
+#X text 492 171 Usually the left inlet is the "hot inlet" \, which
+forces an output \, whereas the others don't and are called "cold inlets".
+This is only in respect to control data objects (audio objects generate
+data constantly and the hot/cold inlet concept isn't pertinent).,
+f 63;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 3 0 0 1;

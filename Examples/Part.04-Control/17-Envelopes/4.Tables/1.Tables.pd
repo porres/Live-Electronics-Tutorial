@@ -1,24 +1,24 @@
-#N canvas 529 23 690 730 12;
+#N canvas 691 23 669 737 12;
 #X declare -path else;
-#X obj 132 273 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
+#X obj 132 273 bng 30 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
+#000000 #000000;
 #X obj 114 352 *~;
 #X obj 55 285 osc~ 440;
 #X text 303 442 0;
 #X text 305 245 1;
-#X obj 319 253 cnv 15 298 198 empty empty empty 20 12 0 14 -228856
--66577 0;
+#X obj 319 253 cnv 15 298 198 empty empty empty 20 12 0 14 #dcdcdc
+#404040 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-hann 22050 float 0;
 #X coords 0 1 22049 0 300 200 1 0 0;
 #X restore 318 252 graph;
 #X text 482 129 ms;
 #X obj 507 130 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 13
--228856 -1 -1 500 256;
+#dcdcdc #000000 #000000 0 256;
 #X text 303 683 0;
 #X text 305 486 1;
-#X obj 319 494 cnv 15 298 198 empty empty empty 20 12 0 14 -228856
--66577 0;
+#X obj 319 494 cnv 15 298 198 empty empty empty 20 12 0 14 #dcdcdc
+#404040 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-sine 22050 float 0;
 #X coords 0 1 22049 0 300 200 1 0 0;
@@ -30,8 +30,8 @@ one of the functions used in the [fader~] object)., f 55;
 #X obj 114 386 out~;
 #X obj 507 86 initmess 500;
 #X obj 132 320 tabplay~ \$0-hann;
-#X obj 171 483 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
+#X obj 171 483 bng 30 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
+#000000 #000000;
 #X obj 153 562 *~;
 #X obj 94 495 osc~ 440;
 #X obj 153 596 out~;
@@ -44,7 +44,7 @@ and trigger the envelope. Click on the bangs below., f 55;
 just the first half the sine function (this is also used in [fader~]).
 Open the [pd tables] subpatch so see how to create these functions.
 , f 55;
-#N canvas 372 23 893 355 tables 0;
+#N canvas 191 387 893 355 tables 0;
 #X obj 199 34 inlet;
 #X obj 99 227 osc~;
 #X msg 124 200 0.5;
@@ -56,11 +56,11 @@ Open the [pd tables] subpatch so see how to create these functions.
 #X obj 114 103 v sr_khz;
 #X obj 199 73 expr 1000 / $f1 \; $f1 * sr_khz;
 #X obj 114 78 sr~ -khz;
-#X floatatom 308 112 5 0 0 0 - - -;
+#X floatatom 308 112 5 0 0 0 - - - 0;
 #X obj 199 142 trigger f b;
 #X msg 237 174 0;
 #X obj 273 247 tabwrite~ \$0-sine;
-#X floatatom 199 114 5 0 0 0 - - -;
+#X floatatom 199 114 5 0 0 0 - - - 0;
 #X obj 199 175 / 2;
 #X obj 221 205 sine~;
 #X obj 308 192 send \$0-hann;
