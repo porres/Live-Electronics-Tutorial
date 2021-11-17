@@ -60,7 +60,7 @@ right order \, as common sense would predict., f 32;
 #X floatatom 723 634 5 0 0 0 - - - 0;
 #X msg 765 564 10 20;
 #X text 550 186 <= click (depth first);
-#X text 677 469 A list sent to an object may also spread the elements
+#X text 684 485 A list sent to an object may also spread the elements
 into different inlets. This happens when the left inlet doesn't take
 lists. The right to left order is respected \, of course., f 45;
 #X obj 860 601 pack f f f f;
