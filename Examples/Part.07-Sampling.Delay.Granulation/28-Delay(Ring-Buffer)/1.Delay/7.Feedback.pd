@@ -116,7 +116,6 @@ means it can actually go down to a 1 sample delay., f 63;
 #X text 213 272 delay time;
 #X obj 209 435 f2s~ 50;
 #X obj 191 322 f2s~ 300;
-#X obj 156 535 gain~ 1 0 20 0 0;
 #X obj 156 650 outlet~;
 #X text 59 28 This subpatch has a block of 1 sample because of this
 [block~] object ====>, f 37;
@@ -126,10 +125,11 @@ means it can actually go down to a 1 sample delay., f 63;
 of audio \, this subpatch can go as low as a single sample delay. The
 [del~] object from the ELSE lbrary can achieve this minimum delay of
 just one sample., f 49;
+#X obj 156 535 gain~ 1 0 20 0 0.677778;
 #X connect 1 0 3 1;
 #X connect 2 0 4 0;
-#X connect 3 0 16 0;
-#X connect 3 0 20 0;
+#X connect 3 0 19 0;
+#X connect 3 0 21 0;
 #X connect 4 0 14 0;
 #X connect 5 0 15 0;
 #X connect 6 0 5 0;
@@ -137,9 +137,9 @@ just one sample., f 49;
 #X connect 9 0 3 0;
 #X connect 10 0 9 1;
 #X connect 14 0 1 1;
-#X connect 15 0 19 0;
-#X connect 16 0 17 0;
-#X connect 19 0 1 0;
+#X connect 15 0 18 0;
+#X connect 18 0 1 0;
+#X connect 21 0 16 0;
 #X restore 574 429 pd ELSE;
 #X text 147 520 Note that we have already done feedback loops with
 a delay of just one sample in this tutorial. Go back and ccheck the
