@@ -38,7 +38,7 @@ an impulse at period transitions. Check its help file.;
 #X obj 572 449 phasor~;
 #X obj 572 473 sin~;
 #X obj 647 449 phasor~;
-#X text 93 428 Note that you can use [phasor~] in conjunction to [table~]
+#X text 94 431 Note that you can use [phasor~] in conjunction to [table~]
 and other objects to generate many wabveforms and also envelopes or
 even play samples as we'll see in the next sections. So don't think
 that this is only useful if you need impulses or phase ramps!, f 64
@@ -47,8 +47,8 @@ that this is only useful if you need impulses or phase ramps!, f 64
 #X text 577 419 for instace:;
 #X text 36 63 Here's a problem. If you have 2 LFOs in sync and multiply
 the frequency of one by a factor \, it's just impossible to keep it
-in sync when you change this factor back to the original value. Try
-it below., f 37;
+in sync. If you go back it will also not work. Try it below., f 37
+;
 #X connect 1 0 7 1;
 #X connect 2 0 7 0;
 #X connect 2 0 8 0;
