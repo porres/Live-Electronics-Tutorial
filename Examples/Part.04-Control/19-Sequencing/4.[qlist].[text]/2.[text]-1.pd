@@ -1,11 +1,11 @@
-#N canvas 699 35 601 753 12;
+#N canvas 699 23 601 723 12;
 #X declare -path else;
 #X obj 362 508 mtof;
 #X obj 418 577 *~;
 #X obj 362 455 trigger f b;
-#X obj 436 499 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
-#X floatatom 362 483 5 0 0 0 - - -;
+#X obj 436 499 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
+#000000 #000000;
+#X floatatom 362 483 5 0 0 0 - - - 0;
 #X obj 436 538 decay2~ 50 500;
 #X obj 418 613 out~;
 #X obj 362 538 bl.tri~;
@@ -14,15 +14,15 @@
 #X obj 362 427 r \$0-note;
 #X msg 72 459 line 0 \, auto;
 #X obj 120 625 text sequence \$0-seq -g, f 13;
-#X obj 57 676 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856 -1
--1;
+#X obj 57 676 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000
+#000000;
 #X msg 120 559 stop;
 #X obj 102 205 text define -k \$0-seq;
 #A set 0 \$1-note 69 \; 500 \$1-note 60 \; 500 \$1-note 60 \; 500 \$1-note
 69 \; 500 \$1-note 69 \; 1500 \$1-note 60 \; 500 \$1-note 60 \; 500
 \$1-note 69 \; 500 \$1-note 69 \; 500 \$1-note 60 \; 500 \$1-note 62
 \; 500 \$1-note 60 \; 500 \$1-note 59 \; 500 \$1-note 59 \; 500 \$1-note
-59 \; 500 \$1-note 68 \; 500 \$1-note 68 \; 1500 \;;
+59 \; 500 \$1-note 68 \; 500 \$1-note 68 \; 3000 \;;
 #X text 300 593 <= send ID value, f 8;
 #X obj 178 593 initmess args \$0;
 #X msg 163 559 tempo \$1 permsec;
@@ -30,7 +30,7 @@
 #X msg 130 504 0.5;
 #X msg 163 504 1;
 #X msg 195 504 2;
-#X floatatom 163 535 5 0.1 5 0 - - -;
+#X floatatom 163 535 5 0.1 5 0 - - - 0;
 #X text 227 503 <= change the tempo, f 9;
 #X text 60 378 The 'tempo' message can be used to change the playing
 speed. Check the help file of [text] for more details., f 66;
