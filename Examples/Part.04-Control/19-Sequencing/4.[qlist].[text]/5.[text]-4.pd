@@ -1,113 +1,108 @@
-#N canvas 532 23 707 650 12;
+#N canvas 589 23 707 637 12;
 #X declare -path else;
-#X obj 71 562 out~;
-#X obj 313 100 text define -k \$0-seq;
-#A set 0 72 1 50 50 \; 0.25 71 1 100 50 \; 0.25 72 1 150 50 \; 0 48
-1 200 50 \; 0.5 60 1 250 50 \; 0 52 1 200 50 \; 0 55 1 200 50 \; 0.5
-60 1 250 50 \; 0 43 1 200 50 \; 0.5 67 1 100 50 \; 0 53 1 200 50 \;
-0 55 1 200 50 \; 0.25 65 1 100 50 \; 0.25 64 1 100 50 \; 0 48 1 200
-50 \; 0.25 67 1 100 50 \; 0.25 72 1 100 50 \; 0 52 1 200 50 \; 0 55
-1 200 50 \; 0.25 71 1 100 50 \; 0.25 72 1 100 50 \; 0 37 1 200 50 \;
-0.25 76 1 100 50 \; 0.25 74 1 100 50 \; 0 51 1 200 50 \; 0 55 1 200
-50 \; 0.25 73 1 100 50 \; 0.25 74 1 150 50 \; 0 38 1 200 50 \; 0.5
-62 1 250 50 \; 0 53 1 200 50 \; 0 54 1 200 50 \; 0.5 62 1 250 50 \;
-0 41 1 200 50 \; 0.5 62 1 100 50 \; 0 62 1 200 50 \; 0 56 1 200 50
-\; 0 60 1 200 50 \; 0.25 60 1 100 50 \; 0.25 59 1 100 50 \; 0 43 1
-200 50 \; 0 55 1 200 50 \; 0 59 1 200 50 \; 0.25 62 1 100 50 \; 0.25
-67 1 100 50 \; 0 46 1 200 50 \; 0 54 1 200 50 \; 0 58 1 200 50 \; 0.25
-66 1 100 50 \; 0.25 67 1 200 50 \; 0 47 1 200 50 \; 0 54 1 200 50 \;
-0 57 1 200 50 \; 0.5 69 1 100 50 \; 0 53 1 200 50 \; 0 59 1 200 50
-\; 0.25 71 1 100 50 \; 0.25 72 1 100 50 \; 0 36 1 200 50 \; 0 52 1
-200 50 \; 0 60 1 200 50 \; 0.25 71 1 100 50 \; 0.25 69 1 100 50 \;
-0.25 67 1 100 50 \; 0.25 69 1 100 50 \; 0 40 1 200 50 \; 0 40 1 200
-50 \; 0 58 1 200 50 \; 0.25 67 1 100 50 \; 0.25 65 1 100 50 \; 0.25
-64 1 100 50 \; 0.25 65 1 100 50 \; 0 41 1 100 50 \; 0 48 1 100 50 \;
-0 57 1 100 50 \; 0.25 64 1 100 50 \; 0.25 62 1 100 50 \; 0 41 1 500
-50 \; 0 48 1 500 50 \; 0 57 1 500 50 \; 0.25 60 1 100 50 \; 0.25 62
-1 100 50 \; 0.25 60 1 100 50 \; 0.25 59 1 100 50 \; 0 41 1 500 50 \;
-0 50 1 500 50 \; 0 56 1 500 50 \; 0.25 57 1 100 50 \; 0.25 55 1 100
-50 \; 0 43 1 200 50 \; 0 50 1 200 50 \; 0.25 60 1 100 50 \; 0.25 59
-1 100 50 \; 0 43 1 500 50 \; 0 52 1 500 50 \; 0 55 1 500 50 \; 0.25
-62 1 100 50 \; 0.25 60 1 100 50 \; 0.25 64 1 100 50 \; 0.25 62 1 100
-50 \; 0 43 1 500 50 \; 0 53 1 500 50 \; 0 55 1 500 50 \; 0.25 65 1
-100 50 \; 0.25 64 1 200 50 \; 0 43 1 500 50 \; 0.5 60 1 200 50 \; 0
-31 1 200 50 \; 0 41 1 200 50 \; 0 48 1 200 50 \; 0.5 60 1 1000 3000
-\; 0 24 1 1000 3000 \; 0 40 1 1000 3000 \; 0 48 1 1000 3000 \; 4 \;
-;
-#X obj 203 229 bng 15 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
+#X obj 312 90 text define -k \$0-seq;
+#A set 0 72 1 0.25 \; 0.25 71 1 0.25 \; 0.25 72 1 0.5 \; 0 48 0.5 0.5
+\; 0.5 60 1 0.5 \; 0 52 0.5 0.5 \; 0 55 0.5 0.5 \; 0.5 60 1 0.5 \;
+0 43 0.5 0.5 \; 0.5 67 1 0.25 \; 0 53 0.5 0.5 \; 0 55 0.5 0.5 \; 0.25
+65 1 0.25 \; 0.25 64 1 0.25 \; 0 48 0.5 0.5 \; 0.25 67 1 0.25 \; 0.25
+72 1 0.25 \; 0 52 0.5 0.5 \; 0 55 0.5 0.5 \; 0.25 71 1 0.25 \; 0.25
+72 1 0.25 \; 0 37 0.5 0.5 \; 0.25 76 1 0.25 \; 0.25 74 1 0.25 \; 0
+51 0.5 0.5 \; 0 55 0.5 0.5 \; 0.25 73 1 0.25 \; 0.25 74 1 0.5 \; 0
+38 0.5 0.5 \; 0.5 62 1 0.5 \; 0 53 0.5 0.5 \; 0 54 0.5 0.5 \; 0.5 62
+1 0.5 \; 0 41 0.5 0.5 \; 0.5 62 1 0.25 \; 0 56 0.5 0.5 \; 0 60 0.5
+0.5 \; 0.25 60 1 0.25 \; 0.25 59 1 0.25 \; 0 43 0.5 0.5 \; 0 55 0.5
+0.5 \; 0 59 0.5 0.5 \; 0.25 62 1 0.25 \; 0.25 67 1 0.25 \; 0 46 0.5
+0.5 \; 0 54 0.5 0.5 \; 0 58 0.5 0.5 \; 0.25 66 1 0.25 \; 0.25 67 1
+0.25 \; 0 47 0.5 0.5 \; 0 54 0.5 0.5 \; 0 57 0.5 0.5 \; 0.5 69 1 0.25
+\; 0 53 0.5 0.5 \; 0 59 0.5 0.5 \; 0.25 71 1 0.25 \; 0.25 72 1 0.25
+\; 0 36 0.5 0.5 \; 0 52 0.5 0.5 \; 0 60 0.5 0.5 \; 0.25 71 1 0.25 \;
+0.25 69 1 0.25 \; 0.25 67 1 0.25 \; 0.25 69 1 0.25 \; 0 40 0.5 0.5
+\; 0 40 0.5 0.5 \; 0 58 0.5 0.5 \; 0.25 67 1 0.25 \; 0.25 65 1 0.25
+\; 0.25 64 1 0.25 \; 0.25 65 1 0.25 \; 0 41 0.5 0.5 \; 0 48 0.5 0.5
+\; 0 57 0.5 0.5 \; 0.25 64 1 0.25 \; 0.25 62 1 0.25 \; 0 41 0.5 0.5
+\; 0 48 0.5 0.5 \; 0 57 0.5 0.5 \; 0.25 60 1 0.25 \; 0.25 62 1 0.25
+\; 0.25 60 1 0.25 \; 0.25 59 1 0.25 \; 0 41 0.5 0.5 \; 0 50 0.5 0.5
+\; 0 56 0.5 0.5 \; 0.25 57 1 0.25 \; 0.25 55 1 0.25 \; 0 43 0.5 0.5
+\; 0 50 0.5 0.5 \; 0.25 60 1 0.25 \; 0.25 59 1 0.25 \; 0 43 0.5 0.5
+\; 0 52 0.5 0.5 \; 0 55 0.5 0.5 \; 0.25 62 1 0.25 \; 0.25 60 1 0.25
+\; 0.25 64 1 0.25 \; 0.25 62 1 0.25 \; 0 43 0.5 0.5 \; 0 53 0.5 0.5
+\; 0 55 0.5 0.5 \; 0.25 65 1 0.25 \; 0.25 64 1 0.5 \; 0 43 0.5 0.5
+\; 0.5 60 1 0.5 \; 0 31 0.5 0.5 \; 0 41 0.5 0.5 \; 0 48 0.5 0.5 \;
+0.5 60 1 4 \; 0 24 0.5 4 \; 0 40 0.5 4 \; 0 48 0.5 4 \; 4 \;;
+#X obj 194 229 bng 15 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
 #000000 #000000;
-#X msg 66 140 stop;
-#X obj 487 46 declare -path else;
-#X text 235 30 <= set tempo;
+#X msg 57 140 stop;
+#X obj 487 41 declare -path else;
+#X text 239 29 <= set tempo;
 #X obj 71 294 makenote;
-#X obj 71 478 list append, f 17;
 #X obj 71 352 keyboard 17 80 5 1 0 0 empty empty;
 #X obj 71 323 pack;
-#X obj 66 232 unpack f f f f;
-#X obj 161 318 s \$0-release;
-#X obj 287 448 r \$0-release;
-#X obj 126 75 s \$0-tempo;
-#X obj 31 77 r \$0-tempo;
-#X obj 232 259 r \$0-tempo;
-#X obj 124 266 * 1;
-#X obj 161 293 * 1;
-#X text 473 101 <= sequence;
-#X text 209 140 <= start playing;
-#X text 363 261 This is good because now the sequence adapts to any
+#X obj 137 75 s \$0-tempo;
+#X obj 22 77 r \$0-tempo;
+#X text 472 91 <= sequence;
+#X text 200 140 <= start playing;
+#X text 336 271 This is good because now the sequence adapts to any
 tempo \, whereas before it'd hold the notes for the same amount independently
-of the tempo., f 45;
-#X text 363 145 Here the sequence is exactly the same as from the last
-example. The output list represents: Pitch \, Amplitude \, Attack+Sustain
-time and Release time., f 45;
-#X text 363 212 We're now using [makenote] and [voices]. Note how the
-tempo is used to also adjust the values of Attack+Sustain and Release
-times., f 45;
-#X text 232 490 The Attack+Sustain time is fed to the rightmost inlet
-of [makenote] (the duration input). We also have a release time that
-is sent to the [voices] object and appended back to the list so it
-is sent to [clone]. The whole list sent to [clone] represents: 1) voice
-number. 2) pitch. 3) Gate (amplitude). 4) release time. Open [clone]
-to see how the values are treated., f 61;
-#X msg 112 140 line 0 \, auto;
-#X msg 31 108 tempo \$1 permin;
-#X obj 66 181 text sequence \$0-seq -w 1 -t 60 permin, f 20;
-#X msg 126 30 60;
-#X msg 160 30 90;
-#X msg 203 30 120;
-#X msg 84 30 50;
-#X msg 49 30 40;
-#X obj 232 285 expr 60 / $f1;
-#X obj 71 508 clone 4 voice2;
-#X obj 71 537 highpass~ 500 1;
-#X obj 71 447 voices 4 1 -list -retrig 2;
-#X connect 2 0 24 0;
-#X connect 3 0 26 0;
-#X connect 6 0 9 0;
-#X connect 6 1 9 1;
-#X connect 7 0 33 0;
-#X connect 8 0 35 0;
-#X connect 9 0 8 0;
-#X connect 10 0 6 0;
-#X connect 10 1 6 1;
-#X connect 10 2 16 0;
-#X connect 10 3 17 0;
-#X connect 12 0 7 1;
-#X connect 12 0 35 2;
-#X connect 14 0 25 0;
-#X connect 15 0 32 0;
-#X connect 16 0 6 2;
-#X connect 17 0 11 0;
-#X connect 24 0 26 0;
-#X connect 25 0 26 0;
-#X connect 26 0 10 0;
-#X connect 26 2 2 0;
-#X connect 27 0 13 0;
-#X connect 28 0 13 0;
-#X connect 29 0 13 0;
-#X connect 30 0 13 0;
-#X connect 31 0 13 0;
-#X connect 32 0 17 1;
-#X connect 32 0 16 1;
-#X connect 33 0 34 0;
-#X connect 34 0 0 0;
-#X connect 35 0 7 0;
+of the tempo., f 47;
+#X msg 103 140 line 0 \, auto;
+#X msg 22 108 tempo \$1 permin;
+#X obj 57 181 text sequence \$0-seq -w 1 -t 60 permin, f 20;
+#X msg 137 30 60;
+#X msg 170 30 90;
+#X msg 207 30 120;
+#X msg 104 30 50;
+#X msg 70 30 40;
+#X obj 71 530 highpass~ 500 1;
+#X obj 71 562 out~ 0.25;
+#X obj 229 208 r \$0-tempo;
+#X obj 229 234 bpm;
+#X obj 229 258 / 2;
+#X obj 124 266 * 500;
+#X obj 57 232 unpack f f f;
+#X obj 71 471 pack f f f;
+#X floatatom 229 284 8 0 0 0 - - - 0;
+#X text 337 145 Here the sequence the same tune but the output list
+represents the gate value and the duration value also in beats., f
+47;
+#X text 337 195 We're now using [makenote] and [poly]. Note how the
+tempo is used to also adjust the duration of the notes. Each note will
+always have half of the duration specified in the sequence \, which
+gives it a 'stacatto' feel., f 47;
+#X obj 71 443 poly 4;
+#X obj 71 501 clone -s 1 4 voice2;
+#X text 255 514 The [clone] object gets represents: 1) voice number.
+2) pitch. 3) Gate (amplitude). The gate value for the melody line is
+"1" and "0.5" for the chords. Open [clone] to see how the values are
+treated., f 58;
+#X text 255 466 the [keyboard] object above is just here to display
+the notes from the sequence., f 58;
+#X connect 1 0 13 0;
+#X connect 2 0 15 0;
+#X connect 5 0 7 0;
+#X connect 5 1 7 1;
+#X connect 6 0 32 0;
+#X connect 7 0 6 0;
+#X connect 9 0 14 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 15 0 27 0;
+#X connect 15 2 1 0;
+#X connect 16 0 8 0;
+#X connect 17 0 8 0;
+#X connect 18 0 8 0;
+#X connect 19 0 8 0;
+#X connect 20 0 8 0;
+#X connect 21 0 22 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 29 0;
+#X connect 26 0 5 2;
+#X connect 27 0 5 0;
+#X connect 27 1 5 1;
+#X connect 27 2 26 0;
+#X connect 28 0 33 0;
+#X connect 29 0 26 1;
+#X connect 32 0 28 0;
+#X connect 32 1 28 1;
+#X connect 32 2 28 2;
+#X connect 33 0 21 0;

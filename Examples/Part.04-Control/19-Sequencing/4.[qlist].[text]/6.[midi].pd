@@ -1,4 +1,4 @@
-#N canvas 676 143 717 509 12;
+#N canvas 574 26 717 509 12;
 #X declare -path else;
 #X msg 133 202 save;
 #N canvas 421 163 551 357 synth 0;
@@ -80,8 +80,8 @@
 #X connect 9 2 8 0;
 #X restore 133 326 pd synth;
 #X obj 133 288 pack;
-#X obj 103 202 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
-1;
+#X obj 103 202 tgl 17 0 empty empty empty 17 7 0 10 #dcdcdc #000000
+#000000 0 1;
 #X obj 406 122 text define \$0-midi;
 #X msg 422 180 line 0 \, auto;
 #X obj 422 324 pack;
@@ -89,8 +89,8 @@
 #X text 517 179 <= play;
 #X msg 364 181 stop;
 #X obj 364 242 b;
-#X obj 601 244 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
+#X obj 601 244 bng 15 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
+#000000 #000000;
 #X obj 406 95 initmess read midi-seq.txt;
 #X obj 422 244 iterate;
 #X obj 422 272 panic;
