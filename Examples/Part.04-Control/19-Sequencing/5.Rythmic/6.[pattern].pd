@@ -1,4 +1,4 @@
-#N canvas 709 23 610 595 12;
+#N canvas 650 23 599 526 12;
 #X declare -path else;
 #X obj 378 26 declare -path else;
 #X obj 192 388 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
@@ -38,9 +38,6 @@ the help file for more info., f 67;
 #X msg 32 291 tempo \$1;
 #X floatatom 32 263 5 0 0 0 - - - 0;
 #X text 34 241 bpm;
-#X text 103 521 A [pattern] object can also output indexes that you
-can use to query for a sequence from an array or a [sequencer] object.
-Check the example in the help file., f 58;
 #X connect 6 0 1 0;
 #X connect 6 1 3 0;
 #X connect 6 2 14 0;

@@ -1,4 +1,0 @@
-#N canvas 610 23 591 564 12;
-#X declare -path else;
-#X obj 332 37 declare -path else;
-#X obj 75 93 score;
