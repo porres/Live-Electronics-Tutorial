@@ -1,47 +1,47 @@
-#N canvas 498 100 720 560 12;
+#N canvas 529 53 720 560 12;
 #X declare -path else;
-#X obj 132 33 tgl 30 0 empty metro empty 17 7 0 10 -228856 -1 -1 0
-1;
+#X obj 132 33 tgl 30 0 empty metro empty 17 7 0 10 #dcdcdc #000000
+#000000 0 1;
 #X text 265 41 TEMPO;
-#X obj 183 39 nbx 5 18 100 1000 0 0 empty empty empty 0 -8 0 15 -228856
--1 -1 100 256;
+#X obj 183 39 nbx 5 18 100 1000 0 0 empty empty empty 0 -8 0 15 #dcdcdc
+#000000 #000000 0 256;
 #X obj 70 75 moses 1;
 #X obj 384 323 table tgl_\$0 16;
 #N canvas 470 122 791 576 drum 0;
-#X obj 54 57 hradio 25 1 0 16 NADA h_radio empty 0 -6 0 15 -116513
--183280 -1 7;
-#X obj 61 89 tgl 15 1 \$0-tgl0 NIENTE empty 0 -6 0 10 -104946 -1 -1
-1 1;
-#X obj 87 89 tgl 15 1 \$0-tgl1 NIENTE empty 0 -6 0 10 -228856 -1 -1
-0 1;
-#X obj 112 89 tgl 15 1 \$0-tgl2 NIENTE empty 0 -6 0 10 -228856 -1 -1
-1 1;
-#X obj 135 89 tgl 15 1 \$0-tgl3 NIENTE empty 0 -6 0 10 -228856 -1 -1
-0 1;
-#X obj 186 89 tgl 15 1 \$0-tgl5 NIENTE empty 0 -6 0 10 -228856 -1 -1
-0 1;
-#X obj 211 89 tgl 15 1 \$0-tgl6 NIENTE empty 0 -6 0 10 -228856 -1 -1
-1 1;
-#X obj 236 89 tgl 15 0 \$0-tgl7 NIENTE empty 0 -6 0 10 -228856 -1 -1
-0 1;
-#X obj 287 89 tgl 15 1 \$0-tgl9 NIENTE empty 0 -6 0 10 -228856 -1 -1
-0 1;
-#X obj 312 89 tgl 15 1 \$0-tgl10 NIENTE empty 0 -6 0 10 -228856 -1
--1 0 1;
-#X obj 335 89 tgl 15 1 \$0-tgl11 NIENTE empty 0 -6 0 10 -228856 -1
--1 1 1;
-#X obj 384 89 tgl 15 1 \$0-tgl13 NIENTE empty 0 -6 0 10 -228856 -1
--1 1 1;
-#X obj 409 89 tgl 15 1 \$0-tgl14 NIENTE empty 0 -6 0 10 -228856 -1
--1 0 1;
-#X obj 435 89 tgl 15 1 \$0-tgl15 NIENTE empty 0 -6 0 10 -228856 -1
--1 1 1;
-#X obj 261 89 tgl 15 1 \$0-tgl8 NIENTE empty 0 -6 0 10 -104946 -1 -1
-1 1;
-#X obj 161 89 tgl 15 1 \$0-tgl4 NIENTE empty 0 -6 0 10 -104946 -1 -1
-1 1;
-#X obj 359 89 tgl 15 1 \$0-tgl12 NIENTE empty 0 -6 0 10 -104946 -1
--1 0 1;
+#X obj 54 57 hradio 25 1 0 16 NADA h_radio empty 0 -6 0 15 #707080
+#b0bcbc #000000 0;
+#X obj 61 89 tgl 15 1 \$0-tgl0 NIENTE empty 0 -6 0 10 #649cc4 #000000
+#000000 1 1;
+#X obj 87 89 tgl 15 1 \$0-tgl1 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 112 89 tgl 15 1 \$0-tgl2 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 1 1;
+#X obj 135 89 tgl 15 1 \$0-tgl3 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 186 89 tgl 15 1 \$0-tgl5 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 211 89 tgl 15 1 \$0-tgl6 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 1 1;
+#X obj 236 89 tgl 15 0 \$0-tgl7 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 287 89 tgl 15 1 \$0-tgl9 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 312 89 tgl 15 1 \$0-tgl10 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 335 89 tgl 15 1 \$0-tgl11 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 1 1;
+#X obj 384 89 tgl 15 1 \$0-tgl13 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 1 1;
+#X obj 409 89 tgl 15 1 \$0-tgl14 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 435 89 tgl 15 1 \$0-tgl15 NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 1 1;
+#X obj 261 89 tgl 15 1 \$0-tgl8 NIENTE empty 0 -6 0 10 #649cc4 #000000
+#000000 1 1;
+#X obj 161 89 tgl 15 1 \$0-tgl4 NIENTE empty 0 -6 0 10 #649cc4 #000000
+#000000 1 1;
+#X obj 359 89 tgl 15 1 \$0-tgl12 NIENTE empty 0 -6 0 10 #649cc4 #000000
+#000000 0 1;
 #X obj 40 240 r \$0-tgl0;
 #X msg 40 262 0 \$1;
 #X obj 40 284 s tgl_\$0;
@@ -90,38 +90,38 @@
 #X msg 39 410 8 \$1;
 #X obj 114 432 s tgl_\$0;
 #X msg 114 410 9 \$1;
-#X obj 61 110 tgl 15 1 \$0-tgl0b NIENTE empty 0 -6 0 10 -104946 -1
--1 1 1;
-#X obj 87 110 tgl 15 1 \$0-tgl1b NIENTE empty 0 -6 0 10 -228856 -1
--1 0 1;
-#X obj 112 110 tgl 15 1 \$0-tgl2b NIENTE empty 0 -6 0 10 -228856 -1
--1 0 1;
-#X obj 135 110 tgl 15 1 \$0-tgl3b NIENTE empty 0 -6 0 10 -228856 -1
--1 1 1;
-#X obj 186 110 tgl 15 1 \$0-tgl5b NIENTE empty 0 -6 0 10 -228856 -1
--1 1 1;
-#X obj 211 110 tgl 15 1 \$0-tgl6b NIENTE empty 0 -6 0 10 -228856 -1
--1 0 1;
-#X obj 236 110 tgl 15 0 \$0-tgl7b NIENTE empty 0 -6 0 10 -228856 -1
--1 0 1;
-#X obj 287 110 tgl 15 1 \$0-tgl9b NIENTE empty 0 -6 0 10 -228856 -1
--1 0 1;
-#X obj 312 110 tgl 15 1 \$0-tgl10b NIENTE empty 0 -6 0 10 -228856 -1
--1 1 1;
-#X obj 335 110 tgl 15 1 \$0-tgl11b NIENTE empty 0 -6 0 10 -228856 -1
--1 0 1;
-#X obj 384 110 tgl 15 1 \$0-tgl13b NIENTE empty 0 -6 0 10 -228856 -1
--1 0 1;
-#X obj 409 110 tgl 15 1 \$0-tgl14b NIENTE empty 0 -6 0 10 -228856 -1
--1 0 1;
-#X obj 435 110 tgl 15 1 \$0-tgl15b NIENTE empty 0 -6 0 10 -228856 -1
--1 1 1;
-#X obj 261 110 tgl 15 1 \$0-tgl8b NIENTE empty 0 -6 0 10 -104946 -1
--1 1 1;
-#X obj 161 110 tgl 15 1 \$0-tgl4b NIENTE empty 0 -6 0 10 -104946 -1
--1 0 1;
-#X obj 359 110 tgl 15 1 \$0-tgl12b NIENTE empty 0 -6 0 10 -104946 -1
--1 1 1;
+#X obj 61 110 tgl 15 1 \$0-tgl0b NIENTE empty 0 -6 0 10 #649cc4 #000000
+#000000 1 1;
+#X obj 87 110 tgl 15 1 \$0-tgl1b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 112 110 tgl 15 1 \$0-tgl2b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 135 110 tgl 15 1 \$0-tgl3b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 1 1;
+#X obj 186 110 tgl 15 1 \$0-tgl5b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 1 1;
+#X obj 211 110 tgl 15 1 \$0-tgl6b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 236 110 tgl 15 0 \$0-tgl7b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 287 110 tgl 15 1 \$0-tgl9b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 312 110 tgl 15 1 \$0-tgl10b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 1 1;
+#X obj 335 110 tgl 15 1 \$0-tgl11b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 384 110 tgl 15 1 \$0-tgl13b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 409 110 tgl 15 1 \$0-tgl14b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 0 1;
+#X obj 435 110 tgl 15 1 \$0-tgl15b NIENTE empty 0 -6 0 10 #dcdcdc #000000
+#000000 1 1;
+#X obj 261 110 tgl 15 1 \$0-tgl8b NIENTE empty 0 -6 0 10 #649cc4 #000000
+#000000 1 1;
+#X obj 161 110 tgl 15 1 \$0-tgl4b NIENTE empty 0 -6 0 10 #649cc4 #000000
+#000000 0 1;
+#X obj 359 110 tgl 15 1 \$0-tgl12b NIENTE empty 0 -6 0 10 #649cc4 #000000
+#000000 1 1;
 #X msg 386 258 0 \$1;
 #X msg 470 258 1 \$1;
 #X msg 553 259 2 \$1;
@@ -254,8 +254,6 @@ them to the arrays., f 36;
 off the toggles to change the rythm. The horizontal radio is just used
 for visualizing the sequence point., f 58;
 #X obj 513 34 declare -path else;
-#X obj 36 257 play.file~ 1 dholak.aif, f 12;
-#X obj 132 258 play.file~ 1 bagal.aif, f 12;
 #X obj 45 313 out~;
 #X text 269 104 Here we have a sequencer in the style of a "Drum Machine".
 We have a series of toggles whose values are stored in an array. Actually
@@ -267,12 +265,14 @@ the arrays. The stored values are only 0 or 1 \, and if it is "1" \,
 [sel 1] outputs a bang that we use to trigger a sample.;
 #X text 123 482 bagal;
 #X text 116 461 dholak;
+#X obj 36 257 player~ 1 dholak.aif, f 10;
+#X obj 132 258 player~ 1 bagal.aif, f 9;
 #X connect 0 0 3 0;
 #X connect 0 0 14 0;
 #X connect 2 0 14 1;
 #X connect 3 0 16 0;
-#X connect 7 0 20 0;
-#X connect 8 0 21 0;
+#X connect 7 0 25 0;
+#X connect 8 0 26 0;
 #X connect 10 0 11 0;
 #X connect 10 0 13 0;
 #X connect 10 0 15 0;
@@ -280,5 +280,5 @@ the arrays. The stored values are only 0 or 1 \, and if it is "1" \,
 #X connect 13 0 8 0;
 #X connect 14 0 10 0;
 #X connect 16 0 10 0;
-#X connect 20 0 22 0;
-#X connect 21 0 22 1;
+#X connect 25 0 20 0;
+#X connect 26 0 20 1;

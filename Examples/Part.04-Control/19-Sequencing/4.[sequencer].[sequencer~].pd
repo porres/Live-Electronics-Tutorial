@@ -1,9 +1,9 @@
-#N canvas 441 155 967 672 12;
+#N canvas 371 23 967 672 12;
 #X declare -path else;
 #X obj 576 202 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 100 256;
-#X obj 576 148 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
+#dcdcdc #000000 #000000 0 256;
+#X obj 576 148 bng 15 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
+#000000 #000000;
 #X obj 621 278 *~;
 #X obj 576 242 bl.saw~;
 #X obj 639 253 decay2~ 50 2000;
@@ -28,22 +28,22 @@
 #X obj 130 371 text get \$0-seq;
 #X obj 130 316 t b f;
 #X obj 130 214 tempo 160 -on;
-#X obj 130 240 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 130 426 4 0 0 0 - - -;
+#X obj 130 240 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 130 426 4 0 0 0 - - - 0;
 #X obj 130 450 mtof;
 #X obj 235 541 *~;
 #X obj 235 572 out~;
 #X obj 253 506 decay2~ 50 500;
 #X obj 130 344 f;
-#X obj 191 318 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -228856
--1 -1 1;
-#X floatatom 191 338 3 0 0 0 - - -;
+#X obj 191 318 hradio 15 1 0 2 empty empty empty 0 -8 0 10 #dcdcdc
+#000000 #000000 0;
+#X floatatom 191 338 3 0 0 0 - - - 0;
 #X obj 130 506 bl.square~;
 #X obj 130 475 trigger float bang;
 #X text 226 316 <= select sequence, f 9;
 #X obj 130 399 route float;
-#X floatatom 130 290 3 0 0 0 - - -;
+#X floatatom 130 290 3 0 0 0 - - - 0;
 #X text 312 223 click to open:;
 #X text 246 369 <= get sequence values.;
 #X text 521 28 The [sequencer] object from ELSE is an abstraction based
