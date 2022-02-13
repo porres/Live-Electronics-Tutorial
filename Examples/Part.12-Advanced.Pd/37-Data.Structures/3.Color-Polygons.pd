@@ -1,6 +1,6 @@
-#N struct 1003-DS float color;
-#N struct 1003-fill float color;
-#N canvas 497 74 909 361 12;
+#N struct 1006-DS float color;
+#N struct 1006-fill float color;
+#N canvas 457 74 881 360 12;
 #X declare -path else;
 #X obj 157 283 pointer;
 #N canvas 233 225 985 322 template-1 0;
@@ -43,26 +43,25 @@ set the internal color and also uses here the 'color' field name for
 that. It doesn't need to close the shape with four coordinate points
 to draw a triangle - three points is already enough to draw the shape.
 , f 44;
-#X restore 565 138 pd template-2;
+#X restore 605 127 pd template-2;
 #X obj 34 321 append \$0-DS color;
 #N canvas 619 501 301 150 \$0-display-1 1;
-#X scalar 1003-DS 500 \;;
+#X scalar 1006-DS 500 \;;
 #X restore 271 126 pd \$0-display-1;
 #N canvas 1026 469 284 191 \$0-display-2 1;
-#X scalar 1003-fill 465 \;;
-#X restore 670 138 pd \$0-display-2;
-#X msg 287 167 clear \, vis 1;
+#X scalar 1006-fill 450 \;;
+#X restore 710 127 pd \$0-display-2;
+#X msg 163 180 clear \, vis 1;
 #X obj 34 256 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 #dcdcdc #000000 #000000 0 256;
-#X obj 287 194 s pd-\$0-display-1;
+#X obj 163 207 s pd-\$0-display-1;
 #X obj 611 273 pointer;
-#X msg 753 167 clear \, vis 1;
+#X msg 618 175 clear \, vis 1;
 #X obj 474 261 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 #dcdcdc #000000 #000000 0 256;
-#X obj 753 194 s pd-\$0-display-2;
+#X obj 618 202 s pd-\$0-display-2;
 #X obj 474 302 append \$0-fill color;
-#X obj 34 126 loadbang;
-#X obj 725 25 declare -path else;
+#X obj 721 22 declare -path else;
 #X obj 157 240 message traverse pd-\$0-display-1 \, bang, f 33;
 #X msg 34 215 500;
 #X msg 474 223 450;
@@ -70,29 +69,26 @@ to draw a triangle - three points is already enough to draw the shape.
 insert a simple line shape with [drawpolygon]. See the [pd template-1]
 subpatch. Data is displayed on the [pd \$0-display-1] subpatch \, click
 and drag the number in it to see the colors change., f 54;
-#X obj 34 180 trigger bang bang bang;
-#X obj 474 185 trigger bang bang bang, f 36;
-#X obj 474 138 loadbang;
 #X obj 611 231 message traverse pd-\$0-display-2 \, bang, f 33;
-#X text 466 59 Next \, we draw a bit less simple shapes and also use
+#X text 446 59 Next \, we draw a bit less simple shapes and also use
 the [filledpolygon] object. See the [pd template-2] subpatch for more
 details. You can also click and drag the number to change colors.,
 f 56;
+#X obj 34 180 loadbanger 3;
+#X obj 474 185 loadbanger 3;
 #X connect 0 0 3 1;
 #X connect 6 0 8 0;
 #X connect 7 0 3 0;
 #X connect 9 0 13 1;
 #X connect 10 0 12 0;
 #X connect 11 0 13 0;
-#X connect 14 0 20 0;
-#X connect 16 0 0 0;
-#X connect 17 0 7 0;
-#X connect 18 0 11 0;
-#X connect 20 0 17 0;
-#X connect 20 1 16 0;
-#X connect 20 2 6 0;
-#X connect 21 0 18 0;
-#X connect 21 1 23 0;
-#X connect 21 2 10 0;
-#X connect 22 0 21 0;
-#X connect 23 0 9 0;
+#X connect 15 0 0 0;
+#X connect 16 0 7 0;
+#X connect 17 0 11 0;
+#X connect 19 0 9 0;
+#X connect 21 0 16 0;
+#X connect 21 1 15 0;
+#X connect 21 2 6 0;
+#X connect 22 0 17 0;
+#X connect 22 1 19 0;
+#X connect 22 2 10 0;
