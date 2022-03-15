@@ -4,13 +4,13 @@
 #X obj 402 485 *~;
 #X obj 420 454 *~;
 #X obj 402 515 delwrite~ \$0-Kp 1000;
-#X floatatom 420 384 5 0 0 0 - - -;
-#X obj 423 363 hsl 128 15 0 1 0 0 empty \$0-fb empty -2 -8 0 10 -228856
--1 -1 12446 1;
+#X floatatom 420 384 5 0 0 0 - - - 0;
+#X obj 423 363 hsl 128 15 0 1 0 0 empty \$0-fb empty -2 -8 0 10 #dcdcdc
+#000000 #000000 0 1;
 #X text 455 362 feedback;
-#X floatatom 624 377 0 0 0 0 - - -;
+#X floatatom 624 377 0 0 0 0 - - - 0;
 #X obj 627 350 hsl 128 15 0 1 0 0 empty \$0-blend empty -2 -8 0 10
--228856 -1 -1 12700 1;
+#dcdcdc #000000 #000000 0 1;
 #X text 669 349 blend;
 #X obj 494 410 noise~;
 #X obj 494 458 expr~ if($v1 < $v2 \, 1 \, -1), f 19;
@@ -25,7 +25,6 @@
 #X obj 270 385 delread4~ \$0-Kp;
 #X obj 140 292 clipnoise~;
 #X obj 270 324 expr~ 1000 / $v1;
-#X obj 270 275 tempo~ 60 100 -on;
 #X obj 624 403 f2s~ 10;
 #X obj 681 460 initmess \; \$0-fb 0.98 \; \$0-blend 1;
 #X text 47 115 For the feedback \, the ideal would be to do it in a
@@ -56,12 +55,13 @@ results modeling plucked instruments., f 58;
 #X text 473 266 As a kind of Waveguide model \, the Karplus-Strong
 is considered a "Wavetable Modification" algorithm \, for at each iteration
 \, the sound clip gets filtered and modified., f 58;
+#X obj 270 275 tempo~ -on 60 100;
 #X connect 0 0 14 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 1;
 #X connect 4 0 16 0;
 #X connect 5 0 4 0;
-#X connect 7 0 24 0;
+#X connect 7 0 23 0;
 #X connect 8 0 7 0;
 #X connect 10 0 15 0;
 #X connect 11 0 2 1;
@@ -75,7 +75,7 @@ is considered a "Wavetable Modification" algorithm \, for at each iteration
 #X connect 21 0 0 0;
 #X connect 22 0 18 0;
 #X connect 22 0 17 1;
-#X connect 23 0 17 0;
-#X connect 23 0 30 0;
-#X connect 24 0 11 1;
-#X connect 30 0 22 0;
+#X connect 23 0 11 1;
+#X connect 29 0 22 0;
+#X connect 34 0 17 0;
+#X connect 34 0 29 0;

@@ -16,7 +16,6 @@
 #X obj 27 199 else/note2pitch;
 #X obj 146 253 * 0.5;
 #X obj 108 150 score2 score2.txt;
-#X obj 93 432 voices 2 -list;
 #X obj 93 465 clone 2 voice2;
 #X obj 93 499 out~;
 #X text 42 27 The [score2] object is a less versatile variant of [score]
@@ -32,9 +31,10 @@ monophonic scores or chords \, whereas [score] is more flexible for
 poliphonic events with independent duration for each event. You can
 subvert [score2] and also achieve something like that \, but it's just
 'hacky'. Check its help file., f 55;
+#X obj 93 432 voices -list 2;
 #X connect 1 0 3 0;
 #X connect 1 1 3 1;
-#X connect 2 0 14 0;
+#X connect 2 0 19 0;
 #X connect 3 0 2 0;
 #X connect 4 0 13 0;
 #X connect 5 0 4 0;
@@ -48,4 +48,4 @@ subvert [score2] and also achieve something like that \, but it's just
 #X connect 13 1 10 0;
 #X connect 13 3 5 0;
 #X connect 14 0 15 0;
-#X connect 15 0 16 0;
+#X connect 19 0 14 0;

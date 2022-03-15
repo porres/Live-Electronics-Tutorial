@@ -10,7 +10,6 @@
 #X obj 50 150 unpack f f f;
 #X floatatom 163 218 8 0 0 0 - - - 0;
 #X obj 64 437 highpass~ 500 1;
-#X obj 64 365 voices 4 -list;
 #X obj 64 398 clone 4 voice2;
 #X obj 163 139 route tempo;
 #X obj 102 56 bng 17 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
@@ -34,25 +33,26 @@ help files for more info., f 41;
 #X text 254 394 The tempo in bpm is specified inside the score and
 it is output on the mid outler. Poliphonic events can be specified
 by splitting messages with commas., f 51;
+#X obj 64 365 voices -list 4;
 #X connect 1 0 3 0;
 #X connect 1 1 3 1;
-#X connect 2 0 10 0;
+#X connect 2 0 22 0;
 #X connect 3 0 2 0;
 #X connect 5 0 6 0;
 #X connect 6 0 8 0;
-#X connect 6 0 15 1;
+#X connect 6 0 14 1;
 #X connect 7 0 1 0;
 #X connect 7 1 1 1;
-#X connect 7 2 15 0;
+#X connect 7 2 14 0;
 #X connect 9 0 4 0;
-#X connect 10 0 11 0;
-#X connect 11 0 9 0;
-#X connect 12 0 5 0;
-#X connect 13 0 14 0;
-#X connect 14 0 7 0;
-#X connect 14 1 12 0;
-#X connect 14 2 16 0;
-#X connect 15 0 1 2;
-#X connect 16 0 13 0;
-#X connect 17 0 16 1;
-#X connect 19 0 14 0;
+#X connect 10 0 9 0;
+#X connect 11 0 5 0;
+#X connect 12 0 13 0;
+#X connect 13 0 7 0;
+#X connect 13 1 11 0;
+#X connect 13 2 15 0;
+#X connect 14 0 1 2;
+#X connect 15 0 12 0;
+#X connect 16 0 15 1;
+#X connect 18 0 13 0;
+#X connect 22 0 10 0;
