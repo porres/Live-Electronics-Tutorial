@@ -1,15 +1,15 @@
-#N canvas 463 73 935 573 12;
+#N canvas 371 47 935 573 12;
 #X declare -path else;
 #X obj 78 274 out~;
-#X floatatom 721 109 5 0.1 10 0 - - -;
-#X obj 724 160 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 6934 1;
+#X floatatom 721 109 5 0.1 10 0 - - - 0;
+#X obj 724 160 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 #dcdcdc
+#000000 #000000 0 1;
 #X obj 721 182 rescale 500 1500;
 #X obj 695 231 bp~ 0 10;
 #X obj 667 160 noise~;
 #X obj 695 268 out~;
 #X obj 721 208 nbx 7 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 1045.95 256;
+#dcdcdc #000000 #000000 0 256;
 #X obj 721 134 lfo 0.1;
 #X text 26 345 An audio rate LFO sometimes is not necessary or even
 possible. This is why the ELSE library provides [lfo] \, a control
@@ -48,10 +48,10 @@ as a "LFO'. And not that ELSE has a control [phasor] object., f 31
 #X obj 511 493 out~;
 #X obj 412 508 display~;
 #X obj 451 456 pimp~ 0.5;
-#X text 635 448 [pimp~] from ELSE combines [phasor~] and [imp~]. The
-impulse is given at period trasitions. This is useful at low frequencies
-and we'll see aplications for it in this tutorial. Check its help file.
-, f 36;
+#X text 635 452 [pimp~] from ELSE combines [phasor~] and [imp~] (a
+trigger). The impulse is given at period trasitions. This is useful
+at low frequencies and we'll see aplications for it in this tutorial.
+Check its help file., f 36;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;
 #X connect 3 0 7 0;
