@@ -50,10 +50,6 @@ on [text]. It has a special syntax that "-" is treated as a pause and
 can join different elements to be sent at once (like chords). Check
 its help file for more information!, f 58;
 #X obj 469 441 sequencer~ 150 100 80 120 60 150 100 70 100;
-#X text 681 485 ELSE also provides the signal rate versions [tempo~]
-and [sequencer~]. The [sequencer~] object is simpler and can only take
-floats. It is triggered by impulses \, which is given by [tempo~].
-Check thei help file of both for more information., f 31;
 #X text 32 55 Now we're using a [text] object to store the values instead
 of an array. Not we can also use [text] as a sequencer as we'll see
 in the next examples. Below we have it storing an usual sequence from
@@ -64,6 +60,10 @@ that it can store several lists and it doesn't need to be only floats
 filtered out in [route float]. In practice \, these are used as rests!
 , f 62;
 #X obj 543 401 tempo~ -on 120 100;
+#X text 681 485 ELSE also provides the signal rate versions [tempo~]
+and [sequencer~]. The [sequencer~] object is simpler and can only take
+floats. It is triggered by impulses \, which is given by [tempo~].
+Check their help file of both for more information., f 31;
 #X connect 0 0 3 0;
 #X connect 0 0 6 0;
 #X connect 1 0 5 0;
@@ -97,5 +97,5 @@ filtered out in [route float]. In practice \, these are used as rests!
 #X connect 35 0 24 0;
 #X connect 36 0 21 0;
 #X connect 40 0 11 0;
-#X connect 44 0 9 0;
-#X connect 44 0 40 0;
+#X connect 43 0 9 0;
+#X connect 43 0 40 0;
