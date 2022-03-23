@@ -21,7 +21,7 @@
 #X obj 621 148 bng 15 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
 #000000 #000000;
 #X obj 621 174 timed.gate~ 500;
-#X text 502 77 The [timed.gate~] object sends a timed gate spcecified
+#X text 502 77 The [timed.gate~] object sends a timed gate specified
 by its argument (500 ms in the right example)., f 44;
 #X obj 549 321 bng 15 250 50 0 empty empty empty 17 7 0 10 #dcdcdc
 #000000 #000000;

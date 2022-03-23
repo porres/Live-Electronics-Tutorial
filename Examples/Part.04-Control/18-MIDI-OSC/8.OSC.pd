@@ -33,7 +33,7 @@ send OSC data (see the help file for more info)., f 72;
 #X text 153 684 routed received messages =>;
 #X text 41 279 Pd Vanilla has the [oscformat] object to format OSC
 messages so they can be sent via the network. The arguments are the
-adresses that will be used for routing and retrieving the sent message.
+addresses that will be used for routing and retrieving the sent message.
 , f 72;
 #X text 113 581 let's route 'hz' and 'slider' ==>;
 #X obj 724 480 netreceive -u -b;

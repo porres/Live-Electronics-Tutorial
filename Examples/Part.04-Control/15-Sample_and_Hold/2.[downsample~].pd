@@ -34,7 +34,7 @@
 hold unit., f 33;
 #X text 65 356 Clearly [sh~] is more maleable \, and it can be triggered
 in many different ways. Use the many impulse and trigger generators
-from ELSE to contol it.;
+from ELSE to control it.;
 #X obj 345 452 tempo~ -on 120 100;
 #X connect 0 0 7 0;
 #X connect 2 0 3 0;

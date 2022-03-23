@@ -273,7 +273,7 @@
 #X obj 555 43 declare -path else;
 #X text 266 85 Now we join the structure from the array sequencer with
 the drrum sequencer example to implement a note sequencer that is controlled
-by toggles. This way you can generate melodic rythms. The notes sequence
+by toggles. This way you can generate melodic rhythms. The notes sequence
 is now controlled by sliders. Open the subpatch below for more info.
 , f 61;
 #X connect 0 0 3 0;

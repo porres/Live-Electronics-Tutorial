@@ -50,7 +50,7 @@ as a "LFO'. And not that ELSE has a control [phasor] object., f 31
 #X obj 451 456 pimp~ 0.5;
 #X text 635 452 [pimp~] from ELSE combines [phasor~] and [imp~] (a
 trigger). The impulse is given at period trasitions. This is useful
-at low frequencies and we'll see aplications for it in this tutorial.
+at low frequencies and we'll see applications for it in this tutorial.
 Check its help file., f 36;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;

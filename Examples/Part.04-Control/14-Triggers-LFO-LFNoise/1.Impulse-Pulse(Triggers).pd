@@ -56,7 +56,7 @@ f 50;
 #X text 30 521 The ELSE library also provides control version objects
 for impulse and pulse generators. In the case of [impulse] \, the output
 is a bang., f 46;
-#X text 24 251 The [rand.i~] object is trigered at positive to negative
+#X text 24 251 The [rand.i~] object is triggered at positive to negative
 or negative to positive transitions \, so you can use either an impulse
 or a gate to trigger it. The [trig.delay~] object also responds to
 impulses and gates. It is triggered by a non-positive (zero or negative)

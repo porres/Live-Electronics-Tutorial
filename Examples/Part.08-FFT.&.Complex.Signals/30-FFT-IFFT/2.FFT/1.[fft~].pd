@@ -105,7 +105,7 @@ of reasonably small audio snippets. This operation is done in a whole
 block of audio - defined by [block~].;
 #X text 21 165 More precisely \, we're dealing with "FFT" \, as with
 the [fft~] object \, which performs a "Fast A "Fourier Transform".
-The FFT is an optimized algorythm for Fourier Analysis in the digital
+The FFT is an optimized algorhythm for Fourier Analysis in the digital
 domain and requires that the block of audio is a power of 2! Audio
 blocks in Pd also need to be a power of 2 \, so there is no conflict
 here.;

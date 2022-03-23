@@ -17,7 +17,7 @@
 #X text 32 55 The [impseq~] object is a sequencer of impulses. It takes
 a list of impulse values and outputs them when receiving a trigger
 \, which ccan be either a bang or a signal trigger (a 0 to non-0 transition).
-By default \, the seqence is "1" \, so below to the left we just have
+By default \, the sequence is "1" \, so below to the left we just have
 a conversion from a bang to an impulse. To the right we have a sequence
 of impulse values \, note that a "0" is like a rest., f 58;
 #X text 503 29 Normally \, [impseq~] is used for setting different

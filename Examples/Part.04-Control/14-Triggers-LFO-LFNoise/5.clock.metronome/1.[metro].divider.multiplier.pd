@@ -76,7 +76,7 @@ where 'clocks' send triggers at a specific frequency \, just like [impulse
 take effect right away in the middle of the period (for the remaining
 part of the period). We can also think about a 'clock multiplier' that
 speeds up the frequency. In modular synthesizers it's common to have
-different modules for a clock divider or multipler \, this doesn't
+different modules for a clock divider or multiplier \, this doesn't
 make sens in Pd because you can just invert the values as below and
 have the input as a clock multiplier instead. Another thing is that
 synth modules usually only multiply or divide by integer values and

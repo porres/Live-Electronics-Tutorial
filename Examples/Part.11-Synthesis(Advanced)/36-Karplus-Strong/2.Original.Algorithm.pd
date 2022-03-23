@@ -32,23 +32,23 @@ subpatch with a block size of 1 \, for very high frequencies. We'll
 do this later., f 55;
 #X text 47 168 An important detail is that we have now is a mean filter
 of two samples inside the feedback loop \, this is a lowpass (high
-cut) filter. The original algorythm also describes a "blend" parameter
+cut) filter. The original algorhythm also describes a "blend" parameter
 which alters the feedback value., f 55;
 #X text 468 135 A negative feedback promotes inversion of the polarity
 for each iteration \, which makes it sound an octave lower \, besides
 changing the harmonic content.;
 #X text 468 56 The original feedback happens for a blend of 1 \, 0
-gives us a negative feedback. Values torwards 0.5 insert random changes
+gives us a negative feedback. Values towards 0.5 insert random changes
 between 0 and 1 \, 0.5 being white noise (and noise is what it sounds
 like) - this noisiness was aimed to emulate more percussive sounds.
 , f 58;
 #X obj 270 299 rand.i~ 50 500;
 #X obj 706 21 declare -path else;
 #X text 46 52 Let's now closely recreate the original Karplus-Strong
-algorythm. Its noise input consisted only in 1 or -1 values stored
+algorhythm. Its noise input consisted only in 1 or -1 values stored
 in a table \, so we're using a live input from [clipnoise~] instead.
 , f 55;
-#X text 472 194 The Karplus Strong algorythm is from the late 70s and
+#X text 472 194 The Karplus Strong algorhythm is from the late 70s and
 is the simplest case of Physical Modeling. More precisely \, an example
 of Waveguide Synthesis. Despite being simple \, it can achieve good
 results modeling plucked instruments., f 58;

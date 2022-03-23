@@ -47,7 +47,7 @@
 #X text 246 369 <= get sequence values.;
 #X text 521 28 The [sequencer] object from ELSE is an abstraction based
 on [text]. It has a special syntax that "-" is treated as a pause and
-can join diferent elements to be sent at once (like chords). Check
+can join different elements to be sent at once (like chords). Check
 its help file for more information!, f 58;
 #X obj 469 441 sequencer~ 150 100 80 120 60 150 100 70 100;
 #X text 681 485 ELSE also provides the signal rate versions [tempo~]

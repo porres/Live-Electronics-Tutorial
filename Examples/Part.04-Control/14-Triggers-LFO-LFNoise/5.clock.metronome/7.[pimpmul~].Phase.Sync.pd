@@ -26,7 +26,7 @@ even play samples as we'll see in the next sections. So don't think
 that this is only useful if you need impulses or phase ramps!, f 64
 ;
 #X obj 683 494 table~;
-#X text 613 441 for instace:;
+#X text 613 441 for instance:;
 #X msg 721 148 4/3;
 #X obj 721 172 frac2dec;
 #X floatatom 204 225 5 0 0 0 - - - 0;
