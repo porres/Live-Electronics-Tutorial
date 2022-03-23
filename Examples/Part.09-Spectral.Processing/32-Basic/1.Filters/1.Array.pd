@@ -1,14 +1,14 @@
-#N canvas 244 190 1058 510 12;
+#N canvas 218 57 1058 510 12;
 #X declare -path else;
 #X msg 806 209 const \$1;
-#X obj 809 188 hsl 100 12 0 1 0 0 empty const empty -2 -6 0 10 -228856
--1 -1 9900 1;
+#X obj 809 188 hsl 100 12 0 1 0 0 empty const empty -2 -6 0 10 #dcdcdc
+#000000 #000000 0 1;
 #X text 26 278 0;
 #X text 27 196 1;
-#X obj 43 202 cnv 15 510 88 empty empty empty 20 12 0 14 -228856 -66577
+#X obj 43 202 cnv 15 510 88 empty empty empty 20 12 0 14 #dcdcdc #404040
 0;
 #X text 516 290 Nyquist;
-#X obj 40 30 cnv 15 510 118 empty empty empty 20 12 0 14 -261682 -66577
+#X obj 40 30 cnv 15 510 118 empty empty empty 20 12 0 14 #fce0c4 #404040
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-fft 1024 float 1;
@@ -134,7 +134,7 @@
 #X coords 0 1.05 1023 -0.02 512 90 1 0 0;
 #X restore 42 201 graph;
 #X text 511 152 Nyquist;
-#X obj 45 337 cnv 15 510 118 empty empty empty 20 12 0 14 -228647 -66577
+#X obj 45 337 cnv 15 510 118 empty empty empty 20 12 0 14 #dcd098 #404040
 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-filtered 1024 float 1;
@@ -256,10 +256,10 @@
 #X coords 0 60 1024 0 512 120 1 0 0;
 #X restore 44 336 graph;
 #X text 523 458 Nyquist;
-#X obj 811 121 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 -228856
--1 -1 2048 256;
+#X obj 811 121 nbx 5 14 64 1e+37 0 0 empty empty empty 0 -8 0 10 #dcdcdc
+#000000 #000000 0 256;
 #X obj 811 73 hradio 15 1 0 8 empty \$0-set-window empty 0 -8 0 10
--228856 -1 -1 5;
+#dcdcdc #000000 #000000 0;
 #X obj 811 96 expr pow(2 \, $f1 + 6);
 #X obj 642 100 noise~;
 #N canvas 250 34 603 251 Window 0;
@@ -281,20 +281,20 @@
 #X coords 0 0 1 1 120 60 0;
 #X restore 811 146 pd Window;
 #X obj 892 143 nbx 2 14 1 1e+37 0 1 \$0-overlap \$0-overlap-set empty
-0 -8 0 10 -228856 -1 -1 4 256;
+0 -8 0 10 #dcdcdc #000000 #000000 4 256;
 #X text 923 142 overlaps;
 #X text 37 154 0 Hz;
 #X text 42 460 0 Hz;
 #X text 42 293 0 Hz;
 #N canvas 398 73 546 569 Pass-Filters 0;
 #X obj 79 193 trigger float bang;
-#X obj 79 164 nbx 5 14 0 8192 0 0 empty empty empty 0 -8 0 10 -228856
--1 -1 0 256;
+#X obj 79 164 nbx 5 14 0 8192 0 0 empty empty empty 0 -8 0 10 #dcdcdc
+#000000 #000000 0 256;
 #X msg 120 260 const 0;
 #X msg 79 260 \$1 1;
 #X obj 264 195 trigger float bang;
-#X obj 264 166 nbx 5 14 0 8192 0 0 empty empty empty 0 -8 0 10 -228856
--1 -1 0 256;
+#X obj 264 166 nbx 5 14 0 8192 0 0 empty empty empty 0 -8 0 10 #dcdcdc
+#000000 #000000 0 256;
 #X msg 264 249 \$1 0;
 #X msg 369 249 const 1;
 #X obj 72 450 expr if ($f1 < $f2 - $f3 \, 0 \, if ($f1 > $f2 + $f3
@@ -302,10 +302,10 @@
 #X obj 238 420 t b f;
 #X obj 238 397 f;
 #X obj 436 423 t b f;
-#X obj 238 375 nbx 5 14 0 8192 0 0 empty empty empty 0 -8 0 10 -228856
--1 -1 0 256;
-#X obj 436 399 nbx 2 14 0 99 0 0 empty empty empty 0 -8 0 10 -228856
--1 -1 0 256;
+#X obj 238 375 nbx 5 14 0 8192 0 0 empty empty empty 0 -8 0 10 #dcdcdc
+#000000 #000000 0 256;
+#X obj 436 399 nbx 2 14 0 99 0 0 empty empty empty 0 -8 0 10 #dcdcdc
+#000000 #000000 0 256;
 #X msg 72 399 8192;
 #X obj 72 425 loop;
 #X obj 264 223 loop;
@@ -437,7 +437,7 @@ on it. The last graph is the filtered output. Open [pd Spectral-Filter]
 for details.;
 #X obj 805 24 declare -path else;
 #X text 616 389 The subpatch below has some logic routines to implement
-differen pass filters.;
+different pass filters.;
 #X connect 0 0 26 0;
 #X connect 1 0 0 0;
 #X connect 13 0 17 0;
