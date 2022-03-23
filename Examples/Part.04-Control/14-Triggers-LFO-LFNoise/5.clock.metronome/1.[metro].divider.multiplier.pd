@@ -52,7 +52,7 @@ difference is that it can be turned on and off., f 62;
 after the next bang output., f 62;
 #X text 22 211 By default [metro]'s time unit is "1 ms". The first
 argument sets the time interval according to the time unit \, so '1000'
-means "a thousand 1 miliseconds" \, which is the same as 1 second.
+means "a thousand 1 milliseconds" \, which is the same as 1 second.
 But note that this parameter is also a "frequency divider" if we consider
 the metronome to be firing at a given frequency. This can also be thought
 of as a 'clock divider' if we apply the concept from modular synthesis
