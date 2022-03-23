@@ -1,4 +1,4 @@
-#N struct 1003-DS float color float x float y;
+#N struct 1079-DS float color float x float y;
 #N canvas 449 122 488 446 12;
 #X declare -path else;
 #N canvas 408 46 478 607 template 0;
@@ -25,7 +25,7 @@ dots are connected to form a closed shape also curved with a bezir
 function., f 43;
 #X restore 227 159 pd template;
 #N canvas 938 199 282 196 \$0-display 0;
-#X scalar 1003-DS 611 50 50 \;;
+#X scalar 1079-DS 506 60 47 \;;
 #X restore 227 186 pd \$0-display;
 #X obj 215 335 pointer;
 #X obj 64 368 append \$0-DS color x y;
@@ -39,6 +39,7 @@ drag the "color" number to see the colors changing., f 52;
 #X obj 64 233 trigger list bang bang, f 32;
 #X obj 64 173 initmess 500 50 50;
 #X listbox 64 203 10 0 0 0 - - - 0;
+#X text 313 158 <= click;
 #X connect 2 0 3 3;
 #X connect 4 0 5 0;
 #X connect 8 0 2 0;

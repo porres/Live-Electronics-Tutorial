@@ -28,8 +28,8 @@ defined in the other subpatch., f 53;
 #X obj 119 519 array size -s \$0-DS \$0-table;
 #X obj 97 408 array set -s \$0-DS \$0-table;
 #N canvas 965 238 334 221 \$0-display 1;
-#X scalar 1003-DS 10 105 \; 41 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
-0 \; 0 \; -31 \; 0 \; 0 \; 0 \; 0 \; 0 \; \;;
+#X scalar 1003-DS 10 105 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; \;;
 #X coords 0 221 1 220 0 0 0;
 #X restore 356 285 pd \$0-display;
 #X obj 421 356 r \$0-pointer;
@@ -54,11 +54,10 @@ vertically \, as in Pd's arrays., f 61;
 object to set/get the size and \, additionaly \, do all sorts of operations
 in a Data Structure array (as well with other regular arrays in Pd).
 , f 57;
-#X text 77 80 In the case of arrays composed only of floats \, [array]
-also eliminates the need of the [element] and [set] objects., f 57
-;
 #X text 90 141 Check in [pd \$0-element] that we also added now a drawing
 instruction for the float element itself., f 49;
+#X text 77 80 In the case of arrays composed only of floats \, [array]
+eliminates the need of the [element] and [set] objects.;
 #X connect 0 0 12 2;
 #X connect 2 0 14 1;
 #X connect 3 0 14 0;
