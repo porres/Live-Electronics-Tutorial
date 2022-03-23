@@ -50,7 +50,7 @@ as low frequency noise objects like [stepnoise~] and [rampnoise~].
 #X text 398 376 Q;
 #X text 485 38 More examples:;
 #X text 586 358 Frequency;
-#X text 40 116 Below we have the oscillator setion in a subpatch. We
+#X text 40 116 Below we have the oscillator section in a subpatch. We
 use a rich sound tha combines a square and a sawtooth oscillator.,
 f 50;
 #X text 594 139 Frequency;

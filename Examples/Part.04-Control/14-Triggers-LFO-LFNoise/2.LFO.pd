@@ -31,7 +31,7 @@ range to an output range from 500 to 1500)., f 25;
 #X obj 460 197 setdsp~;
 #X obj 558 238 display~;
 #X obj 51 26 declare -path else;
-#X text 19 67 "LFOs" (Low Frequency Oscilators) are just any oscillator
+#X text 19 67 "LFOs" (Low Frequency Oscillators) are just any oscillator
 running at a low frequency \, simple as that! We use them to control
 all sorts of parameters in a patch. Below we have a sine wave controlling
 the frequency of a filter.;
