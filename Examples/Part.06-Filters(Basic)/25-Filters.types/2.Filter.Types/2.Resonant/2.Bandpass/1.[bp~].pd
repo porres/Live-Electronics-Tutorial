@@ -501,7 +501,7 @@ set 3000 \; pd dsp 1;
 #X obj 581 107 bp~ 3000 10, f 19;
 #X text 65 39 The vanilla [bp~] (from "bandpass") object receives control
 data for frequency and "Q". It's quite simple and CPU efficient \,
-but not a perfectly simmetric bandpass filter \, atenuatting more the
+but not a perfectly symmetric bandpass filter \, atenuatting more the
 frequencies above the resonant frequency., f 64;
 #X text 658 60 Central/Resonant Frequency;
 #X obj 754 14 declare -path else;

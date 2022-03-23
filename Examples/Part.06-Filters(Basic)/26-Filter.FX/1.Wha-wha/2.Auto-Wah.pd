@@ -24,7 +24,7 @@ way) because the wha wha control is automatically set by the input
 amplitude., f 61;
 #X text 34 164 The [mov.rms~] object is used then as an envelope follower.
 We get this amplitude average in dB and rescale to a frequency range
-with [rescale~]. In the example below we rescale the input frmo -40
+with [rescale~]. In the example below we rescale the input from -40
 to -5 dB into the range of 100 to 4000 Hz., f 61;
 #X obj 192 307 mov.rms~ -db 256;
 #X connect 0 0 5 0;
