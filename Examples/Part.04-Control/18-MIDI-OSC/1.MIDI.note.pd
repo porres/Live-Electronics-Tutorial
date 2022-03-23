@@ -64,7 +64,7 @@ In this example \, [makenote]'s arguments initially set a velocity
 of 127 and schedules a note off after 1000 ms of the note on - but
 you can change this via its inlets., f 62;
 #X floatatom 272 441 5 0 0 0 - - - 0;
-#X text 311 440 <= velociry;
+#X text 311 440 <= velocity;
 #X text 493 127 You could set a MIDI controller now if you have one
 and use [notein] to receive MIDI note information. To set your MIDI
 device \, fo to "Pd => Preferences => MIDI". The [notein] object also

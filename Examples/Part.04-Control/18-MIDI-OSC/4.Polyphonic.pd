@@ -160,7 +160,7 @@ name to load. We included a third argument \, which is equal to the
 number of instances to make a volume compensation inside the patch.
 , f 56;
 #X obj 535 414 clone 4 voice-abs 4;
-#X text 467 268 Click on the [clone] object to open the abstracion.
+#X text 467 268 Click on the [clone] object to open the abstraction.
 Check its help file \, and also check the help file of [voices]. The
 loaded abstraction (voices-abs.pd) is available in the same folder
 of this series of examples., f 56;
