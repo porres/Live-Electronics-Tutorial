@@ -50,7 +50,7 @@ sample rate and Pd's, f 68;
 instead of [phasor~] \, and how to play random bits of the file as
 an example of doing something more complex than just playing the whole
 file. We also have a second [envgen~] as an envelope to avoid clicks
-at the beggining and end of the file bits - this envelope function
+at the beginning and end of the file bits - this envelope function
 is given by the [function] GUI., f 68;
 #X text 361 217 Note that [envgen~] could be replaced by vanilla's
 [vline~] object \, which provides similar functionalities as presented
