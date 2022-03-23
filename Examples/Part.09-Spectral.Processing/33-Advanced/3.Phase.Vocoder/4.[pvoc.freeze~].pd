@@ -18,7 +18,7 @@
 #X obj 238 227 table \$0-back 2048;
 #X obj 238 206 table \$0-front 2048;
 #X text 414 83 Here's the new information of the patch \, we just take
-snapshots by writting the input into two tables. The back grain is
+snapshots by writing the input into two tables. The back grain is
 obtained by a delay., f 40;
 #X connect 2 0 3 0;
 #X connect 2 0 8 0;

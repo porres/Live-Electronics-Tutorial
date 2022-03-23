@@ -22,7 +22,7 @@
 between two samples with a coefficient of 1 \, then we get the average
 by dividing by 2 (or multiplying by 0.5)., f 62;
 #X text 22 21 We've seen how to use [fexpr~] to implement a moving
-average flter. We've also seeen a moving average filter of 2 samples
+average filter. We've also seeen a moving average filter of 2 samples
 in the first section on filters and used it in the feedback phase modulation
 sine. Here we'll see other ways to implement it. First \, it is important
 to note this filter has no feedback coefficients \, so it only has

@@ -129,7 +129,7 @@
 #X msg 324 179 8750.55;
 #X obj 316 262 expr atan(1) * 4;
 #X obj 317 293 v pi_\$0;
-#X obj 16 409 s \$0-coeficientes;
+#X obj 16 409 s \$0-coefficientes;
 #X obj 47 262 t b b;
 #X msg 16 368 1.9664 -0.9669 0.9669 -1.9664 1 \; pd dsp 1;
 #X msg 305 65 \; freq set 500;
@@ -178,7 +178,7 @@
 #X obj 211 45 unpack f f f f f;
 #X obj 211 18 inlet;
 #X text 92 20 index;
-#X text 260 18 coeficientes;
+#X text 260 18 coefficientes;
 #X obj 698 68 cnv 15 320 90 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #X text 728 97 H(z) = b1 + (b2 * z^-1) + (b3 * z^-2);
@@ -360,12 +360,12 @@
 #X text 292 129 0.1;
 #X text 215 129 0.05;
 #X text 115 129 0.02;
-#X obj 114 42 r \$0-coeficients;
+#X obj 114 42 r \$0-coefficients;
 #X connect 57 0 0 0;
 #X coords 0 -1 1 1 850 402 1 100 100;
 #X restore 25 245 pd;
 #X obj 721 133 biquad~;
-#X obj 742 102 r \$0-coeficientes;
+#X obj 742 102 r \$0-coefficientes;
 #N canvas 618 54 275 240 bandpass 0;
 #X obj 42 79 hsl 140 17 20 20000 1 0 empty empty empty 5 9 0 10 #dcdcdc
 #000000 #000000 0 0;
@@ -378,7 +378,7 @@
 #X obj 39 149 bicoeff bandpass 500 10;
 #X text 50 79 Resonant Frequency;
 #X text 144 104 Q/Resonance;
-#X obj 39 173 s \$0-coeficients;
+#X obj 39 173 s \$0-coefficients;
 #X text 52 42 Like [bandpass~].;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -398,7 +398,7 @@
 #X obj 48 131 bicoeff resonant 500 10;
 #X text 59 62 Resonant Frequency;
 #X text 156 89 Q/Resonance;
-#X obj 48 155 s \$0-coeficients;
+#X obj 48 155 s \$0-coefficients;
 #X text 66 27 Like [resonant~].;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -418,7 +418,7 @@
 #X obj 32 140 bicoeff lowpass 500 10;
 #X text 46 70 Resonant Frequency;
 #X text 133 96 Q/Resonance;
-#X obj 32 164 s \$0-coeficients;
+#X obj 32 164 s \$0-coefficients;
 #X text 45 17 The lowpass option is similar to [lowpass~]., f 22;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -438,7 +438,7 @@
 #X obj 47 128 bicoeff highpass 500 10;
 #X text 58 58 Resonant Frequency;
 #X text 153 83 Q/Resonance;
-#X obj 47 152 s \$0-coeficients;
+#X obj 47 152 s \$0-coefficients;
 #X text 66 24 Like [highpass~].;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -458,7 +458,7 @@
 #X text 50 79 Resonant Frequency;
 #X text 144 104 Q/Resonance;
 #X obj 39 149 bicoeff bandstop 500 10;
-#X obj 39 173 s \$0-coeficients;
+#X obj 39 173 s \$0-coefficients;
 #X text 57 42 Like [bandstop~].;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -483,7 +483,7 @@
 #X obj 203 160 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 #dcdcdc #000000 #000000 0 256;
 #X text 259 139 Gain;
-#X obj 48 173 s \$0-coeficients;
+#X obj 48 173 s \$0-coefficients;
 #X text 55 38 Like [eq~].;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -507,7 +507,7 @@
 #X obj 256 152 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 #dcdcdc #000000 #000000 0 256;
 #X text 308 131 Gain;
-#X obj 48 173 s \$0-coeficients;
+#X obj 48 173 s \$0-coefficients;
 #X text 173 104 S/Slope;
 #X text 80 79 Frequency;
 #X obj 48 149 bicoeff highshelf 500 10 12;
@@ -534,7 +534,7 @@
 #X obj 248 152 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 #dcdcdc #000000 #000000 0 256;
 #X text 304 131 Gain;
-#X obj 48 165 s \$0-coeficients;
+#X obj 48 165 s \$0-coefficients;
 #X text 169 96 S/Slope;
 #X obj 48 141 bicoeff lowshelf 500 10 12;
 #X text 80 71 Frequency;
@@ -559,7 +559,7 @@
 #000000 #000000 0 256;
 #X text 59 62 Resonant Frequency;
 #X text 150 88 Q/Resonance;
-#X obj 48 155 s \$0-coeficients;
+#X obj 48 155 s \$0-coefficients;
 #X obj 48 131 bicoeff allpass 500 10;
 #X text 65 24 Like [allpass.2nd~].;
 #X connect 0 0 3 0;

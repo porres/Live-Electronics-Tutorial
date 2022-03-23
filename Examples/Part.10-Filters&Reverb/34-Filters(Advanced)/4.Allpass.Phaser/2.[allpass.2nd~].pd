@@ -210,7 +210,7 @@
 #X obj 225 264 -;
 #X obj 225 384 outlet;
 #X obj 106 110 list;
-#X text 261 42 coeficientes;
+#X text 261 42 coefficientes;
 #X obj 106 145 expr $f4 + ($f5 * cosW_\$0[$f1]) + ($f6 * cos2W_\$0[$f1])
 \; ($f5 * sinW_\$0[$f1]) + ($f6 * sin2W_\$0[$f1]) \; 1 - ($f2 * cosW_\$0[$f1])
 - ($f3 * cos2W_\$0[$f1]) \; 0 - ($f2 * sinW_\$0[$f1]) - ($f3 * sin2W_\$0[$f1])

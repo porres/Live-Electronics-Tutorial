@@ -82,7 +82,7 @@ of [tabread4~] \, we need values in ms instead of samples., f 43;
 #X text 597 513 overlap;
 #X text 694 416 For the overlapping second grain \, we need to sum
 to half the new grain size instead of subtracting because this means
-"back' in the bufffer., f 43;
+"back' in the buffer., f 43;
 #X obj 266 578 del~ out \$0-buffer, f 9;
 #X obj 356 560 del~ out \$0-buffer, f 9;
 #X obj 217 39 inlet~;

@@ -28,7 +28,7 @@ a significant change in the sound for very short delay lengths., f
 #X text 145 260 feedback index;
 #X text 69 48 Audio input;
 #X text 296 51 Now the delay is fed back and summed into the buffer
-input with an attenuation (a feedback index \, or it acumulates/"explodes"
+input with an attenuation (a feedback index \, or it accumulates/"explodes"
 the gain). A 0.9 index makes each iteration/repetition with 90% of
 the amplitude as the last one - check the patch to the left., f 63
 ;

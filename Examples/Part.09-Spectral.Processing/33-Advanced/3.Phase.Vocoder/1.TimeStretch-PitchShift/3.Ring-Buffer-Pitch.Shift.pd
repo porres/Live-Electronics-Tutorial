@@ -131,7 +131,7 @@ window_ms_\$0 \; (1 - $f1) * window_ms_\$0 \; (window_ms_\$0 * $f1)
 #X text 459 364 front;
 #X text 628 237 The cents interval is converted to ratio and used to
 get a new window size (length_\$0). The direction of the reading depends
-wether is negative or not. As before \, grains need to be apart by
+whether is negative or not. As before \, grains need to be apart by
 a new hop size.;
 #X text 630 303 Something new not yet told is that some objects (such
 as the delay objects and [vline~]) will behave differently because

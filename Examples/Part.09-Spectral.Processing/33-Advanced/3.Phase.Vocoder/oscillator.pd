@@ -23,7 +23,7 @@ as a list \, where the first number is the track number \, and [clone]
 uses it to route to different instances., f 46;
 #X text 469 271 The list that arrives inside the abstraction is formed
 by: frequency \, amplitude and "flag". The flag can be "-1" \, which
-means the track is disapearing \, "0" \, which means it's being kept
+means the track is disappearing \, "0" \, which means it's being kept
 \, and "1" \, which means we have a new track. So we use this information
 to route inside this patch and turn the oscillator on or off., f 46
 ;
