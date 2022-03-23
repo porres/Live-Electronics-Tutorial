@@ -41,7 +41,7 @@
 #X obj 622 213 bng 15 250 50 1 empty empty init 0 -6 0 12 -257070 -1
 -160712;
 #X floatatom 574 201 1 0 0 0 - - -;
-#X obj 737 251 hsl 128 15 1.27 127 1 0 empty empty logarythmic 4 -12
+#X obj 737 251 hsl 128 15 1.27 127 1 0 empty empty logarhythmic 4 -12
 0 14 -228856 -1 -205449 0 1;
 #X obj 734 275 nbx 5 16 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 12
 -1 -262144 -1 0 256;

@@ -29,7 +29,7 @@
 #X msg 84 187 stop;
 #X obj 126 356 pattern;
 #X obj 126 394 impseq~;
-#X text 51 63 [pattern] is a rythmic sequencer based on [sequencer]
+#X text 51 63 [pattern] is a rhythmic sequencer based on [sequencer]
 where the note durations are specified as fractions of a whole note.
 Hence: 1/4 = fourth note / 1/8 = eight note and so on. Tuplets are
 defined as \, for instance \, 1/6 (a fourth note triplet). Note you

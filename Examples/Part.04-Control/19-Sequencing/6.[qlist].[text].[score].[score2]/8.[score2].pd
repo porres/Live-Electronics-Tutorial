@@ -22,7 +22,7 @@
 that follows the ruthmic notation paradigm of [pattern] and can substitute
 the combined usage of [pattern] and [sequencer]., f 76;
 #X text 224 227 There can be advantages in using both [pattern] and
-[sequencer] \, like stochastically combining different rythmic and
+[sequencer] \, like stochastically combining different rhythmic and
 melodic phrases \, whereas [score2] offers you a more fixed sequence
 \, and also easier to write \, read and use., f 52;
 #X text 230 436 Like [score] \, chords and poliphonic events are possible
