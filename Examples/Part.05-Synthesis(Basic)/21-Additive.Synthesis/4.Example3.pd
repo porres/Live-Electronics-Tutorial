@@ -15,7 +15,7 @@
 #X obj 99 29 inlet;
 #X obj 99 67 v fund;
 #X text 29 100 Check the [pd partial] subpatches \, where each contains
-a pair of oscilatores., f 36;
+a pair of oscillatores., f 36;
 #N canvas 829 23 446 337 partial 0;
 #X obj 94 179 osc~;
 #X obj 94 250 throw~ \$0-osc;

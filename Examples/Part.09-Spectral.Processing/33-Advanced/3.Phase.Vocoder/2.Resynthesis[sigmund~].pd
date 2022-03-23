@@ -24,7 +24,7 @@ this example we just perform a simple pitch shift., f 50;
 50 times in [clone]. The "tracks" arguments send the highest energy
 components (a.k.a peaks) separately. We set an initial number of 50
 peaks (with -npeak) but it's possible to change that with the npeak
-message. Try that! The pitch shift is trivial \, in each oscilator
+message. Try that! The pitch shift is trivial \, in each oscillator
 we perform a simple transposition. Open the subpatch for more info.
 ;
 #X obj 512 295 clone 50 oscillator;
