@@ -112,7 +112,7 @@ here.;
 #X text 491 358 Note there's a mirroring of frequencies after Nyquist.
 This will be discussed further. The output of [fft~] is in the cartesian
 form \, but musicians are used to the polar form representation \,
-whith Amplitude and Initial Phase - thus we convert to polar as well.
+with Amplitude and Initial Phase - thus we convert to polar as well.
 The amplitude values are up to half the block size and the Initial
 Phase is in radians.;
 #X obj 642 165 nbx 4 14 0 44.1 0 0 empty Khz Khz 0 -6 0 10 -228856
