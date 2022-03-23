@@ -293,7 +293,7 @@ with tonal quality. It gets filtered and the output amplitude depends
 on the analysis of the right input \, a sample with a noisy human speech.
 , f 56;
 #X text 498 52 The filterbank is loaded inside [clone]. Click and open
-it to check how eachs instance works. The central frequency of each
+it to check how each instance works. The central frequency of each
 filter can be set in the number boxes below as MIDI pitch. The bandwidth
 for all filters is set in the "Q" number box., f 61;
 #X text 512 180 Depending on the Q \, the output gain changes \, this

@@ -259,7 +259,7 @@
 #X text 47 119 The coefficient in the 1st order allpass filter controls
 the slope of the phase distortion in the same way as the 2nd order
 filter. But here \, we have a control on the central frequency \, which
-is the frequency that passes through the 180 degress point \, which
+is the frequency that passes through the 180 degrees point \, which
 is at the phase opposition., f 66;
 #X text 678 119 If we sum the input to the filtered signal \, we can
 hear the phase cancellation. In practice \, this becomes a bandstop

@@ -51,7 +51,7 @@ vertically \, as in Pd's arrays., f 61;
 #X restore 356 233 pd \$0-element;
 #X floatatom 119 481 5 0 0 0 - - - 0;
 #X text 77 14 Besides [setsize] and [getsize] \, you can use the [array]
-object to set/get the size and \, additionaly \, do all sorts of operations
+object to set/get the size and \, additionally \, do all sorts of operations
 in a Data Structure array (as well with other regular arrays in Pd).
 , f 57;
 #X text 90 141 Check in [pd \$0-element] that we also added now a drawing

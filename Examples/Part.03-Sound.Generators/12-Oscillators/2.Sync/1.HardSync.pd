@@ -86,7 +86,7 @@ see band limited versions of them in the next section., f 41;
 #X text 29 98 If the slave's frequency is lower than the master's \,
 then it is forced to restart the cycle before it finishes it. Whereas
 if the slave's frequency is higher \, then it repeats at least a portion
-of the period before ressetting - but if its frequency is high enough
+of the period before resetting - but if its frequency is high enough
 \, it can generate multiple periods before resetting \, and this adds
 lots of shaprness to the sound., f 62;
 #X connect 0 0 11 0;

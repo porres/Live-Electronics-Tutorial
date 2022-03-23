@@ -54,7 +54,7 @@ for random pitch shiffting., f 62;
 0 0 0 0 0 0.33 1 0.34 1 0.33 0;
 #X text 30 99 Note that depending on the parameters you may reach a
 flanger like effect \, and it should be clear why since the implementation
-is very similar and dependant on a feedback delay., f 62;
+is very similar and dependent on a feedback delay., f 62;
 #X obj 484 484 fbdelay~ -gain 2000;
 #X obj 96 537 fbdelay~ -gain 2000;
 #X connect 0 0 1 0;

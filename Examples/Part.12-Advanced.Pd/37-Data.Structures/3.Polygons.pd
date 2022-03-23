@@ -43,7 +43,7 @@ to draw a triangle - three points is already enough to draw the shape.
 , f 44;
 #X text 45 212 Here we have a polygon with four coordinate pair points
 \, which form a closed triangle. The first argument takes the name
-of the 'color' varable (or 'field') \, which is also drawn by [drawnumber].
+of the 'color' variable (or 'field') \, which is also drawn by [drawnumber].
 , f 44;
 #X restore 605 134 pd template-2;
 #X obj 62 316 append \$0-DS color;
@@ -76,7 +76,7 @@ f 56;
 #X obj 474 174 loadbanger 3;
 #X text 79 118 click =>;
 #X text 538 134 click =>;
-#X text 22 22 We can add shapes to Data strctures. Check how we add
+#X text 22 22 We can add shapes to Data structures. Check how we add
 a line in the [pd template-1] subpatch with [drawpolygon]. The data
 is displayed on the [pd \$0-display-1] subpatch \, click and drag the
 number in it to see the color change for both the number and the line.

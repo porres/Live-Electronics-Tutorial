@@ -144,7 +144,7 @@ display the graphical objects and another is needed as a data structure
 template (containing a data structure declaration with [struct] along
 with drawing instructions). We can also have yet another subpatch to
 organize some of the code that deals with the data structures \, but
-it's not essential that this code is treated appart. See the example
+it's not essential that this code is treated apart. See the example
 below., f 62;
 #X text 502 186 When in edit mode \, you can select a graphical data
 structure object and do the usual cut \, copy \, paste and duplicate
