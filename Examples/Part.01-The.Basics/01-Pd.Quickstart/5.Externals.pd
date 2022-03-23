@@ -73,7 +73,7 @@ folder by default)., f 65;
 #X text 26 402 The [declare] object is an alternative to load both
 kinds of libraries and only loads them when the patch with a [declare]
 object is loaded. So it's not a permanent install like adding to the
-Path/Statup. But note that once a binary is loaded \, you can recreate
+Path/Startup. But note that once a binary is loaded \, you can recreate
 it on another patch even if it doesn't contain a [declare] object.
 Also note that a single binary pack loads many objects at once \, so
 you can create any object from the library even in another patch that
@@ -83,7 +83,7 @@ been created before., f 65;
 this tutorial and this is what you should have done. You can find installing
 information on this tutorial's readme. Check also ELSE's repository
 on github. Click on the bang buttons below to open them.;
-#X text 525 164 Note you can also download and install else direclty
+#X text 525 164 Note you can also download and install else directly
 from its repository (which contains all previous versions) manually.
 , f 58;
 #X text 526 218 If no objects below are shown \, then you hadn't downloaded

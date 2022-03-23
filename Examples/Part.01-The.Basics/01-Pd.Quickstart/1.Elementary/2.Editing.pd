@@ -6,7 +6,7 @@ Edit Mode automatically by inserting something from the "Put" Menu
 #X text 47 27 We can only interact with the patch in the "Run" Mode
 \, that is "Not in Edit Mode". When in Edit Mode \, the mouse cursor
 becomes a hand and we can select \, delete \, change objects and messages
-\, connect \, disconect boxes and more. You can also perform the usual
+\, connect \, disconnect boxes and more. You can also perform the usual
 cut \, copy \, paste and duplicate operations. Check the Edit menu
 for more.;
 #X floatatom 208 522 5 0 0 0 - - -;
