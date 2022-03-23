@@ -38,7 +38,7 @@ pitch \, at one point we can lower so much it becomes silent \, and
 after that we even play the disc backwards.;
 #X text 490 193 It's also important to note that since we're basically
 reading from the delay line at a rate that is twice the period \, in
-practice we're only reading half of the delay lenght. I mean \, it
+practice we're only reading half of the delay length. I mean \, it
 only takes one second to read from a 2 second delay line backwards
 \, so we just have a 1 second delay. So set the delay line to twice
 as much as you want your playing backwards period to be., f 54;

@@ -51,7 +51,7 @@ below 0.25 so we can use this function as an envelope., f 69;
 #X obj 679 281 + 4;
 #X obj 679 257 * 296;
 #X obj 596 280 *~ 4;
-#X text 545 51 Another aproach is to have a fixed sigma value and we
+#X text 545 51 Another approach is to have a fixed sigma value and we
 just change the input range to something other than -1 to 1 \, which
 also works to change the bell width. Let's take a sigma value of square
 root of 0.5 (0.707107...) \, this simplifies the equation and makes
