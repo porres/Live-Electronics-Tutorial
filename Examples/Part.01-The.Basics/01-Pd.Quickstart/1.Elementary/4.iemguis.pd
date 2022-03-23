@@ -68,7 +68,7 @@ in front of it. The [vu] is to be used with an object that reports
 rms and peak amplitude values., f 61;
 #X text 29 20 Besides atom number boxes \, Pd has more built-in graphical
 user interface (or “GUIs”) \, useful to develop interfaces. These
-are the second group of elements in the Put Menu and are also reffered
+are the second group of elements in the Put Menu and are also referred
 to as "iemguis" as they were originally externals developed at IEM
 (Institute for Electronic Music) in Graz. You can also create them
 from object boxes (unlike messages \, number/symbol atom boxes and
