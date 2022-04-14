@@ -22,10 +22,8 @@
 #X obj 219 411 element \$0-DS \$0-table;
 #X msg 237 357 0;
 #X text 100 313 <= click;
-#N canvas 511 186 854 235 \$0-display 0;
-#X scalar 1003-DS 10 250 \; 1.Array-1.pd 0 \; 2.Array-2.pd 0 \; 3.[element].pd
-0 \; 4.curve.pd 0 \; 5.[array].pd 0 \; 6.x-y.pd 0 \; 7.x-y-w.pd 0 \;
-\;;
+#N canvas 511 186 854 235 \$0-display 1;
+#X scalar 1003-DS 10 250 \; symbol 0 \; \;;
 #X coords 0 235 1 234 0 0 0;
 #X restore 391 143 pd \$0-display;
 #X obj 80 98 initmess \; pd-\$0-display clear \, vis 1 \; \$0-pointer
@@ -46,10 +44,6 @@ coordinate. This allows the element to be dragged horizontally., f
 #X restore 391 91 pd \$0-element;
 #X obj 40 474 set -symbol \$0-element sym;
 #X obj 108 374 t f b;
-#X text 43 24 This example shows how to create an array composed of
-symbols. In this case \, the [array] object can't be used instead of
-[element] and [set]. But we can still use [array] instead of [setsize]/[getsize].
-, f 70;
 #X text 34 186 When loading the array \, we have only one element \,
 not initialized. With the [dir] object from ELSE \, we get the file
 names contained in this folder and insert them into the array. The
@@ -68,11 +62,15 @@ flag! You can now use the [get] object to get both the symbol value
 and the 'y' value from pointers given by the [element] object., f
 42;
 #X obj 40 346 dir -ext pd ../;
+#X text 43 24 This example shows how to create include a symbol field
+in your array. In this case \, the [array] object can't be used instead
+of [element] and [set]. But we can still use [array] instead of [setsize]/[getsize].
+, f 72;
 #X connect 0 0 2 2;
 #X connect 2 0 7 1;
 #X connect 2 0 10 1;
-#X connect 2 0 23 1;
-#X connect 3 0 28 0;
+#X connect 2 0 22 1;
+#X connect 3 0 27 0;
 #X connect 4 0 18 0;
 #X connect 4 1 6 0;
 #X connect 5 0 6 1;
@@ -85,9 +83,9 @@ and the 'y' value from pointers given by the [element] object., f
 #X connect 16 0 2 0;
 #X connect 19 0 9 0;
 #X connect 19 1 11 0;
-#X connect 23 0 25 0;
-#X connect 24 0 23 0;
-#X connect 25 0 22 0;
-#X connect 25 1 26 0;
-#X connect 28 0 4 0;
-#X connect 28 2 19 0;
+#X connect 22 0 24 0;
+#X connect 23 0 22 0;
+#X connect 24 0 21 0;
+#X connect 24 1 25 0;
+#X connect 27 0 4 0;
+#X connect 27 2 19 0;

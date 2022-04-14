@@ -12,9 +12,9 @@
 
 --------------------------------------------------------------------------
 
-#### Version: 1.0-0 beta-46: Unreleased
+#### Version: 1.0-0 RC-1 (Release Candidate 1): Released April 18th 2022
 
- - This particular version of the tutorial requires **Pd 0.52-1** or later and depends on **ELSE 1.0-0 beta 46 (https://github.com/porres/pd-else/releases/tag/v1.0-beta46)! 
+ - This particular version of the tutorial requires **Pd 0.52-1** or later and depends on **ELSE 1.0-0 RC 1 (https://github.com/porres/pd-else/releases/tag/v1.0-rc1)! 
 
 --------------------------------------------------------------------------
 
@@ -34,16 +34,16 @@ This didactic work is licenced via Creative Commons Attribution-NonCommercial-No
 
 --------------------------------------------------------------------------
 
-   ### Downloading and Installing this tutorial:
+#### Downloading and Installing this tutorial:
 
 ​	This version of the tutorial needs at least Pd 0.52-1! You can look for releases of this tutorial in https://github.com/porres/Live-Electronics-Tutorial/releases - where early versions of it are also still present, but it's best just to download this directly via Pd along with the ELSE library, because this tutorial is also provided as part of it (and you need to install the "ELSE" library in order to use this tutorial anyway).
 
-​	So in Pd just go to the "Help" menu and click on "Find Externals", then just search for 'else' for the latest version (1.0-0beta46 by the time of this release). You can also download ELSE from its GitHub repository  <https://github.com/porres/pd-else/> and it'll also contain this tutorial as part of the download. In this combo download, you'll always get compatibility between the tutorial and the ELSE library.
+​	So in Pd just go to the "Help" menu and click on "Find Externals", then just search for 'else' for the latest version (1.0-0rc1 by the time of this release). You can also download ELSE from its GitHub repository  <https://github.com/porres/pd-else/> and it'll also contain this tutorial as part of the download. In this combo download, you'll always get compatibility between the tutorial and the ELSE library.
 
 ​	Once you download the library (via Pd or Github), look for the  'live-electronics-folder' inside the else folder and move it somewhere else, preferably to ~/Pd/Documents (leave ~/Pd/Documents/externals just for proper external libraries, like the ELSE library). Then you can add the folder's path (such as ~/Pd/Documents/Live-Electronics-Tutorial) to Pd via "Preferences => Path", so you can navigate through the tutorial via Pd's browser (Help => Browser). 
 
 --------------------------------------------------------------------------
 
-   ### Loading the examples from the tutorial:
+#### Loading the examples from the tutorial:
 
 ​	Once you have the ELSE library and moved the tutorial to your preferred place, you can can just open the examples. Note that the tutorial uses [declare -path else] in all the examples that need externals from the ELSE library. With this particular strategy, it is possible to run into conflicts, and by conflicts  I mean loading by mistake another external from another library that has the same name as an external from ELSE. In order to avoid this, you must not have loaded such other externals from other libraries before opening Pd with these examples. One good practice is to not load other libraries via "Preferences => Startup", because this loads these externals every time Pd is started.

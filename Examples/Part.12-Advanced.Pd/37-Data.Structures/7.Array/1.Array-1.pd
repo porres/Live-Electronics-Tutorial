@@ -4,7 +4,7 @@
 #X obj 674 140 pointer;
 #X obj 463 173 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 #dcdcdc #000000 #000000 0 256;
-#N canvas 312 344 518 264 template 0;
+#N canvas 133 454 518 264 template 0;
 #X obj 100 116 struct \$0-DS float x float y array z float;
 #X obj 339 183 plot z;
 #X text 75 169 The [plot] object is used to give drawing instructions
@@ -25,7 +25,6 @@ have "Y units per pixel" set to "-1"., f 39;
 array is a collection of elements of the same data type \, which can
 be a float \, a symbol \, a text and even an array itself., f 49;
 #X obj 565 169 append \$0-DS x y;
-#X obj 469 457 getsize \$0-DS \$0-table;
 #N canvas 1020 209 316 192 \$0-display 1;
 #X scalar 1003-DS 25 75 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
@@ -78,13 +77,14 @@ the [pointer] object to send it a pointer. We use the "traverse" message
 and then ask for the "next" object \, so we get the pointer to the
 first object (that is \, the added array) instead of the head of the
 list., f 56;
+#X obj 469 457 getsize \$0-DS z;
 #X connect 0 0 8 2;
-#X connect 1 0 19 0;
-#X connect 3 0 9 0;
-#X connect 8 0 19 1;
-#X connect 9 0 4 0;
-#X connect 11 0 1 0;
-#X connect 12 0 8 0;
-#X connect 13 0 0 0;
-#X connect 14 0 3 0;
-#X connect 15 0 14 0;
+#X connect 1 0 18 0;
+#X connect 3 0 23 0;
+#X connect 8 0 18 1;
+#X connect 10 0 1 0;
+#X connect 11 0 8 0;
+#X connect 12 0 0 0;
+#X connect 13 0 3 0;
+#X connect 14 0 13 0;
+#X connect 23 0 4 0;

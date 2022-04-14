@@ -17,8 +17,7 @@
 #X floatatom 260 444 3 0 0 0 - - - 0;
 #X obj 193 379 element \$0-DS \$0-table;
 #N canvas 806 170 558 245 \$0-display 1;
-#X scalar 1003-DS 10 250 \; 0 \; 53 \\\; 54 \\\; 1 2 3 4 a b c d e
-\\\; \; 0 \; \; 0 \; \; 0 \; \; \;;
+#X scalar 1003-DS 10 250 \; 0 \; \; 0 \; \; 0 \; \; 0 \; \; \;;
 #X coords 0 245 1 244 0 0 0;
 #X restore 404 161 pd \$0-display;
 #X obj 453 287 r \$0-pointer;
