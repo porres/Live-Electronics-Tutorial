@@ -1,5 +1,5 @@
-#N struct 1003-DS float x float y array 1003-table 1003-element;
-#N struct 1003-element float y;
+#N struct 1030-DS float x float y array 1030-table 1030-element;
+#N struct 1030-element float y;
 #N canvas 365 110 508 416 12;
 #X obj 364 296 pointer;
 #N canvas 420 281 476 299 template 0;
@@ -19,7 +19,7 @@ a 'curve'., f 33;
 traverse pd-\$0-display \, bang \; \$0-coords 10 105 \; \$0-size 16
 ;
 #N canvas 890 190 334 221 \$0-display 1;
-#X scalar 1003-DS 10 105 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
+#X scalar 1030-DS 10 105 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; \;;
 #X coords 0 221 1 220 0 0 0;
 #X restore 346 209 pd \$0-display;

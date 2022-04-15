@@ -1,7 +1,7 @@
 #N struct 1003-DS float x float y array 1003-table 1003-element;
 #N struct 1003-element float y array z float;
 #N struct float float y;
-#N canvas 288 57 654 594 12;
+#N canvas 304 44 654 594 12;
 #N canvas 535 136 489 261 template 0;
 #X obj 45 112 struct \$0-DS float x float y array \$0-table \$0-element
 ;
@@ -12,15 +12,11 @@
 #X obj 216 182 plot \$0-table 900 4 0 0 75;
 #X restore 374 146 pd template;
 #N canvas 959 195 334 221 \$0-display 1;
-#X scalar 1003-DS 10 105 \; -59 \; 30 \; 31 \; 55 \; 10 \; 0 \; 0 \;
-0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
-\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \;
-0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0
-\; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; 0 \; \; 54 \; 0 \; \; 0 \; 0 \; \;
+#X scalar 1003-DS 10 105 \; 0 \; 0 \; \; 0 \; 0 \; \; 0 \; 0 \; \;
 0 \; 0 \; \; \;;
 #X coords 0 221 1 220 0 0 0;
 #X restore 374 173 pd \$0-display;
-#N canvas 442 23 479 322 \$0-element 1;
+#N canvas 442 23 479 322 \$0-element 0;
 #X obj 98 205 filledpolygon 0 0 1 -2 -2 2 -2 2 2 -2 2;
 #X text 95 175 draw a black dot to represent the value:;
 #X obj 95 129 struct \$0-element float y array z float;
