@@ -14,23 +14,23 @@
 
 #### Version: 1.0-0 RC-1 (Release Candidate #1): Released April 18th 2022
 
- - This particular version of the tutorial requires **Pd 0.52-1** or later and depends on **ELSE 1.0-0 RC 1 (https://github.com/porres/pd-else/releases/tag/v1.0-rc1)! 
+ - This particular version of the tutorial requires **Pd 0.52-1** or later and depends on **ELSE 1.0-0 RC 1** (<https://github.com/porres/pd-else/releases/tag/v1.0-rc1>)! 
 
 --------------------------------------------------------------------------
 
 **About:**
 
-This tutorial presents theory and practice of Live Electronics topics without any prerequisite. It's aimed at newbies, dummies, enthusiasts and also experts. 
+This tutorial presents theory and practice of Live Electronics and computer music, synthesis/DSP (digital Signal Processing) topics without any prerequisite. It's aimed at newbies, dummies, enthusiasts and also experts. 
 
 This didactic work is licenced via Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0), which allows downloading and sharing with proper credit. It also forbids its usage for comercial purposes. Check the license at: <https://creativecommons.org/licenses/by-nc-nd/4.0/>.
 
-   This is a didactic project developed with Pure Data (or just "Pd", a.k.a. "Pd vanilla" distribution), an open source software developed by Miller Puckette - get it at <http://msp.ucsd.edu/software.html>. Note that the major forks of Pd (Pd-Extended and Purr Data) are incompatible to this tutorial (and the ELSE library). Also Access <http://puredata.info> for other resources on Pd. The official Pd mailing list is found here: <http://lists.puredata.info/listinfo/pdlist>. 
+   This is a didactic project developed with Pure Data (or just "Pd", a.k.a. "Pd vanilla" distribution) and the ELSE library for Pd. Pd is an open source software developed by Miller Puckette - get it at <http://msp.ucsd.edu/software.html>. Note that the major forks of Pd (Pd-Extended and Purr Data) are incompatible to this tutorial (and the ELSE library). Also Access <http://puredata.info> for other resources on Pd. The official Pd mailing list is found here: <http://lists.puredata.info/listinfo/pdlist>. 
 
 ​	Pure Data is adopted in this tutorial amongst other possibilities because of its accessibility, friendliness and for being a powerful didactic tool. Nonetheless, this work relies heavily in the ELSE library for Pure Data, also developed by Alexandre Torres Porres, the author of this tutorial. 
 
-   This project started in 2008 as part of a textbook for a computer music course with included examples in Pd. In 2009, the author presented a paper about it in the 3rd International Pure Data Convention. Currently, this is solely presented as example patches that the author uses in his courses/workshops. The plan now is to write a book accompanied by these examples. Originally developed in brazilian portuguese and relying on Pd Extended 0.42-5 for years, this has just been rewritten from scratch in english and ported to rely only in objects from the ELSE external library and the newer Pd Vanilla versions.
+   This project started in 2008 as part of a textbook for a computer music course with included examples in Pd. In 2009, the author presented a paper about it in the 3rd International Pure Data Convention. Currently, this is solely presented as example patches that the author uses in his courses/workshops. The plan now is to write a book accompanied by these examples. Originally developed in brazilian portuguese and relying on Pd Extended 0.42-5 for years, this has been recently rewritten from scratch in english and ported to rely only in objects from the ELSE external library and the newer Pd Vanilla versions.
 
-   This is still in the early drafts from the first translation rounds, so typos and mistakes may exist. There are plans to include more topics as well. The developments now depend mostly on the software development of the ELSE library to include more examples. Since the ELSE library is still in an early beta stage of development, some objects may change in functionality, new objects are being developed and others might even be deleted until a final version is out. If so, future updates of this didactc material will reflect these changes.  
+   This is still in the early drafts and typos/mistakes may exist. There are plans to include more topics as well. The developments now depend mostly on the software development of the ELSE library to include more examples. Since the ELSE library is still in an early and unstable stage of development, some objects may change in functionality, new objects are being developed and others might even be deleted until a final version is out. If so, future updates of this didactc material will reflect these changes.  
 
 --------------------------------------------------------------------------
 
@@ -40,10 +40,10 @@ This didactic work is licenced via Creative Commons Attribution-NonCommercial-No
 
 ​	So in Pd just go to the "Help" menu and click on "Find Externals", then just search for 'else' for the latest version (1.0-0rc1 by the time of this release). You can also download ELSE from its GitHub repository  <https://github.com/porres/pd-else/> and it'll also contain this tutorial as part of the download. In this combo download, you'll always get compatibility between the tutorial and the ELSE library.
 
-​	Once you download the library (via Pd or Github), look for the  'live-electronics-folder' inside the else folder and move it somewhere else, preferably to ~/Pd/Documents (leave ~/Pd/Documents/externals just for proper external libraries, like the ELSE library). Then you can add the folder's path (such as ~/Pd/Documents/Live-Electronics-Tutorial) to Pd via "Preferences => Path", so you can navigate through the tutorial via Pd's browser (Help => Browser). 
+​	Once you download the library (via Pd or Github), look for the  'live-electronics-folder' inside the else folder and move it somewhere else, preferably to **~/Pd/Documents** (leave **~/Pd/Documents/externals** just for proper external libraries, like the ELSE library). Then you can add the folder's path (such as **~/Pd/Documents/Live-Electronics-Tutorial**) to Pd via "Preferences => Path", so you can navigate through the tutorial via Pd's browser (Help => Browser). 
 
 --------------------------------------------------------------------------
 
 #### Loading the examples from the tutorial:
 
-​	Once you have the ELSE library and moved the tutorial to your preferred place, you can can just open the examples. Note that the tutorial uses [declare -path else] in all the examples that need externals from the ELSE library. With this particular strategy, it is possible to run into conflicts, and by conflicts  I mean loading by mistake another external from another library that has the same name as an external from ELSE. In order to avoid this, you must not have loaded such other externals from other libraries before opening Pd with these examples. One good practice is to not load other libraries via "Preferences => Startup", because this loads these externals every time Pd is started.
+​	Once you have the ELSE library and moved the tutorial to your preferred place, you can can just open the examples. Note that the tutorial uses **[declare -path else]** in all the examples that need externals from the ELSE library. With this particular strategy, it is possible to run into conflicts, and by conflicts I mean loading by mistake another external from another library that has the same name as an external from ELSE. In order to avoid this, you must not have loaded such other externals from other libraries before opening Pd with these examples. One good practice is to not load other libraries via "Preferences => Startup", because this loads these externals every time Pd is started.
