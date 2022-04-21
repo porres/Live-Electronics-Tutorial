@@ -12,7 +12,7 @@
 
 --------------------------------------------------------------------------
 
-#### Version: 1.0-0 RC-1 (Release Candidate #1): Released April 18th 2022
+#### Version: 1.0-0 RC-1 (Release Candidate #1): Released April 19th 2022
 
  - This particular version of the tutorial requires **Pd 0.52-1** or later and depends on **ELSE 1.0-0 RC 1** (<https://github.com/porres/pd-else/releases/tag/v1.0-rc1>)! 
 
