@@ -41,7 +41,7 @@ values from 0 cents to 1901.95 cents.;
 #X obj 215 551 eqdiv 3 13;
 #X obj 570 202 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
-#X obj 570 231 else/gmean 1 3 13;
+#X obj 570 231 gmean 1 3 13;
 #X obj 570 306 print CENTS;
 #X obj 570 267 ratio2cents;
 #X obj 623 438 bng 17 250 50 0 empty empty empty 17 7 0 10 -228856
@@ -54,7 +54,7 @@ values from 0 cents to 1901.95 cents.;
 between two values. This relates to [eqdiv] as equal divisions of intervals
 are also geometric divisions. But [gmean] operates on the ratio values.
 Below we have a Bohlen-Pierce scale., f 42;
-#X obj 623 467 else/amean 1 2 13;
+#X obj 623 467 amean 1 2 13;
 #X text 535 355 The [amean] object s much like [gmean] \, but performs
 arithmetic divisions instead. It can also be used to generate exotic
 scales., f 43;

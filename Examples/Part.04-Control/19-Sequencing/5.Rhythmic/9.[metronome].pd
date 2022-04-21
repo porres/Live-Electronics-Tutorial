@@ -7,7 +7,7 @@
 #000000 #000000;
 #X floatatom 348 210 5 0 0 0 - - - 12;
 #X text 70 301 beat bang, f 4;
-#X obj 186 421 else/out~;
+#X obj 186 421 out~;
 #X obj 270 308 hsl 150 19 0 1 0 0 empty empty empty -2 -8 0 10 #dcdcdc
 #000000 #000000 0 1;
 #X floatatom 267 335 7 0 0 0 - - - 12;
@@ -20,7 +20,7 @@
 #X msg 119 69 timesig 15/8 5;
 #X text 323 336 phase (0-1);
 #X listbox 348 272 12 0 0 0 - - - 0;
-#X obj 186 305 else/display;
+#X obj 186 305 display;
 #X obj 186 371 metronome~;
 #X msg 176 204 timesig 3/4 + 3/8;
 #X text 303 70 This is a high level metronome. It is here because you

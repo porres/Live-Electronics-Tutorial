@@ -13,7 +13,7 @@
 #X msg 60 121 stop;
 #X msg 93 242 \$1 1;
 #X floatatom 146 199 8 0 0 0 - - - 0;
-#X obj 27 199 else/note2pitch;
+#X obj 27 199 note2pitch;
 #X obj 146 253 * 0.5;
 #X obj 108 150 score2 score2.txt;
 #X obj 93 465 clone 2 voice2;
