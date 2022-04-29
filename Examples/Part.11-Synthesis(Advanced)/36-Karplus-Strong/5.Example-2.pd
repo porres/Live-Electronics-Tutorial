@@ -4,7 +4,7 @@
 -8 1 12 #b8b8b8 #000000 #000000 0 1;
 #X obj 323 103 hsl 200 15 0.92 0.999 1 0 \$0-feedback \$0-feedback-set
 Feedback -2 -8 1 12 #dcdcdc #000000 #000000 0 1;
-#X obj 323 138 hsl 200 15 100 8000 0 0 \$0-cutoff \$0-cutoff-set Cutoff
+#X obj 323 138 hsl 200 15 100 15000 0 0 \$0-cutoff \$0-cutoff-set Cutoff
 -2 -8 1 12 #d4e0e8 #000000 #000000 0 1;
 #X obj 62 66 tgl 30 0 empty \$0-metro empty 17 7 0 10 #dcdcdc #000000
 #000000 0 1;
