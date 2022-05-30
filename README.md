@@ -40,7 +40,7 @@ This didactic work is licenced via Creative Commons Attribution-NonCommercial-No
 
 ​	So in Pd just go to the "Help" menu and click on "Find Externals", then just search for 'else' for the latest version (1.0-0rc2 by the time of this release). You can also download ELSE from its GitHub repository  <https://github.com/porres/pd-else/> and it'll also contain this tutorial as part of the download. In this combo download, you'll always get compatibility between the tutorial and the ELSE library.
 
-​	Once you download the library (via Pd or Github), look for the  'live-electronics-folder' inside the else folder and move it somewhere else, preferably to **~/Pd/Documents** (leave **~/Pd/Documents/externals** just for proper external libraries, like the ELSE library). Then you can add the folder's path (such as **~/Pd/Documents/Live-Electronics-Tutorial**) to Pd via "Preferences => Path", so you can navigate through the tutorial via Pd's browser (Help => Browser). 
+​	Once you download the library (via Pd or Github), look for the  'live-electronics-folder' inside the else folder and move it somewhere else, preferably to **~/Documents/Pd** (leave **~/Documents/Pd/externals** just for proper external libraries, like the ELSE library). Then you can add the folder's path (such as **~/Documents/Pd/Live-Electronics-Tutorial**) to Pd via "Preferences => Path", so you can navigate through the tutorial via Pd's browser (Help => Browser). 
 
 --------------------------------------------------------------------------
 
