@@ -375,7 +375,7 @@
 #dcdcdc #000000 #000000 0 256;
 #X obj 39 117 nbx 5 14 -1e+37 1e+37 0 0 empty freq empty 0 -8 0 10
 #dcdcdc #000000 #000000 0 256;
-#X obj 39 149 bicoeff bandpass 500 10;
+#X obj 39 149 bicoeff2 bandpass 500 10;
 #X text 50 79 Resonant Frequency;
 #X text 144 104 Q/Resonance;
 #X obj 39 173 s \$0-coefficients;
@@ -395,7 +395,7 @@
 #dcdcdc #000000 #000000 0 256;
 #X obj 48 99 nbx 5 14 -1e+37 1e+37 0 0 empty freq empty 0 -8 0 10 #dcdcdc
 #000000 #000000 0 256;
-#X obj 48 131 bicoeff resonant 500 10;
+#X obj 48 131 bicoeff2 resonant 500 10;
 #X text 59 62 Resonant Frequency;
 #X text 156 89 Q/Resonance;
 #X obj 48 155 s \$0-coefficients;
@@ -415,7 +415,7 @@
 #dcdcdc #000000 #000000 0 256;
 #X obj 32 108 nbx 5 14 -1e+37 1e+37 0 0 empty freq empty 0 -8 0 10
 #dcdcdc #000000 #000000 0 256;
-#X obj 32 140 bicoeff lowpass 500 10;
+#X obj 32 140 bicoeff2 lowpass 500 10;
 #X text 46 70 Resonant Frequency;
 #X text 133 96 Q/Resonance;
 #X obj 32 164 s \$0-coefficients;
@@ -435,7 +435,7 @@
 #dcdcdc #000000 #000000 0 256;
 #X obj 47 96 nbx 5 14 -1e+37 1e+37 0 0 empty freq empty 0 -8 0 10 #dcdcdc
 #000000 #000000 0 256;
-#X obj 47 128 bicoeff highpass 500 10;
+#X obj 47 128 bicoeff2 highpass 500 10;
 #X text 58 58 Resonant Frequency;
 #X text 153 83 Q/Resonance;
 #X obj 47 152 s \$0-coefficients;
@@ -457,7 +457,7 @@
 #dcdcdc #000000 #000000 0 256;
 #X text 50 79 Resonant Frequency;
 #X text 144 104 Q/Resonance;
-#X obj 39 149 bicoeff bandstop 500 10;
+#X obj 39 149 bicoeff2 bandstop 500 10;
 #X obj 39 173 s \$0-coefficients;
 #X text 57 42 Like [bandstop~].;
 #X connect 0 0 3 0;
@@ -477,7 +477,7 @@
 #dcdcdc #000000 #000000 0 256;
 #X text 50 79 Resonant Frequency;
 #X text 142 104 Q/Resonance;
-#X obj 48 149 bicoeff eq 500 10 12;
+#X obj 48 149 bicoeff2 eq 500 10 12;
 #X obj 206 138 hsl 128 17 0.5 10 1 0 empty empty empty 5 9 0 10 #dcdcdc
 #000000 #000000 0 0;
 #X obj 203 160 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -510,7 +510,7 @@
 #X obj 48 173 s \$0-coefficients;
 #X text 173 104 S/Slope;
 #X text 80 79 Frequency;
-#X obj 48 149 bicoeff highshelf 500 10 12;
+#X obj 48 149 bicoeff2 highshelf 500 10 12;
 #X text 66 39 Like [highshelf~].;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -536,7 +536,7 @@
 #X text 304 131 Gain;
 #X obj 48 165 s \$0-coefficients;
 #X text 169 96 S/Slope;
-#X obj 48 141 bicoeff lowshelf 500 10 12;
+#X obj 48 141 bicoeff2 lowshelf 500 10 12;
 #X text 80 71 Frequency;
 #X text 68 34 Like [lowshelf~].;
 #X connect 0 0 3 0;
@@ -560,7 +560,7 @@
 #X text 59 62 Resonant Frequency;
 #X text 150 88 Q/Resonance;
 #X obj 48 155 s \$0-coefficients;
-#X obj 48 131 bicoeff allpass 500 10;
+#X obj 48 131 bicoeff2 allpass 500 10;
 #X text 65 24 Like [allpass.2nd~].;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -568,11 +568,11 @@
 #X connect 3 0 7 0;
 #X connect 7 0 6 0;
 #X restore 533 149 pd allpass;
-#X text 169 204 Check the help file of [bicoeff] for more details:
+#X text 169 204 Check the help file of [bicoeff2] for more details:
 ;
-#X obj 536 204 bicoeff;
+#X obj 536 204 bicoeff2;
 #X text 40 90 This is not a friendly filter and generating coefficients
-for [biquad~] is not trivial for musicians \, but the [bicoeff] object
+for [biquad~] is not trivial for musicians \, but the [bicoeff2] object
 from ELSE generates coefficients for nine filter types from Robert
 Bristow-Johnson's "Cookbook formulae for audio EQ biquad filter coefficients".
 All these filter types have already been presented here., f 57;

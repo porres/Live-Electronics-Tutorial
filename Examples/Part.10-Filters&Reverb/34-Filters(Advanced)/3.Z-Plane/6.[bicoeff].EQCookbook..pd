@@ -17,7 +17,7 @@
 -1 -1 0 256;
 #X text 118 369 frequency;
 #X text 162 393 Q/Slope;
-#X obj 89 441 bicoeff lowpass 500 10;
+#X obj 89 441 bicoeff2 lowpass 500 10;
 #X obj 335 357 r \$0-coeffs;
 #X text 243 397 gain;
 #N canvas 552 206 708 403 menu 0;
@@ -479,7 +479,7 @@ can calculate biquad coefficients., f 60;
 #X obj 13 515 r \$0-coeffs;
 #X text 29 25 The filter equations from Robert Bristow-Johnson's "Cookbook
 formulae for audio EQ biquad filter coefficients" is the basis of the
-[bicoeff] object., f 53;
+[bicoeff2] object., f 53;
 #X text 29 78 Check this subpatch with a vanilla implementation of
 all these biquad coefficient calculations., f 53;
 #X text 28 183 Open [pd menu] to select the filter type. Lowshelf and
