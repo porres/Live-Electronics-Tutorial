@@ -1,0 +1,26 @@
+#N canvas 231 26 1099 458 12;
+#X text 35 334 BLEP takes the BLIT idea further and produces a 'step
+function' \, used as a transition table for discontinuities. The J09.bandlimited.pd
+from Pd's audio examples is an implementation of BLEP. Poly BLEP uses
+a polynomial instead of a table. ELSE offers some band-limited oscillators
+based on the Poly BLEP algorithm., f 69;
+#X text 35 20 There are many other contemporary algorithms proposed
+to reduce the audible level of aliasing. Since a key aspect in generating
+aliasing is discontinuity in waveforms \, be it via hard sync or plain
+drastic jumps because of the waveform itself (like in square and sawtooth)
+\, most of these techniques focuses on dealing with the discontinuities
+in the edges of the synthesized waveforms. Famous examples of such
+techniques are:, f 69;
+#X text 35 211 The BLIT technique creates a stream of lowpass filtered
+impulses \, a stream of sinc() functions that are integrated together
+over time. Integrating unipolar BLITs results in a sawtooth wave with
+a rounded discontinuity. Integrating bipolar BLITs results in a square
+wave and doubly integrating bipolar BLITs results in a triangle wave.
+BLIT oscillators feature a ringing on the band edges of the waveforms
+and aliasing is reduced but not totally eliminated. BLITs can also
+be computationally expensive and are often stored in wavetables.,
+f 69;
+#X text 38 129 - Band-limited Impulse Trains (BLIT) \; - Band-limited
+Step Functions (BLEP) \; - Polynomial Band-limited Step Functions (PolyBLEP)
+\; - MiniBLEP (minimum phase lowpass filtered prior to BLEP integration)
+, f 69;
