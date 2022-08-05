@@ -1,6 +1,5 @@
 #N canvas 330 56 859 433 12;
 #X declare -path else;
-#X obj 187 220 display~;
 #X obj 187 194 pulse~ 0.5 0.5;
 #X obj 187 283 tgl 17 0 empty empty empty 17 7 0 10 #dcdcdc #000000
 #000000 0 1;
@@ -27,11 +26,12 @@ with only the last sample of the period equal to 0!, f 62;
 #X text 41 126 Like the impulse \, a pulse train has applications as
 a trigger in electronic music. More precisely as a "gate" \, which
 is kind of an on/off switch (like a toggle)., f 61;
-#X connect 0 0 13 0;
-#X connect 1 0 0 0;
-#X connect 3 0 8 0;
-#X connect 4 0 5 0;
-#X connect 5 0 8 1;
-#X connect 8 0 7 0;
-#X connect 8 0 9 0;
-#X connect 13 0 2 0;
+#X obj 187 222 numbox~ 6 12 100 #C0C0C4 #440008 10 0 0 0;
+#X connect 0 0 15 0;
+#X connect 2 0 7 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 1;
+#X connect 7 0 6 0;
+#X connect 7 0 8 0;
+#X connect 12 0 1 0;
+#X connect 15 0 12 0;
