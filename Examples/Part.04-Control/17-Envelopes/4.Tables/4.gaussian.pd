@@ -45,7 +45,7 @@
 #X obj 191 262 tabgen \$0-gauss;
 #X msg 191 235 gauss \$1;
 #X text 187 154 the [tabgen] object can also generate gaussian tables, f 19;
-#X obj 194 210 hsl 100 15 0.02 1 1 0 empty empty empty -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 194 210 hsl 100 15 0.02 1 1 1 empty empty empty -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
 #X obj 394 252 tabreader~ \$0-gauss;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
