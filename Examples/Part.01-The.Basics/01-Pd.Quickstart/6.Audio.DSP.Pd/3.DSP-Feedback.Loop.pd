@@ -1,4 +1,4 @@
-#N canvas 280 91 855 442 12;
+#N canvas 280 91 855 522 12;
 #X declare -path else;
 #X obj 166 260 +~;
 #X obj 209 262 +~ 1;
@@ -50,6 +50,7 @@
 #X connect 2 0 1 0;
 #X connect 6 0 5 0;
 #X restore 688 217 pd 1-sample-feedback;
+#X text 236 435 This tutorial is following the bleeding edge state of Pd development with a not yet released Pd 0.54 version. Up to 0.53 send~/receive~ and throw~/catch~ only work with a block size of 64!, f 57;
 #X connect 0 0 1 0;
 #X connect 0 0 17 0;
 #X connect 1 0 0 1;

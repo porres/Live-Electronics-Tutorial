@@ -1,4 +1,4 @@
-#N canvas 586 23 532 608 12;
+#N canvas 586 23 523 704 12;
 #X declare -path else;
 #X obj 329 23 declare -path else;
 #X obj 329 170 setdsp~;
@@ -14,9 +14,10 @@
 #X obj 151 444 osc~ 880;
 #X obj 77 519 out~;
 #X obj 405 399 clone;
-#X text 212 470 The [out~] abstraction is aware that there's a multichannel input and can distribute it to both outputs. It relies on the [nchs~] external from ELSE that reports the number of channels. Check its help file., f 36;
-#X obj 438 552 nchs~;
+#X obj 378 660 nchs~;
 #X text 38 308 The [inlet~] object deals with multichannel inputs \, so this means you can have abstractions that deal with multichannel signals and send multichannel signals to a [pd~] object as well. The [clone] object also handles multichannel input and has special flags to distribute the signals into different copies of the abstraction or merge the outputs of all copies into a multichannel output. Check its help file., f 62;
+#X text 228 456 This tutorial is following the bleeding edge state of Pd development with a not yet released Pd 0.54 version \, which includes support for multichannel., f 29;
+#X text 79 588 When it is a reality \, the [out~] abstraction is aware that there's a multichannel input and can distribute it to both outputs. It relies on the [nchs~] external from ELSE that reports the number of channels. Check its help file., f 54;
 #X connect 3 0 6 0;
 #X connect 4 0 3 0;
 #X connect 5 0 3 1;
