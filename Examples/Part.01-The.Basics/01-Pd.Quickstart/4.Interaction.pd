@@ -43,7 +43,7 @@
 #X text 740 464 Receive and parse OSC messages \, check the console window, f 19;
 #X text 440 253 Click on the connect messages below and the number boxes.;
 #X text 451 403 Sending and receiving Pd messages via TCP, f 24;
-#X text 275 537 More is possible with externals \, which include more GUI objects and other interaction possibilities \, so we'll first se how to load them in the next example., f 52;
+#X text 275 537 More is possible with externals \, which include more GUI objects and other interaction possibilities \, so we'll first see how to load them in the next example., f 52;
 #X text 430 119 Pd can also control and be controlled via network connections. This way patches can interact and be controlled via other patches from other computers. Lot's of wild stuff can happen!, f 63;
 #X text 430 172 It's also possible to interact via the OSC (Open Sound Control) protocol via UDP. OSC came up as a more sophisticated alternative to MIDI and we'll see more about this later in this tutorial. For now \, check the help files of the objects below., f 63;
 #X obj 135 302 bng 19 250 50 0 empty empty empty 17 7 0 10 #dfdfdf #000000 #000000;
