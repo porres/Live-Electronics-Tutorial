@@ -42,7 +42,7 @@ prints the size in Pd's window., f 79;
 #X text 474 66 The "tick" message marks the graph with "ticks". The
 first float is an offset \, then we define at which point there's a
 tick and the number of ticks until we have a bigger tick. The "xlabel"
-and "ylabel" message display coordinates values \, just send the list
+and "ylabel" messages display coordinate values \, just send the list
 of values to be displayed \, the first number is the offset of the
 label. Both ticks and labels don't get stored when the patch., f 79
 ;
@@ -52,7 +52,7 @@ label. Both ticks and labels don't get stored when the patch., f 79
 #X msg 781 424 \; array6 bounds 0 1 512 -1;
 #X text 475 151 The "bounds" message sets the graphs boundaries \,
 the list is "X range from" / "Y range from" / "X range to" and "Y range
-to". The horizonatl ("X") boundaries are automatically set if you resize
+to". The horizontal ("X") boundaries are automatically set if you resize
 an array that's contained in a graph with a single array., f 79;
 #X text 469 564 See also examples 15.array.pd and 16.more.arrays.pd
 from 2.control.examples, f 76;
