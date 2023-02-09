@@ -172,14 +172,14 @@ shift of 180 degrees \, when what it is doing is actually just a polarity
 inversion., f 60;
 #X text 35 520 Note that both phase and polarity inversion give the
 same result for a sine wave because of its waveform \, in which the
-second half of its cycle is symmetric and with the sign inverted. Other
+second half of its cycle is symmetric and with the sine inverted. Other
 common waveforms with this characteristic are the triangular and regular
 square waves (with a pulse width of 0.5).;
 #X text 735 31 Sawtooth waveforms do not have this characteristic.
 Hence \, a phase opposition is not the same as inverting the polarity.
-And the only way to actually cancell the signal in this case is with
+And the only way to actually cancel the signal in this case is with
 a polarity inversion. See the graphs below and note that only the original
-sawtooth summed with its inverted polarity signal can cancell out.
+sawtooth summed with its inverted polarity signal can cancel out.
 , f 58;
 #X text 786 589 By the way \, there's no difference in our perception
 when changing the polarity!!!, f 41;
@@ -187,16 +187,16 @@ when changing the polarity!!!, f 41;
 #X text 27 16 Summing two waveforms with phase opposition promotes
 a cancelling of the signal \, but this depends on the waveform! It
 does happen with sine waves \, for instance \, but not all wave forms
-or signals. Anyway \, note to the right how we have a sign inversion
+or signals. Anyway \, note to the right how we have a sine inversion
 for all amplitude values in this waveform. Hence they become 0 if summed
 together.;
-#X text 35 210 To invert the polarity means to change the sign \, or
+#X text 35 210 To invert the polarity means to change the sine \, or
 multipliply by -1! In the case of sine waves the result is the same
 of a phase opposition. But an actual phase shift requires a time shift.
 ;
-#X text 35 373 Nonetheless \, most the term "phase inversion" is used
-as a \, misnomer \, by suggesting we're actually talking about a phase
-shift when in fact we're talking about polarity inversion \, which
+#X text 35 373 Nonetheless \, mostly the term "phase inversion" is used
+as a misnomer \, by suggesting we're actually talking about a phase
+shift. In fact we're talking about polarity inversion \, which
 is actually neither a time shift nor a phase shift!;
 #X connect 17 0 20 0;
 #X connect 18 0 19 0;
