@@ -1,4 +1,4 @@
-#N canvas 174 24 706 666 12;
+#N canvas 505 23 677 670 12;
 #X declare -path else;
 #X obj 60 177 declare -path else;
 #X obj 397 477 setdsp~;
