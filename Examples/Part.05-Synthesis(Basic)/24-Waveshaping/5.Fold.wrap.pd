@@ -26,7 +26,7 @@
 #X obj 311 521 out.mc~;
 #X obj 428 521 out.mc~;
 #X text 101 518 [fold~] and [wrap2~] are capable of dealing with multichannels., f 25;
-#X obj 428 447 sine~ -f 220 440;
+#X obj 428 447 sine~ -mc 220 440;
 #X connect 0 0 4 0;
 #X connect 1 0 5 0;
 #X connect 2 0 3 0;

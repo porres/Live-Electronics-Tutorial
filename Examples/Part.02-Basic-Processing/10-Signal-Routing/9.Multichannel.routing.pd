@@ -1,4 +1,4 @@
-#N canvas 528 58 742 620 12;
+#N canvas 400 28 742 620 12;
 #X declare -path else;
 #X obj 98 43 declare -path else;
 #X text 443 48 The [xselect.mx~] lets you perform the crossfade between channels. Check its help file., f 25;
@@ -32,7 +32,7 @@
 #X obj 157 509 s2f~;
 #X obj 78 537 s2f~;
 #X text 231 371 The [xgate~] object also supports multichannel signals \, but there's a [xgate.mc~] object that ouputs a single multichannel connection and you slect which channel the input goes to., f 62;
-#X obj 431 147 sine~ -f 444 555 666 777 888 999;
+#X obj 431 147 sine~ -mc 444 555 666 777 888 999;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;

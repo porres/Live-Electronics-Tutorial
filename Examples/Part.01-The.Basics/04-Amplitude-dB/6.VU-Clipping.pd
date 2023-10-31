@@ -22,7 +22,7 @@
 #X text 465 62 Within Pd we can still have values outside the -1 to 1 range. It is in the digital to analog conversion that the clipping occurs. Pd has a native [vu] GUI object that is a kind of VU Meter. It displays RMS and Peak amplitudes \, but it doesn't really perform any signal analysis. Now the [vu~] object from ELSE analyses a signal and outputs both RMS (left outlet) and Peak (right outlet) so we can feed [vu]., f 66;
 #X text 465 223 Below \, to the right \, we have other objects from ELSE: [meter~] and [meter2~] \, which are convenient abstractions based on [vu~] and [vu] that automatically performs analysis on the input signals. ELSE also offers [meter4~] and [meter8~] \, which can be used for quadraphonic and octaphonic setups. The [meter2~] \, [meter4~] and [meter8~] object can also take multichannel inputs \, check their help files., f 66;
 #X obj 732 524 out.mc~;
-#X obj 732 338 sine~ -f 440 880;
+#X obj 732 338 sine~ -mc 440 880;
 #X connect 0 0 3 0;
 #X connect 1 0 7 0;
 #X connect 1 0 17 0;

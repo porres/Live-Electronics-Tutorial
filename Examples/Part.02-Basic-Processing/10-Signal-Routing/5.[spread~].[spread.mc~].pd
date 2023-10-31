@@ -14,7 +14,7 @@
 #X obj 125 539 out.mc~;
 #X obj 125 493 spread.mc~ 2;
 #X text 260 510 See also [spread.mc~] multichannel connections., f 25;
-#X obj 125 452 sine~ -f 440 660 880;
+#X obj 125 452 sine~ -mc 440 660 880;
 #X connect 0 0 4 0;
 #X connect 2 0 4 1;
 #X connect 3 0 4 2;

@@ -17,7 +17,7 @@
 #X obj 456 213 osc~ 440;
 #X obj 475 245 osc~ 880;
 #X text 415 136 there's also [gain2~] for a stereo input., f 21;
-#X obj 69 97 sine~ -f 220 440 660 880;
+#X obj 69 97 sine~ -mc 220 440 660 880;
 #X connect 1 0 2 0;
 #X connect 1 0 2 1;
 #X connect 1 0 2 2;
