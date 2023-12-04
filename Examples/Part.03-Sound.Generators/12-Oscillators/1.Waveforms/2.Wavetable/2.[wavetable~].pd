@@ -1,4 +1,4 @@
-#N canvas 461 35 567 662 12;
+#N canvas 461 35 565 691 12;
 #X declare -path else;
 #X obj 264 335 soundfiler;
 #X obj 76 422 cnv 15 298 138 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
@@ -39,6 +39,8 @@
 #X text 20 127 It's relatively easy to find around waveforms as .wav or .aif files to be used in Pd. to load them into an array \, we use the native [soundfiler] object. Check the help file of [wavetable~] and [soundfiler] for more details., f 68;
 #X text 115 586 For a nice bank of free wavetables \, check:;
 #X obj 79 611 else/openfile -h https://github.com/KristofferKarlAxelEkstrand/AKWF-FREE;
+#X obj 169 644 else/openfile -h https://waveeditonline.com;
+#X text 130 643 and:;
 #X connect 0 0 11 0;
 #X connect 3 0 13 0;
 #X connect 5 0 0 0;
