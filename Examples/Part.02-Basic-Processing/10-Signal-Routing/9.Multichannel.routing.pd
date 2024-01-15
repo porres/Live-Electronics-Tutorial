@@ -1,4 +1,4 @@
-#N canvas 400 28 742 620 12;
+#N canvas 355 23 746 702 12;
 #X declare -path else;
 #X obj 98 43 declare -path else;
 #X text 443 48 The [xselect.mx~] lets you perform the crossfade between channels. Check its help file., f 25;
@@ -33,6 +33,10 @@
 #X obj 78 537 s2f~;
 #X text 231 371 The [xgate~] object also supports multichannel signals \, but there's a [xgate.mc~] object that ouputs a single multichannel connection and you slect which channel the input goes to., f 62;
 #X obj 431 147 sine~ -mc 444 555 666 777 888 999;
+#X obj 90 633 xgate2.mc~, f 11;
+#X obj 190 633 xselect2.mc~;
+#X obj 300 633 mtx.mc~;
+#X text 393 625 More multichannel versions of routing objects. Be a nice student and study the help files of each!, f 38;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
 #X connect 5 0 4 0;

@@ -76,7 +76,7 @@
 #X obj 90 228 -~ 0.25;
 #X obj 90 252 *~ 4;
 #X msg 136 103 0.25;
-#X obj 136 71 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 136 71 bng 19 250 50 0 empty empty empty 0 -10 0 12 #dfdfdf #000000 #000000;
 #X floatatom 90 71 5 0 0 0 - - - 0;
 #X obj 90 39 initmess 155;
 #X text 208 145 Here's a Vanilla hacky trick to generate a true triangular waveform with [phasor~] objects., f 25;
