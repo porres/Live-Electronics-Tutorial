@@ -34,8 +34,8 @@
 #X obj 626 638 out~;
 #X obj 851 563 phasor~ 440;
 #X obj 851 590 *~ 16384;
-#X obj 933 456 array define \$0-table;
-#X obj 929 428 tabgen 16384 \$0-table sin;
+#X obj 913 454 array define \$0-table;
+#X obj 913 426 tabgen 16384 \$0-table sin;
 #X text 567 425 A lower level implementation with ELSE objects is simpler \, we can generate a sine wave with [tabgen] and not worry about the guard points., f 47;
 #X obj 851 642 out~;
 #X obj 626 572 phasor~ 440;
