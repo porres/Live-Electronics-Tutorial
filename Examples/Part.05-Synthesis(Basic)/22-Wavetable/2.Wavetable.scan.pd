@@ -55,9 +55,9 @@
 #X text 135 405 -->;
 #X obj 1021 15 declare -path else;
 #X text 318 522 linear crossfading;
-#X text 614 57 The whole table is found below. Its size is 4096 and it is split into 4 bits of 1024 points each. Hence we multiply the [phasor~] output to 1024 and feed this as an index to [tabreader~] \, and we also multiply the frame number to 1024 and add to it. The crossfading between the 2 frames is perfomed linearly. Unfortunately a full Vanilla version cannot be implemented in a sane way \, at lest not in an elegant way \, because of how the table would need guard points between the slices., f 83;
+#X text 614 57 The whole table is found below. Its size is 4096 and it is split into 4 bits of 1024 points each. Hence we multiply the [phasor~] output to 1024 and feed this as an index to [tabreader~] \, and we also multiply the frame number to 1024 and add to it. The crossfading between the 2 frames is performed linearly. Unfortunately a full Vanilla version cannot be implemented in a sane way \, at lest not in an elegant way \, because of how the table would need guard points between the slices., f 83;
 #X obj 165 214 phasor~ 220;
-#X text 605 376 The [wavetable~] object has a high level built in implementation for wavetable scanning. The rightmost inlet scans through the diffrent frames that can be set with the 'n' flag.. The range is from 0 to 1 and in this example it means that 0 is the first frame and going to 0.25 crossfades to the second frame., f 81;
+#X text 605 376 The [wavetable~] object has a high level built in implementation for wavetable scanning. The rightmost inlet scans through the different frames that can be set with the 'n' flag.. The range is from 0 to 1 and in this example it means that 0 is the first frame and going to 0.25 crossfades to the second frame., f 81;
 #X text 605 450 Check the help file of [wavetable~] for more details., f 35;
 #X obj 766 507 wavetable~ -n 4 \$0-frames 220;
 #X obj 165 430 tabreader~ -index -loop \$0-frames, f 10;

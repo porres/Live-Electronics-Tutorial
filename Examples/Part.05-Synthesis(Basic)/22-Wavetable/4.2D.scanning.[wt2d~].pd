@@ -181,12 +181,12 @@
 #X text 610 152 The output of both are graphed so you can compare and see how the outcome is the same!, f 32;
 #X text 610 212 The used wavetable is an 8x8 grid loaded in the [pd 2D-table] subpatch., f 32;
 #X text 613 368 The patch implementation is in [pd 2D-wt-scanning]. Open it for details., f 32;
-#X text 613 428 You should also open the help file of [wt2d~] for more details and note how it quite simiar to [wavetable~]/[wt~] and it just has an extra inlet for crossfading vertically., f 32;
+#X text 613 428 You should also open the help file of [wt2d~] for more details and note how it quite similar to [wavetable~]/[wt~] and it just has an extra inlet for crossfading vertically., f 32;
 #X text 613 528 The '-n' flag in [wt2d~] defines how it must split the loades wavetable in number of columns and rows (8 8 in this case)., f 32;
 #X text 29 293 set frequency in hz --->;
 #X text 23 99 We can expand from the last example and show how to use a single wavetable to slice into different frames in two dimensions \, that is different columns and rows! We also expand the idea to crossfade between much more than 4 sources. In this example the wavetable is split into 8 columns and 8 rows. Note that if it had 2 columns and 2 rows \, it'd be the same thing as the previous Vector Synthesis example., f 51;
 #X text 429 372 <------------------------;
-#X text 431 63 Use the 2D slider below to crossfade betwee frames in two dimensions., f 18;
+#X text 431 63 Use the 2D slider below to crossfade between frames in two dimensions., f 18;
 #X connect 3 0 10 0;
 #X connect 4 0 5 0;
 #X connect 6 0 9 0;

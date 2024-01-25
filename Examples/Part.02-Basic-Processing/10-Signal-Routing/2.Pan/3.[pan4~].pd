@@ -1,4 +1,4 @@
-#N struct 1006-point float x0 float y0 float xs float ys float fg float in float gridx float gridy;
+#N struct 1044-point float x0 float y0 float xs float ys float fg float in float gridx float gridy;
 #N canvas 312 51 773 583 12;
 #X declare -path else;
 #X obj 212 207 noise~;
@@ -41,7 +41,6 @@
 #X text 178 526 right;
 #X text 52 542 back;
 #X text 181 542 back;
-#X text 49 23 The [pan4~] object is a 4 speakers panning object. It can be implemented by joining 2 [pan2~] objects \, one for each dimension. The 'x' pan controls the hotizontal Left-Right position while the 'y' pan controls the vertical Back-Front position., f 44;
 #X text 445 50 Using a 2D slider makes as below makes more sense. Compare the outputs and check the object's help file. Note it can also output a multichannel connection., f 41;
 #X text 520 526 left;
 #X text 517 542 front;
@@ -51,6 +50,7 @@
 #X text 604 526 right;
 #X text 478 542 back;
 #X text 607 542 back;
+#X text 49 23 The [pan4~] object is a 4 speakers panning object. It can be implemented by joining 2 [pan2~] objects \, one for each dimension. The 'x' pan controls the horizontal Left-Right position while the 'y' pan controls the vertical Back-Front position., f 44;
 #X connect 0 0 14 0;
 #X connect 1 0 22 0;
 #X connect 1 0 24 0;

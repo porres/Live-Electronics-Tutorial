@@ -40,7 +40,7 @@
 #X text 693 186 4 point;
 #X msg 154 184 noise;
 #X text 205 184 a wild and fun idea \, white noise as a waveform!;
-#X text 22 428 By default \, [wavetable~] uses a different 4 point interpolation method than [tabosc4~]'s \, called 'spline'. Unlike 'sinesum' \, [tabgen] doesn't generate extra (guard) points and [wavetable~] doesn't need them. These extra points are just copies: you have a copy of the last point in the beggining \, and a copy of the first two in the end (we'll see this in detail later on). Such copies are made internally in [wavetable~] so the table should not have them (hence \, the 'sinesum' command is not suited for [wavetable~])., f 76;
+#X text 22 428 By default \, [wavetable~] uses a different 4 point interpolation method than [tabosc4~]'s \, called 'spline'. Unlike 'sinesum' \, [tabgen] doesn't generate extra (guard) points and [wavetable~] doesn't need them. These extra points are just copies: you have a copy of the last point in the beginning \, and a copy of the first two in the end (we'll see this in detail later on). Such copies are made internally in [wavetable~] so the table should not have them (hence \, the 'sinesum' command is not suited for [wavetable~])., f 76;
 #X text 612 20 Besides spline \, [wavetable~] also has 'lagrange' (used in [tabosc4~] and other interpolation modes: 'lin' (linear) and 'cos' (cosine). You can choose no interpolation ar all as well., f 63;
 #X connect 3 0 7 0;
 #X connect 7 0 5 0;

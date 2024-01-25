@@ -1,6 +1,6 @@
 #N canvas 157 23 1146 718 12;
 #X declare -path else;
-#X text 21 74 We've seen the basics of Wavetable Synthesis when the wavetable oscillators were presented \, namely [tabosc4~] and [wavetable~] (or [wt~] for a short abreviation)., f 71;
+#X text 21 74 We've seen the basics of Wavetable Synthesis when the wavetable oscillators were presented \, namely [tabosc4~] and [wavetable~] (or [wt~] for a short abbreviation)., f 71;
 #X text 21 126 Here we'll dig a bit more in \, but in order to really understand it well and in full depth we need to go further in this tutorial and also check details on sampling and handling audio buffers \, specially interpolation that is fully presented in "29-Sampling(buffer)"., f 71;
 #X text 21 200 One interest thing to stress is that oscillators like [osc~] are actually wavetable oscillators "behind the scenes" \, which means that internally a wavetable is pre computed and stored \, then read through at a speed according to a frequency input. One could wrongly assume that such an oscillator would actually compute the trigonometric cosine function \, but vahing a wavetable instead is more efficient computationally., f 71;
 #X obj 129 446 osc~ 440;

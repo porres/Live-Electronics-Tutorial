@@ -13,9 +13,9 @@
 #X obj 260 516 spread.mc~ 2;
 #X text 51 509 See also [spread.mc~] multichannel connections., f 25;
 #X obj 260 465 sine~ -mc 440 660 880;
-#X text 217 341 Note that the spread parameter would spread the outter inputs also to the center channel. Open the help file for more details., f 31;
 #X text 31 49 The [spread~] object \, from the ELSE library can be used to "spread" any number of input channels across any number of output channels with equal power panning and also a spread parameter that can be set in the rightmost inlet.;
 #X text 31 115 Here we have 3 inputs spread them in a stereo field. This is better noticeable with headphones. Note that this would be just like panning each input using the inlet as the panning position \, in this case the left input is like panning to the left position \, the center one is like the mid position and the right inlet pans to the right., f 58;
+#X text 217 341 Note that the spread parameter would spread the outer inputs also to the center channel. Open the help file for more details., f 31;
 #X connect 0 0 3 0;
 #X connect 1 0 3 1;
 #X connect 2 0 3 2;

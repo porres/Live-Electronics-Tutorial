@@ -25,10 +25,10 @@
 #X obj 146 410 out~;
 #X obj 520 438 out~;
 #X obj 626 37 declare -path else;
-#X text 22 28 "Panning" or just "pan" usually means distributing a mono signal into a 2 channel stereo field. The "pan" control allows you to distribute a sound source in a center position ot more to the right or to the left. Later on we'll see other cases of panning to more than 2 channels., f 57;
 #X text 22 104 Panning is rather similar to crossfading \, but instead of mixing two sound sources into an output \, we kinda do the opposite and distribute a single source into two outputs. Check the implementation below and see how the process depends on a same structure than the crossfading \, and how we also adopt the sine/cosine functions., f 57;
 #X text 480 155 The [pan2~] object (from the ELSE library) is the same as the implementation below to the left \, but the pan parameter is from -1 to 1 (instead of 0 to 1). This makes it more suitable for controlling it with audio signals., f 42;
 #X text 658 431 Check the help file. Note it can also output a multichannel connection., f 15;
+#X text 22 28 "Panning" or just "pan" usually means distributing a mono signal into a 2 channel stereo field. The "pan" control allows you to distribute a sound source in a center position or more to the right or to the left. Later on we'll see other cases of panning to more than 2 channels., f 57;
 #X connect 0 0 11 0;
 #X connect 1 0 2 0;
 #X connect 2 0 20 0;

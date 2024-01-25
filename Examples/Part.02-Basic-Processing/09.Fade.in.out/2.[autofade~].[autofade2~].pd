@@ -28,7 +28,7 @@
 #X obj 769 190 sig~;
 #X obj 752 281 tgl 20 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000 0 1;
 #X obj 752 314 sig~;
-#X text 567 58 There are the [autofade.mc~] and [autofade2.mc~] versions that take and outout multichannel connections., f 32;
+#X text 567 58 There are the [autofade.mc~] and [autofade2.mc~] versions that take and output multichannel connections., f 32;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
 #X connect 4 0 3 0;
