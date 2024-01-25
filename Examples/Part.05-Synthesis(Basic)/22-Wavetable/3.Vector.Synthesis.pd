@@ -1,5 +1,5 @@
 #N struct 1004-point float x0 float y0 float xs float ys float fg float in float gridx float gridy;
-#N canvas 280 23 904 674 12;
+#N canvas 260 35 904 674 12;
 #X declare -path else;
 #X obj 512 58 slider2d 127 127 -1 1 1 -1 1 240 240 240 0 0 0 1 0 0 0 0 empty empty;
 #X listbox 512 203 20 0 0 0 - - - 0;
@@ -28,13 +28,13 @@
 #X obj 196 596 out~;
 #X text 315 541 y axis;
 #X text 141 432 x axis;
-#X obj 735 232 s \$0-hz;
+#X obj 722 232 s \$0-hz;
 #X obj 614 331 r \$0-hz;
 #X obj 432 341 r \$0-hz;
 #X obj 233 369 r \$0-hz;
 #X obj 59 347 r \$0-hz;
-#X obj 735 206 nbx 5 17 -1e+37 1e+37 0 0 empty empty empty 0 -10 0 12 #dfdfdf #000000 #000000 0 256;
-#X obj 735 179 initmess 220;
+#X obj 722 206 nbx 5 17 -1e+37 1e+37 0 0 empty empty empty 0 -10 0 12 #dfdfdf #000000 #000000 0 256;
+#X obj 722 179 initmess 220;
 #X obj 59 373 wt~ \$0-t1;
 #X obj 96 406 wt~ \$0-t2;
 #X obj 233 395 wt~ \$0-t3;
@@ -63,6 +63,7 @@
 #X obj 303 563 rampnoise~ 5;
 #X text 27 21 Vector synthesis is basically dynamic linear crossfading between (usually) four sound sources. It is not necessarily a type of wavetable synthesis \, but this technic was introduced by Sequential Circuits in the Prophet VS synthesizer during 1986 and it used four digital wavetable oscillators as its four sound sources then. Therefore here it is included in this tutorial. It is also a nice preparation for the next example., f 61;
 #X text 27 246 Below we have [rampnoise~] objects controlling randomly the crossfading. To the right we have a 2D slider to control the fading position with a controller. Note that the tables are numbered according to the numbered sound sources in the 2D slider ('\$0-t1' \, '\$0-t2' and so on)., f 61;
+#X text 793 208 <---- set frequency, f 9;
 #X connect 0 0 1 0;
 #X connect 1 0 17 0;
 #X connect 2 0 7 0;
