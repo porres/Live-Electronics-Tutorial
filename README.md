@@ -6,15 +6,14 @@
 
 --------------------------------------------------------------------------
 
-	Copyright © 2008-2023 Alexandre Torres Porres
+	Copyright © 2008-2024 Alexandre Torres Porres
 
 **Link:** <https://github.com/porres/Live-Electronics-Tutorial>.
 
 --------------------------------------------------------------------------
 
-#### Version: 1.0-0 RC-11 (Release Candidate #11): Released: February 06th 2024
-
- - This particular version of the tutorial requires **Pd 0.54-1** or later and depends on **ELSE 1.0-0 RC 11** (<https://github.com/porres/pd-else/releases/tag/v1.0-rc11>)! 
+#### Version: 1.0-0 RC-12 (Release Candidate #12): 
+Released: March 08th 2024 as part of **ELSE 1.0-0 RC 12** (<https://github.com/porres/pd-else/releases/tag/v1.0-rc12>)! 
 
 --------------------------------------------------------------------------
 
