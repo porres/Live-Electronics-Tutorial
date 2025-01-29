@@ -1,4 +1,4 @@
-#N canvas 408 55 931 710 12;
+#N canvas 408 55 931 743 12;
 #X declare -path else;
 #X obj 620 288 tabplay~ \$0-sample;
 #X obj 55 244 soundfiler;
@@ -38,10 +38,11 @@
 #X obj 714 21 declare -path else;
 #X text 544 466 You can also use the native [table] or [array] objects to create an array - check their help files., f 47;
 #X obj 55 188 initmess read -resize bubul.wav \$0-sample, f 21;
-#X obj 495 630 sfload \$0-sample;
-#X msg 495 594 load guitar.mp3;
-#X text 151 594 [sfload] from ELSE is similar to [soundfiler] but supports more audio formats \, they are: MP3 \, FLAC \, WAV \, AIF \, AAC \, OGG & OPUS., f 45;
-#X text 615 594 <-- click to load;
+#X obj 507 629 sfload \$0-sample;
+#X msg 507 593 load guitar.mp3;
+#X text 627 593 <-- click to load;
+#X listbox 507 659 38 0 0 0 - - - 0;
+#X text 129 592 [sfload] from ELSE is similar to [soundfiler] but supports more audio formats \, they are: MP3 \, FLAC \, WAV \, AIF \, AAC \, OGG & OPUS. The output information also includes loop regions (check its help file). Another difference to [soundfiler] is that it resizes the array by default., f 49;
 #X connect 0 0 20 0;
 #X connect 1 0 2 0;
 #X connect 2 0 23 0;
@@ -61,4 +62,5 @@
 #X connect 19 0 3 0;
 #X connect 25 0 12 1;
 #X connect 34 0 1 0;
+#X connect 35 0 38 0;
 #X connect 36 0 35 0;
