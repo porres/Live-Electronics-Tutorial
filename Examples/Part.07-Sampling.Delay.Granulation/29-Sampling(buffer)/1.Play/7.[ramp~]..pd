@@ -23,7 +23,7 @@
 #X obj 582 264 hsl 128 15 -2 2 0 0 empty empty empty -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
 #X obj 579 290 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
 #X obj 569 417 tabread4~ \$0-buffer;
-#X text 440 101 You can give [ramp~] an increment value and "1" plays the file at original speed \, but you can give it other values to play in different speeds as in this example. The values are given by a slider n the range of -2 to 2 A value of 0.5 would be half the speed and 2 twice as fast. Negative values read the sound in reverse. Note how this value is multiplied by the sample rate compensation here., f 54;
+#X text 440 91 You can give [ramp~] an increment value and "1" plays the file at original speed \, but you can give it other values to play in different speeds as in this example. The values are given by a slider n the range of -2 to 2 A value of 0.5 would be half the speed and 2 twice as fast. Negative values read the sound in reverse. Note how this value is multiplied by the sample rate compensation here., f 54;
 #X obj 165 390 t f b;
 #X text 239 343 sound file's sample rate, f 12;
 #X text 31 23 This example shows how to use [ramp~] to drive [tabread4~] (or [table~]) instead of [phasor~]. Note we have a ratio parameter that is a compensation from the ratio between the sound file's sample rate and Pd's., f 53;
@@ -36,6 +36,7 @@
 #X floatatom 84 343 7 0 0 0 - - - 0;
 #X text 40 343 size:;
 #X text 213 344 <--;
+#X obj 579 235 initmess 1;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
 #X connect 3 1 2 1;
@@ -61,3 +62,4 @@
 #X connect 32 0 3 1;
 #X connect 33 0 3 0;
 #X connect 33 0 4 0;
+#X connect 36 0 20 0;

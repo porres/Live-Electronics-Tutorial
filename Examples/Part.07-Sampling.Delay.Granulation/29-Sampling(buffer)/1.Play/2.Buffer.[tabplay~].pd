@@ -1,4 +1,4 @@
-#N canvas 408 55 931 743 12;
+#N canvas 324 75 931 743 12;
 #X declare -path else;
 #X obj 620 288 tabplay~ \$0-sample;
 #X obj 55 244 soundfiler;
@@ -6,8 +6,8 @@
 #X obj 292 271 soundfiler;
 #X floatatom 292 297 0 0 0 0 - - - 0;
 #X obj 292 195 openpanel;
-#X obj 292 173 bng 15 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000;
-#X obj 620 199 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000;
+#X obj 292 163 bng 20 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000;
+#X obj 620 199 bng 20 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000;
 #X obj 639 241 nbx 4 16 0 1e+37 0 0 empty empty empty 0 -8 0 13 #dcdcdc #000000 #000000 0 256;
 #X obj 38 394 cnv 15 438 148 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #N canvas 0 22 450 300 (subpatch) 0;
@@ -25,7 +25,7 @@
 #X msg 292 243 read -resize \$1 \$2;
 #X obj 620 324 out~;
 #X text 102 270 # of samples;
-#X text 312 172 choose sound file;
+#X text 315 164 choose sound file;
 #X obj 55 292 s \$0-size;
 #X obj 292 323 s \$0-size;
 #X obj 785 211 r \$0-size;
@@ -37,12 +37,12 @@
 #X text 40 22 For more playing flexibility \, we need to store the file in a "buffer" (term that indicates allocated memory). For such \, we load the file in an array with the native [soundfiler] object \, which needs a "read" message followed by a sound file. The -resize flag resizes the table according to the sound file's number of samples \, which is given in the left outlet (right outlet sends more information like number of channels and sample rate). Check help file for more details., f 61;
 #X obj 714 21 declare -path else;
 #X text 544 466 You can also use the native [table] or [array] objects to create an array - check their help files., f 47;
-#X obj 55 188 initmess read -resize bubul.wav \$0-sample, f 21;
 #X obj 507 629 sfload \$0-sample;
 #X msg 507 593 load guitar.mp3;
 #X text 627 593 <-- click to load;
-#X listbox 507 659 38 0 0 0 - - - 0;
-#X text 129 592 [sfload] from ELSE is similar to [soundfiler] but supports more audio formats \, they are: MP3 \, FLAC \, WAV \, AIF \, AAC \, OGG & OPUS. The output information also includes loop regions (check its help file). Another difference to [soundfiler] is that it resizes the array by default., f 49;
+#X listbox 507 659 30 0 0 0 - - - 0;
+#X obj 55 188 initmess read -resize voice.wav \$0-sample, f 21;
+#X text 129 592 [sfload] from ELSE is similar to [soundfiler] but supports more audio formats \, they are: MP3 \, FLAC \, WAV \, AIF \, AAC \, OGG & OPUS. Another difference to [soundfiler] is that it resizes the array by default., f 49;
 #X connect 0 0 20 0;
 #X connect 1 0 2 0;
 #X connect 2 0 23 0;
@@ -61,6 +61,6 @@
 #X connect 18 0 0 0;
 #X connect 19 0 3 0;
 #X connect 25 0 12 1;
-#X connect 34 0 1 0;
-#X connect 35 0 38 0;
-#X connect 36 0 35 0;
+#X connect 34 0 37 0;
+#X connect 35 0 34 0;
+#X connect 38 0 1 0;

@@ -1,4 +1,4 @@
-#N canvas 325 38 960 711 12;
+#N canvas 392 46 960 711 12;
 #X declare -path else;
 #X obj 723 328 phasor~;
 #X obj 723 387 tabread4~ \$0-buffer;
@@ -12,7 +12,7 @@
 #X text 794 217 Cents;
 #X obj 723 246 cents2ratio;
 #X obj 723 422 out~;
-#X text 245 491 <= Reading frequency;
+#X text 255 491 <= Reading frequency;
 #X text 569 217 Speed (%);
 #X text 784 276 Ratio;
 #X obj 547 404 initmess \; tempo 100;
