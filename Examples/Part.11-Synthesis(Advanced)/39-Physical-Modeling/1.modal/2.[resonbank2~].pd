@@ -1,4 +1,5 @@
 #N canvas 351 66 1071 744 12;
+#X declare -path else;
 #X obj 310 181 keyboard 15 60 5 1 0 0 empty empty;
 #X obj 310 265 stripnote;
 #X obj 310 299 mtof;
@@ -24,6 +25,7 @@
 #X obj 310 328 resonators2~ -freq 100 -ratio 1 2.756 5.404 8.933 13.34 -amp 1 0.7 0.5 0.3 0.2 -decay 1200 1000 800 600 400;
 #X text 538 616 wooden xylophone;
 #X text 55 229 values come from solving the wave equation for a circular membrane with free edges., f 26;
+#X obj 814 75 declare -path else;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 16 0;
