@@ -1,4 +1,4 @@
-#N canvas 341 53 1025 728 12;
+#N canvas 304 100 1025 728 12;
 #X declare -path else;
 #X obj 182 224 r \$0-size;
 #X obj 143 290 random;
@@ -27,7 +27,7 @@
 #X obj 235 265 b;
 #X text 74 482 <= start \, duration \, target;
 #X obj 843 38 declare -path else;
-#X obj 315 511 function 200 100 empty empty 0 1 220 220 220 50 50 50 0 0 0 0 0 81.5703 1 652.562 1 81.5703 0;
+#X obj 315 511 function 200 100 empty empty 0 1 220 220 220 50 50 50 0 0 0 0 0 0.1 1 0.8 1 0.1 0;
 #X obj 337 476 initmess 0 0.1 1 0.8 1 0.1 0;
 #X text 40 124 In this patch we generate random start/end points and get a duration period in ms from the difference. This period can be changed by a ratio input from a cents value. Note we also have a ratio parameter that is a compensation from the ratio between the sound file's sample rate and Pd's, f 68;
 #X obj 711 180 sr~;
