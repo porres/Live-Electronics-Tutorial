@@ -6,15 +6,15 @@
 #X obj 75 163 keyboard 15 60 2 3 0 0 empty empty;
 #X obj 75 241 mtof;
 #X obj 75 418 out~;
-#X obj 289 279 brown~;
+#X obj 182 279 brown~;
 #X floatatom 75 272 8 0 0 0 - - - 0;
 #X obj 408 163 keyboard 15 60 2 3 0 0 empty empty;
 #X obj 408 267 mtof;
 #X obj 408 418 out~;
 #X floatatom 408 298 8 0 0 0 - - - 0;
-#X obj 685 295 impseq~;
+#X obj 546 295 impseq~;
 #X obj 408 239 stripnote;
-#X obj 685 270 / 127;
+#X obj 546 270 / 127;
 #X obj 75 312 resonbank~ -freq 220 -ratio 1 2 2.803 3.871 5.074 7.81 10.948 14.421 -decay 1000 205 1000 196 339 47 58 47 -amp 1 0.044 0.891 0.0891 0.794 0.1 0.281 0.079, f 31;
 #X obj 408 326 resonbank2~ -freq 220 -ratio 1 2 2.803 3.871 5.074 7.81 10.948 14.421 -decay 1000 205 1000 196 339 47 58 47 -amp 1 0.044 0.891 0.0891 0.794 0.1 0.281 0.079, f 40;
 #X obj 593 62 declare -path else;
