@@ -30,7 +30,7 @@
 #X text 470 390 The [float2sig~] object is an abstraction based on [line~] and takes a ramp time as an argument. It can be abbreviatted as [f2s~], f 33;
 #X obj 563 504 nbx 5 14 0 1000 0 0 empty empty empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
 #X text 622 503 ramp time;
-#X obj 255 693 bng 19 250 50 0 empty empty empty 0 -10 0 12 #dfdfdf #000000 #000000;
+#X obj 255 693 bng 21 250 50 0 empty empty empty 0 -10 0 12 #dfdfdf #000000 #000000;
 #X obj 255 729 bang2imp~;
 #X text 466 707 <= start metronome;
 #X obj 443 735 metro 1 8 samps;
@@ -46,7 +46,7 @@
 #X obj 194 784 print~;
 #X obj 443 769 bang2imp~;
 #X obj 443 806 print~;
-#X obj 386 728 bng 19 250 50 0 empty empty empty 0 -10 0 12 #dfdfdf #000000 #000000;
+#X obj 386 728 bng 21 250 50 0 empty empty empty 0 -10 0 12 #dfdfdf #000000 #000000;
 #X obj 443 680 loadbang;
 #X text 141 601 The [bang2imp~] object from ELSE converts control rate bangs to impulses (a signal where a single sample is non zero while the ones next to it are zeros). Since it is an abstraction based on [vline~] it does this with sample accuracy and can convert more than one bang within an audio block., f 73;
 #X connect 0 0 6 0;
