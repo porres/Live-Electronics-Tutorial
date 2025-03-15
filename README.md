@@ -6,14 +6,14 @@
 
 --------------------------------------------------------------------------
 
-	Copyright © 2008-2024 Alexandre Torres Porres
+	Copyright © 2008-2025 Alexandre Torres Porres
 
 **Link:** <https://github.com/porres/Live-Electronics-Tutorial>.
 
 --------------------------------------------------------------------------
 
-#### Version: 1.0-0 RC-12 (Release Candidate #12): 
-Released: September 23rd 2024 as part of **ELSE 1.0-0 RC 12** (<https://github.com/porres/pd-else/releases/tag/v1.0-rc12>)! 
+#### Version: 1.0-0 RC-13 (Release Candidate #13): 
+Released: March 26th 2025 as part of **ELSE 1.0-0 RC 13** (<https://github.com/porres/pd-else/releases/tag/v1.0-rc13>)! 
 
 --------------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ This didactic work is licenced via Creative Commons Attribution-NonCommercial-No
 
 #### Downloading and Installing this tutorial:
 
-​	This version of the tutorial needs at least Pd 0.54-1! You can look for releases of this tutorial in https://github.com/porres/Live-Electronics-Tutorial/releases - where early versions of it are also still present, but it's best just to download this directly via Pd along with the ELSE library, because this tutorial is also provided as part of it (and you need to install the "ELSE" library in order to use this tutorial anyway).
+​	This version of the tutorial needs at least Pd 0.55-2! You can look for releases of this tutorial in https://github.com/porres/Live-Electronics-Tutorial/releases - where early versions of it are also still present, but it's best just to download this directly via Pd along with the ELSE library, because this tutorial is also provided as part of it (and you need to install the "ELSE" library in order to use this tutorial anyway).
 
 ​	So in Pd just go to the "Help" menu and click on "Find Externals", then just search for 'else' for the latest version (1.0-0rc8 by the time of this release). You can also download ELSE from its GitHub repository  <https://github.com/porres/pd-else/> and it'll also contain this tutorial as part of the download. In this combo download, you'll always get compatibility between the tutorial and the ELSE library.
 
