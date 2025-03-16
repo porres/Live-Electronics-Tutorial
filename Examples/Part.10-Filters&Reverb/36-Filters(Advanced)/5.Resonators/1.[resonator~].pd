@@ -72,14 +72,14 @@
 #X obj 572 383 resonator~ 1000 3000;
 #X obj 334 415 pi pi;
 #X text 34 91 The resonance is what specifies a decay time (a.k.a "damping time" or "ring time"). The "t60" is a measure of the decay time as the time it takes to drop 60dB after excited. You can convert bandwidth to t60 and back with the same formula (see below). We also convert bandwidth to Q and back by the way., f 61;
-#X obj 640 324 bang2imp~;
 #X text 514 83 Let's test this. The [pd analyze] subpatch below analyzes the output of the filter and sends a value when it falls under 60 dB of the attack. The analysis isn't perfect \, but it gets pretty close indeed to the default settings. As already mentioned way back \, this filter is bandpass by default and also has lowpass and highpass modes. Try it and check its help file., f 37;
 #X msg 572 288 lop;
 #X msg 582 313 bp;
 #X msg 592 340 hip;
 #X text 472 318 change modes;
 #X text 667 278 excite the resonator, f 10;
-#X connect 0 0 36 0;
+#X obj 640 324 float2imp~ 1;
+#X connect 0 0 42 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
@@ -102,7 +102,7 @@
 #X connect 33 0 1 0;
 #X connect 33 0 30 0;
 #X connect 34 0 23 0;
-#X connect 36 0 33 1;
+#X connect 37 0 33 0;
 #X connect 38 0 33 0;
 #X connect 39 0 33 0;
-#X connect 40 0 33 0;
+#X connect 42 0 33 1;
