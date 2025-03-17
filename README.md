@@ -21,7 +21,7 @@ Released: March 26th 2025 as part of **ELSE 1.0-0 RC 13** (<https://github.com/p
 
 This tutorial presents theory and practice of Live Electronics and computer music, synthesis/DSP (digital Signal Processing) topics without any prerequisite. It's aimed at newbies, dummies, enthusiasts and also experts. 
 
-This didactic work is licenced via Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0), which allows downloading and sharing with proper credit. It also forbids its usage for comercial purposes. Check the license at: <https://creativecommons.org/licenses/by-nc-nd/4.0/>.
+This didactic work is licenced via Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0), which allows downloading and sharing with proper credit. It also forbids its usage for commercial purposes. Check the license at: <https://creativecommons.org/licenses/by-nc-nd/4.0/>.
 
    This is a didactic project developed with Pure Data (or just "Pd", a.k.a. "Pd vanilla" distribution) and the ELSE library for Pd. Pd is an open source software developed by Miller Puckette - get it at <http://msp.ucsd.edu/software.html>. Note that the major forks of Pd (Pd-Extended and Purr Data) are incompatible to this tutorial (and the ELSE library). Also Access <http://puredata.info> for other resources on Pd. The official Pd mailing list is found here: <http://lists.puredata.info/listinfo/pdlist>. 
 
