@@ -13,7 +13,7 @@
 --------------------------------------------------------------------------
 
 #### Version: 1.0-0 RC-13 (Release Candidate #13): 
-Released: April 17th 2025 as part of **ELSE 1.0-0 RC 13** (<https://github.com/porres/pd-else/releases/tag/v1.0-rc13>)! 
+Released: May 2nd 2025 as part of **ELSE 1.0-0 RC 13** (<https://github.com/porres/pd-else/releases/tag/v1.0-rc13>)! 
 
 --------------------------------------------------------------------------
 
