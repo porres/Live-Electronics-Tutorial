@@ -27,7 +27,9 @@ This didactic work is licenced via Creative Commons Attribution-NonCommercial-No
 
 ​	Pure Data is adopted in this tutorial amongst other possibilities because of its accessibility, friendliness and for being a powerful didactic tool. Nonetheless, this work relies heavily in the ELSE library for Pure Data, also developed by Alexandre Torres Porres, the author of this tutorial. 
 
-   This project started in 2008 as part of a textbook for a computer music course with included examples in Pd. In 2009, the author presented a paper about it in the 3rd International Pure Data Convention. Currently, this is solely presented as example patches that the author uses in his courses/workshops. The plan now is to write a book accompanied by these examples. Originally developed in brazilian portuguese and relying on Pd Extended 0.42-5 for years. In 2018 this has been rewritten from scratch and translated into english. It was also ported to rely only in objects from the ELSE external library and the newer Pd Vanilla versions.
+   This project started in 2008 as part of a textbook for a computer music course with included examples in Pd. In 2009, the author presented a paper about it in the 3rd International Pure Data Convention. Currently, this is solely presented as example patches that the author uses in his courses/workshops. The plan now is to write a book accompanied by these examples.
+   
+   This was originally developed in brazilian portuguese and relied on Pd Extended 0.42-5 for years. In 2018 this has been rewritten from scratch and translated into english. It was also ported to rely only in objects from the ELSE external library and the newer Pd Vanilla versions.
 
    There are plans to include more topics, which also depends on the software development of the ELSE library to include more examples. Since the ELSE library is still in an early and unstable stage of development, some objects may change in functionality, new objects are being developed and others might even be deleted until a final version is out. If so, future updates of this didactc material will reflect these changes.  
 
