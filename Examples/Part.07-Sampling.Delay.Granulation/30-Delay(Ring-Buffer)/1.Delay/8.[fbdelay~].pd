@@ -1,4 +1,4 @@
-#N canvas 343 24 908 579 12;
+#N canvas 257 61 908 579 12;
 #X declare -path else;
 #X obj 87 150 noise~;
 #X obj 132 190 *~;
@@ -27,7 +27,7 @@
 #X obj 581 434 nbx 5 14 -1e+37 1e+37 0 0 empty Hz empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
 #X text 557 433 Hz;
 #X text 716 408 feedback index;
-#N canvas 660 242 670 398 pm-fb-filtered 0;
+#N canvas 571 215 670 398 pm-fb-filtered 1;
 #X obj 110 331 outlet~;
 #X obj 142 198 *~;
 #X obj 291 168 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
