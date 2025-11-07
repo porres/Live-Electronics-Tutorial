@@ -1,4 +1,4 @@
-#N canvas 331 28 896 640 12;
+#N canvas 331 38 896 640 12;
 #X declare -path else;
 #X floatatom 614 192 5 -1 1 0 - a - 0;
 #X floatatom 657 239 5 -1 1 0 - b - 0;
@@ -119,12 +119,12 @@
 #X text 450 47 Note that it acts as a reverberator \, much like the allpass reverberator \, but it does filter the input sound (unlike an allpass). Note how the white noise input becomes a pitched output in this process \, and how the fundamental pitch depends on the delay time period., f 52;
 #X text 35 278 The difference to [allpass.rev~] is the independent coefficients for the input \, feedforward and feedback lines. This is also similar and basically the same thing as [comb.filt~] \, but is more flexible and takes a delay period in ms instead., f 53;
 #X text 35 364 The subpatch below implements a comb reverberator with native objects \, and to the right we have an example with the external from ELSE. Check its help file for more information., f 53;
-#X text 463 422 To understand the differences \, the decay parameter in [comb.filt~] controls both the feedforward (b) and feedback (c) gains \, and the input gain parameter (a) is always 1!, f 53;
+#X text 463 422 To understand the differences \, the decay parameter in [comb.filt~] controls both the feedforward (b) and feedback (c) gains \, and the input gain parameter (a) is always 1!, f 54;
 #X text 50 37 The comb reverberator has a similar formula to an allpass. The [comb.rev~] object from ELSE has the following diagram:, f 44;
-#X text 463 561 Filters and reverberators are implemented with delay lines. And let's remember how this object was already presented in this tutorial to implement variable delay effects \, such as flanger and chorus., f 53;
 #X obj 698 12 declare -path else;
 #X obj 528 349 out~;
-#X text 463 488 The fact that a so called "filter" and "reverberator" are basically the same animal can again reinforce how the concept of filters and reverberators are intertwined., f 53;
+#X text 463 488 The fact that a so called "filter" and "reverberator" are basically the same animal can again reinforce how the concept of filters and reverberators are intertwined., f 54;
+#X text 463 551 Filters and reverberators are implemented with delay lines. And let's remember how this object was already presented in this tutorial to implement variable delay effects \, such as flanger and chorus. By the way \, we'll revisit the flanger soon next., f 54;
 #X connect 0 0 5 0;
 #X connect 0 0 52 2;
 #X connect 1 0 6 0;
@@ -137,7 +137,7 @@
 #X connect 9 0 55 0;
 #X connect 47 0 51 0;
 #X connect 47 0 56 0;
-#X connect 52 0 67 0;
+#X connect 52 0 66 0;
 #X connect 53 0 47 1;
 #X connect 57 0 9 0;
 #X connect 58 0 52 0;

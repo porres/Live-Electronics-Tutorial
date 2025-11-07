@@ -1,25 +1,22 @@
-#N canvas 480 83 858 571 12;
+#N canvas 446 69 858 647 12;
 #X declare -path else;
-#X obj 517 136 rzero_rev~;
-#X text 597 135 =;
-#X text 598 111 =;
-#X obj 529 110 rpole~;
-#X obj 584 84 v a;
-#X obj 178 175 rpole~;
-#X obj 178 150 rzero_rev~;
-#X obj 275 126 hsl 128 15 0 0.9999 0 0 \$0-a empty empty -2 -8 0 10
--228856 -1 -1 0 1;
-#X floatatom 272 148 5 0 0 0 - - -;
+#X obj 508 142 rzero_rev~;
+#X text 588 141 =;
+#X text 589 117 =;
+#X obj 520 116 rpole~;
+#X obj 87 198 rpole~;
+#X obj 87 173 rzero_rev~;
+#X obj 184 149 hsl 128 15 0 0.9999 0 0 \$0-a empty empty -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X floatatom 181 171 6 0 0 0 - - - 0;
 #N canvas 172 85 1026 565 (subpatch) 0;
-#X obj 101 101 cnv 15 808 192 empty empty empty 20 12 0 14 -1 -262144
-0;
+#X obj 101 101 cnv 15 808 192 empty empty empty 20 12 0 14 #000000 #fcfcfc 0;
 #X text 210 131 0.05;
-#X obj 106 201 cnv 15 798 83 empty empty empty 20 12 0 14 -257983 -66577
-0;
-#X obj 106 115 cnv 15 798 85 empty empty empty 20 12 0 14 -241340 -66577
-0;
+#X obj 106 201 cnv 15 798 83 empty empty empty 20 12 0 14 #f8f8f8 #404040 0;
+#X obj 106 115 cnv 15 798 85 empty empty empty 20 12 0 14 #e8e8ec #404040 0;
 #N canvas 391 118 975 563 (subpatch) 0;
 #X array \$0-Phase 400 float 0;
+#A color 0;
+#A width 1;
 #X coords 0 1 399 -1 800 170 1 0 0;
 #X restore 105 114 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
@@ -50,15 +47,14 @@
 #X coords 0 1 100 -1 78 170 1;
 #X restore 819 114 graph;
 #X coords 0 -1 1 1 810 194 2 100 100;
-#X restore 28 299 pd;
-#X text 8 303 pi;
-#X text 2 470 -pi;
-#X text 13 389 0;
+#X restore 28 359 pd;
+#X text 8 363 pi;
+#X text 2 530 -pi;
+#X text 13 449 0;
 #N canvas 279 91 377 231 plot 0;
 #X text 45 83 Loop;
 #N canvas 385 89 501 411 H(z) 0;
-#X obj 43 79 cnv 15 400 120 empty empty empty 20 12 0 14 -216246 -66577
-0;
+#X obj 43 79 cnv 15 400 120 empty empty empty 20 12 0 14 #d0c8d4 #404040 0;
 #X text 275 141 H(z) =;
 #X obj 53 44 inlet;
 #X obj 98 313 outlet;
@@ -66,8 +62,7 @@
 #X text 333 156 1 - a*Z-1;
 #X text 337 132 -a + Z-1;
 #X obj 98 214 -;
-#X obj 53 90 expr -a + cosW_\$0[$f1] \; sinW_\$0[$f1] \; 1 - a * cosW_\$0[$f1]
-\; -a * sinW_\$0[$f1];
+#X obj 53 90 expr -a + cosW_\$0[$f1] \; sinW_\$0[$f1] \; 1 - a * cosW_\$0[$f1] \; -a * sinW_\$0[$f1];
 #X obj 143 162 car2pol;
 #X obj 53 159 car2pol;
 #X obj 98 275 wrap2 -1 1;
@@ -197,36 +192,34 @@
 #X connect 5 1 8 1;
 #X connect 6 0 3 0;
 #X connect 7 0 5 0;
-#X restore 786 279 pd plot;
-#X obj 178 100 sig~ 100;
-#X text 140 497 0.05;
-#X text 40 497 0.02;
-#X text 744 496 10;
-#X text 821 497 20;
-#X text 669 496 5;
-#X text 566 496 2;
-#X text 488 497 1;
-#X text 402 497 0.5;
-#X text 300 497 0.2;
-#X text 220 497 0.1;
-#X obj 515 170 fexpr~ -a * $x + $x[-1] + a * $y[-1];
-#X obj 619 111 fexpr~ $x + a * $y[-1];
-#X obj 616 136 fexpr~ -a * $x + $x[-1];
-#X floatatom 357 234 0 0 0 0 - - -;
-#X floatatom 438 234 0 0 0 0 - - -;
-#X text 440 259 Zero;
-#X obj 178 124 bl.saw~;
-#X obj 178 215 out~;
-#X text 29 276 Phase Response;
-#X obj 272 178 f2s~ 10;
-#X text 320 153 coefficient;
-#X text 552 45 These filter equations and how to merge them in [fexpr~]:
-, f 32;
-#X text 358 258 Pole;
-#X text 452 210 Pole/Zero location;
-#N canvas 474 178 355 170 diagram 0;
-#X obj 19 23 cnv 15 310 120 empty empty empty 20 12 0 14 -228856 -66577
-0;
+#X restore 786 339 pd plot;
+#X obj 87 123 sig~ 100;
+#X text 140 557 0.05;
+#X text 40 557 0.02;
+#X text 744 556 10;
+#X text 821 557 20;
+#X text 669 556 5;
+#X text 566 556 2;
+#X text 488 557 1;
+#X text 402 557 0.5;
+#X text 300 557 0.2;
+#X text 220 557 0.1;
+#X obj 506 176 fexpr~ -a * $x + $x[-1] + a * $y[-1];
+#X obj 610 117 fexpr~ $x + a * $y[-1];
+#X obj 607 142 fexpr~ -a * $x + $x[-1];
+#X floatatom 243 275 9 0 0 0 - - - 0;
+#X floatatom 324 275 8 0 0 0 - - - 0;
+#X text 326 300 Zero;
+#X obj 87 147 bl.saw~;
+#X obj 87 238 out~;
+#X text 29 336 Phase Response;
+#X obj 181 201 f2s~ 10;
+#X text 230 172 coefficient;
+#X text 552 45 These filter equations and how to merge them in [fexpr~]:, f 32;
+#X text 244 299 Pole;
+#X text 338 251 Pole/Zero location;
+#N canvas 391 176 355 170 diagram 0;
+#X obj 19 23 cnv 15 310 120 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
 #X text 36 109 y(n) = -a * x(n) + x(n-1) + a * y(n-1);
 #X text 72 37 |;
 #X text 72 49 |;
@@ -260,17 +253,15 @@
 #X text 161 71 -(*a)-;
 #X text 32 28 x[n] ---(*-a)--(+)--(+)----------- y[n];
 #X text 107 71 ---;
-#X restore 650 219 pd diagram;
+#X restore 519 282 pd diagram;
 #N canvas 554 126 283 181 transfer_function 0;
-#X obj 28 56 cnv 15 220 90 empty empty empty 20 12 0 14 -261234 -66577
-0;
+#X obj 28 56 cnv 15 220 90 empty empty empty 20 12 0 14 #fcc4c4 #404040 0;
 #X text 71 99 H(z) =;
 #X text 128 90 -a + z^-1;
 #X text 112 96 ________________;
 #X text 125 112 1 - a * z^-1;
-#N canvas 616 23 501 693 H(z) 0;
-#X obj 160 548 cnv 15 220 90 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#N canvas 616 38 501 693 H(z) 0;
+#X obj 160 548 cnv 15 220 90 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 187 588 H(z) =;
 #X text 244 579 -a + z^-1;
 #X text 169 276 X(z) =;
@@ -298,28 +289,20 @@
 #X text 86 118 Transfer Function notation:;
 #X restore 194 37 pd H(z);
 #X text 39 65 Transfer Function:;
-#X restore 592 249 pd transfer_function;
-#X text 221 534 We don't plot the amplitudes because they are unchanged.
-, f 58;
+#X restore 607 282 pd transfer_function;
+#X text 235 594 We don't plot the amplitudes because they are unchanged., f 58;
 #X obj 651 9 declare -path else;
-#X text 41 14 All filters promote phase distortion \, but the allpass
-filter only promotes that. A 1st order allpass can be implemented with
-[rzero_rev~] & [rpole~]. The Pole & Zero effect on the amplitude gets
-cancelled out \, so only the phase is affected and distorted or shifted!
-, f 66;
 #N canvas 268 208 449 335 Pole-Zero 0;
 #X text 249 268 zero 1;
 #X obj 357 180 v kIm_\$0;
 #X obj 101 182 v kRe_\$0;
 #X obj 65 247 outlet;
 #X obj 245 247 outlet;
-#X obj 101 138 expr if($f1 >= 0 \, sqrt(abs($f1)) \, 0) \; if($f1 <
-0 \, sqrt(abs($f1)) \, 0);
+#X obj 101 138 expr if($f1 >= 0 \, sqrt(abs($f1)) \, 0) \; if($f1 < 0 \, sqrt(abs($f1)) \, 0);
 #X obj 65 216 expr ($f1 + kRe_\$0) / 2;
 #X obj 245 216 expr ($f1 + kRe_\$0) / 2;
 #X obj 65 32 r \$0-a;
-#X obj 65 63 expr $f1 \; pow($f1 \, 2) \; -1 / -$f1 \; pow(1 / -$f1
-\, 2);
+#X obj 65 63 expr $f1 \; pow($f1 \, 2) \; -1 / -$f1 \; pow(1 / -$f1 \, 2);
 #X text 70 267 pole 1;
 #X connect 5 0 2 0;
 #X connect 5 1 1 0;
@@ -330,16 +313,40 @@ cancelled out \, so only the phase is affected and distorted or shifted!
 #X connect 9 1 5 0;
 #X connect 9 2 7 0;
 #X connect 9 3 5 0;
-#X restore 357 210 pd Pole-Zero;
-#X connect 4 0 3 1;
-#X connect 4 0 0 1;
-#X connect 5 0 32 0;
-#X connect 6 0 5 0;
-#X connect 7 0 8 0;
-#X connect 8 0 34 0;
-#X connect 14 0 31 0;
-#X connect 31 0 6 0;
-#X connect 34 0 6 1;
-#X connect 34 0 5 1;
-#X connect 44 0 28 0;
-#X connect 44 1 29 0;
+#X restore 243 251 pd Pole-Zero;
+#X text 41 14 All filters promote phase distortion \, but the allpass filter only promotes that. A 1st order allpass can be implemented with [rzero_rev~] & [rpole~]. The Pole & Zero effect on the amplitude gets cancelled out \, so only the phase is affected and distorted/shifted!;
+#N canvas 1027 204 392 356 biquad~ 0;
+#X obj 115 202 biquad~;
+#X obj 177 126 pack f f;
+#X obj 230 97 * -1;
+#X obj 177 101 t f f;
+#X msg 177 156 \$1 0 \$2 1 0;
+#X obj 177 46 r a;
+#X floatatom 177 74 5 0 0 0 - - - 0;
+#X obj 115 127 noise~;
+#X obj 115 246 out~;
+#X connect 0 0 8 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 0;
+#X connect 3 1 2 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 7 0 0 0;
+#X restore 666 223 pd biquad~;
+#X obj 575 90 r a;
+#X text 518 217 here's how to do it with [biquad~], f 17;
+#X text 637 223 -->;
+#X connect 4 0 31 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 33 0;
+#X connect 13 0 30 0;
+#X connect 30 0 5 0;
+#X connect 33 0 5 1;
+#X connect 33 0 4 1;
+#X connect 42 0 27 0;
+#X connect 42 1 28 0;
+#X connect 45 0 3 1;
+#X connect 45 0 0 1;
