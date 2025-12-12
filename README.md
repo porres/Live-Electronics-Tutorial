@@ -12,8 +12,8 @@
 
 --------------------------------------------------------------------------
 
-#### Version: 1.0-0 RC-15 (Release Candidate #15 test 1): 
-Released: October 29th 2025 as part of **ELSE 1.0-0 RC 15** (<https://github.com/porres/pd-else/releases/tag/v1.0-rc15>)! 
+#### Version: 1.0-0 RC-15 (Release Candidate #15): 
+Just get it as part of ELSE (<https://github.com/porres/pd-else/releases/>)! 
 
 --------------------------------------------------------------------------
 
