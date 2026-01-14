@@ -1,8 +1,7 @@
-#N canvas 645 57 569 416 12;
+#N canvas 700 55 500 658 12;
 #X declare -path else;
-#X obj 299 286 rev1~;
-#X obj 245 192 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
+#X obj 318 290 rev1~;
+#X obj 264 196 bng 30 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
 #X obj 36 257 outlet~;
@@ -27,10 +26,9 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 245 235 pd test;
-#X obj 299 317 out~;
-#X obj 129 207 bng 30 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
+#X restore 264 239 pd test;
+#X obj 318 321 out~;
+#X obj 98 191 bng 30 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000;
 #N canvas 797 186 322 336 test 0;
 #X obj 36 155 osc~;
 #X obj 36 257 outlet~;
@@ -55,21 +53,29 @@
 #X connect 8 0 7 0;
 #X connect 9 0 5 0;
 #X connect 10 0 3 0;
-#X restore 129 250 pd test;
-#X obj 129 306 out~;
-#X obj 315 211 initmess 90;
-#X obj 315 246 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 90 256;
-#X text 102 69 Allpass filters can be used in series to implement a
-reverb model. The [rev1~] abstraction that comes with Pd Vanilla uses
-10 stages of allpass filters. It's a very simple reverb with only a
-decay parameter \, which indicates how much dB the output has after
-1 second in percentage of dB. Check its help file., f 54;
-#X obj 341 23 declare -path else;
+#X restore 98 234 pd test;
+#X obj 98 290 out~;
+#X obj 334 215 initmess 90;
+#X obj 334 250 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
+#X obj 300 27 declare -path else;
+#X text 61 73 Allpass filters can be used in series to implement a reverb model. The [rev1~] abstraction that comes with Pd Vanilla uses 10 stages of allpass filters in series. It's a very simple reverb with only a decay parameter \, which indicates how much dB the output has after 1 second in percentage of dB. Check its help file., f 55;
+#X obj 264 561 out~;
+#X obj 264 409 allpass.rev~ 13 0.6 1;
+#X obj 264 439 allpass.rev~ 33 0.6 1;
+#X obj 264 469 allpass.rev~ 51 0.6 1;
+#X obj 264 498 allpass.rev~ 77 0.6 1;
+#X obj 264 528 allpass.rev~ 99 0.6 1;
+#X text 61 429 To the right we have a cascade of five allpass reverberators in series with ELSE objects. It's as simple as that., f 23;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
+#X connect 2 0 12 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 7 0 8 0;
 #X connect 8 0 0 1;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 11 0;

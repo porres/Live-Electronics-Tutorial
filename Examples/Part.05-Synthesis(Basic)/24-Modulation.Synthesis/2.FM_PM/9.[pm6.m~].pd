@@ -4,7 +4,14 @@
 #X obj 622 327 pic 0 ./files/ex6.gif empty empty 0 0;
 #X obj 54 30 else/keyboard 17 80 4 2 0 0 empty empty;
 #X obj 54 200 else/pm6.m~;
-#A saved idx 0 0 0 0 0 0 36 0 0 0 0 0 0 0 0 0 0 0 0 0 49 0 0 0 0 0 0 0 0 27 0 0 0 0 41 0 \; vol 0 96 0 96 0 98 \; ratio 1 1 1 1 1 1 \; detune 0 0 0 0 0 0 \; pan 0 0 0 0 0 0 \; transp 0 \;;
+#A saved ALL idx 0 0 0 0 0 0 50 0 0 0 0 0 0 0 0 0 0 0 0 0 47 0 0 0 0 0 0 0 0 59 0 0 0 0 78 0 \; vol 0 100 0 100 0 100 \; ratio 1 1 1 1 1 1 \; detune 0 0 0 0 0 0 \; pan 0 0 0 0 0 0 \; transp 0 \; gui 1 \;;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #A saved;
 #A saved;
 #A saved;

@@ -1,4 +1,4 @@
-#N canvas 181 23 1041 607 12;
+#N canvas 181 38 1041 607 12;
 #X declare -path else;
 #X floatatom 439 134 5 0 0 0 - freq5 - 0;
 #X text 477 134 freq_5;
@@ -50,7 +50,7 @@
 #X obj 268 187 sine~;
 #X obj 279 160 *~;
 #X obj 279 132 sine~;
-#X text 194 509 You can see we wer able to recreate this example with [sine~] objects and also a [xmod~] object for the row with feedback modulation \, but a single [pm6~] object can recreate any of these 32 patches or even more countless combinations. Try to do it as a homework., f 75;
+#X text 194 509 You can see we were able to recreate this example with [sine~] objects and also a [xmod~] object for the row with feedback modulation \, but a single [pm6~] object can recreate any of these 32 patches or even more countless combinations. Try to do it as a homework., f 75;
 #X connect 0 0 26 0;
 #X connect 2 0 26 1;
 #X connect 4 0 26 2;
