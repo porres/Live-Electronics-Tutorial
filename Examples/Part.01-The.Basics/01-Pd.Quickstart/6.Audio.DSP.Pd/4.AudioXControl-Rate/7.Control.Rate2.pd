@@ -47,6 +47,8 @@
 #X text 435 536 The same unperfect result is given by Pd's native [threshold~] \, which reports bangs when the signal exceeds a threshold value \, and another when it falls back below., f 63;
 #X obj 753 123 float2imp~;
 #X text 447 136 The [float2imp~] object from ELSE is based on [vline~] so it can generate impulses with sample accuracy., f 36;
+#X obj 142 590 elapsed;
+#X text 64 590 see also:;
 #X connect 0 0 16 0;
 #X connect 1 0 0 0;
 #X connect 2 0 33 0;

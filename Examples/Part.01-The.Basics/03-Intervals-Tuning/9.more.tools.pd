@@ -1,4 +1,4 @@
-#N canvas 475 38 638 590 12;
+#N canvas 475 38 638 641 12;
 #X declare -path else;
 #X obj 421 43 declare -path else, f 19;
 #X obj 373 224 scala;
@@ -25,6 +25,10 @@
 #X obj 347 400 intervals;
 #X listbox 347 434 28 0 0 0 - - - 0;
 #X text 365 468 Get interval names;
+#X msg 379 524 E4 C#3 Ab4;
+#X listbox 379 587 13 0 0 0 - - - 0;
+#X obj 379 554 sortnote;
+#X text 250 589 sorted notes --->;
 #X connect 2 0 16 0;
 #X connect 3 0 17 0;
 #X connect 6 0 4 0;
@@ -37,3 +41,5 @@
 #X connect 12 0 11 0;
 #X connect 16 0 3 0;
 #X connect 22 0 23 0;
+#X connect 25 0 27 0;
+#X connect 27 0 26 0;
