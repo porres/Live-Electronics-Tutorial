@@ -1,4 +1,4 @@
-#N canvas 428 49 766 538 12;
+#N canvas 360 47 766 538 12;
 #X declare -path else;
 #X obj 447 333 *~;
 #X obj 563 336 vsl 18 100 0 1 0 0 ewtwet wefwert empty 0 -9 0 10 #dcdcdc #000000 #000000 0 1;

@@ -6,7 +6,7 @@
 #X obj 139 278 pack;
 #X obj 180 399 osc~ 440;
 #X obj 241 526 out~;
-#X obj 139 39 tgl 18 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 139 35 tgl 21 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000 0 1;
 #X msg 369 304 250;
 #X msg 332 304 100;
 #X text 290 303 decay;

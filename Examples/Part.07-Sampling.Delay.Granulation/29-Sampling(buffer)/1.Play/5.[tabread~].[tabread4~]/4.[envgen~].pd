@@ -1,4 +1,4 @@
-#N canvas 304 100 1025 728 12;
+#N canvas 310 34 1025 728 12;
 #X declare -path else;
 #X obj 182 224 r \$0-size;
 #X obj 143 290 random;
@@ -62,6 +62,7 @@
 #X obj 55 259 t b b b;
 #X obj 269 420 t b b f;
 #X msg 315 447 duration \$1;
+#X text 209 670 As an exercize on how to do this in a pure Vanilla way \, you can adapt this patch to use [vline~] instead!, f 55;
 #X connect 0 0 1 1;
 #X connect 0 0 2 1;
 #X connect 0 0 24 0;

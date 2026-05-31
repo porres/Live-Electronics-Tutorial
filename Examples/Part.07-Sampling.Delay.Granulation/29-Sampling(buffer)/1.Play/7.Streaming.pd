@@ -1,0 +1,18 @@
+#N canvas 426 37 494 595 12;
+#X declare -path else;
+#X obj 277 27 declare -path else;
+#X obj 153 261 tgl 20 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000 0 1;
+#X msg 93 196 open https://radio.plaza.one/ogg;
+#X msg 122 226 open http://netpd.org:8010/netpd.mp3;
+#X obj 122 354 out~;
+#X obj 122 303 streamin~ 2;
+#X text 101 168 first open live stream from links;
+#X text 183 256 Then start playing \, restart playing if you change stream, f 28;
+#X obj 201 524 streamout~;
+#X text 83 440 The [streamout~] object streams ogg files via an icecast server. This requires you to really know what you're doing by setting a server up. Check the help file of both objects please., f 46;
+#X text 90 64 While we're talking about playing files \, ELSE also has objects that support streaming audio from and to the network. In this example we stream from the web. It supports AAC \, AIF \, CAF \, FLAC \, MP3 \, OGG \, OPUS & WAV., f 45;
+#X connect 1 0 5 0;
+#X connect 2 0 5 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 5 1 4 1;

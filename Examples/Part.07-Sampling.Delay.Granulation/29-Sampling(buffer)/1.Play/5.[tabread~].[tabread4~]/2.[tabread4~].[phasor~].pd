@@ -1,4 +1,4 @@
-#N canvas 392 46 960 711 12;
+#N canvas 353 42 960 702 12;
 #X declare -path else;
 #X obj 723 328 phasor~;
 #X obj 723 387 tabread4~ \$0-buffer;
@@ -35,13 +35,13 @@
 #X obj 166 343 sample~ \$0-buffer sax.wav;
 #X text 510 57 We use a ratio value to set the speed \, this can also be calculated from cents or a percentage value. Then \, all you need is to multiply the ratio by the frequency in hertz. Note that negative percentage/ratio values are possible and that they play the file backwards., f 57;
 #X text 30 170 You can also play files with a different sample rate than Pd is running \, because you can compensate the difference by setting a difference speed., f 64;
-#X text 30 17 The [tabplayer~] object from ELSE plays a buffer at different speeds. In vanilla \, you need to read a buffer with [tabread4~] \, which performs interpolation., f 64;
 #X text 30 65 Because when you set a reading speed such as 1.5x (150% faster) \, it means that the reading point will fall in between samples every other sample \, thus you need to interpolate to get a value that better corresponds to that missing step in between. We'll see the interpolation type of [tabread4~] a bit later. By the way \, [tabplayer~] offers the same interpolation type as [tabread4~]., f 64;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X coords 0 1 100 -1 385 141 1;
 #X restore 351 533 graph;
 #X text 254 405 <-- sample rate;
 #X text 30 218 In this example we use [phasor~] to read from [tabread4~]. The [phasor~] object is used to play the sample in a loop \, and we need to find the frequency corresponding to the sound file's period. We do that by dividing the sample rate of the file (even if it's different than Pd's) by the number of samples - both information are given by [sample~] - one could use [soundfiler] or [sfload] instead (the latter in which [sample~] is based on)., f 64;
+#X text 30 17 The [tabplayer~] object from ELSE plays a buffer at different speeds internally. In vanilla \, you need to read a buffer with [tabread4~] \, which performs interpolation., f 64;
 #X connect 0 0 16 0;
 #X connect 1 0 11 0;
 #X connect 2 0 6 0;
