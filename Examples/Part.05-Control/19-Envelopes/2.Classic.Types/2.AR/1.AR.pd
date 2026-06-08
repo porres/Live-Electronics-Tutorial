@@ -30,14 +30,11 @@
 #X text 755 489 0;
 #X text 755 390 1;
 #X obj 735 364 s2f~;
-#X obj 591 168 bng 21 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000;
+#X obj 587 200 bng 21 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000;
 #X msg 636 118 0 750 1 250 0;
-#X msg 532 253 legato \$1;
-#X obj 532 226 tgl 19 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000 0 1;
-#X obj 636 310 envgen~;
 #X obj 636 87 loadbang;
-#X msg 653 272 retrigger 20;
 #X text 618 21 You can also use [function] in conjunction with [envgen~]., f 30;
+#X obj 636 310 envgen~ -legato;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 5 0 1 1;
@@ -56,9 +53,6 @@
 #X connect 29 0 23 0;
 #X connect 30 0 34 0;
 #X connect 31 0 22 0;
-#X connect 32 0 34 0;
-#X connect 33 0 32 0;
+#X connect 32 0 31 0;
 #X connect 34 0 24 1;
 #X connect 34 0 29 0;
-#X connect 35 0 31 0;
-#X connect 36 0 34 0;
