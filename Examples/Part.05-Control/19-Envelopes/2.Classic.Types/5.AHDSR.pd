@@ -27,7 +27,7 @@
 #X text 535 75 a timed gate;
 #X obj 706 271 numbox~ 6 12 100 #C0C0C4 #440008 10 0 0 0;
 #X obj 562 217 envgen~ -suspoint 3 -curve 1 100 1 500 1 250 0.5 200 0, f 28;
-#X text 58 346 Now \, to the right \, with an exponential curve and a signal "gate" input to control the sustain stage. Note that in this case you can also retrigger with an impulse in the right inlet when sustaining., f 51;
+#X text 55 338 Now \, to the right \, with an exponential curve and a signal "gate" input to control the sustain stage. Note that in this case you can also retrigger with an impulse in the right inlet when sustaining. By now and from now on \, also as an exercize \, you should be able to create these examples also using [function]., f 53;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 5 0 7 0;
