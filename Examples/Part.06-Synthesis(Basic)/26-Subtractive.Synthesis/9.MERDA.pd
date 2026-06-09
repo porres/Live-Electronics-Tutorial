@@ -1,6 +1,6 @@
-#N canvas 288 25 1191 760 12;
+#N canvas 232 61 1177 760 12;
 #X declare -path else;
-#X obj 998 65 declare -path else;
+#X obj 973 66 declare -path else;
 #X obj 46 173 keyboard 17 80 4 1 0 0 empty empty;
 #X obj 46 142 note.in;
 #X obj 46 269 mono~ 25, f 30;
@@ -156,7 +156,7 @@
 #A saved;
 #A saved;
 #X obj 640 258 voices~ 4;
-#X text 636 57 And this is a polyphonic version that we can implement by just having [voices~] instead of [mono~]., f 44;
+#X text 625 57 And this is a polyphonic version that we can implement by just having [voices~] instead of [mono~]., f 44;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 9 0;

@@ -1,0 +1,7 @@
+#N canvas 417 38 828 698 12;
+#X declare -path else;
+#X obj 657 32 declare -path else;
+#X text 34 31 Amplitude Modulation (AM):, f 32;
+#X text 114 249 random modulation of partials and shit..., f 52;
+#X text 154 354 also more examples of that in additive synthesis?;
+#X text 208 484 another example with multichannel and shit???;

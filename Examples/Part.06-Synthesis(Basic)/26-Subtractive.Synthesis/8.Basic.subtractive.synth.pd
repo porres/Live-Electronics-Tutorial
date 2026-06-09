@@ -1,4 +1,4 @@
-#N canvas 472 25 566 841 12;
+#N canvas 472 38 698 853 12;
 #X declare -path else;
 #X obj 371 129 declare -path else;
 #X obj 46 173 keyboard 17 80 4 1 0 0 empty empty;
@@ -34,6 +34,7 @@
 #X floatatom 86 521 4 1 20 0 - - - 0;
 #X text 50 15 In this example we combine keyboard tracking \, envelope and LFO as modulation sources. The modulation amount of each is independent. The envelope and LFO amount are both directly in cents. There's also a [drive~] before the filter and this structure is a very basic subtractive synth. In the end we add some reverb. Of course \, many subtractive synths also incorporate many effects like chorus \, flanging \, delay \, reverb \, etc..., f 66;
 #X obj 95 637 moog~ 0 0.75 0.5;
+#X text 394 526 HINT: We've had an example earlier before where we used keyboard tracking to set a ratio multiplier for the envelopes. You can expand on this idea and also have the keyboard tracking affect the the envelope time for the filter and/or amplitude modulation., f 26;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
 #X connect 4 0 30 0;

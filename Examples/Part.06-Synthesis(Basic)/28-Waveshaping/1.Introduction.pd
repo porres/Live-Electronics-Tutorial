@@ -1,4 +1,4 @@
-#N canvas 366 83 857 635 12;
+#N canvas 366 83 870 758 12;
 #X declare -path else;
 #X obj 101 246 nbx 5 19 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 14 #dcdcdc #000000 #000000 0 256;
 #X obj 104 220 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
@@ -49,6 +49,8 @@
 #X obj 301 118 cnv 15 198 138 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-shape 441 float 0;
+#A color 0;
+#A width 1;
 #X coords 0 1.1 440 -1.1 200 140 1 0 0;
 #X restore 300 117 graph;
 #X obj 117 299 tabwrite~ \$0-shape;
@@ -97,6 +99,8 @@
 #X text 332 342 TRANSFER FUNCTION, f 8;
 #X text 307 348 <==;
 #X text 487 419 The [shaper~] object \, from ELSE \, is optimized for waveshaping and automatically rescales audio input signals (between -1 and 1) to the indices of a given table. Here it uses the same transfer function., f 48;
+#X obj 300 658 cnv 19 126 76 empty empty empty 20 12 0 12 #ff0400 #404040 0;
+#X text 235 683 modulation and filterin and filtering....;
 #X connect 0 0 11 0;
 #X connect 1 0 0 0;
 #X connect 3 0 1 0;

@@ -18,7 +18,7 @@
 #X obj 199 577 meter8~;
 #X obj 191 380 op +;
 #X obj 263 384 rand.f -n 8 -1 1;
-#X obj 199 514 rampnoise~ -ch 8 1;
+#X obj 199 504 rampnoise~ -ch 8 1;
 #X obj 80 312 initmess 36;
 #X text 51 73 In this example we have a knob to set an overall detruning factor \, multiplied by random values within the -1 to 1 range. The new idea is to set the gain of each oscillator and have them spaced in the stereo field., f 53;
 #X text 51 150 For the gain factor \, we're actually modulating the amplitudes of each oscillator by a multichannel low frequency noise (random ramps at the rate of 1 Hz)., f 53;
