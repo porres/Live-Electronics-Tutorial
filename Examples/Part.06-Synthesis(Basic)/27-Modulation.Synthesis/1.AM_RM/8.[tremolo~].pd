@@ -24,8 +24,8 @@
 #X obj 264 266 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
 #X text 316 546 0;
 #X text 315 447 1;
-#X text 425 461 In the example on left \, you could also try another waveform such as a triangular oscillator (such as [tri~]) for the modulating signal.;
-#X text 425 515 Note that if you increase the frequency you just have a plain "classic amplitude modulation" example and generate sided band partials., f 59;
+#X text 425 438 In the example on left \, you could also try another waveform such as a triangular oscillator (such as [tri~]) for the modulating signal.;
+#X text 425 492 Note that if you increase the frequency you just have a plain "classic amplitude modulation" example and generate sided band partials., f 59;
 #X obj 264 340 f2s~ 10;
 #X obj 291 424 s2f~;
 #X text 462 53 The [tremolo~] object \, from ELSE \, is an abstraction based on this idea \, but the implementation is a bit different (without [rescale~]). It has an internal sine wave oscillator and you can set the frequency and depth. With a depth level of 1 \, it is basically performs Amplitude Modulation., f 57;

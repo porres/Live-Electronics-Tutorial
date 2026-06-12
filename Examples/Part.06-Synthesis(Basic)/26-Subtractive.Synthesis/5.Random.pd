@@ -64,7 +64,6 @@
 #X obj 289 441 rampnoise~ 0.75;
 #X text 304 419 Drive;
 #X obj 289 473 rescale~ 0 0.5;
-#X text 124 576 Note that [moog~] object has a buil-in overdrive feature., f 29;
 #X connect 0 0 1 0;
 #X connect 1 0 19 0;
 #X connect 3 0 14 0;
