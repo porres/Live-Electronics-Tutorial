@@ -1,6 +1,6 @@
-#N struct 1009-slot float x float y float slotsize float color float width float bordercolor;
 #N canvas 462 70 839 548 12;
 #X declare -path else;
+#N struct \$0-slot float x float y float slotsize float color float width float bordercolor;
 #X obj 665 19 declare -path else;
 #X obj 99 355 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000;
 #X floatatom 211 294 3 0 0 0 - - - 0;
@@ -48,8 +48,8 @@
 #X obj 459 427 player~ 1 dholak.flac, f 11;
 #X obj 546 427 player~ 1 bagal.flac, f 10;
 #X obj 148 355 player~ 1 dholak.flac;
-#X obj 148 207 tempo 60 -mul 4;
-#X obj 586 256 tempo 60 -mul 4;
+#X obj 148 207 tempo -mul 4 60;
+#X obj 586 256 tempo -mul 4 60;
 #X connect 2 0 10 2;
 #X connect 3 0 47 0;
 #X connect 5 0 10 0;

@@ -1,10 +1,10 @@
-#N canvas 423 38 818 642 12;
+#N canvas 423 38 819 666 12;
 #X declare -path else;
 #X obj 625 55 declare -path else;
 #X obj 622 327 pic 0 ./files/ex6.gif empty empty 0 0;
 #X obj 54 30 else/keyboard 17 80 4 2 0 0 empty empty;
 #X obj 54 200 else/pm6.m~;
-#A saved ALL idx 0 0 0 0 0 0 50 0 0 0 0 0 0 0 0 0 0 0 0 0 47 0 0 0 0 0 0 0 0 59 0 0 0 0 78 0 \; vol 0 100 0 100 0 100 \; ratio 1 1 1 1 1 1 \; detune 0 0 0 0 0 0 \; pan 0 0 0 0 0 0 \; transp 0 \; gui 1 \;;
+#A saved ALL idx 0 0 0 0 0 0 30 0 0 0 0 0 0 0 0 0 0 0 0 0 20 0 0 0 0 0 0 0 0 19 0 0 0 0 11 0 \; vol 0 50 0 50 0 50 \; ratio 1 2.01 1 0.5 1 1 \; detune 0 0 0 -0.1 0 0.1 \; pan 0 -0.5 0 0 0 0.5 \; transp 0 \; gui 1 \;;
 #A saved;
 #A saved;
 #A saved;
@@ -19,7 +19,7 @@
 #A saved;
 #A saved;
 #A saved;
-#X obj 204 560 else/out~;
+#X obj 204 575 else/out~;
 #X text 556 132 The [pm6.m~] object is the MERDA version of [pm6.m~]. It comes with a convenient matrix of modulation indexes. The gray diagonal row represents each oscillator \, which can modulate itself. The black number boxes are the level output of the oscillators and the example to the left implements the example number 6 from the DX7 patch chart., f 31;
 #X obj 367 143 adsr~ 250 50 0.75 1000;
 #X obj 54 145 voices~ 4;

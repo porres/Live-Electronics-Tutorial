@@ -1,4 +1,4 @@
-#N canvas 158 66 940 601 12;
+#N canvas 221 66 940 601 12;
 #X declare -path else;
 #X obj 115 221 pgmin;
 #X obj 109 197 bendin;
@@ -47,6 +47,7 @@
 #X text 265 148 Note (on/off);
 #X text 532 479 see also:;
 #X obj 529 504 midi.learn;
+#A saved;
 #A saved;
 #X text 615 496 An object from ELSE that makes it easier to set a MIDI controller., f 33;
 #X obj 147 537 midi.in;

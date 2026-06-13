@@ -222,7 +222,7 @@
 #X text 116 461 dholak;
 #X obj 36 257 player~ 1 dholak.flac, f 11;
 #X obj 132 258 player~ 1 bagal.flac, f 10;
-#X obj 132 76 tempo 60 -mul 4;
+#X obj 132 76 tempo -mul 4 60;
 #X connect 0 0 3 0;
 #X connect 0 0 26 0;
 #X connect 2 0 26 1;

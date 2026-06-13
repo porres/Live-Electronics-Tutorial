@@ -12,5 +12,6 @@
 #X text 346 174 spline;
 #X obj 212 175 ffdelay~;
 #X obj 281 175 fbdelay~;
-#X text 40 79 Besides [tabreader]/[tabreader~] \, other objects in the ELSE library perform interpolation \, some were not presented in this tutorial yet \, others have been mentioned already. The objects and the interpolation types they offer are:, f 62;
+#X text 40 68 Besides [tabreader]/[tabreader~] \, other objects in the ELSE library perform interpolation \, some were not presented in this tutorial yet \, others have been mentioned already. The objects and the interpolation types they offer are:, f 62;
 #X obj 142 175 del.out~;
+#X obj 141 148 del.in~;
