@@ -1,6 +1,5 @@
 #N canvas 401 98 922 643 12;
 #X declare -path else;
-#X obj 92 198 graph~ 441 19 -1 1;
 #X obj 92 141 osc~ 111;
 #X text 25 19 The amplitude of a sound represents the sound source's wave propagation \, as in the motion of your speakers., f 54;
 #X text 102 170 <= running amplitude;
@@ -23,8 +22,9 @@
 #X text 344 509 amplitude;
 #X text 311 494 <-- get instant;
 #X text 317 306 [graph~];
-#X connect 1 0 0 0;
-#X connect 5 0 8 0;
-#X connect 6 0 5 0;
-#X connect 6 0 15 0;
-#X connect 7 0 5 0;
+#X obj 92 198 graph~;
+#X connect 0 0 22 0;
+#X connect 4 0 7 0;
+#X connect 5 0 4 0;
+#X connect 5 0 14 0;
+#X connect 6 0 4 0;

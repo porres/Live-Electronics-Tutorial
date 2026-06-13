@@ -1,6 +1,6 @@
 #N canvas 265 53 847 497 12;
 #X declare -path else;
-#X obj 167 355 nbx 5 14 -1e+37 1e+37 0 1 empty hz empty 0 -8 0 10 #dcdcdc #000000 #000000 110 256;
+#X obj 167 355 nbx 5 14 -1e+37 1e+37 0 1 empty hz empty 0 -8 0 10 #dcdcdc #000000 #000000 195.998 256;
 #N canvas 751 108 751 605 triangular 0;
 #X obj 89 322 list prepend;
 #X obj 89 144 trigger float bang;
@@ -42,6 +42,8 @@
 #X obj 91 179 cnv 15 198 138 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
 #N canvas 0 22 474 324 (subpatch) 0;
 #X array tri 4099 float 0;
+#A color 0;
+#A width 1;
 #X coords 0 1 4098 -1 200 140 1;
 #X restore 90 178 graph;
 #X text 73 171 1;
@@ -50,9 +52,8 @@
 #X obj 167 422 out~;
 #X obj 167 380 tabosc4~ tri;
 #X obj 513 65 tgl 21 0 sfsf fssf empty 17 7 0 10 #dcdcdc #000000 #000000 0 1;
-#X obj 513 125 nbx 5 14 -1e+37 1e+37 0 1 hz empty empty 0 -8 0 10 #dcdcdc #000000 #000000 110 256;
+#X obj 513 125 nbx 5 14 -1e+37 1e+37 0 1 hz empty empty 0 -8 0 10 #dcdcdc #000000 #000000 195.998 256;
 #X obj 525 189 out~;
-#X obj 513 256 graph~ 441 8;
 #X obj 513 153 tri~;
 #X text 22 24 You can also generate a triangular from a list of partials. Check the suboatch [pd triangular] for more details. As the earlier example \, enter the number of harmonics in the number box to generate the waveform. Realize also that you'd need an infinite sum of harmonics for a "perfect" triangular wave., f 61;
 #X text 275 140 <= open;
@@ -96,11 +97,12 @@
 #X connect 12 0 13 0;
 #X connect 13 0 1 1;
 #X restore 604 442 pd vanilla hack;
+#X obj 513 256 graph~;
 #X connect 0 0 9 0;
 #X connect 2 0 1 0;
 #X connect 9 0 8 0;
-#X connect 10 0 19 0;
-#X connect 11 0 14 0;
-#X connect 14 0 12 0;
-#X connect 14 0 13 0;
-#X connect 19 0 11 0;
+#X connect 10 0 18 0;
+#X connect 11 0 13 0;
+#X connect 13 0 12 0;
+#X connect 13 0 20 0;
+#X connect 18 0 11 0;

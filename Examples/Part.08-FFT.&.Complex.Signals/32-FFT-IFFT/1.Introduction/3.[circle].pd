@@ -10,7 +10,7 @@
 #X obj 125 512 car2pol;
 #X obj 171 539 nbx 5 15 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 11 #dcdcdc #000000 #000000 0 256;
 #X obj 171 569 nbx 5 15 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 11 #dcdcdc #000000 #000000 0 256;
-#X obj 125 255 circle 200 -1 1 -1 1 2 229 227 225 229 227 225 102 110 111 1 0 0 0 0 empty empty 1;
+#X obj 125 255 circle 200 -1 1 -1 1 1 229 227 225 229 227 225 102 110 111 1 0 0 0 0 empty empty 1;
 #X connect 0 0 10 0;
 #X connect 3 0 7 0;
 #X connect 5 0 10 0;
