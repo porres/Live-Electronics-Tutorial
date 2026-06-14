@@ -19,7 +19,7 @@
 #A saved;
 #A saved;
 #X obj 232 334 adsr.m~;
-#A saved 50 10 0.75 1500 1 0 0 0 0 -1 0 -1;
+#A saved 50 10 0.75 1500 1 0 0 0 0 -1 0 -1 1;
 #A saved;
 #A saved;
 #A saved;
@@ -95,7 +95,7 @@
 #A saved;
 #A saved;
 #X obj 769 323 adsr.m~;
-#A saved 50 10 0.75 1500 1 0 0 0 0 -1 0 -1;
+#A saved 50 10 0.75 1500 1 0 0 0 0 -1 0 -1 1;
 #A saved;
 #A saved;
 #A saved;
@@ -155,8 +155,8 @@
 #A saved;
 #A saved;
 #X obj 580 268 voices~ 4;
-#X text 630 41 And this is a polyphonic version that we can implement by just having [voices~] instead of [mono~]., f 32;
-#X text 50 39 This is kinda the same patch as the last one \, but a bit more simplified with a single VCO/ADSR and composed of MERDA modules. Note that the [vcf.m~] object has an input for keyboard tracking \, which makes things easier. Check the help files of the objects and click on them to see the parameters on a detached window., f 72;
+#X text 630 40 And this is a polyphonic version that we can implement by just having [voices~] instead of [mono~]., f 32;
+#X text 50 29 This is kinda the same patch as the last one \, but a bit more simplified with a single VCO/ADSR and composed of MERDA modules. Note that the [vcf.m~] object has an input for keyboard tracking \, which makes things easier. Note also that [adsr.m~] has a normalize button. Check the help files of the objects and click on them to see the parameters on a detached window., f 74;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 3 0 9 0;
