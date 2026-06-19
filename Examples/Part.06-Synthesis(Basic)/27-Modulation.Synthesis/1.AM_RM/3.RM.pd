@@ -23,7 +23,7 @@
 #X obj 363 205 graph~ 500 33 -1 1 200 140 #dfdfdf 622 2;
 #X text 41 30 Ring Modulation (RM) is a specific type of Amplitude Modulation where both signals are bipolar and have no DC-Offset! In this case both oscillators vary from -1 to 1 \, and there's no actual difference between a carrier and a modulator signal., f 58;
 #X text 134 364 RING MODULATION --->;
-#X text 412 573 We now hear something different \, but still rather complex. Let's see what really happens next., f 32;
+#X text 404 572 We now hear something different \, but still rather complex. Let's see what really happens next., f 32;
 #X connect 0 0 7 0;
 #X connect 1 0 3 0;
 #X connect 2 0 5 0;

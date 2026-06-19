@@ -43,9 +43,10 @@
 #X obj 789 19 declare -path else;
 #X text 22 10 Additive Synthesis is usually limited to sine wave oscillators. When it comes to complex waveforms \, we can mix them to create other shapes and richer sounds in many ways \, but this technique is usually referred toas 'Wave Stacking'. Below we have three sawtooth oscillators with the same frequency but with different phase and amplitude settings. Note how setting the amplitude and phase interferes a lot on the resulting waveform., f 65;
 #X text 391 502 These to the left are not band limited oscillators for the purpose of being easier to visualize the effect \, but you should use band limited ones as to the right., f 38;
-#X obj 165 487 graph~;
+#X obj 165 487 graph~ 441 7 -1 1 200 140 #dfdfdf 0 1;
 #X obj 695 464 graph~;
 #X text 530 60 Mixing different oscillators at simple intervals like octaves and fiths above/below and detuned is also pretty common to create rich and evolving sounds. Another widely used technique is to detune the oscillators. Below we have a square wave and a sawtooth an octave higher and detuned by 0.5 hz (generating beatings and a continuous shift in the waveform)., f 56;
+#X msg 277 452 skip 7;
 #X connect 0 0 2 0;
 #X connect 1 0 39 0;
 #X connect 2 0 43 0;
@@ -78,3 +79,4 @@
 #X connect 39 0 18 2;
 #X connect 43 0 21 0;
 #X connect 44 0 22 0;
+#X connect 46 0 43 0;

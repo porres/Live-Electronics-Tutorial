@@ -1,4 +1,4 @@
-#N canvas 494 51 822 664 12;
+#N canvas 494 51 821 698 12;
 #X declare -path else;
 #X obj 73 237 mtof;
 #X obj 73 273 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
@@ -64,6 +64,8 @@
 #X obj 289 441 rampnoise~ 0.75;
 #X text 304 419 Drive;
 #X obj 289 473 rescale~ 0 0.5;
+#X obj 413 623 lfnoise~;
+#X text 78 601 Also check [lfnoise~] from ELSE. It includes ramp and step noises and can be triggered to sync the phase to the beggining of a random cycle. Check its help file., f 45;
 #X connect 0 0 1 0;
 #X connect 1 0 19 0;
 #X connect 3 0 14 0;
