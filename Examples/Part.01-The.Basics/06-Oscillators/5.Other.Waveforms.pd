@@ -1,33 +1,33 @@
-#N canvas 535 58 569 692 12;
+#N canvas 535 58 542 725 12;
 #X declare -path else;
-#X text 42 235 -1;
-#X text 50 266 1;
-#X text 44 374 -1;
-#X obj 286 134 cnv 15 224 110 empty empty empty 20 12 0 14 -220534
--66577 0;
-#X obj 62 135 cnv 15 223 110 empty empty empty 20 12 0 14 -228856 -66577
-0;
+#X text 31 260 -1;
+#X text 39 291 1;
+#X text 33 399 -1;
+#X obj 275 159 cnv 15 224 110 empty empty empty 20 12 0 14 #d4d4d4 #404040 0;
+#X obj 51 160 cnv 15 223 110 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array sinusoid 4410 float 0;
+#A color 0;
+#A width 1;
 #X coords 0 1.1 4409 -1.1 450 112 1 0 0;
-#X restore 61 134 graph;
-#X text 48 127 1;
-#X obj 288 274 cnv 15 224 110 empty empty empty 20 12 0 14 -220534
--66577 0;
-#X obj 64 274 cnv 15 223 110 empty empty empty 20 12 0 14 -228856 -66577
-0;
+#X restore 50 159 graph;
+#X text 37 152 1;
+#X obj 277 299 cnv 15 224 110 empty empty empty 20 12 0 14 #d4d4d4 #404040 0;
+#X obj 53 299 cnv 15 223 110 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array triangular 4410 float 0;
+#A color 0;
+#A width 1;
 #X coords 0 1.1 4409 -1.1 450 112 1;
-#X restore 63 273 graph;
-#X obj 288 412 cnv 15 224 110 empty empty empty 20 12 0 14 -220534
--66577 0;
-#X obj 64 412 cnv 15 223 110 empty empty empty 20 12 0 14 -228856 -66577
-0;
+#X restore 52 298 graph;
+#X obj 277 437 cnv 15 224 110 empty empty empty 20 12 0 14 #d4d4d4 #404040 0;
+#X obj 53 437 cnv 15 223 110 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array sawtooth 4410 float 0;
+#A color 0;
+#A width 1;
 #X coords 0 1.1 4409 -1.1 450 112 1 0 0;
-#X restore 63 411 graph;
+#X restore 52 436 graph;
 #N canvas 664 380 438 388 plot 0;
 #X obj 93 47 t b f;
 #X obj 154 309 tabwrite~ triangular;
@@ -53,25 +53,22 @@
 #X connect 4 0 0 0;
 #X connect 5 0 8 0;
 #X connect 6 0 1 0;
-#X restore 463 655 pd plot;
-#X obj 291 544 cnv 15 224 110 empty empty empty 20 12 0 14 -220534
--66577 0;
-#X obj 67 544 cnv 15 223 110 empty empty empty 20 12 0 14 -228856 -66577
-0;
+#X restore 452 680 pd plot;
+#X obj 280 569 cnv 15 224 110 empty empty empty 20 12 0 14 #d4d4d4 #404040 0;
+#X obj 56 569 cnv 15 223 110 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array square 4410 float 0;
+#A color 0;
+#A width 1;
 #X coords 0 1.1 4409 -1.1 450 112 1 0 0;
-#X restore 66 543 graph;
-#X text 45 182 0;
-#X text 50 321 0;
-#X text 50 404 1;
-#X text 44 512 -1;
-#X text 50 459 0;
-#X text 48 536 1;
-#X text 42 644 -1;
-#X text 48 591 0;
-#X text 80 12 In this section the sinusoidal oscillator was shown in
-more detail. This is the simplest oscillator and generates a pure tone.
-These other waveforms are also basic and important waveforms in computer
-music \, they are: Triangular \, Sawtooth and Square. Check the graphs
-below \, which include 2 cycles per waveform.;
+#X restore 55 568 graph;
+#X text 34 207 0;
+#X text 39 346 0;
+#X text 39 429 1;
+#X text 33 537 -1;
+#X text 39 484 0;
+#X text 37 561 1;
+#X text 31 669 -1;
+#X text 37 616 0;
+#X text 65 24 In this section the sinusoidal oscillator was shown in more detail. This is the simplest oscillator and generates a pure tone. These other waveforms are also basic and important waveforms in computer music \, they are: Triangular \, Sawtooth and Square. Check the graphs below \, which include 2 cycles per waveform. Turn the DSP on to plot the graphs., f 51;
+#X obj 438 37 setdsp~;

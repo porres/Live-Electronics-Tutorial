@@ -1,0 +1,16 @@
+#N canvas 554 106 595 550 12;
+#X declare -path else;
+#X obj 382 27 declare -path else;
+#X obj 56 196 keyboard 17 80 4 1 0 0 empty empty;
+#X obj 56 345 clone additive 8;
+#X obj 56 296 voices 8;
+#X obj 54 444 out~;
+#X obj 56 400 stereo.rev~;
+#X text 51 66 We now rely back on [clone] not only to create an additive synthesis voice with 16 partials \, but also nest it inside another [clone] for polyphony. This patch has 8 voices enabled and each voice is based on what we've seen in earlier examples. Each voice has an [adsr~] object that also turns the DSP process on/off and is composed of a detuned and pitch shifting pairs of oscillators for each partial \, whose amplitude and panning are also modulated., f 69;
+#X text 182 345 <-- open to see the guts.;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 2 1 5 1;
+#X connect 3 0 2 0;
+#X connect 5 0 4 0;
+#X connect 5 1 4 1;
