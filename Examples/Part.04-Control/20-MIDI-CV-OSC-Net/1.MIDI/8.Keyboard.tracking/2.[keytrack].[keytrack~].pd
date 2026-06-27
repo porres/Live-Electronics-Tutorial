@@ -1,4 +1,4 @@
-#N canvas 357 38 653 662 12;
+#N canvas 473 55 653 662 12;
 #X declare -path else;
 #X obj 73 550 *~;
 #X obj 27 510 bl.saw~;
@@ -17,12 +17,15 @@
 #X msg 172 303 ref 60;
 #X text 228 278 You can change the reference point. Note that 2 values set a region where the output is 1!, f 35;
 #X text 253 422 amount (%);
-#X msg 191 340 exp 1 -1;
-#X msg 198 364 exp 1.5;
-#X msg 212 387 exp 0;
-#X text 268 340 You can also set exponential factors below and above the reference point(s). By default we have '0' (which linear and so is '1'). Negative values flips it vertically., f 48;
-#X obj 487 542 keytrack~;
-#X text 361 433 You can actually also set different amnount values below and above the reference point(s). Check the help file. This is quite a complex and versatile object. Take some time to study it. Note we also have a signal version., f 36;
+#X obj 497 422 keytrack~;
+#X msg 212 387 exp 1.5;
+#X msg 191 340 exp 2;
+#X msg 198 364 exp -2;
+#X text 274 337 You can also set exponential factors. By default we have '0' (which linear and so is '1'). Negative values flips it vertically., f 43;
+#X text 377 412 There is also a signal version., f 15;
+#X text 362 472 And there's also a variant that lets you set different amount and exponential values below and above the reference point(s). Check the help file of all these objects as they are rather complex and. Take some time to study them., f 34;
+#X obj 391 601 keytrack2;
+#X obj 478 601 keytrack2~;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 4 0 5 0;
@@ -37,6 +40,6 @@
 #X connect 11 0 0 1;
 #X connect 13 0 6 0;
 #X connect 14 0 6 0;
-#X connect 17 0 6 0;
 #X connect 18 0 6 0;
 #X connect 19 0 6 0;
+#X connect 20 0 6 0;
