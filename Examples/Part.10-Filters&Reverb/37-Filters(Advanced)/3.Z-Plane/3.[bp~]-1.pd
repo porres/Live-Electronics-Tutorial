@@ -1,36 +1,30 @@
-#N canvas 395 53 874 579 12;
+#N canvas 302 38 962 890 12;
 #X declare -path else;
-#X obj 534 253 cpole~, f 12;
-#X obj 539 294 cpole~, f 33;
-#X obj 506 214 *~;
-#X obj 471 182 noise~;
-#X obj 278 170 nbx 5 14 0.1 100 1 0 \$0-Q \$0-q_set empty 0 -8 0 10
-#dcdcdc #000000 #000000 0 256;
-#X floatatom 141 225 8 0 0 0 - - - 0;
-#X obj 284 256 v g;
-#X msg 524 155 \$3;
-#X obj 211 312 noise~;
-#X obj 141 253 v a1;
-#X obj 213 253 v a2;
-#X obj 69 298 noise~;
-#X obj 148 170 nbx 8 14 100 20000 1 0 \$0-freq-send \$0-freq empty
-0 -8 0 10 #dcdcdc #000000 #000000 0 100;
-#X text 127 169 Hz;
-#X obj 102 355 nbx 5 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 #dcdcdc
-#000000 #000000 0 256;
-#X obj 78 331 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty 0
--8 0 10 #dcdcdc #000000 #000000 0 256;
-#X obj 69 355 bp~;
-#X obj 211 346 fexpr~ g * $x[0] + a1 * $y[-1] + a2 * $y[-2], f 30
-;
-#X obj 55 114 cnv 15 330 20 empty empty empty 20 12 0 14 #e0e0e0 #404040
-0;
-#X text 65 114 y[n] = g * x[n] + a1 * y[n-1] + a2 * y[n-2];
-#X floatatom 524 182 8 0 0 0 - - - 0;
-#X obj 539 327 out~;
-#X obj 211 398 out~;
-#X obj 69 398 out~;
-#N canvas 761 216 488 480 coefficients 0;
+#X obj 574 248 cpole~, f 12;
+#X obj 579 289 cpole~, f 33;
+#X obj 546 209 *~;
+#X obj 511 177 noise~;
+#X obj 326 165 nbx 5 14 0.1 100 1 0 \$0-Q \$0-q_set empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
+#X floatatom 168 220 9 0 0 0 - - - 0;
+#X obj 326 251 v g;
+#X msg 564 150 \$3;
+#X obj 222 297 noise~;
+#X obj 168 248 v a1;
+#X obj 246 248 v a2;
+#X obj 69 283 noise~;
+#X obj 168 165 nbx 8 14 100 20000 1 0 \$0-freq-send \$0-freq empty 0 -8 0 10 #dcdcdc #000000 #000000 0 100;
+#X text 147 164 Hz;
+#X obj 102 340 nbx 7 14 1 100 1 0 empty \$0-Q empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
+#X obj 78 316 nbx 7 14 -1e+37 1e+37 0 0 empty \$0-freq-send empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
+#X obj 69 340 bp~;
+#X obj 222 331 fexpr~ g * $x[0] + a1 * $y[-1] + a2 * $y[-2], f 30;
+#X obj 55 112 cnv 15 330 20 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X text 65 112 y[n] = g * x[n] + a1 * y[n-1] + a2 * y[n-2];
+#X floatatom 564 177 8 0 0 0 - - - 0;
+#X obj 579 322 out~;
+#X obj 222 377 out~;
+#X obj 69 377 out~;
+#N canvas 810 221 488 480 coefficients 0;
 #X obj 99 48 inlet;
 #X obj 50 48 inlet;
 #X obj 216 263 v r;
@@ -56,57 +50,38 @@
 #X connect 8 0 4 0;
 #X restore 372 163 pd init;
 #X obj 99 87 t b f;
-#X obj 50 159 expr omega \; - r * r \; 2 * oneminusr * (oneminusr +
-r * omega) \; 1 - oneminusr \; min(omega / $f2 \, 1) \; $f1 * 2*pi
-/ sr;
-#N canvas 526 56 548 260 a1 0;
-#X obj 58 53 inlet;
-#X obj 58 192 outlet;
-#X obj 426 145 v g;
-#X obj 58 93 expr (((g*g*g * (-1/720) + g*g*(1/24)) - g*0.5) + 1) \;
-$f1 * $f1;
-#X obj 58 145 expr max(2 * $f1 * r \, -1);
-#X connect 0 0 3 0;
-#X connect 3 0 4 0;
-#X connect 3 1 2 0;
-#X connect 4 0 1 0;
-#X restore 50 256 pd a1;
-#X obj 82 380 unpack float float float;
-#X obj 247 413 outlet;
-#X obj 164 413 outlet;
-#X obj 82 413 outlet;
-#X obj 82 315 s \$0-coefficients;
-#X obj 82 351 r \$0-coefficients;
+#X obj 72 370 unpack float float float;
+#X obj 237 403 outlet;
+#X obj 154 403 outlet;
+#X obj 72 403 outlet;
+#X obj 72 305 s \$0-coefficients;
+#X obj 72 341 r \$0-coefficients;
 #X text 59 21 Hz;
 #X text 106 24 Q;
-#X text 183 73 This is how we get the coefficients from the Hz and
-Q input. This is taken from [bp~]'s source code., f 38;
-#X obj 82 284 pack f f f;
+#X text 183 73 This is how we get the coefficients from the Hz and Q input. This is taken from [bp~]'s source code., f 38;
+#X obj 72 274 pack f f f;
 #X obj 50 130 pack float 1;
+#X obj 50 159 expr 2 * cos(omega) * r \; - r * r \; 2 * oneminusr * (oneminusr + r * omega) \; 1 - oneminusr \; min(omega / $f2 \, 1) \; $f1 * 2*pi / sr;
 #X connect 0 0 6 0;
-#X connect 1 0 19 0;
-#X connect 6 0 19 0;
-#X connect 6 1 19 1;
-#X connect 7 0 8 0;
-#X connect 7 1 18 1;
-#X connect 7 2 18 2;
-#X connect 7 3 2 0;
-#X connect 7 4 4 0;
-#X connect 7 5 3 0;
-#X connect 8 0 18 0;
-#X connect 9 0 12 0;
-#X connect 9 1 11 0;
-#X connect 9 2 10 0;
-#X connect 14 0 9 0;
-#X connect 18 0 13 0;
-#X connect 19 0 7 0;
-#X restore 148 196 pd coefficients;
-#X f 19;
-#X text 31 20 The [bp~] filter has 2 complex poles \, here's the difference
-equation and a subpatch that generates the coefficients from a frequency
-and Q input \, the coefficients are loaded inside [fexpr~] for comparison:
-, f 50;
-#X text 484 154 gain;
+#X connect 1 0 17 0;
+#X connect 6 0 17 0;
+#X connect 6 1 17 1;
+#X connect 7 0 10 0;
+#X connect 7 1 9 0;
+#X connect 7 2 8 0;
+#X connect 12 0 7 0;
+#X connect 16 0 11 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 18 1 16 1;
+#X connect 18 2 16 2;
+#X connect 18 3 2 0;
+#X connect 18 4 4 0;
+#X connect 18 5 3 0;
+#X restore 168 191 pd coefficients;
+#X f 23;
+#X text 31 22 The [bp~] filter has 2 complex poles \, here's the difference equation and a subpatch that generates the coefficients from a frequency and Q input \, the coefficients are loaded inside [fexpr~] for comparison:, f 50;
+#X text 524 149 gain;
 #N canvas 495 81 862 659 Poles 0;
 #X obj 587 587 outlet;
 #X obj 525 587 outlet;
@@ -141,8 +116,7 @@ and Q input \, the coefficients are loaded inside [fexpr~] for comparison:
 #X text 569 83 (a1 a2 b0);
 #X obj 525 234 trigger bang float float;
 #X obj 607 338 route 0 1;
-#X obj 607 285 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 607 285 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 607 311 pack float float;
 #X obj 637 362 abs;
 #X obj 637 386 sqrt;
@@ -155,8 +129,7 @@ and Q input \, the coefficients are loaded inside [fexpr~] for comparison:
 #X obj 649 587 outlet;
 #X obj 637 429 v im;
 #X obj 591 429 v re;
-#X obj 525 459 expr (b + re) / 2 \; im / 2 \; (b - re) / 2 \; -im /
-2, f 27;
+#X obj 525 459 expr (b + re) / 2 \; im / 2 \; (b - re) / 2 \; -im / 2, f 27;
 #X text 532 526 re;
 #X text 593 526 im;
 #X text 652 526 re;
@@ -175,24 +148,15 @@ and Q input \, the coefficients are loaded inside [fexpr~] for comparison:
 #X text 371 500 _______;
 #X text 103 556 +;
 #X text 103 564 -;
-#X text 47 150 Where "a" should be a feedback coefficient gain "a0"
-\, but this is "1" in our case \, so it gets ignored. In out difference
-equation variables: a1 = b & a2 = c \, with a detail \, the signs are
-reversed \, so we have:;
+#X text 47 150 Where "a" should be a feedback coefficient gain "a0" \, but this is "1" in our case \, so it gets ignored. In out difference equation variables: a1 = b & a2 = c \, with a detail \, the signs are reversed \, so we have:;
 #X text 89 292 Or \, with the original terms:;
 #X text 43 58 The pole extraction is based in bhaskara:;
 #X text 85 507 Real Part =;
 #X text 256 506 Imaginary Part =;
-#X text 69 559 the ( ) indicates how to extract both poles (one with
-"+" \, the other with "-").;
+#X text 69 559 the ( ) indicates how to extract both poles (one with "+" \, the other with "-").;
 #X text 521 46 Let's finally calculate this in a patch:;
 #X text 625 284 complex;
-#X text 52 381 If (b^2 - 4.c) is negative \, we're extracting a square
-root of a negative value \, hence we're dealing with a complex number!
-That means: a Complex Pole! So we need to check if it's positive or
-negative. If positive \, this is the real part and the imaginary part
-is 0 \, but if negative \, it's the imaginary part and the real part
-is 0 - we then have both parts as:;
+#X text 52 381 If (b^2 - 4.c) is negative \, we're extracting a square root of a negative value \, hence we're dealing with a complex number! That means: a Complex Pole! So we need to check if it's positive or negative. If positive \, this is the real part and the imaginary part is 0 \, but if negative \, it's the imaginary part and the real part is 0 - we then have both parts as:;
 #X text 549 611 pole 1;
 #X text 674 611 pole 2;
 #X floatatom 587 546 7 0 0 0 - - - 0;
@@ -225,31 +189,28 @@ is 0 - we then have both parts as:;
 #X connect 76 0 0 0;
 #X connect 77 0 42 0;
 #X connect 78 0 43 0;
-#X restore 587 155 pd Poles;
+#X restore 627 150 pd Poles;
 #X f 29;
-#X text 263 168 Q;
-#X obj 695 21 declare -path else;
-#X obj 587 122 r \$0-coefficients;
-#X floatatom 284 225 8 0 0 0 - - - 0;
-#X floatatom 213 225 8 0 0 0 - - - 0;
-#X floatatom 787 214 8 0 0 0 - - - 0;
-#X floatatom 720 214 8 0 0 0 - - - 0;
-#X floatatom 653 214 8 0 0 0 - - - 0;
-#X floatatom 588 214 8 0 0 0 - - - 0;
-#X text 18 196 open and check =>;
-#X text 55 473 Even though the coefficients' values are real inside
-[fexpr~] \, we're dealing with complex poles. More precisely a conjugate
-pair \, where the imaginary values are mirrrored and get cancelled
-out., f 46;
-#X obj 471 472 biquad~;
-#X obj 504 410 r \$0-coefficients;
-#X obj 504 434 list append 0 0;
-#X obj 471 504 out~;
-#X text 443 54 And see how we can also implement this filter with two
-[cpole~] objects (complex pole filters) below. Open [pd Poles] to seee
-how to extract poles from the input coefficients., f 54;
-#X text 601 493 One can use [biquad~] as well. We just add to the list
-two zeros that represent the unused 2-Zeros., f 34;
+#X text 311 163 Q;
+#X obj 735 16 declare -path else;
+#X obj 627 117 r \$0-coefficients;
+#X floatatom 326 220 11 0 0 0 - - - 0;
+#X floatatom 246 220 10 0 0 0 - - - 0;
+#X floatatom 827 209 8 0 0 0 - - - 0;
+#X floatatom 760 209 8 0 0 0 - - - 0;
+#X floatatom 693 209 8 0 0 0 - - - 0;
+#X floatatom 628 209 8 0 0 0 - - - 0;
+#X text 38 191 open and check =>;
+#X text 39 452 Even though the coefficients' values are real inside [fexpr~] \, we're dealing with complex poles. More precisely a conjugate pair \, where the imaginary values are mirrrored and get cancelled out., f 62;
+#X obj 511 467 biquad~;
+#X obj 590 400 r \$0-coefficients;
+#X obj 590 424 list append 0 0;
+#X obj 511 499 out~;
+#X text 483 49 And see how we can also implement this filter with two [cpole~] objects (complex pole filters) below. Open [pd Poles] to seee how to extract poles from the input coefficients., f 54;
+#X obj 33 574 biplot;
+#X obj 590 457 s \$0-biplot;
+#X obj 33 549 r \$0-biplot;
+#X text 641 488 One can use [biquad~] as well. We just add to the list two zeros that represent the unused 2-Zeros \, below we plot the response., f 36;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 1 0 21 0;
@@ -285,3 +246,5 @@ two zeros that represent the unused 2-Zeros., f 34;
 #X connect 39 0 42 0;
 #X connect 40 0 41 0;
 #X connect 41 0 39 0;
+#X connect 41 0 45 0;
+#X connect 46 0 44 0;

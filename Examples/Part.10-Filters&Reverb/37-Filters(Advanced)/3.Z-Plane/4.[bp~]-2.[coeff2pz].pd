@@ -1,9 +1,9 @@
-#N canvas 277 23 950 723 12;
+#N canvas 277 38 950 870 12;
 #X declare -path else;
 #X obj 153 118 nbx 5 14 0.1 100 1 0 \$0-Q \$0-q_set empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
 #X obj 23 117 nbx 8 14 100 20000 1 0 \$0-freq-send \$0-freq empty 0 -8 0 10 #dcdcdc #000000 #000000 0 100;
 #X text 105 116 Hz;
-#X floatatom 103 258 8 0 0 0 - - \$0-gain 0;
+#X floatatom 103 258 11 0 0 0 - - \$0-gain 0;
 #N canvas 761 216 485 388 coefficients 0;
 #X obj 99 48 inlet;
 #X obj 50 48 inlet;
@@ -79,11 +79,11 @@
 #X floatatom 89 409 8 0 0 0 - - - 0;
 #X obj 22 561 biplot;
 #X text 145 284 [coeff2pz] outputs poles \, zeros and the overall gain coefficient, f 32;
-#X floatatom 34 409 7 0 0 0 - - - 0;
+#X floatatom 43 436 9 0 0 0 - - - 0;
 #X text 578 17 This time we're taking the pole's coordinates directly into [zbiplot]., f 45;
 #X text 31 16 Now we're using the [coeff2pz] object from ELSE to converts biquad coefficients to poles and zeros based on the theory from the last example. We also have [biplot] and [zbiplot] to better visualize the action of this filter.;
-#X text 157 357 Here we take the coordinate of a single pole (which is in the cartesian form) and convert it to polar. We find the frequency from the angle in radians by converting from radians per sample to Hz!, f 39;
-#X text 60 466 See how Q controls the amplitude of the poles. Thus it controls a boost in this frequency! The gain parameter compensates the boost in order that the maximum amplitude value is 0 dB., f 51;
+#X text 159 335 Here we take the coordinate of a single pole (which is in the cartesian form) and convert it to polar. We find the frequency from the angle in radians by converting from radians per sample to Hz!, f 39;
+#X text 61 470 See how Q controls the amplitude of the poles. Thus it controls a boost in this frequency! The gain parameter compensates the boost in order that the maximum amplitude value is 0 dB., f 51;
 #X obj 447 112 vsl 22 157 0 1.1 0 0 xxx \$0-gain empty 0 -9 0 10 #404040 #fc0400 #000000 0 1;
 #X obj 454 160 cnv 5 5 5 empty empty G 0 0 0 14 #404040 #fcfcfc 0;
 #X obj 454 176 cnv 5 5 5 empty empty A 0 0 0 14 #404040 #fcfcfc 0;
@@ -91,6 +91,7 @@
 #X obj 454 212 cnv 5 5 5 empty empty N 0 0 0 14 #404040 #fcfcfc 0;
 #X listbox 23 194 34 0 0 0 - - - 0;
 #X listbox 469 66 34 0 0 0 - - - 0;
+#X text 116 437 Amplitude;
 #X connect 0 0 4 1;
 #X connect 1 0 4 0;
 #X connect 4 0 8 0;

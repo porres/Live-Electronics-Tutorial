@@ -41,7 +41,7 @@
 #X obj 499 172 allpass.2nd~;
 #X text 261 27 Note that all of these filters are also implemented in single separate objects in the ELSE library \, and the main difference is that they take signal input to control the parameters. Another difference is that only [eq~] \, [lowshelf~] and [highshelf~] have a gain input., f 54;
 #X text 273 228 see also: [bicoeff];
-#X obj 265 262 bicoeff 450 150 peaking;
+#X obj 265 262 bicoeff 450 150 peaking 1000 0.5 0 0;
 #X connect 0 0 9 0;
 #X connect 1 0 9 0;
 #X connect 2 0 9 0;
@@ -55,7 +55,7 @@
 #X restore 32 316 pd menu;
 #X obj 168 400 nbx 5 14 0 100 0 0 empty empty empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
 #X obj 777 32 declare -path else;
-#N canvas 345 38 1021 510 vanilla 0;
+#N canvas 345 38 1021 510 vanilla 1;
 #N canvas 114 184 549 267 lowpass 0;
 #X obj 39 165 pack f f f f f;
 #X obj 164 165 v b0;
@@ -358,7 +358,6 @@
 #X obj 376 231 max 0.5;
 #X obj 595 274 r \$0-coeffs;
 #X text 44 26 With the parameters of: frequency \, Q (for resonant filters) or S (for shelving filters) and gain (for peak/shelving) we can calculate biquad coefficients., f 60;
-#X obj 520 417 outlet;
 #X connect 9 0 25 0;
 #X connect 10 0 16 0;
 #X connect 10 1 22 0;
@@ -379,7 +378,6 @@
 #X connect 34 0 9 0;
 #X connect 35 0 23 0;
 #X connect 37 0 57 0;
-#X connect 37 0 61 0;
 #X connect 39 0 40 0;
 #X connect 40 0 42 0;
 #X connect 40 1 41 0;
