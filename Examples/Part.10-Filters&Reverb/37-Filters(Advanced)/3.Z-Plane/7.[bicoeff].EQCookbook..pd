@@ -55,7 +55,7 @@
 #X restore 32 316 pd menu;
 #X obj 168 400 nbx 5 14 0 100 0 0 empty empty empty 0 -8 0 10 #dcdcdc #000000 #000000 0 256;
 #X obj 777 32 declare -path else;
-#N canvas 345 38 1021 510 vanilla 1;
+#N canvas 260 38 1021 510 vanilla 0;
 #N canvas 114 184 549 267 lowpass 0;
 #X obj 39 165 pack f f f f f;
 #X obj 164 165 v b0;
@@ -398,6 +398,8 @@
 #X floatatom 398 280 6 0 0 0 - - - 0;
 #X text 29 41 The filter equations from Robert Bristow-Johnson's "Cookbook formulae for audio EQ biquad filter coefficients" is the basis of the [bicoeff] and [bicoeff2] objects., f 50;
 #X text 226 158 <-- open;
+#X listbox 120 485 20 0 0 0 - - - 0;
+#X obj 42 433 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X connect 0 0 30 0;
 #X connect 4 0 6 0;
 #X connect 5 0 4 0;
@@ -405,6 +407,7 @@
 #X connect 9 0 14 0;
 #X connect 11 0 14 2;
 #X connect 14 0 10 0;
+#X connect 14 0 33 0;
 #X connect 15 0 4 0;
 #X connect 17 0 14 0;
 #X connect 18 0 14 1;
@@ -413,3 +416,4 @@
 #X connect 22 0 24 0;
 #X connect 23 0 0 0;
 #X connect 26 0 25 0;
+#X connect 34 0 9 0;

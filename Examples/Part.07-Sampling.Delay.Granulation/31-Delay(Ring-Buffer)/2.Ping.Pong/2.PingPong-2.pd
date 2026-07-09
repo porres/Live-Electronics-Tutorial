@@ -30,14 +30,14 @@
 #X obj 140 479 r~ \$0-time;
 #X obj 315 500 r~ \$0-time;
 #X obj 184 171 f2s~ 500 500;
-#X obj 63 277 sig~ 100;
+#X obj 63 268 sig~ 100;
 #X obj 296 285 osc~ 670;
 #X text 65 56 This other implementation takes a stereo input and alternates the channels. At each iteration \, the delay output is fed into another channel and vice versa. Headphones might be better to notice the ping pong effects., f 53;
 #X obj 309 205 f2s~ 10 0.85;
 #X obj 312 13 declare -path else;
 #X obj 184 589 out~;
-#X obj 140 314 asr~ 50 150;
 #X obj 314 325 asr~ 50 150;
+#X obj 140 314 envgen~ 25 1 50 0;
 #X connect 0 0 2 0;
 #X connect 0 0 24 0;
 #X connect 1 0 3 0;
@@ -68,5 +68,5 @@
 #X connect 30 0 20 0;
 #X connect 31 0 14 0;
 #X connect 33 0 10 0;
-#X connect 36 0 13 1;
-#X connect 37 0 14 1;
+#X connect 36 0 14 1;
+#X connect 37 0 13 1;

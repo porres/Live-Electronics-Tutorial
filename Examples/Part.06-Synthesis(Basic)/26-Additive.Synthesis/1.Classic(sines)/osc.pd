@@ -5,12 +5,12 @@
 #X obj 115 244 *~;
 #X obj 115 274 /~ \$2;
 #X obj 133 52 inlet;
-#X obj 133 87 bng 15 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000;
+#X obj 133 87 bng 21 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000 #000000;
 #X text 205 198 This patch is used inside [clone] in one of the examples in this series., f 22;
 #X obj 257 62 declare -path else;
 #X obj 61 129 random 1500, f 6;
 #X obj 61 174 + 200;
-#X obj 133 155 asr~ 100 6000;
+#X obj 133 155 envgen~ 0 100 1 6000 0;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
