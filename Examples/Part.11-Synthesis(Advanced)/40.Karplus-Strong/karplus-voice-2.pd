@@ -1,4 +1,4 @@
-#N canvas 501 23 569 645 12;
+#N canvas 501 38 569 645 12;
 #X obj 182 428 mtof;
 #X obj 50 46 inlet;
 #X obj 319 517 *~;
@@ -14,10 +14,10 @@
 #X obj 320 158 dollsym 1;
 #X obj 320 129 initmess symbol \\\$0-feedback;
 #X obj 320 186 receiver;
-#X obj 224 107 dollsym 1;
-#X obj 224 135 receiver;
-#X obj 224 77 initmess symbol \\\$0-cutoff;
-#X obj 177 173 lowpass~ 0 0.5;
+#X obj 209 107 dollsym 1;
+#X obj 209 135 receiver;
+#X obj 209 77 initmess symbol \\\$0-cutoff;
+#X obj 177 173 lop3~;
 #X connect 0 0 13 0;
 #X connect 3 0 4 0;
 #X connect 4 0 13 0;

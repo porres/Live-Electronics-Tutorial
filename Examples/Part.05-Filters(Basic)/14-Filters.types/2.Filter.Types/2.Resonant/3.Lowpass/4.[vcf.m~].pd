@@ -17,6 +17,6 @@
 #A saved;
 #A saved;
 #A saved;
-#X text 67 74 The [vcf.m~] object is a MERDA module based on [moog~] \, so it's just a wrapper around it. It also has an input for keyboard tracking \, which is a subtractive synthesis technique we've seen earlier in this tutorial., f 45;
+#X text 67 74 The [vcf.m~] object is a MERDA module based on [moog~] \, so it's just a wrapper around it. It also has an input for keyboard tracking \, which is a subtractive synthesis technique we'll seen later in this tutorial., f 45;
 #X connect 0 0 3 0;
 #X connect 3 0 2 0;

@@ -21,14 +21,14 @@
 #X obj 59 262 drive~;
 #X obj 59 228 clone 6 karplus-voice-1 \$0;
 #X text 338 205 This example has eight 6-voice chords \, which are stored in the [text] object above and randomly picked on the left., f 65;
-#X text 338 240 Each voice is played by a different copy of an abstraction inside [clone]. They're also attacked at a different time with a random delay value. Click the [clone] object to check it. Not much else is new \, we have the same duration/sustain parameter from the last example. Note we're using [lop2~] now in the feedback loop., f 65;
 #X obj 59 110 tempo -ms 3000 25;
-#X connect 3 0 21 0;
-#X connect 4 0 21 1;
+#X text 338 240 Each voice is played by a different copy of an abstraction inside [clone]. They're also attacked at a different time with a random delay value. Click the [clone] object to check it. Not much else is new \, we have the same duration/sustain parameter from the last example. Note we're using [lop3~] now in the feedback loop., f 65;
+#X connect 3 0 20 0;
+#X connect 4 0 20 1;
 #X connect 5 0 4 0;
 #X connect 8 0 10 0;
 #X connect 10 0 18 0;
 #X connect 13 0 8 0;
 #X connect 17 0 6 0;
 #X connect 18 0 17 0;
-#X connect 21 0 13 0;
+#X connect 20 0 13 0;
