@@ -15,7 +15,7 @@
 #X floatatom 236 368 0 0 0 0 - - - 0;
 #X floatatom 286 368 4 0 0 0 - - - 0;
 #X floatatom 337 368 0 0 0 0 - - - 0;
-#X obj 598 244 cnv 15 198 198 empty 1003-lin . -13 -10 0 44 #f8f8f8 #fc0400 0;
+#X obj 598 244 cnv 15 198 198 empty \$0-lin . -13 -10 0 44 #f8f8f8 #fc0400 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array interpolation 8 float 0;
 #X coords 0 1 7 -1 200 200 1 0 0;
