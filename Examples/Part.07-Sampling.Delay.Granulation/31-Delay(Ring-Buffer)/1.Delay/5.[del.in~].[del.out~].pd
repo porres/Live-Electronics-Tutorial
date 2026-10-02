@@ -17,7 +17,7 @@
 #X obj 327 432 del.out~ \$0-del 1500;
 #X obj 309 282 del.out~ -samps \$0-del 22050;
 #X text 33 183 Check the help file for more details. Below \, check how you can resize the delay line and also freeze it. When frozen \, the write head stops writing to the delay line but keeps moving., f 71;
-#X text 33 61 The [del.in~] and [del.out~] objects from ELSE are like [delwrite~] and [dlread4~] \, respectively. It uses a different interpolation method (spline) and offers more functionalitites not present in the native delay objects (at least not yet) \, like being able to resize the delay line in [del.in~] \, "freeze" the recording and change the delay name on the dealay reading object. We can also set the delay time in samples instead of ms. Like the Vanilla originals \, they also take multichannels \, butthey are set automatically in [del.in~] according to the input., f 72;
+#X text 33 61 The [del.in~] and [del.out~] objects from ELSE are like [delwrite~] and [dlread4~] \, respectively. It uses a different interpolation method (spline) and offers more functionalitites not present in the native delay objects (at least not yet) \, like being able to resize the delay line in [del.in~] \, "freeze" the recording and change the delay name on the delay reading object. We can also set the delay time in samples instead of ms. Like the Vanilla originals \, they also take multichannels \, but they are set automatically in [del.in~] according to the input., f 72;
 #X connect 0 0 15 0;
 #X connect 1 0 14 0;
 #X connect 6 0 13 0;
